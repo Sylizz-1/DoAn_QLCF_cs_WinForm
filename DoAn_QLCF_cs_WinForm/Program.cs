@@ -13,9 +13,9 @@ namespace DoAn_QLCF_cs_WinForm
 		{
 			// To customize application configuration such as set high DPI settings or default font,
 			// see https://aka.ms/applicationconfiguration.
-			
+			string connectionString = ConfigurationManager.ConnectionStrings["sqlConnection"].ConnectionString;
 			ApplicationConfiguration.Initialize();
-			Application.Run(new MainView());
+			Application.Run(new MainView(connectionString));
 		}
 	}
 }

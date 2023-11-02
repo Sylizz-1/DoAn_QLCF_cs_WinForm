@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DoAn_QLCF_cs_WinForm.Presenter;
+using DoAn_QLCF_cs_WinForm.Repository;
+using DoAn_QLCF_cs_WinForm.Repository.RepositoryInterface;
 using DoAn_QLCF_cs_WinForm.View.ViewInterface;
 
 namespace DoAn_QLCF_cs_WinForm.View
@@ -15,6 +17,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 	public partial class MainView : Form, IMainView
 	{
 		private bool isSideBarExpand = true;
+		private readonly string connectionString;
 		// override
 		public MainPresenter presenter
 		{
@@ -22,10 +25,10 @@ namespace DoAn_QLCF_cs_WinForm.View
 		}
 
 		// UI code
-		public MainView()
+		public MainView(string connectionString)
 		{
 			InitializeComponent();
-
+			this.connectionString = connectionString;
 		}
 
 		private void sideMinimizeTimer_Tick(object sender, EventArgs e)
@@ -69,5 +72,11 @@ namespace DoAn_QLCF_cs_WinForm.View
 			}
 		}
 
+		private void btnNhanVien_Click(object sender, EventArgs e)
+		{
+			ICaPheView view = CaPheView.GetInstance(this);
+			ICaPheRepository repo = new CaPheRepository(this.connectionString);
+			new CaPhePresenter(view, repo);
+		}
 	}
 }

@@ -382,6 +382,7 @@
 			btnNhanVien.TabIndex = 10;
 			btnNhanVien.Text = "Nhân viên";
 			btnNhanVien.UseVisualStyleBackColor = true;
+			btnNhanVien.Click += btnNhanVien_Click;
 			// 
 			// menuSlide
 			// 

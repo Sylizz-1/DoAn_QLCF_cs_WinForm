@@ -20,17 +20,41 @@ namespace DoAn_QLCF_cs_WinForm.View
 			InitializeComponent();
 		}
 
+		private static CaPheView instance;
 		public IList<CaPheModel> CaPheList
 		{
 			get => (IList<CaPheModel>)this.dataGridView1.DataSource;
 			set => this.dataGridView1.DataSource = value;
 		}
-		public int SelectedCaphe { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+		public int SelectedCaphe
+		{
+			get => throw new NotImplementedException();
+			set => throw new NotImplementedException();
+		}
 		public string Message { get; set; }
 		public string SearchValue
 		{
 			get => this.searchTxt.Text;
 			set => this.searchTxt.Text = value;
 		}
+
+		public static CaPheView GetInstance(Form parentContainer)
+		{
+			if (instance == null || instance.IsDisposed)
+			{
+				instance = new CaPheView();
+				instance.MdiParent = parentContainer;
+				instance.Dock = DockStyle.Fill;
+			}
+			else
+			{
+				if (instance.WindowState == FormWindowState.Minimized)
+					instance.WindowState = FormWindowState.Normal;
+				
+			}
+			instance.Show();
+			return instance;
+		}
+
 	}
 }
