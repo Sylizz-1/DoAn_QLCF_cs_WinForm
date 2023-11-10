@@ -29,35 +29,44 @@
 		private void InitializeComponent()
 		{
 			components = new System.ComponentModel.Container();
-			sideBar = new Panel();
-			panel11 = new Panel();
-			button1 = new Button();
-			label1 = new Label();
-			panel10 = new Panel();
-			btnNcc = new Button();
-			panel9 = new Panel();
-			btnThongKe = new Button();
-			panel8 = new Panel();
-			button8 = new Button();
-			panel7 = new Panel();
-			btnPhanQuyen = new Button();
-			panel6 = new Panel();
-			btnHoaDon = new Button();
-			panel5 = new Panel();
-			btnNhapHang = new Button();
-			panel4 = new Panel();
-			btnNguyenLieu = new Button();
-			panel3 = new Panel();
-			btnCaPhe = new Button();
-			panel2 = new Panel();
-			btnKhachHang = new Button();
-			panel1 = new Panel();
-			btnNhanVien = new Button();
-			menuSlide = new Panel();
-			btnMenuSideBar = new Button();
 			sideMinimizeTimer = new System.Windows.Forms.Timer(components);
 			sideExpandTimer = new System.Windows.Forms.Timer(components);
+			bindingSource1 = new BindingSource(components);
+			sideBar = new CustomControl.SidePanel();
+			label3 = new Label();
+			panel12 = new Panel();
+			navLogOut = new CustomControl.CustomButton();
+			label2 = new Label();
+			panel11 = new Panel();
+			navPhanQuyen = new CustomControl.CustomButton();
+			panel10 = new Panel();
+			navNcc = new CustomControl.CustomButton();
+			panel9 = new Panel();
+			navThongKe = new CustomControl.CustomButton();
+			panel8 = new Panel();
+			navFile = new CustomControl.CustomButton();
+			panel7 = new Panel();
+			navHoaDon = new CustomControl.CustomButton();
+			panel6 = new Panel();
+			navNhapHang = new CustomControl.CustomButton();
+			panel5 = new Panel();
+			navNguyenLieu = new CustomControl.CustomButton();
+			panel4 = new Panel();
+			navCafe = new CustomControl.CustomButton();
+			panel3 = new Panel();
+			navKhachHang = new CustomControl.CustomButton();
+			panel2 = new Panel();
+			navNhanVien = new CustomControl.CustomButton();
+			label1 = new Label();
+			sideNav = new Panel();
+			sideNavBtn = new CustomControl.CustomButton();
+			label4 = new Label();
+			panelLogo = new Panel();
+			btnNhanVienTT = new ToolTip(components);
+			customButton1 = new CustomControl.CustomButton();
+			((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
 			sideBar.SuspendLayout();
+			panel12.SuspendLayout();
 			panel11.SuspendLayout();
 			panel10.SuspendLayout();
 			panel9.SuspendLayout();
@@ -68,16 +77,28 @@
 			panel4.SuspendLayout();
 			panel3.SuspendLayout();
 			panel2.SuspendLayout();
-			panel1.SuspendLayout();
-			menuSlide.SuspendLayout();
+			sideNav.SuspendLayout();
 			SuspendLayout();
+			// 
+			// sideMinimizeTimer
+			// 
+			sideMinimizeTimer.Interval = 1;
+			sideMinimizeTimer.Tick += sideMinimizeTimer_Tick;
+			// 
+			// sideExpandTimer
+			// 
+			sideExpandTimer.Interval = 8;
+			sideExpandTimer.Tick += sideExpandTimer_Tick;
 			// 
 			// sideBar
 			// 
 			sideBar.AutoScroll = true;
-			sideBar.BackColor = Color.FromArgb(51, 51, 76);
+			sideBar.BackColor = SystemColors.Control;
+			sideBar.BorderRadius = 1;
+			sideBar.Controls.Add(label3);
+			sideBar.Controls.Add(panel12);
+			sideBar.Controls.Add(label2);
 			sideBar.Controls.Add(panel11);
-			sideBar.Controls.Add(label1);
 			sideBar.Controls.Add(panel10);
 			sideBar.Controls.Add(panel9);
 			sideBar.Controls.Add(panel8);
@@ -87,350 +108,562 @@
 			sideBar.Controls.Add(panel4);
 			sideBar.Controls.Add(panel3);
 			sideBar.Controls.Add(panel2);
-			sideBar.Controls.Add(panel1);
-			sideBar.Controls.Add(menuSlide);
+			sideBar.Controls.Add(label1);
+			sideBar.Controls.Add(sideNav);
+			sideBar.Controls.Add(label4);
+			sideBar.Controls.Add(panelLogo);
 			sideBar.Dock = DockStyle.Left;
-			sideBar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+			sideBar.GradientAngle = 45F;
+			sideBar.GradientBottomColor = Color.DarkMagenta;
+			sideBar.GradientTopColor = Color.Teal;
 			sideBar.Location = new Point(0, 0);
-			sideBar.MaximumSize = new Size(252, 1000);
-			sideBar.MinimumSize = new Size(67, 300);
+			sideBar.Margin = new Padding(0);
+			sideBar.MaximumSize = new Size(258, 2000);
+			sideBar.MinimumSize = new Size(54, 100);
 			sideBar.Name = "sideBar";
-			sideBar.Size = new Size(252, 715);
-			sideBar.TabIndex = 0;
+			sideBar.Size = new Size(258, 743);
+			sideBar.TabIndex = 1;
+			// 
+			// label3
+			// 
+			label3.Dock = DockStyle.Bottom;
+			label3.Location = new Point(0, 693);
+			label3.Name = "label3";
+			label3.Size = new Size(258, 1);
+			label3.TabIndex = 15;
+			// 
+			// panel12
+			// 
+			panel12.BackColor = Color.Transparent;
+			panel12.Controls.Add(navLogOut);
+			panel12.Dock = DockStyle.Bottom;
+			panel12.Location = new Point(0, 694);
+			panel12.Name = "panel12";
+			panel12.Padding = new Padding(5);
+			panel12.Size = new Size(258, 49);
+			panel12.TabIndex = 14;
+			// 
+			// navLogOut
+			// 
+			navLogOut.BackColor = Color.Transparent;
+			navLogOut.BackgroundColor = Color.Transparent;
+			navLogOut.BorderColor = Color.PaleVioletRed;
+			navLogOut.BorderRadius = 10;
+			navLogOut.BorderSize = 0;
+			navLogOut.Dock = DockStyle.Fill;
+			navLogOut.EnabledTextHover = true;
+			navLogOut.FlatAppearance.BorderSize = 0;
+			navLogOut.FlatAppearance.MouseDownBackColor = Color.Red;
+			navLogOut.FlatAppearance.MouseOverBackColor = Color.Crimson;
+			navLogOut.FlatStyle = FlatStyle.Flat;
+			navLogOut.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			navLogOut.ForeColor = Color.FromArgb(239, 65, 65);
+			navLogOut.Image = Properties.Resources.logoutflatred2;
+			navLogOut.ImageAlign = ContentAlignment.MiddleLeft;
+			navLogOut.Location = new Point(5, 5);
+			navLogOut.Name = "navLogOut";
+			navLogOut.Padding = new Padding(5);
+			navLogOut.Size = new Size(248, 39);
+			navLogOut.TabIndex = 2;
+			navLogOut.Text = "Đăng xuất";
+			navLogOut.TextColor = Color.FromArgb(239, 65, 65);
+			navLogOut.TextHover = Color.White;
+			navLogOut.UseVisualStyleBackColor = false;
+			navLogOut.MouseEnter += navLogOut_MouseEnter;
+			navLogOut.MouseLeave += navLogOut_MouseLeave;
+			// 
+			// label2
+			// 
+			label2.Dock = DockStyle.Top;
+			label2.Location = new Point(0, 615);
+			label2.Name = "label2";
+			label2.Size = new Size(258, 1);
+			label2.TabIndex = 13;
 			// 
 			// panel11
 			// 
-			panel11.Controls.Add(button1);
+			panel11.BackColor = Color.Transparent;
+			panel11.Controls.Add(navPhanQuyen);
 			panel11.Dock = DockStyle.Top;
-			panel11.Location = new Point(0, 632);
+			panel11.Location = new Point(0, 566);
 			panel11.Name = "panel11";
-			panel11.Size = new Size(252, 59);
-			panel11.TabIndex = 21;
+			panel11.Padding = new Padding(5);
+			panel11.Size = new Size(258, 49);
+			panel11.TabIndex = 12;
 			// 
-			// button1
+			// navPhanQuyen
 			// 
-			button1.FlatAppearance.BorderSize = 0;
-			button1.FlatStyle = FlatStyle.Flat;
-			button1.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-			button1.ForeColor = Color.FromArgb(255, 26, 26);
-			button1.Image = Properties.Resources.log_out;
-			button1.ImageAlign = ContentAlignment.MiddleLeft;
-			button1.Location = new Point(0, 0);
-			button1.Name = "button1";
-			button1.Padding = new Padding(12, 0, 0, 0);
-			button1.Size = new Size(252, 59);
-			button1.TabIndex = 10;
-			button1.Text = "Đăng xuất";
-			button1.UseVisualStyleBackColor = true;
-			// 
-			// label1
-			// 
-			label1.BackColor = Color.White;
-			label1.Dock = DockStyle.Top;
-			label1.Location = new Point(0, 631);
-			label1.Name = "label1";
-			label1.Size = new Size(252, 1);
-			label1.TabIndex = 1;
+			navPhanQuyen.BackColor = Color.Transparent;
+			navPhanQuyen.BackgroundColor = Color.Transparent;
+			navPhanQuyen.BorderColor = Color.PaleVioletRed;
+			navPhanQuyen.BorderRadius = 10;
+			navPhanQuyen.BorderSize = 0;
+			navPhanQuyen.Dock = DockStyle.Fill;
+			navPhanQuyen.EnabledTextHover = false;
+			navPhanQuyen.FlatAppearance.BorderSize = 0;
+			navPhanQuyen.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
+			navPhanQuyen.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
+			navPhanQuyen.FlatStyle = FlatStyle.Flat;
+			navPhanQuyen.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			navPhanQuyen.ForeColor = Color.White;
+			navPhanQuyen.Image = Properties.Resources.PERflat;
+			navPhanQuyen.ImageAlign = ContentAlignment.MiddleLeft;
+			navPhanQuyen.Location = new Point(5, 5);
+			navPhanQuyen.Name = "navPhanQuyen";
+			navPhanQuyen.Padding = new Padding(5);
+			navPhanQuyen.Size = new Size(248, 39);
+			navPhanQuyen.TabIndex = 2;
+			navPhanQuyen.Text = "Phân quyền";
+			navPhanQuyen.TextColor = Color.White;
+			navPhanQuyen.TextHover = Color.White;
+			navPhanQuyen.UseVisualStyleBackColor = false;
 			// 
 			// panel10
 			// 
-			panel10.Controls.Add(btnNcc);
+			panel10.BackColor = Color.Transparent;
+			panel10.Controls.Add(navNcc);
 			panel10.Dock = DockStyle.Top;
-			panel10.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-			panel10.Location = new Point(0, 572);
+			panel10.Location = new Point(0, 517);
 			panel10.Name = "panel10";
-			panel10.Size = new Size(252, 59);
-			panel10.TabIndex = 20;
+			panel10.Padding = new Padding(5);
+			panel10.Size = new Size(258, 49);
+			panel10.TabIndex = 11;
 			// 
-			// btnNcc
+			// navNcc
 			// 
-			btnNcc.FlatAppearance.BorderSize = 0;
-			btnNcc.FlatStyle = FlatStyle.Flat;
-			btnNcc.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-			btnNcc.ForeColor = SystemColors.ButtonFace;
-			btnNcc.Image = Properties.Resources.Supplier;
-			btnNcc.ImageAlign = ContentAlignment.MiddleLeft;
-			btnNcc.Location = new Point(0, 0);
-			btnNcc.Name = "btnNcc";
-			btnNcc.Padding = new Padding(12, 0, 0, 0);
-			btnNcc.Size = new Size(252, 59);
-			btnNcc.TabIndex = 10;
-			btnNcc.Text = "Nhà cung cấp";
-			btnNcc.UseVisualStyleBackColor = true;
+			navNcc.BackColor = Color.Transparent;
+			navNcc.BackgroundColor = Color.Transparent;
+			navNcc.BorderColor = Color.PaleVioletRed;
+			navNcc.BorderRadius = 10;
+			navNcc.BorderSize = 0;
+			navNcc.Dock = DockStyle.Fill;
+			navNcc.EnabledTextHover = false;
+			navNcc.FlatAppearance.BorderSize = 0;
+			navNcc.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
+			navNcc.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
+			navNcc.FlatStyle = FlatStyle.Flat;
+			navNcc.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			navNcc.ForeColor = Color.White;
+			navNcc.Image = Properties.Resources.supplierflat;
+			navNcc.ImageAlign = ContentAlignment.MiddleLeft;
+			navNcc.Location = new Point(5, 5);
+			navNcc.Name = "navNcc";
+			navNcc.Padding = new Padding(5);
+			navNcc.Size = new Size(248, 39);
+			navNcc.TabIndex = 2;
+			navNcc.Text = "Nhà cung cấp";
+			navNcc.TextColor = Color.White;
+			navNcc.TextHover = Color.White;
+			navNcc.UseVisualStyleBackColor = false;
 			// 
 			// panel9
 			// 
-			panel9.Controls.Add(btnThongKe);
+			panel9.BackColor = Color.Transparent;
+			panel9.Controls.Add(navThongKe);
 			panel9.Dock = DockStyle.Top;
-			panel9.Location = new Point(0, 513);
+			panel9.Location = new Point(0, 468);
 			panel9.Name = "panel9";
-			panel9.Size = new Size(252, 59);
-			panel9.TabIndex = 19;
+			panel9.Padding = new Padding(5);
+			panel9.Size = new Size(258, 49);
+			panel9.TabIndex = 10;
 			// 
-			// btnThongKe
+			// navThongKe
 			// 
-			btnThongKe.FlatAppearance.BorderSize = 0;
-			btnThongKe.FlatStyle = FlatStyle.Flat;
-			btnThongKe.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-			btnThongKe.ForeColor = SystemColors.ButtonFace;
-			btnThongKe.Image = Properties.Resources.statistic;
-			btnThongKe.ImageAlign = ContentAlignment.MiddleLeft;
-			btnThongKe.Location = new Point(0, 0);
-			btnThongKe.Name = "btnThongKe";
-			btnThongKe.Padding = new Padding(12, 0, 0, 0);
-			btnThongKe.Size = new Size(252, 59);
-			btnThongKe.TabIndex = 10;
-			btnThongKe.Text = "Thống kê";
-			btnThongKe.UseVisualStyleBackColor = true;
+			navThongKe.BackColor = Color.Transparent;
+			navThongKe.BackgroundColor = Color.Transparent;
+			navThongKe.BorderColor = Color.PaleVioletRed;
+			navThongKe.BorderRadius = 10;
+			navThongKe.BorderSize = 0;
+			navThongKe.Dock = DockStyle.Fill;
+			navThongKe.EnabledTextHover = false;
+			navThongKe.FlatAppearance.BorderSize = 0;
+			navThongKe.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
+			navThongKe.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
+			navThongKe.FlatStyle = FlatStyle.Flat;
+			navThongKe.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			navThongKe.ForeColor = Color.White;
+			navThongKe.Image = Properties.Resources.statisticflat;
+			navThongKe.ImageAlign = ContentAlignment.MiddleLeft;
+			navThongKe.Location = new Point(5, 5);
+			navThongKe.Name = "navThongKe";
+			navThongKe.Padding = new Padding(5);
+			navThongKe.Size = new Size(248, 39);
+			navThongKe.TabIndex = 2;
+			navThongKe.Text = "Thống kê";
+			navThongKe.TextColor = Color.White;
+			navThongKe.TextHover = Color.White;
+			navThongKe.UseVisualStyleBackColor = false;
 			// 
 			// panel8
 			// 
-			panel8.Controls.Add(button8);
+			panel8.BackColor = Color.Transparent;
+			panel8.Controls.Add(navFile);
 			panel8.Dock = DockStyle.Top;
-			panel8.Location = new Point(0, 454);
+			panel8.Location = new Point(0, 419);
 			panel8.Name = "panel8";
-			panel8.Size = new Size(252, 59);
-			panel8.TabIndex = 18;
+			panel8.Padding = new Padding(5);
+			panel8.Size = new Size(258, 49);
+			panel8.TabIndex = 9;
 			// 
-			// button8
+			// navFile
 			// 
-			button8.FlatAppearance.BorderSize = 0;
-			button8.FlatStyle = FlatStyle.Flat;
-			button8.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-			button8.ForeColor = SystemColors.ButtonFace;
-			button8.Image = Properties.Resources.open_folder;
-			button8.ImageAlign = ContentAlignment.MiddleLeft;
-			button8.Location = new Point(0, 0);
-			button8.Name = "button8";
-			button8.Padding = new Padding(12, 0, 0, 0);
-			button8.Size = new Size(252, 59);
-			button8.TabIndex = 10;
-			button8.Text = "Nhập/Xuất file";
-			button8.UseVisualStyleBackColor = true;
+			navFile.BackColor = Color.Transparent;
+			navFile.BackgroundColor = Color.Transparent;
+			navFile.BorderColor = Color.PaleVioletRed;
+			navFile.BorderRadius = 10;
+			navFile.BorderSize = 0;
+			navFile.Dock = DockStyle.Fill;
+			navFile.EnabledTextHover = false;
+			navFile.FlatAppearance.BorderSize = 0;
+			navFile.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
+			navFile.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
+			navFile.FlatStyle = FlatStyle.Flat;
+			navFile.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			navFile.ForeColor = Color.White;
+			navFile.Image = Properties.Resources.fileFla;
+			navFile.ImageAlign = ContentAlignment.MiddleLeft;
+			navFile.Location = new Point(5, 5);
+			navFile.Name = "navFile";
+			navFile.Padding = new Padding(5);
+			navFile.Size = new Size(248, 39);
+			navFile.TabIndex = 2;
+			navFile.Text = "Nhập/Xuất file";
+			navFile.TextColor = Color.White;
+			navFile.TextHover = Color.White;
+			navFile.UseVisualStyleBackColor = false;
 			// 
 			// panel7
 			// 
-			panel7.Controls.Add(btnPhanQuyen);
+			panel7.BackColor = Color.Transparent;
+			panel7.Controls.Add(navHoaDon);
 			panel7.Dock = DockStyle.Top;
-			panel7.Location = new Point(0, 395);
+			panel7.Location = new Point(0, 370);
 			panel7.Name = "panel7";
-			panel7.Size = new Size(252, 59);
-			panel7.TabIndex = 17;
+			panel7.Padding = new Padding(5);
+			panel7.Size = new Size(258, 49);
+			panel7.TabIndex = 8;
 			// 
-			// btnPhanQuyen
+			// navHoaDon
 			// 
-			btnPhanQuyen.FlatAppearance.BorderSize = 0;
-			btnPhanQuyen.FlatStyle = FlatStyle.Flat;
-			btnPhanQuyen.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-			btnPhanQuyen.ForeColor = SystemColors.ButtonFace;
-			btnPhanQuyen.Image = Properties.Resources.permissionIcon;
-			btnPhanQuyen.ImageAlign = ContentAlignment.MiddleLeft;
-			btnPhanQuyen.Location = new Point(0, 0);
-			btnPhanQuyen.Name = "btnPhanQuyen";
-			btnPhanQuyen.Padding = new Padding(12, 0, 0, 0);
-			btnPhanQuyen.Size = new Size(252, 59);
-			btnPhanQuyen.TabIndex = 10;
-			btnPhanQuyen.Text = "Phân quyền";
-			btnPhanQuyen.UseVisualStyleBackColor = true;
+			navHoaDon.BackColor = Color.Transparent;
+			navHoaDon.BackgroundColor = Color.Transparent;
+			navHoaDon.BorderColor = Color.PaleVioletRed;
+			navHoaDon.BorderRadius = 10;
+			navHoaDon.BorderSize = 0;
+			navHoaDon.Dock = DockStyle.Fill;
+			navHoaDon.EnabledTextHover = false;
+			navHoaDon.FlatAppearance.BorderSize = 0;
+			navHoaDon.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
+			navHoaDon.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
+			navHoaDon.FlatStyle = FlatStyle.Flat;
+			navHoaDon.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			navHoaDon.ForeColor = Color.White;
+			navHoaDon.Image = Properties.Resources.invoiceFlat;
+			navHoaDon.ImageAlign = ContentAlignment.MiddleLeft;
+			navHoaDon.Location = new Point(5, 5);
+			navHoaDon.Name = "navHoaDon";
+			navHoaDon.Padding = new Padding(5);
+			navHoaDon.Size = new Size(248, 39);
+			navHoaDon.TabIndex = 2;
+			navHoaDon.Text = "Hóa đơn";
+			navHoaDon.TextColor = Color.White;
+			navHoaDon.TextHover = Color.White;
+			navHoaDon.UseVisualStyleBackColor = false;
 			// 
 			// panel6
 			// 
-			panel6.Controls.Add(btnHoaDon);
+			panel6.BackColor = Color.Transparent;
+			panel6.Controls.Add(navNhapHang);
 			panel6.Dock = DockStyle.Top;
-			panel6.Location = new Point(0, 336);
+			panel6.Location = new Point(0, 321);
 			panel6.Name = "panel6";
-			panel6.Size = new Size(252, 59);
-			panel6.TabIndex = 16;
+			panel6.Padding = new Padding(5);
+			panel6.Size = new Size(258, 49);
+			panel6.TabIndex = 7;
 			// 
-			// btnHoaDon
+			// navNhapHang
 			// 
-			btnHoaDon.FlatAppearance.BorderSize = 0;
-			btnHoaDon.FlatStyle = FlatStyle.Flat;
-			btnHoaDon.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-			btnHoaDon.ForeColor = SystemColors.ButtonFace;
-			btnHoaDon.Image = Properties.Resources.invoiceIcon;
-			btnHoaDon.ImageAlign = ContentAlignment.MiddleLeft;
-			btnHoaDon.Location = new Point(0, 0);
-			btnHoaDon.Name = "btnHoaDon";
-			btnHoaDon.Padding = new Padding(12, 0, 0, 0);
-			btnHoaDon.Size = new Size(252, 59);
-			btnHoaDon.TabIndex = 10;
-			btnHoaDon.Text = "Hóa đơn";
-			btnHoaDon.UseVisualStyleBackColor = true;
+			navNhapHang.BackColor = Color.Transparent;
+			navNhapHang.BackgroundColor = Color.Transparent;
+			navNhapHang.BorderColor = Color.PaleVioletRed;
+			navNhapHang.BorderRadius = 10;
+			navNhapHang.BorderSize = 0;
+			navNhapHang.Dock = DockStyle.Fill;
+			navNhapHang.EnabledTextHover = false;
+			navNhapHang.FlatAppearance.BorderSize = 0;
+			navNhapHang.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
+			navNhapHang.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
+			navNhapHang.FlatStyle = FlatStyle.Flat;
+			navNhapHang.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			navNhapHang.ForeColor = Color.White;
+			navNhapHang.Image = Properties.Resources.importFlat;
+			navNhapHang.ImageAlign = ContentAlignment.MiddleLeft;
+			navNhapHang.Location = new Point(5, 5);
+			navNhapHang.Name = "navNhapHang";
+			navNhapHang.Padding = new Padding(5);
+			navNhapHang.Size = new Size(248, 39);
+			navNhapHang.TabIndex = 2;
+			navNhapHang.Text = "Nhập hàng";
+			navNhapHang.TextColor = Color.White;
+			navNhapHang.TextHover = Color.White;
+			navNhapHang.UseVisualStyleBackColor = false;
 			// 
 			// panel5
 			// 
-			panel5.Controls.Add(btnNhapHang);
+			panel5.BackColor = Color.Transparent;
+			panel5.Controls.Add(navNguyenLieu);
 			panel5.Dock = DockStyle.Top;
-			panel5.Location = new Point(0, 277);
+			panel5.Location = new Point(0, 272);
 			panel5.Name = "panel5";
-			panel5.Size = new Size(252, 59);
-			panel5.TabIndex = 15;
+			panel5.Padding = new Padding(5);
+			panel5.Size = new Size(258, 49);
+			panel5.TabIndex = 6;
 			// 
-			// btnNhapHang
+			// navNguyenLieu
 			// 
-			btnNhapHang.FlatAppearance.BorderSize = 0;
-			btnNhapHang.FlatStyle = FlatStyle.Flat;
-			btnNhapHang.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-			btnNhapHang.ForeColor = SystemColors.ButtonFace;
-			btnNhapHang.Image = Properties.Resources.importIcon;
-			btnNhapHang.ImageAlign = ContentAlignment.MiddleLeft;
-			btnNhapHang.Location = new Point(0, 0);
-			btnNhapHang.Name = "btnNhapHang";
-			btnNhapHang.Padding = new Padding(12, 0, 0, 0);
-			btnNhapHang.Size = new Size(252, 59);
-			btnNhapHang.TabIndex = 10;
-			btnNhapHang.Text = "Nhập hàng";
-			btnNhapHang.UseVisualStyleBackColor = true;
+			navNguyenLieu.BackColor = Color.Transparent;
+			navNguyenLieu.BackgroundColor = Color.Transparent;
+			navNguyenLieu.BorderColor = Color.PaleVioletRed;
+			navNguyenLieu.BorderRadius = 10;
+			navNguyenLieu.BorderSize = 0;
+			navNguyenLieu.Dock = DockStyle.Fill;
+			navNguyenLieu.EnabledTextHover = false;
+			navNguyenLieu.FlatAppearance.BorderSize = 0;
+			navNguyenLieu.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
+			navNguyenLieu.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
+			navNguyenLieu.FlatStyle = FlatStyle.Flat;
+			navNguyenLieu.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			navNguyenLieu.ForeColor = Color.White;
+			navNguyenLieu.Image = Properties.Resources.ingreFlat;
+			navNguyenLieu.ImageAlign = ContentAlignment.MiddleLeft;
+			navNguyenLieu.Location = new Point(5, 5);
+			navNguyenLieu.Name = "navNguyenLieu";
+			navNguyenLieu.Padding = new Padding(5);
+			navNguyenLieu.Size = new Size(248, 39);
+			navNguyenLieu.TabIndex = 2;
+			navNguyenLieu.Text = "Nguyên liệu";
+			navNguyenLieu.TextColor = Color.White;
+			navNguyenLieu.TextHover = Color.White;
+			navNguyenLieu.UseVisualStyleBackColor = false;
 			// 
 			// panel4
 			// 
-			panel4.Controls.Add(btnNguyenLieu);
+			panel4.BackColor = Color.Transparent;
+			panel4.Controls.Add(navCafe);
 			panel4.Dock = DockStyle.Top;
-			panel4.Location = new Point(0, 218);
+			panel4.Location = new Point(0, 223);
 			panel4.Name = "panel4";
-			panel4.Size = new Size(252, 59);
-			panel4.TabIndex = 14;
+			panel4.Padding = new Padding(5);
+			panel4.Size = new Size(258, 49);
+			panel4.TabIndex = 5;
 			// 
-			// btnNguyenLieu
+			// navCafe
 			// 
-			btnNguyenLieu.FlatAppearance.BorderSize = 0;
-			btnNguyenLieu.FlatStyle = FlatStyle.Flat;
-			btnNguyenLieu.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-			btnNguyenLieu.ForeColor = SystemColors.ButtonFace;
-			btnNguyenLieu.Image = Properties.Resources.ingredientIcon;
-			btnNguyenLieu.ImageAlign = ContentAlignment.MiddleLeft;
-			btnNguyenLieu.Location = new Point(0, 0);
-			btnNguyenLieu.Name = "btnNguyenLieu";
-			btnNguyenLieu.Padding = new Padding(12, 0, 0, 0);
-			btnNguyenLieu.Size = new Size(252, 59);
-			btnNguyenLieu.TabIndex = 10;
-			btnNguyenLieu.Text = "Nguyên liệu";
-			btnNguyenLieu.UseVisualStyleBackColor = true;
+			navCafe.BackColor = Color.Transparent;
+			navCafe.BackgroundColor = Color.Transparent;
+			navCafe.BorderColor = Color.PaleVioletRed;
+			navCafe.BorderRadius = 10;
+			navCafe.BorderSize = 0;
+			navCafe.Dock = DockStyle.Fill;
+			navCafe.EnabledTextHover = false;
+			navCafe.FlatAppearance.BorderSize = 0;
+			navCafe.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
+			navCafe.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
+			navCafe.FlatStyle = FlatStyle.Flat;
+			navCafe.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			navCafe.ForeColor = Color.White;
+			navCafe.Image = Properties.Resources.CoffeeFlat;
+			navCafe.ImageAlign = ContentAlignment.MiddleLeft;
+			navCafe.Location = new Point(5, 5);
+			navCafe.Name = "navCafe";
+			navCafe.Padding = new Padding(5);
+			navCafe.Size = new Size(248, 39);
+			navCafe.TabIndex = 2;
+			navCafe.Text = "Cà phê";
+			navCafe.TextColor = Color.White;
+			navCafe.TextHover = Color.White;
+			navCafe.UseVisualStyleBackColor = false;
 			// 
 			// panel3
 			// 
-			panel3.Controls.Add(btnCaPhe);
+			panel3.BackColor = Color.Transparent;
+			panel3.Controls.Add(navKhachHang);
 			panel3.Dock = DockStyle.Top;
-			panel3.Location = new Point(0, 159);
+			panel3.Location = new Point(0, 174);
 			panel3.Name = "panel3";
-			panel3.Size = new Size(252, 59);
-			panel3.TabIndex = 13;
+			panel3.Padding = new Padding(5);
+			panel3.Size = new Size(258, 49);
+			panel3.TabIndex = 4;
 			// 
-			// btnCaPhe
+			// navKhachHang
 			// 
-			btnCaPhe.FlatAppearance.BorderSize = 0;
-			btnCaPhe.FlatStyle = FlatStyle.Flat;
-			btnCaPhe.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-			btnCaPhe.ForeColor = SystemColors.ButtonFace;
-			btnCaPhe.Image = Properties.Resources.caphe;
-			btnCaPhe.ImageAlign = ContentAlignment.MiddleLeft;
-			btnCaPhe.Location = new Point(0, 0);
-			btnCaPhe.Name = "btnCaPhe";
-			btnCaPhe.Padding = new Padding(12, 0, 0, 0);
-			btnCaPhe.Size = new Size(252, 59);
-			btnCaPhe.TabIndex = 10;
-			btnCaPhe.Text = "Cà phê";
-			btnCaPhe.UseVisualStyleBackColor = true;
+			navKhachHang.BackColor = Color.Transparent;
+			navKhachHang.BackgroundColor = Color.Transparent;
+			navKhachHang.BorderColor = Color.PaleVioletRed;
+			navKhachHang.BorderRadius = 10;
+			navKhachHang.BorderSize = 0;
+			navKhachHang.Dock = DockStyle.Fill;
+			navKhachHang.EnabledTextHover = false;
+			navKhachHang.FlatAppearance.BorderSize = 0;
+			navKhachHang.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
+			navKhachHang.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
+			navKhachHang.FlatStyle = FlatStyle.Flat;
+			navKhachHang.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			navKhachHang.ForeColor = Color.White;
+			navKhachHang.Image = Properties.Resources.EmployeeFlat;
+			navKhachHang.ImageAlign = ContentAlignment.MiddleLeft;
+			navKhachHang.Location = new Point(5, 5);
+			navKhachHang.Name = "navKhachHang";
+			navKhachHang.Padding = new Padding(5);
+			navKhachHang.Size = new Size(248, 39);
+			navKhachHang.TabIndex = 2;
+			navKhachHang.Text = "Khách hàng";
+			navKhachHang.TextColor = Color.White;
+			navKhachHang.TextHover = Color.White;
+			navKhachHang.UseVisualStyleBackColor = false;
 			// 
 			// panel2
 			// 
-			panel2.Controls.Add(btnKhachHang);
+			panel2.BackColor = Color.Transparent;
+			panel2.Controls.Add(navNhanVien);
 			panel2.Dock = DockStyle.Top;
-			panel2.Location = new Point(0, 100);
+			panel2.Location = new Point(0, 125);
 			panel2.Name = "panel2";
-			panel2.Size = new Size(252, 59);
-			panel2.TabIndex = 12;
+			panel2.Padding = new Padding(5);
+			panel2.Size = new Size(258, 49);
+			panel2.TabIndex = 2;
 			// 
-			// btnKhachHang
+			// navNhanVien
 			// 
-			btnKhachHang.FlatAppearance.BorderSize = 0;
-			btnKhachHang.FlatStyle = FlatStyle.Flat;
-			btnKhachHang.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-			btnKhachHang.ForeColor = SystemColors.ButtonFace;
-			btnKhachHang.Image = Properties.Resources.customerIcon;
-			btnKhachHang.ImageAlign = ContentAlignment.MiddleLeft;
-			btnKhachHang.Location = new Point(0, 0);
-			btnKhachHang.Name = "btnKhachHang";
-			btnKhachHang.Padding = new Padding(12, 0, 0, 0);
-			btnKhachHang.Size = new Size(252, 59);
-			btnKhachHang.TabIndex = 10;
-			btnKhachHang.Text = "Khách hàng";
-			btnKhachHang.UseVisualStyleBackColor = true;
+			navNhanVien.BackColor = Color.Transparent;
+			navNhanVien.BackgroundColor = Color.Transparent;
+			navNhanVien.BorderColor = Color.PaleVioletRed;
+			navNhanVien.BorderRadius = 10;
+			navNhanVien.BorderSize = 0;
+			navNhanVien.Dock = DockStyle.Fill;
+			navNhanVien.EnabledTextHover = false;
+			navNhanVien.FlatAppearance.BorderSize = 0;
+			navNhanVien.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
+			navNhanVien.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
+			navNhanVien.FlatStyle = FlatStyle.Flat;
+			navNhanVien.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			navNhanVien.ForeColor = Color.White;
+			navNhanVien.Image = Properties.Resources.manIcontest;
+			navNhanVien.ImageAlign = ContentAlignment.MiddleLeft;
+			navNhanVien.Location = new Point(5, 5);
+			navNhanVien.Name = "navNhanVien";
+			navNhanVien.Padding = new Padding(5);
+			navNhanVien.Size = new Size(248, 39);
+			navNhanVien.TabIndex = 2;
+			navNhanVien.Text = "Nhân viên";
+			navNhanVien.TextColor = Color.White;
+			navNhanVien.TextHover = Color.White;
+			btnNhanVienTT.SetToolTip(navNhanVien, "dsadadd");
+			navNhanVien.UseVisualStyleBackColor = false;
 			// 
-			// panel1
+			// label1
 			// 
-			panel1.Controls.Add(btnNhanVien);
-			panel1.Dock = DockStyle.Top;
-			panel1.Location = new Point(0, 41);
-			panel1.Name = "panel1";
-			panel1.Size = new Size(252, 59);
-			panel1.TabIndex = 11;
+			label1.Dock = DockStyle.Top;
+			label1.Location = new Point(0, 124);
+			label1.Name = "label1";
+			label1.Size = new Size(258, 1);
+			label1.TabIndex = 3;
 			// 
-			// btnNhanVien
+			// sideNav
 			// 
-			btnNhanVien.FlatAppearance.BorderSize = 0;
-			btnNhanVien.FlatStyle = FlatStyle.Flat;
-			btnNhanVien.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-			btnNhanVien.ForeColor = SystemColors.ButtonFace;
-			btnNhanVien.Image = Properties.Resources.employees;
-			btnNhanVien.ImageAlign = ContentAlignment.MiddleLeft;
-			btnNhanVien.Location = new Point(0, 0);
-			btnNhanVien.Name = "btnNhanVien";
-			btnNhanVien.Padding = new Padding(12, 0, 0, 0);
-			btnNhanVien.Size = new Size(252, 59);
-			btnNhanVien.TabIndex = 10;
-			btnNhanVien.Text = "Nhân viên";
-			btnNhanVien.UseVisualStyleBackColor = true;
-			btnNhanVien.Click += btnNhanVien_Click;
+			sideNav.BackColor = Color.Transparent;
+			sideNav.Controls.Add(sideNavBtn);
+			sideNav.Dock = DockStyle.Top;
+			sideNav.Location = new Point(0, 75);
+			sideNav.Name = "sideNav";
+			sideNav.Padding = new Padding(5);
+			sideNav.Size = new Size(258, 49);
+			sideNav.TabIndex = 16;
 			// 
-			// menuSlide
+			// sideNavBtn
 			// 
-			menuSlide.Controls.Add(btnMenuSideBar);
-			menuSlide.Dock = DockStyle.Top;
-			menuSlide.Location = new Point(0, 0);
-			menuSlide.Name = "menuSlide";
-			menuSlide.Size = new Size(252, 41);
-			menuSlide.TabIndex = 1;
+			sideNavBtn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+			sideNavBtn.BackColor = Color.Transparent;
+			sideNavBtn.BackgroundColor = Color.Transparent;
+			sideNavBtn.BorderColor = Color.PaleVioletRed;
+			sideNavBtn.BorderRadius = 10;
+			sideNavBtn.BorderSize = 0;
+			sideNavBtn.EnabledTextHover = false;
+			sideNavBtn.FlatAppearance.BorderSize = 0;
+			sideNavBtn.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
+			sideNavBtn.FlatStyle = FlatStyle.Flat;
+			sideNavBtn.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			sideNavBtn.ForeColor = Color.White;
+			sideNavBtn.Image = Properties.Resources.navCloseflat;
+			sideNavBtn.ImageAlign = ContentAlignment.MiddleLeft;
+			sideNavBtn.Location = new Point(5, 5);
+			sideNavBtn.Name = "sideNavBtn";
+			sideNavBtn.Padding = new Padding(5);
+			sideNavBtn.Size = new Size(44, 39);
+			sideNavBtn.TabIndex = 2;
+			sideNavBtn.TextColor = Color.White;
+			sideNavBtn.TextHover = Color.White;
+			sideNavBtn.UseVisualStyleBackColor = false;
+			sideNavBtn.Click += btnMenuSideNav_Click;
 			// 
-			// btnMenuSideBar
+			// label4
 			// 
-			btnMenuSideBar.Dock = DockStyle.Fill;
-			btnMenuSideBar.FlatAppearance.BorderSize = 0;
-			btnMenuSideBar.FlatStyle = FlatStyle.Flat;
-			btnMenuSideBar.ForeColor = SystemColors.ButtonFace;
-			btnMenuSideBar.Image = Properties.Resources.menuClick;
-			btnMenuSideBar.ImageAlign = ContentAlignment.MiddleLeft;
-			btnMenuSideBar.Location = new Point(0, 0);
-			btnMenuSideBar.Name = "btnMenuSideBar";
-			btnMenuSideBar.Padding = new Padding(12, 0, 0, 0);
-			btnMenuSideBar.Size = new Size(252, 41);
-			btnMenuSideBar.TabIndex = 1;
-			btnMenuSideBar.UseVisualStyleBackColor = true;
-			btnMenuSideBar.Click += btnMenuSideBar_Click;
+			label4.Dock = DockStyle.Top;
+			label4.Location = new Point(0, 74);
+			label4.Name = "label4";
+			label4.Size = new Size(258, 1);
+			label4.TabIndex = 18;
 			// 
-			// sideMinimizeTimer
+			// panelLogo
 			// 
-			sideMinimizeTimer.Interval = 10;
-			sideMinimizeTimer.Tick += sideMinimizeTimer_Tick;
+			panelLogo.BackColor = SystemColors.ActiveCaptionText;
+			panelLogo.Dock = DockStyle.Top;
+			panelLogo.Location = new Point(0, 0);
+			panelLogo.Name = "panelLogo";
+			panelLogo.Size = new Size(258, 74);
+			panelLogo.TabIndex = 17;
 			// 
-			// sideExpandTimer
+			// btnNhanVienTT
 			// 
-			sideExpandTimer.Interval = 10;
-			sideExpandTimer.Tick += sideExpandTimer_Tick;
+			btnNhanVienTT.AutoPopDelay = 5000;
+			btnNhanVienTT.InitialDelay = 1;
+			btnNhanVienTT.ReshowDelay = 1;
+			// 
+			// customButton1
+			// 
+			customButton1.BackColor = Color.MediumSlateBlue;
+			customButton1.BackgroundColor = Color.MediumSlateBlue;
+			customButton1.BorderColor = Color.PaleVioletRed;
+			customButton1.BorderRadius = 20;
+			customButton1.BorderSize = 0;
+			customButton1.EnabledTextHover = false;
+			customButton1.FlatAppearance.BorderSize = 0;
+			customButton1.FlatStyle = FlatStyle.Flat;
+			customButton1.ForeColor = Color.White;
+			customButton1.Location = new Point(445, 74);
+			customButton1.Name = "customButton1";
+			customButton1.Size = new Size(304, 100);
+			customButton1.TabIndex = 2;
+			customButton1.Text = "customButton1";
+			customButton1.TextColor = Color.White;
+			customButton1.TextHover = Color.White;
+			customButton1.UseVisualStyleBackColor = false;
 			// 
 			// MainView
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(919, 715);
+			BackColor = SystemColors.Control;
+			ClientSize = new Size(945, 743);
+			Controls.Add(customButton1);
 			Controls.Add(sideBar);
-			IsMdiContainer = true;
+			Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
 			Name = "MainView";
 			StartPosition = FormStartPosition.CenterScreen;
 			Text = "MainView";
-			SizeChanged += MainView_SizeChanged;
+			((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
 			sideBar.ResumeLayout(false);
+			panel12.ResumeLayout(false);
 			panel11.ResumeLayout(false);
 			panel10.ResumeLayout(false);
 			panel9.ResumeLayout(false);
@@ -441,40 +674,45 @@
 			panel4.ResumeLayout(false);
 			panel3.ResumeLayout(false);
 			panel2.ResumeLayout(false);
-			panel1.ResumeLayout(false);
-			menuSlide.ResumeLayout(false);
+			sideNav.ResumeLayout(false);
 			ResumeLayout(false);
 		}
 
 		#endregion
-
-		private Panel sideBar;
-		private Panel menuSlide;
-		private Button btnMenuSideBar;
-		private Button btnNhanVien;
-		private Panel panel1;
-		private Panel panel9;
-		private Button btnThongKe;
-		private Panel panel8;
-		private Button button8;
-		private Panel panel7;
-		private Button btnPhanQuyen;
-		private Panel panel6;
-		private Button btnHoaDon;
-		private Panel panel5;
-		private Button btnNhapHang;
-		private Panel panel4;
-		private Button btnNguyenLieu;
-		private Panel panel3;
-		private Button btnCaPhe;
-		private Panel panel2;
-		private Button btnKhachHang;
-		private Panel panel10;
-		private Button btnNcc;
 		private System.Windows.Forms.Timer sideMinimizeTimer;
 		private System.Windows.Forms.Timer sideExpandTimer;
+		private BindingSource bindingSource1;
+		private CustomControl.SidePanel sideBar;
 		private Label label1;
+		private Panel panel2;
+		private CustomControl.CustomButton navNhanVien;
 		private Panel panel11;
-		private Button button1;
+		private CustomControl.CustomButton navPhanQuyen;
+		private Panel panel10;
+		private CustomControl.CustomButton navNcc;
+		private Panel panel9;
+		private CustomControl.CustomButton navThongKe;
+		private Panel panel8;
+		private CustomControl.CustomButton navFile;
+		private Panel panel7;
+		private CustomControl.CustomButton navHoaDon;
+		private Panel panel6;
+		private CustomControl.CustomButton navNhapHang;
+		private Panel panel5;
+		private CustomControl.CustomButton navNguyenLieu;
+		private Panel panel4;
+		private CustomControl.CustomButton navCafe;
+		private Panel panel3;
+		private CustomControl.CustomButton navKhachHang;
+		private ToolTip btnNhanVienTT;
+		private Label label3;
+		private Panel panel12;
+		private CustomControl.CustomButton navLogOut;
+		private Label label2;
+		private Panel sideNav;
+		private CustomControl.CustomButton sideNavBtn;
+		private Panel panelLogo;
+		private Label label4;
+		private CustomControl.CustomButton customButton1;
 	}
 }

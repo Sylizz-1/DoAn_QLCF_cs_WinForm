@@ -18,6 +18,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 		public CaPheView()
 		{
 			InitializeComponent();
+
 		}
 
 		private static CaPheView instance;
@@ -50,7 +51,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 			{
 				if (instance.WindowState == FormWindowState.Minimized)
 					instance.WindowState = FormWindowState.Normal;
-				
+
 			}
 			instance.Show();
 			return instance;
