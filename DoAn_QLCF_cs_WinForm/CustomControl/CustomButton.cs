@@ -16,14 +16,8 @@ namespace DoAn_QLCF_cs_WinForm.CustomControl
 			this.Size = new Size(150, 40);
 			this.BackColor = Color.MediumSlateBlue;
 			this.ForeColor = Color.White;
-			/*this.Resize += new EventHandler(Button_Resize);*/
 			this.textHover = this.ForeColor;
-		}
-
-		private void Button_Resize(object? sender, EventArgs e)
-		{
-			if (borderRadius > this.Height)
-				borderRadius = this.Height;
+			
 		}
 
 		//Fields

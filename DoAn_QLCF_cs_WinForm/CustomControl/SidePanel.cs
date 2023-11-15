@@ -14,6 +14,7 @@ namespace DoAn_QLCF_cs_WinForm.CustomControl
 		private float gradientAngle = 90F;
 		private Color gradientTopColor= Color.Teal;
 		private Color gradientBottomColor =Color.FromArgb(255, 51, 153);
+		private bool enabledGradient;
 		public SidePanel() {
 			/*this.BackColor = Color.Teal;*/
 		}
@@ -27,6 +28,9 @@ namespace DoAn_QLCF_cs_WinForm.CustomControl
 		public Color GradientTopColor { get => gradientTopColor; set { gradientTopColor = value; this.Invalidate(); } }
 		[Category("Custom")]
 		public Color GradientBottomColor { get => gradientBottomColor; set { gradientBottomColor = value; this.Invalidate(); } }
+
+		[Category("Custom")]
+		public bool EnabledGradient { get => enabledGradient; set { enabledGradient = value; this.Invalidate(); } }
 
 		// Private Methods
 		private GraphicsPath GetFigurePath(RectangleF rec, float radius)
@@ -50,9 +54,13 @@ namespace DoAn_QLCF_cs_WinForm.CustomControl
 			RectangleF rectSurfaceF = new RectangleF(0,0,this.Width,this.Height);
 
 			// Gradient
-			e.Graphics.SmoothingMode = SmoothingMode.HighQuality;
-			LinearGradientBrush brush = new LinearGradientBrush(this.ClientRectangle, GradientTopColor, GradientBottomColor, GradientAngle);
-			e.Graphics.FillRectangle(brush, this.ClientRectangle);
+			if (this.EnabledGradient)
+			{
+				e.Graphics.SmoothingMode = SmoothingMode.HighQuality;
+				LinearGradientBrush brush = new LinearGradientBrush(this.ClientRectangle, GradientTopColor, GradientBottomColor, GradientAngle);
+				e.Graphics.FillRectangle(brush, this.ClientRectangle);
+			}
+	
 
 			// BorderRadius
 			if (borderRadius > 2)
