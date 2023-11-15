@@ -52,11 +52,11 @@ namespace DoAn_QLCF_cs_WinForm.CustomControl
 		{
 			base.OnPaint(e);
 			RectangleF rectSurfaceF = new RectangleF(0,0,this.Width,this.Height);
+			e.Graphics.SmoothingMode = SmoothingMode.HighQuality;
 
 			// Gradient
 			if (this.EnabledGradient)
 			{
-				e.Graphics.SmoothingMode = SmoothingMode.HighQuality;
 				LinearGradientBrush brush = new LinearGradientBrush(this.ClientRectangle, GradientTopColor, GradientBottomColor, GradientAngle);
 				e.Graphics.FillRectangle(brush, this.ClientRectangle);
 			}
@@ -66,7 +66,7 @@ namespace DoAn_QLCF_cs_WinForm.CustomControl
 			if (borderRadius > 2)
 			{
 				using (GraphicsPath pathSurface = GetFigurePath(rectSurfaceF, borderRadius))
-				using (Pen penSurface = new Pen(Color.Transparent, 2))
+				using (Pen penSurface = new Pen(this.Parent.BackColor, 2))
 				{
 					this.Region = new Region(pathSurface);
 					e.Graphics.DrawPath(penSurface, pathSurface);

@@ -57,11 +57,20 @@
 			label1 = new Label();
 			sideNav = new Panel();
 			sideNavBtn = new CustomControl.CustomButton();
-			label4 = new Label();
-			panelLogo = new Panel();
-			btnNhanVienTT = new ToolTip(components);
+			btnNavToolTip = new ToolTip(components);
 			sideMinimizeTimer = new System.Windows.Forms.Timer(components);
 			sideExpandTimer = new System.Windows.Forms.Timer(components);
+			backgroundMainView = new CustomControl.SidePanel();
+			mainContainer = new CustomControl.SidePanel();
+			titleBar = new CustomControl.SidePanel();
+			timeLblTitle = new Label();
+			textLblTitle = new Label();
+			imageLblTitle = new Label();
+			customButton4 = new CustomControl.CustomButton();
+			customButton3 = new CustomControl.CustomButton();
+			customButton2 = new CustomControl.CustomButton();
+			customButton1 = new CustomControl.CustomButton();
+			timerLblTitle = new System.Windows.Forms.Timer(components);
 			((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
 			sideBar.SuspendLayout();
 			panel12.SuspendLayout();
@@ -76,6 +85,8 @@
 			panel3.SuspendLayout();
 			panel2.SuspendLayout();
 			sideNav.SuspendLayout();
+			backgroundMainView.SuspendLayout();
+			titleBar.SuspendLayout();
 			SuspendLayout();
 			// 
 			// sideBar
@@ -97,8 +108,6 @@
 			sideBar.Controls.Add(panel2);
 			sideBar.Controls.Add(label1);
 			sideBar.Controls.Add(sideNav);
-			sideBar.Controls.Add(label4);
-			sideBar.Controls.Add(panelLogo);
 			sideBar.Dock = DockStyle.Left;
 			sideBar.EnabledGradient = false;
 			sideBar.GradientAngle = 45F;
@@ -109,7 +118,7 @@
 			sideBar.MaximumSize = new Size(258, 2000);
 			sideBar.MinimumSize = new Size(54, 100);
 			sideBar.Name = "sideBar";
-			sideBar.Size = new Size(258, 743);
+			sideBar.Size = new Size(54, 743);
 			sideBar.TabIndex = 1;
 			// 
 			// label3
@@ -118,7 +127,7 @@
 			label3.Dock = DockStyle.Bottom;
 			label3.Location = new Point(0, 693);
 			label3.Name = "label3";
-			label3.Size = new Size(258, 1);
+			label3.Size = new Size(54, 1);
 			label3.TabIndex = 15;
 			// 
 			// panel12
@@ -129,7 +138,7 @@
 			panel12.Location = new Point(0, 694);
 			panel12.Name = "panel12";
 			panel12.Padding = new Padding(5);
-			panel12.Size = new Size(258, 49);
+			panel12.Size = new Size(54, 49);
 			panel12.TabIndex = 14;
 			// 
 			// navLogOut
@@ -152,10 +161,10 @@
 			navLogOut.Location = new Point(5, 5);
 			navLogOut.Name = "navLogOut";
 			navLogOut.Padding = new Padding(5);
-			navLogOut.Size = new Size(248, 39);
+			navLogOut.Size = new Size(44, 39);
 			navLogOut.TabIndex = 2;
-			navLogOut.Tag = "Đăng xuất";
-			navLogOut.Text = "Đăng xuất";
+			navLogOut.Tag = "Đăng Xuất";
+			navLogOut.Text = "Đăng Xuất";
 			navLogOut.TextColor = Color.FromArgb(239, 65, 65);
 			navLogOut.TextHover = Color.White;
 			navLogOut.UseVisualStyleBackColor = false;
@@ -167,10 +176,10 @@
 			panel11.BackColor = Color.DarkSlateGray;
 			panel11.Controls.Add(navPhanQuyen);
 			panel11.Dock = DockStyle.Top;
-			panel11.Location = new Point(0, 502);
+			panel11.Location = new Point(0, 491);
 			panel11.Name = "panel11";
 			panel11.Padding = new Padding(5);
-			panel11.Size = new Size(258, 49);
+			panel11.Size = new Size(54, 49);
 			panel11.TabIndex = 12;
 			// 
 			// navPhanQuyen
@@ -193,12 +202,13 @@
 			navPhanQuyen.Location = new Point(5, 5);
 			navPhanQuyen.Name = "navPhanQuyen";
 			navPhanQuyen.Padding = new Padding(5);
-			navPhanQuyen.Size = new Size(248, 39);
+			navPhanQuyen.Size = new Size(44, 39);
 			navPhanQuyen.TabIndex = 2;
-			navPhanQuyen.Tag = "Phân quyền";
-			navPhanQuyen.Text = "Phân quyền";
+			navPhanQuyen.Tag = "Phân Quyền";
+			navPhanQuyen.Text = "Phân Quyền";
 			navPhanQuyen.TextColor = Color.White;
 			navPhanQuyen.TextHover = Color.White;
+			btnNavToolTip.SetToolTip(navPhanQuyen, "Phân Quyền");
 			navPhanQuyen.UseVisualStyleBackColor = false;
 			navPhanQuyen.Click += ButtonNavClick;
 			// 
@@ -207,10 +217,10 @@
 			panel10.BackColor = Color.DarkSlateGray;
 			panel10.Controls.Add(navNcc);
 			panel10.Dock = DockStyle.Top;
-			panel10.Location = new Point(0, 453);
+			panel10.Location = new Point(0, 442);
 			panel10.Name = "panel10";
 			panel10.Padding = new Padding(5);
-			panel10.Size = new Size(258, 49);
+			panel10.Size = new Size(54, 49);
 			panel10.TabIndex = 11;
 			// 
 			// navNcc
@@ -233,12 +243,13 @@
 			navNcc.Location = new Point(5, 5);
 			navNcc.Name = "navNcc";
 			navNcc.Padding = new Padding(5);
-			navNcc.Size = new Size(248, 39);
+			navNcc.Size = new Size(44, 39);
 			navNcc.TabIndex = 2;
-			navNcc.Tag = "Nhà cung cấp";
-			navNcc.Text = "Nhà cung cấp";
+			navNcc.Tag = "Nhà Cung Cấp";
+			navNcc.Text = "Nhà Cung Cấp";
 			navNcc.TextColor = Color.White;
 			navNcc.TextHover = Color.White;
+			btnNavToolTip.SetToolTip(navNcc, "Nhà Cung Cấp");
 			navNcc.UseVisualStyleBackColor = false;
 			navNcc.Click += ButtonNavClick;
 			// 
@@ -247,10 +258,10 @@
 			panel9.BackColor = Color.DarkSlateGray;
 			panel9.Controls.Add(navThongKe);
 			panel9.Dock = DockStyle.Top;
-			panel9.Location = new Point(0, 404);
+			panel9.Location = new Point(0, 393);
 			panel9.Name = "panel9";
 			panel9.Padding = new Padding(5);
-			panel9.Size = new Size(258, 49);
+			panel9.Size = new Size(54, 49);
 			panel9.TabIndex = 10;
 			// 
 			// navThongKe
@@ -273,12 +284,13 @@
 			navThongKe.Location = new Point(5, 5);
 			navThongKe.Name = "navThongKe";
 			navThongKe.Padding = new Padding(5);
-			navThongKe.Size = new Size(248, 39);
+			navThongKe.Size = new Size(44, 39);
 			navThongKe.TabIndex = 2;
-			navThongKe.Tag = "Thống kê";
-			navThongKe.Text = "Thống kê";
+			navThongKe.Tag = "Thống Kê";
+			navThongKe.Text = "Thống Kê";
 			navThongKe.TextColor = Color.White;
 			navThongKe.TextHover = Color.White;
+			btnNavToolTip.SetToolTip(navThongKe, "Thống Kê");
 			navThongKe.UseVisualStyleBackColor = false;
 			navThongKe.Click += ButtonNavClick;
 			// 
@@ -287,10 +299,10 @@
 			panel8.BackColor = Color.DarkSlateGray;
 			panel8.Controls.Add(navFile);
 			panel8.Dock = DockStyle.Top;
-			panel8.Location = new Point(0, 355);
+			panel8.Location = new Point(0, 344);
 			panel8.Name = "panel8";
 			panel8.Padding = new Padding(5);
-			panel8.Size = new Size(258, 49);
+			panel8.Size = new Size(54, 49);
 			panel8.TabIndex = 9;
 			// 
 			// navFile
@@ -313,12 +325,13 @@
 			navFile.Location = new Point(5, 5);
 			navFile.Name = "navFile";
 			navFile.Padding = new Padding(5);
-			navFile.Size = new Size(248, 39);
+			navFile.Size = new Size(44, 39);
 			navFile.TabIndex = 2;
-			navFile.Tag = "Nhập/Xuất file";
-			navFile.Text = "Nhập/Xuất file";
+			navFile.Tag = "Nhập/Xuất File";
+			navFile.Text = "Nhập/Xuất File";
 			navFile.TextColor = Color.White;
 			navFile.TextHover = Color.White;
+			btnNavToolTip.SetToolTip(navFile, "Nhập/Xuất File");
 			navFile.UseVisualStyleBackColor = false;
 			navFile.Click += ButtonNavClick;
 			// 
@@ -327,10 +340,10 @@
 			panel7.BackColor = Color.DarkSlateGray;
 			panel7.Controls.Add(navHoaDon);
 			panel7.Dock = DockStyle.Top;
-			panel7.Location = new Point(0, 306);
+			panel7.Location = new Point(0, 295);
 			panel7.Name = "panel7";
 			panel7.Padding = new Padding(5);
-			panel7.Size = new Size(258, 49);
+			panel7.Size = new Size(54, 49);
 			panel7.TabIndex = 8;
 			// 
 			// navHoaDon
@@ -353,12 +366,13 @@
 			navHoaDon.Location = new Point(5, 5);
 			navHoaDon.Name = "navHoaDon";
 			navHoaDon.Padding = new Padding(5);
-			navHoaDon.Size = new Size(248, 39);
+			navHoaDon.Size = new Size(44, 39);
 			navHoaDon.TabIndex = 2;
-			navHoaDon.Tag = "Hóa đơn";
-			navHoaDon.Text = "Hóa đơn";
+			navHoaDon.Tag = "Hóa Đơn";
+			navHoaDon.Text = "Hóa Đơn";
 			navHoaDon.TextColor = Color.White;
 			navHoaDon.TextHover = Color.White;
+			btnNavToolTip.SetToolTip(navHoaDon, "Hóa Đơn");
 			navHoaDon.UseVisualStyleBackColor = false;
 			navHoaDon.Click += ButtonNavClick;
 			// 
@@ -367,10 +381,10 @@
 			panel6.BackColor = Color.DarkSlateGray;
 			panel6.Controls.Add(navNhapHang);
 			panel6.Dock = DockStyle.Top;
-			panel6.Location = new Point(0, 257);
+			panel6.Location = new Point(0, 246);
 			panel6.Name = "panel6";
 			panel6.Padding = new Padding(5);
-			panel6.Size = new Size(258, 49);
+			panel6.Size = new Size(54, 49);
 			panel6.TabIndex = 7;
 			// 
 			// navNhapHang
@@ -393,12 +407,13 @@
 			navNhapHang.Location = new Point(5, 5);
 			navNhapHang.Name = "navNhapHang";
 			navNhapHang.Padding = new Padding(5);
-			navNhapHang.Size = new Size(248, 39);
+			navNhapHang.Size = new Size(44, 39);
 			navNhapHang.TabIndex = 2;
-			navNhapHang.Tag = "Nhập hàng";
-			navNhapHang.Text = "Nhập hàng";
+			navNhapHang.Tag = "Nhập Hàng";
+			navNhapHang.Text = "Nhập Hàng";
 			navNhapHang.TextColor = Color.White;
 			navNhapHang.TextHover = Color.White;
+			btnNavToolTip.SetToolTip(navNhapHang, "Nhập Hàng");
 			navNhapHang.UseVisualStyleBackColor = false;
 			navNhapHang.Click += ButtonNavClick;
 			// 
@@ -407,10 +422,10 @@
 			panel5.BackColor = Color.DarkSlateGray;
 			panel5.Controls.Add(navNguyenLieu);
 			panel5.Dock = DockStyle.Top;
-			panel5.Location = new Point(0, 208);
+			panel5.Location = new Point(0, 197);
 			panel5.Name = "panel5";
 			panel5.Padding = new Padding(5);
-			panel5.Size = new Size(258, 49);
+			panel5.Size = new Size(54, 49);
 			panel5.TabIndex = 6;
 			// 
 			// navNguyenLieu
@@ -433,12 +448,13 @@
 			navNguyenLieu.Location = new Point(5, 5);
 			navNguyenLieu.Name = "navNguyenLieu";
 			navNguyenLieu.Padding = new Padding(5);
-			navNguyenLieu.Size = new Size(248, 39);
+			navNguyenLieu.Size = new Size(44, 39);
 			navNguyenLieu.TabIndex = 2;
-			navNguyenLieu.Tag = "Nguyên liệu";
-			navNguyenLieu.Text = "Nguyên liệu";
+			navNguyenLieu.Tag = "Nguyên Liệu";
+			navNguyenLieu.Text = "Nguyên Liệu";
 			navNguyenLieu.TextColor = Color.White;
 			navNguyenLieu.TextHover = Color.White;
+			btnNavToolTip.SetToolTip(navNguyenLieu, "Nguyên Liệu");
 			navNguyenLieu.UseVisualStyleBackColor = false;
 			navNguyenLieu.Click += ButtonNavClick;
 			// 
@@ -447,10 +463,10 @@
 			panel4.BackColor = Color.DarkSlateGray;
 			panel4.Controls.Add(navCafe);
 			panel4.Dock = DockStyle.Top;
-			panel4.Location = new Point(0, 159);
+			panel4.Location = new Point(0, 148);
 			panel4.Name = "panel4";
 			panel4.Padding = new Padding(5);
-			panel4.Size = new Size(258, 49);
+			panel4.Size = new Size(54, 49);
 			panel4.TabIndex = 5;
 			// 
 			// navCafe
@@ -473,12 +489,13 @@
 			navCafe.Location = new Point(5, 5);
 			navCafe.Name = "navCafe";
 			navCafe.Padding = new Padding(5);
-			navCafe.Size = new Size(248, 39);
+			navCafe.Size = new Size(44, 39);
 			navCafe.TabIndex = 2;
-			navCafe.Tag = "Cà phê";
-			navCafe.Text = "Cà phê";
+			navCafe.Tag = "Cà Phê";
+			navCafe.Text = "Cà Phê";
 			navCafe.TextColor = Color.White;
 			navCafe.TextHover = Color.White;
+			btnNavToolTip.SetToolTip(navCafe, "Cà Phê");
 			navCafe.UseVisualStyleBackColor = false;
 			navCafe.Click += ButtonNavClick;
 			// 
@@ -487,10 +504,10 @@
 			panel3.BackColor = Color.DarkSlateGray;
 			panel3.Controls.Add(navKhachHang);
 			panel3.Dock = DockStyle.Top;
-			panel3.Location = new Point(0, 110);
+			panel3.Location = new Point(0, 99);
 			panel3.Name = "panel3";
 			panel3.Padding = new Padding(5);
-			panel3.Size = new Size(258, 49);
+			panel3.Size = new Size(54, 49);
 			panel3.TabIndex = 4;
 			// 
 			// navKhachHang
@@ -513,12 +530,13 @@
 			navKhachHang.Location = new Point(5, 5);
 			navKhachHang.Name = "navKhachHang";
 			navKhachHang.Padding = new Padding(5);
-			navKhachHang.Size = new Size(248, 39);
+			navKhachHang.Size = new Size(44, 39);
 			navKhachHang.TabIndex = 2;
-			navKhachHang.Tag = "Khách hàng";
-			navKhachHang.Text = "Khách hàng";
+			navKhachHang.Tag = "Khách Hàng";
+			navKhachHang.Text = "Khách Hàng";
 			navKhachHang.TextColor = Color.White;
 			navKhachHang.TextHover = Color.White;
+			btnNavToolTip.SetToolTip(navKhachHang, "Khách Hàng");
 			navKhachHang.UseVisualStyleBackColor = false;
 			navKhachHang.Click += ButtonNavClick;
 			// 
@@ -527,10 +545,10 @@
 			panel2.BackColor = Color.DarkSlateGray;
 			panel2.Controls.Add(navNhanVien);
 			panel2.Dock = DockStyle.Top;
-			panel2.Location = new Point(0, 61);
+			panel2.Location = new Point(0, 50);
 			panel2.Name = "panel2";
 			panel2.Padding = new Padding(5);
-			panel2.Size = new Size(258, 49);
+			panel2.Size = new Size(54, 49);
 			panel2.TabIndex = 2;
 			// 
 			// navNhanVien
@@ -553,13 +571,13 @@
 			navNhanVien.Location = new Point(5, 5);
 			navNhanVien.Name = "navNhanVien";
 			navNhanVien.Padding = new Padding(5);
-			navNhanVien.Size = new Size(248, 39);
+			navNhanVien.Size = new Size(44, 39);
 			navNhanVien.TabIndex = 2;
-			navNhanVien.Tag = "Nhân viên";
-			navNhanVien.Text = "Nhân viên";
+			navNhanVien.Tag = "Nhân Viên";
+			navNhanVien.Text = "Nhân Viên";
 			navNhanVien.TextColor = Color.White;
 			navNhanVien.TextHover = Color.White;
-			btnNhanVienTT.SetToolTip(navNhanVien, "dsadadd");
+			btnNavToolTip.SetToolTip(navNhanVien, "Nhân Viên");
 			navNhanVien.UseVisualStyleBackColor = false;
 			navNhanVien.Click += ButtonNavClick;
 			// 
@@ -567,9 +585,9 @@
 			// 
 			label1.BackColor = Color.White;
 			label1.Dock = DockStyle.Top;
-			label1.Location = new Point(0, 60);
+			label1.Location = new Point(0, 49);
 			label1.Name = "label1";
-			label1.Size = new Size(258, 1);
+			label1.Size = new Size(54, 1);
 			label1.TabIndex = 3;
 			// 
 			// sideNav
@@ -577,10 +595,10 @@
 			sideNav.BackColor = Color.DarkSlateGray;
 			sideNav.Controls.Add(sideNavBtn);
 			sideNav.Dock = DockStyle.Top;
-			sideNav.Location = new Point(0, 11);
+			sideNav.Location = new Point(0, 0);
 			sideNav.Name = "sideNav";
 			sideNav.Padding = new Padding(5);
-			sideNav.Size = new Size(258, 49);
+			sideNav.Size = new Size(54, 49);
 			sideNav.TabIndex = 16;
 			// 
 			// sideNavBtn
@@ -610,29 +628,11 @@
 			sideNavBtn.UseVisualStyleBackColor = false;
 			sideNavBtn.Click += btnMenuSideNav_Click;
 			// 
-			// label4
+			// btnNavToolTip
 			// 
-			label4.BackColor = Color.White;
-			label4.Dock = DockStyle.Top;
-			label4.Location = new Point(0, 10);
-			label4.Name = "label4";
-			label4.Size = new Size(258, 1);
-			label4.TabIndex = 18;
-			// 
-			// panelLogo
-			// 
-			panelLogo.BackColor = SystemColors.ActiveCaptionText;
-			panelLogo.Dock = DockStyle.Top;
-			panelLogo.Location = new Point(0, 0);
-			panelLogo.Name = "panelLogo";
-			panelLogo.Size = new Size(258, 10);
-			panelLogo.TabIndex = 17;
-			// 
-			// btnNhanVienTT
-			// 
-			btnNhanVienTT.AutoPopDelay = 5000;
-			btnNhanVienTT.InitialDelay = 1;
-			btnNhanVienTT.ReshowDelay = 1;
+			btnNavToolTip.AutoPopDelay = 5000;
+			btnNavToolTip.InitialDelay = 1;
+			btnNavToolTip.ReshowDelay = 1;
 			// 
 			// sideMinimizeTimer
 			// 
@@ -644,17 +644,203 @@
 			sideExpandTimer.Interval = 10;
 			sideExpandTimer.Tick += sideExpandTimer_Tick;
 			// 
+			// backgroundMainView
+			// 
+			backgroundMainView.BackColor = SystemColors.ActiveCaption;
+			backgroundMainView.BorderRadius = 1;
+			backgroundMainView.Controls.Add(mainContainer);
+			backgroundMainView.Controls.Add(titleBar);
+			backgroundMainView.Dock = DockStyle.Fill;
+			backgroundMainView.EnabledGradient = true;
+			backgroundMainView.GradientAngle = 45F;
+			backgroundMainView.GradientBottomColor = Color.Teal;
+			backgroundMainView.GradientTopColor = Color.SkyBlue;
+			backgroundMainView.Location = new Point(54, 0);
+			backgroundMainView.Name = "backgroundMainView";
+			backgroundMainView.Size = new Size(891, 743);
+			backgroundMainView.TabIndex = 2;
+			// 
+			// mainContainer
+			// 
+			mainContainer.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			mainContainer.BackColor = SystemColors.Control;
+			mainContainer.BorderRadius = 25;
+			mainContainer.EnabledGradient = false;
+			mainContainer.GradientAngle = 90F;
+			mainContainer.GradientBottomColor = Color.FromArgb(255, 51, 153);
+			mainContainer.GradientTopColor = Color.Teal;
+			mainContainer.Location = new Point(19, 56);
+			mainContainer.Name = "mainContainer";
+			mainContainer.Size = new Size(860, 682);
+			mainContainer.TabIndex = 1;
+			// 
+			// titleBar
+			// 
+			titleBar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+			titleBar.BackColor = Color.DarkSlateGray;
+			titleBar.BorderRadius = 15;
+			titleBar.Controls.Add(timeLblTitle);
+			titleBar.Controls.Add(textLblTitle);
+			titleBar.Controls.Add(imageLblTitle);
+			titleBar.Controls.Add(customButton4);
+			titleBar.Controls.Add(customButton3);
+			titleBar.Controls.Add(customButton2);
+			titleBar.Controls.Add(customButton1);
+			titleBar.EnabledGradient = false;
+			titleBar.GradientAngle = 45F;
+			titleBar.GradientBottomColor = Color.DarkSlateGray;
+			titleBar.GradientTopColor = Color.Teal;
+			titleBar.Location = new Point(19, 0);
+			titleBar.Name = "titleBar";
+			titleBar.Padding = new Padding(10, 5, 15, 5);
+			titleBar.Size = new Size(860, 50);
+			titleBar.TabIndex = 0;
+			// 
+			// timeLblTitle
+			// 
+			timeLblTitle.BackColor = Color.DarkSlateGray;
+			timeLblTitle.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			timeLblTitle.ForeColor = SystemColors.Control;
+			timeLblTitle.Location = new Point(213, 9);
+			timeLblTitle.Name = "timeLblTitle";
+			timeLblTitle.Size = new Size(214, 33);
+			timeLblTitle.TabIndex = 7;
+			timeLblTitle.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// textLblTitle
+			// 
+			textLblTitle.BackColor = Color.DarkSlateGray;
+			textLblTitle.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			textLblTitle.ForeColor = SystemColors.Control;
+			textLblTitle.Location = new Point(61, 9);
+			textLblTitle.Name = "textLblTitle";
+			textLblTitle.Size = new Size(128, 33);
+			textLblTitle.TabIndex = 6;
+			textLblTitle.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// imageLblTitle
+			// 
+			imageLblTitle.BackColor = Color.DarkSlateGray;
+			imageLblTitle.Location = new Point(27, 9);
+			imageLblTitle.Name = "imageLblTitle";
+			imageLblTitle.Size = new Size(43, 33);
+			imageLblTitle.TabIndex = 5;
+			// 
+			// customButton4
+			// 
+			customButton4.Anchor = AnchorStyles.Right;
+			customButton4.BackColor = Color.Transparent;
+			customButton4.BackgroundColor = Color.Transparent;
+			customButton4.BorderColor = Color.Teal;
+			customButton4.BorderRadius = 20;
+			customButton4.BorderSize = 0;
+			customButton4.Cursor = Cursors.Hand;
+			customButton4.EnabledTextHover = false;
+			customButton4.FlatAppearance.BorderSize = 0;
+			customButton4.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
+			customButton4.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
+			customButton4.FlatStyle = FlatStyle.Flat;
+			customButton4.ForeColor = Color.White;
+			customButton4.Image = Properties.Resources.TaskIcon;
+			customButton4.Location = new Point(538, 5);
+			customButton4.Margin = new Padding(3, 3, 20, 3);
+			customButton4.Name = "customButton4";
+			customButton4.Size = new Size(53, 40);
+			customButton4.TabIndex = 4;
+			customButton4.TextColor = Color.White;
+			customButton4.TextHover = Color.White;
+			customButton4.UseVisualStyleBackColor = false;
+			// 
+			// customButton3
+			// 
+			customButton3.Anchor = AnchorStyles.Right;
+			customButton3.BackColor = Color.Transparent;
+			customButton3.BackgroundColor = Color.Transparent;
+			customButton3.BorderColor = Color.Teal;
+			customButton3.BorderRadius = 20;
+			customButton3.BorderSize = 0;
+			customButton3.Cursor = Cursors.Hand;
+			customButton3.EnabledTextHover = false;
+			customButton3.FlatAppearance.BorderSize = 0;
+			customButton3.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
+			customButton3.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
+			customButton3.FlatStyle = FlatStyle.Flat;
+			customButton3.ForeColor = Color.White;
+			customButton3.Image = Properties.Resources.emailIcon;
+			customButton3.Location = new Point(612, 5);
+			customButton3.Name = "customButton3";
+			customButton3.Size = new Size(53, 40);
+			customButton3.TabIndex = 3;
+			customButton3.TextColor = Color.White;
+			customButton3.TextHover = Color.White;
+			customButton3.UseVisualStyleBackColor = false;
+			// 
+			// customButton2
+			// 
+			customButton2.Anchor = AnchorStyles.Right;
+			customButton2.BackColor = Color.Transparent;
+			customButton2.BackgroundColor = Color.Transparent;
+			customButton2.BorderColor = Color.Teal;
+			customButton2.BorderRadius = 20;
+			customButton2.BorderSize = 0;
+			customButton2.Cursor = Cursors.Hand;
+			customButton2.EnabledTextHover = false;
+			customButton2.FlatAppearance.BorderSize = 0;
+			customButton2.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
+			customButton2.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
+			customButton2.FlatStyle = FlatStyle.Flat;
+			customButton2.ForeColor = Color.White;
+			customButton2.Image = Properties.Resources.notificationIcon;
+			customButton2.Location = new Point(686, 5);
+			customButton2.Name = "customButton2";
+			customButton2.Size = new Size(53, 40);
+			customButton2.TabIndex = 2;
+			customButton2.TextColor = Color.White;
+			customButton2.TextHover = Color.White;
+			customButton2.UseVisualStyleBackColor = false;
+			// 
+			// customButton1
+			// 
+			customButton1.BackColor = Color.OrangeRed;
+			customButton1.BackgroundColor = Color.OrangeRed;
+			customButton1.BorderColor = Color.Teal;
+			customButton1.BorderRadius = 20;
+			customButton1.BorderSize = 0;
+			customButton1.Cursor = Cursors.Hand;
+			customButton1.Dock = DockStyle.Right;
+			customButton1.EnabledTextHover = false;
+			customButton1.FlatAppearance.BorderSize = 0;
+			customButton1.FlatAppearance.MouseDownBackColor = Color.OrangeRed;
+			customButton1.FlatAppearance.MouseOverBackColor = Color.Coral;
+			customButton1.FlatStyle = FlatStyle.Flat;
+			customButton1.ForeColor = Color.White;
+			customButton1.Image = Properties.Resources.usericon;
+			customButton1.Location = new Point(792, 5);
+			customButton1.Name = "customButton1";
+			customButton1.Size = new Size(53, 40);
+			customButton1.TabIndex = 1;
+			customButton1.TextColor = Color.White;
+			customButton1.TextHover = Color.White;
+			customButton1.UseVisualStyleBackColor = false;
+			// 
+			// timerLblTitle
+			// 
+			timerLblTitle.Interval = 1000;
+			timerLblTitle.Tick += timerLblTitle_Tick;
+			// 
 			// MainView
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = SystemColors.Control;
 			ClientSize = new Size(945, 743);
+			Controls.Add(backgroundMainView);
 			Controls.Add(sideBar);
 			Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
 			Name = "MainView";
 			StartPosition = FormStartPosition.CenterScreen;
 			Text = "MainView";
+			Load += MainView_Load;
 			SizeChanged += MainView_SizeChanged;
 			((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
 			sideBar.ResumeLayout(false);
@@ -670,6 +856,8 @@
 			panel3.ResumeLayout(false);
 			panel2.ResumeLayout(false);
 			sideNav.ResumeLayout(false);
+			backgroundMainView.ResumeLayout(false);
+			titleBar.ResumeLayout(false);
 			ResumeLayout(false);
 		}
 
@@ -697,15 +885,24 @@
 		private CustomControl.CustomButton navCafe;
 		private Panel panel3;
 		private CustomControl.CustomButton navKhachHang;
-		private ToolTip btnNhanVienTT;
+		private ToolTip btnNavToolTip;
 		private Label label3;
 		private Panel panel12;
 		private CustomControl.CustomButton navLogOut;
 		private Panel sideNav;
 		private CustomControl.CustomButton sideNavBtn;
-		private Panel panelLogo;
-		private Label label4;
 		private System.Windows.Forms.Timer sideMinimizeTimer;
 		private System.Windows.Forms.Timer sideExpandTimer;
+		private CustomControl.SidePanel backgroundMainView;
+		private CustomControl.SidePanel titleBar;
+		private CustomControl.CustomButton customButton1;
+		private CustomControl.SidePanel mainContainer;
+		private CustomControl.CustomButton customButton4;
+		private CustomControl.CustomButton customButton3;
+		private CustomControl.CustomButton customButton2;
+		private Label imageLblTitle;
+		private Label textLblTitle;
+		private Label timeLblTitle;
+		private System.Windows.Forms.Timer timerLblTitle;
 	}
 }

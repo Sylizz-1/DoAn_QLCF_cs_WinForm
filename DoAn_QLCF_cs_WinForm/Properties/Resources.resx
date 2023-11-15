@@ -127,6 +127,9 @@
   <data name="permissionIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\permissionIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="supplierflat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\supplierflat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="importIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\importIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -151,11 +154,11 @@
   <data name="open-folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\open-folder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="manIcontest" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\manIcontest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="caphe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\caphe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="employee1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\employee1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="usericon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usericon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="statisticflat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\statisticflat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,17 +172,20 @@
   <data name="ingreFlat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ingreFlat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="navOpenflat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\navOpenflat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ingredientIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ingredientIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="EmployeeFlat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EmployeeFlat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="caphe" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\caphe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="employee1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\employee1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="invoiceFlat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\invoiceFlat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logoutflatred2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logoutflatred2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="invoiceIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\invoiceIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,8 +196,14 @@
   <data name="importFlat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\importFlat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="supplierflat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\supplierflat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="manIcontest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\manIcontest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="invoiceFlat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\invoiceFlat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="notificationIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\notificationIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="employee" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\employee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,22 +211,22 @@
   <data name="logoutflatred" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logoutflatred.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="navCloseflat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\navCloseflat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="emailIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\emailIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="menuClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menuClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logoutflat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logoutflat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logoutflatred2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logoutflatred2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logoutflatwhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logoutflatwhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="navCloseflat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\navCloseflat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logoutflat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logoutflat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="navOpenflat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\navOpenflat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="TaskIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TaskIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

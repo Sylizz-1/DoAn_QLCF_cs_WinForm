@@ -93,6 +93,16 @@ namespace DoAn_QLCF_cs_WinForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap emailIcon {
+            get {
+                object obj = ResourceManager.GetObject("emailIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap employee {
             get {
                 object obj = ResourceManager.GetObject("employee", resourceCulture);
@@ -323,6 +333,16 @@ namespace DoAn_QLCF_cs_WinForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap notificationIcon {
+            get {
+                object obj = ResourceManager.GetObject("notificationIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap open_folder {
             get {
                 object obj = ResourceManager.GetObject("open-folder", resourceCulture);
@@ -386,6 +406,26 @@ namespace DoAn_QLCF_cs_WinForm.Properties {
         internal static System.Drawing.Bitmap supplierflat {
             get {
                 object obj = ResourceManager.GetObject("supplierflat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TaskIcon {
+            get {
+                object obj = ResourceManager.GetObject("TaskIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap usericon {
+            get {
+                object obj = ResourceManager.GetObject("usericon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

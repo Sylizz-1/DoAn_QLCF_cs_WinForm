@@ -34,8 +34,6 @@ namespace DoAn_QLCF_cs_WinForm.View
 			ICaPheView view = CaPheView.GetInstance(this);
 			ICaPheRepository repo = new CaPheRepository(this.connectionString);
 			new CaPhePresenter(view, repo);
-
-
 		}
 
 		// UI code
@@ -44,6 +42,12 @@ namespace DoAn_QLCF_cs_WinForm.View
 			InitializeComponent();
 			this.connectionString = connectionString;
 			LoadButtonNav();
+			timerLblTitle.Start();
+		}
+
+		private void MainView_Load(object sender, EventArgs e)
+		{
+			SetDoubleBuffering(backgroundMainView, true);
 		}
 
 		private void sideMinimizeTimer_Tick(object sender, EventArgs e)
@@ -53,7 +57,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 				sideMinimizeTimer.Stop();
 				isSideBarExpand = false;
 			}
-			sideBar.Width -= 40;
+			sideBar.Width -= 50;
 		}
 
 
@@ -64,7 +68,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 				sideExpandTimer.Stop();
 				isSideBarExpand = true;
 			}
-			sideBar.Width += 40;
+			sideBar.Width += 50;
 		}
 
 
@@ -152,8 +156,22 @@ namespace DoAn_QLCF_cs_WinForm.View
 			{
 				btn.BackColor = Color.Transparent;
 			}
+			Button button = ((Button)sender);
+			button.BackColor = Color.LightSeaGreen;
+			imageLblTitle.Image = button.Image;
+			textLblTitle.Text = (string)button.Tag;
+		}
 
-			((Button)sender).BackColor = Color.LightSeaGreen;
+		public static void SetDoubleBuffering(System.Windows.Forms.Control control, bool value)
+		{
+			System.Reflection.PropertyInfo controlProperty = typeof(System.Windows.Forms.Control)
+				.GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+			controlProperty.SetValue(control, value, null);
+		}
+
+		private void timerLblTitle_Tick(object sender, EventArgs e)
+		{
+			timeLblTitle.Text = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss");
 		}
 	}
 }
