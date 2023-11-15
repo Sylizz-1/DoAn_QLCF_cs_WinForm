@@ -44,7 +44,8 @@ namespace DoAn_QLCF_cs_WinForm.View
 			if (instance == null || instance.IsDisposed)
 			{
 				instance = new CaPheView();
-				instance.MdiParent = parentContainer;
+				instance.TopLevel = false;
+				parentContainer.Controls.Add(instance);
 				instance.Dock = DockStyle.Fill;
 			}
 			else

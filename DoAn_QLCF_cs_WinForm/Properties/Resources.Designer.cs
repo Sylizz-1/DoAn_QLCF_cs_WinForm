@@ -63,9 +63,59 @@ namespace DoAn_QLCF_cs_WinForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap accIcon {
+            get {
+                object obj = ResourceManager.GetObject("accIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap caphe {
             get {
                 object obj = ResourceManager.GetObject("caphe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap changepassicon {
+            get {
+                object obj = ResourceManager.GetObject("changepassicon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap changepassicon2 {
+            get {
+                object obj = ResourceManager.GetObject("changepassicon2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap changepassicon3 {
+            get {
+                object obj = ResourceManager.GetObject("changepassicon3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap changepassicon4 {
+            get {
+                object obj = ResourceManager.GetObject("changepassicon4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -366,6 +416,36 @@ namespace DoAn_QLCF_cs_WinForm.Properties {
         internal static System.Drawing.Bitmap permissionIcon {
             get {
                 object obj = ResourceManager.GetObject("permissionIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap settingIcon {
+            get {
+                object obj = ResourceManager.GetObject("settingIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap signOutMiniIcon {
+            get {
+                object obj = ResourceManager.GetObject("signOutMiniIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap signOutMiniIconRed {
+            get {
+                object obj = ResourceManager.GetObject("signOutMiniIconRed", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

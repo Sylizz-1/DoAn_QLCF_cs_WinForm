@@ -61,7 +61,7 @@
 			sideMinimizeTimer = new System.Windows.Forms.Timer(components);
 			sideExpandTimer = new System.Windows.Forms.Timer(components);
 			backgroundMainView = new CustomControl.SidePanel();
-			mainContainer = new CustomControl.SidePanel();
+			mainPanelContainer = new CustomControl.SidePanel();
 			titleBar = new CustomControl.SidePanel();
 			timeLblTitle = new Label();
 			textLblTitle = new Label();
@@ -69,7 +69,12 @@
 			customButton4 = new CustomControl.CustomButton();
 			customButton3 = new CustomControl.CustomButton();
 			customButton2 = new CustomControl.CustomButton();
-			customButton1 = new CustomControl.CustomButton();
+			accountIcon = new CustomControl.CustomButton();
+			contextMenuStrip1 = new ContextMenuStrip(components);
+			accMenuStrip = new ToolStripMenuItem();
+			changePassMenuStrip = new ToolStripMenuItem();
+			settingMenuStrip = new ToolStripMenuItem();
+			logOutMenuStrip = new ToolStripMenuItem();
 			timerLblTitle = new System.Windows.Forms.Timer(components);
 			((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
 			sideBar.SuspendLayout();
@@ -87,6 +92,7 @@
 			sideNav.SuspendLayout();
 			backgroundMainView.SuspendLayout();
 			titleBar.SuspendLayout();
+			contextMenuStrip1.SuspendLayout();
 			SuspendLayout();
 			// 
 			// sideBar
@@ -118,14 +124,14 @@
 			sideBar.MaximumSize = new Size(258, 2000);
 			sideBar.MinimumSize = new Size(54, 100);
 			sideBar.Name = "sideBar";
-			sideBar.Size = new Size(54, 743);
+			sideBar.Size = new Size(54, 643);
 			sideBar.TabIndex = 1;
 			// 
 			// label3
 			// 
 			label3.BackColor = Color.White;
 			label3.Dock = DockStyle.Bottom;
-			label3.Location = new Point(0, 693);
+			label3.Location = new Point(0, 593);
 			label3.Name = "label3";
 			label3.Size = new Size(54, 1);
 			label3.TabIndex = 15;
@@ -135,7 +141,7 @@
 			panel12.BackColor = Color.DarkSlateGray;
 			panel12.Controls.Add(navLogOut);
 			panel12.Dock = DockStyle.Bottom;
-			panel12.Location = new Point(0, 694);
+			panel12.Location = new Point(0, 594);
 			panel12.Name = "panel12";
 			panel12.Padding = new Padding(5);
 			panel12.Size = new Size(54, 49);
@@ -498,6 +504,7 @@
 			btnNavToolTip.SetToolTip(navCafe, "Cà Phê");
 			navCafe.UseVisualStyleBackColor = false;
 			navCafe.Click += ButtonNavClick;
+			navCafe.MouseDown += navCafe_MouseDown;
 			// 
 			// panel3
 			// 
@@ -648,7 +655,7 @@
 			// 
 			backgroundMainView.BackColor = SystemColors.ActiveCaption;
 			backgroundMainView.BorderRadius = 1;
-			backgroundMainView.Controls.Add(mainContainer);
+			backgroundMainView.Controls.Add(mainPanelContainer);
 			backgroundMainView.Controls.Add(titleBar);
 			backgroundMainView.Dock = DockStyle.Fill;
 			backgroundMainView.EnabledGradient = true;
@@ -657,22 +664,22 @@
 			backgroundMainView.GradientTopColor = Color.SkyBlue;
 			backgroundMainView.Location = new Point(54, 0);
 			backgroundMainView.Name = "backgroundMainView";
-			backgroundMainView.Size = new Size(891, 743);
+			backgroundMainView.Size = new Size(729, 643);
 			backgroundMainView.TabIndex = 2;
 			// 
-			// mainContainer
+			// mainPanelContainer
 			// 
-			mainContainer.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-			mainContainer.BackColor = SystemColors.Control;
-			mainContainer.BorderRadius = 25;
-			mainContainer.EnabledGradient = false;
-			mainContainer.GradientAngle = 90F;
-			mainContainer.GradientBottomColor = Color.FromArgb(255, 51, 153);
-			mainContainer.GradientTopColor = Color.Teal;
-			mainContainer.Location = new Point(19, 56);
-			mainContainer.Name = "mainContainer";
-			mainContainer.Size = new Size(860, 682);
-			mainContainer.TabIndex = 1;
+			mainPanelContainer.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			mainPanelContainer.BackColor = SystemColors.Control;
+			mainPanelContainer.BorderRadius = 25;
+			mainPanelContainer.EnabledGradient = false;
+			mainPanelContainer.GradientAngle = 90F;
+			mainPanelContainer.GradientBottomColor = Color.FromArgb(255, 51, 153);
+			mainPanelContainer.GradientTopColor = Color.Teal;
+			mainPanelContainer.Location = new Point(19, 55);
+			mainPanelContainer.Name = "mainPanelContainer";
+			mainPanelContainer.Size = new Size(698, 582);
+			mainPanelContainer.TabIndex = 1;
 			// 
 			// titleBar
 			// 
@@ -685,7 +692,7 @@
 			titleBar.Controls.Add(customButton4);
 			titleBar.Controls.Add(customButton3);
 			titleBar.Controls.Add(customButton2);
-			titleBar.Controls.Add(customButton1);
+			titleBar.Controls.Add(accountIcon);
 			titleBar.EnabledGradient = false;
 			titleBar.GradientAngle = 45F;
 			titleBar.GradientBottomColor = Color.DarkSlateGray;
@@ -693,7 +700,7 @@
 			titleBar.Location = new Point(19, 0);
 			titleBar.Name = "titleBar";
 			titleBar.Padding = new Padding(10, 5, 15, 5);
-			titleBar.Size = new Size(860, 50);
+			titleBar.Size = new Size(698, 50);
 			titleBar.TabIndex = 0;
 			// 
 			// timeLblTitle
@@ -701,9 +708,9 @@
 			timeLblTitle.BackColor = Color.DarkSlateGray;
 			timeLblTitle.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
 			timeLblTitle.ForeColor = SystemColors.Control;
-			timeLblTitle.Location = new Point(213, 9);
+			timeLblTitle.Location = new Point(194, 9);
 			timeLblTitle.Name = "timeLblTitle";
-			timeLblTitle.Size = new Size(214, 33);
+			timeLblTitle.Size = new Size(179, 33);
 			timeLblTitle.TabIndex = 7;
 			timeLblTitle.TextAlign = ContentAlignment.MiddleCenter;
 			// 
@@ -742,7 +749,7 @@
 			customButton4.FlatStyle = FlatStyle.Flat;
 			customButton4.ForeColor = Color.White;
 			customButton4.Image = Properties.Resources.TaskIcon;
-			customButton4.Location = new Point(538, 5);
+			customButton4.Location = new Point(376, 5);
 			customButton4.Margin = new Padding(3, 3, 20, 3);
 			customButton4.Name = "customButton4";
 			customButton4.Size = new Size(53, 40);
@@ -767,7 +774,7 @@
 			customButton3.FlatStyle = FlatStyle.Flat;
 			customButton3.ForeColor = Color.White;
 			customButton3.Image = Properties.Resources.emailIcon;
-			customButton3.Location = new Point(612, 5);
+			customButton3.Location = new Point(450, 5);
 			customButton3.Name = "customButton3";
 			customButton3.Size = new Size(53, 40);
 			customButton3.TabIndex = 3;
@@ -791,7 +798,7 @@
 			customButton2.FlatStyle = FlatStyle.Flat;
 			customButton2.ForeColor = Color.White;
 			customButton2.Image = Properties.Resources.notificationIcon;
-			customButton2.Location = new Point(686, 5);
+			customButton2.Location = new Point(524, 5);
 			customButton2.Name = "customButton2";
 			customButton2.Size = new Size(53, 40);
 			customButton2.TabIndex = 2;
@@ -799,29 +806,66 @@
 			customButton2.TextHover = Color.White;
 			customButton2.UseVisualStyleBackColor = false;
 			// 
-			// customButton1
+			// accountIcon
 			// 
-			customButton1.BackColor = Color.OrangeRed;
-			customButton1.BackgroundColor = Color.OrangeRed;
-			customButton1.BorderColor = Color.Teal;
-			customButton1.BorderRadius = 20;
-			customButton1.BorderSize = 0;
-			customButton1.Cursor = Cursors.Hand;
-			customButton1.Dock = DockStyle.Right;
-			customButton1.EnabledTextHover = false;
-			customButton1.FlatAppearance.BorderSize = 0;
-			customButton1.FlatAppearance.MouseDownBackColor = Color.OrangeRed;
-			customButton1.FlatAppearance.MouseOverBackColor = Color.Coral;
-			customButton1.FlatStyle = FlatStyle.Flat;
-			customButton1.ForeColor = Color.White;
-			customButton1.Image = Properties.Resources.usericon;
-			customButton1.Location = new Point(792, 5);
-			customButton1.Name = "customButton1";
-			customButton1.Size = new Size(53, 40);
-			customButton1.TabIndex = 1;
-			customButton1.TextColor = Color.White;
-			customButton1.TextHover = Color.White;
-			customButton1.UseVisualStyleBackColor = false;
+			accountIcon.BackColor = Color.OrangeRed;
+			accountIcon.BackgroundColor = Color.OrangeRed;
+			accountIcon.BorderColor = Color.Teal;
+			accountIcon.BorderRadius = 20;
+			accountIcon.BorderSize = 0;
+			accountIcon.ContextMenuStrip = contextMenuStrip1;
+			accountIcon.Cursor = Cursors.Hand;
+			accountIcon.Dock = DockStyle.Right;
+			accountIcon.EnabledTextHover = false;
+			accountIcon.FlatAppearance.BorderSize = 0;
+			accountIcon.FlatAppearance.MouseDownBackColor = Color.OrangeRed;
+			accountIcon.FlatAppearance.MouseOverBackColor = Color.Coral;
+			accountIcon.FlatStyle = FlatStyle.Flat;
+			accountIcon.ForeColor = Color.White;
+			accountIcon.Image = Properties.Resources.usericon;
+			accountIcon.Location = new Point(630, 5);
+			accountIcon.Name = "accountIcon";
+			accountIcon.Size = new Size(53, 40);
+			accountIcon.TabIndex = 1;
+			accountIcon.TextColor = Color.White;
+			accountIcon.TextHover = Color.White;
+			accountIcon.UseVisualStyleBackColor = false;
+			accountIcon.Click += accountIcon_Click;
+			// 
+			// contextMenuStrip1
+			// 
+			contextMenuStrip1.Items.AddRange(new ToolStripItem[] { accMenuStrip, changePassMenuStrip, settingMenuStrip, logOutMenuStrip });
+			contextMenuStrip1.Name = "contextMenuStrip1";
+			contextMenuStrip1.Size = new Size(147, 92);
+			// 
+			// accMenuStrip
+			// 
+			accMenuStrip.Image = Properties.Resources.accIcon;
+			accMenuStrip.Name = "accMenuStrip";
+			accMenuStrip.Size = new Size(146, 22);
+			accMenuStrip.Text = "Tài Khoản";
+			// 
+			// changePassMenuStrip
+			// 
+			changePassMenuStrip.Image = Properties.Resources.changepassicon4;
+			changePassMenuStrip.Name = "changePassMenuStrip";
+			changePassMenuStrip.Size = new Size(146, 22);
+			changePassMenuStrip.Text = "Đổi Mật Khẩu";
+			// 
+			// settingMenuStrip
+			// 
+			settingMenuStrip.Image = Properties.Resources.settingIcon;
+			settingMenuStrip.Name = "settingMenuStrip";
+			settingMenuStrip.Size = new Size(146, 22);
+			settingMenuStrip.Text = "Cài Đặt";
+			// 
+			// logOutMenuStrip
+			// 
+			logOutMenuStrip.ForeColor = Color.Red;
+			logOutMenuStrip.Image = Properties.Resources.signOutMiniIconRed;
+			logOutMenuStrip.Name = "logOutMenuStrip";
+			logOutMenuStrip.Size = new Size(146, 22);
+			logOutMenuStrip.Text = "Đăng xuất";
 			// 
 			// timerLblTitle
 			// 
@@ -833,10 +877,11 @@
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = SystemColors.Control;
-			ClientSize = new Size(945, 743);
+			ClientSize = new Size(783, 643);
 			Controls.Add(backgroundMainView);
 			Controls.Add(sideBar);
 			Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+			MinimumSize = new Size(799, 682);
 			Name = "MainView";
 			StartPosition = FormStartPosition.CenterScreen;
 			Text = "MainView";
@@ -858,6 +903,7 @@
 			sideNav.ResumeLayout(false);
 			backgroundMainView.ResumeLayout(false);
 			titleBar.ResumeLayout(false);
+			contextMenuStrip1.ResumeLayout(false);
 			ResumeLayout(false);
 		}
 
@@ -895,8 +941,7 @@
 		private System.Windows.Forms.Timer sideExpandTimer;
 		private CustomControl.SidePanel backgroundMainView;
 		private CustomControl.SidePanel titleBar;
-		private CustomControl.CustomButton customButton1;
-		private CustomControl.SidePanel mainContainer;
+		private CustomControl.CustomButton accountIcon;
 		private CustomControl.CustomButton customButton4;
 		private CustomControl.CustomButton customButton3;
 		private CustomControl.CustomButton customButton2;
@@ -904,5 +949,11 @@
 		private Label textLblTitle;
 		private Label timeLblTitle;
 		private System.Windows.Forms.Timer timerLblTitle;
+		private ContextMenuStrip contextMenuStrip1;
+		private ToolStripMenuItem accMenuStrip;
+		private ToolStripMenuItem changePassMenuStrip;
+		private ToolStripMenuItem settingMenuStrip;
+		private ToolStripMenuItem logOutMenuStrip;
+		private CustomControl.SidePanel mainPanelContainer;
 	}
 }

@@ -22,12 +22,14 @@ namespace DoAn_QLCF_cs_WinForm.View
 		private bool isSideBarExpand = true;
 		private readonly string connectionString;
 		private List<Button> buttonNavList;
+		private Form mainFormContainer;
 
 		// Interact with Presenter
 		public MainPresenter presenter
 		{
 			private get; set;
 		}
+		public Form MainFormContainer { get => mainFormContainer; set => mainFormContainer = value; }
 
 		private void btnNhanVien_Click(object sender, EventArgs e)
 		{
@@ -43,6 +45,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 			this.connectionString = connectionString;
 			LoadButtonNav();
 			timerLblTitle.Start();
+			LoadFormContainer();
 		}
 
 		private void MainView_Load(object sender, EventArgs e)
@@ -90,11 +93,11 @@ namespace DoAn_QLCF_cs_WinForm.View
 
 		private void MainView_SizeChanged(object sender, EventArgs e)
 		{
-			if (isSideBarExpand && this.Width <= 700)
+			if (isSideBarExpand && this.Width <= 820)
 			{
-				this.sideBar.Width = this.sideBar.MinimumSize.Width;
-				isSideBarExpand = false;
+				sideMinimizeTimer.Start();
 				this.sideNavBtn.Image = (Properties.Resources.navOpenflat);
+				HideButtonText();
 			}
 		}
 
@@ -172,6 +175,32 @@ namespace DoAn_QLCF_cs_WinForm.View
 		private void timerLblTitle_Tick(object sender, EventArgs e)
 		{
 			timeLblTitle.Text = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss");
+		}
+
+		private void accountIcon_Click(object sender, EventArgs e)
+		{
+			Button btnSender = (Button)sender;
+			Point ptLowerLeft = new Point(0, btnSender.Height);
+			ptLowerLeft = btnSender.PointToScreen(ptLowerLeft);
+			contextMenuStrip1.Show(ptLowerLeft);
+		}
+
+		private void LoadFormContainer()
+		{
+			mainFormContainer = new Form();
+			mainFormContainer.TopLevel = false;
+			mainPanelContainer.Controls.Add(mainFormContainer);
+			mainFormContainer.FormBorderStyle = FormBorderStyle.None;
+			mainFormContainer.Dock = DockStyle.Fill;
+			mainFormContainer.Show();
+			
+		}
+
+		private void navCafe_MouseDown(object sender, MouseEventArgs e)
+		{
+			ICaPheView view = CaPheView.GetInstance(this.mainFormContainer);
+			ICaPheRepository repo = new CaPheRepository(this.connectionString);
+			new CaPhePresenter(view, repo);
 		}
 	}
 }
