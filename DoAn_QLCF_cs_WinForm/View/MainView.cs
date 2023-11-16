@@ -30,7 +30,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 			private get; set;
 		}
 		public Form MainFormContainer { get => mainFormContainer; set => mainFormContainer = value; }
-
+		
 		private void btnNhanVien_Click(object sender, EventArgs e)
 		{
 			ICaPheView view = CaPheView.GetInstance(this);
@@ -192,8 +192,8 @@ namespace DoAn_QLCF_cs_WinForm.View
 			mainPanelContainer.Controls.Add(mainFormContainer);
 			mainFormContainer.FormBorderStyle = FormBorderStyle.None;
 			mainFormContainer.Dock = DockStyle.Fill;
+			mainFormContainer.Padding = new Padding(5);
 			mainFormContainer.Show();
-			
 		}
 
 		private void navCafe_MouseDown(object sender, MouseEventArgs e)

@@ -24,7 +24,7 @@ namespace DoAn_QLCF_cs_WinForm.Repository
 			throw new NotImplementedException();
 		}
 
-		public List<CaPheModel> GetAll()
+		public IEnumerable<CaPheModel> GetAll()
 		{
 			throw new NotImplementedException();
 		}
@@ -34,7 +34,7 @@ namespace DoAn_QLCF_cs_WinForm.Repository
 			throw new NotImplementedException();
 		}
 
-		public List<CaPheModel> GetByValue(string value)
+		public IEnumerable<CaPheModel> GetByValue(string value)
 		{
 			throw new NotImplementedException();
 		}

@@ -1,4 +1,5 @@
 ﻿using DoAn_QLCF_cs_WinForm.Model;
+using DoAn_QLCF_cs_WinForm.Presenter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,12 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
 {
 	public interface ICaPheView
 	{
-		IList<CaPheModel> CaPheList { get; set; }
-		int SelectedCaphe { get; set; }
+		CaPhePresenter Presenter { set; }
 		string Message { get; set; }
 		string SearchValue { get; set; }
 
+		string CapheId { get; set; }
 
+		void LoadData(BindingSource list);
 	}
 }

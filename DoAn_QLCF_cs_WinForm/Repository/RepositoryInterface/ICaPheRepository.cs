@@ -12,9 +12,9 @@ namespace DoAn_QLCF_cs_WinForm.Repository.RepositoryInterface
 		void Add(CaPheModel obj);
 		void Update(CaPheModel obj);
 		void Delete(int id);
-		List<CaPheModel> GetAll();
+		IEnumerable<CaPheModel> GetAll();
 
-		List<CaPheModel> GetByValue(string value);
+		IEnumerable<CaPheModel> GetByValue(string value);
 
 		CaPheModel GetById(int id);
 		bool IsExit(int id);

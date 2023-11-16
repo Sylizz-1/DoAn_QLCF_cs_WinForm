@@ -15,7 +15,7 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
 		private ICaPheView view;
 		private ICaPheRepository repository;
 		private BindingSource cpBindingSource;
-		private List<CaPheModel> caPheList;
+		private IEnumerable<CaPheModel> caPheList;
 
 
 		public CaPhePresenter(ICaPheView view, ICaPheRepository repository)
@@ -30,7 +30,25 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
 		{
 			caPheList = repository.GetAll();
 			cpBindingSource.DataSource = caPheList;
-			view.CaPheList = (IList<CaPheModel>)cpBindingSource;
+			view.LoadData(cpBindingSource);
 		}
+
+		public void Add ()
+		{
+
+		}
+		public void Delete()
+		{
+
+		}
+		public void Update()
+		{
+
+		}
+		public void SearchChange()
+		{
+
+		}
+	
 	}
 }
