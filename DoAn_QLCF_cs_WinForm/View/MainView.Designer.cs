@@ -124,7 +124,7 @@
 			sideBar.MaximumSize = new Size(258, 2000);
 			sideBar.MinimumSize = new Size(54, 100);
 			sideBar.Name = "sideBar";
-			sideBar.Size = new Size(54, 643);
+			sideBar.Size = new Size(258, 643);
 			sideBar.TabIndex = 1;
 			// 
 			// label3
@@ -133,7 +133,7 @@
 			label3.Dock = DockStyle.Bottom;
 			label3.Location = new Point(0, 593);
 			label3.Name = "label3";
-			label3.Size = new Size(54, 1);
+			label3.Size = new Size(258, 1);
 			label3.TabIndex = 15;
 			// 
 			// panel12
@@ -144,7 +144,7 @@
 			panel12.Location = new Point(0, 594);
 			panel12.Name = "panel12";
 			panel12.Padding = new Padding(5);
-			panel12.Size = new Size(54, 49);
+			panel12.Size = new Size(258, 49);
 			panel12.TabIndex = 14;
 			// 
 			// navLogOut
@@ -167,7 +167,7 @@
 			navLogOut.Location = new Point(5, 5);
 			navLogOut.Name = "navLogOut";
 			navLogOut.Padding = new Padding(5);
-			navLogOut.Size = new Size(44, 39);
+			navLogOut.Size = new Size(248, 39);
 			navLogOut.TabIndex = 2;
 			navLogOut.Tag = "Đăng Xuất";
 			navLogOut.Text = "Đăng Xuất";
@@ -185,7 +185,7 @@
 			panel11.Location = new Point(0, 491);
 			panel11.Name = "panel11";
 			panel11.Padding = new Padding(5);
-			panel11.Size = new Size(54, 49);
+			panel11.Size = new Size(258, 49);
 			panel11.TabIndex = 12;
 			// 
 			// navPhanQuyen
@@ -208,7 +208,7 @@
 			navPhanQuyen.Location = new Point(5, 5);
 			navPhanQuyen.Name = "navPhanQuyen";
 			navPhanQuyen.Padding = new Padding(5);
-			navPhanQuyen.Size = new Size(44, 39);
+			navPhanQuyen.Size = new Size(248, 39);
 			navPhanQuyen.TabIndex = 2;
 			navPhanQuyen.Tag = "Phân Quyền";
 			navPhanQuyen.Text = "Phân Quyền";
@@ -226,7 +226,7 @@
 			panel10.Location = new Point(0, 442);
 			panel10.Name = "panel10";
 			panel10.Padding = new Padding(5);
-			panel10.Size = new Size(54, 49);
+			panel10.Size = new Size(258, 49);
 			panel10.TabIndex = 11;
 			// 
 			// navNcc
@@ -249,7 +249,7 @@
 			navNcc.Location = new Point(5, 5);
 			navNcc.Name = "navNcc";
 			navNcc.Padding = new Padding(5);
-			navNcc.Size = new Size(44, 39);
+			navNcc.Size = new Size(248, 39);
 			navNcc.TabIndex = 2;
 			navNcc.Tag = "Nhà Cung Cấp";
 			navNcc.Text = "Nhà Cung Cấp";
@@ -267,7 +267,7 @@
 			panel9.Location = new Point(0, 393);
 			panel9.Name = "panel9";
 			panel9.Padding = new Padding(5);
-			panel9.Size = new Size(54, 49);
+			panel9.Size = new Size(258, 49);
 			panel9.TabIndex = 10;
 			// 
 			// navThongKe
@@ -290,7 +290,7 @@
 			navThongKe.Location = new Point(5, 5);
 			navThongKe.Name = "navThongKe";
 			navThongKe.Padding = new Padding(5);
-			navThongKe.Size = new Size(44, 39);
+			navThongKe.Size = new Size(248, 39);
 			navThongKe.TabIndex = 2;
 			navThongKe.Tag = "Thống Kê";
 			navThongKe.Text = "Thống Kê";
@@ -308,7 +308,7 @@
 			panel8.Location = new Point(0, 344);
 			panel8.Name = "panel8";
 			panel8.Padding = new Padding(5);
-			panel8.Size = new Size(54, 49);
+			panel8.Size = new Size(258, 49);
 			panel8.TabIndex = 9;
 			// 
 			// navFile
@@ -331,7 +331,7 @@
 			navFile.Location = new Point(5, 5);
 			navFile.Name = "navFile";
 			navFile.Padding = new Padding(5);
-			navFile.Size = new Size(44, 39);
+			navFile.Size = new Size(248, 39);
 			navFile.TabIndex = 2;
 			navFile.Tag = "Nhập/Xuất File";
 			navFile.Text = "Nhập/Xuất File";
@@ -349,7 +349,7 @@
 			panel7.Location = new Point(0, 295);
 			panel7.Name = "panel7";
 			panel7.Padding = new Padding(5);
-			panel7.Size = new Size(54, 49);
+			panel7.Size = new Size(258, 49);
 			panel7.TabIndex = 8;
 			// 
 			// navHoaDon
@@ -372,7 +372,7 @@
 			navHoaDon.Location = new Point(5, 5);
 			navHoaDon.Name = "navHoaDon";
 			navHoaDon.Padding = new Padding(5);
-			navHoaDon.Size = new Size(44, 39);
+			navHoaDon.Size = new Size(248, 39);
 			navHoaDon.TabIndex = 2;
 			navHoaDon.Tag = "Hóa Đơn";
 			navHoaDon.Text = "Hóa Đơn";
@@ -390,7 +390,7 @@
 			panel6.Location = new Point(0, 246);
 			panel6.Name = "panel6";
 			panel6.Padding = new Padding(5);
-			panel6.Size = new Size(54, 49);
+			panel6.Size = new Size(258, 49);
 			panel6.TabIndex = 7;
 			// 
 			// navNhapHang
@@ -413,7 +413,7 @@
 			navNhapHang.Location = new Point(5, 5);
 			navNhapHang.Name = "navNhapHang";
 			navNhapHang.Padding = new Padding(5);
-			navNhapHang.Size = new Size(44, 39);
+			navNhapHang.Size = new Size(248, 39);
 			navNhapHang.TabIndex = 2;
 			navNhapHang.Tag = "Nhập Hàng";
 			navNhapHang.Text = "Nhập Hàng";
@@ -431,7 +431,7 @@
 			panel5.Location = new Point(0, 197);
 			panel5.Name = "panel5";
 			panel5.Padding = new Padding(5);
-			panel5.Size = new Size(54, 49);
+			panel5.Size = new Size(258, 49);
 			panel5.TabIndex = 6;
 			// 
 			// navNguyenLieu
@@ -454,7 +454,7 @@
 			navNguyenLieu.Location = new Point(5, 5);
 			navNguyenLieu.Name = "navNguyenLieu";
 			navNguyenLieu.Padding = new Padding(5);
-			navNguyenLieu.Size = new Size(44, 39);
+			navNguyenLieu.Size = new Size(248, 39);
 			navNguyenLieu.TabIndex = 2;
 			navNguyenLieu.Tag = "Nguyên Liệu";
 			navNguyenLieu.Text = "Nguyên Liệu";
@@ -472,7 +472,7 @@
 			panel4.Location = new Point(0, 148);
 			panel4.Name = "panel4";
 			panel4.Padding = new Padding(5);
-			panel4.Size = new Size(54, 49);
+			panel4.Size = new Size(258, 49);
 			panel4.TabIndex = 5;
 			// 
 			// navCafe
@@ -495,7 +495,7 @@
 			navCafe.Location = new Point(5, 5);
 			navCafe.Name = "navCafe";
 			navCafe.Padding = new Padding(5);
-			navCafe.Size = new Size(44, 39);
+			navCafe.Size = new Size(248, 39);
 			navCafe.TabIndex = 2;
 			navCafe.Tag = "Cà Phê";
 			navCafe.Text = "Cà Phê";
@@ -514,7 +514,7 @@
 			panel3.Location = new Point(0, 99);
 			panel3.Name = "panel3";
 			panel3.Padding = new Padding(5);
-			panel3.Size = new Size(54, 49);
+			panel3.Size = new Size(258, 49);
 			panel3.TabIndex = 4;
 			// 
 			// navKhachHang
@@ -537,7 +537,7 @@
 			navKhachHang.Location = new Point(5, 5);
 			navKhachHang.Name = "navKhachHang";
 			navKhachHang.Padding = new Padding(5);
-			navKhachHang.Size = new Size(44, 39);
+			navKhachHang.Size = new Size(248, 39);
 			navKhachHang.TabIndex = 2;
 			navKhachHang.Tag = "Khách Hàng";
 			navKhachHang.Text = "Khách Hàng";
@@ -555,7 +555,7 @@
 			panel2.Location = new Point(0, 50);
 			panel2.Name = "panel2";
 			panel2.Padding = new Padding(5);
-			panel2.Size = new Size(54, 49);
+			panel2.Size = new Size(258, 49);
 			panel2.TabIndex = 2;
 			// 
 			// navNhanVien
@@ -578,7 +578,7 @@
 			navNhanVien.Location = new Point(5, 5);
 			navNhanVien.Name = "navNhanVien";
 			navNhanVien.Padding = new Padding(5);
-			navNhanVien.Size = new Size(44, 39);
+			navNhanVien.Size = new Size(248, 39);
 			navNhanVien.TabIndex = 2;
 			navNhanVien.Tag = "Nhân Viên";
 			navNhanVien.Text = "Nhân Viên";
@@ -594,7 +594,7 @@
 			label1.Dock = DockStyle.Top;
 			label1.Location = new Point(0, 49);
 			label1.Name = "label1";
-			label1.Size = new Size(54, 1);
+			label1.Size = new Size(258, 1);
 			label1.TabIndex = 3;
 			// 
 			// sideNav
@@ -605,7 +605,7 @@
 			sideNav.Location = new Point(0, 0);
 			sideNav.Name = "sideNav";
 			sideNav.Padding = new Padding(5);
-			sideNav.Size = new Size(54, 49);
+			sideNav.Size = new Size(258, 49);
 			sideNav.TabIndex = 16;
 			// 
 			// sideNavBtn
@@ -653,18 +653,18 @@
 			// 
 			// backgroundMainView
 			// 
-			backgroundMainView.BackColor = SystemColors.ActiveCaption;
+			backgroundMainView.BackColor = Color.SkyBlue;
 			backgroundMainView.BorderRadius = 1;
 			backgroundMainView.Controls.Add(mainPanelContainer);
 			backgroundMainView.Controls.Add(titleBar);
 			backgroundMainView.Dock = DockStyle.Fill;
-			backgroundMainView.EnabledGradient = true;
+			backgroundMainView.EnabledGradient = false;
 			backgroundMainView.GradientAngle = 45F;
 			backgroundMainView.GradientBottomColor = Color.Teal;
 			backgroundMainView.GradientTopColor = Color.SkyBlue;
-			backgroundMainView.Location = new Point(54, 0);
+			backgroundMainView.Location = new Point(258, 0);
 			backgroundMainView.Name = "backgroundMainView";
-			backgroundMainView.Size = new Size(729, 643);
+			backgroundMainView.Size = new Size(725, 643);
 			backgroundMainView.TabIndex = 2;
 			// 
 			// mainPanelContainer
@@ -678,7 +678,7 @@
 			mainPanelContainer.GradientTopColor = Color.Teal;
 			mainPanelContainer.Location = new Point(19, 55);
 			mainPanelContainer.Name = "mainPanelContainer";
-			mainPanelContainer.Size = new Size(698, 582);
+			mainPanelContainer.Size = new Size(694, 582);
 			mainPanelContainer.TabIndex = 1;
 			// 
 			// titleBar
@@ -700,7 +700,7 @@
 			titleBar.Location = new Point(19, 0);
 			titleBar.Name = "titleBar";
 			titleBar.Padding = new Padding(10, 5, 15, 5);
-			titleBar.Size = new Size(698, 50);
+			titleBar.Size = new Size(694, 50);
 			titleBar.TabIndex = 0;
 			// 
 			// timeLblTitle
@@ -749,7 +749,7 @@
 			customButton4.FlatStyle = FlatStyle.Flat;
 			customButton4.ForeColor = Color.White;
 			customButton4.Image = Properties.Resources.TaskIcon;
-			customButton4.Location = new Point(376, 5);
+			customButton4.Location = new Point(372, 5);
 			customButton4.Margin = new Padding(3, 3, 20, 3);
 			customButton4.Name = "customButton4";
 			customButton4.Size = new Size(53, 40);
@@ -774,7 +774,7 @@
 			customButton3.FlatStyle = FlatStyle.Flat;
 			customButton3.ForeColor = Color.White;
 			customButton3.Image = Properties.Resources.emailIcon;
-			customButton3.Location = new Point(450, 5);
+			customButton3.Location = new Point(446, 5);
 			customButton3.Name = "customButton3";
 			customButton3.Size = new Size(53, 40);
 			customButton3.TabIndex = 3;
@@ -798,7 +798,7 @@
 			customButton2.FlatStyle = FlatStyle.Flat;
 			customButton2.ForeColor = Color.White;
 			customButton2.Image = Properties.Resources.notificationIcon;
-			customButton2.Location = new Point(524, 5);
+			customButton2.Location = new Point(520, 5);
 			customButton2.Name = "customButton2";
 			customButton2.Size = new Size(53, 40);
 			customButton2.TabIndex = 2;
@@ -823,7 +823,7 @@
 			accountIcon.FlatStyle = FlatStyle.Flat;
 			accountIcon.ForeColor = Color.White;
 			accountIcon.Image = Properties.Resources.usericon;
-			accountIcon.Location = new Point(630, 5);
+			accountIcon.Location = new Point(626, 5);
 			accountIcon.Name = "accountIcon";
 			accountIcon.Size = new Size(53, 40);
 			accountIcon.TabIndex = 1;
@@ -877,7 +877,7 @@
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = SystemColors.Control;
-			ClientSize = new Size(783, 643);
+			ClientSize = new Size(983, 643);
 			Controls.Add(backgroundMainView);
 			Controls.Add(sideBar);
 			Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
