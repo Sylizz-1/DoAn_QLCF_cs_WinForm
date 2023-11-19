@@ -101,17 +101,6 @@ namespace DoAn_QLCF_cs_WinForm.View
 			}
 		}
 
-
-		private void navLogOut_MouseEnter(object sender, EventArgs e)
-		{
-			(sender as Button).Image = (Image)(Properties.Resources.logoutflatwhite);
-		}
-
-		private void navLogOut_MouseLeave(object sender, EventArgs e)
-		{
-			(sender as Button).Image = (Image)(Properties.Resources.logoutflatred2);
-		}
-
 		private void LoadButtonNav()
 		{
 			this.buttonNavList = GetButtonsFromPanels(sideBar.Controls.Cast<Control>().ToList());
@@ -192,7 +181,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 			mainPanelContainer.Controls.Add(mainFormContainer);
 			mainFormContainer.FormBorderStyle = FormBorderStyle.None;
 			mainFormContainer.Dock = DockStyle.Fill;
-			mainFormContainer.Padding = new Padding(5);
+			mainFormContainer.Padding = new Padding(0);
 			mainFormContainer.Show();
 		}
 

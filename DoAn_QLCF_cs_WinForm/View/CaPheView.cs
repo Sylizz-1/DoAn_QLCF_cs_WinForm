@@ -33,6 +33,9 @@ namespace DoAn_QLCF_cs_WinForm.View
 		}
 		public CaPhePresenter Presenter { set => this.presenter = value; }
 		public string CapheId { get => this.idTxt.Texts; set => this.idTxt.Texts = value; }
+
+
+		// UI Code
 		public void LoadData(BindingSource list)
 		{
 			this.dataGridView1.DataSource = list;
@@ -57,6 +60,19 @@ namespace DoAn_QLCF_cs_WinForm.View
 			return instance;
 		}
 
+		private void caPhePic_Click(object sender, EventArgs e)
+		{
+			OpenFileDialog ofd = new OpenFileDialog();
+			ofd.Filter = "image files|*.jpg;*.png;*.gif";
+			DialogResult dr = ofd.ShowDialog();
+
+			if (dr == DialogResult.Cancel)
+				return;
+
+			caPhePic.Image = Image.FromFile(ofd.FileName);
+			caPhePic.Text = ofd.FileName;
+		}
+
 
 		// Presenter
 
@@ -65,5 +81,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 		{
 			presenter.Add();
 		}
+
+		
 	}
 }

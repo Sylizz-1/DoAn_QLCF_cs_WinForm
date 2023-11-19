@@ -164,6 +164,7 @@
 			navLogOut.ForeColor = Color.FromArgb(239, 65, 65);
 			navLogOut.Image = Properties.Resources.logoutflatred2;
 			navLogOut.ImageAlign = ContentAlignment.MiddleLeft;
+			navLogOut.ImageHover = Properties.Resources.logoutflatwhite;
 			navLogOut.Location = new Point(5, 5);
 			navLogOut.Name = "navLogOut";
 			navLogOut.Padding = new Padding(5);
@@ -174,8 +175,6 @@
 			navLogOut.TextColor = Color.FromArgb(239, 65, 65);
 			navLogOut.TextHover = Color.White;
 			navLogOut.UseVisualStyleBackColor = false;
-			navLogOut.MouseEnter += navLogOut_MouseEnter;
-			navLogOut.MouseLeave += navLogOut_MouseLeave;
 			// 
 			// panel11
 			// 
@@ -205,6 +204,7 @@
 			navPhanQuyen.ForeColor = Color.White;
 			navPhanQuyen.Image = Properties.Resources.PERflat;
 			navPhanQuyen.ImageAlign = ContentAlignment.MiddleLeft;
+			navPhanQuyen.ImageHover = null;
 			navPhanQuyen.Location = new Point(5, 5);
 			navPhanQuyen.Name = "navPhanQuyen";
 			navPhanQuyen.Padding = new Padding(5);
@@ -246,6 +246,7 @@
 			navNcc.ForeColor = Color.White;
 			navNcc.Image = Properties.Resources.supplierflat;
 			navNcc.ImageAlign = ContentAlignment.MiddleLeft;
+			navNcc.ImageHover = null;
 			navNcc.Location = new Point(5, 5);
 			navNcc.Name = "navNcc";
 			navNcc.Padding = new Padding(5);
@@ -287,6 +288,7 @@
 			navThongKe.ForeColor = Color.White;
 			navThongKe.Image = Properties.Resources.statisticflat;
 			navThongKe.ImageAlign = ContentAlignment.MiddleLeft;
+			navThongKe.ImageHover = null;
 			navThongKe.Location = new Point(5, 5);
 			navThongKe.Name = "navThongKe";
 			navThongKe.Padding = new Padding(5);
@@ -328,6 +330,7 @@
 			navFile.ForeColor = Color.White;
 			navFile.Image = Properties.Resources.fileFla;
 			navFile.ImageAlign = ContentAlignment.MiddleLeft;
+			navFile.ImageHover = null;
 			navFile.Location = new Point(5, 5);
 			navFile.Name = "navFile";
 			navFile.Padding = new Padding(5);
@@ -369,6 +372,7 @@
 			navHoaDon.ForeColor = Color.White;
 			navHoaDon.Image = Properties.Resources.invoiceFlat;
 			navHoaDon.ImageAlign = ContentAlignment.MiddleLeft;
+			navHoaDon.ImageHover = null;
 			navHoaDon.Location = new Point(5, 5);
 			navHoaDon.Name = "navHoaDon";
 			navHoaDon.Padding = new Padding(5);
@@ -410,6 +414,7 @@
 			navNhapHang.ForeColor = Color.White;
 			navNhapHang.Image = Properties.Resources.importFlat;
 			navNhapHang.ImageAlign = ContentAlignment.MiddleLeft;
+			navNhapHang.ImageHover = null;
 			navNhapHang.Location = new Point(5, 5);
 			navNhapHang.Name = "navNhapHang";
 			navNhapHang.Padding = new Padding(5);
@@ -451,6 +456,7 @@
 			navNguyenLieu.ForeColor = Color.White;
 			navNguyenLieu.Image = Properties.Resources.ingreFlat;
 			navNguyenLieu.ImageAlign = ContentAlignment.MiddleLeft;
+			navNguyenLieu.ImageHover = null;
 			navNguyenLieu.Location = new Point(5, 5);
 			navNguyenLieu.Name = "navNguyenLieu";
 			navNguyenLieu.Padding = new Padding(5);
@@ -492,6 +498,7 @@
 			navCafe.ForeColor = Color.White;
 			navCafe.Image = Properties.Resources.CoffeeFlat;
 			navCafe.ImageAlign = ContentAlignment.MiddleLeft;
+			navCafe.ImageHover = null;
 			navCafe.Location = new Point(5, 5);
 			navCafe.Name = "navCafe";
 			navCafe.Padding = new Padding(5);
@@ -534,6 +541,7 @@
 			navKhachHang.ForeColor = Color.White;
 			navKhachHang.Image = Properties.Resources.EmployeeFlat;
 			navKhachHang.ImageAlign = ContentAlignment.MiddleLeft;
+			navKhachHang.ImageHover = null;
 			navKhachHang.Location = new Point(5, 5);
 			navKhachHang.Name = "navKhachHang";
 			navKhachHang.Padding = new Padding(5);
@@ -575,6 +583,7 @@
 			navNhanVien.ForeColor = Color.White;
 			navNhanVien.Image = Properties.Resources.manIcontest;
 			navNhanVien.ImageAlign = ContentAlignment.MiddleLeft;
+			navNhanVien.ImageHover = null;
 			navNhanVien.Location = new Point(5, 5);
 			navNhanVien.Name = "navNhanVien";
 			navNhanVien.Padding = new Padding(5);
@@ -625,6 +634,7 @@
 			sideNavBtn.ForeColor = Color.White;
 			sideNavBtn.Image = Properties.Resources.navCloseflat;
 			sideNavBtn.ImageAlign = ContentAlignment.MiddleLeft;
+			sideNavBtn.ImageHover = null;
 			sideNavBtn.Location = new Point(5, 5);
 			sideNavBtn.Name = "sideNavBtn";
 			sideNavBtn.Padding = new Padding(5);
@@ -749,6 +759,7 @@
 			customButton4.FlatStyle = FlatStyle.Flat;
 			customButton4.ForeColor = Color.White;
 			customButton4.Image = Properties.Resources.TaskIcon;
+			customButton4.ImageHover = null;
 			customButton4.Location = new Point(372, 5);
 			customButton4.Margin = new Padding(3, 3, 20, 3);
 			customButton4.Name = "customButton4";
@@ -774,6 +785,7 @@
 			customButton3.FlatStyle = FlatStyle.Flat;
 			customButton3.ForeColor = Color.White;
 			customButton3.Image = Properties.Resources.emailIcon;
+			customButton3.ImageHover = null;
 			customButton3.Location = new Point(446, 5);
 			customButton3.Name = "customButton3";
 			customButton3.Size = new Size(53, 40);
@@ -798,6 +810,7 @@
 			customButton2.FlatStyle = FlatStyle.Flat;
 			customButton2.ForeColor = Color.White;
 			customButton2.Image = Properties.Resources.notificationIcon;
+			customButton2.ImageHover = null;
 			customButton2.Location = new Point(520, 5);
 			customButton2.Name = "customButton2";
 			customButton2.Size = new Size(53, 40);
@@ -823,6 +836,7 @@
 			accountIcon.FlatStyle = FlatStyle.Flat;
 			accountIcon.ForeColor = Color.White;
 			accountIcon.Image = Properties.Resources.usericon;
+			accountIcon.ImageHover = null;
 			accountIcon.Location = new Point(626, 5);
 			accountIcon.Name = "accountIcon";
 			accountIcon.Size = new Size(53, 40);
