@@ -1,6 +1,9 @@
 ﻿DROP DATABASE if exists QLCF;
+GO
 CREATE DATABASE QLCF;
+GO
 USE QLCF;
+GO
 
 
 -- SQLINES LICENSE FOR EVALUATION USE ONLY
@@ -8,7 +11,7 @@ CREATE TABLE Quyen
 (
     QuyenId      int PRIMARY KEY NOT NULL IDENTITY,
     TenQuyen     nvarchar(255)       NOT NULL UNIQUE,
-    NoiDungQuyen varchar(max)                NULL,
+    NoiDungQuyen nvarchar(max)                NULL,
 );
 
 -- SQLINES LICENSE FOR EVALUATION USE ONLY
@@ -20,7 +23,7 @@ CREATE TABLE NhanVien
     QuyenId int NOT NULL ,
     Ten             nvarchar(255)       NOT NULL,
     GioiTinh        nvarchar(10),
-    SDT             nvarchar(20),
+    SDT             varchar(20),
     Email           varchar(255),
     NamSinh date,
     IsDelete bit default 0,
@@ -31,7 +34,7 @@ CREATE TABLE NhanVien
 create table ChucNang
 (
     ChucNangId      int PRIMARY KEY NOT NULL IDENTITY,
-    TenChucNang     varchar(255)        not null unique,
+    TenChucNang     nvarchar(255)        not null unique,
 );
 
 -- SQLINES LICENSE FOR EVALUATION USE ONLY
@@ -84,7 +87,7 @@ CREATE TABLE NguyenLieu
 (
     NguyenLieuId  int       NOT NULL PRIMARY KEY IDENTITY,
     TenNguyenLieu nvarchar(255) NOT NULL,
-    ThongTin      varchar(max)          NULL,
+    ThongTin      nvarchar(max)          NULL,
     KhoiLuong     float        not null,
     GiaTien_Kg    float        not null,
     HinhAnh varchar(255) null ,
@@ -124,7 +127,7 @@ CREATE TABLE CaPhe
     CaPheId   int PRIMARY KEY NOT NULL IDENTITY,
     TenCaPhe  nvarchar(255),
     Gia       float,
-    MieuTa    varchar(max)                NULL,
+    MieuTa    nvarchar(max)                NULL,
     XuatXu    nvarchar(255)       NULL,
     HinhAnh   varchar(255)        NULL,
     IsDeleted bit DEFAULT 0
@@ -179,3 +182,109 @@ CREATE TABLE ChiTietHoaDon
     FOREIGN KEY (CaPheId) REFERENCES CaPhe (CaPheId),
     PRIMARY KEY (HoaDonId, CaPheId)
 );
+
+-----------------------------------INSERT DATA--------------------------------------------------------
+
+USE QLCF
+GO
+
+-- INSERT data into Quyen table
+INSERT INTO Quyen (TenQuyen, NoiDungQuyen) VALUES
+(N'Admin', N'Quyền toàn quyền'),
+(N'NhanVien', N'Quyền nhân viên');
+
+-- INSERT data into NhanVien table
+INSERT INTO NhanVien (TaiKhoan, MatKhau, QuyenId, Ten, GioiTinh, SDT, Email, NamSinh, IsDelete) VALUES
+(N'admin', N'admin123', 1, 'Admin User', 'Nam', '0123456789', 'admin@gmail.com', '1990-01-01', 0),
+(N'nhanvien1', N'nhanvien123', 2, N'Nhân Viên 1', N'Nữ', '0987654321', 'nhanvien1@gmail.com', '1995-05-15', 0);
+
+-- INSERT data into ChucNang table
+INSERT INTO ChucNang (TenChucNang) VALUES
+(N'Thêm sản phẩm'),
+(N'Xóa sản phẩm'),
+(N'Sửa sản phẩm'),
+(N'Thêm khách hàng'),
+(N'Xóa khách hàng'),
+(N'Sửa khách hàng');
+
+-- INSERT data into Quyen_ChucNang table
+INSERT INTO Quyen_ChucNang (QuyenId, ChucNangId) VALUES
+(1, 1),
+(1, 2),
+(2, 4);
+
+-- INSERT data into LoaiKhachHang table
+INSERT INTO LoaiKhachHang (TenLoaiKh, GiamGia) VALUES
+('Vip', 5),
+(N'Thường', 0);
+
+-- INSERT data into KhachHang table
+INSERT INTO KhachHang (TaiKhoan, MatKhau, TenKhachHang, DiaChi, SDT, Email, LoaiKhachHangId, IsDelete, ThoiGianTaoTk) VALUES
+('vipcustomer', 'vip123', N'Khách Hàng VIP', '123 VIP DHSG', '0123456789', 'vip@gmail.com', 1, 0, '2023-01-01'),
+('customer1', 'customer123', N'Khách Hàng Thường', '456 Normal DHSG', '0987654321', 'customer1@gmail.com', 2, 0, '2023-01-02');
+
+-- INSERT data into NhaCungCap table
+INSERT INTO NhaCungCap (TenNhaCungCap, DiaChi, SDT, Email, IsDelete) VALUES
+('NCC1', '123 Supplier Street', '0123456789', 'ncc1@gmail.com', 0),
+('NCC2', '456 Supplier Street', '0987654321', 'ncc2@gmail.com', 0);
+
+-- INSERT data into NguyenLieu table
+INSERT INTO NguyenLieu (TenNguyenLieu, ThongTin, KhoiLuong, GiaTien_Kg, HinhAnh, IsDelete) VALUES
+(N'Cà phê bột', N'Thông tin về Cà phê bột', 5.0, 150000.0, 'caPheBot.jpg', 0),
+(N'Hạt cafe rang khô', N'Thông tin về Hạt cafe rang khô', 8.0, 100000.0, 'hatCaPhe.jpg', 0),
+(N'Đường', N'Thông tin về Đường', 8.0, 80000.0, 'duong.jpg', 0),
+(N'Sữa đặc', N'Thông tin về Sữa đặc', 8.0, 120000.0, 'suaDac.jpg', 0),
+(N'Sữa tươi không đường', N'Thông tin về Sữa tươi không đường', 8.0, 300000.0, 'suaTuoi.jpg', 0),
+(N'Bột cacao', N'Thông tin về Bột cacao', 8.0, 150000.0, 'botCaCao.jpg', 0),
+(N'Bột socola', N'Thông tin về Bột socola', 8.0, 150000.0, 'botSocola.jpg', 0),
+(N'Trà nhài', N'Thông tin về Trà nhài', 8.0, 140000.0, 'traNhai.jpg', 0),
+(N'Trà sen', N'Thông tin về Trà sen', 8.0, 150000.0, 'traSen.jpg', 0),
+(N'Đá viên', N'Thông tin về Đá viên', 10.0, 150000.0, 'daVien.jpg', 0),
+(N'Đá xay', N'Thông tin về Đá xay', 10.0, 150000.0, 'daXay.jpg', 0);
+
+-- INSERT data into PhieuNhap table
+INSERT INTO PhieuNhap (NhanVienId, NhaCungCapId, NgayNhap, TongTien) VALUES
+(1, 1, '2023-01-03', 1000000.0),
+(2, 2, '2023-01-04', 1500000.0);
+
+-- INSERT data into ChiTietPhieuNhap table
+INSERT INTO ChiTietPhieuNhap (PhieuNhapId, NguyenLieuId, KhoiLuong, DonGia) VALUES
+(1, 1, 2.0, 200000.0),
+(1, 2, 3.0, 250000.0),
+(2, 1, 4.0, 220000.0),
+(2, 2, 5.0, 280000.0);
+
+-- INSERT data into CaPhe table
+INSERT INTO CaPhe (TenCaPhe, Gia, MieuTa, XuatXu, HinhAnh, IsDeleted) VALUES
+(N'Cà phê truyền thống', 25000.0, N'Mô tả về cà phê 1', 'Viet Nam', 'caPheTruyenThong.jpg', 0),
+(N'Cà phê Capuchino', 25000.0, N'Mô tả về cà phê 1', 'Viet Nam', 'CaPheCapuchino.jpg', 0),
+('Cafe Latte', 25000.0, N'Mô tả về cà phê 1', 'Viet Nam', 'CaPheLatte.jpg', 0),
+('Americano', 25000.0, N'Mô tả về cà phê 1', 'Viet Nam', 'CaPheAmericano.jpg', 0),
+('Cafe Mocha', 25000.0, N'Mô tả về cà phê 1', 'Viet Nam', 'CaPheMocha.jpg', 0),
+('Cappuccino Viennese', 25000.0, N'Mô tả về cà phê 1', 'Viet Nam', 'CaPheCappuccinoViennese.jpg', 0),
+(N'Cà phê Espresso', 30000.0, N'Mô tả về cà phê 2', 'Brazil', 'CaPheEspresso.jpg', 0);
+
+-- INSERT data into CaPhe_NguyenLieu table
+INSERT INTO CaPhe_NguyenLieu (CaPheId, NguyenLieuId, KhoiLuong) VALUES
+(1, 1, 1.5),
+(1, 2, 2.0),
+(2, 1, 1.0),
+(2, 2, 1.5);
+
+-- INSERT data into PhieuGiamGia table
+INSERT INTO PhieuGiamGia (PggId, TgBatDau, TgKetThuc, GiaHoaDon, PhanTramGiamGia, IsDelete) VALUES
+(1, '2023-01-05', '2023-02-05', 100.0, 10, 0),
+(2, '2023-01-10', '2023-02-10', 150.0, 15, 0);
+
+-- INSERT data into HoaDon table
+INSERT INTO HoaDon (NhanVienId, KhachHangId, PggId, NgayNhap, PhiTruocGiamGia, GiamGia, PhiSauGiamGia, IsDelete) VALUES
+(1, 1, 1, '2023-02-01', 80000.0, 10, 72000.0, 0),
+(2, 2, 2, '2023-02-02', 120000.0, 15, 102000.0, 0);
+
+-- INSERT data into ChiTietHoaDon table
+INSERT INTO ChiTietHoaDon (HoaDonId, CaPheId, SoLuong, DonGia) VALUES
+(1, 1, 2, 250000.0),
+(1, 2, 3, 300000.0),
+(2, 1, 1, 250000.0),
+(2, 2, 2, 300000.0);
+
