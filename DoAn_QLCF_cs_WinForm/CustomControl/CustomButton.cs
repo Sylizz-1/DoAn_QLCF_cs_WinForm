@@ -27,6 +27,8 @@ namespace DoAn_QLCF_cs_WinForm.CustomControl
 		private Color textHover;
 		private Color textHoverTemp;
 		private bool enabledTextHover;
+		private Image imageHover;
+		private Image imageHoverTemp;
 		//Properties
 		[Category("Custom")]
 		public int BorderSize
@@ -76,6 +78,9 @@ namespace DoAn_QLCF_cs_WinForm.CustomControl
 
 		[Category("Custom")]
 		public bool EnabledTextHover { get => enabledTextHover; set { enabledTextHover = value; } }
+
+		[Category("Custom")]
+		public Image ImageHover { get => imageHover; set => imageHover = value; }
 
 
 		//Methods
@@ -159,6 +164,12 @@ namespace DoAn_QLCF_cs_WinForm.CustomControl
 				this.textHoverTemp = this.ForeColor;
 				this.ForeColor = this.TextHover;
 			}
+
+			if(this.ImageHover != null)
+			{
+				this.imageHoverTemp = this.Image;
+				this.Image = this.ImageHover;
+			}
 		}
 
 		protected override void OnMouseLeave(EventArgs e)
@@ -166,6 +177,9 @@ namespace DoAn_QLCF_cs_WinForm.CustomControl
 			base.OnMouseLeave(e);
 			if (this.EnabledTextHover)
 				this.ForeColor = this.textHoverTemp;
+
+			if (this.ImageHover != null)
+				this.Image = this.imageHoverTemp;
 		}
 
 	}

@@ -172,24 +172,24 @@ namespace DoAn_QLCF_cs_WinForm.View
         }
 
 
-        private void navLogOut_MouseEnter(object sender, EventArgs e)
-        {
-            (sender as Button).Image = (Image)(Properties.Resources.logoutflatwhite);
-        }
+		private void navLogOut_MouseEnter(object sender, EventArgs e)
+		{
+			(sender as Button).Image = (Image)(Properties.Resources.logoutflatwhite);
+		}
 
-        private void navLogOut_MouseLeave(object sender, EventArgs e)
-        {
-            (sender as Button).Image = (Image)(Properties.Resources.logoutflatred2);
-        }
+		private void navLogOut_MouseLeave(object sender, EventArgs e)
+		{
+			(sender as Button).Image = (Image)(Properties.Resources.logoutflatred2);
+		}
 
-        private void LoadButtonNav()
-        {
-            this.buttonNavList = GetButtonsFromPanels(sideBar.Controls.Cast<Control>().ToList());
-        }
-        // Phương thức đệ quy để lấy danh sách các nút từ các panel
-        private List<Button> GetButtonsFromPanels(List<Control> controls)
-        {
-            List<Button> buttons = new List<Button>();
+		private void LoadButtonNav()
+		{
+			this.buttonNavList = GetButtonsFromPanels(sideBar.Controls.Cast<Control>().ToList());
+		}
+		// Phương thức đệ quy để lấy danh sách các nút từ các panel
+		private List<Button> GetButtonsFromPanels(List<Control> controls)
+		{
+			List<Button> buttons = new List<Button>();
 
             foreach (Control control in controls)
             {
@@ -255,16 +255,16 @@ namespace DoAn_QLCF_cs_WinForm.View
             contextMenuStrip1.Show(ptLowerLeft);
         }
 
-        private void LoadFormContainer()
-        {
-            mainFormContainer = new Form();
-            mainFormContainer.TopLevel = false;
-            mainPanelContainer.Controls.Add(mainFormContainer);
-            mainFormContainer.FormBorderStyle = FormBorderStyle.None;
-            mainFormContainer.Dock = DockStyle.Fill;
-            mainFormContainer.Padding = new Padding(5);
-            mainFormContainer.Show();
-        }
+		private void LoadFormContainer()
+		{
+			mainFormContainer = new Form();
+			mainFormContainer.TopLevel = false;
+			mainPanelContainer.Controls.Add(mainFormContainer);
+			mainFormContainer.FormBorderStyle = FormBorderStyle.None;
+			mainFormContainer.Dock = DockStyle.Fill;
+			mainFormContainer.Padding = new Padding(5);
+			mainFormContainer.Show();
+		}
 
         private void navCafe_MouseDown(object sender, MouseEventArgs e)
         {
