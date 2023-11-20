@@ -9,6 +9,7 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
 {
 	public interface IMainView
 	{
-		public MainPresenter presenter { set; }
+		public MainPresenter presenter { set; }		
+		void Show();
 	}
 }

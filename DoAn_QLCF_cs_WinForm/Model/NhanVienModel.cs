@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,12 @@ namespace DoAn_QLCF_cs_WinForm.Model
 	{
 		private int id;
 		private string name;
-		public int Id { get => id; set => id = value; }
+		private int idPermission;
+        private ArrayList arrAction = new ArrayList();
+        
+        public int Id { get => id; set => id = value; }
 		public string Name { get => name; set => name = value; }
-	}
+        public int IdPermission { get => idPermission; set => idPermission = value; }
+        public ArrayList ArrAction { get => arrAction; set => arrAction = value; }
+    }
 }
