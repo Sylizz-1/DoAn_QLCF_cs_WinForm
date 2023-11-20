@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
+namespace DoAn_QLCF_cs_WinForm.Repository.RepositoryInterface
 {
-	public interface IThongKeView
+	public interface IPggRepository
 	{
 	}
 }

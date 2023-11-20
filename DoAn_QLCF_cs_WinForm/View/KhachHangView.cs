@@ -18,5 +18,26 @@ namespace DoAn_QLCF_cs_WinForm.View
 		{
 			InitializeComponent();
 		}
+
+		private static KhachHangView instance;
+		public static IKhachHangView GetInstance(Form parentContainer)
+		{
+			if (instance == null || instance.IsDisposed)
+			{
+				instance = new KhachHangView();
+				instance.TopLevel = false;
+				parentContainer.Controls.Add(instance);
+				
+				instance.Dock = DockStyle.Fill;
+			}
+			else
+			{
+				if (instance.WindowState == FormWindowState.Minimized)
+					instance.WindowState = FormWindowState.Normal;
+
+			}
+			instance.Show();
+			return instance;
+		}
 	}
 }

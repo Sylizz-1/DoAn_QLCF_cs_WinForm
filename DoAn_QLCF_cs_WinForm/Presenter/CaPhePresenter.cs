@@ -23,7 +23,7 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
 			this.view = view;
 			this.repository = repository;
 			cpBindingSource = new BindingSource();
-			/*LoadCaPheList();*/
+			LoadCaPheList();
 		}
 
 		private void LoadCaPheList ()

@@ -21,7 +21,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 		public CaPheView()
 		{
 			InitializeComponent();
-			/*this.tabControl1.TabPages.Remove(DetailsTabPage);*/
+			
 		}
 
 		private static CaPheView instance;
@@ -41,7 +41,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 			this.dataGridView1.DataSource = list;
 		}
 
-		public static CaPheView GetInstance(Form parentContainer)
+		public static ICaPheView GetInstance(Form parentContainer)
 		{
 			if (instance == null || instance.IsDisposed)
 			{
@@ -79,9 +79,8 @@ namespace DoAn_QLCF_cs_WinForm.View
 
 		private void addBtn_Click(object sender, EventArgs e)
 		{
+			this.tabControl1.TabPages.Remove(listTabPage);
 			presenter.Add();
 		}
-
-		
 	}
 }

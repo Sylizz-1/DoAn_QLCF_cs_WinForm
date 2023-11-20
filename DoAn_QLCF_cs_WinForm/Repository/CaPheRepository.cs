@@ -26,7 +26,16 @@ namespace DoAn_QLCF_cs_WinForm.Repository
 
 		public IEnumerable<CaPheModel> GetAll()
 		{
-			throw new NotImplementedException();
+			// Tạo một danh sách Caphemodel
+			List<CaPheModel> danhSachCaphe = new List<CaPheModel>
+			{
+				// Thêm các đối tượng vào danh sách
+				new CaPheModel { Id = 1, Name = "Cà phê đen" },
+				new CaPheModel { Id = 2, Name = "Cappuccino" },
+				new CaPheModel { Id = 3, Name = "Espresso" }
+			};
+
+			return danhSachCaphe;
 		}
 
 		public CaPheModel GetById(int id)

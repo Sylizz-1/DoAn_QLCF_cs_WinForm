@@ -17,5 +17,26 @@ namespace DoAn_QLCF_cs_WinForm.View
 		{
 			InitializeComponent();
 		}
+
+		private static ImExFileView instance;
+		public static IImExFileView GetInstance(Form parentContainer)
+		{
+
+			if (instance == null || instance.IsDisposed)
+			{
+				instance = new ImExFileView();
+				instance.TopLevel = false;
+				parentContainer.Controls.Add(instance);
+				instance.Dock = DockStyle.Fill;
+			}
+			else
+			{
+				if (instance.WindowState == FormWindowState.Minimized)
+					instance.WindowState = FormWindowState.Normal;
+
+			}
+			instance.Show();
+			return instance;
+		}
 	}
 }

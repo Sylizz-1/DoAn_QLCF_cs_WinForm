@@ -31,6 +31,8 @@
 			components = new System.ComponentModel.Container();
 			bindingSource1 = new BindingSource(components);
 			sideBar = new CustomControl.SidePanel();
+			panel1 = new Panel();
+			navPgg = new CustomControl.CustomButton();
 			label3 = new Label();
 			panel12 = new Panel();
 			navLogOut = new CustomControl.CustomButton();
@@ -78,6 +80,7 @@
 			timerLblTitle = new System.Windows.Forms.Timer(components);
 			((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
 			sideBar.SuspendLayout();
+			panel1.SuspendLayout();
 			panel12.SuspendLayout();
 			panel11.SuspendLayout();
 			panel10.SuspendLayout();
@@ -100,6 +103,7 @@
 			sideBar.AutoScroll = true;
 			sideBar.BackColor = Color.DarkSlateGray;
 			sideBar.BorderRadius = 1;
+			sideBar.Controls.Add(panel1);
 			sideBar.Controls.Add(label3);
 			sideBar.Controls.Add(panel12);
 			sideBar.Controls.Add(panel11);
@@ -124,14 +128,57 @@
 			sideBar.MaximumSize = new Size(258, 2000);
 			sideBar.MinimumSize = new Size(54, 100);
 			sideBar.Name = "sideBar";
-			sideBar.Size = new Size(258, 643);
+			sideBar.Size = new Size(258, 696);
 			sideBar.TabIndex = 1;
+			// 
+			// panel1
+			// 
+			panel1.BackColor = Color.DarkSlateGray;
+			panel1.Controls.Add(navPgg);
+			panel1.Dock = DockStyle.Top;
+			panel1.Location = new Point(0, 540);
+			panel1.Name = "panel1";
+			panel1.Padding = new Padding(5);
+			panel1.Size = new Size(258, 49);
+			panel1.TabIndex = 17;
+			// 
+			// navPgg
+			// 
+			navPgg.BackColor = Color.Transparent;
+			navPgg.BackgroundColor = Color.Transparent;
+			navPgg.BorderColor = Color.DarkBlue;
+			navPgg.BorderRadius = 10;
+			navPgg.BorderSize = 0;
+			navPgg.Dock = DockStyle.Fill;
+			navPgg.EnabledTextHover = false;
+			navPgg.FlatAppearance.BorderSize = 0;
+			navPgg.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
+			navPgg.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
+			navPgg.FlatStyle = FlatStyle.Flat;
+			navPgg.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			navPgg.ForeColor = Color.White;
+			navPgg.Image = Properties.Resources.DiscountIcon24px;
+			navPgg.ImageAlign = ContentAlignment.MiddleLeft;
+			navPgg.ImageHover = null;
+			navPgg.Location = new Point(5, 5);
+			navPgg.Name = "navPgg";
+			navPgg.Padding = new Padding(5);
+			navPgg.Size = new Size(248, 39);
+			navPgg.TabIndex = 2;
+			navPgg.Tag = "Phiếu Giảm Giá";
+			navPgg.Text = "Phiếu Giảm Giá";
+			navPgg.TextColor = Color.White;
+			navPgg.TextHover = Color.White;
+			btnNavToolTip.SetToolTip(navPgg, "Phiếu Giảm Giá");
+			navPgg.UseVisualStyleBackColor = false;
+			navPgg.Click += ButtonNavClick;
+			navPgg.MouseDown += navPgg_MouseDown;
 			// 
 			// label3
 			// 
 			label3.BackColor = Color.White;
 			label3.Dock = DockStyle.Bottom;
-			label3.Location = new Point(0, 593);
+			label3.Location = new Point(0, 646);
 			label3.Name = "label3";
 			label3.Size = new Size(258, 1);
 			label3.TabIndex = 15;
@@ -141,7 +188,7 @@
 			panel12.BackColor = Color.DarkSlateGray;
 			panel12.Controls.Add(navLogOut);
 			panel12.Dock = DockStyle.Bottom;
-			panel12.Location = new Point(0, 594);
+			panel12.Location = new Point(0, 647);
 			panel12.Name = "panel12";
 			panel12.Padding = new Padding(5);
 			panel12.Size = new Size(258, 49);
@@ -217,6 +264,7 @@
 			btnNavToolTip.SetToolTip(navPhanQuyen, "Phân Quyền");
 			navPhanQuyen.UseVisualStyleBackColor = false;
 			navPhanQuyen.Click += ButtonNavClick;
+			navPhanQuyen.MouseDown += navPhanQuyen_MouseDown;
 			// 
 			// panel10
 			// 
@@ -259,6 +307,7 @@
 			btnNavToolTip.SetToolTip(navNcc, "Nhà Cung Cấp");
 			navNcc.UseVisualStyleBackColor = false;
 			navNcc.Click += ButtonNavClick;
+			navNcc.MouseDown += navNcc_MouseDown;
 			// 
 			// panel9
 			// 
@@ -301,6 +350,7 @@
 			btnNavToolTip.SetToolTip(navThongKe, "Thống Kê");
 			navThongKe.UseVisualStyleBackColor = false;
 			navThongKe.Click += ButtonNavClick;
+			navThongKe.MouseDown += navThongKe_MouseDown;
 			// 
 			// panel8
 			// 
@@ -343,6 +393,7 @@
 			btnNavToolTip.SetToolTip(navFile, "Nhập/Xuất File");
 			navFile.UseVisualStyleBackColor = false;
 			navFile.Click += ButtonNavClick;
+			navFile.MouseDown += navFile_MouseDown;
 			// 
 			// panel7
 			// 
@@ -385,6 +436,7 @@
 			btnNavToolTip.SetToolTip(navHoaDon, "Hóa Đơn");
 			navHoaDon.UseVisualStyleBackColor = false;
 			navHoaDon.Click += ButtonNavClick;
+			navHoaDon.MouseDown += navHoaDon_MouseDown;
 			// 
 			// panel6
 			// 
@@ -427,6 +479,7 @@
 			btnNavToolTip.SetToolTip(navNhapHang, "Nhập Hàng");
 			navNhapHang.UseVisualStyleBackColor = false;
 			navNhapHang.Click += ButtonNavClick;
+			navNhapHang.MouseDown += navNhapHang_MouseDown;
 			// 
 			// panel5
 			// 
@@ -469,6 +522,7 @@
 			btnNavToolTip.SetToolTip(navNguyenLieu, "Nguyên Liệu");
 			navNguyenLieu.UseVisualStyleBackColor = false;
 			navNguyenLieu.Click += ButtonNavClick;
+			navNguyenLieu.MouseDown += navNguyenLieu_MouseDown;
 			// 
 			// panel4
 			// 
@@ -554,6 +608,7 @@
 			btnNavToolTip.SetToolTip(navKhachHang, "Khách Hàng");
 			navKhachHang.UseVisualStyleBackColor = false;
 			navKhachHang.Click += ButtonNavClick;
+			navKhachHang.MouseDown += navKhachHang_MouseDown;
 			// 
 			// panel2
 			// 
@@ -596,6 +651,7 @@
 			btnNavToolTip.SetToolTip(navNhanVien, "Nhân Viên");
 			navNhanVien.UseVisualStyleBackColor = false;
 			navNhanVien.Click += ButtonNavClick;
+			navNhanVien.MouseDown += navNhanVien_MouseDown;
 			// 
 			// label1
 			// 
@@ -674,7 +730,7 @@
 			backgroundMainView.GradientTopColor = Color.SkyBlue;
 			backgroundMainView.Location = new Point(258, 0);
 			backgroundMainView.Name = "backgroundMainView";
-			backgroundMainView.Size = new Size(725, 643);
+			backgroundMainView.Size = new Size(725, 696);
 			backgroundMainView.TabIndex = 2;
 			// 
 			// mainPanelContainer
@@ -688,8 +744,9 @@
 			mainPanelContainer.GradientTopColor = Color.Teal;
 			mainPanelContainer.Location = new Point(19, 55);
 			mainPanelContainer.Name = "mainPanelContainer";
-			mainPanelContainer.Size = new Size(694, 582);
+			mainPanelContainer.Size = new Size(694, 635);
 			mainPanelContainer.TabIndex = 1;
+			mainPanelContainer.Click += ButtonNavClick;
 			// 
 			// titleBar
 			// 
@@ -891,7 +948,7 @@
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = SystemColors.Control;
-			ClientSize = new Size(983, 643);
+			ClientSize = new Size(983, 696);
 			Controls.Add(backgroundMainView);
 			Controls.Add(sideBar);
 			Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -899,10 +956,12 @@
 			Name = "MainView";
 			StartPosition = FormStartPosition.CenterScreen;
 			Text = "MainView";
+			WindowState = FormWindowState.Maximized;
 			Load += MainView_Load;
 			SizeChanged += MainView_SizeChanged;
 			((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
 			sideBar.ResumeLayout(false);
+			panel1.ResumeLayout(false);
 			panel12.ResumeLayout(false);
 			panel11.ResumeLayout(false);
 			panel10.ResumeLayout(false);
@@ -969,5 +1028,7 @@
 		private ToolStripMenuItem settingMenuStrip;
 		private ToolStripMenuItem logOutMenuStrip;
 		private CustomControl.SidePanel mainPanelContainer;
+		private Panel panel1;
+		private CustomControl.CustomButton navPgg;
 	}
 }

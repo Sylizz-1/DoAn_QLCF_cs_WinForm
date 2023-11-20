@@ -28,8 +28,13 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+			DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+			DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
 			tabControl1 = new TabControl();
 			listTabPage = new TabPage();
+			label9 = new Label();
+			label2 = new Label();
 			comboBox2 = new ComboBox();
 			comboBox1 = new ComboBox();
 			customButton2 = new CustomControl.CustomButton();
@@ -39,6 +44,8 @@
 			searchTxt = new CustomControl.CustomTextBox();
 			dataGridView1 = new DataGridView();
 			DetailsTabPage = new TabPage();
+			HuyBtn = new CustomControl.CustomButton();
+			xacNhanBtn = new CustomControl.CustomButton();
 			caPhePic = new PictureBox();
 			label8 = new Label();
 			customTextBox5 = new CustomControl.CustomTextBox();
@@ -55,8 +62,6 @@
 			label5 = new Label();
 			label4 = new Label();
 			label1 = new Label();
-			xacNhanBtn = new CustomControl.CustomButton();
-			HuyBtn = new CustomControl.CustomButton();
 			tabControl1.SuspendLayout();
 			listTabPage.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -78,6 +83,8 @@
 			// listTabPage
 			// 
 			listTabPage.BackColor = SystemColors.Control;
+			listTabPage.Controls.Add(label9);
+			listTabPage.Controls.Add(label2);
 			listTabPage.Controls.Add(comboBox2);
 			listTabPage.Controls.Add(comboBox1);
 			listTabPage.Controls.Add(customButton2);
@@ -93,14 +100,36 @@
 			listTabPage.TabIndex = 0;
 			listTabPage.Text = "Danh Sách";
 			// 
+			// label9
+			// 
+			label9.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+			label9.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+			label9.Location = new Point(316, 10);
+			label9.Name = "label9";
+			label9.Size = new Size(52, 31);
+			label9.TabIndex = 10;
+			label9.Text = "Lọc:";
+			label9.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// label2
+			// 
+			label2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+			label2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+			label2.Location = new Point(486, 10);
+			label2.Name = "label2";
+			label2.Size = new Size(73, 31);
+			label2.TabIndex = 9;
+			label2.Text = "Sắp xếp:";
+			label2.TextAlign = ContentAlignment.MiddleCenter;
+			// 
 			// comboBox2
 			// 
 			comboBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
 			comboBox2.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
 			comboBox2.FormattingEnabled = true;
-			comboBox2.Location = new Point(322, 10);
+			comboBox2.Location = new Point(370, 10);
 			comboBox2.Name = "comboBox2";
-			comboBox2.Size = new Size(164, 31);
+			comboBox2.Size = new Size(92, 31);
 			comboBox2.TabIndex = 8;
 			// 
 			// comboBox1
@@ -108,9 +137,9 @@
 			comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
 			comboBox1.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
 			comboBox1.FormattingEnabled = true;
-			comboBox1.Location = new Point(492, 10);
+			comboBox1.Location = new Point(562, 10);
 			comboBox1.Name = "comboBox1";
-			comboBox1.Size = new Size(164, 31);
+			comboBox1.Size = new Size(92, 31);
 			comboBox1.TabIndex = 7;
 			// 
 			// customButton2
@@ -247,14 +276,43 @@
 			// 
 			// dataGridView1
 			// 
+			dataGridView1.AllowUserToAddRows = false;
+			dataGridView1.AllowUserToDeleteRows = false;
 			dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
 			dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 			dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-			dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridView1.Location = new Point(3, 81);
+			dataGridView1.BorderStyle = BorderStyle.None;
+			dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+			dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle1.BackColor = Color.DarkCyan;
+			dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+			dataGridViewCellStyle1.ForeColor = SystemColors.Control;
+			dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+			dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+			dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+			dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridView1.ColumnHeadersHeight = 30;
+			dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+			dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle2.BackColor = SystemColors.Window;
+			dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+			dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+			dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+			dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+			dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+			dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+			dataGridView1.EnableHeadersVisualStyles = false;
+			dataGridView1.GridColor = Color.DarkCyan;
+			dataGridView1.ImeMode = ImeMode.NoControl;
+			dataGridView1.Location = new Point(3, 165);
 			dataGridView1.Name = "dataGridView1";
+			dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+			dataGridView1.RowHeadersVisible = false;
+			dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+			dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
 			dataGridView1.RowTemplate.Height = 25;
-			dataGridView1.Size = new Size(1063, 442);
+			dataGridView1.RowTemplate.ReadOnly = true;
+			dataGridView1.Size = new Size(1063, 358);
 			dataGridView1.TabIndex = 1;
 			// 
 			// DetailsTabPage
@@ -285,16 +343,74 @@
 			DetailsTabPage.TabIndex = 1;
 			DetailsTabPage.Text = "Chi Tiết";
 			// 
+			// HuyBtn
+			// 
+			HuyBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+			HuyBtn.BackColor = SystemColors.Control;
+			HuyBtn.BackgroundColor = SystemColors.Control;
+			HuyBtn.BorderColor = Color.Red;
+			HuyBtn.BorderRadius = 15;
+			HuyBtn.BorderSize = 2;
+			HuyBtn.Cursor = Cursors.Hand;
+			HuyBtn.EnabledTextHover = true;
+			HuyBtn.FlatAppearance.BorderSize = 0;
+			HuyBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(187, 10, 10);
+			HuyBtn.FlatAppearance.MouseOverBackColor = Color.Red;
+			HuyBtn.FlatStyle = FlatStyle.Flat;
+			HuyBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+			HuyBtn.ForeColor = Color.Red;
+			HuyBtn.Image = Properties.Resources.CANCELiconRed;
+			HuyBtn.ImageAlign = ContentAlignment.MiddleRight;
+			HuyBtn.ImageHover = Properties.Resources.CANCELiconWhite;
+			HuyBtn.Location = new Point(832, 420);
+			HuyBtn.Name = "HuyBtn";
+			HuyBtn.Size = new Size(137, 53);
+			HuyBtn.TabIndex = 26;
+			HuyBtn.Text = "  Hủy";
+			HuyBtn.TextColor = Color.Red;
+			HuyBtn.TextHover = Color.White;
+			HuyBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+			HuyBtn.UseVisualStyleBackColor = false;
+			// 
+			// xacNhanBtn
+			// 
+			xacNhanBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+			xacNhanBtn.BackColor = SystemColors.Control;
+			xacNhanBtn.BackgroundColor = SystemColors.Control;
+			xacNhanBtn.BorderColor = Color.DarkCyan;
+			xacNhanBtn.BorderRadius = 15;
+			xacNhanBtn.BorderSize = 2;
+			xacNhanBtn.Cursor = Cursors.Hand;
+			xacNhanBtn.EnabledTextHover = true;
+			xacNhanBtn.FlatAppearance.BorderSize = 0;
+			xacNhanBtn.FlatAppearance.MouseDownBackColor = Color.Teal;
+			xacNhanBtn.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
+			xacNhanBtn.FlatStyle = FlatStyle.Flat;
+			xacNhanBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+			xacNhanBtn.ForeColor = Color.DarkCyan;
+			xacNhanBtn.Image = Properties.Resources.ConfirmIcondarkcyan1;
+			xacNhanBtn.ImageAlign = ContentAlignment.MiddleRight;
+			xacNhanBtn.ImageHover = Properties.Resources.ConfirmIconWhite1;
+			xacNhanBtn.Location = new Point(679, 420);
+			xacNhanBtn.Name = "xacNhanBtn";
+			xacNhanBtn.Size = new Size(137, 53);
+			xacNhanBtn.TabIndex = 25;
+			xacNhanBtn.Text = "  Xác Nhận";
+			xacNhanBtn.TextColor = Color.DarkCyan;
+			xacNhanBtn.TextHover = Color.White;
+			xacNhanBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+			xacNhanBtn.UseVisualStyleBackColor = false;
+			// 
 			// caPhePic
 			// 
 			caPhePic.BackColor = SystemColors.ActiveBorder;
 			caPhePic.BackgroundImageLayout = ImageLayout.None;
 			caPhePic.Cursor = Cursors.Hand;
 			caPhePic.Image = Properties.Resources.defaultImage3;
-			caPhePic.Location = new Point(660, 83);
+			caPhePic.Location = new Point(50, 243);
 			caPhePic.Name = "caPhePic";
-			caPhePic.Size = new Size(147, 125);
-			caPhePic.SizeMode = PictureBoxSizeMode.Zoom;
+			caPhePic.Size = new Size(160, 144);
+			caPhePic.SizeMode = PictureBoxSizeMode.StretchImage;
 			caPhePic.TabIndex = 24;
 			caPhePic.TabStop = false;
 			caPhePic.Click += caPhePic_Click;
@@ -302,7 +418,7 @@
 			// label8
 			// 
 			label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-			label8.Location = new Point(642, 56);
+			label8.Location = new Point(35, 217);
 			label8.Name = "label8";
 			label8.Size = new Size(106, 29);
 			label8.TabIndex = 23;
@@ -318,13 +434,13 @@
 			customTextBox5.BorderSize = 2;
 			customTextBox5.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
 			customTextBox5.ForeColor = Color.DimGray;
-			customTextBox5.Location = new Point(347, 255);
+			customTextBox5.Location = new Point(347, 166);
 			customTextBox5.Multiline = false;
 			customTextBox5.Name = "customTextBox5";
 			customTextBox5.Padding = new Padding(9, 9, 7, 7);
 			customTextBox5.PasswordChar = false;
 			customTextBox5.PlaceholderColor = Color.DarkGray;
-			customTextBox5.PlaceholderText = "Tìm Kiếm ...";
+			customTextBox5.PlaceholderText = "IsDelete....";
 			customTextBox5.Size = new Size(244, 42);
 			customTextBox5.TabIndex = 22;
 			customTextBox5.Texts = "";
@@ -333,7 +449,7 @@
 			// label6
 			// 
 			label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-			label6.Location = new Point(330, 216);
+			label6.Location = new Point(330, 127);
 			label6.Name = "label6";
 			label6.Size = new Size(106, 51);
 			label6.TabIndex = 21;
@@ -349,7 +465,7 @@
 			customTextBox4.BorderSize = 2;
 			customTextBox4.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
 			customTextBox4.ForeColor = Color.DimGray;
-			customTextBox4.Location = new Point(347, 166);
+			customTextBox4.Location = new Point(621, 83);
 			customTextBox4.Multiline = false;
 			customTextBox4.Name = "customTextBox4";
 			customTextBox4.Padding = new Padding(9, 9, 7, 7);
@@ -364,7 +480,7 @@
 			// label3
 			// 
 			label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-			label3.Location = new Point(345, 126);
+			label3.Location = new Point(619, 43);
 			label3.Name = "label3";
 			label3.Size = new Size(106, 51);
 			label3.TabIndex = 19;
@@ -466,7 +582,7 @@
 			customTextBox3.BorderSize = 2;
 			customTextBox3.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
 			customTextBox3.ForeColor = Color.DimGray;
-			customTextBox3.Location = new Point(50, 255);
+			customTextBox3.Location = new Point(621, 166);
 			customTextBox3.Multiline = false;
 			customTextBox3.Name = "customTextBox3";
 			customTextBox3.Padding = new Padding(9, 9, 7, 7);
@@ -512,7 +628,7 @@
 			// label4
 			// 
 			label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-			label4.Location = new Point(33, 216);
+			label4.Location = new Point(604, 127);
 			label4.Name = "label4";
 			label4.Size = new Size(106, 51);
 			label4.TabIndex = 3;
@@ -528,64 +644,6 @@
 			label1.TabIndex = 0;
 			label1.Text = "ID";
 			label1.TextAlign = ContentAlignment.MiddleCenter;
-			// 
-			// xacNhanBtn
-			// 
-			xacNhanBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-			xacNhanBtn.BackColor = SystemColors.Control;
-			xacNhanBtn.BackgroundColor = SystemColors.Control;
-			xacNhanBtn.BorderColor = Color.DarkCyan;
-			xacNhanBtn.BorderRadius = 15;
-			xacNhanBtn.BorderSize = 2;
-			xacNhanBtn.Cursor = Cursors.Hand;
-			xacNhanBtn.EnabledTextHover = true;
-			xacNhanBtn.FlatAppearance.BorderSize = 0;
-			xacNhanBtn.FlatAppearance.MouseDownBackColor = Color.Teal;
-			xacNhanBtn.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
-			xacNhanBtn.FlatStyle = FlatStyle.Flat;
-			xacNhanBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-			xacNhanBtn.ForeColor = Color.DarkCyan;
-			xacNhanBtn.Image = Properties.Resources.ConfirmIcondarkcyan1;
-			xacNhanBtn.ImageAlign = ContentAlignment.MiddleRight;
-			xacNhanBtn.ImageHover = Properties.Resources.ConfirmIconWhite1;
-			xacNhanBtn.Location = new Point(560, 390);
-			xacNhanBtn.Name = "xacNhanBtn";
-			xacNhanBtn.Size = new Size(137, 53);
-			xacNhanBtn.TabIndex = 25;
-			xacNhanBtn.Text = "  Xác Nhận";
-			xacNhanBtn.TextColor = Color.DarkCyan;
-			xacNhanBtn.TextHover = Color.White;
-			xacNhanBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-			xacNhanBtn.UseVisualStyleBackColor = false;
-			// 
-			// HuyBtn
-			// 
-			HuyBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-			HuyBtn.BackColor = SystemColors.Control;
-			HuyBtn.BackgroundColor = SystemColors.Control;
-			HuyBtn.BorderColor = Color.Red;
-			HuyBtn.BorderRadius = 15;
-			HuyBtn.BorderSize = 2;
-			HuyBtn.Cursor = Cursors.Hand;
-			HuyBtn.EnabledTextHover = true;
-			HuyBtn.FlatAppearance.BorderSize = 0;
-			HuyBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(187, 10, 10);
-			HuyBtn.FlatAppearance.MouseOverBackColor = Color.Red;
-			HuyBtn.FlatStyle = FlatStyle.Flat;
-			HuyBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-			HuyBtn.ForeColor = Color.Red;
-			HuyBtn.Image = Properties.Resources.CANCELiconRed;
-			HuyBtn.ImageAlign = ContentAlignment.MiddleRight;
-			HuyBtn.ImageHover = Properties.Resources.CANCELiconWhite;
-			HuyBtn.Location = new Point(703, 390);
-			HuyBtn.Name = "HuyBtn";
-			HuyBtn.Size = new Size(137, 53);
-			HuyBtn.TabIndex = 26;
-			HuyBtn.Text = "  Hủy";
-			HuyBtn.TextColor = Color.Red;
-			HuyBtn.TextHover = Color.White;
-			HuyBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-			HuyBtn.UseVisualStyleBackColor = false;
 			// 
 			// CaPheView
 			// 
@@ -634,5 +692,7 @@
 		private PictureBox caPhePic;
 		private CustomControl.CustomButton xacNhanBtn;
 		private CustomControl.CustomButton HuyBtn;
+		private Label label2;
+		private Label label9;
 	}
 }

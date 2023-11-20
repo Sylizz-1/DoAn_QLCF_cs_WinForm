@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DoAn_QLCF_cs_WinForm.Repository.RepositoryInterface
 {
-	internal interface IThongKeRepository
+	public interface IThongKeRepository
 	{
 	}
 }

@@ -273,6 +273,16 @@ namespace DoAn_QLCF_cs_WinForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DiscountIcon24px {
+            get {
+                object obj = ResourceManager.GetObject("DiscountIcon24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap editIconTeal16px {
             get {
                 object obj = ResourceManager.GetObject("editIconTeal16px", resourceCulture);

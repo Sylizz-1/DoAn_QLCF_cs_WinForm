@@ -17,5 +17,26 @@ namespace DoAn_QLCF_cs_WinForm.View
 		{
 			InitializeComponent();
 		}
+
+		private static NccView instance;
+		public static INccView GetInstance(Form parentContainer)
+		{
+
+			if (instance == null || instance.IsDisposed)
+			{
+				instance = new NccView();
+				instance.TopLevel = false;
+				parentContainer.Controls.Add(instance);
+				instance.Dock = DockStyle.Fill;
+			}
+			else
+			{
+				if (instance.WindowState == FormWindowState.Minimized)
+					instance.WindowState = FormWindowState.Normal;
+
+			}
+			instance.Show();
+			return instance;
+		}
 	}
 }
