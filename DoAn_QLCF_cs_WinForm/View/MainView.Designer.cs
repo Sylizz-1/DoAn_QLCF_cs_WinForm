@@ -1,4 +1,6 @@
-﻿namespace DoAn_QLCF_cs_WinForm.View
+﻿using System.Windows.Forms;
+
+namespace DoAn_QLCF_cs_WinForm.View
 {
     partial class MainView
     {
@@ -34,25 +36,25 @@
 			label3 = new Label();
 			panel12 = new Panel();
 			navLogOut = new CustomControl.CustomButton();
-			panel11 = new Panel();
+			pn_nhanVien = new Panel();
 			navPhanQuyen = new CustomControl.CustomButton();
-			panel10 = new Panel();
+			pn_khachHang = new Panel();
 			navNcc = new CustomControl.CustomButton();
-			panel9 = new Panel();
+			pn_caPhe = new Panel();
 			navThongKe = new CustomControl.CustomButton();
-			panel8 = new Panel();
+			pn_nguyenLieu = new Panel();
 			navFile = new CustomControl.CustomButton();
-			panel7 = new Panel();
+			pn_nhapHang = new Panel();
 			navHoaDon = new CustomControl.CustomButton();
-			panel6 = new Panel();
+			pn_hoaDon = new Panel();
 			navNhapHang = new CustomControl.CustomButton();
-			panel5 = new Panel();
+			pn_file = new Panel();
 			navNguyenLieu = new CustomControl.CustomButton();
-			panel4 = new Panel();
+			pn_thongKe = new Panel();
 			navCafe = new CustomControl.CustomButton();
-			panel3 = new Panel();
+			pn_nhaCungCap = new Panel();
 			navKhachHang = new CustomControl.CustomButton();
-			panel2 = new Panel();
+			pn_phanQuyen = new Panel();
 			navNhanVien = new CustomControl.CustomButton();
 			label1 = new Label();
 			sideNav = new Panel();
@@ -79,16 +81,16 @@
 			((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
 			sideBar.SuspendLayout();
 			panel12.SuspendLayout();
-			panel11.SuspendLayout();
-			panel10.SuspendLayout();
-			panel9.SuspendLayout();
-			panel8.SuspendLayout();
-			panel7.SuspendLayout();
-			panel6.SuspendLayout();
-			panel5.SuspendLayout();
-			panel4.SuspendLayout();
-			panel3.SuspendLayout();
-			panel2.SuspendLayout();
+			pn_nhanVien.SuspendLayout();
+			pn_khachHang.SuspendLayout();
+			pn_caPhe.SuspendLayout();
+			pn_nguyenLieu.SuspendLayout();
+			pn_nhapHang.SuspendLayout();
+			pn_hoaDon.SuspendLayout();
+			pn_file.SuspendLayout();
+			pn_thongKe.SuspendLayout();
+			pn_nhaCungCap.SuspendLayout();
+			pn_phanQuyen.SuspendLayout();
 			sideNav.SuspendLayout();
 			backgroundMainView.SuspendLayout();
 			titleBar.SuspendLayout();
@@ -102,16 +104,16 @@
 			sideBar.BorderRadius = 1;
 			sideBar.Controls.Add(label3);
 			sideBar.Controls.Add(panel12);
-			sideBar.Controls.Add(panel11);
-			sideBar.Controls.Add(panel10);
-			sideBar.Controls.Add(panel9);
-			sideBar.Controls.Add(panel8);
-			sideBar.Controls.Add(panel7);
-			sideBar.Controls.Add(panel6);
-			sideBar.Controls.Add(panel5);
-			sideBar.Controls.Add(panel4);
-			sideBar.Controls.Add(panel3);
-			sideBar.Controls.Add(panel2);
+			sideBar.Controls.Add(pn_nhanVien);
+			sideBar.Controls.Add(pn_khachHang);
+			sideBar.Controls.Add(pn_caPhe);
+			sideBar.Controls.Add(pn_nguyenLieu);
+			sideBar.Controls.Add(pn_nhapHang);
+			sideBar.Controls.Add(pn_hoaDon);
+			sideBar.Controls.Add(pn_file);
+			sideBar.Controls.Add(pn_thongKe);
+			sideBar.Controls.Add(pn_nhaCungCap);
+			sideBar.Controls.Add(pn_phanQuyen);
 			sideBar.Controls.Add(label1);
 			sideBar.Controls.Add(sideNav);
 			sideBar.Dock = DockStyle.Left;
@@ -176,17 +178,17 @@
 			navLogOut.UseVisualStyleBackColor = false;
 			navLogOut.MouseEnter += navLogOut_MouseEnter;
 			navLogOut.MouseLeave += navLogOut_MouseLeave;
-			// 
-			// panel11
-			// 
-			panel11.BackColor = Color.DarkSlateGray;
-			panel11.Controls.Add(navPhanQuyen);
-			panel11.Dock = DockStyle.Top;
-			panel11.Location = new Point(0, 491);
-			panel11.Name = "panel11";
-			panel11.Padding = new Padding(5);
-			panel11.Size = new Size(258, 49);
-			panel11.TabIndex = 12;
+            // 
+            // pn_nhanVien
+            // 
+            pn_nhanVien.BackColor = Color.DarkSlateGray;
+            pn_nhanVien.Controls.Add(navPhanQuyen);
+            pn_nhanVien.Dock = DockStyle.Top;
+            pn_nhanVien.Location = new Point(0, 491);
+            pn_nhanVien.Name = "pn_nhanVien";
+            pn_nhanVien.Padding = new Padding(5);
+            pn_nhanVien.Size = new Size(258, 49);
+            pn_nhanVien.TabIndex = 12;
 			// 
 			// navPhanQuyen
 			// 
@@ -217,17 +219,17 @@
 			btnNavToolTip.SetToolTip(navPhanQuyen, "Phân Quyền");
 			navPhanQuyen.UseVisualStyleBackColor = false;
 			navPhanQuyen.Click += ButtonNavClick;
-			// 
-			// panel10
-			// 
-			panel10.BackColor = Color.DarkSlateGray;
-			panel10.Controls.Add(navNcc);
-			panel10.Dock = DockStyle.Top;
-			panel10.Location = new Point(0, 442);
-			panel10.Name = "panel10";
-			panel10.Padding = new Padding(5);
-			panel10.Size = new Size(258, 49);
-			panel10.TabIndex = 11;
+            // 
+            // pn_khachHang
+            // 
+            pn_khachHang.BackColor = Color.DarkSlateGray;
+            pn_khachHang.Controls.Add(navNcc);
+            pn_khachHang.Dock = DockStyle.Top;
+            pn_khachHang.Location = new Point(0, 442);
+            pn_khachHang.Name = "pn_khachHang";
+            pn_khachHang.Padding = new Padding(5);
+            pn_khachHang.Size = new Size(258, 49);
+            pn_khachHang.TabIndex = 11;
 			// 
 			// navNcc
 			// 
@@ -258,17 +260,17 @@
 			btnNavToolTip.SetToolTip(navNcc, "Nhà Cung Cấp");
 			navNcc.UseVisualStyleBackColor = false;
 			navNcc.Click += ButtonNavClick;
-			// 
-			// panel9
-			// 
-			panel9.BackColor = Color.DarkSlateGray;
-			panel9.Controls.Add(navThongKe);
-			panel9.Dock = DockStyle.Top;
-			panel9.Location = new Point(0, 393);
-			panel9.Name = "panel9";
-			panel9.Padding = new Padding(5);
-			panel9.Size = new Size(258, 49);
-			panel9.TabIndex = 10;
+            // 
+            // pn_caPhe
+            // 
+            pn_caPhe.BackColor = Color.DarkSlateGray;
+            pn_caPhe.Controls.Add(navThongKe);
+            pn_caPhe.Dock = DockStyle.Top;
+            pn_caPhe.Location = new Point(0, 393);
+            pn_caPhe.Name = "pn_caPhe";
+            pn_caPhe.Padding = new Padding(5);
+            pn_caPhe.Size = new Size(258, 49);
+            pn_caPhe.TabIndex = 10;
 			// 
 			// navThongKe
 			// 
@@ -299,17 +301,17 @@
 			btnNavToolTip.SetToolTip(navThongKe, "Thống Kê");
 			navThongKe.UseVisualStyleBackColor = false;
 			navThongKe.Click += ButtonNavClick;
-			// 
-			// panel8
-			// 
-			panel8.BackColor = Color.DarkSlateGray;
-			panel8.Controls.Add(navFile);
-			panel8.Dock = DockStyle.Top;
-			panel8.Location = new Point(0, 344);
-			panel8.Name = "panel8";
-			panel8.Padding = new Padding(5);
-			panel8.Size = new Size(258, 49);
-			panel8.TabIndex = 9;
+            // 
+            // pn_nguyenLieu
+            // 
+            pn_nguyenLieu.BackColor = Color.DarkSlateGray;
+            pn_nguyenLieu.Controls.Add(navFile);
+            pn_nguyenLieu.Dock = DockStyle.Top;
+            pn_nguyenLieu.Location = new Point(0, 344);
+            pn_nguyenLieu.Name = "pn_nguyenLieu";
+            pn_nguyenLieu.Padding = new Padding(5);
+            pn_nguyenLieu.Size = new Size(258, 49);
+            pn_nguyenLieu.TabIndex = 9;
 			// 
 			// navFile
 			// 
@@ -341,16 +343,16 @@
 			navFile.UseVisualStyleBackColor = false;
 			navFile.Click += ButtonNavClick;
 			// 
-			// panel7
+			// pn_nhapHang
 			// 
-			panel7.BackColor = Color.DarkSlateGray;
-			panel7.Controls.Add(navHoaDon);
-			panel7.Dock = DockStyle.Top;
-			panel7.Location = new Point(0, 295);
-			panel7.Name = "panel7";
-			panel7.Padding = new Padding(5);
-			panel7.Size = new Size(258, 49);
-			panel7.TabIndex = 8;
+			pn_nhapHang.BackColor = Color.DarkSlateGray;
+			pn_nhapHang.Controls.Add(navHoaDon);
+			pn_nhapHang.Dock = DockStyle.Top;
+			pn_nhapHang.Location = new Point(0, 295);
+			pn_nhapHang.Name = "pn_nhapHang";
+			pn_nhapHang.Padding = new Padding(5);
+			pn_nhapHang.Size = new Size(258, 49);
+			pn_nhapHang.TabIndex = 8;
 			// 
 			// navHoaDon
 			// 
@@ -382,16 +384,16 @@
 			navHoaDon.UseVisualStyleBackColor = false;
 			navHoaDon.Click += ButtonNavClick;
 			// 
-			// panel6
+			// pn_hoaDon
 			// 
-			panel6.BackColor = Color.DarkSlateGray;
-			panel6.Controls.Add(navNhapHang);
-			panel6.Dock = DockStyle.Top;
-			panel6.Location = new Point(0, 246);
-			panel6.Name = "panel6";
-			panel6.Padding = new Padding(5);
-			panel6.Size = new Size(258, 49);
-			panel6.TabIndex = 7;
+			pn_hoaDon.BackColor = Color.DarkSlateGray;
+			pn_hoaDon.Controls.Add(navNhapHang);
+			pn_hoaDon.Dock = DockStyle.Top;
+			pn_hoaDon.Location = new Point(0, 246);
+			pn_hoaDon.Name = "pn_hoaDon";
+			pn_hoaDon.Padding = new Padding(5);
+			pn_hoaDon.Size = new Size(258, 49);
+			pn_hoaDon.TabIndex = 7;
 			// 
 			// navNhapHang
 			// 
@@ -423,16 +425,16 @@
 			navNhapHang.UseVisualStyleBackColor = false;
 			navNhapHang.Click += ButtonNavClick;
 			// 
-			// panel5
+			// pn_file
 			// 
-			panel5.BackColor = Color.DarkSlateGray;
-			panel5.Controls.Add(navNguyenLieu);
-			panel5.Dock = DockStyle.Top;
-			panel5.Location = new Point(0, 197);
-			panel5.Name = "panel5";
-			panel5.Padding = new Padding(5);
-			panel5.Size = new Size(258, 49);
-			panel5.TabIndex = 6;
+			pn_file.BackColor = Color.DarkSlateGray;
+			pn_file.Controls.Add(navNguyenLieu);
+			pn_file.Dock = DockStyle.Top;
+			pn_file.Location = new Point(0, 197);
+			pn_file.Name = "pn_file";
+			pn_file.Padding = new Padding(5);
+			pn_file.Size = new Size(258, 49);
+			pn_file.TabIndex = 6;
 			// 
 			// navNguyenLieu
 			// 
@@ -464,16 +466,16 @@
 			navNguyenLieu.UseVisualStyleBackColor = false;
 			navNguyenLieu.Click += ButtonNavClick;
 			// 
-			// panel4
+			// pn_thongKe
 			// 
-			panel4.BackColor = Color.DarkSlateGray;
-			panel4.Controls.Add(navCafe);
-			panel4.Dock = DockStyle.Top;
-			panel4.Location = new Point(0, 148);
-			panel4.Name = "panel4";
-			panel4.Padding = new Padding(5);
-			panel4.Size = new Size(258, 49);
-			panel4.TabIndex = 5;
+			pn_thongKe.BackColor = Color.DarkSlateGray;
+			pn_thongKe.Controls.Add(navCafe);
+			pn_thongKe.Dock = DockStyle.Top;
+			pn_thongKe.Location = new Point(0, 148);
+			pn_thongKe.Name = "pn_thongKe";
+			pn_thongKe.Padding = new Padding(5);
+			pn_thongKe.Size = new Size(258, 49);
+			pn_thongKe.TabIndex = 5;
 			// 
 			// navCafe
 			// 
@@ -506,16 +508,16 @@
 			navCafe.Click += ButtonNavClick;
 			navCafe.MouseDown += navCafe_MouseDown;
 			// 
-			// panel3
+			// pn_nhaCungCap
 			// 
-			panel3.BackColor = Color.DarkSlateGray;
-			panel3.Controls.Add(navKhachHang);
-			panel3.Dock = DockStyle.Top;
-			panel3.Location = new Point(0, 99);
-			panel3.Name = "panel3";
-			panel3.Padding = new Padding(5);
-			panel3.Size = new Size(258, 49);
-			panel3.TabIndex = 4;
+			pn_nhaCungCap.BackColor = Color.DarkSlateGray;
+			pn_nhaCungCap.Controls.Add(navKhachHang);
+			pn_nhaCungCap.Dock = DockStyle.Top;
+			pn_nhaCungCap.Location = new Point(0, 99);
+			pn_nhaCungCap.Name = "pn_nhaCungCap";
+			pn_nhaCungCap.Padding = new Padding(5);
+			pn_nhaCungCap.Size = new Size(258, 49);
+			pn_nhaCungCap.TabIndex = 4;
 			// 
 			// navKhachHang
 			// 
@@ -547,16 +549,16 @@
 			navKhachHang.UseVisualStyleBackColor = false;
 			navKhachHang.Click += ButtonNavClick;
 			// 
-			// panel2
+			// pn_phanQuyen
 			// 
-			panel2.BackColor = Color.DarkSlateGray;
-			panel2.Controls.Add(navNhanVien);
-			panel2.Dock = DockStyle.Top;
-			panel2.Location = new Point(0, 50);
-			panel2.Name = "panel2";
-			panel2.Padding = new Padding(5);
-			panel2.Size = new Size(258, 49);
-			panel2.TabIndex = 2;
+			pn_phanQuyen.BackColor = Color.DarkSlateGray;
+			pn_phanQuyen.Controls.Add(navNhanVien);
+			pn_phanQuyen.Dock = DockStyle.Top;
+			pn_phanQuyen.Location = new Point(0, 50);
+			pn_phanQuyen.Name = "pn_phanQuyen";
+			pn_phanQuyen.Padding = new Padding(5);
+			pn_phanQuyen.Size = new Size(258, 49);
+			pn_phanQuyen.TabIndex = 2;
 			// 
 			// navNhanVien
 			// 
@@ -890,16 +892,16 @@
 			((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
 			sideBar.ResumeLayout(false);
 			panel12.ResumeLayout(false);
-			panel11.ResumeLayout(false);
-			panel10.ResumeLayout(false);
-			panel9.ResumeLayout(false);
-			panel8.ResumeLayout(false);
-			panel7.ResumeLayout(false);
-			panel6.ResumeLayout(false);
-			panel5.ResumeLayout(false);
-			panel4.ResumeLayout(false);
-			panel3.ResumeLayout(false);
-			panel2.ResumeLayout(false);
+            pn_nhanVien.ResumeLayout(false);
+            pn_khachHang.ResumeLayout(false);
+			pn_caPhe.ResumeLayout(false);
+            pn_nguyenLieu.ResumeLayout(false);
+			pn_nhapHang.ResumeLayout(false);
+			pn_hoaDon.ResumeLayout(false);
+			pn_file.ResumeLayout(false);
+			pn_thongKe.ResumeLayout(false);
+			pn_nhaCungCap.ResumeLayout(false);
+			pn_phanQuyen.ResumeLayout(false);
 			sideNav.ResumeLayout(false);
 			backgroundMainView.ResumeLayout(false);
 			titleBar.ResumeLayout(false);

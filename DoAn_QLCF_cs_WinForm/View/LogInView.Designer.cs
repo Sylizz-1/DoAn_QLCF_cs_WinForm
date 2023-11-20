@@ -105,8 +105,7 @@
             btn_login.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.icons8_coffee_100_2;
+            //             
             pictureBox1.Location = new Point(139, 39);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(271, 144);
