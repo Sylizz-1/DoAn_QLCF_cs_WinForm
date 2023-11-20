@@ -35,13 +35,6 @@ namespace DoAn_QLCF_cs_WinForm.View
         }
         public Form MainFormContainer { get => mainFormContainer; set => mainFormContainer = value; }
 
-        private void btnNhanVien_Click(object sender, EventArgs e)
-        {
-            ICaPheView view = CaPheView.GetInstance(this);
-            ICaPheRepository repo = new CaPheRepository(this.connectionString);
-            new CaPhePresenter(view, repo);
-        }
-
         // UI code
         public MainView(string connectionString, NhanVienModel employeeInfor)
         {

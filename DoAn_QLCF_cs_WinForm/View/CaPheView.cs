@@ -21,7 +21,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 		public CaPheView()
 		{
 			InitializeComponent();
-			
+			listTabPage.Hide();
 		}
 
 		private static CaPheView instance;

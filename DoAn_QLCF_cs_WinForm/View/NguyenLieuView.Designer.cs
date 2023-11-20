@@ -181,7 +181,7 @@
 			delBtn.FlatStyle = FlatStyle.Flat;
 			delBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
 			delBtn.ForeColor = Color.Red;
-			delBtn.Image = Properties.Resources.deleteIconRed16px;
+			delBtn.Image = Properties.Resources.findIcon16px;
 			delBtn.ImageAlign = ContentAlignment.MiddleRight;
 			delBtn.ImageHover = Properties.Resources.deleteIconWhite16px;
 			delBtn.Location = new Point(1751, 9);

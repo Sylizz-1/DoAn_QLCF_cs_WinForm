@@ -199,7 +199,7 @@ INSERT INTO NhanVien (TaiKhoan, MatKhau, QuyenId, Ten, GioiTinh, SDT, Email, Nam
 (N'thungan1', N'123', 2, N'Thu Ngân 1', N'Nữ', '0987654321', 'nhanvien1@gmail.com', '1995-05-15', 0);
 
 -- INSERT data into ChucNang table
-INSERT INTO ChucNang (ChucNangId,TenChucNang) VALUES
+INSERT INTO ChucNang (TenChucNang) VALUES
 (N'Quản lý nhân viên'),
 (N'Quản lý khách hàng'),
 (N'Quản lý cà phê'),
@@ -277,8 +277,8 @@ INSERT INTO CaPhe_NguyenLieu (CaPheId, NguyenLieuId, KhoiLuong) VALUES
 
 -- INSERT data into PhieuGiamGia table
 INSERT INTO PhieuGiamGia (PggId, TgBatDau, TgKetThuc, GiaHoaDon, PhanTramGiamGia, IsDelete) VALUES
-(1, '2023-01-05', '2023-02-05', 100.0, 10, 0),
-(2, '2023-01-10', '2023-02-10', 150.0, 15, 0);
+(1, '2023-01-05', '2023-02-05', 100000.0, 10, 0),
+(2, '2023-01-10', '2023-02-10', 150000.0, 15, 0);
 
 -- INSERT data into HoaDon table
 INSERT INTO HoaDon (NhanVienId, KhachHangId, PggId, NgayNhap, PhiTruocGiamGia, GiamGia, PhiSauGiamGia, IsDelete) VALUES
