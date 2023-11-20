@@ -191,27 +191,31 @@ GO
 -- INSERT data into Quyen table
 INSERT INTO Quyen (TenQuyen, NoiDungQuyen) VALUES
 (N'Admin', N'Quyền toàn quyền'),
-(N'NhanVien', N'Quyền nhân viên');
+(N'NhanVienThuNgan', N'Quyền nhân viên thu ngân');
 
 -- INSERT data into NhanVien table
 INSERT INTO NhanVien (TaiKhoan, MatKhau, QuyenId, Ten, GioiTinh, SDT, Email, NamSinh, IsDelete) VALUES
-(N'admin', N'admin123', 1, 'Admin User', 'Nam', '0123456789', 'admin@gmail.com', '1990-01-01', 0),
-(N'nhanvien1', N'nhanvien123', 2, N'Nhân Viên 1', N'Nữ', '0987654321', 'nhanvien1@gmail.com', '1995-05-15', 0);
+(N'admin', N'123', 1, 'Admin User', 'Nam', '0123456789', 'admin@gmail.com', '1990-01-01', 0),
+(N'thungan1', N'123', 2, N'Thu Ngân 1', N'Nữ', '0987654321', 'nhanvien1@gmail.com', '1995-05-15', 0);
 
 -- INSERT data into ChucNang table
-INSERT INTO ChucNang (TenChucNang) VALUES
-(N'Thêm sản phẩm'),
-(N'Xóa sản phẩm'),
-(N'Sửa sản phẩm'),
-(N'Thêm khách hàng'),
-(N'Xóa khách hàng'),
-(N'Sửa khách hàng');
+INSERT INTO ChucNang (ChucNangId,TenChucNang) VALUES
+(N'Quản lý nhân viên'),
+(N'Quản lý khách hàng'),
+(N'Quản lý cà phê'),
+(N'Quản lý nguyên liệu'),
+(N'Quản lý nhập hàng'),
+(N'Quản lý hóa đơn'),
+(N'Quản lý nhập xuất file'),
+(N'Quản lý thống kê'),
+(N'Quản lý nhà cung cấp'),
+(N'Quản lý phân quyền');
 
 -- INSERT data into Quyen_ChucNang table
 INSERT INTO Quyen_ChucNang (QuyenId, ChucNangId) VALUES
-(1, 1),
-(1, 2),
-(2, 4);
+(2, 2),
+(2, 5),
+(2, 6);
 
 -- INSERT data into LoaiKhachHang table
 INSERT INTO LoaiKhachHang (TenLoaiKh, GiamGia) VALUES

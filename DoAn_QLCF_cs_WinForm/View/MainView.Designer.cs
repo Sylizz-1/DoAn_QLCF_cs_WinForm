@@ -1,26 +1,28 @@
-﻿namespace DoAn_QLCF_cs_WinForm.View
+﻿using System.Windows.Forms;
+
+namespace DoAn_QLCF_cs_WinForm.View
 {
-	partial class MainView
-	{
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
-		private System.ComponentModel.IContainer components = null;
+    partial class MainView
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && (components != null))
-			{
-				components.Dispose();
-			}
-			base.Dispose(disposing);
-		}
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-		#region Windows Form Designer generated code
+        #region Windows Form Designer generated code
 
 		/// <summary>
 		/// Required method for Designer support - do not modify
@@ -36,25 +38,25 @@
 			label3 = new Label();
 			panel12 = new Panel();
 			navLogOut = new CustomControl.CustomButton();
-			panel11 = new Panel();
+			pn_nhanVien = new Panel();
 			navPhanQuyen = new CustomControl.CustomButton();
-			panel10 = new Panel();
+			pn_khachHang = new Panel();
 			navNcc = new CustomControl.CustomButton();
-			panel9 = new Panel();
+			pn_caPhe = new Panel();
 			navThongKe = new CustomControl.CustomButton();
-			panel8 = new Panel();
+			pn_nguyenLieu = new Panel();
 			navFile = new CustomControl.CustomButton();
-			panel7 = new Panel();
+			pn_nhapHang = new Panel();
 			navHoaDon = new CustomControl.CustomButton();
-			panel6 = new Panel();
+			pn_hoaDon = new Panel();
 			navNhapHang = new CustomControl.CustomButton();
-			panel5 = new Panel();
+			pn_file = new Panel();
 			navNguyenLieu = new CustomControl.CustomButton();
-			panel4 = new Panel();
+			pn_thongKe = new Panel();
 			navCafe = new CustomControl.CustomButton();
-			panel3 = new Panel();
+			pn_nhaCungCap = new Panel();
 			navKhachHang = new CustomControl.CustomButton();
-			panel2 = new Panel();
+			pn_phanQuyen = new Panel();
 			navNhanVien = new CustomControl.CustomButton();
 			label1 = new Label();
 			sideNav = new Panel();
@@ -82,16 +84,16 @@
 			sideBar.SuspendLayout();
 			panel1.SuspendLayout();
 			panel12.SuspendLayout();
-			panel11.SuspendLayout();
-			panel10.SuspendLayout();
-			panel9.SuspendLayout();
-			panel8.SuspendLayout();
-			panel7.SuspendLayout();
-			panel6.SuspendLayout();
-			panel5.SuspendLayout();
-			panel4.SuspendLayout();
-			panel3.SuspendLayout();
-			panel2.SuspendLayout();
+			pn_nhanVien.SuspendLayout();
+			pn_khachHang.SuspendLayout();
+			pn_caPhe.SuspendLayout();
+			pn_nguyenLieu.SuspendLayout();
+			pn_nhapHang.SuspendLayout();
+			pn_hoaDon.SuspendLayout();
+			pn_file.SuspendLayout();
+			pn_thongKe.SuspendLayout();
+			pn_nhaCungCap.SuspendLayout();
+			pn_phanQuyen.SuspendLayout();
 			sideNav.SuspendLayout();
 			backgroundMainView.SuspendLayout();
 			titleBar.SuspendLayout();
@@ -106,16 +108,16 @@
 			sideBar.Controls.Add(panel1);
 			sideBar.Controls.Add(label3);
 			sideBar.Controls.Add(panel12);
-			sideBar.Controls.Add(panel11);
-			sideBar.Controls.Add(panel10);
-			sideBar.Controls.Add(panel9);
-			sideBar.Controls.Add(panel8);
-			sideBar.Controls.Add(panel7);
-			sideBar.Controls.Add(panel6);
-			sideBar.Controls.Add(panel5);
-			sideBar.Controls.Add(panel4);
-			sideBar.Controls.Add(panel3);
-			sideBar.Controls.Add(panel2);
+			sideBar.Controls.Add(pn_nhanVien);
+			sideBar.Controls.Add(pn_khachHang);
+			sideBar.Controls.Add(pn_caPhe);
+			sideBar.Controls.Add(pn_nguyenLieu);
+			sideBar.Controls.Add(pn_nhapHang);
+			sideBar.Controls.Add(pn_hoaDon);
+			sideBar.Controls.Add(pn_file);
+			sideBar.Controls.Add(pn_thongKe);
+			sideBar.Controls.Add(pn_nhaCungCap);
+			sideBar.Controls.Add(pn_phanQuyen);
 			sideBar.Controls.Add(label1);
 			sideBar.Controls.Add(sideNav);
 			sideBar.Dock = DockStyle.Left;
@@ -211,7 +213,6 @@
 			navLogOut.ForeColor = Color.FromArgb(239, 65, 65);
 			navLogOut.Image = Properties.Resources.logoutflatred2;
 			navLogOut.ImageAlign = ContentAlignment.MiddleLeft;
-			navLogOut.ImageHover = Properties.Resources.logoutflatwhite;
 			navLogOut.Location = new Point(5, 5);
 			navLogOut.Name = "navLogOut";
 			navLogOut.Padding = new Padding(5);
@@ -222,17 +223,19 @@
 			navLogOut.TextColor = Color.FromArgb(239, 65, 65);
 			navLogOut.TextHover = Color.White;
 			navLogOut.UseVisualStyleBackColor = false;
-			// 
-			// panel11
-			// 
-			panel11.BackColor = Color.DarkSlateGray;
-			panel11.Controls.Add(navPhanQuyen);
-			panel11.Dock = DockStyle.Top;
-			panel11.Location = new Point(0, 491);
-			panel11.Name = "panel11";
-			panel11.Padding = new Padding(5);
-			panel11.Size = new Size(258, 49);
-			panel11.TabIndex = 12;
+			navLogOut.MouseEnter += navLogOut_MouseEnter;
+			navLogOut.MouseLeave += navLogOut_MouseLeave;
+            // 
+            // pn_nhanVien
+            // 
+            pn_nhanVien.BackColor = Color.DarkSlateGray;
+            pn_nhanVien.Controls.Add(navPhanQuyen);
+            pn_nhanVien.Dock = DockStyle.Top;
+            pn_nhanVien.Location = new Point(0, 491);
+            pn_nhanVien.Name = "pn_nhanVien";
+            pn_nhanVien.Padding = new Padding(5);
+            pn_nhanVien.Size = new Size(258, 49);
+            pn_nhanVien.TabIndex = 12;
 			// 
 			// navPhanQuyen
 			// 
@@ -251,7 +254,6 @@
 			navPhanQuyen.ForeColor = Color.White;
 			navPhanQuyen.Image = Properties.Resources.PERflat;
 			navPhanQuyen.ImageAlign = ContentAlignment.MiddleLeft;
-			navPhanQuyen.ImageHover = null;
 			navPhanQuyen.Location = new Point(5, 5);
 			navPhanQuyen.Name = "navPhanQuyen";
 			navPhanQuyen.Padding = new Padding(5);
@@ -264,18 +266,17 @@
 			btnNavToolTip.SetToolTip(navPhanQuyen, "Phân Quyền");
 			navPhanQuyen.UseVisualStyleBackColor = false;
 			navPhanQuyen.Click += ButtonNavClick;
-			navPhanQuyen.MouseDown += navPhanQuyen_MouseDown;
-			// 
-			// panel10
-			// 
-			panel10.BackColor = Color.DarkSlateGray;
-			panel10.Controls.Add(navNcc);
-			panel10.Dock = DockStyle.Top;
-			panel10.Location = new Point(0, 442);
-			panel10.Name = "panel10";
-			panel10.Padding = new Padding(5);
-			panel10.Size = new Size(258, 49);
-			panel10.TabIndex = 11;
+            // 
+            // pn_khachHang
+            // 
+            pn_khachHang.BackColor = Color.DarkSlateGray;
+            pn_khachHang.Controls.Add(navNcc);
+            pn_khachHang.Dock = DockStyle.Top;
+            pn_khachHang.Location = new Point(0, 442);
+            pn_khachHang.Name = "pn_khachHang";
+            pn_khachHang.Padding = new Padding(5);
+            pn_khachHang.Size = new Size(258, 49);
+            pn_khachHang.TabIndex = 11;
 			// 
 			// navNcc
 			// 
@@ -294,7 +295,6 @@
 			navNcc.ForeColor = Color.White;
 			navNcc.Image = Properties.Resources.supplierflat;
 			navNcc.ImageAlign = ContentAlignment.MiddleLeft;
-			navNcc.ImageHover = null;
 			navNcc.Location = new Point(5, 5);
 			navNcc.Name = "navNcc";
 			navNcc.Padding = new Padding(5);
@@ -307,18 +307,17 @@
 			btnNavToolTip.SetToolTip(navNcc, "Nhà Cung Cấp");
 			navNcc.UseVisualStyleBackColor = false;
 			navNcc.Click += ButtonNavClick;
-			navNcc.MouseDown += navNcc_MouseDown;
-			// 
-			// panel9
-			// 
-			panel9.BackColor = Color.DarkSlateGray;
-			panel9.Controls.Add(navThongKe);
-			panel9.Dock = DockStyle.Top;
-			panel9.Location = new Point(0, 393);
-			panel9.Name = "panel9";
-			panel9.Padding = new Padding(5);
-			panel9.Size = new Size(258, 49);
-			panel9.TabIndex = 10;
+            // 
+            // pn_caPhe
+            // 
+            pn_caPhe.BackColor = Color.DarkSlateGray;
+            pn_caPhe.Controls.Add(navThongKe);
+            pn_caPhe.Dock = DockStyle.Top;
+            pn_caPhe.Location = new Point(0, 393);
+            pn_caPhe.Name = "pn_caPhe";
+            pn_caPhe.Padding = new Padding(5);
+            pn_caPhe.Size = new Size(258, 49);
+            pn_caPhe.TabIndex = 10;
 			// 
 			// navThongKe
 			// 
@@ -337,7 +336,6 @@
 			navThongKe.ForeColor = Color.White;
 			navThongKe.Image = Properties.Resources.statisticflat;
 			navThongKe.ImageAlign = ContentAlignment.MiddleLeft;
-			navThongKe.ImageHover = null;
 			navThongKe.Location = new Point(5, 5);
 			navThongKe.Name = "navThongKe";
 			navThongKe.Padding = new Padding(5);
@@ -350,18 +348,17 @@
 			btnNavToolTip.SetToolTip(navThongKe, "Thống Kê");
 			navThongKe.UseVisualStyleBackColor = false;
 			navThongKe.Click += ButtonNavClick;
-			navThongKe.MouseDown += navThongKe_MouseDown;
-			// 
-			// panel8
-			// 
-			panel8.BackColor = Color.DarkSlateGray;
-			panel8.Controls.Add(navFile);
-			panel8.Dock = DockStyle.Top;
-			panel8.Location = new Point(0, 344);
-			panel8.Name = "panel8";
-			panel8.Padding = new Padding(5);
-			panel8.Size = new Size(258, 49);
-			panel8.TabIndex = 9;
+            // 
+            // pn_nguyenLieu
+            // 
+            pn_nguyenLieu.BackColor = Color.DarkSlateGray;
+            pn_nguyenLieu.Controls.Add(navFile);
+            pn_nguyenLieu.Dock = DockStyle.Top;
+            pn_nguyenLieu.Location = new Point(0, 344);
+            pn_nguyenLieu.Name = "pn_nguyenLieu";
+            pn_nguyenLieu.Padding = new Padding(5);
+            pn_nguyenLieu.Size = new Size(258, 49);
+            pn_nguyenLieu.TabIndex = 9;
 			// 
 			// navFile
 			// 
@@ -380,7 +377,6 @@
 			navFile.ForeColor = Color.White;
 			navFile.Image = Properties.Resources.fileFla;
 			navFile.ImageAlign = ContentAlignment.MiddleLeft;
-			navFile.ImageHover = null;
 			navFile.Location = new Point(5, 5);
 			navFile.Name = "navFile";
 			navFile.Padding = new Padding(5);
@@ -395,16 +391,16 @@
 			navFile.Click += ButtonNavClick;
 			navFile.MouseDown += navFile_MouseDown;
 			// 
-			// panel7
+			// pn_nhapHang
 			// 
-			panel7.BackColor = Color.DarkSlateGray;
-			panel7.Controls.Add(navHoaDon);
-			panel7.Dock = DockStyle.Top;
-			panel7.Location = new Point(0, 295);
-			panel7.Name = "panel7";
-			panel7.Padding = new Padding(5);
-			panel7.Size = new Size(258, 49);
-			panel7.TabIndex = 8;
+			pn_nhapHang.BackColor = Color.DarkSlateGray;
+			pn_nhapHang.Controls.Add(navHoaDon);
+			pn_nhapHang.Dock = DockStyle.Top;
+			pn_nhapHang.Location = new Point(0, 295);
+			pn_nhapHang.Name = "pn_nhapHang";
+			pn_nhapHang.Padding = new Padding(5);
+			pn_nhapHang.Size = new Size(258, 49);
+			pn_nhapHang.TabIndex = 8;
 			// 
 			// navHoaDon
 			// 
@@ -423,7 +419,6 @@
 			navHoaDon.ForeColor = Color.White;
 			navHoaDon.Image = Properties.Resources.invoiceFlat;
 			navHoaDon.ImageAlign = ContentAlignment.MiddleLeft;
-			navHoaDon.ImageHover = null;
 			navHoaDon.Location = new Point(5, 5);
 			navHoaDon.Name = "navHoaDon";
 			navHoaDon.Padding = new Padding(5);
@@ -438,16 +433,16 @@
 			navHoaDon.Click += ButtonNavClick;
 			navHoaDon.MouseDown += navHoaDon_MouseDown;
 			// 
-			// panel6
+			// pn_hoaDon
 			// 
-			panel6.BackColor = Color.DarkSlateGray;
-			panel6.Controls.Add(navNhapHang);
-			panel6.Dock = DockStyle.Top;
-			panel6.Location = new Point(0, 246);
-			panel6.Name = "panel6";
-			panel6.Padding = new Padding(5);
-			panel6.Size = new Size(258, 49);
-			panel6.TabIndex = 7;
+			pn_hoaDon.BackColor = Color.DarkSlateGray;
+			pn_hoaDon.Controls.Add(navNhapHang);
+			pn_hoaDon.Dock = DockStyle.Top;
+			pn_hoaDon.Location = new Point(0, 246);
+			pn_hoaDon.Name = "pn_hoaDon";
+			pn_hoaDon.Padding = new Padding(5);
+			pn_hoaDon.Size = new Size(258, 49);
+			pn_hoaDon.TabIndex = 7;
 			// 
 			// navNhapHang
 			// 
@@ -466,7 +461,6 @@
 			navNhapHang.ForeColor = Color.White;
 			navNhapHang.Image = Properties.Resources.importFlat;
 			navNhapHang.ImageAlign = ContentAlignment.MiddleLeft;
-			navNhapHang.ImageHover = null;
 			navNhapHang.Location = new Point(5, 5);
 			navNhapHang.Name = "navNhapHang";
 			navNhapHang.Padding = new Padding(5);
@@ -481,16 +475,16 @@
 			navNhapHang.Click += ButtonNavClick;
 			navNhapHang.MouseDown += navNhapHang_MouseDown;
 			// 
-			// panel5
+			// pn_file
 			// 
-			panel5.BackColor = Color.DarkSlateGray;
-			panel5.Controls.Add(navNguyenLieu);
-			panel5.Dock = DockStyle.Top;
-			panel5.Location = new Point(0, 197);
-			panel5.Name = "panel5";
-			panel5.Padding = new Padding(5);
-			panel5.Size = new Size(258, 49);
-			panel5.TabIndex = 6;
+			pn_file.BackColor = Color.DarkSlateGray;
+			pn_file.Controls.Add(navNguyenLieu);
+			pn_file.Dock = DockStyle.Top;
+			pn_file.Location = new Point(0, 197);
+			pn_file.Name = "pn_file";
+			pn_file.Padding = new Padding(5);
+			pn_file.Size = new Size(258, 49);
+			pn_file.TabIndex = 6;
 			// 
 			// navNguyenLieu
 			// 
@@ -509,7 +503,6 @@
 			navNguyenLieu.ForeColor = Color.White;
 			navNguyenLieu.Image = Properties.Resources.ingreFlat;
 			navNguyenLieu.ImageAlign = ContentAlignment.MiddleLeft;
-			navNguyenLieu.ImageHover = null;
 			navNguyenLieu.Location = new Point(5, 5);
 			navNguyenLieu.Name = "navNguyenLieu";
 			navNguyenLieu.Padding = new Padding(5);
@@ -524,16 +517,16 @@
 			navNguyenLieu.Click += ButtonNavClick;
 			navNguyenLieu.MouseDown += navNguyenLieu_MouseDown;
 			// 
-			// panel4
+			// pn_thongKe
 			// 
-			panel4.BackColor = Color.DarkSlateGray;
-			panel4.Controls.Add(navCafe);
-			panel4.Dock = DockStyle.Top;
-			panel4.Location = new Point(0, 148);
-			panel4.Name = "panel4";
-			panel4.Padding = new Padding(5);
-			panel4.Size = new Size(258, 49);
-			panel4.TabIndex = 5;
+			pn_thongKe.BackColor = Color.DarkSlateGray;
+			pn_thongKe.Controls.Add(navCafe);
+			pn_thongKe.Dock = DockStyle.Top;
+			pn_thongKe.Location = new Point(0, 148);
+			pn_thongKe.Name = "pn_thongKe";
+			pn_thongKe.Padding = new Padding(5);
+			pn_thongKe.Size = new Size(258, 49);
+			pn_thongKe.TabIndex = 5;
 			// 
 			// navCafe
 			// 
@@ -552,7 +545,6 @@
 			navCafe.ForeColor = Color.White;
 			navCafe.Image = Properties.Resources.CoffeeFlat;
 			navCafe.ImageAlign = ContentAlignment.MiddleLeft;
-			navCafe.ImageHover = null;
 			navCafe.Location = new Point(5, 5);
 			navCafe.Name = "navCafe";
 			navCafe.Padding = new Padding(5);
@@ -567,16 +559,16 @@
 			navCafe.Click += ButtonNavClick;
 			navCafe.MouseDown += navCafe_MouseDown;
 			// 
-			// panel3
+			// pn_nhaCungCap
 			// 
-			panel3.BackColor = Color.DarkSlateGray;
-			panel3.Controls.Add(navKhachHang);
-			panel3.Dock = DockStyle.Top;
-			panel3.Location = new Point(0, 99);
-			panel3.Name = "panel3";
-			panel3.Padding = new Padding(5);
-			panel3.Size = new Size(258, 49);
-			panel3.TabIndex = 4;
+			pn_nhaCungCap.BackColor = Color.DarkSlateGray;
+			pn_nhaCungCap.Controls.Add(navKhachHang);
+			pn_nhaCungCap.Dock = DockStyle.Top;
+			pn_nhaCungCap.Location = new Point(0, 99);
+			pn_nhaCungCap.Name = "pn_nhaCungCap";
+			pn_nhaCungCap.Padding = new Padding(5);
+			pn_nhaCungCap.Size = new Size(258, 49);
+			pn_nhaCungCap.TabIndex = 4;
 			// 
 			// navKhachHang
 			// 
@@ -595,7 +587,6 @@
 			navKhachHang.ForeColor = Color.White;
 			navKhachHang.Image = Properties.Resources.EmployeeFlat;
 			navKhachHang.ImageAlign = ContentAlignment.MiddleLeft;
-			navKhachHang.ImageHover = null;
 			navKhachHang.Location = new Point(5, 5);
 			navKhachHang.Name = "navKhachHang";
 			navKhachHang.Padding = new Padding(5);
@@ -610,16 +601,16 @@
 			navKhachHang.Click += ButtonNavClick;
 			navKhachHang.MouseDown += navKhachHang_MouseDown;
 			// 
-			// panel2
+			// pn_phanQuyen
 			// 
-			panel2.BackColor = Color.DarkSlateGray;
-			panel2.Controls.Add(navNhanVien);
-			panel2.Dock = DockStyle.Top;
-			panel2.Location = new Point(0, 50);
-			panel2.Name = "panel2";
-			panel2.Padding = new Padding(5);
-			panel2.Size = new Size(258, 49);
-			panel2.TabIndex = 2;
+			pn_phanQuyen.BackColor = Color.DarkSlateGray;
+			pn_phanQuyen.Controls.Add(navNhanVien);
+			pn_phanQuyen.Dock = DockStyle.Top;
+			pn_phanQuyen.Location = new Point(0, 50);
+			pn_phanQuyen.Name = "pn_phanQuyen";
+			pn_phanQuyen.Padding = new Padding(5);
+			pn_phanQuyen.Size = new Size(258, 49);
+			pn_phanQuyen.TabIndex = 2;
 			// 
 			// navNhanVien
 			// 
@@ -638,7 +629,6 @@
 			navNhanVien.ForeColor = Color.White;
 			navNhanVien.Image = Properties.Resources.manIcontest;
 			navNhanVien.ImageAlign = ContentAlignment.MiddleLeft;
-			navNhanVien.ImageHover = null;
 			navNhanVien.Location = new Point(5, 5);
 			navNhanVien.Name = "navNhanVien";
 			navNhanVien.Padding = new Padding(5);
@@ -690,7 +680,6 @@
 			sideNavBtn.ForeColor = Color.White;
 			sideNavBtn.Image = Properties.Resources.navCloseflat;
 			sideNavBtn.ImageAlign = ContentAlignment.MiddleLeft;
-			sideNavBtn.ImageHover = null;
 			sideNavBtn.Location = new Point(5, 5);
 			sideNavBtn.Name = "sideNavBtn";
 			sideNavBtn.Padding = new Padding(5);
@@ -816,7 +805,6 @@
 			customButton4.FlatStyle = FlatStyle.Flat;
 			customButton4.ForeColor = Color.White;
 			customButton4.Image = Properties.Resources.TaskIcon;
-			customButton4.ImageHover = null;
 			customButton4.Location = new Point(372, 5);
 			customButton4.Margin = new Padding(3, 3, 20, 3);
 			customButton4.Name = "customButton4";
@@ -842,7 +830,6 @@
 			customButton3.FlatStyle = FlatStyle.Flat;
 			customButton3.ForeColor = Color.White;
 			customButton3.Image = Properties.Resources.emailIcon;
-			customButton3.ImageHover = null;
 			customButton3.Location = new Point(446, 5);
 			customButton3.Name = "customButton3";
 			customButton3.Size = new Size(53, 40);
@@ -867,7 +854,6 @@
 			customButton2.FlatStyle = FlatStyle.Flat;
 			customButton2.ForeColor = Color.White;
 			customButton2.Image = Properties.Resources.notificationIcon;
-			customButton2.ImageHover = null;
 			customButton2.Location = new Point(520, 5);
 			customButton2.Name = "customButton2";
 			customButton2.Size = new Size(53, 40);
@@ -893,7 +879,6 @@
 			accountIcon.FlatStyle = FlatStyle.Flat;
 			accountIcon.ForeColor = Color.White;
 			accountIcon.Image = Properties.Resources.usericon;
-			accountIcon.ImageHover = null;
 			accountIcon.Location = new Point(626, 5);
 			accountIcon.Name = "accountIcon";
 			accountIcon.Size = new Size(53, 40);
@@ -963,16 +948,16 @@
 			sideBar.ResumeLayout(false);
 			panel1.ResumeLayout(false);
 			panel12.ResumeLayout(false);
-			panel11.ResumeLayout(false);
-			panel10.ResumeLayout(false);
-			panel9.ResumeLayout(false);
-			panel8.ResumeLayout(false);
-			panel7.ResumeLayout(false);
-			panel6.ResumeLayout(false);
-			panel5.ResumeLayout(false);
-			panel4.ResumeLayout(false);
-			panel3.ResumeLayout(false);
-			panel2.ResumeLayout(false);
+            pn_nhanVien.ResumeLayout(false);
+            pn_khachHang.ResumeLayout(false);
+			pn_caPhe.ResumeLayout(false);
+            pn_nguyenLieu.ResumeLayout(false);
+			pn_nhapHang.ResumeLayout(false);
+			pn_hoaDon.ResumeLayout(false);
+			pn_file.ResumeLayout(false);
+			pn_thongKe.ResumeLayout(false);
+			pn_nhaCungCap.ResumeLayout(false);
+			pn_phanQuyen.ResumeLayout(false);
 			sideNav.ResumeLayout(false);
 			backgroundMainView.ResumeLayout(false);
 			titleBar.ResumeLayout(false);
@@ -980,54 +965,54 @@
 			ResumeLayout(false);
 		}
 
-		#endregion
-		private BindingSource bindingSource1;
-		private CustomControl.SidePanel sideBar;
-		private Label label1;
-		private Panel panel2;
-		private CustomControl.CustomButton navNhanVien;
-		private Panel panel11;
-		private CustomControl.CustomButton navPhanQuyen;
-		private Panel panel10;
-		private CustomControl.CustomButton navNcc;
-		private Panel panel9;
-		private CustomControl.CustomButton navThongKe;
-		private Panel panel8;
-		private CustomControl.CustomButton navFile;
-		private Panel panel7;
-		private CustomControl.CustomButton navHoaDon;
-		private Panel panel6;
-		private CustomControl.CustomButton navNhapHang;
-		private Panel panel5;
-		private CustomControl.CustomButton navNguyenLieu;
-		private Panel panel4;
-		private CustomControl.CustomButton navCafe;
-		private Panel panel3;
-		private CustomControl.CustomButton navKhachHang;
-		private ToolTip btnNavToolTip;
-		private Label label3;
-		private Panel panel12;
-		private CustomControl.CustomButton navLogOut;
-		private Panel sideNav;
-		private CustomControl.CustomButton sideNavBtn;
-		private System.Windows.Forms.Timer sideMinimizeTimer;
-		private System.Windows.Forms.Timer sideExpandTimer;
-		private CustomControl.SidePanel backgroundMainView;
-		private CustomControl.SidePanel titleBar;
-		private CustomControl.CustomButton accountIcon;
-		private CustomControl.CustomButton customButton4;
-		private CustomControl.CustomButton customButton3;
-		private CustomControl.CustomButton customButton2;
-		private Label imageLblTitle;
-		private Label textLblTitle;
-		private Label timeLblTitle;
-		private System.Windows.Forms.Timer timerLblTitle;
-		private ContextMenuStrip contextMenuStrip1;
-		private ToolStripMenuItem accMenuStrip;
-		private ToolStripMenuItem changePassMenuStrip;
-		private ToolStripMenuItem settingMenuStrip;
-		private ToolStripMenuItem logOutMenuStrip;
-		private CustomControl.SidePanel mainPanelContainer;
+        #endregion
+        private BindingSource bindingSource1;
+        private CustomControl.SidePanel sideBar;
+        private Label label1;
+        private Panel pn_nhanVien;
+        private CustomControl.CustomButton navNhanVien;
+        private Panel pn_phanQuyen;
+        private CustomControl.CustomButton navPhanQuyen;
+        private Panel pn_nhaCungCap;
+        private CustomControl.CustomButton navNcc;
+        private Panel pn_thongKe;
+        private CustomControl.CustomButton navThongKe;
+        private Panel pn_file;
+        private CustomControl.CustomButton navFile;
+        private Panel pn_hoaDon;
+        private CustomControl.CustomButton navHoaDon;
+        private Panel pn_nhapHang;
+        private CustomControl.CustomButton navNhapHang;
+        private Panel pn_nguyenLieu;
+        private CustomControl.CustomButton navNguyenLieu;
+        private Panel pn_caPhe;
+        private CustomControl.CustomButton navCafe;
+        private Panel pn_khachHang;
+        private CustomControl.CustomButton navKhachHang;
+        private ToolTip btnNavToolTip;
+        private Label label3;
+        private Panel panel12;
+        private CustomControl.CustomButton navLogOut;
+        private Panel sideNav;
+        private CustomControl.CustomButton sideNavBtn;
+        private System.Windows.Forms.Timer sideMinimizeTimer;
+        private System.Windows.Forms.Timer sideExpandTimer;
+        private CustomControl.SidePanel backgroundMainView;
+        private CustomControl.SidePanel titleBar;
+        private CustomControl.CustomButton accountIcon;
+        private CustomControl.CustomButton customButton4;
+        private CustomControl.CustomButton customButton3;
+        private CustomControl.CustomButton customButton2;
+        private Label imageLblTitle;
+        private Label textLblTitle;
+        private Label timeLblTitle;
+        private System.Windows.Forms.Timer timerLblTitle;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem accMenuStrip;
+        private ToolStripMenuItem changePassMenuStrip;
+        private ToolStripMenuItem settingMenuStrip;
+        private ToolStripMenuItem logOutMenuStrip;
+        private CustomControl.SidePanel mainPanelContainer;
 		private Panel panel1;
 		private CustomControl.CustomButton navPgg;
 	}

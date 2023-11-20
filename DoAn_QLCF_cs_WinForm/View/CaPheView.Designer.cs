@@ -154,8 +154,7 @@
 			customButton2.FlatAppearance.BorderSize = 0;
 			customButton2.FlatAppearance.MouseOverBackColor = Color.FromArgb(50, 64, 64, 64);
 			customButton2.FlatStyle = FlatStyle.Flat;
-			customButton2.ForeColor = Color.White;
-			customButton2.Image = Properties.Resources.findIcon16px;
+			customButton2.ForeColor = Color.White;			
 			customButton2.ImageHover = null;
 			customButton2.Location = new Point(234, 10);
 			customButton2.Name = "customButton2";
