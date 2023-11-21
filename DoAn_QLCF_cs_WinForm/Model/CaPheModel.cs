@@ -9,25 +9,28 @@ namespace DoAn_QLCF_cs_WinForm.Model
 {
 	public class CaPheModel
 	{
-		private Image anh;
-		private int id;
-		private string name;
 
-		[DisplayName("ID cà phê")]
-		public int Id 
-		{ get => id;
-			set => id = value; }
+		[DisplayName("ID")]
+		public int Id { get ; set ; }
 
+		[DisplayName("Hình Ảnh")]
+		public Image HinhAnh { get; set; }
 
-		[DisplayName("Tên cà phê")]
-		public string Name { get => name; 
-			set  {
-				name = value;
+		[DisplayName("Tên")]
+		public string Ten { get; set; }
 
-			}
-		}
+		[DisplayName("Giá")]
+		public float Gia { get; set; }
 
-		[DisplayName("ảnh")]
-		public Image Anh { get => anh; set => anh = value; }
+		[DisplayName("Miêu Tả")]
+		public string MieuTa { get; set; }
+
+		[DisplayName("Xuất Xứ")]
+		public string XuatXu { get; set; }
+
+		
+
+		[DisplayName("IsDelete")]
+		public bool IsDelete { get; set; }
 	}
 }

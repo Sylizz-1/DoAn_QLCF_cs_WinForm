@@ -10,7 +10,7 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
 {
 	public interface ICaPheView
 	{
-		CaPhePresenter Presenter { set; }
+		CaPhePresenter Presenter { get; set; }
 		string Message { get; set; }
 		string SearchValue { get; set; }
 

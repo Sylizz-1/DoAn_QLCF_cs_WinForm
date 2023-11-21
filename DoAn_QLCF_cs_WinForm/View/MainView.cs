@@ -5,7 +5,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,7 +44,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             this.connectionString = connectionString;
             this.employeeInfor = employeeInfor;
             LoadButtonNav();
-            timerLblTitle.Start();
+            timerLblTitle.Start();  
             LoadFormContainer();
 
             RemoveControlByPermission();

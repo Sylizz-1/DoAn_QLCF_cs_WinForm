@@ -2,6 +2,7 @@
 using DoAn_QLCF_cs_WinForm.Repository.RepositoryInterface;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,8 +11,12 @@ namespace DoAn_QLCF_cs_WinForm.Repository
 {
 	public class CaPheRepository : BaseRepository, ICaPheRepository
 	{
+		private string caPheImagePath;
 		public CaPheRepository(string connectionString) {
 			this.connectionString = connectionString;
+			string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+			var logoimage = Path.Combine(path, "image\\caPhe");
+			caPheImagePath = logoimage;
 		}
 
 		public void Add(CaPheModel obj)
@@ -27,15 +32,33 @@ namespace DoAn_QLCF_cs_WinForm.Repository
 		public IEnumerable<CaPheModel> GetAll()
 		{
 			// Tạo một danh sách Caphemodel
-			List<CaPheModel> danhSachCaphe = new List<CaPheModel>
+			var cpList = new List<CaPheModel>();
+			using(var connection = new SqlConnection(this.connectionString))
+			using(var cmd = connection.CreateCommand())
 			{
-				// Thêm các đối tượng vào danh sách
-				new CaPheModel { Id = 1, Name = "Cà phê đen" },
-				new CaPheModel { Id = 2, Name = "Cappuccino" },
-				new CaPheModel { Id = 3, Name = "Espresso" }
-			};
+				connection.Open();
+				cmd.Connection = connection;
+				cmd.CommandText = "select * from CaPhe order by CaPheId desc";
+				using(var reader = cmd.ExecuteReader())
+				{
+					while (reader.Read())
+					{
+						var cpModel = new CaPheModel();
+						cpModel.Id = (int)reader["CaPheId"];
+						cpModel.Ten = reader["TenCaPhe"].ToString();
+						cpModel.Gia = Convert.ToSingle(reader["Gia"]) ;
+						cpModel.MieuTa = reader["MieuTa"].ToString();
+						cpModel.XuatXu = reader["XuatXu"].ToString();
+						string imgPath = Path.Combine(this.caPheImagePath, reader["HinhAnh"].ToString());
+						cpModel.HinhAnh = Image.FromFile(imgPath) ?? null;
+						cpModel.IsDelete = (bool)reader["IsDeleted"];
 
-			return danhSachCaphe;
+						cpList.Add(cpModel);
+					}
+				}
+
+				return cpList;
+			}
 		}
 
 		public CaPheModel GetById(int id)

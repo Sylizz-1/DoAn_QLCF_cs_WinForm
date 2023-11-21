@@ -32,7 +32,7 @@
 			DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
 			DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
 			tabControl1 = new TabControl();
-			listTabPage = new TabPage();
+			listTp = new TabPage();
 			label9 = new Label();
 			label2 = new Label();
 			comboBox2 = new ComboBox();
@@ -43,12 +43,12 @@
 			addBtn = new CustomControl.CustomButton();
 			searchTxt = new CustomControl.CustomTextBox();
 			dataGridView1 = new DataGridView();
-			DetailsTabPage = new TabPage();
+			DetailsTp = new TabPage();
+			comboBox3 = new ComboBox();
 			HuyBtn = new CustomControl.CustomButton();
 			xacNhanBtn = new CustomControl.CustomButton();
 			caPhePic = new PictureBox();
 			label8 = new Label();
-			customTextBox5 = new CustomControl.CustomTextBox();
 			label6 = new Label();
 			customTextBox4 = new CustomControl.CustomTextBox();
 			label3 = new Label();
@@ -62,17 +62,19 @@
 			label5 = new Label();
 			label4 = new Label();
 			label1 = new Label();
+			nguyenLieuTp = new TabPage();
 			tabControl1.SuspendLayout();
-			listTabPage.SuspendLayout();
+			listTp.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-			DetailsTabPage.SuspendLayout();
+			DetailsTp.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)caPhePic).BeginInit();
 			SuspendLayout();
 			// 
 			// tabControl1
 			// 
-			tabControl1.Controls.Add(listTabPage);
-			tabControl1.Controls.Add(DetailsTabPage);
+			tabControl1.Controls.Add(listTp);
+			tabControl1.Controls.Add(DetailsTp);
+			tabControl1.Controls.Add(nguyenLieuTp);
 			tabControl1.Dock = DockStyle.Fill;
 			tabControl1.Location = new Point(0, 0);
 			tabControl1.Name = "tabControl1";
@@ -80,25 +82,25 @@
 			tabControl1.Size = new Size(1077, 554);
 			tabControl1.TabIndex = 2;
 			// 
-			// listTabPage
+			// listTp
 			// 
-			listTabPage.BackColor = SystemColors.Control;
-			listTabPage.Controls.Add(label9);
-			listTabPage.Controls.Add(label2);
-			listTabPage.Controls.Add(comboBox2);
-			listTabPage.Controls.Add(comboBox1);
-			listTabPage.Controls.Add(customButton2);
-			listTabPage.Controls.Add(delBtn);
-			listTabPage.Controls.Add(editBtn);
-			listTabPage.Controls.Add(addBtn);
-			listTabPage.Controls.Add(searchTxt);
-			listTabPage.Controls.Add(dataGridView1);
-			listTabPage.Location = new Point(4, 24);
-			listTabPage.Name = "listTabPage";
-			listTabPage.Padding = new Padding(3);
-			listTabPage.Size = new Size(1069, 526);
-			listTabPage.TabIndex = 0;
-			listTabPage.Text = "Danh Sách";
+			listTp.BackColor = SystemColors.Control;
+			listTp.Controls.Add(label9);
+			listTp.Controls.Add(label2);
+			listTp.Controls.Add(comboBox2);
+			listTp.Controls.Add(comboBox1);
+			listTp.Controls.Add(customButton2);
+			listTp.Controls.Add(delBtn);
+			listTp.Controls.Add(editBtn);
+			listTp.Controls.Add(addBtn);
+			listTp.Controls.Add(searchTxt);
+			listTp.Controls.Add(dataGridView1);
+			listTp.Location = new Point(4, 24);
+			listTp.Name = "listTp";
+			listTp.Padding = new Padding(3);
+			listTp.Size = new Size(1069, 526);
+			listTp.TabIndex = 0;
+			listTp.Text = "Danh Sách";
 			// 
 			// label9
 			// 
@@ -273,6 +275,7 @@
 			searchTxt.TabIndex = 2;
 			searchTxt.Texts = "";
 			searchTxt.UnderlinedStyle = false;
+			searchTxt._TextChanged += searchTxt__TextChanged;
 			// 
 			// dataGridView1
 			// 
@@ -315,33 +318,43 @@
 			dataGridView1.Size = new Size(1063, 358);
 			dataGridView1.TabIndex = 1;
 			// 
-			// DetailsTabPage
+			// DetailsTp
 			// 
-			DetailsTabPage.BackColor = SystemColors.Control;
-			DetailsTabPage.Controls.Add(HuyBtn);
-			DetailsTabPage.Controls.Add(xacNhanBtn);
-			DetailsTabPage.Controls.Add(caPhePic);
-			DetailsTabPage.Controls.Add(label8);
-			DetailsTabPage.Controls.Add(customTextBox5);
-			DetailsTabPage.Controls.Add(label6);
-			DetailsTabPage.Controls.Add(customTextBox4);
-			DetailsTabPage.Controls.Add(label3);
-			DetailsTabPage.Controls.Add(customTextBox1);
-			DetailsTabPage.Controls.Add(M);
-			DetailsTabPage.Controls.Add(label7);
-			DetailsTabPage.Controls.Add(customButton4);
-			DetailsTabPage.Controls.Add(idTxt);
-			DetailsTabPage.Controls.Add(customTextBox3);
-			DetailsTabPage.Controls.Add(customTextBox2);
-			DetailsTabPage.Controls.Add(label5);
-			DetailsTabPage.Controls.Add(label4);
-			DetailsTabPage.Controls.Add(label1);
-			DetailsTabPage.Location = new Point(4, 24);
-			DetailsTabPage.Name = "DetailsTabPage";
-			DetailsTabPage.Padding = new Padding(3);
-			DetailsTabPage.Size = new Size(1069, 526);
-			DetailsTabPage.TabIndex = 1;
-			DetailsTabPage.Text = "Chi Tiết";
+			DetailsTp.BackColor = SystemColors.Control;
+			DetailsTp.Controls.Add(comboBox3);
+			DetailsTp.Controls.Add(HuyBtn);
+			DetailsTp.Controls.Add(xacNhanBtn);
+			DetailsTp.Controls.Add(caPhePic);
+			DetailsTp.Controls.Add(label8);
+			DetailsTp.Controls.Add(label6);
+			DetailsTp.Controls.Add(customTextBox4);
+			DetailsTp.Controls.Add(label3);
+			DetailsTp.Controls.Add(customTextBox1);
+			DetailsTp.Controls.Add(M);
+			DetailsTp.Controls.Add(label7);
+			DetailsTp.Controls.Add(customButton4);
+			DetailsTp.Controls.Add(idTxt);
+			DetailsTp.Controls.Add(customTextBox3);
+			DetailsTp.Controls.Add(customTextBox2);
+			DetailsTp.Controls.Add(label5);
+			DetailsTp.Controls.Add(label4);
+			DetailsTp.Controls.Add(label1);
+			DetailsTp.Location = new Point(4, 24);
+			DetailsTp.Name = "DetailsTp";
+			DetailsTp.Padding = new Padding(3);
+			DetailsTp.Size = new Size(1069, 526);
+			DetailsTp.TabIndex = 1;
+			DetailsTp.Text = "Chi Tiết";
+			// 
+			// comboBox3
+			// 
+			comboBox3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+			comboBox3.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+			comboBox3.FormattingEnabled = true;
+			comboBox3.Location = new Point(347, 172);
+			comboBox3.Name = "comboBox3";
+			comboBox3.Size = new Size(244, 36);
+			comboBox3.TabIndex = 52;
 			// 
 			// HuyBtn
 			// 
@@ -424,27 +437,6 @@
 			label8.TabIndex = 23;
 			label8.Text = "Hình Ảnh";
 			label8.TextAlign = ContentAlignment.MiddleCenter;
-			// 
-			// customTextBox5
-			// 
-			customTextBox5.BackColor = SystemColors.Window;
-			customTextBox5.BorderColor = Color.Silver;
-			customTextBox5.BorderFocusColor = Color.DarkCyan;
-			customTextBox5.BorderRadius = 13;
-			customTextBox5.BorderSize = 2;
-			customTextBox5.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-			customTextBox5.ForeColor = Color.DimGray;
-			customTextBox5.Location = new Point(347, 166);
-			customTextBox5.Multiline = false;
-			customTextBox5.Name = "customTextBox5";
-			customTextBox5.Padding = new Padding(9, 9, 7, 7);
-			customTextBox5.PasswordChar = false;
-			customTextBox5.PlaceholderColor = Color.DarkGray;
-			customTextBox5.PlaceholderText = "IsDelete....";
-			customTextBox5.Size = new Size(244, 42);
-			customTextBox5.TabIndex = 22;
-			customTextBox5.Texts = "";
-			customTextBox5.UnderlinedStyle = false;
 			// 
 			// label6
 			// 
@@ -645,6 +637,15 @@
 			label1.Text = "ID";
 			label1.TextAlign = ContentAlignment.MiddleCenter;
 			// 
+			// nguyenLieuTp
+			// 
+			nguyenLieuTp.Location = new Point(4, 24);
+			nguyenLieuTp.Name = "nguyenLieuTp";
+			nguyenLieuTp.Size = new Size(1069, 526);
+			nguyenLieuTp.TabIndex = 2;
+			nguyenLieuTp.Text = "tabPage1";
+			nguyenLieuTp.UseVisualStyleBackColor = true;
+			// 
 			// CaPheView
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
@@ -655,20 +656,20 @@
 			Name = "CaPheView";
 			Text = "CaPheView";
 			tabControl1.ResumeLayout(false);
-			listTabPage.ResumeLayout(false);
+			listTp.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-			DetailsTabPage.ResumeLayout(false);
+			DetailsTp.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)caPhePic).EndInit();
 			ResumeLayout(false);
 		}
 
 		#endregion
 		private TabControl tabControl1;
-		private TabPage listTabPage;
+		private TabPage listTp;
 		private DataGridView dataGridView1;
 		private CustomControl.CustomButton addBtn;
 		private CustomControl.CustomTextBox searchTxt;
-		private TabPage DetailsTabPage;
+		private TabPage DetailsTp;
 		private Label label5;
 		private Label label4;
 		private Label label1;
@@ -682,7 +683,6 @@
 		private ComboBox comboBox2;
 		private CustomControl.CustomButton customButton4;
 		private Label label7;
-		private CustomControl.CustomTextBox customTextBox5;
 		private Label label6;
 		private CustomControl.CustomTextBox customTextBox4;
 		private Label label3;
@@ -694,5 +694,7 @@
 		private CustomControl.CustomButton HuyBtn;
 		private Label label2;
 		private Label label9;
+		private TabPage nguyenLieuTp;
+		private ComboBox comboBox3;
 	}
 }

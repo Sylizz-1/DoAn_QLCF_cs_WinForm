@@ -17,6 +17,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 		public KhachHangView()
 		{
 			InitializeComponent();
+			SetUpView();
 		}
 
 		private static KhachHangView instance;
@@ -38,6 +39,13 @@ namespace DoAn_QLCF_cs_WinForm.View
 			}
 			instance.Show();
 			return instance;
+		}
+
+		private void SetUpView()
+		{
+			tabControl1.Appearance = TabAppearance.FlatButtons;
+			tabControl1.ItemSize = new System.Drawing.Size(0, 1);
+			tabControl1.SizeMode = TabSizeMode.Fixed;
 		}
 	}
 }

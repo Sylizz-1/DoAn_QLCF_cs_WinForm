@@ -31,7 +31,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 			get => this.searchTxt.Text;
 			set => this.searchTxt.Text = value;
 		}
-		public CaPhePresenter Presenter { set => this.presenter = value; }
+		public CaPhePresenter Presenter { get; set => this.presenter = value; }
 		public string CapheId { get => this.idTxt.Texts; set => this.idTxt.Texts = value; }
 
 
@@ -39,10 +39,12 @@ namespace DoAn_QLCF_cs_WinForm.View
 		public void LoadData(BindingSource list)
 		{
 			this.dataGridView1.DataSource = list;
+			((DataGridViewImageColumn)dataGridView1.Columns[1]).ImageLayout = DataGridViewImageCellLayout.Zoom;
 		}
 
 		private void SetUpView()
 		{
+			// setup Tabcontrol
 			tabControl1.Appearance = TabAppearance.FlatButtons;
 			tabControl1.ItemSize = new System.Drawing.Size(0, 1);
 			tabControl1.SizeMode = TabSizeMode.Fixed;
@@ -86,8 +88,12 @@ namespace DoAn_QLCF_cs_WinForm.View
 
 		private void addBtn_Click(object sender, EventArgs e)
 		{
-			this.tabControl1.TabPages.Remove(listTabPage);
 			presenter.Add();
+		}
+
+		private void searchTxt__TextChanged(object sender, EventArgs e)
+		{
+			Presenter.SearchChange();
 		}
 	}
 }
