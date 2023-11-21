@@ -155,6 +155,7 @@
 			customButton2.FlatAppearance.MouseOverBackColor = Color.FromArgb(50, 64, 64, 64);
 			customButton2.FlatStyle = FlatStyle.Flat;
 			customButton2.ForeColor = Color.White;
+			customButton2.Image = Properties.Resources.findIcon16px;
 			customButton2.ImageHover = null;
 			customButton2.Location = new Point(234, 10);
 			customButton2.Name = "customButton2";
@@ -344,7 +345,7 @@
 			// 
 			// HuyBtn
 			// 
-			HuyBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+			HuyBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
 			HuyBtn.BackColor = SystemColors.Control;
 			HuyBtn.BackgroundColor = SystemColors.Control;
 			HuyBtn.BorderColor = Color.Red;
@@ -361,9 +362,9 @@
 			HuyBtn.Image = Properties.Resources.CANCELiconRed;
 			HuyBtn.ImageAlign = ContentAlignment.MiddleRight;
 			HuyBtn.ImageHover = Properties.Resources.CANCELiconWhite;
-			HuyBtn.Location = new Point(832, 420);
+			HuyBtn.Location = new Point(942, 10);
 			HuyBtn.Name = "HuyBtn";
-			HuyBtn.Size = new Size(137, 53);
+			HuyBtn.Size = new Size(117, 40);
 			HuyBtn.TabIndex = 26;
 			HuyBtn.Text = "  Hủy";
 			HuyBtn.TextColor = Color.Red;
@@ -373,7 +374,7 @@
 			// 
 			// xacNhanBtn
 			// 
-			xacNhanBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+			xacNhanBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
 			xacNhanBtn.BackColor = SystemColors.Control;
 			xacNhanBtn.BackgroundColor = SystemColors.Control;
 			xacNhanBtn.BorderColor = Color.DarkCyan;
@@ -390,9 +391,9 @@
 			xacNhanBtn.Image = Properties.Resources.ConfirmIcondarkcyan1;
 			xacNhanBtn.ImageAlign = ContentAlignment.MiddleRight;
 			xacNhanBtn.ImageHover = Properties.Resources.ConfirmIconWhite1;
-			xacNhanBtn.Location = new Point(679, 420);
+			xacNhanBtn.Location = new Point(819, 9);
 			xacNhanBtn.Name = "xacNhanBtn";
-			xacNhanBtn.Size = new Size(137, 53);
+			xacNhanBtn.Size = new Size(117, 40);
 			xacNhanBtn.TabIndex = 25;
 			xacNhanBtn.Text = "  Xác Nhận";
 			xacNhanBtn.TextColor = Color.DarkCyan;
@@ -406,9 +407,9 @@
 			caPhePic.BackgroundImageLayout = ImageLayout.None;
 			caPhePic.Cursor = Cursors.Hand;
 			caPhePic.Image = Properties.Resources.defaultImage3;
-			caPhePic.Location = new Point(50, 243);
+			caPhePic.Location = new Point(50, 246);
 			caPhePic.Name = "caPhePic";
-			caPhePic.Size = new Size(160, 144);
+			caPhePic.Size = new Size(129, 97);
 			caPhePic.SizeMode = PictureBoxSizeMode.StretchImage;
 			caPhePic.TabIndex = 24;
 			caPhePic.TabStop = false;
