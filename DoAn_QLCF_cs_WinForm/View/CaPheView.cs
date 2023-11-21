@@ -31,7 +31,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 			get => this.searchTxt.Text;
 			set => this.searchTxt.Text = value;
 		}
-		public CaPhePresenter Presenter { get; set => this.presenter = value; }
+		public CaPhePresenter Presenter { get => this.presenter; set => this.presenter = value; }
 		public string CapheId { get => this.idTxt.Texts; set => this.idTxt.Texts = value; }
 
 
