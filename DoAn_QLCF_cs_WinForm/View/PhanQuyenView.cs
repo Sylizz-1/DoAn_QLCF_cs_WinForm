@@ -11,32 +11,32 @@ using System.Windows.Forms;
 
 namespace DoAn_QLCF_cs_WinForm.View
 {
-	public partial class PhanQuyenView : Form, IPhanQuyenView
-	{
-		public PhanQuyenView()
-		{
-			InitializeComponent();
-		}
+    public partial class PhanQuyenView : Form, IPhanQuyenView
+    {
+        public PhanQuyenView()
+        {
+            InitializeComponent();
+        }
 
-		private static PhanQuyenView instance;
-		public static IPhanQuyenView GetInstance(Form parentContainer)
-		{
+        private static PhanQuyenView instance;
+        public static IPhanQuyenView GetInstance(Form parentContainer)
+        {
 
-			if (instance == null || instance.IsDisposed)
-			{
-				instance = new PhanQuyenView();
-				instance.TopLevel = false;
-				parentContainer.Controls.Add(instance);
-				instance.Dock = DockStyle.Fill;
-			}
-			else
-			{
-				if (instance.WindowState == FormWindowState.Minimized)
-					instance.WindowState = FormWindowState.Normal;
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new PhanQuyenView();
+                instance.TopLevel = false;
+                parentContainer.Controls.Add(instance);
+                instance.Dock = DockStyle.Fill;
+            }
+            else
+            {
+                if (instance.WindowState == FormWindowState.Minimized)
+                    instance.WindowState = FormWindowState.Normal;
 
-			}
-			instance.Show();
-			return instance;
-		}
-	}
+            }
+            instance.Show();
+            return instance;
+        }
+    }
 }

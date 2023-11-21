@@ -28,7 +28,6 @@ namespace DoAn_QLCF_cs_WinForm
             new LoginPresenter(loginView, loginRepository);
             Application.Run((Form)loginView);
 
-            //Application.Run(new MainView(connectionString, new NhanVienModel()));
         }
     }
 }
