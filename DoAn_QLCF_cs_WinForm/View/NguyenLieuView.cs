@@ -11,34 +11,47 @@ using System.Windows.Forms;
 
 namespace DoAn_QLCF_cs_WinForm.View
 {
-	public partial class NguyenLieuView : Form, INguyenLieuView
-	{
-		
+    public partial class NguyenLieuView : Form, INguyenLieuView
+    {
 
-		public NguyenLieuView()
-		{
-			InitializeComponent();
-		}
 
-		private static NguyenLieuView instance;
-		public static INguyenLieuView GetInstance(Form parentContainer)
-		{
+        public NguyenLieuView()
+        {
+            InitializeComponent();
+            tabControl1.Appearance = TabAppearance.FlatButtons;
+            tabControl1.ItemSize = new System.Drawing.Size(0, 1);
+            tabControl1.SizeMode = TabSizeMode.Fixed;
+        }
 
-			if (instance == null || instance.IsDisposed)
-			{
-				instance = new NguyenLieuView();
-				instance.TopLevel = false;
-				parentContainer.Controls.Add(instance);
-				instance.Dock = DockStyle.Fill;
-			}
-			else
-			{
-				if (instance.WindowState == FormWindowState.Minimized)
-					instance.WindowState = FormWindowState.Normal;
+        private static NguyenLieuView instance;
+        public static INguyenLieuView GetInstance(Form parentContainer)
+        {
 
-			}
-			instance.Show();
-			return instance;
-		}
-	}
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new NguyenLieuView();
+                instance.TopLevel = false;
+                parentContainer.Controls.Add(instance);
+                instance.Dock = DockStyle.Fill;
+            }
+            else
+            {
+                if (instance.WindowState == FormWindowState.Minimized)
+                    instance.WindowState = FormWindowState.Normal;
+
+            }
+            instance.Show();
+            return instance;
+        }
+
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = detailTabPage;
+        }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = listTabPage;
+        }
+    }
 }

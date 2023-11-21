@@ -11,32 +11,55 @@ using System.Windows.Forms;
 
 namespace DoAn_QLCF_cs_WinForm.View
 {
-	public partial class NhapHangView : Form, INhapHangView
-	{
-		public NhapHangView()
-		{
-			InitializeComponent();
-		}
+    public partial class NhapHangView : Form, INhapHangView
+    {
+        public NhapHangView()
+        {
+            InitializeComponent();
+            tabControl1.Appearance = TabAppearance.FlatButtons;
+            tabControl1.ItemSize = new System.Drawing.Size(0, 1);
+            tabControl1.SizeMode = TabSizeMode.Fixed;
+        }
 
-		private static NhapHangView instance;
-		public static INhapHangView GetInstance(Form parentContainer)
-		{
+        private static NhapHangView instance;
+        public static INhapHangView GetInstance(Form parentContainer)
+        {
 
-			if (instance == null || instance.IsDisposed)
-			{
-				instance = new NhapHangView();
-				instance.TopLevel = false;
-				parentContainer.Controls.Add(instance);
-				instance.Dock = DockStyle.Fill;
-			}
-			else
-			{
-				if (instance.WindowState == FormWindowState.Minimized)
-					instance.WindowState = FormWindowState.Normal;
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new NhapHangView();
+                instance.TopLevel = false;
+                parentContainer.Controls.Add(instance);
+                instance.Dock = DockStyle.Fill;
+            }
+            else
+            {
+                if (instance.WindowState == FormWindowState.Minimized)
+                    instance.WindowState = FormWindowState.Normal;
 
-			}
-			instance.Show();
-			return instance;
-		}
-	}
+            }
+            instance.Show();
+            return instance;
+        }
+
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = detailTabPage;
+        }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = listTabPage;
+        }
+
+        private void btn_add2_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = moreDetailTabPage;
+        }
+
+        private void btn_back2_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = detailTabPage;
+        }
+    }
 }
