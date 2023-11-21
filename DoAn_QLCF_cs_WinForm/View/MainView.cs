@@ -58,7 +58,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             }
             ArrayList arrAction = this.employeeInfor.ArrAction;
             //duyệt qua 10 item menu trong design, item nào ko có trong arrAction thì remove
-            for (int i = 1; i <= 10; i++)
+            for (int i = 1; i <= 11; i++)
             {
                 if (!arrAction.Contains(i))
                 {
@@ -93,6 +93,9 @@ namespace DoAn_QLCF_cs_WinForm.View
                             break;
                         case 10:
                             removeControlByName("pn_phanQuyen");
+                            break;
+                        case 11:
+                            removeControlByName("pn_phieuGiamGia");
                             break;
                     }
                 }
@@ -165,24 +168,24 @@ namespace DoAn_QLCF_cs_WinForm.View
         }
 
 
-		private void navLogOut_MouseEnter(object sender, EventArgs e)
-		{
-			(sender as Button).Image = (Image)(Properties.Resources.logoutflatwhite);
-		}
+        private void navLogOut_MouseEnter(object sender, EventArgs e)
+        {
+            (sender as Button).Image = (Image)(Properties.Resources.logoutflatwhite);
+        }
 
-		private void navLogOut_MouseLeave(object sender, EventArgs e)
-		{
-			(sender as Button).Image = (Image)(Properties.Resources.logoutflatred2);
-		}
+        private void navLogOut_MouseLeave(object sender, EventArgs e)
+        {
+            (sender as Button).Image = (Image)(Properties.Resources.logoutflatred2);
+        }
 
-		private void LoadButtonNav()
-		{
-			this.buttonNavList = GetButtonsFromPanels(sideBar.Controls.Cast<Control>().ToList());
-		}
-		// Phương thức đệ quy để lấy danh sách các nút từ các panel
-		private List<Button> GetButtonsFromPanels(List<Control> controls)
-		{
-			List<Button> buttons = new List<Button>();
+        private void LoadButtonNav()
+        {
+            this.buttonNavList = GetButtonsFromPanels(sideBar.Controls.Cast<Control>().ToList());
+        }
+        // Phương thức đệ quy để lấy danh sách các nút từ các panel
+        private List<Button> GetButtonsFromPanels(List<Control> controls)
+        {
+            List<Button> buttons = new List<Button>();
 
             foreach (Control control in controls)
             {
@@ -248,115 +251,115 @@ namespace DoAn_QLCF_cs_WinForm.View
             contextMenuStrip1.Show(ptLowerLeft);
         }
 
-		private void LoadFormContainer()
-		{
-			mainFormContainer = new Form();
-			mainFormContainer.TopLevel = false;
-			mainPanelContainer.Controls.Add(mainFormContainer);
-			mainFormContainer.FormBorderStyle = FormBorderStyle.None;
-			mainFormContainer.Dock = DockStyle.Fill;
-			mainFormContainer.Padding = new Padding(3);
-			mainFormContainer.Show();
-		}
+        private void LoadFormContainer()
+        {
+            mainFormContainer = new Form();
+            mainFormContainer.TopLevel = false;
+            mainPanelContainer.Controls.Add(mainFormContainer);
+            mainFormContainer.FormBorderStyle = FormBorderStyle.None;
+            mainFormContainer.Dock = DockStyle.Fill;
+            mainFormContainer.Padding = new Padding(3);
+            mainFormContainer.Show();
+        }
 
-		private void navCafe_MouseDown(object sender, MouseEventArgs e)
-		{
-			foreach (Form frm in this.mainFormContainer.Controls)
-				frm.Hide();
+        private void navCafe_MouseDown(object sender, MouseEventArgs e)
+        {
+            foreach (Form frm in this.mainFormContainer.Controls)
+                frm.Hide();
 
-			ICaPheView view = CaPheView.GetInstance(this.mainFormContainer);
-			ICaPheRepository repo = new CaPheRepository(this.connectionString);
-			new CaPhePresenter(view, repo);
-		}
+            ICaPheView view = CaPheView.GetInstance(this.mainFormContainer);
+            ICaPheRepository repo = new CaPheRepository(this.connectionString);
+            new CaPhePresenter(view, repo);
+        }
 
-		private void navNhanVien_MouseDown(object sender, MouseEventArgs e)
-		{
-			foreach (Form frm in this.mainFormContainer.Controls)
-				frm.Hide();
-			INhanVienView view = NhanVienView.GetInstance(this.mainFormContainer);
-			INhanVienRepository repo = new NhanVienRepository(this.connectionString);
-			new NhanVienPresenter(view, repo);
-		}
+        private void navNhanVien_MouseDown(object sender, MouseEventArgs e)
+        {
+            foreach (Form frm in this.mainFormContainer.Controls)
+                frm.Hide();
+            INhanVienView view = NhanVienView.GetInstance(this.mainFormContainer);
+            INhanVienRepository repo = new NhanVienRepository(this.connectionString);
+            new NhanVienPresenter(view, repo);
+        }
 
-		private void navNguyenLieu_MouseDown(object sender, MouseEventArgs e)
-		{
-			foreach (Form frm in this.mainFormContainer.Controls)
-				frm.Hide();
-			INguyenLieuView view = NguyenLieuView.GetInstance(this.mainFormContainer);
-			INguyenLieuRepository repo = new NguyenLieuRepository(this.connectionString);
-			new NguyenLieuPresenter(view, repo);
-		}
+        private void navNguyenLieu_MouseDown(object sender, MouseEventArgs e)
+        {
+            foreach (Form frm in this.mainFormContainer.Controls)
+                frm.Hide();
+            INguyenLieuView view = NguyenLieuView.GetInstance(this.mainFormContainer);
+            INguyenLieuRepository repo = new NguyenLieuRepository(this.connectionString);
+            new NguyenLieuPresenter(view, repo);
+        }
 
-		private void navKhachHang_MouseDown(object sender, MouseEventArgs e)
-		{
-			foreach (Form frm in this.mainFormContainer.Controls)
-				frm.Hide();
-			IKhachHangView view = KhachHangView.GetInstance(this.mainFormContainer);
-			IKhachHangRepository repo = new KhachHangRepository(this.connectionString);
-			new KhachHangPresenter(view, repo);
-		}
+        private void navKhachHang_MouseDown(object sender, MouseEventArgs e)
+        {
+            foreach (Form frm in this.mainFormContainer.Controls)
+                frm.Hide();
+            IKhachHangView view = KhachHangView.GetInstance(this.mainFormContainer);
+            IKhachHangRepository repo = new KhachHangRepository(this.connectionString);
+            new KhachHangPresenter(view, repo);
+        }
 
-		private void navNhapHang_MouseDown(object sender, MouseEventArgs e)
-		{
-			foreach (Form frm in this.mainFormContainer.Controls)
-				frm.Hide();
-			INhapHangView view = NhapHangView.GetInstance(this.mainFormContainer);
-			INhapHangRepository repo = new NhapHangRepository(this.connectionString);
-			new NhapHangPresenter(view, repo);
-		}
+        private void navNhapHang_MouseDown(object sender, MouseEventArgs e)
+        {
+            foreach (Form frm in this.mainFormContainer.Controls)
+                frm.Hide();
+            INhapHangView view = NhapHangView.GetInstance(this.mainFormContainer);
+            INhapHangRepository repo = new NhapHangRepository(this.connectionString);
+            new NhapHangPresenter(view, repo);
+        }
 
-		private void navHoaDon_MouseDown(object sender, MouseEventArgs e)
-		{
-			foreach (Form frm in this.mainFormContainer.Controls)
-				frm.Hide();
-			IHoaDonView view = HoaDonView.GetInstance(this.mainFormContainer);
-			IHoaDonRepository repo = new HoaDonRepository(this.connectionString);
-			new HoaDonPresenter(view, repo);
-		}
+        private void navHoaDon_MouseDown(object sender, MouseEventArgs e)
+        {
+            foreach (Form frm in this.mainFormContainer.Controls)
+                frm.Hide();
+            IHoaDonView view = HoaDonView.GetInstance(this.mainFormContainer);
+            IHoaDonRepository repo = new HoaDonRepository(this.connectionString);
+            new HoaDonPresenter(view, repo);
+        }
 
-		private void navFile_MouseDown(object sender, MouseEventArgs e)
-		{
-			foreach (Form frm in this.mainFormContainer.Controls)
-				frm.Hide();
-			IImExFileView view = ImExFileView.GetInstance(this.mainFormContainer);
-			IImExFileRepository repo = new ImExFileRepository(this.connectionString);
-			new ImExFilePresenter(view, repo);
-		}
+        private void navFile_MouseDown(object sender, MouseEventArgs e)
+        {
+            foreach (Form frm in this.mainFormContainer.Controls)
+                frm.Hide();
+            IImExFileView view = ImExFileView.GetInstance(this.mainFormContainer);
+            IImExFileRepository repo = new ImExFileRepository(this.connectionString);
+            new ImExFilePresenter(view, repo);
+        }
 
-		private void navThongKe_MouseDown(object sender, MouseEventArgs e)
-		{
-			foreach (Form frm in this.mainFormContainer.Controls)
-				frm.Hide();
-			IThongKeView view = ThongKeView.GetInstance(this.mainFormContainer);
-			IThongKeRepository repo = new ThongKeRepository(this.connectionString);
-			new ThongKePresenter(view, repo);
-		}
+        private void navThongKe_MouseDown(object sender, MouseEventArgs e)
+        {
+            foreach (Form frm in this.mainFormContainer.Controls)
+                frm.Hide();
+            IThongKeView view = ThongKeView.GetInstance(this.mainFormContainer);
+            IThongKeRepository repo = new ThongKeRepository(this.connectionString);
+            new ThongKePresenter(view, repo);
+        }
 
-		private void navNcc_MouseDown(object sender, MouseEventArgs e)
-		{
-			foreach (Form frm in this.mainFormContainer.Controls)
-				frm.Hide();
-			INccView view = NccView.GetInstance(this.mainFormContainer);
-			INccViewRepository repo = new NccViewRepository(this.connectionString);
-			new NccPresenter(view, repo);
-		}
+        private void navNcc_MouseDown(object sender, MouseEventArgs e)
+        {
+            foreach (Form frm in this.mainFormContainer.Controls)
+                frm.Hide();
+            INccView view = NccView.GetInstance(this.mainFormContainer);
+            INccViewRepository repo = new NccViewRepository(this.connectionString);
+            new NccPresenter(view, repo);
+        }
 
-		private void navPhanQuyen_MouseDown(object sender, MouseEventArgs e)
-		{
-			foreach (Form frm in this.mainFormContainer.Controls)
-				frm.Hide();
-			IPhanQuyenView view = PhanQuyenView.GetInstance(this.mainFormContainer);
-			IPhanQuyenRepository repo = new PhanQuyenRepository(this.connectionString);
-			new PhanQuyenPresenter(view, repo);
-		}
+        private void navPhanQuyen_MouseDown(object sender, MouseEventArgs e)
+        {
+            foreach (Form frm in this.mainFormContainer.Controls)
+                frm.Hide();
+            IPhanQuyenView view = PhanQuyenView.GetInstance(this.mainFormContainer);
+            IPhanQuyenRepository repo = new PhanQuyenRepository(this.connectionString);
+            new PhanQuyenPresenter(view, repo);
+        }
 
-		private void navPgg_MouseDown(object sender, MouseEventArgs e)
-		{
-			foreach (Form frm in this.mainFormContainer.Controls)
-				frm.Hide();
-			IPggView view = PggView.GetInstance(this.mainFormContainer);
-			IPggRepository repo = new PggRepository(this.connectionString);
-			new PggPresenter(view, repo);
-		}
-	}
+        private void navPgg_MouseDown(object sender, MouseEventArgs e)
+        {
+            foreach (Form frm in this.mainFormContainer.Controls)
+                frm.Hide();
+            IPggView view = PggView.GetInstance(this.mainFormContainer);
+            IPggRepository repo = new PggRepository(this.connectionString);
+            new PggPresenter(view, repo);
+        }
+    }
 }
