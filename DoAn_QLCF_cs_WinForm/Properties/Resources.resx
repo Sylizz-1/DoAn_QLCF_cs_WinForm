@@ -118,187 +118,235 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Supplier" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Supplier.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="arrowreturn32pxBlack1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\arrowreturn32pxBlack1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="caphe" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\caphe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logoutflat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logoutflat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="employee3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\employee3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="permissionIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\permissionIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="customer64pxBLUE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\customer64pxBLUE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="deleteIconRed16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\deleteIconRed16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="detailsIcon16pxWHITE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\detailsIcon16pxWHITE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="importIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\importIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="customerIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\customerIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="addIconWhite16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\addIconWhite16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="calendarDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\calendarDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="employee (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\employee (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="fileFla" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fileFla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CANCELiconWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CANCELiconWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CoffeeFlat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CoffeeFlat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PERflat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PERflat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="changepassicon4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\changepassicon4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="detailsIcon16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\detailsIcon16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="employees" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\employees.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="open-folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\open-folder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="signOutMiniIconRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\signOutMiniIconRed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ConfirmIcondarkcyan1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ConfirmIcondarkcyan1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="usericon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\usericon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="statisticflat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\statisticflat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="editIconWhite16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\editIconWhite16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="statistic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\statistic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="log-out" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\log-out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ingreFlat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ingreFlat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="navOpenflat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\navOpenflat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ingredientIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ingredientIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EmployeeFlat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EmployeeFlat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="navCloseflat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\navCloseflat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logoutflatred2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logoutflatred2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="invoiceIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\invoiceIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DiscountIcon24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DiscountIcon24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="addIconTeal16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\addIconTeal16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="deleteIconWhite16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\deleteIconWhite16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="invoiceFlat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\invoiceFlat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="importFlat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\importFlat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="defaultImage3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\defaultImage3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="notificationIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\notificationIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Coffee64pxWHITE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Coffee64pxWHITE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CANCELiconRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CANCELiconRed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="changepassicon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\changepassicon3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="settingIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settingIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="changepassicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\changepassicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ingredientIcon64pxWHITE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ingredientIcon64pxWHITE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="manIcontest" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\manIcontest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Loadkhachhang64pxwhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Loadkhachhang64pxwhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="arrowreturn32pxWhite1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\arrowreturn32pxWhite1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="supplierflat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\supplierflat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logoutflatred" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logoutflatred.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ConfirmIconWhite1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ConfirmIconWhite1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="TaskIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TaskIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="changepassicon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\changepassicon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="addIconTeal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\addIconTeal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="navCloseflat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\navCloseflat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="menuClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menuClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="accIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\accIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="employeeWHITE64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\employeeWHITE64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="settingIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\settingIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="importFlat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\importFlat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ingredientIcon64pxOrangeRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ingredientIcon64pxOrangeRed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="discount64pxnh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\discount64pxnh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="changepassicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\changepassicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="log-out" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\log-out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="addIconWhite16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addIconWhite16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="invoiceIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\invoiceIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="customer64pxWHITE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\customer64pxWHITE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fileFla" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fileFla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="open-folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\open-folder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EmployeeFlat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EmployeeFlat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ConfirmIconWhite1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ConfirmIconWhite1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="changepassicon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\changepassicon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Loadkhachhang64pxDarkCYAN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Loadkhachhang64pxDarkCYAN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="statisticflat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\statisticflat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="manIcontest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\manIcontest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="invoiceFlat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\invoiceFlat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="emailIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\emailIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="signOutMiniIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\signOutMiniIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CANCELiconWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CANCELiconWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="editIconTeal16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\editIconTeal16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logoutflatred" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logoutflatred.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logoutflatwhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logoutflatwhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="arrowreturn32pxWhite1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrowreturn32pxWhite1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logoutflat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logoutflat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ingredientIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ingredientIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="permissionIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\permissionIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="addIconTeal16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addIconTeal16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="findIcon16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\findIcon16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="detailsIcon16pxWHITE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\detailsIcon16pxWHITE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PERflat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PERflat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="importIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\importIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="deleteIconRed16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\deleteIconRed16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ingreFlat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ingreFlat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="employee (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\employee (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="changepassicon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\changepassicon3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="changepassicon4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\changepassicon4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="notificationIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\notificationIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="editIconTeal16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\editIconTeal16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ConfirmIcondarkcyan1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ConfirmIcondarkcyan1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TaskIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TaskIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="signOutMiniIconRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\signOutMiniIconRed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="coupon64pxcolor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\coupon64pxcolor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="coupon32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\coupon32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="addIconTeal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addIconTeal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logoutflatwhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logoutflatwhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="caphe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\caphe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="navOpenflat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\navOpenflat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="statistic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\statistic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DiscountIcon24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DiscountIcon24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CoffeeFlat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CoffeeFlat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="coupon64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\coupon64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="deleteIconWhite16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\deleteIconWhite16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="editIconWhite16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\editIconWhite16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="detailsIcon16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\detailsIcon16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="calendarDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\calendarDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="discount64pxnhWHITE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\discount64pxnhWHITE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Supplier" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Supplier.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="accIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\accIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="usericon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usericon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="customerIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\customerIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logoutflatred2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logoutflatred2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arrowreturn32pxBlack1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrowreturn32pxBlack1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="signOutMiniIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\signOutMiniIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="supplierflat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\supplierflat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="defaultImage3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\defaultImage3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="employees" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\employees.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Coffee64pxBrown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Coffee64pxBrown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="employeeCrimS64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\employeeCrimS64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LoaiKhachHangNAV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LoaiKhachHangNAV.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

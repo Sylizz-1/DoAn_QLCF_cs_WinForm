@@ -21,7 +21,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 		public CaPheView()
 		{
 			InitializeComponent();
-			listTabPage.Hide();
+			SetUpView();
 		}
 
 		private static CaPheView instance;
@@ -39,6 +39,13 @@ namespace DoAn_QLCF_cs_WinForm.View
 		public void LoadData(BindingSource list)
 		{
 			this.dataGridView1.DataSource = list;
+		}
+
+		private void SetUpView()
+		{
+			tabControl1.Appearance = TabAppearance.FlatButtons;
+			tabControl1.ItemSize = new System.Drawing.Size(0, 1);
+			tabControl1.SizeMode = TabSizeMode.Fixed;
 		}
 
 		public static ICaPheView GetInstance(Form parentContainer)
