@@ -11,9 +11,11 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
 	public class NhanVienPresenter
 	{
 		private INhanVienView view;
-		private INhanVienRepository repo;
+		private INhanVienRepository repository;
+		private BindingSource bindingSource;
+		private IEnumerable<NhanVienModel> List;
 
-		public NhanVienPresenter(INhanVienView view, INhanVienRepository repo)
+        public NhanVienPresenter(INhanVienView view, INhanVienRepository repo)
 		{
 			this.view = view;
 			this.repo = repo;

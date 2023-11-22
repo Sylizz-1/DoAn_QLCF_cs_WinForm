@@ -51,5 +51,15 @@ namespace DoAn_QLCF_cs_WinForm.View
         {
             tabControl1.SelectedTab = listTabPage;
         }
+
+        private void listTabPage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void detailTabPage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
