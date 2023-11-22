@@ -328,7 +328,7 @@
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = Color.DarkCyan;
             dataGridView1.ImeMode = ImeMode.NoControl;
-            dataGridView1.Location = new Point(3, 151);
+            dataGridView1.Location = new Point(3, 114);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridView1.RowHeadersVisible = false;
@@ -337,7 +337,7 @@
             dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.RowTemplate.ReadOnly = true;
-            dataGridView1.Size = new Size(1062, 374);
+            dataGridView1.Size = new Size(1062, 411);
             dataGridView1.TabIndex = 22;
             // 
             // Column1

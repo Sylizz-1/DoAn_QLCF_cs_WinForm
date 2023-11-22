@@ -1,4 +1,5 @@
-﻿using DoAn_QLCF_cs_WinForm.View.ViewInterface;
+﻿using DoAn_QLCF_cs_WinForm.Presenter;
+using DoAn_QLCF_cs_WinForm.View.ViewInterface;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,9 @@ namespace DoAn_QLCF_cs_WinForm.View
         }
 
         private static NhanVienView instance;
+
+        public NhanVienPresenter Presenter { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public static INhanVienView GetInstance(Form parentContainer)
         {
 
@@ -60,6 +64,11 @@ namespace DoAn_QLCF_cs_WinForm.View
         private void detailTabPage_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public void LoadData(BindingSource list)
+        {
+            this.dataGridView1.DataSource = list;
         }
     }
 }

@@ -10,10 +10,14 @@ namespace DoAn_QLCF_cs_WinForm.Model
 {
 	public class NhanVienModel
 	{
+        private int idPermission;
+        private ArrayList arrAction = new ArrayList();
+        public int IdPermission { get => idPermission; set => idPermission = value; }
+        public ArrayList ArrAction { get => arrAction; set => arrAction = value; }
         [DisplayName("ID")]
         public int Id { get; set; }
         [DisplayName("Họ Tên")]
-        public string Ten { get; set; }
+        public string Name { get; set; }
         [DisplayName("Email")]
         public string Email { get; set; }
         [DisplayName("Số Điện Thoại")]

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DoAn_QLCF_cs_WinForm.Presenter;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,7 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
 {
 	public interface INhanVienView
 	{
-	}
+        NhanVienPresenter Presenter { get; set; }
+        void LoadData(BindingSource list);
+    }
 }
