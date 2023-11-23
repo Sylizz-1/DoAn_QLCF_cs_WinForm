@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="icons8-username-47" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-username-47.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logoutflat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logoutflat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -259,6 +262,9 @@
   <data name="ConfirmIcondarkcyan1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ConfirmIcondarkcyan1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="LoaiKhachHangNAV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LoaiKhachHangNAV.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="TaskIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TaskIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -270,6 +276,9 @@
   </data>
   <data name="coupon32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\coupon32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-user-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-user-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="addIconTeal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\addIconTeal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -325,6 +334,9 @@
   <data name="logoutflatred2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logoutflatred2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-user-100-header" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-user-100-header.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="arrowreturn32pxBlack1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrowreturn32pxBlack1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -346,7 +358,7 @@
   <data name="employeeCrimS64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\employeeCrimS64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LoaiKhachHangNAV" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LoaiKhachHangNAV.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-password-47" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-password-47.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

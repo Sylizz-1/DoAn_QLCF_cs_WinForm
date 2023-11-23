@@ -9,6 +9,7 @@ using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DoAn_QLCF_cs_WinForm.View
 {
@@ -17,7 +18,21 @@ namespace DoAn_QLCF_cs_WinForm.View
         public LogInView()
         {
             InitializeComponent();
+            setUpView();
+
             btn_login.Click += delegate { LoginEvent?.Invoke(this, EventArgs.Empty); };
+        }
+
+        private void setUpView()
+        {
+            //ẩn tab view
+            tabControl1.Appearance = TabAppearance.FlatButtons;
+            tabControl1.ItemSize = new System.Drawing.Size(0, 1);
+            tabControl1.SizeMode = TabSizeMode.Fixed;
+
+            //ẩn button new account
+            btn_newAccount.FlatStyle = FlatStyle.Flat;
+            btn_newAccount.FlatAppearance.BorderSize = 0;
         }
 
         public string UserName
