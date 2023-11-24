@@ -43,6 +43,14 @@
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             tb_registerEmployee = new TabPage();
+            btn_register = new Button();
+            panel3 = new Panel();
+            pictureBox4 = new PictureBox();
+            txt_registerPassword = new CustomControl.CustomTextBox();
+            panel4 = new Panel();
+            pictureBox5 = new PictureBox();
+            txt_registerUsername = new CustomControl.CustomTextBox();
+            btn_back = new CustomControl.CustomButton();
             tabControl1.SuspendLayout();
             tb_login.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -51,6 +59,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            tb_registerEmployee.SuspendLayout();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // txt_username
@@ -135,6 +148,7 @@
             btn_newAccount.TabIndex = 18;
             btn_newAccount.Text = "Không có tài khoản? Tạo tài khoản mới!";
             btn_newAccount.UseVisualStyleBackColor = true;
+            btn_newAccount.Click += btn_newAccount_Click;
             // 
             // groupBox1
             // 
@@ -246,6 +260,10 @@
             // 
             // tb_registerEmployee
             // 
+            tb_registerEmployee.Controls.Add(btn_register);
+            tb_registerEmployee.Controls.Add(panel3);
+            tb_registerEmployee.Controls.Add(panel4);
+            tb_registerEmployee.Controls.Add(btn_back);
             tb_registerEmployee.Location = new Point(4, 29);
             tb_registerEmployee.Name = "tb_registerEmployee";
             tb_registerEmployee.Padding = new Padding(3);
@@ -253,6 +271,121 @@
             tb_registerEmployee.TabIndex = 1;
             tb_registerEmployee.Text = "Register Employee";
             tb_registerEmployee.UseVisualStyleBackColor = true;
+            // 
+            // btn_register
+            // 
+            btn_register.Location = new Point(149, 318);
+            btn_register.Name = "btn_register";
+            btn_register.Size = new Size(174, 29);
+            btn_register.TabIndex = 35;
+            btn_register.Text = "Dang Ky";
+            btn_register.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(pictureBox4);
+            panel3.Controls.Add(txt_registerPassword);
+            panel3.Location = new Point(54, 221);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(400, 57);
+            panel3.TabIndex = 34;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = Properties.Resources.icons8_password_47;
+            pictureBox4.Location = new Point(3, 4);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(47, 47);
+            pictureBox4.TabIndex = 8;
+            pictureBox4.TabStop = false;
+            // 
+            // txt_registerPassword
+            // 
+            txt_registerPassword.BackColor = SystemColors.Window;
+            txt_registerPassword.BorderColor = Color.Silver;
+            txt_registerPassword.BorderFocusColor = Color.HotPink;
+            txt_registerPassword.BorderRadius = 12;
+            txt_registerPassword.BorderSize = 1;
+            txt_registerPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_registerPassword.ForeColor = Color.DimGray;
+            txt_registerPassword.Location = new Point(56, 6);
+            txt_registerPassword.Margin = new Padding(3, 4, 3, 4);
+            txt_registerPassword.Multiline = false;
+            txt_registerPassword.Name = "txt_registerPassword";
+            txt_registerPassword.Padding = new Padding(10, 9, 8, 9);
+            txt_registerPassword.PasswordChar = false;
+            txt_registerPassword.PlaceholderColor = Color.DarkGray;
+            txt_registerPassword.PlaceholderText = "Password";
+            txt_registerPassword.Size = new Size(338, 47);
+            txt_registerPassword.TabIndex = 4;
+            txt_registerPassword.Texts = "";
+            txt_registerPassword.UnderlinedStyle = false;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(pictureBox5);
+            panel4.Controls.Add(txt_registerUsername);
+            panel4.Location = new Point(54, 146);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(400, 57);
+            panel4.TabIndex = 33;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = Properties.Resources.icons8_username_47;
+            pictureBox5.Location = new Point(3, 4);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(47, 47);
+            pictureBox5.TabIndex = 8;
+            pictureBox5.TabStop = false;
+            // 
+            // txt_registerUsername
+            // 
+            txt_registerUsername.BackColor = SystemColors.Window;
+            txt_registerUsername.BorderColor = Color.Silver;
+            txt_registerUsername.BorderFocusColor = Color.HotPink;
+            txt_registerUsername.BorderRadius = 12;
+            txt_registerUsername.BorderSize = 1;
+            txt_registerUsername.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_registerUsername.ForeColor = Color.DimGray;
+            txt_registerUsername.Location = new Point(56, 4);
+            txt_registerUsername.Margin = new Padding(3, 4, 3, 4);
+            txt_registerUsername.Multiline = false;
+            txt_registerUsername.Name = "txt_registerUsername";
+            txt_registerUsername.Padding = new Padding(10, 9, 8, 9);
+            txt_registerUsername.PasswordChar = false;
+            txt_registerUsername.PlaceholderColor = Color.DarkGray;
+            txt_registerUsername.PlaceholderText = "Username";
+            txt_registerUsername.Size = new Size(338, 47);
+            txt_registerUsername.TabIndex = 3;
+            txt_registerUsername.Texts = "";
+            txt_registerUsername.UnderlinedStyle = false;
+            // 
+            // btn_back
+            // 
+            btn_back.BackColor = Color.Transparent;
+            btn_back.BackgroundColor = Color.Transparent;
+            btn_back.BorderColor = Color.PaleVioletRed;
+            btn_back.BorderRadius = 20;
+            btn_back.BorderSize = 0;
+            btn_back.Cursor = Cursors.Hand;
+            btn_back.EnabledTextHover = false;
+            btn_back.FlatAppearance.BorderSize = 0;
+            btn_back.FlatAppearance.MouseDownBackColor = Color.Teal;
+            btn_back.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
+            btn_back.FlatStyle = FlatStyle.Flat;
+            btn_back.ForeColor = Color.White;
+            btn_back.Image = Properties.Resources.arrowreturn32pxBlack1;
+            btn_back.ImageHover = Properties.Resources.arrowreturn32pxWhite1;
+            btn_back.Location = new Point(8, 7);
+            btn_back.Margin = new Padding(3, 4, 3, 4);
+            btn_back.Name = "btn_back";
+            btn_back.Size = new Size(72, 55);
+            btn_back.TabIndex = 32;
+            btn_back.TextColor = Color.White;
+            btn_back.TextHover = Color.White;
+            btn_back.UseVisualStyleBackColor = false;
+            btn_back.Click += btn_back_Click;
             // 
             // LogInView
             // 
@@ -273,6 +406,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            tb_registerEmployee.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
         }
 
@@ -293,5 +431,14 @@
         private RadioButton radioButton2;
         private RadioButton radioButton1;
         private Button btn_newAccount;
+        private CustomControl.CustomButton btn_back;
+        private CustomControl.CustomTextBox customTextBox3;
+        private Panel panel3;
+        private PictureBox pictureBox4;
+        private CustomControl.CustomTextBox txt_registerPassword;
+        private Panel panel4;
+        private PictureBox pictureBox5;
+        private CustomControl.CustomTextBox txt_registerUsername;
+        private Button btn_register;
     }
 }

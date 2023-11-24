@@ -10,11 +10,17 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
     {
         string UserName { get; set; }
         string Password { get; set; }
+        string RegisterUserName { get; set; }
+        string RegisterPassword { get; set; }
 
         //Events
         event EventHandler LoginEvent;
+        event EventHandler RegisterEvent;
 
+        //method
         void IsSuccess();
         void IsFailure();
+        void RegisterSuccess();
+        void RegisterFailure();
     }
 }

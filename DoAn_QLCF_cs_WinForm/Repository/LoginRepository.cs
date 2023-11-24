@@ -64,5 +64,20 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                 }
             }
         }
+
+        public bool Register(string username, string password)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "INSERT INTO NhanVien (TaiKhoan, MatKhau) VALUES (@username, @password);";
+                command.Parameters.Add("@username", SqlDbType.VarChar).Value = username;
+                command.Parameters.Add("@password", SqlDbType.VarChar).Value = password;
+                command.ExecuteNonQuery();
+                return true;
+            }
+        }
     }
 }

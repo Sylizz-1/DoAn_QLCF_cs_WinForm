@@ -21,6 +21,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             setUpView();
 
             btn_login.Click += delegate { LoginEvent?.Invoke(this, EventArgs.Empty); };
+            btn_register.Click += delegate { RegisterEvent?.Invoke(this, EventArgs.Empty); };
         }
 
         private void setUpView()
@@ -45,8 +46,19 @@ namespace DoAn_QLCF_cs_WinForm.View
             get { return txt_password.Texts; }
             set { txt_password.Texts = value; }
         }
+        public string RegisterUserName
+        {
+            get { return txt_registerUsername.Texts; }
+            set { txt_registerUsername.Texts = value; }
+        }
+        public string RegisterPassword
+        {
+            get { return txt_registerPassword.Texts; }
+            set { txt_registerPassword.Texts = value; }
+        }
 
         public event EventHandler LoginEvent;
+        public event EventHandler RegisterEvent;
 
         public void IsFailure()
         {
@@ -58,5 +70,27 @@ namespace DoAn_QLCF_cs_WinForm.View
         {
             MessageBox.Show("Đăng nhập thành công!");
         }
+
+        public void RegisterSuccess()
+        {
+            MessageBox.Show("Đăng kí thành công!");
+        }
+
+        public void RegisterFailure()
+        {
+            MessageBox.Show("Đăng kí thất bại!");
+        }
+
+        private void btn_newAccount_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tb_registerEmployee;
+        }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tb_login;
+        }
+
+       
     }
 }

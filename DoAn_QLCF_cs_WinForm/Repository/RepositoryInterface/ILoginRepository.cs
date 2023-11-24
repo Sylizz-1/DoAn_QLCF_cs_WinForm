@@ -10,5 +10,6 @@ namespace DoAn_QLCF_cs_WinForm.Repository.RepositoryInterface
     public interface ILoginRepository
     {
         NhanVienModel Login(String username, String password);
+        bool Register(String username, String password);
     }
 }

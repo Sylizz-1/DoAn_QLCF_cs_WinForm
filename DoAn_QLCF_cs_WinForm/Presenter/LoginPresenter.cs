@@ -23,6 +23,7 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             this.repository = repository;
 
             this.view.LoginEvent += Login;
+            this.view.RegisterEvent += Register;
         }
 
         private void Login(object sender, EventArgs e)
@@ -38,6 +39,18 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             else
             {
                 this.view.IsFailure();
+            }
+        }
+
+        private void Register(object sender, EventArgs e)
+        {            
+            if (repository.Register(this.view.RegisterUserName, this.view.RegisterPassword))
+            {
+                this.view.RegisterSuccess();
+            }
+            else
+            {
+                this.view.RegisterFailure();
             }
         }
     }
