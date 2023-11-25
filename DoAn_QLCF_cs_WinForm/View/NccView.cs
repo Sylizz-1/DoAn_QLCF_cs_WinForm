@@ -242,7 +242,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         private void sortBtn_Click(object sender, EventArgs e)
         {
-
+            gbSort.Visible = true;
         }
     }
 }

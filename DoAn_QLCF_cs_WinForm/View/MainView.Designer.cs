@@ -355,6 +355,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             btnNavToolTip.SetToolTip(navNcc, "Nhà Cung Cấp");
             navNcc.UseVisualStyleBackColor = false;
             navNcc.Click += ButtonNavClick;
+            navNcc.MouseDown += navNcc_MouseDown;
             // 
             // pn_thongKe
             // 
@@ -954,27 +955,27 @@ namespace DoAn_QLCF_cs_WinForm.View
             contextMenuStrip1.ImageScalingSize = new Size(20, 20);
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { accMenuStrip, changePassMenuStrip, settingMenuStrip, logOutMenuStrip });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(174, 108);
+            contextMenuStrip1.Size = new Size(197, 132);
             // 
             // accMenuStrip
             // 
             accMenuStrip.Image = Properties.Resources.accIcon;
             accMenuStrip.Name = "accMenuStrip";
-            accMenuStrip.Size = new Size(173, 26);
+            accMenuStrip.Size = new Size(196, 32);
             accMenuStrip.Text = "Tài Khoản";
             // 
             // changePassMenuStrip
             // 
             changePassMenuStrip.Image = Properties.Resources.changepassicon4;
             changePassMenuStrip.Name = "changePassMenuStrip";
-            changePassMenuStrip.Size = new Size(173, 26);
+            changePassMenuStrip.Size = new Size(196, 32);
             changePassMenuStrip.Text = "Đổi Mật Khẩu";
             // 
             // settingMenuStrip
             // 
             settingMenuStrip.Image = Properties.Resources.settingIcon;
             settingMenuStrip.Name = "settingMenuStrip";
-            settingMenuStrip.Size = new Size(173, 26);
+            settingMenuStrip.Size = new Size(196, 32);
             settingMenuStrip.Text = "Cài Đặt";
             // 
             // logOutMenuStrip
@@ -982,7 +983,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             logOutMenuStrip.ForeColor = Color.Red;
             logOutMenuStrip.Image = Properties.Resources.signOutMiniIconRed;
             logOutMenuStrip.Name = "logOutMenuStrip";
-            logOutMenuStrip.Size = new Size(173, 26);
+            logOutMenuStrip.Size = new Size(196, 32);
             logOutMenuStrip.Text = "Đăng xuất";
             // 
             // timerLblTitle
@@ -992,7 +993,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             // 
             // MainView
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(983, 749);
@@ -1078,7 +1079,7 @@ namespace DoAn_QLCF_cs_WinForm.View
         private CustomControl.SidePanel mainPanelContainer;
         private Panel pn_phieuGiamGia;
         private CustomControl.CustomButton navPgg;
-		private Panel pn_loaiKhachHang;
-		private CustomControl.CustomButton navLkh;
-	}
+        private Panel pn_loaiKhachHang;
+        private CustomControl.CustomButton navLkh;
+    }
 }

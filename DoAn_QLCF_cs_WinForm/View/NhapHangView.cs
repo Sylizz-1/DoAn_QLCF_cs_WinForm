@@ -46,11 +46,6 @@ namespace DoAn_QLCF_cs_WinForm.View
             return instance;
         }
 
-        private void addBtn_Click(object sender, EventArgs e)
-        {
-            tcNhapHang.SelectedTab = detailTabPage;
-        }
-
         private void btn_back_Click(object sender, EventArgs e)
         {
             tcNhapHang.SelectedTab = listTabPage;
@@ -66,14 +61,19 @@ namespace DoAn_QLCF_cs_WinForm.View
             tcNhapHang.SelectedTab = detailTabPage;
         }
 
-        void INhapHangView.LoadData(BindingSource list)
+        public void LoadData(BindingSource list)
         {
-            throw new NotImplementedException();
+            this.dgvDsNhapHang.DataSource = list;
         }
 
-        void INhapHangView.GetIdNccAdd(int id)
+        public void GetIdNccAdd(int id)
         {
-            throw new NotImplementedException();
+            this.txtPhieuNhapId.Texts = id.ToString();
+        }
+
+        private void btnAddPN_Click(object sender, EventArgs e)
+        {
+            tcNhapHang.SelectedTab = detailTabPage;
         }
     }
 }

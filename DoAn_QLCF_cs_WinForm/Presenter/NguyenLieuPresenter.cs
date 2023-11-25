@@ -37,12 +37,6 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             int txtIdNguyenLieu = repository.GetNextId();
             view.GetIdNguyenLieuAdd(txtIdNguyenLieu);
         }
-
-        public void Add()
-        {
-            NguyenLieuModel NguyenLieu = view.AddNguyenLieu();
-            repository.Add(NguyenLieu);
-        }
         public void Delete()
         {
 

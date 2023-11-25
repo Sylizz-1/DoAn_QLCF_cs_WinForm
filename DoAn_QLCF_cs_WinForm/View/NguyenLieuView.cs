@@ -16,6 +16,7 @@ namespace DoAn_QLCF_cs_WinForm.View
     public partial class NguyenLieuView : Form, INguyenLieuView
     {
 
+        private static NguyenLieuView instance;
 
         public NguyenLieuView()
         {
@@ -25,13 +26,21 @@ namespace DoAn_QLCF_cs_WinForm.View
             tabControl1.SizeMode = TabSizeMode.Fixed;
         }
 
-        private static NguyenLieuView instance;
-
-        NguyenLieuPresenter INguyenLieuView.Presenter { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        string INguyenLieuView.Message { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        string INguyenLieuView.SearchValue { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        string INguyenLieuView.NguyenLieuId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        int INguyenLieuView.selectedId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string SearchValue 
+        { 
+            get => throw new NotImplementedException(); 
+            set => throw new NotImplementedException(); 
+        }
+        public string NguyenLieuId 
+        { 
+            get => throw new NotImplementedException(); 
+            set => throw new NotImplementedException(); 
+        }
+        public int selectedId 
+        { 
+            get => throw new NotImplementedException(); 
+            set => throw new NotImplementedException(); 
+        }
 
         public static INguyenLieuView GetInstance(Form parentContainer)
         {
@@ -63,19 +72,15 @@ namespace DoAn_QLCF_cs_WinForm.View
             tabControl1.SelectedTab = listTabPage;
         }
 
-        void INguyenLieuView.LoadData(BindingSource list)
+        public void LoadData(BindingSource list)
         {
-            throw new NotImplementedException();
+            this.dgvNgl.DataSource = list;
         }
 
-        void INguyenLieuView.GetIdNguyenLieuAdd(int id)
+        public void GetIdNguyenLieuAdd(int id)
         {
-            throw new NotImplementedException();
+            this.idTxt.Texts = id.ToString();
         }
 
-        NguyenLieuModel INguyenLieuView.AddNguyenLieu()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
