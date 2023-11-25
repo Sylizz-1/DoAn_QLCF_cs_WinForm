@@ -23,12 +23,13 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
         string TenNhaCungCap { get; set; }
         string DiaChi { get; set; }
         string SDT { get; set; }
-        string Email { get; set; }
+        string Email { get; set ; }
         string IsDelete { get; set; }
         string selectedId { get; set; }
         void LoadData(BindingSource list);
         void GetIdNccAdd(int id);
         bool CheckInput();
         void SetNull();
+        void SetTextBoxFillData(NccModel ncc);
     }
 }

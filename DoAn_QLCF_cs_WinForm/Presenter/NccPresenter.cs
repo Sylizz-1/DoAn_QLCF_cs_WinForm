@@ -95,12 +95,8 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             if (int.Parse(this.view.selectedId) != 0)
             {
                 NccModel ncc = repository.GetById(int.Parse(this.view.selectedId));
-                this.view.NhaCungCapId = this.view.selectedId;
-                this.view.TenNhaCungCap = ncc.TenNhaCungCap.ToString();
-                this.view.SDT = ncc.SDT.ToString();
-                this.view.Email = ncc.Email.ToString();
-                this.view.DiaChi = ncc.DiaChi.ToString();
-                this.view.IsDelete = ncc.IsDelete.ToString();
+                this.view.SetTextBoxFillData(ncc);
+
             }
         }
         public void Update(object sender, EventArgs e)
@@ -119,7 +115,7 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
                     if (repository.Update(ncc))
                     {
                         MessageBox.Show("Edit Success");
-                        this.view.NhaCungCapId = this.view.selectedId;
+                        this.view.NhaCungCapId = ncc.NhaCungCapId.ToString();
                         this.view.TenNhaCungCap = ncc.TenNhaCungCap.ToString();
                         this.view.SDT = ncc.SDT.ToString();
                         this.view.Email = ncc.Email.ToString();
