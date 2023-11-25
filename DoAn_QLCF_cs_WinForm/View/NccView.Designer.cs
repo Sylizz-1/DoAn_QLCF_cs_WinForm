@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            tcNCC = new TabControl();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            tabControl1 = new TabControl();
             listTabPage = new TabPage();
             dataGridView1 = new DataGridView();
             searchTxt = new CustomControl.CustomTextBox();
@@ -41,15 +41,15 @@
             detailTabPage = new TabPage();
             HuyBtn = new CustomControl.CustomButton();
             xacNhanBtn = new CustomControl.CustomButton();
-            txtSDTNcc = new CustomControl.CustomTextBox();
+            customTextBox4 = new CustomControl.CustomTextBox();
             label3 = new Label();
-            txtDiaChiNcc = new CustomControl.CustomTextBox();
+            customTextBox1 = new CustomControl.CustomTextBox();
             M = new Label();
             label7 = new Label();
             btn_back = new CustomControl.CustomButton();
-            txtIdNcc = new CustomControl.CustomTextBox();
-            txtEmailNcc = new CustomControl.CustomTextBox();
-            txtTenNcc = new CustomControl.CustomTextBox();
+            idTxt = new CustomControl.CustomTextBox();
+            customTextBox3 = new CustomControl.CustomTextBox();
+            customTextBox2 = new CustomControl.CustomTextBox();
             label5 = new Label();
             label4 = new Label();
             label1 = new Label();
@@ -57,22 +57,21 @@
             label8 = new Label();
             tabControl1.SuspendLayout();
             listTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvNcc).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             detailTabPage.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
-            // tcNCC
+            // tabControl1
             // 
-            tcNCC.Controls.Add(listTabPage);
-            tcNCC.Controls.Add(detailTabPage);
-            tcNCC.Dock = DockStyle.Fill;
-            tcNCC.Location = new Point(0, 0);
-            tcNCC.Margin = new Padding(4);
-            tcNCC.Name = "tcNCC";
-            tcNCC.SelectedIndex = 0;
-            tcNCC.Size = new Size(1515, 866);
-            tcNCC.TabIndex = 0;
+            tabControl1.Controls.Add(listTabPage);
+            tabControl1.Controls.Add(detailTabPage);
+            tabControl1.Dock = DockStyle.Fill;
+            tabControl1.Location = new Point(0, 0);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(1212, 693);
+            tabControl1.TabIndex = 0;
             // 
             // listTabPage
             // 
@@ -81,58 +80,56 @@
             listTabPage.Controls.Add(delBtn);
             listTabPage.Controls.Add(editBtn);
             listTabPage.Controls.Add(addBtn);
-            listTabPage.Location = new Point(4, 34);
-            listTabPage.Margin = new Padding(4);
+            listTabPage.Location = new Point(4, 29);
             listTabPage.Name = "listTabPage";
-            listTabPage.Padding = new Padding(4);
-            listTabPage.Size = new Size(1507, 828);
+            listTabPage.Padding = new Padding(3);
+            listTabPage.Size = new Size(1204, 660);
             listTabPage.TabIndex = 0;
             listTabPage.Text = "Danh Sách";
             listTabPage.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
-            dgvNcc.AllowUserToAddRows = false;
-            dgvNcc.AllowUserToDeleteRows = false;
-            dgvNcc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvNcc.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dgvNcc.BorderStyle = BorderStyle.None;
-            dgvNcc.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.DarkCyan;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvNcc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvNcc.ColumnHeadersHeight = 30;
-            dgvNcc.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvNcc.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvNcc.Dock = DockStyle.Bottom;
-            dgvNcc.EnableHeadersVisualStyles = false;
-            dgvNcc.GridColor = Color.DarkCyan;
-            dgvNcc.ImeMode = ImeMode.NoControl;
-            dgvNcc.Location = new Point(4, 228);
-            dgvNcc.Margin = new Padding(4, 5, 4, 5);
-            dgvNcc.Name = "dgvNcc";
-            dgvNcc.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dgvNcc.RowHeadersVisible = false;
-            dgvNcc.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvNcc.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            dgvNcc.RowTemplate.Height = 25;
-            dgvNcc.RowTemplate.ReadOnly = true;
-            dgvNcc.Size = new Size(1499, 596);
-            dgvNcc.TabIndex = 20;
-            dgvNcc.CellClick += dgvNcc_CellClick;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.DarkCyan;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridView1.ColumnHeadersHeight = 30;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = SystemColors.Window;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridView1.Dock = DockStyle.Bottom;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.GridColor = Color.DarkCyan;
+            dataGridView1.ImeMode = ImeMode.NoControl;
+            dataGridView1.Location = new Point(3, 180);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.RowTemplate.ReadOnly = true;
+            dataGridView1.Size = new Size(1198, 477);
+            dataGridView1.TabIndex = 20;
             // 
             // searchTxt
             // 
@@ -143,15 +140,15 @@
             searchTxt.BorderSize = 2;
             searchTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             searchTxt.ForeColor = Color.DimGray;
-            searchTxt.Location = new Point(8, 12);
-            searchTxt.Margin = new Padding(4, 5, 4, 5);
+            searchTxt.Location = new Point(6, 10);
+            searchTxt.Margin = new Padding(3, 4, 3, 4);
             searchTxt.Multiline = false;
             searchTxt.Name = "searchTxt";
-            searchTxt.Padding = new Padding(12, 11, 58, 11);
+            searchTxt.Padding = new Padding(10, 9, 46, 9);
             searchTxt.PasswordChar = false;
             searchTxt.PlaceholderColor = Color.DarkGray;
             searchTxt.PlaceholderText = "Tìm Kiếm ...";
-            searchTxt.Size = new Size(380, 55);
+            searchTxt.Size = new Size(304, 47);
             searchTxt.TabIndex = 19;
             searchTxt.Texts = "";
             searchTxt.UnderlinedStyle = false;
@@ -219,10 +216,10 @@
             delBtn.Image = Properties.Resources.deleteIconRed16px;
             delBtn.ImageAlign = ContentAlignment.MiddleRight;
             delBtn.ImageHover = Properties.Resources.deleteIconWhite16px;
-            delBtn.Location = new Point(1315, 9);
-            delBtn.Margin = new Padding(4, 5, 4, 5);
+            delBtn.Location = new Point(1052, 7);
+            delBtn.Margin = new Padding(3, 4, 3, 4);
             delBtn.Name = "delBtn";
-            delBtn.Size = new Size(172, 64);
+            delBtn.Size = new Size(138, 51);
             delBtn.TabIndex = 13;
             delBtn.Text = "  Xóa";
             delBtn.TextColor = Color.Red;
@@ -249,17 +246,16 @@
             editBtn.Image = Properties.Resources.editIconTeal16px;
             editBtn.ImageAlign = ContentAlignment.MiddleRight;
             editBtn.ImageHover = Properties.Resources.editIconWhite16px;
-            editBtn.Location = new Point(1134, 9);
-            editBtn.Margin = new Padding(4, 5, 4, 5);
+            editBtn.Location = new Point(907, 7);
+            editBtn.Margin = new Padding(3, 4, 3, 4);
             editBtn.Name = "editBtn";
-            editBtn.Size = new Size(172, 64);
+            editBtn.Size = new Size(138, 51);
             editBtn.TabIndex = 12;
             editBtn.Text = "  Sửa";
             editBtn.TextColor = Color.DarkCyan;
             editBtn.TextHover = Color.White;
             editBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             editBtn.UseVisualStyleBackColor = false;
-            editBtn.Click += editBtn_Click;
             // 
             // addBtn
             // 
@@ -280,10 +276,10 @@
             addBtn.Image = Properties.Resources.addIconTeal16px;
             addBtn.ImageAlign = ContentAlignment.MiddleRight;
             addBtn.ImageHover = Properties.Resources.addIconWhite16px;
-            addBtn.Location = new Point(951, 9);
-            addBtn.Margin = new Padding(4, 5, 4, 5);
+            addBtn.Location = new Point(761, 7);
+            addBtn.Margin = new Padding(3, 4, 3, 4);
             addBtn.Name = "addBtn";
-            addBtn.Size = new Size(172, 64);
+            addBtn.Size = new Size(138, 51);
             addBtn.TabIndex = 11;
             addBtn.Text = "  Thêm";
             addBtn.TextColor = Color.DarkCyan;
@@ -294,27 +290,26 @@
             // 
             // detailTabPage
             // 
-            detailTabPage.Controls.Add(checkboxIsDelete);
+            detailTabPage.Controls.Add(comboBox5);
             detailTabPage.Controls.Add(label8);
             detailTabPage.Controls.Add(HuyBtn);
             detailTabPage.Controls.Add(xacNhanBtn);
-            detailTabPage.Controls.Add(txtSDTNcc);
+            detailTabPage.Controls.Add(customTextBox4);
             detailTabPage.Controls.Add(label3);
-            detailTabPage.Controls.Add(txtDiaChiNcc);
+            detailTabPage.Controls.Add(customTextBox1);
             detailTabPage.Controls.Add(M);
             detailTabPage.Controls.Add(label7);
             detailTabPage.Controls.Add(btn_back);
-            detailTabPage.Controls.Add(txtIdNcc);
-            detailTabPage.Controls.Add(txtEmailNcc);
-            detailTabPage.Controls.Add(txtTenNcc);
+            detailTabPage.Controls.Add(idTxt);
+            detailTabPage.Controls.Add(customTextBox3);
+            detailTabPage.Controls.Add(customTextBox2);
             detailTabPage.Controls.Add(label5);
             detailTabPage.Controls.Add(label4);
             detailTabPage.Controls.Add(label1);
-            detailTabPage.Location = new Point(4, 34);
-            detailTabPage.Margin = new Padding(4);
+            detailTabPage.Location = new Point(4, 29);
             detailTabPage.Name = "detailTabPage";
-            detailTabPage.Padding = new Padding(4);
-            detailTabPage.Size = new Size(1507, 828);
+            detailTabPage.Padding = new Padding(3);
+            detailTabPage.Size = new Size(1204, 660);
             detailTabPage.TabIndex = 1;
             detailTabPage.Text = "Chi Tiết";
             detailTabPage.UseVisualStyleBackColor = true;
@@ -338,17 +333,16 @@
             HuyBtn.Image = Properties.Resources.CANCELiconRed;
             HuyBtn.ImageAlign = ContentAlignment.MiddleRight;
             HuyBtn.ImageHover = Properties.Resources.CANCELiconWhite;
-            HuyBtn.Location = new Point(1280, 689);
-            HuyBtn.Margin = new Padding(4, 5, 4, 5);
+            HuyBtn.Location = new Point(1024, 551);
+            HuyBtn.Margin = new Padding(3, 4, 3, 4);
             HuyBtn.Name = "HuyBtn";
-            HuyBtn.Size = new Size(196, 89);
+            HuyBtn.Size = new Size(157, 71);
             HuyBtn.TabIndex = 42;
             HuyBtn.Text = "  Hủy";
             HuyBtn.TextColor = Color.Red;
             HuyBtn.TextHover = Color.White;
             HuyBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             HuyBtn.UseVisualStyleBackColor = false;
-            HuyBtn.Click += HuyBtn_Click;
             // 
             // xacNhanBtn
             // 
@@ -369,10 +363,10 @@
             xacNhanBtn.Image = Properties.Resources.ConfirmIcondarkcyan1;
             xacNhanBtn.ImageAlign = ContentAlignment.MiddleRight;
             xacNhanBtn.ImageHover = Properties.Resources.ConfirmIconWhite1;
-            xacNhanBtn.Location = new Point(1061, 689);
-            xacNhanBtn.Margin = new Padding(4, 5, 4, 5);
+            xacNhanBtn.Location = new Point(849, 551);
+            xacNhanBtn.Margin = new Padding(3, 4, 3, 4);
             xacNhanBtn.Name = "xacNhanBtn";
-            xacNhanBtn.Size = new Size(196, 89);
+            xacNhanBtn.Size = new Size(157, 71);
             xacNhanBtn.TabIndex = 41;
             xacNhanBtn.Text = "  Xác Nhận";
             xacNhanBtn.TextColor = Color.DarkCyan;
@@ -380,7 +374,7 @@
             xacNhanBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             xacNhanBtn.UseVisualStyleBackColor = false;
             // 
-            // txtSDTNcc
+            // customTextBox4
             // 
             customTextBox4.BackColor = SystemColors.Window;
             customTextBox4.BorderColor = Color.Silver;
@@ -405,15 +399,14 @@
             // label3
             // 
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(890, 81);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(712, 65);
             label3.Name = "label3";
-            label3.Size = new Size(189, 85);
+            label3.Size = new Size(151, 68);
             label3.TabIndex = 35;
             label3.Text = "Số Điện Thoại";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // txtDiaChiNcc
+            // customTextBox1
             // 
             customTextBox1.BackColor = SystemColors.Window;
             customTextBox1.BorderColor = Color.Silver;
@@ -438,10 +431,9 @@
             // M
             // 
             M.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            M.Location = new Point(478, 84);
-            M.Margin = new Padding(4, 0, 4, 0);
+            M.Location = new Point(382, 67);
             M.Name = "M";
-            M.Size = new Size(151, 85);
+            M.Size = new Size(121, 68);
             M.TabIndex = 33;
             M.Text = "Địa Chỉ";
             M.TextAlign = ContentAlignment.MiddleCenter;
@@ -449,10 +441,9 @@
             // label7
             // 
             label7.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(140, 20);
-            label7.Margin = new Padding(4, 0, 4, 0);
+            label7.Location = new Point(112, 16);
             label7.Name = "label7";
-            label7.Size = new Size(389, 71);
+            label7.Size = new Size(311, 57);
             label7.TabIndex = 32;
             label7.Text = "Thông Tin Chi Tiết";
             label7.TextAlign = ContentAlignment.MiddleCenter;
@@ -473,17 +464,17 @@
             btn_back.ForeColor = Color.White;
             btn_back.Image = Properties.Resources.arrowreturn32pxBlack1;
             btn_back.ImageHover = Properties.Resources.arrowreturn32pxWhite1;
-            btn_back.Location = new Point(28, 25);
-            btn_back.Margin = new Padding(4, 5, 4, 5);
+            btn_back.Location = new Point(22, 20);
+            btn_back.Margin = new Padding(3, 4, 3, 4);
             btn_back.Name = "btn_back";
-            btn_back.Size = new Size(90, 69);
+            btn_back.Size = new Size(72, 55);
             btn_back.TabIndex = 31;
             btn_back.TextColor = Color.White;
             btn_back.TextHover = Color.White;
             btn_back.UseVisualStyleBackColor = false;
             btn_back.Click += btn_back_Click;
             // 
-            // txtIdNcc
+            // idTxt
             // 
             idTxt.BackColor = SystemColors.Window;
             idTxt.BorderColor = Color.Silver;
@@ -505,7 +496,7 @@
             idTxt.Texts = "";
             idTxt.UnderlinedStyle = false;
             // 
-            // txtEmailNcc
+            // customTextBox3
             // 
             customTextBox3.BackColor = SystemColors.Window;
             customTextBox3.BorderColor = Color.Silver;
@@ -527,7 +518,7 @@
             customTextBox3.Texts = "";
             customTextBox3.UnderlinedStyle = false;
             // 
-            // txtTenNcc
+            // customTextBox2
             // 
             customTextBox2.BackColor = SystemColors.Window;
             customTextBox2.BorderColor = Color.Silver;
@@ -552,10 +543,9 @@
             // label5
             // 
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(50, 220);
-            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Location = new Point(40, 176);
             label5.Name = "label5";
-            label5.Size = new Size(112, 85);
+            label5.Size = new Size(90, 68);
             label5.TabIndex = 27;
             label5.Text = "Tên";
             label5.TextAlign = ContentAlignment.MiddleCenter;
@@ -565,7 +555,7 @@
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label4.Location = new Point(695, 177);
             label4.Name = "label4";
-            label4.Size = new Size(151, 85);
+            label4.Size = new Size(121, 68);
             label4.TabIndex = 26;
             label4.Text = "Email";
             label4.TextAlign = ContentAlignment.MiddleCenter;
@@ -573,10 +563,9 @@
             // label1
             // 
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(54, 85);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(43, 68);
             label1.Name = "label1";
-            label1.Size = new Size(112, 85);
+            label1.Size = new Size(90, 68);
             label1.TabIndex = 25;
             label1.Text = "ID";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -604,45 +593,44 @@
             // 
             // NccView
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1515, 866);
-            Controls.Add(tcNCC);
-            FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4);
+            ClientSize = new Size(1212, 693);
+            Controls.Add(tabControl1);
             Name = "NccView";
             Text = "NccView";
-            tcNCC.ResumeLayout(false);
+            tabControl1.ResumeLayout(false);
             listTabPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvNcc).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             detailTabPage.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private TabControl tcNCC;
+        private TabControl tabControl1;
         private TabPage listTabPage;
         private TabPage detailTabPage;
         private CustomControl.CustomButton delBtn;
         private CustomControl.CustomButton editBtn;
         private CustomControl.CustomButton addBtn;
         private CustomControl.CustomTextBox searchTxt;
-        private DataGridView dgvNcc;
-        private CustomControl.CustomTextBox txtSDTNcc;
+        private DataGridView dataGridView1;
+        private CustomControl.CustomTextBox customTextBox4;
         private Label label3;
-        private CustomControl.CustomTextBox txtDiaChiNcc;
+        private CustomControl.CustomTextBox customTextBox1;
         private Label M;
         private Label label7;
         private CustomControl.CustomButton btn_back;
-        private CustomControl.CustomTextBox txtIdNcc;
-        private CustomControl.CustomTextBox txtEmailNcc;
-        private CustomControl.CustomTextBox txtTenNcc;
+        private CustomControl.CustomTextBox idTxt;
+        private CustomControl.CustomTextBox customTextBox3;
+        private CustomControl.CustomTextBox customTextBox2;
         private Label label5;
         private Label label4;
         private Label label1;
         private CustomControl.CustomButton HuyBtn;
         private CustomControl.CustomButton xacNhanBtn;
+        private ComboBox comboBox5;
         private Label label8;
     }
 }
