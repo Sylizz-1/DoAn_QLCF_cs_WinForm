@@ -55,26 +55,26 @@
             Column10 = new DataGridViewTextBoxColumn();
             detailTabPage = new TabPage();
             groupBox2 = new GroupBox();
-            customTextBox4 = new CustomControl.CustomTextBox();
+            matkhauTxt = new CustomControl.CustomTextBox();
             M = new Label();
-            customTextBox1 = new CustomControl.CustomTextBox();
-            customTextBox6 = new CustomControl.CustomTextBox();
+            taikhoanTxt = new CustomControl.CustomTextBox();
+            returnTxt = new CustomControl.CustomTextBox();
             label10 = new Label();
             label13 = new Label();
-            comboBox3 = new ComboBox();
-            comboBox5 = new ComboBox();
+            quyencmb = new ComboBox();
+            trangthaicmb = new ComboBox();
             label8 = new Label();
             label3 = new Label();
             groupBox1 = new GroupBox();
-            customTextBox5 = new CustomControl.CustomTextBox();
-            customTextBox3 = new CustomControl.CustomTextBox();
+            emailTxt = new CustomControl.CustomTextBox();
+            sdtTxt = new CustomControl.CustomTextBox();
             idTxt = new CustomControl.CustomTextBox();
             label1 = new Label();
             label12 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            customTextBox2 = new CustomControl.CustomTextBox();
+            datepick = new DateTimePicker();
+            tenTxt = new CustomControl.CustomTextBox();
             label5 = new Label();
-            comboBox4 = new ComboBox();
+            gioitinhcmb = new ComboBox();
             label11 = new Label();
             label4 = new Label();
             label6 = new Label();
@@ -430,14 +430,14 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(customTextBox4);
+            groupBox2.Controls.Add(matkhauTxt);
             groupBox2.Controls.Add(M);
-            groupBox2.Controls.Add(customTextBox1);
-            groupBox2.Controls.Add(customTextBox6);
+            groupBox2.Controls.Add(taikhoanTxt);
+            groupBox2.Controls.Add(returnTxt);
             groupBox2.Controls.Add(label10);
             groupBox2.Controls.Add(label13);
-            groupBox2.Controls.Add(comboBox3);
-            groupBox2.Controls.Add(comboBox5);
+            groupBox2.Controls.Add(quyencmb);
+            groupBox2.Controls.Add(trangthaicmb);
             groupBox2.Controls.Add(label8);
             groupBox2.Controls.Add(label3);
             groupBox2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -448,26 +448,26 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "tài khoản nhân viên";
             // 
-            // customTextBox4
+            // matkhauTxt
             // 
-            customTextBox4.BackColor = SystemColors.Window;
-            customTextBox4.BorderColor = Color.Silver;
-            customTextBox4.BorderFocusColor = Color.DarkCyan;
-            customTextBox4.BorderRadius = 13;
-            customTextBox4.BorderSize = 2;
-            customTextBox4.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            customTextBox4.ForeColor = Color.DimGray;
-            customTextBox4.Location = new Point(18, 165);
-            customTextBox4.Multiline = false;
-            customTextBox4.Name = "customTextBox4";
-            customTextBox4.Padding = new Padding(9, 9, 7, 7);
-            customTextBox4.PasswordChar = false;
-            customTextBox4.PlaceholderColor = Color.DarkGray;
-            customTextBox4.PlaceholderText = "Nhập mật khẩu...";
-            customTextBox4.Size = new Size(244, 42);
-            customTextBox4.TabIndex = 58;
-            customTextBox4.Texts = "";
-            customTextBox4.UnderlinedStyle = false;
+            matkhauTxt.BackColor = SystemColors.Window;
+            matkhauTxt.BorderColor = Color.Silver;
+            matkhauTxt.BorderFocusColor = Color.DarkCyan;
+            matkhauTxt.BorderRadius = 13;
+            matkhauTxt.BorderSize = 2;
+            matkhauTxt.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            matkhauTxt.ForeColor = Color.DimGray;
+            matkhauTxt.Location = new Point(18, 165);
+            matkhauTxt.Multiline = false;
+            matkhauTxt.Name = "matkhauTxt";
+            matkhauTxt.Padding = new Padding(9, 9, 7, 7);
+            matkhauTxt.PasswordChar = false;
+            matkhauTxt.PlaceholderColor = Color.DarkGray;
+            matkhauTxt.PlaceholderText = "Nhập mật khẩu...";
+            matkhauTxt.Size = new Size(244, 42);
+            matkhauTxt.TabIndex = 58;
+            matkhauTxt.Texts = "";
+            matkhauTxt.UnderlinedStyle = false;
             // 
             // M
             // 
@@ -479,47 +479,47 @@
             M.Text = "Tài Khoản";
             M.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // customTextBox1
+            // taikhoanTxt
             // 
-            customTextBox1.BackColor = SystemColors.Window;
-            customTextBox1.BorderColor = Color.Silver;
-            customTextBox1.BorderFocusColor = Color.DarkCyan;
-            customTextBox1.BorderRadius = 13;
-            customTextBox1.BorderSize = 2;
-            customTextBox1.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            customTextBox1.ForeColor = Color.DimGray;
-            customTextBox1.Location = new Point(18, 82);
-            customTextBox1.Multiline = false;
-            customTextBox1.Name = "customTextBox1";
-            customTextBox1.Padding = new Padding(9, 9, 7, 7);
-            customTextBox1.PasswordChar = false;
-            customTextBox1.PlaceholderColor = Color.DarkGray;
-            customTextBox1.PlaceholderText = "Nhập tài khoản...";
-            customTextBox1.Size = new Size(244, 42);
-            customTextBox1.TabIndex = 32;
-            customTextBox1.Texts = "";
-            customTextBox1.UnderlinedStyle = false;
+            taikhoanTxt.BackColor = SystemColors.Window;
+            taikhoanTxt.BorderColor = Color.Silver;
+            taikhoanTxt.BorderFocusColor = Color.DarkCyan;
+            taikhoanTxt.BorderRadius = 13;
+            taikhoanTxt.BorderSize = 2;
+            taikhoanTxt.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            taikhoanTxt.ForeColor = Color.DimGray;
+            taikhoanTxt.Location = new Point(18, 82);
+            taikhoanTxt.Multiline = false;
+            taikhoanTxt.Name = "taikhoanTxt";
+            taikhoanTxt.Padding = new Padding(9, 9, 7, 7);
+            taikhoanTxt.PasswordChar = false;
+            taikhoanTxt.PlaceholderColor = Color.DarkGray;
+            taikhoanTxt.PlaceholderText = "Nhập tài khoản...";
+            taikhoanTxt.Size = new Size(244, 42);
+            taikhoanTxt.TabIndex = 32;
+            taikhoanTxt.Texts = "";
+            taikhoanTxt.UnderlinedStyle = false;
             // 
-            // customTextBox6
+            // returnTxt
             // 
-            customTextBox6.BackColor = SystemColors.Window;
-            customTextBox6.BorderColor = Color.Silver;
-            customTextBox6.BorderFocusColor = Color.DarkCyan;
-            customTextBox6.BorderRadius = 13;
-            customTextBox6.BorderSize = 2;
-            customTextBox6.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            customTextBox6.ForeColor = Color.DimGray;
-            customTextBox6.Location = new Point(18, 249);
-            customTextBox6.Multiline = false;
-            customTextBox6.Name = "customTextBox6";
-            customTextBox6.Padding = new Padding(9, 9, 7, 7);
-            customTextBox6.PasswordChar = false;
-            customTextBox6.PlaceholderColor = Color.DarkGray;
-            customTextBox6.PlaceholderText = "Nhập mật khẩu...";
-            customTextBox6.Size = new Size(244, 42);
-            customTextBox6.TabIndex = 57;
-            customTextBox6.Texts = "";
-            customTextBox6.UnderlinedStyle = false;
+            returnTxt.BackColor = SystemColors.Window;
+            returnTxt.BorderColor = Color.Silver;
+            returnTxt.BorderFocusColor = Color.DarkCyan;
+            returnTxt.BorderRadius = 13;
+            returnTxt.BorderSize = 2;
+            returnTxt.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            returnTxt.ForeColor = Color.DimGray;
+            returnTxt.Location = new Point(18, 249);
+            returnTxt.Multiline = false;
+            returnTxt.Name = "returnTxt";
+            returnTxt.Padding = new Padding(9, 9, 7, 7);
+            returnTxt.PasswordChar = false;
+            returnTxt.PlaceholderColor = Color.DarkGray;
+            returnTxt.PlaceholderText = "Nhập mật khẩu...";
+            returnTxt.Size = new Size(244, 42);
+            returnTxt.TabIndex = 57;
+            returnTxt.Texts = "";
+            returnTxt.UnderlinedStyle = false;
             // 
             // label10
             // 
@@ -541,27 +541,27 @@
             label13.Text = "Nhập Lại Mật Khẩu";
             label13.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // comboBox3
+            // quyencmb
             // 
-            comboBox3.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(272, 81);
-            comboBox3.Margin = new Padding(3, 2, 3, 2);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(245, 38);
-            comboBox3.TabIndex = 49;
+            quyencmb.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            quyencmb.FormattingEnabled = true;
+            quyencmb.Location = new Point(272, 81);
+            quyencmb.Margin = new Padding(3, 2, 3, 2);
+            quyencmb.Name = "quyencmb";
+            quyencmb.Size = new Size(245, 38);
+            quyencmb.TabIndex = 49;
             // 
-            // comboBox5
+            // trangthaicmb
             // 
-            comboBox5.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox5.FormattingEnabled = true;
-            comboBox5.Items.AddRange(new object[] { "Dừng hoạt dộng", "Đang hoạt động" });
-            comboBox5.Location = new Point(272, 169);
-            comboBox5.Margin = new Padding(3, 2, 3, 2);
-            comboBox5.Name = "comboBox5";
-            comboBox5.Size = new Size(245, 38);
-            comboBox5.TabIndex = 55;
-            comboBox5.Text = "False";
+            trangthaicmb.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            trangthaicmb.FormattingEnabled = true;
+            trangthaicmb.Items.AddRange(new object[] { "Dừng hoạt dộng", "Đang hoạt động" });
+            trangthaicmb.Location = new Point(272, 169);
+            trangthaicmb.Margin = new Padding(3, 2, 3, 2);
+            trangthaicmb.Name = "trangthaicmb";
+            trangthaicmb.Size = new Size(245, 38);
+            trangthaicmb.TabIndex = 55;
+            trangthaicmb.Text = "False";
             // 
             // label8
             // 
@@ -585,15 +585,15 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(customTextBox5);
-            groupBox1.Controls.Add(customTextBox3);
+            groupBox1.Controls.Add(emailTxt);
+            groupBox1.Controls.Add(sdtTxt);
             groupBox1.Controls.Add(idTxt);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(label12);
-            groupBox1.Controls.Add(dateTimePicker1);
-            groupBox1.Controls.Add(customTextBox2);
+            groupBox1.Controls.Add(datepick);
+            groupBox1.Controls.Add(tenTxt);
             groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(comboBox4);
+            groupBox1.Controls.Add(gioitinhcmb);
             groupBox1.Controls.Add(label11);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label6);
@@ -605,47 +605,47 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "thông tin nhân viên";
             // 
-            // customTextBox5
+            // emailTxt
             // 
-            customTextBox5.BackColor = SystemColors.Window;
-            customTextBox5.BorderColor = Color.Silver;
-            customTextBox5.BorderFocusColor = Color.DarkCyan;
-            customTextBox5.BorderRadius = 13;
-            customTextBox5.BorderSize = 2;
-            customTextBox5.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            customTextBox5.ForeColor = Color.DimGray;
-            customTextBox5.Location = new Point(7, 269);
-            customTextBox5.Multiline = false;
-            customTextBox5.Name = "customTextBox5";
-            customTextBox5.Padding = new Padding(9, 9, 7, 7);
-            customTextBox5.PasswordChar = false;
-            customTextBox5.PlaceholderColor = Color.DarkGray;
-            customTextBox5.PlaceholderText = "Nhập email...";
-            customTextBox5.Size = new Size(244, 42);
-            customTextBox5.TabIndex = 53;
-            customTextBox5.Texts = "";
-            customTextBox5.UnderlinedStyle = false;
+            emailTxt.BackColor = SystemColors.Window;
+            emailTxt.BorderColor = Color.Silver;
+            emailTxt.BorderFocusColor = Color.DarkCyan;
+            emailTxt.BorderRadius = 13;
+            emailTxt.BorderSize = 2;
+            emailTxt.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            emailTxt.ForeColor = Color.DimGray;
+            emailTxt.Location = new Point(7, 269);
+            emailTxt.Multiline = false;
+            emailTxt.Name = "emailTxt";
+            emailTxt.Padding = new Padding(9, 9, 7, 7);
+            emailTxt.PasswordChar = false;
+            emailTxt.PlaceholderColor = Color.DarkGray;
+            emailTxt.PlaceholderText = "Nhập email...";
+            emailTxt.Size = new Size(244, 42);
+            emailTxt.TabIndex = 53;
+            emailTxt.Texts = "";
+            emailTxt.UnderlinedStyle = false;
             // 
-            // customTextBox3
+            // sdtTxt
             // 
-            customTextBox3.BackColor = SystemColors.Window;
-            customTextBox3.BorderColor = Color.Silver;
-            customTextBox3.BorderFocusColor = Color.DarkCyan;
-            customTextBox3.BorderRadius = 13;
-            customTextBox3.BorderSize = 2;
-            customTextBox3.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            customTextBox3.ForeColor = Color.DimGray;
-            customTextBox3.Location = new Point(279, 169);
-            customTextBox3.Multiline = false;
-            customTextBox3.Name = "customTextBox3";
-            customTextBox3.Padding = new Padding(9, 9, 7, 7);
-            customTextBox3.PasswordChar = false;
-            customTextBox3.PlaceholderColor = Color.DarkGray;
-            customTextBox3.PlaceholderText = "Nhập số điện thoại...";
-            customTextBox3.Size = new Size(244, 42);
-            customTextBox3.TabIndex = 52;
-            customTextBox3.Texts = "";
-            customTextBox3.UnderlinedStyle = false;
+            sdtTxt.BackColor = SystemColors.Window;
+            sdtTxt.BorderColor = Color.Silver;
+            sdtTxt.BorderFocusColor = Color.DarkCyan;
+            sdtTxt.BorderRadius = 13;
+            sdtTxt.BorderSize = 2;
+            sdtTxt.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            sdtTxt.ForeColor = Color.DimGray;
+            sdtTxt.Location = new Point(279, 169);
+            sdtTxt.Multiline = false;
+            sdtTxt.Name = "sdtTxt";
+            sdtTxt.Padding = new Padding(9, 9, 7, 7);
+            sdtTxt.PasswordChar = false;
+            sdtTxt.PlaceholderColor = Color.DarkGray;
+            sdtTxt.PlaceholderText = "Nhập số điện thoại...";
+            sdtTxt.Size = new Size(244, 42);
+            sdtTxt.TabIndex = 52;
+            sdtTxt.Texts = "";
+            sdtTxt.UnderlinedStyle = false;
             // 
             // idTxt
             // 
@@ -654,6 +654,7 @@
             idTxt.BorderFocusColor = Color.DarkCyan;
             idTxt.BorderRadius = 13;
             idTxt.BorderSize = 2;
+            idTxt.Enabled = false;
             idTxt.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             idTxt.ForeColor = Color.DimGray;
             idTxt.Location = new Point(6, 57);
@@ -688,37 +689,38 @@
             label12.Text = "Ngày Sinh";
             label12.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // dateTimePicker1
+            // datepick
             // 
-            dateTimePicker1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePicker1.Location = new Point(279, 272);
-            dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
-            dateTimePicker1.MaxDate = new DateTime(2025, 7, 5, 0, 0, 0, 0);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(244, 33);
-            dateTimePicker1.TabIndex = 52;
-            dateTimePicker1.Value = new DateTime(2023, 11, 10, 0, 0, 0, 0);
+            datepick.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            datepick.Location = new Point(279, 272);
+            datepick.Margin = new Padding(3, 2, 3, 2);
+            datepick.MaxDate = new DateTime(2025, 7, 5, 0, 0, 0, 0);
+            datepick.Name = "datepick";
+            datepick.Size = new Size(244, 33);
+            datepick.TabIndex = 52;
+            datepick.Value = new DateTime(2023, 11, 10, 0, 0, 0, 0);
+            datepick.ValueChanged += dateTimePicker1_ValueChanged;
             // 
-            // customTextBox2
+            // tenTxt
             // 
-            customTextBox2.BackColor = SystemColors.Window;
-            customTextBox2.BorderColor = Color.Silver;
-            customTextBox2.BorderFocusColor = Color.DarkCyan;
-            customTextBox2.BorderRadius = 13;
-            customTextBox2.BorderSize = 2;
-            customTextBox2.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            customTextBox2.ForeColor = Color.DimGray;
-            customTextBox2.Location = new Point(279, 57);
-            customTextBox2.Multiline = false;
-            customTextBox2.Name = "customTextBox2";
-            customTextBox2.Padding = new Padding(9, 9, 7, 7);
-            customTextBox2.PasswordChar = false;
-            customTextBox2.PlaceholderColor = Color.DarkGray;
-            customTextBox2.PlaceholderText = "Nhập tên nhân viên...";
-            customTextBox2.Size = new Size(244, 42);
-            customTextBox2.TabIndex = 28;
-            customTextBox2.Texts = "";
-            customTextBox2.UnderlinedStyle = false;
+            tenTxt.BackColor = SystemColors.Window;
+            tenTxt.BorderColor = Color.Silver;
+            tenTxt.BorderFocusColor = Color.DarkCyan;
+            tenTxt.BorderRadius = 13;
+            tenTxt.BorderSize = 2;
+            tenTxt.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            tenTxt.ForeColor = Color.DimGray;
+            tenTxt.Location = new Point(279, 57);
+            tenTxt.Multiline = false;
+            tenTxt.Name = "tenTxt";
+            tenTxt.Padding = new Padding(9, 9, 7, 7);
+            tenTxt.PasswordChar = false;
+            tenTxt.PlaceholderColor = Color.DarkGray;
+            tenTxt.PlaceholderText = "Nhập tên nhân viên...";
+            tenTxt.Size = new Size(244, 42);
+            tenTxt.TabIndex = 28;
+            tenTxt.Texts = "";
+            tenTxt.UnderlinedStyle = false;
             // 
             // label5
             // 
@@ -730,17 +732,17 @@
             label5.Text = "Họ Tên";
             label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // comboBox4
+            // gioitinhcmb
             // 
-            comboBox4.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Items.AddRange(new object[] { "Nam", "Nữ" });
-            comboBox4.Location = new Point(6, 169);
-            comboBox4.Margin = new Padding(3, 2, 3, 2);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(245, 38);
-            comboBox4.TabIndex = 51;
-            comboBox4.Text = "Nữ";
+            gioitinhcmb.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            gioitinhcmb.FormattingEnabled = true;
+            gioitinhcmb.Items.AddRange(new object[] { "Nam", "Nữ" });
+            gioitinhcmb.Location = new Point(6, 169);
+            gioitinhcmb.Margin = new Padding(3, 2, 3, 2);
+            gioitinhcmb.Name = "gioitinhcmb";
+            gioitinhcmb.Size = new Size(245, 38);
+            gioitinhcmb.TabIndex = 51;
+            gioitinhcmb.Text = "Nữ";
             // 
             // label11
             // 
@@ -893,10 +895,10 @@
         private CustomControl.CustomButton btn_back;
         private Label label6;
         private Label label3;
-        private CustomControl.CustomTextBox customTextBox1;
+        private CustomControl.CustomTextBox taikhoanTxt;
         private Label M;
         private CustomControl.CustomTextBox idTxt;
-        private CustomControl.CustomTextBox customTextBox2;
+        private CustomControl.CustomTextBox tenTxt;
         private Label label5;
         private Label label1;
         private CustomControl.CustomButton delBtn;
@@ -910,22 +912,22 @@
         private CustomControl.CustomTextBox searchTxt;
         private CustomControl.CustomButton HuyBtn;
         private CustomControl.CustomButton xacNhanBtn;
-        private ComboBox comboBox3;
+        private ComboBox quyencmb;
         private Label label10;
-        private ComboBox comboBox4;
+        private ComboBox gioitinhcmb;
         private Label label11;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker datepick;
         private Label label12;
-        private ComboBox comboBox5;
+        private ComboBox trangthaicmb;
         private Label label8;
-        private CustomControl.CustomTextBox customTextBox6;
+        private CustomControl.CustomTextBox returnTxt;
         private Label label13;
         private GroupBox groupBox1;
         private Label label4;
-        private CustomControl.CustomTextBox customTextBox5;
-        private CustomControl.CustomTextBox customTextBox3;
+        private CustomControl.CustomTextBox emailTxt;
+        private CustomControl.CustomTextBox sdtTxt;
         private GroupBox groupBox2;
-        private CustomControl.CustomTextBox customTextBox4;
+        private CustomControl.CustomTextBox matkhauTxt;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;

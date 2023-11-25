@@ -47,5 +47,10 @@ namespace DoAn_QLCF_cs_WinForm.View
 			tabControl1.ItemSize = new System.Drawing.Size(0, 1);
 			tabControl1.SizeMode = TabSizeMode.Fixed;
 		}
-	}
+
+        public void LoadData(BindingSource list)
+        {
+            this.dataGridView1.DataSource = list;
+        }
+    }
 }

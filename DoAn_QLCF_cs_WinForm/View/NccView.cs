@@ -244,5 +244,10 @@ namespace DoAn_QLCF_cs_WinForm.View
         {
             gbSort.Visible = true;
         }
+
+        private void txtIdNcc__TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -21,6 +21,65 @@ namespace DoAn_QLCF_cs_WinForm.View
             tabControl1.ItemSize = new System.Drawing.Size(0, 1);
             tabControl1.SizeMode = TabSizeMode.Fixed;
         }
+        public string nhanvienId
+        {
+            get => this.idTxt.Texts;
+            set => this.idTxt.Texts = value;
+        }
+
+        public string nhanvienTen
+        {
+            get => this.tenTxt.Texts;
+            set => this.tenTxt.Texts = value;
+        }
+
+        public string nhanvienSdt
+        {
+            get => this.sdtTxt.Texts;
+            set => this.sdtTxt.Texts = value;
+        }
+
+        public string nhanvienEmail
+        {
+            get => this.emailTxt.Texts;
+            set => this.emailTxt.Texts = value;
+        }
+
+        public string nhanvienGioitinh
+        {
+            get => this.gioitinhcmb.SelectedItem.ToString();
+            set => this.gioitinhcmb.SelectedItem = value;
+        }
+
+        public string nhanvienTaikhoan
+        {
+            get => this.taikhoanTxt.Texts;
+            set => this.taikhoanTxt.Texts = value;
+        }
+
+        public string nhanvienMatkhau
+        {
+            get => this.matkhauTxt.Texts;
+            set => this.matkhauTxt.Texts = value;
+        }
+
+        public string nhanvienReturn
+        {
+            get => this.returnTxt.Texts;
+            set => this.returnTxt.Texts = value;
+        }
+
+        public string nhanvienQuyen
+        {
+            get => this.quyencmb.SelectedItem.ToString();
+            set => this.quyencmb.SelectedItem = value;
+        }
+
+        public string nhanvienDel
+        {
+            get => this.trangthaicmb.SelectedItem.ToString();
+            set => this.trangthaicmb.SelectedItem = value;
+        }
 
         private static NhanVienView instance;
 
@@ -69,6 +128,16 @@ namespace DoAn_QLCF_cs_WinForm.View
         public void LoadData(BindingSource list)
         {
             this.dataGridView1.DataSource = list;
+        }
+
+        public void GetIdNhanVien(int id)
+        {
+            this.idTxt.Texts = id.ToString();
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

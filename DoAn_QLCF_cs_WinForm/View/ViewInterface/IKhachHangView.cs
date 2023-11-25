@@ -8,5 +8,7 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
 {
 	public interface IKhachHangView
 	{
-	}
+        void LoadData(BindingSource list);
+
+    }
 }
