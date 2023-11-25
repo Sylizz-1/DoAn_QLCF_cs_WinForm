@@ -40,7 +40,7 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             }
             else if (this.view.Role == null)
             {
-                this.view.ShowMessage("Vui lòng chọn vai trò!");
+                this.view.IsEmptyRole();
                 return false;
             }
             return true;
@@ -57,11 +57,11 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
                     {                        
                         IMainView mainView = new MainView(connectionString, nhanVien);
                         mainView.Show();
-                        this.view.ShowMessage("Đăng nhập nhân viên thành công!");
+                        this.view.IsSuccess();
                     }
                     else
                     {
-                        this.view.ShowMessage("Tài khoản hoặc mật khẩu không đúng!");
+                        this.view.IsFailure();
                     }
                 }
                 else if(this.view.Role == "customer")
@@ -69,11 +69,11 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
                     KhachHangModel khachHang = repository.LoginCustomer(this.view.UserName, this.view.Password);
                     if (khachHang != null)
                     {
-                        this.view.ShowMessage("Đăng nhập khách hàng thành công!");
+                        this.view.IsSuccess();
                     }
                     else
                     {
-                        this.view.ShowMessage("Tài khoản hoặc mật khẩu không đúng!");
+                        this.view.IsFailure();
                     }
                 }                                
             }
@@ -84,11 +84,11 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
         {            
             if (repository.Register(this.view.RegisterUserName, this.view.RegisterPassword))
             {
-                this.view.ShowMessage("Đăng kí thành công!");
+                this.view.RegisterSuccess();
             }
             else
             {
-                this.view.ShowMessage("Đăng kí thất bại!");
+                this.view.RegisterFailure();
             }
         }
     }
