@@ -20,12 +20,9 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
         event EventHandler RegisterEvent;
 
         //method
-        void IsSuccess();
-        void IsFailure();
-        void RegisterSuccess();
-        void RegisterFailure();
+        void ShowMessage(string message);
+        void IsLoginFailure();
         void IsEmptyUsername();
         void IsEmptyPassword();
-        void IsEmptyRole();
     }
 }

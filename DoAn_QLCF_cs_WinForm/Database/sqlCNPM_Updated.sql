@@ -211,7 +211,8 @@ INSERT INTO ChucNang (TenChucNang) VALUES
 (N'Quản lý thống kê'),
 (N'Quản lý nhà cung cấp'),
 (N'Quản lý phân quyền'),
-(N'Quản lý phiếu giảm giá');
+(N'Quản lý phiếu giảm giá'),
+(N'Quản lý loại khách hàng');
 
 -- INSERT data into Quyen_ChucNang table
 INSERT INTO Quyen_ChucNang (QuyenId, ChucNangId) VALUES

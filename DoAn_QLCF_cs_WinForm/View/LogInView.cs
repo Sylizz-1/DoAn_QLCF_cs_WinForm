@@ -72,25 +72,15 @@ namespace DoAn_QLCF_cs_WinForm.View
         public event EventHandler LoginEvent;
         public event EventHandler RegisterEvent;
 
-        public void IsFailure()
+        public void IsLoginFailure()
         {
             MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!");
             txt_username.Focus();
         }
 
-        public void IsSuccess()
+        public void ShowMessage(string message)
         {
-            MessageBox.Show("Đăng nhập thành công!");
-        }
-
-        public void RegisterSuccess()
-        {
-            MessageBox.Show("Đăng kí thành công!");
-        }
-
-        public void RegisterFailure()
-        {
-            MessageBox.Show("Đăng kí thất bại!");
+            MessageBox.Show(message);
         }
 
         public void IsEmptyUsername()            
@@ -103,11 +93,6 @@ namespace DoAn_QLCF_cs_WinForm.View
         {
             txt_password.Focus();
             MessageBox.Show("Password không được để trống!");
-        }
-
-        public void IsEmptyRole()
-        {
-            MessageBox.Show("Vui lòng chọn vai trò!");
         }
 
         private void btn_newAccount_Click(object sender, EventArgs e)
