@@ -81,29 +81,14 @@ namespace DoAn_QLCF_cs_WinForm.View
             MessageBox.Show("Đăng kí thất bại!");
         }
 
-        public void IsEmptyUsername()            
+        private void btn_newAccount_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tb_registerEmployee;
         }
 
         private void btn_back_Click(object sender, EventArgs e)
         {
-            txt_password.Focus();
-            MessageBox.Show("Password không được để trống!");
-        }
-
-        public void IsEmptyRole()
-        {
-            MessageBox.Show("Vui lòng chọn vai trò!");
-        }
-
-        private void btn_newAccount_Click(object sender, EventArgs e)
-        {
-            tabControl1.SelectedTab = tp_information;
-        }
-        private void btn_back1_Click(object sender, EventArgs e)
-        {
-            tabControl1.SelectedTab = tp_login;
+            tabControl1.SelectedTab = tb_login;
         }
 
        
