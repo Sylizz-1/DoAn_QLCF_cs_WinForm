@@ -22,7 +22,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             base.Dispose(disposing);
         }
 
-		#region Windows Form Designer generated code
+        #region Windows Form Designer generated code
 
         /// <summary>
         /// Required method for Designer support - do not modify
@@ -1028,8 +1028,8 @@ namespace DoAn_QLCF_cs_WinForm.View
             ResumeLayout(false);
         }
 
-		#endregion
-		private BindingSource bindingSource1;
+        #endregion
+        private BindingSource bindingSource1;
         private CustomControl.SidePanel sideBar;
         private Label label1;
         private Panel pn_phanQuyen;
