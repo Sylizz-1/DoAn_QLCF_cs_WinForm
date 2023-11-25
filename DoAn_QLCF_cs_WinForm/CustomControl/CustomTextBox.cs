@@ -43,7 +43,7 @@ namespace DoAn_QLCF_cs_WinForm.CustomControl
         #region -> Private methods
         private void SetPlaceholder()
         {
-            if (string.IsNullOrWhiteSpace(textBox1.Text) && placeholderText == "")
+            if (string.IsNullOrWhiteSpace(textBox1.Text) && placeholderText != "")
             {
                 isPlaceholder = true;
                 textBox1.Text = placeholderText;

@@ -76,6 +76,7 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                         }
                         catch (OutOfMemoryException ex)
                         {
+                            ex.ToString();
                             NguyenLieu.HinhAnh = null;
                         }
                         NguyenLieu.IsDelete = (bool)reader["IsDelete"];
@@ -176,6 +177,7 @@ namespace DoAn_QLCF_cs_WinForm.Repository
             }
             catch (Exception ex)
             {
+                ex.ToString();
             }
 
             return nguyenLieuList;

@@ -1,4 +1,5 @@
 ﻿using DoAn_QLCF_cs_WinForm.Model;
+using DoAn_QLCF_cs_WinForm.Repository;
 using DoAn_QLCF_cs_WinForm.Repository.RepositoryInterface;
 using DoAn_QLCF_cs_WinForm.View.ViewInterface;
 using Microsoft.VisualBasic;
