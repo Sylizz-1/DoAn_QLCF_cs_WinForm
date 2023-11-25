@@ -1,5 +1,4 @@
-﻿using DoAn_QLCF_cs_WinForm.Presenter;
-using DoAn_QLCF_cs_WinForm.View.ViewInterface;
+﻿using DoAn_QLCF_cs_WinForm.View.ViewInterface;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,15 +16,12 @@ namespace DoAn_QLCF_cs_WinForm.View
         public NhapHangView()
         {
             InitializeComponent();
-            tcNhapHang.Appearance = TabAppearance.FlatButtons;
-            tcNhapHang.ItemSize = new System.Drawing.Size(0, 1);
-            tcNhapHang.SizeMode = TabSizeMode.Fixed;
+            tabControl1.Appearance = TabAppearance.FlatButtons;
+            tabControl1.ItemSize = new System.Drawing.Size(0, 1);
+            tabControl1.SizeMode = TabSizeMode.Fixed;
         }
 
         private static NhapHangView instance;
-
-        NhapHangPresenter INhapHangView.Presenter { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
         public static INhapHangView GetInstance(Form parentContainer)
         {
 
@@ -48,32 +44,22 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            tcNhapHang.SelectedTab = detailTabPage;
+            tabControl1.SelectedTab = detailTabPage;
         }
 
         private void btn_back_Click(object sender, EventArgs e)
         {
-            tcNhapHang.SelectedTab = listTabPage;
+            tabControl1.SelectedTab = listTabPage;
         }
 
         private void btn_add2_Click(object sender, EventArgs e)
         {
-            tcNhapHang.SelectedTab = moreDetailTabPage;
+            tabControl1.SelectedTab = moreDetailTabPage;
         }
 
         private void btn_back2_Click(object sender, EventArgs e)
         {
-            tcNhapHang.SelectedTab = detailTabPage;
-        }
-
-        void INhapHangView.LoadData(BindingSource list)
-        {
-            throw new NotImplementedException();
-        }
-
-        void INhapHangView.GetIdNccAdd(int id)
-        {
-            throw new NotImplementedException();
+            tabControl1.SelectedTab = detailTabPage;
         }
     }
 }
