@@ -439,10 +439,12 @@
             // rdb_employeeRegister
             // 
             rdb_employeeRegister.AutoSize = true;
+            rdb_employeeRegister.Checked = true;
             rdb_employeeRegister.Location = new Point(6, 33);
             rdb_employeeRegister.Name = "rdb_employeeRegister";
             rdb_employeeRegister.Size = new Size(123, 32);
             rdb_employeeRegister.TabIndex = 0;
+            rdb_employeeRegister.TabStop = true;
             rdb_employeeRegister.Text = "Nhân Viên";
             rdb_employeeRegister.UseVisualStyleBackColor = true;
             // 
@@ -848,7 +850,7 @@
         #endregion
 
         private CustomControl.CustomTextBox txt_username;
-        private CustomControl.CustomTextBox txt_password;        
+        private CustomControl.CustomTextBox txt_password;
         private TabControl tabControl1;
         private TabPage tp_login;
         private TabPage tp_register;

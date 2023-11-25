@@ -44,7 +44,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             this.connectionString = connectionString;
             this.employeeInfor = employeeInfor;
             LoadButtonNav();
-            timerLblTitle.Start();
+            timerLblTitle.Start();  
             LoadFormContainer();
 
             RemoveControlByPermission();
@@ -60,7 +60,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             }
             ArrayList arrAction = this.employeeInfor.ArrAction;
             //duyệt qua 10 item menu trong design, item nào ko có trong arrAction thì remove
-            for (int i = 1; i <= 12; i++)
+            for (int i = 1; i <= 11; i++)
             {
                 if (!arrAction.Contains(i))
                 {
@@ -98,9 +98,6 @@ namespace DoAn_QLCF_cs_WinForm.View
                             break;
                         case 11:
                             removeControlByName("pn_phieuGiamGia");
-                            break;
-                        case 12:
-                            removeControlByName("pn_loaiKhachHang");
                             break;
                     }
                 }
@@ -309,11 +306,8 @@ namespace DoAn_QLCF_cs_WinForm.View
             foreach (Form frm in this.mainFormContainer.Controls)
                 frm.Hide();
             INhapHangView view = NhapHangView.GetInstance(this.mainFormContainer);
-            IPhieuNhapRepository repoPN = new PhieuNhapRepository(this.connectionString);
-            IChiTietPhieuNhapRepository repoCTPN = new ChiTietPhieuNhapRepository(this.connectionString);
-            INhanVienRepository repoNV = new NhanVienRepository(this.connectionString);
-            INccRepository repoNcc = new NccRepository(this.connectionString);
-            new NhapHangPresenter(view, repoPN, repoCTPN, repoNV, repoNcc);
+            INhapHangRepository repo = new NhapHangRepository(this.connectionString);
+            new NhapHangPresenter(view, repo);
         }
 
         private void navHoaDon_MouseDown(object sender, MouseEventArgs e)
@@ -348,7 +342,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             foreach (Form frm in this.mainFormContainer.Controls)
                 frm.Hide();
             INccView view = NccView.GetInstance(this.mainFormContainer);
-            INccRepository repo = new NccRepository(this.connectionString);
+            INccViewRepository repo = new NccViewRepository(this.connectionString);
             new NccPresenter(view, repo);
         }
 
