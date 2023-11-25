@@ -260,17 +260,191 @@
             // 
             // tb_registerEmployee
             // 
-            tb_registerEmployee.Controls.Add(btn_register);
-            tb_registerEmployee.Controls.Add(panel3);
-            tb_registerEmployee.Controls.Add(panel4);
-            tb_registerEmployee.Controls.Add(btn_back);
-            tb_registerEmployee.Location = new Point(4, 29);
-            tb_registerEmployee.Name = "tb_registerEmployee";
-            tb_registerEmployee.Padding = new Padding(3);
-            tb_registerEmployee.Size = new Size(540, 520);
-            tb_registerEmployee.TabIndex = 1;
-            tb_registerEmployee.Text = "Register Employee";
-            tb_registerEmployee.UseVisualStyleBackColor = true;
+            tp_information.Controls.Add(pn_birthday);
+            tp_information.Controls.Add(btn_continue);
+            tp_information.Controls.Add(groupBox3);
+            tp_information.Controls.Add(groupBox2);
+            tp_information.Controls.Add(panel6);
+            tp_information.Controls.Add(panel7);
+            tp_information.Controls.Add(panel8);
+            tp_information.Controls.Add(btn_back1);
+            tp_information.Controls.Add(pictureBox8);
+            tp_information.Location = new Point(4, 29);
+            tp_information.Name = "tp_information";
+            tp_information.Padding = new Padding(3);
+            tp_information.Size = new Size(540, 520);
+            tp_information.TabIndex = 2;
+            tp_information.Text = "Information";
+            tp_information.UseVisualStyleBackColor = true;
+            // 
+            // pn_birthday
+            // 
+            pn_birthday.Controls.Add(customDateTimePicker1);
+            pn_birthday.Controls.Add(pictureBox12);
+            pn_birthday.Location = new Point(70, 397);
+            pn_birthday.Name = "pn_birthday";
+            pn_birthday.Size = new Size(400, 47);
+            pn_birthday.TabIndex = 47;
+            // 
+            // customDateTimePicker1
+            // 
+            customDateTimePicker1.BorderColor = Color.PaleVioletRed;
+            customDateTimePicker1.BorderSize = 0;
+            customDateTimePicker1.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            customDateTimePicker1.Location = new Point(56, 4);
+            customDateTimePicker1.MinimumSize = new Size(0, 35);
+            customDateTimePicker1.Name = "customDateTimePicker1";
+            customDateTimePicker1.Size = new Size(338, 36);
+            customDateTimePicker1.SkinColor = Color.MediumSlateBlue;
+            customDateTimePicker1.TabIndex = 9;
+            customDateTimePicker1.TextColor = Color.White;
+            // 
+            // pictureBox12
+            // 
+            pictureBox12.Image = Properties.Resources.icons8_birthday_39;
+            pictureBox12.Location = new Point(7, 4);
+            pictureBox12.Name = "pictureBox12";
+            pictureBox12.Size = new Size(39, 39);
+            pictureBox12.TabIndex = 8;
+            pictureBox12.TabStop = false;
+            // 
+            // btn_continue
+            // 
+            btn_continue.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_continue.BackColor = SystemColors.Control;
+            btn_continue.BackgroundColor = SystemColors.Control;
+            btn_continue.BorderColor = Color.DarkCyan;
+            btn_continue.BorderRadius = 15;
+            btn_continue.BorderSize = 2;
+            btn_continue.Cursor = Cursors.Hand;
+            btn_continue.EnabledTextHover = true;
+            btn_continue.FlatAppearance.BorderSize = 0;
+            btn_continue.FlatAppearance.MouseDownBackColor = Color.Teal;
+            btn_continue.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
+            btn_continue.FlatStyle = FlatStyle.Flat;
+            btn_continue.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_continue.ForeColor = Color.DarkCyan;
+            btn_continue.ImageAlign = ContentAlignment.MiddleRight;
+            btn_continue.ImageHover = null;
+            btn_continue.Location = new Point(70, 456);
+            btn_continue.Margin = new Padding(3, 4, 3, 4);
+            btn_continue.Name = "btn_continue";
+            btn_continue.Size = new Size(400, 51);
+            btn_continue.TabIndex = 46;
+            btn_continue.Text = "Tiếp Theo";
+            btn_continue.TextColor = Color.DarkCyan;
+            btn_continue.TextHover = Color.White;
+            btn_continue.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_continue.UseVisualStyleBackColor = false;
+            btn_continue.Click += btn_continue_Click;
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(radioButton5);
+            groupBox3.Controls.Add(radioButton6);
+            groupBox3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox3.Location = new Point(274, 88);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(198, 110);
+            groupBox3.TabIndex = 43;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Chọn Giới Tính";
+            // 
+            // radioButton5
+            // 
+            radioButton5.AutoSize = true;
+            radioButton5.Location = new Point(6, 71);
+            radioButton5.Name = "radioButton5";
+            radioButton5.Size = new Size(60, 32);
+            radioButton5.TabIndex = 1;
+            radioButton5.TabStop = true;
+            radioButton5.Text = "Nữ";
+            radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // radioButton6
+            // 
+            radioButton6.AutoSize = true;
+            radioButton6.Location = new Point(6, 33);
+            radioButton6.Name = "radioButton6";
+            radioButton6.Size = new Size(75, 32);
+            radioButton6.TabIndex = 0;
+            radioButton6.TabStop = true;
+            radioButton6.Text = "Nam";
+            radioButton6.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(rdb_customerRegister);
+            groupBox2.Controls.Add(rdb_employeeRegister);
+            groupBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox2.Location = new Point(70, 88);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(198, 110);
+            groupBox2.TabIndex = 42;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Chọn Vai Trò";
+            // 
+            // rdb_customerRegister
+            // 
+            rdb_customerRegister.AutoSize = true;
+            rdb_customerRegister.Location = new Point(6, 71);
+            rdb_customerRegister.Name = "rdb_customerRegister";
+            rdb_customerRegister.Size = new Size(138, 32);
+            rdb_customerRegister.TabIndex = 1;
+            rdb_customerRegister.Text = "Khách Hàng";
+            rdb_customerRegister.UseVisualStyleBackColor = true;
+            // 
+            // rdb_employeeRegister
+            // 
+            rdb_employeeRegister.AutoSize = true;
+            rdb_employeeRegister.Checked = true;
+            rdb_employeeRegister.Location = new Point(6, 33);
+            rdb_employeeRegister.Name = "rdb_employeeRegister";
+            rdb_employeeRegister.Size = new Size(123, 32);
+            rdb_employeeRegister.TabIndex = 0;
+            rdb_employeeRegister.TabStop = true;
+            rdb_employeeRegister.Text = "Nhân Viên";
+            rdb_employeeRegister.UseVisualStyleBackColor = true;
+            // 
+            // panel6
+            // 
+            panel6.Controls.Add(pictureBox9);
+            panel6.Controls.Add(customTextBox2);
+            panel6.Location = new Point(70, 334);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(400, 57);
+            panel6.TabIndex = 41;
+            // 
+            // pictureBox9
+            // 
+            pictureBox9.Image = Properties.Resources.icons8_email_47;
+            pictureBox9.Location = new Point(3, 4);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(47, 47);
+            pictureBox9.TabIndex = 8;
+            pictureBox9.TabStop = false;
+            // 
+            // customTextBox2
+            // 
+            customTextBox2.BackColor = SystemColors.Window;
+            customTextBox2.BorderColor = Color.Silver;
+            customTextBox2.BorderFocusColor = Color.HotPink;
+            customTextBox2.BorderRadius = 12;
+            customTextBox2.BorderSize = 1;
+            customTextBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            customTextBox2.ForeColor = Color.DimGray;
+            customTextBox2.Location = new Point(56, 6);
+            customTextBox2.Margin = new Padding(3, 4, 3, 4);
+            customTextBox2.Multiline = false;
+            customTextBox2.Name = "customTextBox2";
+            customTextBox2.Padding = new Padding(10, 9, 8, 9);
+            customTextBox2.PasswordChar = false;
+            customTextBox2.PlaceholderColor = Color.DarkGray;
+            customTextBox2.PlaceholderText = "Nhập Email";
+            customTextBox2.Size = new Size(338, 47);
+            customTextBox2.TabIndex = 4;
+            customTextBox2.Texts = "";
+            customTextBox2.UnderlinedStyle = false;
             // 
             // btn_register
             // 

@@ -22,5 +22,8 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
         void IsFailure();
         void RegisterSuccess();
         void RegisterFailure();
+        void IsEmptyUsername();
+        void IsEmptyPassword();
+        void IsEmptyRole();
     }
 }
