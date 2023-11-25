@@ -9,8 +9,7 @@ namespace DoAn_QLCF_cs_WinForm.Repository.RepositoryInterface
 {
     public interface ILoginRepository
     {
-        NhanVienModel LoginEmployee(String username, String password);
-        KhachHangModel LoginCustomer(String username, String password);
+        NhanVienModel Login(String username, String password);
         bool Register(String username, String password);
     }
 }

@@ -31,7 +31,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             tabControl1.ItemSize = new System.Drawing.Size(0, 1);
             tabControl1.SizeMode = TabSizeMode.Fixed;
 
-            //ẩn style button new account
+            //ẩn button new account
             btn_newAccount.FlatStyle = FlatStyle.Flat;
             btn_newAccount.FlatAppearance.BorderSize = 0;
         }
@@ -57,18 +57,6 @@ namespace DoAn_QLCF_cs_WinForm.View
             set { txt_registerPassword.Texts = value; }
         }
 
-        public string Role
-        {
-            get
-            {
-                if (rdb_customerLogin.Checked)
-                    return "customer";
-                if (rdb_employeeLogin.Checked)
-                    return "employee";
-                return null;
-            }
-        }
-
         public event EventHandler LoginEvent;
         public event EventHandler RegisterEvent;
 
@@ -85,11 +73,10 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         public void IsEmptyUsername()            
         {
-            txt_username.Focus();
-            MessageBox.Show("Username không được để trống!");
+            tabControl1.SelectedTab = tb_registerEmployee;
         }
 
-        public void IsEmptyPassword()
+        private void btn_back_Click(object sender, EventArgs e)
         {
             txt_password.Focus();
             MessageBox.Show("Password không được để trống!");
@@ -104,14 +91,6 @@ namespace DoAn_QLCF_cs_WinForm.View
             tabControl1.SelectedTab = tp_login;
         }
 
-        private void btn_back2_Click(object sender, EventArgs e)
-        {
-            tabControl1.SelectedTab = tp_information;
-        }
-
-        private void btn_continue_Click(object sender, EventArgs e)
-        {
-            tabControl1.SelectedTab = tp_register;
-        }        
+       
     }
 }

@@ -16,7 +16,6 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
     {
         private ILoginView view;
         private ILoginRepository repository;
-        private string connectionString = ConfigurationManager.ConnectionStrings["sqlConnection"].ConnectionString;
 
         public LoginPresenter(ILoginView view, ILoginRepository repository)
         {
@@ -82,7 +81,7 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
         }
 
         private void Register(object sender, EventArgs e)
-        {
+        {            
             if (repository.Register(this.view.RegisterUserName, this.view.RegisterPassword))
             {
                 this.view.ShowMessage("Đăng kí thành công!");

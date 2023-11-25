@@ -25,7 +25,7 @@ CREATE TABLE NhanVien
     GioiTinh        nvarchar(10),
     SDT             varchar(20),
     Email           varchar(255),
-    NgaySinh date,
+    NamSinh date,
     IsDelete bit default 0,
     foreign key (QuyenId) references Quyen (QuyenId)
 );
@@ -68,7 +68,6 @@ CREATE TABLE KhachHang
     LoaiKhachHangId int,
     IsDelete bit default 0,
     ThoiGianTaoTk date default getdate(),
-    NgaySinh date,
     FOREIGN KEY (LoaiKhachHangId) REFERENCES LoaiKhachHang (LoaiKhachHangId)
 );
 
@@ -195,7 +194,7 @@ INSERT INTO Quyen (TenQuyen, NoiDungQuyen) VALUES
 (N'NhanVienThuNgan', N'Quyền nhân viên thu ngân');
 
 -- INSERT data into NhanVien table
-INSERT INTO NhanVien (TaiKhoan, MatKhau, QuyenId, Ten, GioiTinh, SDT, Email, NgaySinh, IsDelete) VALUES
+INSERT INTO NhanVien (TaiKhoan, MatKhau, QuyenId, Ten, GioiTinh, SDT, Email, NamSinh, IsDelete) VALUES
 (N'admin', N'123', 1, 'Admin User', 'Nam', '0123456789', 'admin@gmail.com', '1990-01-01', 0),
 (N'thungan1', N'123', 2, N'Thu Ngân 1', N'Nữ', '0987654321', 'nhanvien1@gmail.com', '1995-05-15', 0);
 
@@ -226,9 +225,9 @@ INSERT INTO LoaiKhachHang (TenLoaiKh, GiamGia) VALUES
 (N'Thường', 0);
 
 -- INSERT data into KhachHang table
-INSERT INTO KhachHang (TaiKhoan, MatKhau, TenKhachHang, DiaChi, SDT, Email, LoaiKhachHangId, IsDelete, ThoiGianTaoTk, NgaySinh) VALUES
-('khachvip', '123', N'Nguyễn Văn Tèo', '123 VIP DHSG', '0123456789', 'vip@gmail.com', 1, 0, '2023-01-01', '1990-01-01'),
-('khach1', '123', N'Lê Thị Bê', '456 Normal DHSG', '0987654321', 'customer1@gmail.com', 2, 0, '2023-01-02', '1990-01-01');
+INSERT INTO KhachHang (TaiKhoan, MatKhau, TenKhachHang, DiaChi, SDT, Email, LoaiKhachHangId, IsDelete, ThoiGianTaoTk) VALUES
+('vipcustomer', 'vip123', N'Khách Hàng VIP', '123 VIP DHSG', '0123456789', 'vip@gmail.com', 1, 0, '2023-01-01'),
+('customer1', 'customer123', N'Khách Hàng Thường', '456 Normal DHSG', '0987654321', 'customer1@gmail.com', 2, 0, '2023-01-02');
 
 -- INSERT data into NhaCungCap table
 INSERT INTO NhaCungCap (TenNhaCungCap, DiaChi, SDT, Email, IsDelete) VALUES
