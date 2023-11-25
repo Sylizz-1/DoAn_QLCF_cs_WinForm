@@ -33,16 +33,15 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             tcNCC = new TabControl();
             listTabPage = new TabPage();
+            filterBtn = new CustomControl.CustomButton();
+            sortBtn = new CustomControl.CustomButton();
             dgvNcc = new DataGridView();
             searchTxt = new CustomControl.CustomTextBox();
-            label9 = new Label();
-            label2 = new Label();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
             delBtn = new CustomControl.CustomButton();
             editBtn = new CustomControl.CustomButton();
             addBtn = new CustomControl.CustomButton();
             detailTabPage = new TabPage();
+            checkboxIsDelete = new CheckBox();
             label8 = new Label();
             HuyBtn = new CustomControl.CustomButton();
             xacNhanBtn = new CustomControl.CustomButton();
@@ -58,11 +57,14 @@
             label5 = new Label();
             label4 = new Label();
             label1 = new Label();
-            checkboxIsDelete = new CheckBox();
+            groupBox1 = new GroupBox();
+            radioButton1 = new RadioButton();
+            radioButton2 = new RadioButton();
             tcNCC.SuspendLayout();
             listTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvNcc).BeginInit();
             detailTabPage.SuspendLayout();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // tcNCC
@@ -79,12 +81,11 @@
             // 
             // listTabPage
             // 
+            listTabPage.Controls.Add(groupBox1);
+            listTabPage.Controls.Add(filterBtn);
+            listTabPage.Controls.Add(sortBtn);
             listTabPage.Controls.Add(dgvNcc);
             listTabPage.Controls.Add(searchTxt);
-            listTabPage.Controls.Add(label9);
-            listTabPage.Controls.Add(label2);
-            listTabPage.Controls.Add(comboBox2);
-            listTabPage.Controls.Add(comboBox1);
             listTabPage.Controls.Add(delBtn);
             listTabPage.Controls.Add(editBtn);
             listTabPage.Controls.Add(addBtn);
@@ -96,6 +97,66 @@
             listTabPage.TabIndex = 0;
             listTabPage.Text = "Danh Sách";
             listTabPage.UseVisualStyleBackColor = true;
+            // 
+            // filterBtn
+            // 
+            filterBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            filterBtn.BackColor = SystemColors.Control;
+            filterBtn.BackgroundColor = SystemColors.Control;
+            filterBtn.BorderColor = Color.Goldenrod;
+            filterBtn.BorderRadius = 15;
+            filterBtn.BorderSize = 2;
+            filterBtn.Cursor = Cursors.Hand;
+            filterBtn.EnabledTextHover = true;
+            filterBtn.FlatAppearance.BorderSize = 0;
+            filterBtn.FlatAppearance.MouseDownBackColor = Color.Teal;
+            filterBtn.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
+            filterBtn.FlatStyle = FlatStyle.Flat;
+            filterBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            filterBtn.ForeColor = Color.Goldenrod;
+            filterBtn.ImageAlign = ContentAlignment.MiddleRight;
+            filterBtn.ImageHover = null;
+            filterBtn.Location = new Point(545, 12);
+            filterBtn.Margin = new Padding(4, 5, 4, 5);
+            filterBtn.Name = "filterBtn";
+            filterBtn.Size = new Size(172, 64);
+            filterBtn.TabIndex = 22;
+            filterBtn.Text = "Lọc";
+            filterBtn.TextColor = Color.Goldenrod;
+            filterBtn.TextHover = Color.White;
+            filterBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            filterBtn.UseVisualStyleBackColor = false;
+            filterBtn.Click += filterBtn_Click;
+            // 
+            // sortBtn
+            // 
+            sortBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            sortBtn.BackColor = SystemColors.Control;
+            sortBtn.BackgroundColor = SystemColors.Control;
+            sortBtn.BorderColor = Color.DeepSkyBlue;
+            sortBtn.BorderRadius = 15;
+            sortBtn.BorderSize = 2;
+            sortBtn.Cursor = Cursors.Hand;
+            sortBtn.EnabledTextHover = true;
+            sortBtn.FlatAppearance.BorderSize = 0;
+            sortBtn.FlatAppearance.MouseDownBackColor = Color.Teal;
+            sortBtn.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
+            sortBtn.FlatStyle = FlatStyle.Flat;
+            sortBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            sortBtn.ForeColor = Color.DeepSkyBlue;
+            sortBtn.ImageAlign = ContentAlignment.MiddleRight;
+            sortBtn.ImageHover = null;
+            sortBtn.Location = new Point(744, 9);
+            sortBtn.Margin = new Padding(4, 5, 4, 5);
+            sortBtn.Name = "sortBtn";
+            sortBtn.Size = new Size(172, 64);
+            sortBtn.TabIndex = 21;
+            sortBtn.Text = "Sắp xếp";
+            sortBtn.TextColor = Color.DeepSkyBlue;
+            sortBtn.TextHover = Color.White;
+            sortBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            sortBtn.UseVisualStyleBackColor = false;
+            sortBtn.Click += sortBtn_Click;
             // 
             // dgvNcc
             // 
@@ -162,52 +223,6 @@
             searchTxt.TabIndex = 19;
             searchTxt.Texts = "";
             searchTxt.UnderlinedStyle = false;
-            // 
-            // label9
-            // 
-            label9.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label9.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(398, 15);
-            label9.Margin = new Padding(4, 0, 4, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(58, 51);
-            label9.TabIndex = 17;
-            label9.Text = "Lọc:";
-            label9.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(648, 16);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(104, 51);
-            label2.TabIndex = 16;
-            label2.Text = "Sắp xếp:";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // comboBox2
-            // 
-            comboBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            comboBox2.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(462, 20);
-            comboBox2.Margin = new Padding(4, 5, 4, 5);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(176, 44);
-            comboBox2.TabIndex = 15;
-            // 
-            // comboBox1
-            // 
-            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            comboBox1.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(759, 20);
-            comboBox1.Margin = new Padding(4, 5, 4, 5);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(184, 44);
-            comboBox1.TabIndex = 14;
             // 
             // delBtn
             // 
@@ -328,6 +343,15 @@
             detailTabPage.Text = "Chi Tiết";
             detailTabPage.UseVisualStyleBackColor = true;
             // 
+            // checkboxIsDelete
+            // 
+            checkboxIsDelete.AutoSize = true;
+            checkboxIsDelete.Location = new Point(1047, 304);
+            checkboxIsDelete.Name = "checkboxIsDelete";
+            checkboxIsDelete.Size = new Size(22, 21);
+            checkboxIsDelete.TabIndex = 57;
+            checkboxIsDelete.UseVisualStyleBackColor = true;
+            // 
             // label8
             // 
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -404,7 +428,7 @@
             // 
             txtSDTNcc.BackColor = SystemColors.Window;
             txtSDTNcc.BorderColor = Color.Silver;
-            txtSDTNcc.BorderFocusColor = Color.DarkCyan;
+            txtSDTNcc.BorderFocusColor = Color.DeepSkyBlue;
             txtSDTNcc.BorderRadius = 13;
             txtSDTNcc.BorderSize = 2;
             txtSDTNcc.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
@@ -416,11 +440,12 @@
             txtSDTNcc.Padding = new Padding(12, 15, 10, 11);
             txtSDTNcc.PasswordChar = false;
             txtSDTNcc.PlaceholderColor = Color.DarkGray;
-            txtSDTNcc.PlaceholderText = "Nhập số điện thoại....";
+            txtSDTNcc.PlaceholderText = "Nhập số điện thoại";
             txtSDTNcc.Size = new Size(349, 63);
             txtSDTNcc.TabIndex = 36;
             txtSDTNcc.Texts = "";
             txtSDTNcc.UnderlinedStyle = false;
+            txtSDTNcc._TextChanged += txtSDTNcc__TextChanged;
             // 
             // label3
             // 
@@ -437,7 +462,7 @@
             // 
             txtDiaChiNcc.BackColor = SystemColors.Window;
             txtDiaChiNcc.BorderColor = Color.Silver;
-            txtDiaChiNcc.BorderFocusColor = Color.DarkCyan;
+            txtDiaChiNcc.BorderFocusColor = Color.DeepSkyBlue;
             txtDiaChiNcc.BorderRadius = 13;
             txtDiaChiNcc.BorderSize = 2;
             txtDiaChiNcc.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
@@ -449,11 +474,12 @@
             txtDiaChiNcc.Padding = new Padding(12, 15, 10, 11);
             txtDiaChiNcc.PasswordChar = false;
             txtDiaChiNcc.PlaceholderColor = Color.DarkGray;
-            txtDiaChiNcc.PlaceholderText = "Nhập địa chỉ....";
+            txtDiaChiNcc.PlaceholderText = "Nhập địa chỉ";
             txtDiaChiNcc.Size = new Size(349, 63);
             txtDiaChiNcc.TabIndex = 34;
             txtDiaChiNcc.Texts = "";
             txtDiaChiNcc.UnderlinedStyle = false;
+            txtDiaChiNcc._TextChanged += txtDiaChiNcc__TextChanged;
             // 
             // M
             // 
@@ -520,7 +546,7 @@
             txtIdNcc.Padding = new Padding(12, 15, 10, 11);
             txtIdNcc.PasswordChar = false;
             txtIdNcc.PlaceholderColor = Color.DarkGray;
-            txtIdNcc.PlaceholderText = "Nhập ID....";
+            txtIdNcc.PlaceholderText = "Nhập ID";
             txtIdNcc.Size = new Size(349, 63);
             txtIdNcc.TabIndex = 30;
             txtIdNcc.Texts = "";
@@ -530,7 +556,7 @@
             // 
             txtEmailNcc.BackColor = SystemColors.Window;
             txtEmailNcc.BorderColor = Color.Silver;
-            txtEmailNcc.BorderFocusColor = Color.DarkCyan;
+            txtEmailNcc.BorderFocusColor = Color.DeepSkyBlue;
             txtEmailNcc.BorderRadius = 13;
             txtEmailNcc.BorderSize = 2;
             txtEmailNcc.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
@@ -542,17 +568,18 @@
             txtEmailNcc.Padding = new Padding(12, 15, 10, 11);
             txtEmailNcc.PasswordChar = false;
             txtEmailNcc.PlaceholderColor = Color.DarkGray;
-            txtEmailNcc.PlaceholderText = "Nhập email....";
+            txtEmailNcc.PlaceholderText = "Nhập email";
             txtEmailNcc.Size = new Size(349, 63);
             txtEmailNcc.TabIndex = 29;
             txtEmailNcc.Texts = "";
             txtEmailNcc.UnderlinedStyle = false;
+            txtEmailNcc._TextChanged += txtEmailNcc__TextChanged;
             // 
             // txtTenNcc
             // 
             txtTenNcc.BackColor = SystemColors.Window;
             txtTenNcc.BorderColor = Color.Silver;
-            txtTenNcc.BorderFocusColor = Color.DarkCyan;
+            txtTenNcc.BorderFocusColor = Color.DeepSkyBlue;
             txtTenNcc.BorderRadius = 13;
             txtTenNcc.BorderSize = 2;
             txtTenNcc.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
@@ -564,11 +591,12 @@
             txtTenNcc.Padding = new Padding(12, 15, 10, 11);
             txtTenNcc.PasswordChar = false;
             txtTenNcc.PlaceholderColor = Color.DarkGray;
-            txtTenNcc.PlaceholderText = "Nhập tên nhà cung cấp....";
+            txtTenNcc.PlaceholderText = "Nhập tên nhà cung cấp";
             txtTenNcc.Size = new Size(349, 63);
             txtTenNcc.TabIndex = 28;
             txtTenNcc.Texts = "";
             txtTenNcc.UnderlinedStyle = false;
+            txtTenNcc._TextChanged += txtTenNcc__TextChanged;
             // 
             // label5
             // 
@@ -584,7 +612,7 @@
             // label4
             // 
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(502, 220);
+            label4.Location = new Point(478, 220);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(151, 85);
@@ -603,14 +631,38 @@
             label1.Text = "ID";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // checkboxIsDelete
+            // groupBox1
             // 
-            checkboxIsDelete.AutoSize = true;
-            checkboxIsDelete.Location = new Point(1047, 304);
-            checkboxIsDelete.Name = "checkboxIsDelete";
-            checkboxIsDelete.Size = new Size(22, 21);
-            checkboxIsDelete.TabIndex = 57;
-            checkboxIsDelete.UseVisualStyleBackColor = true;
+            groupBox1.Controls.Add(radioButton2);
+            groupBox1.Controls.Add(radioButton1);
+            groupBox1.Location = new Point(53, 94);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(140, 108);
+            groupBox1.TabIndex = 23;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "ID";
+            // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.Location = new Point(17, 30);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(74, 29);
+            radioButton1.TabIndex = 0;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "Tăng";
+            radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.Location = new Point(17, 65);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(78, 29);
+            radioButton2.TabIndex = 1;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "Giảm";
+            radioButton2.UseVisualStyleBackColor = true;
             // 
             // NccView
             // 
@@ -627,6 +679,8 @@
             ((System.ComponentModel.ISupportInitialize)dgvNcc).EndInit();
             detailTabPage.ResumeLayout(false);
             detailTabPage.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -635,10 +689,6 @@
         private TabControl tcNCC;
         private TabPage listTabPage;
         private TabPage detailTabPage;
-        private Label label9;
-        private Label label2;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
         private CustomControl.CustomButton delBtn;
         private CustomControl.CustomButton editBtn;
         private CustomControl.CustomButton addBtn;
@@ -660,5 +710,10 @@
         private CustomControl.CustomButton xacNhanBtn;
         private Label label8;
         private CheckBox checkboxIsDelete;
+        private CustomControl.CustomButton filterBtn;
+        private CustomControl.CustomButton sortBtn;
+        private GroupBox groupBox1;
+        private RadioButton radioButton2;
+        private RadioButton radioButton1;
     }
 }

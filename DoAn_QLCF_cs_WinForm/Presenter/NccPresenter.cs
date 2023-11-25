@@ -26,8 +26,9 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
 
             this.view.AddEvent += Add;
             this.view.DeleteEvent += Delete;
-            this.view.EditEvent += Edit;
+            this.view.btnUpdateClickEvent += UpdateClickEvent;
             this.view.UpdateEvent += Update;
+            this.view.btnAddClickEvent += AddClickEvent;
 
             cpBindingSource = new BindingSource();
             LoadNccList();
@@ -44,7 +45,11 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             int txtIdNcc = repository.GetNextId();
             view.GetIdNccAdd(txtIdNcc);
         }
-
+        private void AddClickEvent(object sender, EventArgs e)
+        {
+            GetNccId();
+            this.view.SetNull();
+        }
         private void Add(object sender, EventArgs e)
         {
             if (this.view.isAdd)
@@ -84,18 +89,17 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
                 LoadNccList();
             }
         }
-        public void Edit(object sender, EventArgs e)
+        public void UpdateClickEvent(object sender, EventArgs e)
         {
             if (int.Parse(this.view.selectedId) != 0)
             {
                 NccModel ncc = repository.GetById(int.Parse(this.view.selectedId));
-                this.view.NhaCungCapId = ncc.NhaCungCapId.ToString();
+                this.view.NhaCungCapId = this.view.selectedId;
                 this.view.TenNhaCungCap = ncc.TenNhaCungCap.ToString();
                 this.view.SDT = ncc.SDT.ToString();
                 this.view.Email = ncc.Email.ToString();
                 this.view.DiaChi = ncc.DiaChi.ToString();
                 this.view.IsDelete = ncc.IsDelete.ToString();
-                MessageBox.Show(this.view.NhaCungCapId);
             }
         }
         public void Update(object sender, EventArgs e)
@@ -113,17 +117,18 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
 
                     if (repository.Update(ncc))
                     {
-                        MessageBox.Show("Success");
+                        MessageBox.Show("Edit Success");
+                        this.view.NhaCungCapId = this.view.selectedId;
+                        this.view.TenNhaCungCap = ncc.TenNhaCungCap.ToString();
+                        this.view.SDT = ncc.SDT.ToString();
+                        this.view.Email = ncc.Email.ToString();
+                        this.view.DiaChi = ncc.DiaChi.ToString();
+                        this.view.IsDelete = ncc.IsDelete.ToString();
                     }
                     else
                         MessageBox.Show("Fail");
                     LoadNccList();
-                    this.view.SetNull();
                 }
-        }
-        public void SearchChange()
-        {
-
         }
     }
 }

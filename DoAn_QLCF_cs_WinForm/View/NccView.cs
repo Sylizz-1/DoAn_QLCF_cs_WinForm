@@ -10,18 +10,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DoAn_QLCF_cs_WinForm.View
 {
     public partial class NccView : Form, INccView
     {
         private static NccView instance;
-        private string id;
+        private string id = "1";
         public event EventHandler btnAddClickEvent;
         public event EventHandler btnUpdateClickEvent;
         public event EventHandler AddEvent;
         public event EventHandler UpdateEvent;
         public event EventHandler DeleteEvent;
+        public event EventHandler SortEvent;
+        public event EventHandler FilterEvent;
         public bool checkIsAdd = false;
         public NccView()
         {
@@ -29,9 +32,12 @@ namespace DoAn_QLCF_cs_WinForm.View
             SetUpView();
 
             xacNhanBtn.Click += delegate { AddEvent?.Invoke(this, EventArgs.Empty); };
+            xacNhanBtn.Click += delegate { UpdateEvent?.Invoke(this, EventArgs.Empty); };
             delBtn.Click += delegate { DeleteEvent?.Invoke(this, EventArgs.Empty); };
             editBtn.Click += delegate { btnUpdateClickEvent?.Invoke(this, EventArgs.Empty); };
-            xacNhanBtn.Click += delegate { UpdateEvent?.Invoke(this, EventArgs.Empty); };
+            addBtn.Click += delegate { btnAddClickEvent?.Invoke(this, EventArgs.Empty); };
+            filterBtn.Click += delegate { FilterEvent?.Invoke(this, EventArgs.Empty); };
+            sortBtn.Click += delegate { SortEvent?.Invoke(this, EventArgs.Empty); };
         }
         public string SearchValue
         {
@@ -157,12 +163,10 @@ namespace DoAn_QLCF_cs_WinForm.View
             txtEmailNcc.Texts = "";
             txtDiaChiNcc.Texts = "";
             checkboxIsDelete.Checked = false;
-        }
-
-        public void FillData(NccModel ncc)
-        {
-            MessageBox.Show(txtEmailNcc.Texts);
-            MessageBox.Show(txtDiaChiNcc.Texts);
+            txtTenNcc.BorderColor = Color.DarkCyan;
+            txtDiaChiNcc.BorderColor = Color.DarkCyan;
+            txtEmailNcc.BorderColor = Color.DarkCyan;
+            txtSDTNcc.BorderColor = Color.DarkCyan;
         }
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -198,5 +202,47 @@ namespace DoAn_QLCF_cs_WinForm.View
             }
         }
 
+        private void txtTenNcc__TextChanged(object sender, EventArgs e)
+        {
+            if (txtTenNcc.Texts.Length > 0)
+                txtTenNcc.BorderColor = Color.DarkCyan;
+            else
+                txtTenNcc.BorderColor = Color.Red;
+        }
+
+        private void txtDiaChiNcc__TextChanged(object sender, EventArgs e)
+        {
+            if (txtDiaChiNcc.Texts.Length > 0)
+                txtDiaChiNcc.BorderColor = Color.DarkCyan;
+            else
+                txtDiaChiNcc.BorderColor = Color.Red;
+        }
+
+        private void txtEmailNcc__TextChanged(object sender, EventArgs e)
+        {
+            if (txtEmailNcc.Texts.Length > 0)
+                txtEmailNcc.BorderColor = Color.DarkCyan;
+            else
+                txtEmailNcc.BorderColor = Color.Red;
+        }
+
+        private void txtSDTNcc__TextChanged(object sender, EventArgs e)
+        {
+            int result;
+            if (!int.TryParse(txtSDTNcc.Texts, out result))
+                txtSDTNcc.BorderColor = Color.Red;
+            else
+                txtSDTNcc.BorderColor = Color.DarkCyan;
+        }
+
+        private void filterBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sortBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
