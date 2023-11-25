@@ -1,6 +1,4 @@
-﻿using DoAn_QLCF_cs_WinForm.Model;
-using DoAn_QLCF_cs_WinForm.Presenter;
-using DoAn_QLCF_cs_WinForm.View.ViewInterface;
+﻿using DoAn_QLCF_cs_WinForm.View.ViewInterface;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,13 +24,6 @@ namespace DoAn_QLCF_cs_WinForm.View
         }
 
         private static NguyenLieuView instance;
-
-        NguyenLieuPresenter INguyenLieuView.Presenter { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        string INguyenLieuView.Message { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        string INguyenLieuView.SearchValue { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        string INguyenLieuView.NguyenLieuId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        int INguyenLieuView.selectedId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
         public static INguyenLieuView GetInstance(Form parentContainer)
         {
 
@@ -61,21 +52,6 @@ namespace DoAn_QLCF_cs_WinForm.View
         private void btn_back_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = listTabPage;
-        }
-
-        void INguyenLieuView.LoadData(BindingSource list)
-        {
-            throw new NotImplementedException();
-        }
-
-        void INguyenLieuView.GetIdNguyenLieuAdd(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        NguyenLieuModel INguyenLieuView.AddNguyenLieu()
-        {
-            throw new NotImplementedException();
         }
     }
 }

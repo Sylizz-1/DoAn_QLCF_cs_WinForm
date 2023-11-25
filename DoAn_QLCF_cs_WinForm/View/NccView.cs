@@ -1,6 +1,4 @@
-﻿using DoAn_QLCF_cs_WinForm.Model;
-using DoAn_QLCF_cs_WinForm.Presenter;
-using DoAn_QLCF_cs_WinForm.View.ViewInterface;
+﻿using DoAn_QLCF_cs_WinForm.View.ViewInterface;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -79,9 +77,8 @@ namespace DoAn_QLCF_cs_WinForm.View
             get => checkIsAdd;
             set => checkIsAdd = value;
         }
-        public string selectedId { get => this.id; set => this.id = value; }
 
-
+        private static NccView instance;
         public static INccView GetInstance(Form parentContainer)
         {
 
@@ -171,14 +168,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            tcNCC.SelectedTab = detailTabPage;
-            isAdd = true;
-        }
-
-        private void editBtn_Click(object sender, EventArgs e)
-        {
-            tcNCC.SelectedTab = detailTabPage;
-            isAdd = false;
+            tabControl1.SelectedTab = detailTabPage;
         }
 
         private void btn_back_Click(object sender, EventArgs e)
