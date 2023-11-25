@@ -10,8 +10,10 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
     {
         string UserName { get; set; }
         string Password { get; set; }
+        string Role { get; }
         string RegisterUserName { get; set; }
         string RegisterPassword { get; set; }
+        
 
         //Events
         event EventHandler LoginEvent;
@@ -22,5 +24,8 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
         void IsFailure();
         void RegisterSuccess();
         void RegisterFailure();
+        void IsEmptyUsername();
+        void IsEmptyPassword();
+        void IsEmptyRole();
     }
 }

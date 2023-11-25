@@ -28,25 +28,25 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = "SELECT ChucNangId FROM Quyen_ChucNang WHERE QuyenId = @id;";
-                command.Parameters.Add("@id", SqlDbType.VarChar).Value = idPermission;                
+                command.Parameters.Add("@id", SqlDbType.VarChar).Value = idPermission;
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        array.Add(reader.GetInt32(0));                        
-                    } 
+                        array.Add(reader.GetInt32(0));
+                    }
                 }
             }
             return array;
         }
-        public NhanVienModel Login(String username, String password)
+        public NhanVienModel LoginEmployee(String username, String password)
         {
             using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand())
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "SELECT * FROM NhanVien WHERE TaiKhoan = @username AND MatKhau = @password;";
+                command.CommandText = "SELECT * FROM NhanVien WHERE TaiKhoan = @username AND MatKhau = @password AND IsDelete = 0;";
                 command.Parameters.Add("@username", SqlDbType.VarChar).Value = username;
                 command.Parameters.Add("@password", SqlDbType.VarChar).Value = password;
                 using (SqlDataReader reader = command.ExecuteReader())
@@ -63,6 +63,36 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                     return null;
                 }
             }
+        }
+
+        public KhachHangModel LoginCustomer(string username, string password)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "SELECT * FROM KhachHang WHERE TaiKhoan = @username AND MatKhau = @password AND IsDelete = 0;";
+                command.Parameters.Add("@username", SqlDbType.VarChar).Value = username;
+                command.Parameters.Add("@password", SqlDbType.VarChar).Value = password;
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        KhachHangModel khachHangModel = new KhachHangModel();
+                        khachHangModel.Id = reader.GetInt32("KhachHangId");
+                        khachHangModel.Name = reader.GetString("TenKhachHang");
+                        khachHangModel.Address = reader.GetString("DiaChi");
+                        khachHangModel.PhoneNumber = reader.GetString("SDT");
+                        khachHangModel.Email = reader.GetString("Email");
+                        khachHangModel.IdTypeOfCustomer = reader.GetInt32("LoaiKhachHangId");
+                        khachHangModel.TimeCreateAccount = Convert.ToDateTime(reader["ThoiGianTaoTk"]);
+                        khachHangModel.Birthday = Convert.ToDateTime(reader["NgaySinh"]);
+                        return khachHangModel;
+                    }
+                    return null;
+                }
+            }                    
         }
 
         public bool Register(string username, string password)

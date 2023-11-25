@@ -16,6 +16,7 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
     {
         private ILoginView view;
         private ILoginRepository repository;
+        private string connectionString = ConfigurationManager.ConnectionStrings["sqlConnection"].ConnectionString;
 
         public LoginPresenter(ILoginView view, ILoginRepository repository)
         {
@@ -26,24 +27,62 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             this.view.RegisterEvent += Register;
         }
 
+        private bool validateInputLogin()
+        {
+            if (this.view.UserName == "")
+            {
+                this.view.IsEmptyUsername();
+                return false;
+            }
+            else if (this.view.Password == "")
+            {
+                this.view.IsEmptyPassword();
+                return false;
+            }
+            else if (this.view.Role == null)
+            {
+                this.view.IsEmptyRole();
+                return false;
+            }
+            return true;
+        }
+
         private void Login(object sender, EventArgs e)
         {
-            NhanVienModel nhanVien = repository.Login(this.view.UserName, this.view.Password);            
-            if(nhanVien != null)
+            if (validateInputLogin())
             {
-                this.view.IsSuccess();
-                string connectionString = ConfigurationManager.ConnectionStrings["sqlConnection"].ConnectionString;
-                IMainView mainView = new MainView(connectionString, nhanVien);                                
-                mainView.Show();                
+                if(this.view.Role == "employee")
+                {
+                    NhanVienModel nhanVien = repository.LoginEmployee(this.view.UserName, this.view.Password);
+                    if (nhanVien != null)
+                    {                        
+                        IMainView mainView = new MainView(connectionString, nhanVien);
+                        mainView.Show();
+                        this.view.IsSuccess();
+                    }
+                    else
+                    {
+                        this.view.IsFailure();
+                    }
+                }
+                else if(this.view.Role == "customer")
+                {
+                    KhachHangModel khachHang = repository.LoginCustomer(this.view.UserName, this.view.Password);
+                    if (khachHang != null)
+                    {
+                        this.view.IsSuccess();
+                    }
+                    else
+                    {
+                        this.view.IsFailure();
+                    }
+                }                                
             }
-            else
-            {
-                this.view.IsFailure();
-            }
+
         }
 
         private void Register(object sender, EventArgs e)
-        {            
+        {
             if (repository.Register(this.view.RegisterUserName, this.view.RegisterPassword))
             {
                 this.view.RegisterSuccess();
