@@ -39,7 +39,6 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                 cmd.Parameters.AddWithValue("@GiaTien_Kg", NguyenLieu.GiaTien_Kg);
                 cmd.Parameters.AddWithValue("@HinhAnh", NguyenLieu.HinhAnh);
                 cmd.Parameters.AddWithValue("@IsDelete", NguyenLieu.IsDelete);
-
                 cmd.ExecuteNonQuery();
             }
         }
