@@ -35,6 +35,10 @@
             listTabPage = new TabPage();
             dataGridView1 = new DataGridView();
             searchTxt = new CustomControl.CustomTextBox();
+            label9 = new Label();
+            label2 = new Label();
+            comboBox2 = new ComboBox();
+            comboBox1 = new ComboBox();
             delBtn = new CustomControl.CustomButton();
             editBtn = new CustomControl.CustomButton();
             addBtn = new CustomControl.CustomButton();
@@ -59,7 +63,6 @@
             listTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             detailTabPage.SuspendLayout();
-            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -77,6 +80,10 @@
             // 
             listTabPage.Controls.Add(dataGridView1);
             listTabPage.Controls.Add(searchTxt);
+            listTabPage.Controls.Add(label9);
+            listTabPage.Controls.Add(label2);
+            listTabPage.Controls.Add(comboBox2);
+            listTabPage.Controls.Add(comboBox1);
             listTabPage.Controls.Add(delBtn);
             listTabPage.Controls.Add(editBtn);
             listTabPage.Controls.Add(addBtn);
@@ -611,6 +618,10 @@
         private TabControl tabControl1;
         private TabPage listTabPage;
         private TabPage detailTabPage;
+        private Label label9;
+        private Label label2;
+        private ComboBox comboBox2;
+        private ComboBox comboBox1;
         private CustomControl.CustomButton delBtn;
         private CustomControl.CustomButton editBtn;
         private CustomControl.CustomButton addBtn;

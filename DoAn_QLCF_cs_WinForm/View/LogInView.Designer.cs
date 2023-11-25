@@ -31,35 +31,76 @@
             txt_username = new CustomControl.CustomTextBox();
             txt_password = new CustomControl.CustomTextBox();
             tabControl1 = new TabControl();
-            tb_login = new TabPage();
+            tp_login = new TabPage();
             btn_newAccount = new Button();
             groupBox1 = new GroupBox();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
+            rdb_customerLogin = new RadioButton();
+            rdb_employeeLogin = new RadioButton();
             btn_login = new CustomControl.CustomButton();
             panel2 = new Panel();
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
-            tb_registerEmployee = new TabPage();
-            btn_register = new Button();
+            tp_information = new TabPage();
+            pn_birthday = new Panel();
+            customDateTimePicker1 = new CustomControl.CustomDateTimePicker();
+            pictureBox12 = new PictureBox();
+            btn_continue = new CustomControl.CustomButton();
+            groupBox3 = new GroupBox();
+            radioButton5 = new RadioButton();
+            radioButton6 = new RadioButton();
+            groupBox2 = new GroupBox();
+            rdb_customerRegister = new RadioButton();
+            rdb_employeeRegister = new RadioButton();
+            panel6 = new Panel();
+            pictureBox9 = new PictureBox();
+            customTextBox2 = new CustomControl.CustomTextBox();
+            panel7 = new Panel();
+            pictureBox10 = new PictureBox();
+            customTextBox4 = new CustomControl.CustomTextBox();
+            panel8 = new Panel();
+            pictureBox11 = new PictureBox();
+            customTextBox5 = new CustomControl.CustomTextBox();
+            btn_back1 = new CustomControl.CustomButton();
+            pictureBox8 = new PictureBox();
+            tp_register = new TabPage();
+            btn_register = new CustomControl.CustomButton();
+            panel5 = new Panel();
+            pictureBox7 = new PictureBox();
+            customTextBox1 = new CustomControl.CustomTextBox();
+            pictureBox6 = new PictureBox();
             panel3 = new Panel();
             pictureBox4 = new PictureBox();
             txt_registerPassword = new CustomControl.CustomTextBox();
             panel4 = new Panel();
             pictureBox5 = new PictureBox();
             txt_registerUsername = new CustomControl.CustomTextBox();
-            btn_back = new CustomControl.CustomButton();
+            btn_back2 = new CustomControl.CustomButton();
             tabControl1.SuspendLayout();
-            tb_login.SuspendLayout();
+            tp_login.SuspendLayout();
             groupBox1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            tb_registerEmployee.SuspendLayout();
+            tp_information.SuspendLayout();
+            pn_birthday.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
+            groupBox3.SuspendLayout();
+            groupBox2.SuspendLayout();
+            panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
+            panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            tp_register.SuspendLayout();
+            panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel4.SuspendLayout();
@@ -112,8 +153,9 @@
             // 
             // tabControl1
             // 
-            tabControl1.Controls.Add(tb_login);
-            tabControl1.Controls.Add(tb_registerEmployee);
+            tabControl1.Controls.Add(tp_login);
+            tabControl1.Controls.Add(tp_information);
+            tabControl1.Controls.Add(tp_register);
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.Location = new Point(0, 0);
             tabControl1.Name = "tabControl1";
@@ -121,21 +163,21 @@
             tabControl1.Size = new Size(548, 553);
             tabControl1.TabIndex = 8;
             // 
-            // tb_login
+            // tp_login
             // 
-            tb_login.BackColor = SystemColors.Window;
-            tb_login.Controls.Add(btn_newAccount);
-            tb_login.Controls.Add(groupBox1);
-            tb_login.Controls.Add(btn_login);
-            tb_login.Controls.Add(panel2);
-            tb_login.Controls.Add(pictureBox2);
-            tb_login.Controls.Add(panel1);
-            tb_login.Location = new Point(4, 29);
-            tb_login.Name = "tb_login";
-            tb_login.Padding = new Padding(3);
-            tb_login.Size = new Size(540, 520);
-            tb_login.TabIndex = 0;
-            tb_login.Text = "Login";
+            tp_login.BackColor = SystemColors.Window;
+            tp_login.Controls.Add(btn_newAccount);
+            tp_login.Controls.Add(groupBox1);
+            tp_login.Controls.Add(btn_login);
+            tp_login.Controls.Add(panel2);
+            tp_login.Controls.Add(pictureBox2);
+            tp_login.Controls.Add(panel1);
+            tp_login.Location = new Point(4, 29);
+            tp_login.Name = "tp_login";
+            tp_login.Padding = new Padding(3);
+            tp_login.Size = new Size(540, 520);
+            tp_login.TabIndex = 0;
+            tp_login.Text = "Login";
             // 
             // btn_newAccount
             // 
@@ -152,8 +194,8 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(radioButton2);
-            groupBox1.Controls.Add(radioButton1);
+            groupBox1.Controls.Add(rdb_customerLogin);
+            groupBox1.Controls.Add(rdb_employeeLogin);
             groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.Location = new Point(70, 289);
             groupBox1.Name = "groupBox1";
@@ -162,27 +204,27 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Chọn Vai Trò";
             // 
-            // radioButton2
+            // rdb_customerLogin
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(257, 33);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(138, 32);
-            radioButton2.TabIndex = 1;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Khách Hàng";
-            radioButton2.UseVisualStyleBackColor = true;
+            rdb_customerLogin.AutoSize = true;
+            rdb_customerLogin.Location = new Point(257, 33);
+            rdb_customerLogin.Name = "rdb_customerLogin";
+            rdb_customerLogin.Size = new Size(138, 32);
+            rdb_customerLogin.TabIndex = 1;
+            rdb_customerLogin.TabStop = true;
+            rdb_customerLogin.Text = "Khách Hàng";
+            rdb_customerLogin.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rdb_employeeLogin
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(6, 33);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(123, 32);
-            radioButton1.TabIndex = 0;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Nhân Viên";
-            radioButton1.UseVisualStyleBackColor = true;
+            rdb_employeeLogin.AutoSize = true;
+            rdb_employeeLogin.Location = new Point(6, 33);
+            rdb_employeeLogin.Name = "rdb_employeeLogin";
+            rdb_employeeLogin.Size = new Size(123, 32);
+            rdb_employeeLogin.TabIndex = 0;
+            rdb_employeeLogin.TabStop = true;
+            rdb_employeeLogin.Text = "Nhân Viên";
+            rdb_employeeLogin.UseVisualStyleBackColor = true;
             // 
             // btn_login
             // 
@@ -258,7 +300,7 @@
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
             // 
-            // tb_registerEmployee
+            // tp_information
             // 
             tp_information.Controls.Add(pn_birthday);
             tp_information.Controls.Add(btn_continue);
@@ -446,20 +488,220 @@
             customTextBox2.Texts = "";
             customTextBox2.UnderlinedStyle = false;
             // 
+            // panel7
+            // 
+            panel7.Controls.Add(pictureBox10);
+            panel7.Controls.Add(customTextBox4);
+            panel7.Location = new Point(70, 269);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(400, 57);
+            panel7.TabIndex = 40;
+            // 
+            // pictureBox10
+            // 
+            pictureBox10.Image = Properties.Resources.icons8_phone_47_2;
+            pictureBox10.Location = new Point(3, 4);
+            pictureBox10.Name = "pictureBox10";
+            pictureBox10.Size = new Size(47, 47);
+            pictureBox10.TabIndex = 8;
+            pictureBox10.TabStop = false;
+            // 
+            // customTextBox4
+            // 
+            customTextBox4.BackColor = SystemColors.Window;
+            customTextBox4.BorderColor = Color.Silver;
+            customTextBox4.BorderFocusColor = Color.HotPink;
+            customTextBox4.BorderRadius = 12;
+            customTextBox4.BorderSize = 1;
+            customTextBox4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            customTextBox4.ForeColor = Color.DimGray;
+            customTextBox4.Location = new Point(56, 6);
+            customTextBox4.Margin = new Padding(3, 4, 3, 4);
+            customTextBox4.Multiline = false;
+            customTextBox4.Name = "customTextBox4";
+            customTextBox4.Padding = new Padding(10, 9, 8, 9);
+            customTextBox4.PasswordChar = false;
+            customTextBox4.PlaceholderColor = Color.DarkGray;
+            customTextBox4.PlaceholderText = "Nhập Số Điện Thoại";
+            customTextBox4.Size = new Size(338, 47);
+            customTextBox4.TabIndex = 4;
+            customTextBox4.Texts = "";
+            customTextBox4.UnderlinedStyle = false;
+            // 
+            // panel8
+            // 
+            panel8.Controls.Add(pictureBox11);
+            panel8.Controls.Add(customTextBox5);
+            panel8.Location = new Point(70, 204);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(400, 57);
+            panel8.TabIndex = 39;
+            // 
+            // pictureBox11
+            // 
+            pictureBox11.Image = Properties.Resources.icons8_name_47;
+            pictureBox11.Location = new Point(3, 4);
+            pictureBox11.Name = "pictureBox11";
+            pictureBox11.Size = new Size(47, 47);
+            pictureBox11.TabIndex = 8;
+            pictureBox11.TabStop = false;
+            // 
+            // customTextBox5
+            // 
+            customTextBox5.BackColor = SystemColors.Window;
+            customTextBox5.BorderColor = Color.Silver;
+            customTextBox5.BorderFocusColor = Color.HotPink;
+            customTextBox5.BorderRadius = 12;
+            customTextBox5.BorderSize = 1;
+            customTextBox5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            customTextBox5.ForeColor = Color.DimGray;
+            customTextBox5.Location = new Point(56, 4);
+            customTextBox5.Margin = new Padding(3, 4, 3, 4);
+            customTextBox5.Multiline = false;
+            customTextBox5.Name = "customTextBox5";
+            customTextBox5.Padding = new Padding(10, 9, 8, 9);
+            customTextBox5.PasswordChar = false;
+            customTextBox5.PlaceholderColor = Color.DarkGray;
+            customTextBox5.PlaceholderText = "Nhập Họ Tên";
+            customTextBox5.Size = new Size(338, 47);
+            customTextBox5.TabIndex = 3;
+            customTextBox5.Texts = "";
+            customTextBox5.UnderlinedStyle = false;
+            // 
+            // btn_back1
+            // 
+            btn_back1.BackColor = Color.Transparent;
+            btn_back1.BackgroundColor = Color.Transparent;
+            btn_back1.BorderColor = Color.PaleVioletRed;
+            btn_back1.BorderRadius = 20;
+            btn_back1.BorderSize = 0;
+            btn_back1.Cursor = Cursors.Hand;
+            btn_back1.EnabledTextHover = false;
+            btn_back1.FlatAppearance.BorderSize = 0;
+            btn_back1.FlatAppearance.MouseDownBackColor = Color.Teal;
+            btn_back1.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
+            btn_back1.FlatStyle = FlatStyle.Flat;
+            btn_back1.ForeColor = Color.White;
+            btn_back1.Image = Properties.Resources.arrowreturn32pxBlack1;
+            btn_back1.ImageHover = Properties.Resources.arrowreturn32pxWhite1;
+            btn_back1.Location = new Point(3, 4);
+            btn_back1.Margin = new Padding(3, 4, 3, 4);
+            btn_back1.Name = "btn_back1";
+            btn_back1.Size = new Size(72, 55);
+            btn_back1.TabIndex = 38;
+            btn_back1.TextColor = Color.White;
+            btn_back1.TextHover = Color.White;
+            btn_back1.UseVisualStyleBackColor = false;
+            btn_back1.Click += btn_back1_Click;
+            // 
+            // pictureBox8
+            // 
+            pictureBox8.Image = Properties.Resources.icons8_contacts_70;
+            pictureBox8.Location = new Point(229, 9);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(70, 70);
+            pictureBox8.TabIndex = 37;
+            pictureBox8.TabStop = false;
+            // 
+            // tp_register
+            // 
+            tp_register.Controls.Add(btn_register);
+            tp_register.Controls.Add(panel5);
+            tp_register.Controls.Add(pictureBox6);
+            tp_register.Controls.Add(panel3);
+            tp_register.Controls.Add(panel4);
+            tp_register.Controls.Add(btn_back2);
+            tp_register.Location = new Point(4, 29);
+            tp_register.Name = "tp_register";
+            tp_register.Padding = new Padding(3);
+            tp_register.Size = new Size(540, 520);
+            tp_register.TabIndex = 1;
+            tp_register.Text = "Register";
+            tp_register.UseVisualStyleBackColor = true;
+            // 
             // btn_register
             // 
-            btn_register.Location = new Point(149, 318);
+            btn_register.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_register.BackColor = SystemColors.Control;
+            btn_register.BackgroundColor = SystemColors.Control;
+            btn_register.BorderColor = Color.DarkCyan;
+            btn_register.BorderRadius = 15;
+            btn_register.BorderSize = 2;
+            btn_register.Cursor = Cursors.Hand;
+            btn_register.EnabledTextHover = true;
+            btn_register.FlatAppearance.BorderSize = 0;
+            btn_register.FlatAppearance.MouseDownBackColor = Color.Teal;
+            btn_register.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
+            btn_register.FlatStyle = FlatStyle.Flat;
+            btn_register.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_register.ForeColor = Color.DarkCyan;
+            btn_register.ImageAlign = ContentAlignment.MiddleRight;
+            btn_register.ImageHover = null;
+            btn_register.Location = new Point(70, 425);
+            btn_register.Margin = new Padding(3, 4, 3, 4);
             btn_register.Name = "btn_register";
-            btn_register.Size = new Size(174, 29);
-            btn_register.TabIndex = 35;
-            btn_register.Text = "Dang Ky";
-            btn_register.UseVisualStyleBackColor = true;
+            btn_register.Size = new Size(400, 51);
+            btn_register.TabIndex = 37;
+            btn_register.Text = "Đăng Ký";
+            btn_register.TextColor = Color.DarkCyan;
+            btn_register.TextHover = Color.White;
+            btn_register.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_register.UseVisualStyleBackColor = false;
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(pictureBox7);
+            panel5.Controls.Add(customTextBox1);
+            panel5.Location = new Point(70, 343);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(400, 57);
+            panel5.TabIndex = 35;
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.Image = Properties.Resources.icons8_check_lock_47;
+            pictureBox7.Location = new Point(3, 4);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(47, 47);
+            pictureBox7.TabIndex = 8;
+            pictureBox7.TabStop = false;
+            // 
+            // customTextBox1
+            // 
+            customTextBox1.BackColor = SystemColors.Window;
+            customTextBox1.BorderColor = Color.Silver;
+            customTextBox1.BorderFocusColor = Color.HotPink;
+            customTextBox1.BorderRadius = 12;
+            customTextBox1.BorderSize = 1;
+            customTextBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            customTextBox1.ForeColor = Color.DimGray;
+            customTextBox1.Location = new Point(56, 6);
+            customTextBox1.Margin = new Padding(3, 4, 3, 4);
+            customTextBox1.Multiline = false;
+            customTextBox1.Name = "customTextBox1";
+            customTextBox1.Padding = new Padding(10, 9, 8, 9);
+            customTextBox1.PasswordChar = false;
+            customTextBox1.PlaceholderColor = Color.DarkGray;
+            customTextBox1.PlaceholderText = "Confirm Password";
+            customTextBox1.Size = new Size(338, 47);
+            customTextBox1.TabIndex = 4;
+            customTextBox1.Texts = "";
+            customTextBox1.UnderlinedStyle = false;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Image = Properties.Resources.icons8_register_100;
+            pictureBox6.Location = new Point(220, 31);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(100, 100);
+            pictureBox6.TabIndex = 36;
+            pictureBox6.TabStop = false;
             // 
             // panel3
             // 
             panel3.Controls.Add(pictureBox4);
             panel3.Controls.Add(txt_registerPassword);
-            panel3.Location = new Point(54, 221);
+            panel3.Location = new Point(70, 261);
             panel3.Name = "panel3";
             panel3.Size = new Size(400, 57);
             panel3.TabIndex = 34;
@@ -499,7 +741,7 @@
             // 
             panel4.Controls.Add(pictureBox5);
             panel4.Controls.Add(txt_registerUsername);
-            panel4.Location = new Point(54, 146);
+            panel4.Location = new Point(70, 179);
             panel4.Name = "panel4";
             panel4.Size = new Size(400, 57);
             panel4.TabIndex = 33;
@@ -535,31 +777,31 @@
             txt_registerUsername.Texts = "";
             txt_registerUsername.UnderlinedStyle = false;
             // 
-            // btn_back
+            // btn_back2
             // 
-            btn_back.BackColor = Color.Transparent;
-            btn_back.BackgroundColor = Color.Transparent;
-            btn_back.BorderColor = Color.PaleVioletRed;
-            btn_back.BorderRadius = 20;
-            btn_back.BorderSize = 0;
-            btn_back.Cursor = Cursors.Hand;
-            btn_back.EnabledTextHover = false;
-            btn_back.FlatAppearance.BorderSize = 0;
-            btn_back.FlatAppearance.MouseDownBackColor = Color.Teal;
-            btn_back.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
-            btn_back.FlatStyle = FlatStyle.Flat;
-            btn_back.ForeColor = Color.White;
-            btn_back.Image = Properties.Resources.arrowreturn32pxBlack1;
-            btn_back.ImageHover = Properties.Resources.arrowreturn32pxWhite1;
-            btn_back.Location = new Point(8, 7);
-            btn_back.Margin = new Padding(3, 4, 3, 4);
-            btn_back.Name = "btn_back";
-            btn_back.Size = new Size(72, 55);
-            btn_back.TabIndex = 32;
-            btn_back.TextColor = Color.White;
-            btn_back.TextHover = Color.White;
-            btn_back.UseVisualStyleBackColor = false;
-            btn_back.Click += btn_back_Click;
+            btn_back2.BackColor = Color.Transparent;
+            btn_back2.BackgroundColor = Color.Transparent;
+            btn_back2.BorderColor = Color.PaleVioletRed;
+            btn_back2.BorderRadius = 20;
+            btn_back2.BorderSize = 0;
+            btn_back2.Cursor = Cursors.Hand;
+            btn_back2.EnabledTextHover = false;
+            btn_back2.FlatAppearance.BorderSize = 0;
+            btn_back2.FlatAppearance.MouseDownBackColor = Color.Teal;
+            btn_back2.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
+            btn_back2.FlatStyle = FlatStyle.Flat;
+            btn_back2.ForeColor = Color.White;
+            btn_back2.Image = Properties.Resources.arrowreturn32pxBlack1;
+            btn_back2.ImageHover = Properties.Resources.arrowreturn32pxWhite1;
+            btn_back2.Location = new Point(8, 7);
+            btn_back2.Margin = new Padding(3, 4, 3, 4);
+            btn_back2.Name = "btn_back2";
+            btn_back2.Size = new Size(72, 55);
+            btn_back2.TabIndex = 32;
+            btn_back2.TextColor = Color.White;
+            btn_back2.TextHover = Color.White;
+            btn_back2.UseVisualStyleBackColor = false;
+            btn_back2.Click += btn_back2_Click;
             // 
             // LogInView
             // 
@@ -572,7 +814,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LogInView";
             tabControl1.ResumeLayout(false);
-            tb_login.ResumeLayout(false);
+            tp_login.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             panel2.ResumeLayout(false);
@@ -580,7 +822,24 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            tb_registerEmployee.ResumeLayout(false);
+            tp_information.ResumeLayout(false);
+            pn_birthday.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
+            panel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            tp_register.ResumeLayout(false);
+            panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             panel4.ResumeLayout(false);
@@ -591,10 +850,10 @@
         #endregion
 
         private CustomControl.CustomTextBox txt_username;
-        private CustomControl.CustomTextBox txt_password;        
+        private CustomControl.CustomTextBox txt_password;
         private TabControl tabControl1;
-        private TabPage tb_login;
-        private TabPage tb_registerEmployee;
+        private TabPage tp_login;
+        private TabPage tp_register;
         private PictureBox pictureBox1;
         private Panel panel1;
         private Panel panel2;
@@ -602,17 +861,42 @@
         private PictureBox pictureBox2;
         private CustomControl.CustomButton btn_login;
         private GroupBox groupBox1;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
+        private RadioButton rdb_customerLogin;
+        private RadioButton rdb_employeeLogin;
         private Button btn_newAccount;
-        private CustomControl.CustomButton btn_back;
-        private CustomControl.CustomTextBox customTextBox3;
+        private CustomControl.CustomButton btn_back2;
         private Panel panel3;
         private PictureBox pictureBox4;
         private CustomControl.CustomTextBox txt_registerPassword;
         private Panel panel4;
         private PictureBox pictureBox5;
         private CustomControl.CustomTextBox txt_registerUsername;
-        private Button btn_register;
+        private TabPage tp_information;
+        private PictureBox pictureBox6;
+        private Panel panel5;
+        private PictureBox pictureBox7;
+        private CustomControl.CustomTextBox customTextBox1;
+        private CustomControl.CustomButton btn_register;
+        private PictureBox pictureBox8;
+        private CustomControl.CustomButton btn_back1;
+        private GroupBox groupBox2;
+        private RadioButton rdb_customerRegister;
+        private RadioButton rdb_employeeRegister;
+        private Panel panel6;
+        private PictureBox pictureBox9;
+        private CustomControl.CustomTextBox customTextBox2;
+        private Panel panel7;
+        private PictureBox pictureBox10;
+        private CustomControl.CustomTextBox customTextBox4;
+        private Panel panel8;
+        private PictureBox pictureBox11;
+        private CustomControl.CustomTextBox customTextBox5;
+        private GroupBox groupBox3;
+        private RadioButton radioButton5;
+        private RadioButton radioButton6;
+        private CustomControl.CustomButton btn_continue;
+        private Panel pn_birthday;
+        private CustomControl.CustomDateTimePicker customDateTimePicker1;
+        private PictureBox pictureBox12;
     }
 }

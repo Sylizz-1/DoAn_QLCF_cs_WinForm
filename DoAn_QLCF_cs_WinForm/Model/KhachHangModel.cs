@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace DoAn_QLCF_cs_WinForm.Model
 {
-	public class KhachHangModel
-	{
-		private int id;
-		private string name;
-		public int Id { get => id; set => id = value; }
-		public string Name { get => name; set => name = value; }
-	}
+    public class KhachHangModel
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Email { get; set; }
+        public int IdTypeOfCustomer { get; set; }
+        public DateTime TimeCreateAccount { get; set; }
+        public DateTime Birthday { get; set; }
+
+    }
 }

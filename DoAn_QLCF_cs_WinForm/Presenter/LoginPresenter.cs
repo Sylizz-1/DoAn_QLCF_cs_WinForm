@@ -16,6 +16,7 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
     {
         private ILoginView view;
         private ILoginRepository repository;
+        private string connectionString = ConfigurationManager.ConnectionStrings["sqlConnection"].ConnectionString;
 
         public LoginPresenter(ILoginView view, ILoginRepository repository)
         {
@@ -50,11 +51,11 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
         {
             if (validateInputLogin())
             {
-                if(this.view.Role == "employee")
+                if (this.view.Role == "employee")
                 {
                     NhanVienModel nhanVien = repository.LoginEmployee(this.view.UserName, this.view.Password);
                     if (nhanVien != null)
-                    {                        
+                    {
                         IMainView mainView = new MainView(connectionString, nhanVien);
                         mainView.Show();
                         this.view.IsSuccess();
@@ -64,7 +65,7 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
                         this.view.IsFailure();
                     }
                 }
-                else if(this.view.Role == "customer")
+                else if (this.view.Role == "customer")
                 {
                     KhachHangModel khachHang = repository.LoginCustomer(this.view.UserName, this.view.Password);
                     if (khachHang != null)
@@ -75,13 +76,13 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
                     {
                         this.view.IsFailure();
                     }
-                }                                
+                }
             }
 
         }
 
         private void Register(object sender, EventArgs e)
-        {            
+        {
             if (repository.Register(this.view.RegisterUserName, this.view.RegisterPassword))
             {
                 this.view.RegisterSuccess();
