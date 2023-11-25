@@ -26,6 +26,7 @@ namespace DoAn_QLCF_cs_WinForm.View
         public event EventHandler SortEvent;
         public event EventHandler FilterEvent;
         public bool checkIsAdd = false;
+        private BindingSource templist = new BindingSource();
         public NccView()
         {
             InitializeComponent();
@@ -38,6 +39,19 @@ namespace DoAn_QLCF_cs_WinForm.View
             addBtn.Click += delegate { btnAddClickEvent?.Invoke(this, EventArgs.Empty); };
             filterBtn.Click += delegate { FilterEvent?.Invoke(this, EventArgs.Empty); };
             sortBtn.Click += delegate { SortEvent?.Invoke(this, EventArgs.Empty); };
+
+            rbIDDec.CheckedChanged += SortRadioButton_CheckedChanged;
+            rbIIDnc.CheckedChanged += SortRadioButton_CheckedChanged;
+            rbNameDec.CheckedChanged += SortRadioButton_CheckedChanged;
+            rbNameInc.CheckedChanged += SortRadioButton_CheckedChanged;
+            rbSdtDec.CheckedChanged += SortRadioButton_CheckedChanged;
+            rbSdtInc.CheckedChanged += SortRadioButton_CheckedChanged;
+            rbDcDec.CheckedChanged += SortRadioButton_CheckedChanged;
+            rbDcInc.CheckedChanged += SortRadioButton_CheckedChanged;
+            rbEmailDec.CheckedChanged += SortRadioButton_CheckedChanged;
+            rbEmailInc.CheckedChanged += SortRadioButton_CheckedChanged;
+            rbIsDeleteDec.CheckedChanged += SortRadioButton_CheckedChanged;
+            rbIsDeleteInc.CheckedChanged += SortRadioButton_CheckedChanged;
         }
         public string SearchValue
         {
@@ -58,6 +72,21 @@ namespace DoAn_QLCF_cs_WinForm.View
         {
             get => this.txtDiaChiNcc.Texts;
             set => this.txtDiaChiNcc.Texts = value;
+        }
+        public void SetTextBoxFillData(NccModel ncc)
+        {
+            this.txtIdNcc.Enabled = true;
+            this.txtIdNcc.Focus();
+            this.txtIdNcc.Texts = ncc.NhaCungCapId.ToString();
+            this.txtIdNcc.Enabled = false;
+            this.txtTenNcc.Focus();
+            this.txtTenNcc.Texts = ncc.TenNhaCungCap;
+            this.txtDiaChiNcc.Focus();
+            this.txtDiaChiNcc.Texts = ncc.DiaChi;
+            this.txtSDTNcc.Focus();
+            this.txtSDTNcc.Texts = ncc.SDT;
+            this.txtEmailNcc.Focus();
+            this.txtEmailNcc.Texts = ncc.Email;
         }
         public string SDT
         {
@@ -105,6 +134,7 @@ namespace DoAn_QLCF_cs_WinForm.View
         public void LoadData(BindingSource list)
         {
             this.dgvNcc.DataSource = list;
+            templist = list;
         }
         public void GetIdNccAdd(int id)
         {
@@ -242,7 +272,64 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         private void sortBtn_Click(object sender, EventArgs e)
         {
-            gbSort.Visible = true;
+            if(gbSort.Visible)
+                gbSort.Visible = false;
+            else
+                gbSort.Visible = true;
+        }
+        private void SortRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (sender is RadioButton radioButton && radioButton.Checked)
+            {
+                string sortType = radioButton.Tag.ToString();
+                SortListModels(sortType);
+            }
+        }
+        private void SortListModels(string sortType)
+        {
+            List<NccModel> myList = templist.List.OfType<NccModel>().ToList();
+            switch (sortType)
+            {
+                case "IDInc":
+                    myList.Sort((x, y) => x.NhaCungCapId.CompareTo(y.NhaCungCapId));
+                    break;
+                case "IDDec":
+                    myList.Sort((x, y) => y.NhaCungCapId.CompareTo(x.NhaCungCapId));
+                    break;
+                case "NameInc":
+                    myList.Sort((x, y) => x.TenNhaCungCap.CompareTo(y.TenNhaCungCap));
+                    break;
+                case "NameDec":
+                    myList.Sort((x, y) => y.TenNhaCungCap.CompareTo(x.TenNhaCungCap));
+                    break;
+                case "DcInc":
+                    myList.Sort((x, y) => x.DiaChi.CompareTo(y.DiaChi));
+                    break;
+                case "DcDec":
+                    myList.Sort((x, y) => y.DiaChi.CompareTo(x.DiaChi));
+                    break;
+                case "SdtInc":
+                    myList.Sort((x, y) => x.SDT.CompareTo(y.SDT));
+                    break;
+                case "SdtDec":
+                    myList.Sort((x, y) => y.SDT.CompareTo(x.SDT));
+                    break;
+                case "EmailInc":
+                    myList.Sort((x, y) => x.Email.CompareTo(y.Email));
+                    break;
+                case "EmailDec":
+                    myList.Sort((x, y) => y.Email.CompareTo(x.Email));
+                    break;
+                case "IsDeleteInc":
+                    myList.Sort((x, y) => x.Email.CompareTo(y.Email));
+                    break;
+                case "IsDeleteDec":
+                    myList.Sort((x, y) => y.Email.CompareTo(x.Email));
+                    break;
+            }
+            BindingSource myBindingSource = new BindingSource();
+            myBindingSource.DataSource = myList;
+            LoadData(myBindingSource);
         }
     }
 }

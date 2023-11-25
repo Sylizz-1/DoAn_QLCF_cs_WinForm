@@ -154,6 +154,7 @@
             rbDcDec.Size = new Size(78, 29);
             rbDcDec.TabIndex = 1;
             rbDcDec.TabStop = true;
+            rbDcDec.Tag = "DcDec";
             rbDcDec.Text = "Giảm";
             rbDcDec.UseVisualStyleBackColor = true;
             // 
@@ -165,6 +166,7 @@
             rbDcInc.Size = new Size(74, 29);
             rbDcInc.TabIndex = 0;
             rbDcInc.TabStop = true;
+            rbDcInc.Tag = "DcInc";
             rbDcInc.Text = "Tăng";
             rbDcInc.UseVisualStyleBackColor = true;
             // 
@@ -187,6 +189,7 @@
             rbIsDeleteDec.Size = new Size(78, 29);
             rbIsDeleteDec.TabIndex = 1;
             rbIsDeleteDec.TabStop = true;
+            rbIsDeleteDec.Tag = "IsDeleteDec";
             rbIsDeleteDec.Text = "Giảm";
             rbIsDeleteDec.UseVisualStyleBackColor = true;
             // 
@@ -198,6 +201,7 @@
             rbIsDeleteInc.Size = new Size(74, 29);
             rbIsDeleteInc.TabIndex = 0;
             rbIsDeleteInc.TabStop = true;
+            rbIsDeleteInc.Tag = "IsDeleteInc";
             rbIsDeleteInc.Text = "Tăng";
             rbIsDeleteInc.UseVisualStyleBackColor = true;
             // 
@@ -220,6 +224,7 @@
             rbIDDec.Size = new Size(78, 29);
             rbIDDec.TabIndex = 1;
             rbIDDec.TabStop = true;
+            rbIDDec.Tag = "IDDec";
             rbIDDec.Text = "Giảm";
             rbIDDec.UseVisualStyleBackColor = true;
             // 
@@ -231,6 +236,7 @@
             rbIIDnc.Size = new Size(74, 29);
             rbIIDnc.TabIndex = 0;
             rbIIDnc.TabStop = true;
+            rbIIDnc.Tag = "IDInc";
             rbIIDnc.Text = "Tăng";
             rbIIDnc.UseVisualStyleBackColor = true;
             // 
@@ -253,6 +259,7 @@
             rbSdtDec.Size = new Size(78, 29);
             rbSdtDec.TabIndex = 1;
             rbSdtDec.TabStop = true;
+            rbSdtDec.Tag = "SdtDec";
             rbSdtDec.Text = "Giảm";
             rbSdtDec.UseVisualStyleBackColor = true;
             // 
@@ -264,6 +271,7 @@
             rbSdtInc.Size = new Size(74, 29);
             rbSdtInc.TabIndex = 0;
             rbSdtInc.TabStop = true;
+            rbSdtInc.Tag = "SdtInc";
             rbSdtInc.Text = "Tăng";
             rbSdtInc.UseVisualStyleBackColor = true;
             // 
@@ -286,6 +294,7 @@
             rbNameDec.Size = new Size(78, 29);
             rbNameDec.TabIndex = 1;
             rbNameDec.TabStop = true;
+            rbNameDec.Tag = "NameDec";
             rbNameDec.Text = "Giảm";
             rbNameDec.UseVisualStyleBackColor = true;
             // 
@@ -297,6 +306,7 @@
             rbNameInc.Size = new Size(74, 29);
             rbNameInc.TabIndex = 0;
             rbNameInc.TabStop = true;
+            rbNameInc.Tag = "NameInc";
             rbNameInc.Text = "Tăng";
             rbNameInc.UseVisualStyleBackColor = true;
             // 
@@ -319,6 +329,7 @@
             rbEmailDec.Size = new Size(78, 29);
             rbEmailDec.TabIndex = 1;
             rbEmailDec.TabStop = true;
+            rbEmailDec.Tag = "EmailDec";
             rbEmailDec.Text = "Giảm";
             rbEmailDec.UseVisualStyleBackColor = true;
             // 
@@ -330,6 +341,7 @@
             rbEmailInc.Size = new Size(74, 29);
             rbEmailInc.TabIndex = 0;
             rbEmailInc.TabStop = true;
+            rbEmailInc.Tag = "EmailInc";
             rbEmailInc.Text = "Tăng";
             rbEmailInc.UseVisualStyleBackColor = true;
             // 
