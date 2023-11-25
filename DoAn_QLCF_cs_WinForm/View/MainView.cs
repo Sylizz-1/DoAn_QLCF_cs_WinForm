@@ -44,7 +44,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             this.connectionString = connectionString;
             this.employeeInfor = employeeInfor;
             LoadButtonNav();
-            timerLblTitle.Start();  
+            timerLblTitle.Start();
             LoadFormContainer();
 
             RemoveControlByPermission();
@@ -309,8 +309,11 @@ namespace DoAn_QLCF_cs_WinForm.View
             foreach (Form frm in this.mainFormContainer.Controls)
                 frm.Hide();
             INhapHangView view = NhapHangView.GetInstance(this.mainFormContainer);
-            INhapHangRepository repo = new NhapHangRepository(this.connectionString);
-            new NhapHangPresenter(view, repo);
+            IPhieuNhapRepository repoPN = new PhieuNhapRepository(this.connectionString);
+            IChiTietPhieuNhapRepository repoCTPN = new ChiTietPhieuNhapRepository(this.connectionString);
+            INhanVienRepository repoNV = new NhanVienRepository(this.connectionString);
+            INccRepository repoNcc = new NccRepository(this.connectionString);
+            new NhapHangPresenter(view, repoPN, repoCTPN, repoNV, repoNcc);
         }
 
         private void navHoaDon_MouseDown(object sender, MouseEventArgs e)
@@ -345,7 +348,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             foreach (Form frm in this.mainFormContainer.Controls)
                 frm.Hide();
             INccView view = NccView.GetInstance(this.mainFormContainer);
-            INccViewRepository repo = new NccViewRepository(this.connectionString);
+            INccRepository repo = new NccRepository(this.connectionString);
             new NccPresenter(view, repo);
         }
 

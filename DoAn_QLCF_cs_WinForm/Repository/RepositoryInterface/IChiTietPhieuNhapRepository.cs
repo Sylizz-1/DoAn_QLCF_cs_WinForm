@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace DoAn_QLCF_cs_WinForm.Repository.RepositoryInterface
 {
-    public interface INguyenLieuRepository
+    public interface IChiTietPhieuNhapRepository
     {
-        void Add(NguyenLieuModel obj);
-        void Update(NguyenLieuModel obj);
+        void Add(ChiTietPhieuNhapModel obj);
+        void Update(ChiTietPhieuNhapModel obj);
         void Delete(int id);
         int GetNextId();
-        IEnumerable<NguyenLieuModel> GetAll();
+        IEnumerable<ChiTietPhieuNhapModel> GetAll();
 
-        IEnumerable<NguyenLieuModel> GetByValue(string value);
+        IEnumerable<ChiTietPhieuNhapModel> GetByValue(string value);
 
-        NguyenLieuModel GetById(int id);
+        ChiTietPhieuNhapModel GetById(int id);
         bool IsExit(int id);
     }
 }
