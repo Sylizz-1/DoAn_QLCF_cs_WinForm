@@ -313,7 +313,8 @@ namespace DoAn_QLCF_cs_WinForm.View
             IChiTietPhieuNhapRepository repoCTPN = new ChiTietPhieuNhapRepository(this.connectionString);
             INhanVienRepository repoNV = new NhanVienRepository(this.connectionString);
             INccRepository repoNcc = new NccRepository(this.connectionString);
-            new NhapHangPresenter(view, repoPN, repoCTPN, repoNV, repoNcc);
+            INguyenLieuRepository repoNgl = new NguyenLieuRepository(this.connectionString);
+            new NhapHangPresenter(view, repoPN, repoCTPN, repoNV, repoNcc, repoNgl);
         }
 
         private void navHoaDon_MouseDown(object sender, MouseEventArgs e)

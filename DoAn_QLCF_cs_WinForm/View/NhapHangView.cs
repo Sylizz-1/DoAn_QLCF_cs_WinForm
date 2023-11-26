@@ -1,4 +1,5 @@
-﻿using DoAn_QLCF_cs_WinForm.Presenter;
+﻿using DoAn_QLCF_cs_WinForm.Model;
+using DoAn_QLCF_cs_WinForm.Presenter;
 using DoAn_QLCF_cs_WinForm.View.ViewInterface;
 using System;
 using System.Collections.Generic;
@@ -46,6 +47,38 @@ namespace DoAn_QLCF_cs_WinForm.View
             return instance;
         }
 
+        public void LoadDataPN(BindingSource list)
+        {
+            this.dgvDsNhapHang.DataSource = list;
+        }
+        public void LoadDataCTPN(BindingSource list)
+        {
+            this.dgvCTPN.DataSource = list;
+        }
+        public void LoadDataNV(BindingSource list)
+        {
+            List<string> name = new List<string> ();
+            List<string> id = new List<string>();
+            foreach (NhanVienModel nv in list)
+            {
+                name.Add(nv.Name);
+                id.Add(nv.Id.ToString());
+            }    
+        }
+        public void LoadDataNCC(BindingSource list)
+        {
+            this.dgvCTPN.DataSource = list;
+        }
+
+        public void GetIdPNAdd(int id)
+        {
+            this.txtPhieuNhapId.Texts = id.ToString();
+        }
+
+        private void btnAddPN_Click(object sender, EventArgs e)
+        {
+            tcNhapHang.SelectedTab = detailTabPage;
+        }
         private void btn_back_Click(object sender, EventArgs e)
         {
             tcNhapHang.SelectedTab = listTabPage;
@@ -57,21 +90,6 @@ namespace DoAn_QLCF_cs_WinForm.View
         }
 
         private void btn_back2_Click(object sender, EventArgs e)
-        {
-            tcNhapHang.SelectedTab = detailTabPage;
-        }
-
-        public void LoadData(BindingSource list)
-        {
-            this.dgvDsNhapHang.DataSource = list;
-        }
-
-        public void GetIdNccAdd(int id)
-        {
-            this.txtPhieuNhapId.Texts = id.ToString();
-        }
-
-        private void btnAddPN_Click(object sender, EventArgs e)
         {
             tcNhapHang.SelectedTab = detailTabPage;
         }

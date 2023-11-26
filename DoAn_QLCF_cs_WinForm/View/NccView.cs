@@ -62,11 +62,6 @@ namespace DoAn_QLCF_cs_WinForm.View
             rbIsDeleteDec.CheckedChanged += SortRadioButton_CheckedChanged;
             rbIsDeleteInc.CheckedChanged += SortRadioButton_CheckedChanged;
         }
-        public string SearchValue
-        {
-            get => this.searchTxt.Text;
-            set => this.searchTxt.Text = value;
-        }
         public string NhaCungCapId
         {
             get => this.txtIdNcc.Texts;

@@ -31,20 +31,38 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            tabControl1 = new TabControl();
+            tcNgl = new TabControl();
             listTabPage = new TabPage();
+            gbSort = new GroupBox();
+            groupBox5 = new GroupBox();
+            rbInfoDec = new RadioButton();
+            rbInfoInc = new RadioButton();
+            groupBox6 = new GroupBox();
+            rbIsDeleteDec = new RadioButton();
+            rbIsDeleteInc = new RadioButton();
+            groupBox1 = new GroupBox();
+            rbIDDec = new RadioButton();
+            rbIIDnc = new RadioButton();
+            groupBox4 = new GroupBox();
+            rbKlgDec = new RadioButton();
+            rbKlgInc = new RadioButton();
+            groupBox2 = new GroupBox();
+            rbNameDec = new RadioButton();
+            rbNameInc = new RadioButton();
+            groupBox3 = new GroupBox();
+            rbPriceDec = new RadioButton();
+            rbPriceInc = new RadioButton();
+            resetBtn = new CustomControl.CustomButton();
+            filterBtn = new CustomControl.CustomButton();
+            sortBtn = new CustomControl.CustomButton();
             dgvNgl = new DataGridView();
-            label9 = new Label();
-            label2 = new Label();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
             customButton2 = new CustomControl.CustomButton();
             delBtn = new CustomControl.CustomButton();
             editBtn = new CustomControl.CustomButton();
             addBtn = new CustomControl.CustomButton();
             searchTxt = new CustomControl.CustomTextBox();
             detailTabPage = new TabPage();
-            comboBox3 = new ComboBox();
+            checkboxIsDelete = new CheckBox();
             label6 = new Label();
             HuyBtn = new CustomControl.CustomButton();
             xacNhanBtn = new CustomControl.CustomButton();
@@ -52,55 +70,377 @@
             btn_back = new CustomControl.CustomButton();
             caPhePic = new PictureBox();
             label8 = new Label();
-            customTextBox4 = new CustomControl.CustomTextBox();
+            txtNglPrice = new CustomControl.CustomTextBox();
             label3 = new Label();
-            customTextBox1 = new CustomControl.CustomTextBox();
+            txtNglInfo = new CustomControl.CustomTextBox();
             M = new Label();
-            idTxt = new CustomControl.CustomTextBox();
-            customTextBox3 = new CustomControl.CustomTextBox();
-            customTextBox2 = new CustomControl.CustomTextBox();
+            txtNglId = new CustomControl.CustomTextBox();
+            txtNglWeigh = new CustomControl.CustomTextBox();
+            txtNglName = new CustomControl.CustomTextBox();
             label5 = new Label();
             label4 = new Label();
             label1 = new Label();
-            tabControl1.SuspendLayout();
+            tcNgl.SuspendLayout();
             listTabPage.SuspendLayout();
+            gbSort.SuspendLayout();
+            groupBox5.SuspendLayout();
+            groupBox6.SuspendLayout();
+            groupBox1.SuspendLayout();
+            groupBox4.SuspendLayout();
+            groupBox2.SuspendLayout();
+            groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvNgl).BeginInit();
             detailTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)caPhePic).BeginInit();
             SuspendLayout();
             // 
-            // tabControl1
+            // tcNgl
             // 
-            tabControl1.Controls.Add(listTabPage);
-            tabControl1.Controls.Add(detailTabPage);
-            tabControl1.Dock = DockStyle.Fill;
-            tabControl1.Location = new Point(0, 0);
-            tabControl1.Margin = new Padding(4, 4, 4, 4);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1538, 925);
-            tabControl1.TabIndex = 0;
+            tcNgl.Controls.Add(listTabPage);
+            tcNgl.Controls.Add(detailTabPage);
+            tcNgl.Dock = DockStyle.Fill;
+            tcNgl.Location = new Point(0, 0);
+            tcNgl.Margin = new Padding(4);
+            tcNgl.Name = "tcNgl";
+            tcNgl.SelectedIndex = 0;
+            tcNgl.Size = new Size(1538, 925);
+            tcNgl.TabIndex = 0;
             // 
             // listTabPage
             // 
+            listTabPage.Controls.Add(gbSort);
+            listTabPage.Controls.Add(resetBtn);
+            listTabPage.Controls.Add(filterBtn);
+            listTabPage.Controls.Add(sortBtn);
             listTabPage.Controls.Add(dgvNgl);
-            listTabPage.Controls.Add(label9);
-            listTabPage.Controls.Add(label2);
-            listTabPage.Controls.Add(comboBox2);
-            listTabPage.Controls.Add(comboBox1);
             listTabPage.Controls.Add(customButton2);
             listTabPage.Controls.Add(delBtn);
             listTabPage.Controls.Add(editBtn);
             listTabPage.Controls.Add(addBtn);
             listTabPage.Controls.Add(searchTxt);
             listTabPage.Location = new Point(4, 34);
-            listTabPage.Margin = new Padding(4, 4, 4, 4);
+            listTabPage.Margin = new Padding(4);
             listTabPage.Name = "listTabPage";
-            listTabPage.Padding = new Padding(4, 4, 4, 4);
+            listTabPage.Padding = new Padding(4);
             listTabPage.Size = new Size(1530, 887);
             listTabPage.TabIndex = 0;
             listTabPage.Text = "Danh Sach";
             listTabPage.UseVisualStyleBackColor = true;
+            // 
+            // gbSort
+            // 
+            gbSort.Controls.Add(groupBox5);
+            gbSort.Controls.Add(groupBox6);
+            gbSort.Controls.Add(groupBox1);
+            gbSort.Controls.Add(groupBox4);
+            gbSort.Controls.Add(groupBox2);
+            gbSort.Controls.Add(groupBox3);
+            gbSort.Location = new Point(34, 120);
+            gbSort.Name = "gbSort";
+            gbSort.Size = new Size(1148, 150);
+            gbSort.TabIndex = 30;
+            gbSort.TabStop = false;
+            gbSort.Visible = false;
+            // 
+            // groupBox5
+            // 
+            groupBox5.Controls.Add(rbInfoDec);
+            groupBox5.Controls.Add(rbInfoInc);
+            groupBox5.Location = new Point(403, 24);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(140, 108);
+            groupBox5.TabIndex = 24;
+            groupBox5.TabStop = false;
+            groupBox5.Text = "Thông tin";
+            // 
+            // rbInfoDec
+            // 
+            rbInfoDec.AutoSize = true;
+            rbInfoDec.Location = new Point(17, 65);
+            rbInfoDec.Name = "rbInfoDec";
+            rbInfoDec.Size = new Size(78, 29);
+            rbInfoDec.TabIndex = 1;
+            rbInfoDec.TabStop = true;
+            rbInfoDec.Tag = "InfoDec";
+            rbInfoDec.Text = "Giảm";
+            rbInfoDec.UseVisualStyleBackColor = true;
+            // 
+            // rbInfoInc
+            // 
+            rbInfoInc.AutoSize = true;
+            rbInfoInc.Location = new Point(17, 30);
+            rbInfoInc.Name = "rbInfoInc";
+            rbInfoInc.Size = new Size(74, 29);
+            rbInfoInc.TabIndex = 0;
+            rbInfoInc.TabStop = true;
+            rbInfoInc.Tag = "InfoInc";
+            rbInfoInc.Text = "Tăng";
+            rbInfoInc.UseVisualStyleBackColor = true;
+            // 
+            // groupBox6
+            // 
+            groupBox6.Controls.Add(rbIsDeleteDec);
+            groupBox6.Controls.Add(rbIsDeleteInc);
+            groupBox6.Location = new Point(991, 24);
+            groupBox6.Name = "groupBox6";
+            groupBox6.Size = new Size(140, 108);
+            groupBox6.TabIndex = 26;
+            groupBox6.TabStop = false;
+            groupBox6.Text = "IsDelete";
+            // 
+            // rbIsDeleteDec
+            // 
+            rbIsDeleteDec.AutoSize = true;
+            rbIsDeleteDec.Location = new Point(17, 65);
+            rbIsDeleteDec.Name = "rbIsDeleteDec";
+            rbIsDeleteDec.Size = new Size(78, 29);
+            rbIsDeleteDec.TabIndex = 1;
+            rbIsDeleteDec.TabStop = true;
+            rbIsDeleteDec.Tag = "IsDeleteDec";
+            rbIsDeleteDec.Text = "Giảm";
+            rbIsDeleteDec.UseVisualStyleBackColor = true;
+            // 
+            // rbIsDeleteInc
+            // 
+            rbIsDeleteInc.AutoSize = true;
+            rbIsDeleteInc.Location = new Point(17, 30);
+            rbIsDeleteInc.Name = "rbIsDeleteInc";
+            rbIsDeleteInc.Size = new Size(74, 29);
+            rbIsDeleteInc.TabIndex = 0;
+            rbIsDeleteInc.TabStop = true;
+            rbIsDeleteInc.Tag = "IsDeleteInc";
+            rbIsDeleteInc.Text = "Tăng";
+            rbIsDeleteInc.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(rbIDDec);
+            groupBox1.Controls.Add(rbIIDnc);
+            groupBox1.Location = new Point(11, 24);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(140, 108);
+            groupBox1.TabIndex = 23;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "ID";
+            // 
+            // rbIDDec
+            // 
+            rbIDDec.AutoSize = true;
+            rbIDDec.Location = new Point(17, 65);
+            rbIDDec.Name = "rbIDDec";
+            rbIDDec.Size = new Size(78, 29);
+            rbIDDec.TabIndex = 1;
+            rbIDDec.TabStop = true;
+            rbIDDec.Tag = "IDDec";
+            rbIDDec.Text = "Giảm";
+            rbIDDec.UseVisualStyleBackColor = true;
+            // 
+            // rbIIDnc
+            // 
+            rbIIDnc.AutoSize = true;
+            rbIIDnc.Location = new Point(17, 30);
+            rbIIDnc.Name = "rbIIDnc";
+            rbIIDnc.Size = new Size(74, 29);
+            rbIIDnc.TabIndex = 0;
+            rbIIDnc.TabStop = true;
+            rbIIDnc.Tag = "IDInc";
+            rbIIDnc.Text = "Tăng";
+            rbIIDnc.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(rbKlgDec);
+            groupBox4.Controls.Add(rbKlgInc);
+            groupBox4.Location = new Point(599, 24);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(140, 108);
+            groupBox4.TabIndex = 24;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Khối lượng";
+            // 
+            // rbKlgDec
+            // 
+            rbKlgDec.AutoSize = true;
+            rbKlgDec.Location = new Point(17, 65);
+            rbKlgDec.Name = "rbKlgDec";
+            rbKlgDec.Size = new Size(78, 29);
+            rbKlgDec.TabIndex = 1;
+            rbKlgDec.TabStop = true;
+            rbKlgDec.Tag = "KlgDec";
+            rbKlgDec.Text = "Giảm";
+            rbKlgDec.UseVisualStyleBackColor = true;
+            // 
+            // rbKlgInc
+            // 
+            rbKlgInc.AutoSize = true;
+            rbKlgInc.Location = new Point(17, 30);
+            rbKlgInc.Name = "rbKlgInc";
+            rbKlgInc.Size = new Size(74, 29);
+            rbKlgInc.TabIndex = 0;
+            rbKlgInc.TabStop = true;
+            rbKlgInc.Tag = "KlgInc";
+            rbKlgInc.Text = "Tăng";
+            rbKlgInc.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(rbNameDec);
+            groupBox2.Controls.Add(rbNameInc);
+            groupBox2.Location = new Point(207, 24);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(140, 108);
+            groupBox2.TabIndex = 24;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Tên";
+            // 
+            // rbNameDec
+            // 
+            rbNameDec.AutoSize = true;
+            rbNameDec.Location = new Point(17, 65);
+            rbNameDec.Name = "rbNameDec";
+            rbNameDec.Size = new Size(78, 29);
+            rbNameDec.TabIndex = 1;
+            rbNameDec.TabStop = true;
+            rbNameDec.Tag = "NameDec";
+            rbNameDec.Text = "Giảm";
+            rbNameDec.UseVisualStyleBackColor = true;
+            // 
+            // rbNameInc
+            // 
+            rbNameInc.AutoSize = true;
+            rbNameInc.Location = new Point(17, 30);
+            rbNameInc.Name = "rbNameInc";
+            rbNameInc.Size = new Size(74, 29);
+            rbNameInc.TabIndex = 0;
+            rbNameInc.TabStop = true;
+            rbNameInc.Tag = "NameInc";
+            rbNameInc.Text = "Tăng";
+            rbNameInc.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(rbPriceDec);
+            groupBox3.Controls.Add(rbPriceInc);
+            groupBox3.Location = new Point(795, 24);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(140, 108);
+            groupBox3.TabIndex = 25;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Giá tiền";
+            // 
+            // rbPriceDec
+            // 
+            rbPriceDec.AutoSize = true;
+            rbPriceDec.Location = new Point(17, 65);
+            rbPriceDec.Name = "rbPriceDec";
+            rbPriceDec.Size = new Size(78, 29);
+            rbPriceDec.TabIndex = 1;
+            rbPriceDec.TabStop = true;
+            rbPriceDec.Tag = "PriceDec";
+            rbPriceDec.Text = "Giảm";
+            rbPriceDec.UseVisualStyleBackColor = true;
+            // 
+            // rbPriceInc
+            // 
+            rbPriceInc.AutoSize = true;
+            rbPriceInc.Location = new Point(17, 30);
+            rbPriceInc.Name = "rbPriceInc";
+            rbPriceInc.Size = new Size(74, 29);
+            rbPriceInc.TabIndex = 0;
+            rbPriceInc.TabStop = true;
+            rbPriceInc.Tag = "PriceInc";
+            rbPriceInc.Text = "Tăng";
+            rbPriceInc.UseVisualStyleBackColor = true;
+            // 
+            // resetBtn
+            // 
+            resetBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            resetBtn.BackColor = SystemColors.Control;
+            resetBtn.BackgroundColor = SystemColors.Control;
+            resetBtn.BorderColor = Color.Gray;
+            resetBtn.BorderRadius = 15;
+            resetBtn.BorderSize = 2;
+            resetBtn.Cursor = Cursors.Hand;
+            resetBtn.EnabledTextHover = true;
+            resetBtn.FlatAppearance.BorderSize = 0;
+            resetBtn.FlatAppearance.MouseDownBackColor = Color.DarkGray;
+            resetBtn.FlatAppearance.MouseOverBackColor = Color.DarkGray;
+            resetBtn.FlatStyle = FlatStyle.Flat;
+            resetBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            resetBtn.ForeColor = Color.DarkGray;
+            resetBtn.ImageAlign = ContentAlignment.MiddleRight;
+            resetBtn.ImageHover = null;
+            resetBtn.Location = new Point(1346, 141);
+            resetBtn.Margin = new Padding(4, 5, 4, 5);
+            resetBtn.Name = "resetBtn";
+            resetBtn.Size = new Size(172, 64);
+            resetBtn.TabIndex = 29;
+            resetBtn.Text = "Reset";
+            resetBtn.TextColor = Color.DarkGray;
+            resetBtn.TextHover = Color.White;
+            resetBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            resetBtn.UseVisualStyleBackColor = false;
+            resetBtn.Click += resetBtn_Click;
+            // 
+            // filterBtn
+            // 
+            filterBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            filterBtn.BackColor = SystemColors.Control;
+            filterBtn.BackgroundColor = SystemColors.Control;
+            filterBtn.BorderColor = Color.Goldenrod;
+            filterBtn.BorderRadius = 15;
+            filterBtn.BorderSize = 2;
+            filterBtn.Cursor = Cursors.Hand;
+            filterBtn.EnabledTextHover = true;
+            filterBtn.FlatAppearance.BorderSize = 0;
+            filterBtn.FlatAppearance.MouseDownBackColor = Color.Goldenrod;
+            filterBtn.FlatAppearance.MouseOverBackColor = Color.Goldenrod;
+            filterBtn.FlatStyle = FlatStyle.Flat;
+            filterBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            filterBtn.ForeColor = Color.Goldenrod;
+            filterBtn.ImageAlign = ContentAlignment.MiddleRight;
+            filterBtn.ImageHover = null;
+            filterBtn.Location = new Point(580, 9);
+            filterBtn.Margin = new Padding(4, 5, 4, 5);
+            filterBtn.Name = "filterBtn";
+            filterBtn.Size = new Size(172, 64);
+            filterBtn.TabIndex = 24;
+            filterBtn.Text = "Lọc";
+            filterBtn.TextColor = Color.Goldenrod;
+            filterBtn.TextHover = Color.White;
+            filterBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            filterBtn.UseVisualStyleBackColor = false;
+            filterBtn.Click += filterBtn_Click;
+            // 
+            // sortBtn
+            // 
+            sortBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            sortBtn.BackColor = SystemColors.Control;
+            sortBtn.BackgroundColor = SystemColors.Control;
+            sortBtn.BorderColor = Color.DeepSkyBlue;
+            sortBtn.BorderRadius = 15;
+            sortBtn.BorderSize = 2;
+            sortBtn.Cursor = Cursors.Hand;
+            sortBtn.EnabledTextHover = true;
+            sortBtn.FlatAppearance.BorderSize = 0;
+            sortBtn.FlatAppearance.MouseDownBackColor = Color.DeepSkyBlue;
+            sortBtn.FlatAppearance.MouseOverBackColor = Color.DeepSkyBlue;
+            sortBtn.FlatStyle = FlatStyle.Flat;
+            sortBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            sortBtn.ForeColor = Color.DeepSkyBlue;
+            sortBtn.ImageAlign = ContentAlignment.MiddleRight;
+            sortBtn.ImageHover = null;
+            sortBtn.Location = new Point(771, 9);
+            sortBtn.Margin = new Padding(4, 5, 4, 5);
+            sortBtn.Name = "sortBtn";
+            sortBtn.Size = new Size(172, 64);
+            sortBtn.TabIndex = 23;
+            sortBtn.Text = "Sắp xếp";
+            sortBtn.TextColor = Color.DeepSkyBlue;
+            sortBtn.TextHover = Color.White;
+            sortBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            sortBtn.UseVisualStyleBackColor = false;
+            sortBtn.Click += sortBtn_Click;
             // 
             // dgvNgl
             // 
@@ -132,7 +472,7 @@
             dgvNgl.EnableHeadersVisualStyles = false;
             dgvNgl.GridColor = Color.DarkCyan;
             dgvNgl.ImeMode = ImeMode.NoControl;
-            dgvNgl.Location = new Point(4, 287);
+            dgvNgl.Location = new Point(4, 346);
             dgvNgl.Margin = new Padding(4, 5, 4, 5);
             dgvNgl.Name = "dgvNgl";
             dgvNgl.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
@@ -142,54 +482,9 @@
             dgvNgl.RowsDefaultCellStyle = dataGridViewCellStyle6;
             dgvNgl.RowTemplate.Height = 25;
             dgvNgl.RowTemplate.ReadOnly = true;
-            dgvNgl.Size = new Size(1522, 596);
+            dgvNgl.Size = new Size(1522, 537);
             dgvNgl.TabIndex = 22;
-            // 
-            // label9
-            // 
-            label9.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label9.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(408, 15);
-            label9.Margin = new Padding(4, 0, 4, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(58, 51);
-            label9.TabIndex = 21;
-            label9.Text = "Lọc:";
-            label9.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(658, 16);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(104, 51);
-            label2.TabIndex = 20;
-            label2.Text = "Sắp xếp:";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // comboBox2
-            // 
-            comboBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            comboBox2.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(472, 20);
-            comboBox2.Margin = new Padding(4, 5, 4, 5);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(176, 44);
-            comboBox2.TabIndex = 19;
-            // 
-            // comboBox1
-            // 
-            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            comboBox1.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(769, 20);
-            comboBox1.Margin = new Padding(4, 5, 4, 5);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(184, 44);
-            comboBox1.TabIndex = 18;
+            dgvNgl.CellClick += dgvNgl_CellClick;
             // 
             // customButton2
             // 
@@ -233,7 +528,7 @@
             delBtn.Image = Properties.Resources.deleteIconRed16px;
             delBtn.ImageAlign = ContentAlignment.MiddleRight;
             delBtn.ImageHover = Properties.Resources.deleteIconWhite16px;
-            delBtn.Location = new Point(1346, 9);
+            delBtn.Location = new Point(1344, 9);
             delBtn.Margin = new Padding(4, 5, 4, 5);
             delBtn.Name = "delBtn";
             delBtn.Size = new Size(172, 64);
@@ -263,7 +558,7 @@
             editBtn.Image = Properties.Resources.editIconTeal16px;
             editBtn.ImageAlign = ContentAlignment.MiddleRight;
             editBtn.ImageHover = Properties.Resources.editIconWhite16px;
-            editBtn.Location = new Point(1165, 9);
+            editBtn.Location = new Point(1153, 9);
             editBtn.Margin = new Padding(4, 5, 4, 5);
             editBtn.Name = "editBtn";
             editBtn.Size = new Size(172, 64);
@@ -273,6 +568,7 @@
             editBtn.TextHover = Color.White;
             editBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             editBtn.UseVisualStyleBackColor = false;
+            editBtn.Click += editBtn_Click;
             // 
             // addBtn
             // 
@@ -293,7 +589,7 @@
             addBtn.Image = Properties.Resources.addIconTeal16px;
             addBtn.ImageAlign = ContentAlignment.MiddleRight;
             addBtn.ImageHover = Properties.Resources.addIconWhite16px;
-            addBtn.Location = new Point(982, 9);
+            addBtn.Location = new Point(962, 9);
             addBtn.Margin = new Padding(4, 5, 4, 5);
             addBtn.Name = "addBtn";
             addBtn.Size = new Size(172, 64);
@@ -329,7 +625,7 @@
             // 
             // detailTabPage
             // 
-            detailTabPage.Controls.Add(comboBox3);
+            detailTabPage.Controls.Add(checkboxIsDelete);
             detailTabPage.Controls.Add(label6);
             detailTabPage.Controls.Add(HuyBtn);
             detailTabPage.Controls.Add(xacNhanBtn);
@@ -337,41 +633,38 @@
             detailTabPage.Controls.Add(btn_back);
             detailTabPage.Controls.Add(caPhePic);
             detailTabPage.Controls.Add(label8);
-            detailTabPage.Controls.Add(customTextBox4);
+            detailTabPage.Controls.Add(txtNglPrice);
             detailTabPage.Controls.Add(label3);
-            detailTabPage.Controls.Add(customTextBox1);
+            detailTabPage.Controls.Add(txtNglInfo);
             detailTabPage.Controls.Add(M);
-            detailTabPage.Controls.Add(idTxt);
-            detailTabPage.Controls.Add(customTextBox3);
-            detailTabPage.Controls.Add(customTextBox2);
+            detailTabPage.Controls.Add(txtNglId);
+            detailTabPage.Controls.Add(txtNglWeigh);
+            detailTabPage.Controls.Add(txtNglName);
             detailTabPage.Controls.Add(label5);
             detailTabPage.Controls.Add(label4);
             detailTabPage.Controls.Add(label1);
             detailTabPage.Location = new Point(4, 34);
-            detailTabPage.Margin = new Padding(4, 4, 4, 4);
+            detailTabPage.Margin = new Padding(4);
             detailTabPage.Name = "detailTabPage";
-            detailTabPage.Padding = new Padding(4, 4, 4, 4);
+            detailTabPage.Padding = new Padding(4);
             detailTabPage.Size = new Size(1530, 887);
             detailTabPage.TabIndex = 1;
             detailTabPage.Text = "Chi Tiết";
             detailTabPage.UseVisualStyleBackColor = true;
             // 
-            // comboBox3
+            // checkboxIsDelete
             // 
-            comboBox3.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "False", "True" });
-            comboBox3.Location = new Point(512, 316);
-            comboBox3.Margin = new Padding(4, 4, 4, 4);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(348, 44);
-            comboBox3.TabIndex = 56;
-            comboBox3.Text = "False";
+            checkboxIsDelete.AutoSize = true;
+            checkboxIsDelete.Location = new Point(1051, 324);
+            checkboxIsDelete.Name = "checkboxIsDelete";
+            checkboxIsDelete.Size = new Size(22, 21);
+            checkboxIsDelete.TabIndex = 56;
+            checkboxIsDelete.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(512, 234);
+            label6.Location = new Point(923, 288);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(112, 85);
@@ -408,6 +701,7 @@
             HuyBtn.TextHover = Color.White;
             HuyBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             HuyBtn.UseVisualStyleBackColor = false;
+            HuyBtn.Click += HuyBtn_Click;
             // 
             // xacNhanBtn
             // 
@@ -438,6 +732,7 @@
             xacNhanBtn.TextHover = Color.White;
             xacNhanBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             xacNhanBtn.UseVisualStyleBackColor = false;
+            xacNhanBtn.Click += xacNhanBtn_Click;
             // 
             // label7
             // 
@@ -501,27 +796,28 @@
             label8.Text = "Hình Ảnh";
             label8.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // customTextBox4
+            // txtNglPrice
             // 
-            customTextBox4.BackColor = SystemColors.Window;
-            customTextBox4.BorderColor = Color.Silver;
-            customTextBox4.BorderFocusColor = Color.DarkCyan;
-            customTextBox4.BorderRadius = 13;
-            customTextBox4.BorderSize = 2;
-            customTextBox4.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            customTextBox4.ForeColor = Color.DimGray;
-            customTextBox4.Location = new Point(904, 161);
-            customTextBox4.Margin = new Padding(4, 5, 4, 5);
-            customTextBox4.Multiline = false;
-            customTextBox4.Name = "customTextBox4";
-            customTextBox4.Padding = new Padding(12, 15, 10, 11);
-            customTextBox4.PasswordChar = false;
-            customTextBox4.PlaceholderColor = Color.DarkGray;
-            customTextBox4.PlaceholderText = "Nhập giá tiền....";
-            customTextBox4.Size = new Size(349, 63);
-            customTextBox4.TabIndex = 34;
-            customTextBox4.Texts = "";
-            customTextBox4.UnderlinedStyle = false;
+            txtNglPrice.BackColor = SystemColors.Window;
+            txtNglPrice.BorderColor = Color.Silver;
+            txtNglPrice.BorderFocusColor = Color.DarkCyan;
+            txtNglPrice.BorderRadius = 13;
+            txtNglPrice.BorderSize = 2;
+            txtNglPrice.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNglPrice.ForeColor = Color.DimGray;
+            txtNglPrice.Location = new Point(904, 161);
+            txtNglPrice.Margin = new Padding(4, 5, 4, 5);
+            txtNglPrice.Multiline = false;
+            txtNglPrice.Name = "txtNglPrice";
+            txtNglPrice.Padding = new Padding(12, 15, 10, 11);
+            txtNglPrice.PasswordChar = false;
+            txtNglPrice.PlaceholderColor = Color.DarkGray;
+            txtNglPrice.PlaceholderText = "Nhập giá tiền";
+            txtNglPrice.Size = new Size(349, 63);
+            txtNglPrice.TabIndex = 34;
+            txtNglPrice.Texts = "";
+            txtNglPrice.UnderlinedStyle = false;
+            txtNglPrice._TextChanged += txtNglPrice__TextChanged;
             // 
             // label3
             // 
@@ -534,27 +830,28 @@
             label3.Text = "Giá Tiền (Kg)";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // customTextBox1
+            // txtNglInfo
             // 
-            customTextBox1.BackColor = SystemColors.Window;
-            customTextBox1.BorderColor = Color.Silver;
-            customTextBox1.BorderFocusColor = Color.DarkCyan;
-            customTextBox1.BorderRadius = 13;
-            customTextBox1.BorderSize = 2;
-            customTextBox1.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            customTextBox1.ForeColor = Color.DimGray;
-            customTextBox1.Location = new Point(512, 161);
-            customTextBox1.Margin = new Padding(4, 5, 4, 5);
-            customTextBox1.Multiline = false;
-            customTextBox1.Name = "customTextBox1";
-            customTextBox1.Padding = new Padding(12, 15, 10, 11);
-            customTextBox1.PasswordChar = false;
-            customTextBox1.PlaceholderColor = Color.DarkGray;
-            customTextBox1.PlaceholderText = "Nhập thông tin nguyên liệu...";
-            customTextBox1.Size = new Size(349, 63);
-            customTextBox1.TabIndex = 32;
-            customTextBox1.Texts = "";
-            customTextBox1.UnderlinedStyle = false;
+            txtNglInfo.BackColor = SystemColors.Window;
+            txtNglInfo.BorderColor = Color.Silver;
+            txtNglInfo.BorderFocusColor = Color.DarkCyan;
+            txtNglInfo.BorderRadius = 13;
+            txtNglInfo.BorderSize = 2;
+            txtNglInfo.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNglInfo.ForeColor = Color.DimGray;
+            txtNglInfo.Location = new Point(512, 161);
+            txtNglInfo.Margin = new Padding(4, 5, 4, 5);
+            txtNglInfo.Multiline = false;
+            txtNglInfo.Name = "txtNglInfo";
+            txtNglInfo.Padding = new Padding(12, 15, 10, 11);
+            txtNglInfo.PasswordChar = false;
+            txtNglInfo.PlaceholderColor = Color.DarkGray;
+            txtNglInfo.PlaceholderText = "Nhập thông tin";
+            txtNglInfo.Size = new Size(349, 63);
+            txtNglInfo.TabIndex = 32;
+            txtNglInfo.Texts = "";
+            txtNglInfo.UnderlinedStyle = false;
+            txtNglInfo._TextChanged += txtNglInfo__TextChanged;
             // 
             // M
             // 
@@ -567,71 +864,73 @@
             M.Text = "Thông Tin";
             M.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // idTxt
+            // txtNglId
             // 
-            idTxt.BackColor = SystemColors.Window;
-            idTxt.BorderColor = Color.Silver;
-            idTxt.BorderFocusColor = Color.DarkCyan;
-            idTxt.BorderRadius = 13;
-            idTxt.BorderSize = 2;
-            idTxt.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            idTxt.ForeColor = Color.DimGray;
-            idTxt.Location = new Point(88, 161);
-            idTxt.Margin = new Padding(4, 5, 4, 5);
-            idTxt.Multiline = false;
-            idTxt.Name = "idTxt";
-            idTxt.Padding = new Padding(12, 15, 10, 11);
-            idTxt.PasswordChar = false;
-            idTxt.PlaceholderColor = Color.DarkGray;
-            idTxt.PlaceholderText = "Nhập ID....";
-            idTxt.Size = new Size(349, 63);
-            idTxt.TabIndex = 30;
-            idTxt.Texts = "";
-            idTxt.UnderlinedStyle = false;
+            txtNglId.BackColor = SystemColors.Window;
+            txtNglId.BorderColor = Color.Silver;
+            txtNglId.BorderFocusColor = Color.DarkCyan;
+            txtNglId.BorderRadius = 13;
+            txtNglId.BorderSize = 2;
+            txtNglId.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNglId.ForeColor = Color.DimGray;
+            txtNglId.Location = new Point(88, 161);
+            txtNglId.Margin = new Padding(4, 5, 4, 5);
+            txtNglId.Multiline = false;
+            txtNglId.Name = "txtNglId";
+            txtNglId.Padding = new Padding(12, 15, 10, 11);
+            txtNglId.PasswordChar = false;
+            txtNglId.PlaceholderColor = Color.DarkGray;
+            txtNglId.PlaceholderText = "Nhập ID";
+            txtNglId.Size = new Size(349, 63);
+            txtNglId.TabIndex = 30;
+            txtNglId.Texts = "";
+            txtNglId.UnderlinedStyle = false;
             // 
-            // customTextBox3
+            // txtNglWeigh
             // 
-            customTextBox3.BackColor = SystemColors.Window;
-            customTextBox3.BorderColor = Color.Silver;
-            customTextBox3.BorderFocusColor = Color.DarkCyan;
-            customTextBox3.BorderRadius = 13;
-            customTextBox3.BorderSize = 2;
-            customTextBox3.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            customTextBox3.ForeColor = Color.DimGray;
-            customTextBox3.Location = new Point(904, 299);
-            customTextBox3.Margin = new Padding(4, 5, 4, 5);
-            customTextBox3.Multiline = false;
-            customTextBox3.Name = "customTextBox3";
-            customTextBox3.Padding = new Padding(12, 15, 10, 11);
-            customTextBox3.PasswordChar = false;
-            customTextBox3.PlaceholderColor = Color.DarkGray;
-            customTextBox3.PlaceholderText = "Nhập khối lượng...";
-            customTextBox3.Size = new Size(349, 63);
-            customTextBox3.TabIndex = 29;
-            customTextBox3.Texts = "";
-            customTextBox3.UnderlinedStyle = false;
+            txtNglWeigh.BackColor = SystemColors.Window;
+            txtNglWeigh.BorderColor = Color.Silver;
+            txtNglWeigh.BorderFocusColor = Color.DarkCyan;
+            txtNglWeigh.BorderRadius = 13;
+            txtNglWeigh.BorderSize = 2;
+            txtNglWeigh.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNglWeigh.ForeColor = Color.DimGray;
+            txtNglWeigh.Location = new Point(512, 299);
+            txtNglWeigh.Margin = new Padding(4, 5, 4, 5);
+            txtNglWeigh.Multiline = false;
+            txtNglWeigh.Name = "txtNglWeigh";
+            txtNglWeigh.Padding = new Padding(12, 15, 10, 11);
+            txtNglWeigh.PasswordChar = false;
+            txtNglWeigh.PlaceholderColor = Color.DarkGray;
+            txtNglWeigh.PlaceholderText = "Nhập khối lượng";
+            txtNglWeigh.Size = new Size(349, 63);
+            txtNglWeigh.TabIndex = 29;
+            txtNglWeigh.Texts = "";
+            txtNglWeigh.UnderlinedStyle = false;
+            txtNglWeigh._TextChanged += txtNglWeigh__TextChanged;
             // 
-            // customTextBox2
+            // txtNglName
             // 
-            customTextBox2.BackColor = SystemColors.Window;
-            customTextBox2.BorderColor = Color.Silver;
-            customTextBox2.BorderFocusColor = Color.DarkCyan;
-            customTextBox2.BorderRadius = 13;
-            customTextBox2.BorderSize = 2;
-            customTextBox2.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            customTextBox2.ForeColor = Color.DimGray;
-            customTextBox2.Location = new Point(88, 299);
-            customTextBox2.Margin = new Padding(4, 5, 4, 5);
-            customTextBox2.Multiline = false;
-            customTextBox2.Name = "customTextBox2";
-            customTextBox2.Padding = new Padding(12, 15, 10, 11);
-            customTextBox2.PasswordChar = false;
-            customTextBox2.PlaceholderColor = Color.DarkGray;
-            customTextBox2.PlaceholderText = "Nhập tên nguyên liệu...";
-            customTextBox2.Size = new Size(349, 63);
-            customTextBox2.TabIndex = 28;
-            customTextBox2.Texts = "";
-            customTextBox2.UnderlinedStyle = false;
+            txtNglName.BackColor = SystemColors.Window;
+            txtNglName.BorderColor = Color.Silver;
+            txtNglName.BorderFocusColor = Color.DarkCyan;
+            txtNglName.BorderRadius = 13;
+            txtNglName.BorderSize = 2;
+            txtNglName.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNglName.ForeColor = Color.DimGray;
+            txtNglName.Location = new Point(88, 299);
+            txtNglName.Margin = new Padding(4, 5, 4, 5);
+            txtNglName.Multiline = false;
+            txtNglName.Name = "txtNglName";
+            txtNglName.Padding = new Padding(12, 15, 10, 11);
+            txtNglName.PasswordChar = false;
+            txtNglName.PlaceholderColor = Color.DarkGray;
+            txtNglName.PlaceholderText = "Nhập tên nguyên liệu";
+            txtNglName.Size = new Size(349, 63);
+            txtNglName.TabIndex = 28;
+            txtNglName.Texts = "";
+            txtNglName.UnderlinedStyle = false;
+            txtNglName._TextChanged += txtNglName__TextChanged;
             // 
             // label5
             // 
@@ -647,7 +946,7 @@
             // label4
             // 
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(879, 234);
+            label4.Location = new Point(487, 234);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(151, 85);
@@ -671,22 +970,36 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1538, 925);
-            Controls.Add(tabControl1);
+            Controls.Add(tcNgl);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 5, 4, 5);
             Name = "NguyenLieuView";
             Text = "NguyenLieuView";
-            tabControl1.ResumeLayout(false);
+            tcNgl.ResumeLayout(false);
             listTabPage.ResumeLayout(false);
+            gbSort.ResumeLayout(false);
+            groupBox5.ResumeLayout(false);
+            groupBox5.PerformLayout();
+            groupBox6.ResumeLayout(false);
+            groupBox6.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvNgl).EndInit();
             detailTabPage.ResumeLayout(false);
+            detailTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)caPhePic).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private TabControl tabControl1;
+        private TabControl tcNgl;
         private TabPage listTabPage;
         private TabPage detailTabPage;
         private CustomControl.CustomButton customButton2;
@@ -694,20 +1007,16 @@
         private CustomControl.CustomButton editBtn;
         private CustomControl.CustomButton addBtn;
         private CustomControl.CustomTextBox searchTxt;
-        private Label label9;
-        private Label label2;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
         private DataGridView dgvNgl;
         private PictureBox caPhePic;
         private Label label8;
-        private CustomControl.CustomTextBox customTextBox4;
+        private CustomControl.CustomTextBox txtNglPrice;
         private Label label3;
-        private CustomControl.CustomTextBox customTextBox1;
+        private CustomControl.CustomTextBox txtNglInfo;
         private Label M;
-        private CustomControl.CustomTextBox idTxt;
-        private CustomControl.CustomTextBox customTextBox3;
-        private CustomControl.CustomTextBox customTextBox2;
+        private CustomControl.CustomTextBox txtNglId;
+        private CustomControl.CustomTextBox txtNglWeigh;
+        private CustomControl.CustomTextBox txtNglName;
         private Label label5;
         private Label label4;
         private Label label1;
@@ -715,7 +1024,29 @@
         private CustomControl.CustomButton btn_back;
         private CustomControl.CustomButton HuyBtn;
         private CustomControl.CustomButton xacNhanBtn;
-        private ComboBox comboBox3;
         private Label label6;
+        private CustomControl.CustomButton sortBtn;
+        private CustomControl.CustomButton filterBtn;
+        private CustomControl.CustomButton resetBtn;
+        private GroupBox gbSort;
+        private GroupBox groupBox5;
+        private RadioButton rbInfoDec;
+        private RadioButton rbInfoInc;
+        private GroupBox groupBox6;
+        private RadioButton rbIsDeleteDec;
+        private RadioButton rbIsDeleteInc;
+        private GroupBox groupBox1;
+        private RadioButton rbIDDec;
+        private RadioButton rbIIDnc;
+        private GroupBox groupBox4;
+        private RadioButton rbKlgDec;
+        private RadioButton rbKlgInc;
+        private GroupBox groupBox2;
+        private RadioButton rbNameDec;
+        private RadioButton rbNameInc;
+        private GroupBox groupBox3;
+        private RadioButton rbPriceDec;
+        private RadioButton rbPriceInc;
+        private CheckBox checkboxIsDelete;
     }
 }

@@ -22,7 +22,6 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
         bool isAdd { get; set; }
         bool isFilter { get; set; }
         bool isUpdate { get; set; }
-        string SearchValue { get; set; }
         string NhaCungCapId { get; set; }
         string TenNhaCungCap { get; set; }
         string DiaChi { get; set; }
