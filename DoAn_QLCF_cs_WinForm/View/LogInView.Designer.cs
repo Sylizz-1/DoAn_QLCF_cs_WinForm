@@ -44,31 +44,31 @@
             pictureBox1 = new PictureBox();
             tp_information = new TabPage();
             pn_birthday = new Panel();
-            customDateTimePicker1 = new CustomControl.CustomDateTimePicker();
+            dtp_birthdayRegister = new CustomControl.CustomDateTimePicker();
             pictureBox12 = new PictureBox();
             btn_continue = new CustomControl.CustomButton();
             groupBox3 = new GroupBox();
-            radioButton5 = new RadioButton();
-            radioButton6 = new RadioButton();
+            rdb_femaleRegister = new RadioButton();
+            rdb_maleRegister = new RadioButton();
             groupBox2 = new GroupBox();
             rdb_customerRegister = new RadioButton();
             rdb_employeeRegister = new RadioButton();
             panel6 = new Panel();
             pictureBox9 = new PictureBox();
-            customTextBox2 = new CustomControl.CustomTextBox();
+            txt_emailRegister = new CustomControl.CustomTextBox();
             panel7 = new Panel();
             pictureBox10 = new PictureBox();
-            customTextBox4 = new CustomControl.CustomTextBox();
+            txt_phoneNumberRegister = new CustomControl.CustomTextBox();
             panel8 = new Panel();
             pictureBox11 = new PictureBox();
-            customTextBox5 = new CustomControl.CustomTextBox();
+            txt_nameRegister = new CustomControl.CustomTextBox();
             btn_back1 = new CustomControl.CustomButton();
             pictureBox8 = new PictureBox();
             tp_register = new TabPage();
             btn_register = new CustomControl.CustomButton();
             panel5 = new Panel();
             pictureBox7 = new PictureBox();
-            customTextBox1 = new CustomControl.CustomTextBox();
+            txt_registerPasswordConfirm = new CustomControl.CustomTextBox();
             pictureBox6 = new PictureBox();
             panel3 = new Panel();
             pictureBox4 = new PictureBox();
@@ -321,25 +321,25 @@
             // 
             // pn_birthday
             // 
-            pn_birthday.Controls.Add(customDateTimePicker1);
+            pn_birthday.Controls.Add(dtp_birthdayRegister);
             pn_birthday.Controls.Add(pictureBox12);
             pn_birthday.Location = new Point(70, 397);
             pn_birthday.Name = "pn_birthday";
             pn_birthday.Size = new Size(400, 47);
             pn_birthday.TabIndex = 47;
             // 
-            // customDateTimePicker1
+            // dtp_birthdayRegister
             // 
-            customDateTimePicker1.BorderColor = Color.PaleVioletRed;
-            customDateTimePicker1.BorderSize = 0;
-            customDateTimePicker1.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            customDateTimePicker1.Location = new Point(56, 4);
-            customDateTimePicker1.MinimumSize = new Size(0, 35);
-            customDateTimePicker1.Name = "customDateTimePicker1";
-            customDateTimePicker1.Size = new Size(338, 36);
-            customDateTimePicker1.SkinColor = Color.MediumSlateBlue;
-            customDateTimePicker1.TabIndex = 9;
-            customDateTimePicker1.TextColor = Color.White;
+            dtp_birthdayRegister.BorderColor = Color.PaleVioletRed;
+            dtp_birthdayRegister.BorderSize = 0;
+            dtp_birthdayRegister.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            dtp_birthdayRegister.Location = new Point(56, 4);
+            dtp_birthdayRegister.MinimumSize = new Size(0, 35);
+            dtp_birthdayRegister.Name = "dtp_birthdayRegister";
+            dtp_birthdayRegister.Size = new Size(338, 36);
+            dtp_birthdayRegister.SkinColor = Color.MediumSlateBlue;
+            dtp_birthdayRegister.TabIndex = 9;
+            dtp_birthdayRegister.TextColor = Color.White;
             // 
             // pictureBox12
             // 
@@ -382,8 +382,8 @@
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(radioButton5);
-            groupBox3.Controls.Add(radioButton6);
+            groupBox3.Controls.Add(rdb_femaleRegister);
+            groupBox3.Controls.Add(rdb_maleRegister);
             groupBox3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox3.Location = new Point(274, 88);
             groupBox3.Name = "groupBox3";
@@ -392,27 +392,27 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Chọn Giới Tính";
             // 
-            // radioButton5
+            // rdb_femaleRegister
             // 
-            radioButton5.AutoSize = true;
-            radioButton5.Location = new Point(6, 71);
-            radioButton5.Name = "radioButton5";
-            radioButton5.Size = new Size(60, 32);
-            radioButton5.TabIndex = 1;
-            radioButton5.TabStop = true;
-            radioButton5.Text = "Nữ";
-            radioButton5.UseVisualStyleBackColor = true;
+            rdb_femaleRegister.AutoSize = true;
+            rdb_femaleRegister.Location = new Point(6, 71);
+            rdb_femaleRegister.Name = "rdb_femaleRegister";
+            rdb_femaleRegister.Size = new Size(60, 32);
+            rdb_femaleRegister.TabIndex = 1;
+            rdb_femaleRegister.TabStop = true;
+            rdb_femaleRegister.Text = "Nữ";
+            rdb_femaleRegister.UseVisualStyleBackColor = true;
             // 
-            // radioButton6
+            // rdb_maleRegister
             // 
-            radioButton6.AutoSize = true;
-            radioButton6.Location = new Point(6, 33);
-            radioButton6.Name = "radioButton6";
-            radioButton6.Size = new Size(75, 32);
-            radioButton6.TabIndex = 0;
-            radioButton6.TabStop = true;
-            radioButton6.Text = "Nam";
-            radioButton6.UseVisualStyleBackColor = true;
+            rdb_maleRegister.AutoSize = true;
+            rdb_maleRegister.Location = new Point(6, 33);
+            rdb_maleRegister.Name = "rdb_maleRegister";
+            rdb_maleRegister.Size = new Size(75, 32);
+            rdb_maleRegister.TabIndex = 0;
+            rdb_maleRegister.TabStop = true;
+            rdb_maleRegister.Text = "Nam";
+            rdb_maleRegister.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -451,7 +451,7 @@
             // panel6
             // 
             panel6.Controls.Add(pictureBox9);
-            panel6.Controls.Add(customTextBox2);
+            panel6.Controls.Add(txt_emailRegister);
             panel6.Location = new Point(70, 334);
             panel6.Name = "panel6";
             panel6.Size = new Size(400, 57);
@@ -466,32 +466,32 @@
             pictureBox9.TabIndex = 8;
             pictureBox9.TabStop = false;
             // 
-            // customTextBox2
+            // txt_emailRegister
             // 
-            customTextBox2.BackColor = SystemColors.Window;
-            customTextBox2.BorderColor = Color.Silver;
-            customTextBox2.BorderFocusColor = Color.HotPink;
-            customTextBox2.BorderRadius = 12;
-            customTextBox2.BorderSize = 1;
-            customTextBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            customTextBox2.ForeColor = Color.DimGray;
-            customTextBox2.Location = new Point(56, 6);
-            customTextBox2.Margin = new Padding(3, 4, 3, 4);
-            customTextBox2.Multiline = false;
-            customTextBox2.Name = "customTextBox2";
-            customTextBox2.Padding = new Padding(10, 9, 8, 9);
-            customTextBox2.PasswordChar = false;
-            customTextBox2.PlaceholderColor = Color.DarkGray;
-            customTextBox2.PlaceholderText = "Nhập Email";
-            customTextBox2.Size = new Size(338, 47);
-            customTextBox2.TabIndex = 4;
-            customTextBox2.Texts = "";
-            customTextBox2.UnderlinedStyle = false;
+            txt_emailRegister.BackColor = SystemColors.Window;
+            txt_emailRegister.BorderColor = Color.Silver;
+            txt_emailRegister.BorderFocusColor = Color.HotPink;
+            txt_emailRegister.BorderRadius = 12;
+            txt_emailRegister.BorderSize = 1;
+            txt_emailRegister.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_emailRegister.ForeColor = Color.DimGray;
+            txt_emailRegister.Location = new Point(56, 6);
+            txt_emailRegister.Margin = new Padding(3, 4, 3, 4);
+            txt_emailRegister.Multiline = false;
+            txt_emailRegister.Name = "txt_emailRegister";
+            txt_emailRegister.Padding = new Padding(10, 9, 8, 9);
+            txt_emailRegister.PasswordChar = false;
+            txt_emailRegister.PlaceholderColor = Color.DarkGray;
+            txt_emailRegister.PlaceholderText = "Nhập Email";
+            txt_emailRegister.Size = new Size(338, 47);
+            txt_emailRegister.TabIndex = 4;
+            txt_emailRegister.Texts = "";
+            txt_emailRegister.UnderlinedStyle = false;
             // 
             // panel7
             // 
             panel7.Controls.Add(pictureBox10);
-            panel7.Controls.Add(customTextBox4);
+            panel7.Controls.Add(txt_phoneNumberRegister);
             panel7.Location = new Point(70, 269);
             panel7.Name = "panel7";
             panel7.Size = new Size(400, 57);
@@ -506,32 +506,32 @@
             pictureBox10.TabIndex = 8;
             pictureBox10.TabStop = false;
             // 
-            // customTextBox4
+            // txt_phoneNumberRegister
             // 
-            customTextBox4.BackColor = SystemColors.Window;
-            customTextBox4.BorderColor = Color.Silver;
-            customTextBox4.BorderFocusColor = Color.HotPink;
-            customTextBox4.BorderRadius = 12;
-            customTextBox4.BorderSize = 1;
-            customTextBox4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            customTextBox4.ForeColor = Color.DimGray;
-            customTextBox4.Location = new Point(56, 6);
-            customTextBox4.Margin = new Padding(3, 4, 3, 4);
-            customTextBox4.Multiline = false;
-            customTextBox4.Name = "customTextBox4";
-            customTextBox4.Padding = new Padding(10, 9, 8, 9);
-            customTextBox4.PasswordChar = false;
-            customTextBox4.PlaceholderColor = Color.DarkGray;
-            customTextBox4.PlaceholderText = "Nhập Số Điện Thoại";
-            customTextBox4.Size = new Size(338, 47);
-            customTextBox4.TabIndex = 4;
-            customTextBox4.Texts = "";
-            customTextBox4.UnderlinedStyle = false;
+            txt_phoneNumberRegister.BackColor = SystemColors.Window;
+            txt_phoneNumberRegister.BorderColor = Color.Silver;
+            txt_phoneNumberRegister.BorderFocusColor = Color.HotPink;
+            txt_phoneNumberRegister.BorderRadius = 12;
+            txt_phoneNumberRegister.BorderSize = 1;
+            txt_phoneNumberRegister.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_phoneNumberRegister.ForeColor = Color.DimGray;
+            txt_phoneNumberRegister.Location = new Point(56, 6);
+            txt_phoneNumberRegister.Margin = new Padding(3, 4, 3, 4);
+            txt_phoneNumberRegister.Multiline = false;
+            txt_phoneNumberRegister.Name = "txt_phoneNumberRegister";
+            txt_phoneNumberRegister.Padding = new Padding(10, 9, 8, 9);
+            txt_phoneNumberRegister.PasswordChar = false;
+            txt_phoneNumberRegister.PlaceholderColor = Color.DarkGray;
+            txt_phoneNumberRegister.PlaceholderText = "Nhập Số Điện Thoại";
+            txt_phoneNumberRegister.Size = new Size(338, 47);
+            txt_phoneNumberRegister.TabIndex = 4;
+            txt_phoneNumberRegister.Texts = "";
+            txt_phoneNumberRegister.UnderlinedStyle = false;
             // 
             // panel8
             // 
             panel8.Controls.Add(pictureBox11);
-            panel8.Controls.Add(customTextBox5);
+            panel8.Controls.Add(txt_nameRegister);
             panel8.Location = new Point(70, 204);
             panel8.Name = "panel8";
             panel8.Size = new Size(400, 57);
@@ -546,27 +546,27 @@
             pictureBox11.TabIndex = 8;
             pictureBox11.TabStop = false;
             // 
-            // customTextBox5
+            // txt_nameRegister
             // 
-            customTextBox5.BackColor = SystemColors.Window;
-            customTextBox5.BorderColor = Color.Silver;
-            customTextBox5.BorderFocusColor = Color.HotPink;
-            customTextBox5.BorderRadius = 12;
-            customTextBox5.BorderSize = 1;
-            customTextBox5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            customTextBox5.ForeColor = Color.DimGray;
-            customTextBox5.Location = new Point(56, 4);
-            customTextBox5.Margin = new Padding(3, 4, 3, 4);
-            customTextBox5.Multiline = false;
-            customTextBox5.Name = "customTextBox5";
-            customTextBox5.Padding = new Padding(10, 9, 8, 9);
-            customTextBox5.PasswordChar = false;
-            customTextBox5.PlaceholderColor = Color.DarkGray;
-            customTextBox5.PlaceholderText = "Nhập Họ Tên";
-            customTextBox5.Size = new Size(338, 47);
-            customTextBox5.TabIndex = 3;
-            customTextBox5.Texts = "";
-            customTextBox5.UnderlinedStyle = false;
+            txt_nameRegister.BackColor = SystemColors.Window;
+            txt_nameRegister.BorderColor = Color.Silver;
+            txt_nameRegister.BorderFocusColor = Color.HotPink;
+            txt_nameRegister.BorderRadius = 12;
+            txt_nameRegister.BorderSize = 1;
+            txt_nameRegister.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_nameRegister.ForeColor = Color.DimGray;
+            txt_nameRegister.Location = new Point(56, 4);
+            txt_nameRegister.Margin = new Padding(3, 4, 3, 4);
+            txt_nameRegister.Multiline = false;
+            txt_nameRegister.Name = "txt_nameRegister";
+            txt_nameRegister.Padding = new Padding(10, 9, 8, 9);
+            txt_nameRegister.PasswordChar = false;
+            txt_nameRegister.PlaceholderColor = Color.DarkGray;
+            txt_nameRegister.PlaceholderText = "Nhập Họ Tên";
+            txt_nameRegister.Size = new Size(338, 47);
+            txt_nameRegister.TabIndex = 3;
+            txt_nameRegister.Texts = "";
+            txt_nameRegister.UnderlinedStyle = false;
             // 
             // btn_back1
             // 
@@ -651,7 +651,7 @@
             // panel5
             // 
             panel5.Controls.Add(pictureBox7);
-            panel5.Controls.Add(customTextBox1);
+            panel5.Controls.Add(txt_registerPasswordConfirm);
             panel5.Location = new Point(70, 343);
             panel5.Name = "panel5";
             panel5.Size = new Size(400, 57);
@@ -666,27 +666,27 @@
             pictureBox7.TabIndex = 8;
             pictureBox7.TabStop = false;
             // 
-            // customTextBox1
+            // txt_registerPasswordConfirm
             // 
-            customTextBox1.BackColor = SystemColors.Window;
-            customTextBox1.BorderColor = Color.Silver;
-            customTextBox1.BorderFocusColor = Color.HotPink;
-            customTextBox1.BorderRadius = 12;
-            customTextBox1.BorderSize = 1;
-            customTextBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            customTextBox1.ForeColor = Color.DimGray;
-            customTextBox1.Location = new Point(56, 6);
-            customTextBox1.Margin = new Padding(3, 4, 3, 4);
-            customTextBox1.Multiline = false;
-            customTextBox1.Name = "customTextBox1";
-            customTextBox1.Padding = new Padding(10, 9, 8, 9);
-            customTextBox1.PasswordChar = false;
-            customTextBox1.PlaceholderColor = Color.DarkGray;
-            customTextBox1.PlaceholderText = "Confirm Password";
-            customTextBox1.Size = new Size(338, 47);
-            customTextBox1.TabIndex = 4;
-            customTextBox1.Texts = "";
-            customTextBox1.UnderlinedStyle = false;
+            txt_registerPasswordConfirm.BackColor = SystemColors.Window;
+            txt_registerPasswordConfirm.BorderColor = Color.Silver;
+            txt_registerPasswordConfirm.BorderFocusColor = Color.HotPink;
+            txt_registerPasswordConfirm.BorderRadius = 12;
+            txt_registerPasswordConfirm.BorderSize = 1;
+            txt_registerPasswordConfirm.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_registerPasswordConfirm.ForeColor = Color.DimGray;
+            txt_registerPasswordConfirm.Location = new Point(56, 6);
+            txt_registerPasswordConfirm.Margin = new Padding(3, 4, 3, 4);
+            txt_registerPasswordConfirm.Multiline = false;
+            txt_registerPasswordConfirm.Name = "txt_registerPasswordConfirm";
+            txt_registerPasswordConfirm.Padding = new Padding(10, 9, 8, 9);
+            txt_registerPasswordConfirm.PasswordChar = false;
+            txt_registerPasswordConfirm.PlaceholderColor = Color.DarkGray;
+            txt_registerPasswordConfirm.PlaceholderText = "Confirm Password";
+            txt_registerPasswordConfirm.Size = new Size(338, 47);
+            txt_registerPasswordConfirm.TabIndex = 4;
+            txt_registerPasswordConfirm.Texts = "";
+            txt_registerPasswordConfirm.UnderlinedStyle = false;
             // 
             // pictureBox6
             // 
@@ -875,7 +875,7 @@
         private PictureBox pictureBox6;
         private Panel panel5;
         private PictureBox pictureBox7;
-        private CustomControl.CustomTextBox customTextBox1;
+        private CustomControl.CustomTextBox txt_registerPasswordConfirm;
         private CustomControl.CustomButton btn_register;
         private PictureBox pictureBox8;
         private CustomControl.CustomButton btn_back1;
@@ -884,19 +884,19 @@
         private RadioButton rdb_employeeRegister;
         private Panel panel6;
         private PictureBox pictureBox9;
-        private CustomControl.CustomTextBox customTextBox2;
+        private CustomControl.CustomTextBox txt_emailRegister;
         private Panel panel7;
         private PictureBox pictureBox10;
-        private CustomControl.CustomTextBox customTextBox4;
+        private CustomControl.CustomTextBox txt_phoneNumberRegister;
         private Panel panel8;
         private PictureBox pictureBox11;
-        private CustomControl.CustomTextBox customTextBox5;
+        private CustomControl.CustomTextBox txt_nameRegister;
         private GroupBox groupBox3;
-        private RadioButton radioButton5;
-        private RadioButton radioButton6;
+        private RadioButton rdb_femaleRegister;
+        private RadioButton rdb_maleRegister;
         private CustomControl.CustomButton btn_continue;
         private Panel pn_birthday;
-        private CustomControl.CustomDateTimePicker customDateTimePicker1;
+        private CustomControl.CustomDateTimePicker dtp_birthdayRegister;
         private PictureBox pictureBox12;
     }
 }

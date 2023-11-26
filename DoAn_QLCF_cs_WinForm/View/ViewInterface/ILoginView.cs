@@ -13,11 +13,19 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
         string Role { get; }
         string RegisterUserName { get; set; }
         string RegisterPassword { get; set; }
+        string RegisterPasswordConfirm { get; }
+        string RegisterName { get; }
+        string RegisterPhoneNumber { get; }
+        string RegisterEmail { get; }
+        string RegisterBirthday { get; }
+        string RegisterSex { get; }
+        string RegisterRole { get; }
 
 
         //Events
         event EventHandler LoginEvent;
         event EventHandler RegisterEvent;
+        event EventHandler CheckInputInformation;
 
         //method        
         void ShowMessage(string message);

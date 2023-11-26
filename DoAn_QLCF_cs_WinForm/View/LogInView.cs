@@ -22,6 +22,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 
             btn_login.Click += delegate { LoginEvent?.Invoke(this, EventArgs.Empty); };
             btn_register.Click += delegate { RegisterEvent?.Invoke(this, EventArgs.Empty); };
+            btn_continue.Click += delegate { CheckInputInformation?.Invoke(this, EventArgs.Empty); };
         }
 
         private void setUpView()
@@ -69,8 +70,61 @@ namespace DoAn_QLCF_cs_WinForm.View
             }
         }
 
+        public string RegisterPasswordConfirm
+        {
+            get { return txt_registerPasswordConfirm.Texts; }
+        }
+
+        public string RegisterName
+        {
+            get { return txt_nameRegister.Texts; }
+        }
+
+        public string RegisterPhoneNumber
+        {
+            get { return txt_phoneNumberRegister.Texts; }
+        }
+
+        public string RegisterEmail
+        {
+            get { return txt_emailRegister.Texts; }
+        }
+
+        public string RegisterSex
+        {
+            get
+            {
+                if (rdb_maleRegister.Checked)
+                    return "male";
+                if (rdb_femaleRegister.Checked)
+                    return "female";
+                return null;
+            }
+        }
+
+        public string RegisterRole
+        {
+            get
+            {
+                if (rdb_employeeRegister.Checked)
+                    return "employee";
+                if (rdb_customerRegister.Checked)
+                    return "customer";
+                return null;
+            }
+        }
+
+        public string RegisterBirthday
+        {
+            get
+            {
+                return dtp_birthdayRegister.Value.ToString("MM/dd/yyyy");
+            }
+        }
+
         public event EventHandler LoginEvent;
         public event EventHandler RegisterEvent;
+        public event EventHandler CheckInputInformation;
 
         public void ShowMessage(string message)
         {
@@ -113,6 +167,6 @@ namespace DoAn_QLCF_cs_WinForm.View
         private void btn_continue_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tp_register;
-        }      
+        }
     }
 }
