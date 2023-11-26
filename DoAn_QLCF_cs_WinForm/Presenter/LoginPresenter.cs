@@ -24,9 +24,8 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             this.repository = repository;
 
             this.view.LoginEvent += Login;
-            this.view.RegisterEvent += Register;
-            this.view.CheckInputInformation += CheckInputInformation;
-        }     
+            this.view.RegisterEvent += Register;            
+        }
 
         private bool validateInputLogin()
         {
@@ -80,12 +79,7 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
                 }
             }
 
-        }
-
-        private void CheckInputInformation(object sender, EventArgs e)
-        {
-            
-        }
+        }       
 
         private void Register(object sender, EventArgs e)
         {

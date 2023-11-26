@@ -25,7 +25,6 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
         //Events
         event EventHandler LoginEvent;
         event EventHandler RegisterEvent;
-        event EventHandler CheckInputInformation;
 
         //method        
         void ShowMessage(string message);

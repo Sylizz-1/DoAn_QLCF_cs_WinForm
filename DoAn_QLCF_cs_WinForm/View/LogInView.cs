@@ -22,7 +22,6 @@ namespace DoAn_QLCF_cs_WinForm.View
 
             btn_login.Click += delegate { LoginEvent?.Invoke(this, EventArgs.Empty); };
             btn_register.Click += delegate { RegisterEvent?.Invoke(this, EventArgs.Empty); };
-            btn_continue.Click += delegate { CheckInputInformation?.Invoke(this, EventArgs.Empty); };
         }
 
         private void setUpView()
@@ -35,6 +34,9 @@ namespace DoAn_QLCF_cs_WinForm.View
             //ẩn style button new account
             btn_newAccount.FlatStyle = FlatStyle.Flat;
             btn_newAccount.FlatAppearance.BorderSize = 0;
+
+            //gán giá trị max cho birthday là ngày hôm nay
+            dtp_birthdayRegister.MaxDate = DateTime.Today;
         }
 
         public string UserName
@@ -124,7 +126,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         public event EventHandler LoginEvent;
         public event EventHandler RegisterEvent;
-        public event EventHandler CheckInputInformation;
+        public event EventHandler InformationEvent;
 
         public void ShowMessage(string message)
         {
@@ -149,6 +151,43 @@ namespace DoAn_QLCF_cs_WinForm.View
             MessageBox.Show("Password không được để trống!");
         }
 
+        private bool CheckInputInformation()
+        {
+            if (RegisterRole == null)
+            {
+                ShowMessage("Vui lòng chọn vai trò!");
+                return false;
+            }
+            else if (RegisterSex == null)
+            {
+                ShowMessage("Vui lòng chọn giới tính!");
+                return false;
+            }
+            else if (RegisterName == "")
+            {
+                txt_nameRegister.Focus();
+                ShowMessage("Họ tên không được để trống!");
+                return false;
+            }
+            else if (RegisterPhoneNumber == "")
+            {
+                txt_phoneNumberRegister.Focus();
+                ShowMessage("Số điện thoại không được để trống!");
+                return false;
+            }
+            else if (RegisterEmail == "")
+            {
+                txt_emailRegister.Focus();
+                ShowMessage("Email không được để trống!");
+                return false;
+            }
+            else if (RegisterBirthday == DateTime.Today.ToString("MM/dd/yyyy"))
+            {
+                ShowMessage("Vui lòng chọn ngày sinh!");
+                return false;
+            }
+            return true;
+        }
 
         private void btn_newAccount_Click(object sender, EventArgs e)
         {
@@ -166,7 +205,44 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         private void btn_continue_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedTab = tp_register;
+            if (CheckInputInformation())
+            {
+                tabControl1.SelectedTab = tp_register;
+            }
+        }
+
+        private void txt_username_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+            {
+                e.Handled = true; // Hủy bỏ sự kiện nếu ký tự là khoảng trắng
+            }
+        }
+
+        private void txt_password_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+            {
+                e.Handled = true; // Hủy bỏ sự kiện nếu ký tự là khoảng trắng
+            }
+        }
+
+        private void txt_nameRegister_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+            {
+                e.Handled = false;
+            }
+            else if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Hủy bỏ sự kiện nếu ký tự không phải là chữ cái hoặc ký tự điều khiển
+            }
+
+        }
+
+        private void txt_phoneNumberRegister_KeyPress(object sender, KeyPressEventArgs e)
+        {
+        
         }
     }
 }

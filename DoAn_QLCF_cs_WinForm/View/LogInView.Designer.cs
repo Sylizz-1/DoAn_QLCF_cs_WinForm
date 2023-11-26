@@ -123,11 +123,12 @@
             txt_username.Padding = new Padding(10, 9, 8, 9);
             txt_username.PasswordChar = false;
             txt_username.PlaceholderColor = Color.DarkGray;
-            txt_username.PlaceholderText = "Username";
+            txt_username.PlaceholderText = "Nhập Tài Khoản";
             txt_username.Size = new Size(338, 47);
             txt_username.TabIndex = 3;
             txt_username.Texts = "";
             txt_username.UnderlinedStyle = false;
+            txt_username.KeyPress += txt_username_KeyPress;
             // 
             // txt_password
             // 
@@ -145,11 +146,12 @@
             txt_password.Padding = new Padding(10, 9, 8, 9);
             txt_password.PasswordChar = false;
             txt_password.PlaceholderColor = Color.DarkGray;
-            txt_password.PlaceholderText = "Password";
+            txt_password.PlaceholderText = "Nhập Mật Khẩu";
             txt_password.Size = new Size(338, 47);
             txt_password.TabIndex = 4;
             txt_password.Texts = "";
             txt_password.UnderlinedStyle = false;
+            txt_password.KeyPress += txt_password_KeyPress;
             // 
             // tabControl1
             // 
@@ -439,12 +441,10 @@
             // rdb_employeeRegister
             // 
             rdb_employeeRegister.AutoSize = true;
-            rdb_employeeRegister.Checked = true;
             rdb_employeeRegister.Location = new Point(6, 33);
             rdb_employeeRegister.Name = "rdb_employeeRegister";
             rdb_employeeRegister.Size = new Size(123, 32);
             rdb_employeeRegister.TabIndex = 0;
-            rdb_employeeRegister.TabStop = true;
             rdb_employeeRegister.Text = "Nhân Viên";
             rdb_employeeRegister.UseVisualStyleBackColor = true;
             // 
@@ -527,6 +527,7 @@
             txt_phoneNumberRegister.TabIndex = 4;
             txt_phoneNumberRegister.Texts = "";
             txt_phoneNumberRegister.UnderlinedStyle = false;
+            txt_phoneNumberRegister.KeyPress += txt_phoneNumberRegister_KeyPress;
             // 
             // panel8
             // 
@@ -567,6 +568,7 @@
             txt_nameRegister.TabIndex = 3;
             txt_nameRegister.Texts = "";
             txt_nameRegister.UnderlinedStyle = false;
+            txt_nameRegister.KeyPress += txt_nameRegister_KeyPress;
             // 
             // btn_back1
             // 
@@ -682,7 +684,7 @@
             txt_registerPasswordConfirm.Padding = new Padding(10, 9, 8, 9);
             txt_registerPasswordConfirm.PasswordChar = false;
             txt_registerPasswordConfirm.PlaceholderColor = Color.DarkGray;
-            txt_registerPasswordConfirm.PlaceholderText = "Confirm Password";
+            txt_registerPasswordConfirm.PlaceholderText = "Nhập Lại Mật Khẩu";
             txt_registerPasswordConfirm.Size = new Size(338, 47);
             txt_registerPasswordConfirm.TabIndex = 4;
             txt_registerPasswordConfirm.Texts = "";
@@ -731,7 +733,7 @@
             txt_registerPassword.Padding = new Padding(10, 9, 8, 9);
             txt_registerPassword.PasswordChar = false;
             txt_registerPassword.PlaceholderColor = Color.DarkGray;
-            txt_registerPassword.PlaceholderText = "Password";
+            txt_registerPassword.PlaceholderText = "Nhập Mật Khẩu";
             txt_registerPassword.Size = new Size(338, 47);
             txt_registerPassword.TabIndex = 4;
             txt_registerPassword.Texts = "";
@@ -771,7 +773,7 @@
             txt_registerUsername.Padding = new Padding(10, 9, 8, 9);
             txt_registerUsername.PasswordChar = false;
             txt_registerUsername.PlaceholderColor = Color.DarkGray;
-            txt_registerUsername.PlaceholderText = "Username";
+            txt_registerUsername.PlaceholderText = "Nhập Tài Khoản";
             txt_registerUsername.Size = new Size(338, 47);
             txt_registerUsername.TabIndex = 3;
             txt_registerUsername.Texts = "";
