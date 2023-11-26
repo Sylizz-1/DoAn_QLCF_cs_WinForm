@@ -96,10 +96,10 @@
             tcNCC.Controls.Add(detailTabPage);
             tcNCC.Dock = DockStyle.Fill;
             tcNCC.Location = new Point(0, 0);
-            tcNCC.Margin = new Padding(3, 2, 3, 2);
+            tcNCC.Margin = new Padding(4);
             tcNCC.Name = "tcNCC";
             tcNCC.SelectedIndex = 0;
-            tcNCC.Size = new Size(1060, 520);
+            tcNCC.Size = new Size(1515, 866);
             tcNCC.TabIndex = 0;
             // 
             // listTabPage
@@ -113,11 +113,11 @@
             listTabPage.Controls.Add(delBtn);
             listTabPage.Controls.Add(editBtn);
             listTabPage.Controls.Add(addBtn);
-            listTabPage.Location = new Point(4, 24);
-            listTabPage.Margin = new Padding(3, 2, 3, 2);
+            listTabPage.Location = new Point(4, 34);
+            listTabPage.Margin = new Padding(4);
             listTabPage.Name = "listTabPage";
-            listTabPage.Padding = new Padding(3, 2, 3, 2);
-            listTabPage.Size = new Size(1052, 492);
+            listTabPage.Padding = new Padding(4);
+            listTabPage.Size = new Size(1507, 828);
             listTabPage.TabIndex = 0;
             listTabPage.Text = "Danh Sách";
             listTabPage.UseVisualStyleBackColor = true;
@@ -160,11 +160,9 @@
             gbSort.Controls.Add(groupBox4);
             gbSort.Controls.Add(groupBox2);
             gbSort.Controls.Add(groupBox3);
-            gbSort.Location = new Point(24, 72);
-            gbSort.Margin = new Padding(2, 2, 2, 2);
+            gbSort.Location = new Point(34, 120);
             gbSort.Name = "gbSort";
-            gbSort.Padding = new Padding(2, 2, 2, 2);
-            gbSort.Size = new Size(804, 90);
+            gbSort.Size = new Size(1148, 150);
             gbSort.TabIndex = 27;
             gbSort.TabStop = false;
             gbSort.Visible = false;
@@ -173,11 +171,9 @@
             // 
             groupBox5.Controls.Add(rbDcDec);
             groupBox5.Controls.Add(rbDcInc);
-            groupBox5.Location = new Point(282, 14);
-            groupBox5.Margin = new Padding(2, 2, 2, 2);
+            groupBox5.Location = new Point(403, 24);
             groupBox5.Name = "groupBox5";
-            groupBox5.Padding = new Padding(2, 2, 2, 2);
-            groupBox5.Size = new Size(98, 65);
+            groupBox5.Size = new Size(140, 108);
             groupBox5.TabIndex = 24;
             groupBox5.TabStop = false;
             groupBox5.Text = "Địa chỉ";
@@ -185,10 +181,9 @@
             // rbDcDec
             // 
             rbDcDec.AutoSize = true;
-            rbDcDec.Location = new Point(12, 39);
-            rbDcDec.Margin = new Padding(2, 2, 2, 2);
+            rbDcDec.Location = new Point(17, 65);
             rbDcDec.Name = "rbDcDec";
-            rbDcDec.Size = new Size(53, 19);
+            rbDcDec.Size = new Size(78, 29);
             rbDcDec.TabIndex = 1;
             rbDcDec.TabStop = true;
             rbDcDec.Tag = "DcDec";
@@ -198,10 +193,9 @@
             // rbDcInc
             // 
             rbDcInc.AutoSize = true;
-            rbDcInc.Location = new Point(12, 18);
-            rbDcInc.Margin = new Padding(2, 2, 2, 2);
+            rbDcInc.Location = new Point(17, 30);
             rbDcInc.Name = "rbDcInc";
-            rbDcInc.Size = new Size(50, 19);
+            rbDcInc.Size = new Size(74, 29);
             rbDcInc.TabIndex = 0;
             rbDcInc.TabStop = true;
             rbDcInc.Tag = "DcInc";
@@ -212,11 +206,9 @@
             // 
             groupBox6.Controls.Add(rbIsDeleteDec);
             groupBox6.Controls.Add(rbIsDeleteInc);
-            groupBox6.Location = new Point(694, 14);
-            groupBox6.Margin = new Padding(2, 2, 2, 2);
+            groupBox6.Location = new Point(991, 24);
             groupBox6.Name = "groupBox6";
-            groupBox6.Padding = new Padding(2, 2, 2, 2);
-            groupBox6.Size = new Size(98, 65);
+            groupBox6.Size = new Size(140, 108);
             groupBox6.TabIndex = 26;
             groupBox6.TabStop = false;
             groupBox6.Text = "IsDelete";
@@ -224,10 +216,9 @@
             // rbIsDeleteDec
             // 
             rbIsDeleteDec.AutoSize = true;
-            rbIsDeleteDec.Location = new Point(12, 39);
-            rbIsDeleteDec.Margin = new Padding(2, 2, 2, 2);
+            rbIsDeleteDec.Location = new Point(17, 65);
             rbIsDeleteDec.Name = "rbIsDeleteDec";
-            rbIsDeleteDec.Size = new Size(53, 19);
+            rbIsDeleteDec.Size = new Size(78, 29);
             rbIsDeleteDec.TabIndex = 1;
             rbIsDeleteDec.TabStop = true;
             rbIsDeleteDec.Tag = "IsDeleteDec";
@@ -237,10 +228,9 @@
             // rbIsDeleteInc
             // 
             rbIsDeleteInc.AutoSize = true;
-            rbIsDeleteInc.Location = new Point(12, 18);
-            rbIsDeleteInc.Margin = new Padding(2, 2, 2, 2);
+            rbIsDeleteInc.Location = new Point(17, 30);
             rbIsDeleteInc.Name = "rbIsDeleteInc";
-            rbIsDeleteInc.Size = new Size(50, 19);
+            rbIsDeleteInc.Size = new Size(74, 29);
             rbIsDeleteInc.TabIndex = 0;
             rbIsDeleteInc.TabStop = true;
             rbIsDeleteInc.Tag = "IsDeleteInc";
@@ -251,11 +241,9 @@
             // 
             groupBox1.Controls.Add(rbIDDec);
             groupBox1.Controls.Add(rbIIDnc);
-            groupBox1.Location = new Point(8, 14);
-            groupBox1.Margin = new Padding(2, 2, 2, 2);
+            groupBox1.Location = new Point(11, 24);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(2, 2, 2, 2);
-            groupBox1.Size = new Size(98, 65);
+            groupBox1.Size = new Size(140, 108);
             groupBox1.TabIndex = 23;
             groupBox1.TabStop = false;
             groupBox1.Text = "ID";
@@ -263,10 +251,9 @@
             // rbIDDec
             // 
             rbIDDec.AutoSize = true;
-            rbIDDec.Location = new Point(12, 39);
-            rbIDDec.Margin = new Padding(2, 2, 2, 2);
+            rbIDDec.Location = new Point(17, 65);
             rbIDDec.Name = "rbIDDec";
-            rbIDDec.Size = new Size(53, 19);
+            rbIDDec.Size = new Size(78, 29);
             rbIDDec.TabIndex = 1;
             rbIDDec.TabStop = true;
             rbIDDec.Tag = "IDDec";
@@ -276,10 +263,9 @@
             // rbIIDnc
             // 
             rbIIDnc.AutoSize = true;
-            rbIIDnc.Location = new Point(12, 18);
-            rbIIDnc.Margin = new Padding(2, 2, 2, 2);
+            rbIIDnc.Location = new Point(17, 30);
             rbIIDnc.Name = "rbIIDnc";
-            rbIIDnc.Size = new Size(50, 19);
+            rbIIDnc.Size = new Size(74, 29);
             rbIIDnc.TabIndex = 0;
             rbIIDnc.TabStop = true;
             rbIIDnc.Tag = "IDInc";
@@ -290,11 +276,9 @@
             // 
             groupBox4.Controls.Add(rbSdtDec);
             groupBox4.Controls.Add(rbSdtInc);
-            groupBox4.Location = new Point(419, 14);
-            groupBox4.Margin = new Padding(2, 2, 2, 2);
+            groupBox4.Location = new Point(599, 24);
             groupBox4.Name = "groupBox4";
-            groupBox4.Padding = new Padding(2, 2, 2, 2);
-            groupBox4.Size = new Size(98, 65);
+            groupBox4.Size = new Size(140, 108);
             groupBox4.TabIndex = 24;
             groupBox4.TabStop = false;
             groupBox4.Text = "SĐT";
@@ -302,10 +286,9 @@
             // rbSdtDec
             // 
             rbSdtDec.AutoSize = true;
-            rbSdtDec.Location = new Point(12, 39);
-            rbSdtDec.Margin = new Padding(2, 2, 2, 2);
+            rbSdtDec.Location = new Point(17, 65);
             rbSdtDec.Name = "rbSdtDec";
-            rbSdtDec.Size = new Size(53, 19);
+            rbSdtDec.Size = new Size(78, 29);
             rbSdtDec.TabIndex = 1;
             rbSdtDec.TabStop = true;
             rbSdtDec.Tag = "SdtDec";
@@ -315,10 +298,9 @@
             // rbSdtInc
             // 
             rbSdtInc.AutoSize = true;
-            rbSdtInc.Location = new Point(12, 18);
-            rbSdtInc.Margin = new Padding(2, 2, 2, 2);
+            rbSdtInc.Location = new Point(17, 30);
             rbSdtInc.Name = "rbSdtInc";
-            rbSdtInc.Size = new Size(50, 19);
+            rbSdtInc.Size = new Size(74, 29);
             rbSdtInc.TabIndex = 0;
             rbSdtInc.TabStop = true;
             rbSdtInc.Tag = "SdtInc";
@@ -329,11 +311,9 @@
             // 
             groupBox2.Controls.Add(rbNameDec);
             groupBox2.Controls.Add(rbNameInc);
-            groupBox2.Location = new Point(145, 14);
-            groupBox2.Margin = new Padding(2, 2, 2, 2);
+            groupBox2.Location = new Point(207, 24);
             groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new Padding(2, 2, 2, 2);
-            groupBox2.Size = new Size(98, 65);
+            groupBox2.Size = new Size(140, 108);
             groupBox2.TabIndex = 24;
             groupBox2.TabStop = false;
             groupBox2.Text = "Tên";
@@ -341,10 +321,9 @@
             // rbNameDec
             // 
             rbNameDec.AutoSize = true;
-            rbNameDec.Location = new Point(12, 39);
-            rbNameDec.Margin = new Padding(2, 2, 2, 2);
+            rbNameDec.Location = new Point(17, 65);
             rbNameDec.Name = "rbNameDec";
-            rbNameDec.Size = new Size(53, 19);
+            rbNameDec.Size = new Size(78, 29);
             rbNameDec.TabIndex = 1;
             rbNameDec.TabStop = true;
             rbNameDec.Tag = "NameDec";
@@ -354,10 +333,9 @@
             // rbNameInc
             // 
             rbNameInc.AutoSize = true;
-            rbNameInc.Location = new Point(12, 18);
-            rbNameInc.Margin = new Padding(2, 2, 2, 2);
+            rbNameInc.Location = new Point(17, 30);
             rbNameInc.Name = "rbNameInc";
-            rbNameInc.Size = new Size(50, 19);
+            rbNameInc.Size = new Size(74, 29);
             rbNameInc.TabIndex = 0;
             rbNameInc.TabStop = true;
             rbNameInc.Tag = "NameInc";
@@ -368,11 +346,9 @@
             // 
             groupBox3.Controls.Add(rbEmailDec);
             groupBox3.Controls.Add(rbEmailInc);
-            groupBox3.Location = new Point(556, 14);
-            groupBox3.Margin = new Padding(2, 2, 2, 2);
+            groupBox3.Location = new Point(795, 24);
             groupBox3.Name = "groupBox3";
-            groupBox3.Padding = new Padding(2, 2, 2, 2);
-            groupBox3.Size = new Size(98, 65);
+            groupBox3.Size = new Size(140, 108);
             groupBox3.TabIndex = 25;
             groupBox3.TabStop = false;
             groupBox3.Text = "Email";
@@ -380,10 +356,9 @@
             // rbEmailDec
             // 
             rbEmailDec.AutoSize = true;
-            rbEmailDec.Location = new Point(12, 39);
-            rbEmailDec.Margin = new Padding(2, 2, 2, 2);
+            rbEmailDec.Location = new Point(17, 65);
             rbEmailDec.Name = "rbEmailDec";
-            rbEmailDec.Size = new Size(53, 19);
+            rbEmailDec.Size = new Size(78, 29);
             rbEmailDec.TabIndex = 1;
             rbEmailDec.TabStop = true;
             rbEmailDec.Tag = "EmailDec";
@@ -393,10 +368,9 @@
             // rbEmailInc
             // 
             rbEmailInc.AutoSize = true;
-            rbEmailInc.Location = new Point(12, 18);
-            rbEmailInc.Margin = new Padding(2, 2, 2, 2);
+            rbEmailInc.Location = new Point(17, 30);
             rbEmailInc.Name = "rbEmailInc";
-            rbEmailInc.Size = new Size(50, 19);
+            rbEmailInc.Size = new Size(74, 29);
             rbEmailInc.TabIndex = 0;
             rbEmailInc.TabStop = true;
             rbEmailInc.Tag = "EmailInc";
@@ -424,7 +398,7 @@
             filterBtn.Location = new Point(552, 9);
             filterBtn.Margin = new Padding(4, 5, 4, 5);
             filterBtn.Name = "filterBtn";
-            filterBtn.Size = new Size(120, 38);
+            filterBtn.Size = new Size(172, 64);
             filterBtn.TabIndex = 22;
             filterBtn.Text = "Lọc";
             filterBtn.TextColor = Color.Goldenrod;
@@ -454,7 +428,7 @@
             sortBtn.Location = new Point(742, 9);
             sortBtn.Margin = new Padding(4, 5, 4, 5);
             sortBtn.Name = "sortBtn";
-            sortBtn.Size = new Size(120, 38);
+            sortBtn.Size = new Size(172, 64);
             sortBtn.TabIndex = 21;
             sortBtn.Text = "Sắp xếp";
             sortBtn.TextColor = Color.DeepSkyBlue;
@@ -493,7 +467,8 @@
             dgvNcc.EnableHeadersVisualStyles = false;
             dgvNcc.GridColor = Color.DarkCyan;
             dgvNcc.ImeMode = ImeMode.NoControl;
-            dgvNcc.Location = new Point(3, 191);
+            dgvNcc.Location = new Point(4, 326);
+            dgvNcc.Margin = new Padding(4, 5, 4, 5);
             dgvNcc.Name = "dgvNcc";
             dgvNcc.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dgvNcc.RowHeadersVisible = false;
@@ -502,7 +477,7 @@
             dgvNcc.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dgvNcc.RowTemplate.Height = 25;
             dgvNcc.RowTemplate.ReadOnly = true;
-            dgvNcc.Size = new Size(1046, 299);
+            dgvNcc.Size = new Size(1499, 498);
             dgvNcc.TabIndex = 20;
             dgvNcc.CellClick += dgvNcc_CellClick;
             // 
@@ -515,14 +490,15 @@
             searchTxt.BorderSize = 2;
             searchTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             searchTxt.ForeColor = Color.DimGray;
-            searchTxt.Location = new Point(6, 7);
+            searchTxt.Location = new Point(8, 12);
+            searchTxt.Margin = new Padding(4, 5, 4, 5);
             searchTxt.Multiline = false;
             searchTxt.Name = "searchTxt";
-            searchTxt.Padding = new Padding(8, 7, 41, 7);
+            searchTxt.Padding = new Padding(12, 11, 58, 11);
             searchTxt.PasswordChar = false;
             searchTxt.PlaceholderColor = Color.DarkGray;
             searchTxt.PlaceholderText = "Tìm Kiếm ...";
-            searchTxt.Size = new Size(266, 36);
+            searchTxt.Size = new Size(380, 55);
             searchTxt.TabIndex = 19;
             searchTxt.Texts = "";
             searchTxt.UnderlinedStyle = false;
@@ -549,7 +525,7 @@
             delBtn.Location = new Point(1312, 9);
             delBtn.Margin = new Padding(4, 5, 4, 5);
             delBtn.Name = "delBtn";
-            delBtn.Size = new Size(120, 38);
+            delBtn.Size = new Size(172, 64);
             delBtn.TabIndex = 13;
             delBtn.Text = "  Xóa";
             delBtn.TextColor = Color.Red;
@@ -579,7 +555,7 @@
             editBtn.Location = new Point(1122, 9);
             editBtn.Margin = new Padding(4, 5, 4, 5);
             editBtn.Name = "editBtn";
-            editBtn.Size = new Size(120, 38);
+            editBtn.Size = new Size(172, 64);
             editBtn.TabIndex = 12;
             editBtn.Text = "  Sửa";
             editBtn.TextColor = Color.DarkCyan;
@@ -610,7 +586,7 @@
             addBtn.Location = new Point(932, 9);
             addBtn.Margin = new Padding(4, 5, 4, 5);
             addBtn.Name = "addBtn";
-            addBtn.Size = new Size(120, 38);
+            addBtn.Size = new Size(172, 64);
             addBtn.TabIndex = 11;
             addBtn.Text = "  Thêm";
             addBtn.TextColor = Color.DarkCyan;
@@ -637,11 +613,11 @@
             detailTabPage.Controls.Add(label5);
             detailTabPage.Controls.Add(label4);
             detailTabPage.Controls.Add(label1);
-            detailTabPage.Location = new Point(4, 24);
-            detailTabPage.Margin = new Padding(3, 2, 3, 2);
+            detailTabPage.Location = new Point(4, 34);
+            detailTabPage.Margin = new Padding(4);
             detailTabPage.Name = "detailTabPage";
-            detailTabPage.Padding = new Padding(3, 2, 3, 2);
-            detailTabPage.Size = new Size(1052, 492);
+            detailTabPage.Padding = new Padding(4);
+            detailTabPage.Size = new Size(1507, 828);
             detailTabPage.TabIndex = 1;
             detailTabPage.Text = "Chi Tiết";
             detailTabPage.UseVisualStyleBackColor = true;
@@ -649,19 +625,19 @@
             // checkboxIsDelete
             // 
             checkboxIsDelete.AutoSize = true;
-            checkboxIsDelete.Location = new Point(733, 182);
-            checkboxIsDelete.Margin = new Padding(2, 2, 2, 2);
+            checkboxIsDelete.Location = new Point(1047, 304);
             checkboxIsDelete.Name = "checkboxIsDelete";
-            checkboxIsDelete.Size = new Size(15, 14);
+            checkboxIsDelete.Size = new Size(22, 21);
             checkboxIsDelete.TabIndex = 57;
             checkboxIsDelete.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(640, 164);
+            label8.Location = new Point(914, 273);
+            label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
-            label8.Size = new Size(78, 51);
+            label8.Size = new Size(112, 85);
             label8.TabIndex = 56;
             label8.Text = "IsDelete";
             label8.TextAlign = ContentAlignment.MiddleCenter;
@@ -685,9 +661,10 @@
             HuyBtn.Image = Properties.Resources.CANCELiconRed;
             HuyBtn.ImageAlign = ContentAlignment.MiddleRight;
             HuyBtn.ImageHover = Properties.Resources.CANCELiconWhite;
-            HuyBtn.Location = new Point(896, 413);
+            HuyBtn.Location = new Point(1280, 689);
+            HuyBtn.Margin = new Padding(4, 5, 4, 5);
             HuyBtn.Name = "HuyBtn";
-            HuyBtn.Size = new Size(137, 53);
+            HuyBtn.Size = new Size(196, 89);
             HuyBtn.TabIndex = 42;
             HuyBtn.Text = "  Hủy";
             HuyBtn.TextColor = Color.Red;
@@ -715,9 +692,10 @@
             xacNhanBtn.Image = Properties.Resources.ConfirmIcondarkcyan1;
             xacNhanBtn.ImageAlign = ContentAlignment.MiddleRight;
             xacNhanBtn.ImageHover = Properties.Resources.ConfirmIconWhite1;
-            xacNhanBtn.Location = new Point(743, 413);
+            xacNhanBtn.Location = new Point(1061, 689);
+            xacNhanBtn.Margin = new Padding(4, 5, 4, 5);
             xacNhanBtn.Name = "xacNhanBtn";
-            xacNhanBtn.Size = new Size(137, 53);
+            xacNhanBtn.Size = new Size(196, 89);
             xacNhanBtn.TabIndex = 41;
             xacNhanBtn.Text = "  Xác Nhận";
             xacNhanBtn.TextColor = Color.DarkCyan;
@@ -734,14 +712,15 @@
             txtSDTNcc.BorderSize = 2;
             txtSDTNcc.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             txtSDTNcc.ForeColor = Color.DimGray;
-            txtSDTNcc.Location = new Point(626, 89);
+            txtSDTNcc.Location = new Point(894, 149);
+            txtSDTNcc.Margin = new Padding(4, 5, 4, 5);
             txtSDTNcc.Multiline = false;
             txtSDTNcc.Name = "txtSDTNcc";
-            txtSDTNcc.Padding = new Padding(8, 9, 7, 7);
+            txtSDTNcc.Padding = new Padding(12, 15, 10, 11);
             txtSDTNcc.PasswordChar = false;
             txtSDTNcc.PlaceholderColor = Color.DarkGray;
             txtSDTNcc.PlaceholderText = "Nhập số điện thoại";
-            txtSDTNcc.Size = new Size(244, 42);
+            txtSDTNcc.Size = new Size(349, 63);
             txtSDTNcc.TabIndex = 36;
             txtSDTNcc.Texts = "";
             txtSDTNcc.UnderlinedStyle = false;
@@ -750,9 +729,10 @@
             // label3
             // 
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(623, 49);
+            label3.Location = new Point(890, 81);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(132, 51);
+            label3.Size = new Size(189, 85);
             label3.TabIndex = 35;
             label3.Text = "Số Điện Thoại";
             label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -766,14 +746,15 @@
             txtDiaChiNcc.BorderSize = 2;
             txtDiaChiNcc.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             txtDiaChiNcc.ForeColor = Color.DimGray;
-            txtDiaChiNcc.Location = new Point(351, 89);
+            txtDiaChiNcc.Location = new Point(502, 149);
+            txtDiaChiNcc.Margin = new Padding(4, 5, 4, 5);
             txtDiaChiNcc.Multiline = false;
             txtDiaChiNcc.Name = "txtDiaChiNcc";
-            txtDiaChiNcc.Padding = new Padding(8, 9, 7, 7);
+            txtDiaChiNcc.Padding = new Padding(12, 15, 10, 11);
             txtDiaChiNcc.PasswordChar = false;
             txtDiaChiNcc.PlaceholderColor = Color.DarkGray;
             txtDiaChiNcc.PlaceholderText = "Nhập địa chỉ";
-            txtDiaChiNcc.Size = new Size(244, 42);
+            txtDiaChiNcc.Size = new Size(349, 63);
             txtDiaChiNcc.TabIndex = 34;
             txtDiaChiNcc.Texts = "";
             txtDiaChiNcc.UnderlinedStyle = false;
@@ -782,9 +763,10 @@
             // M
             // 
             M.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            M.Location = new Point(335, 50);
+            M.Location = new Point(478, 84);
+            M.Margin = new Padding(4, 0, 4, 0);
             M.Name = "M";
-            M.Size = new Size(106, 51);
+            M.Size = new Size(151, 85);
             M.TabIndex = 33;
             M.Text = "Địa Chỉ";
             M.TextAlign = ContentAlignment.MiddleCenter;
@@ -792,9 +774,10 @@
             // label7
             // 
             label7.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(98, 12);
+            label7.Location = new Point(140, 20);
+            label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
-            label7.Size = new Size(272, 43);
+            label7.Size = new Size(389, 71);
             label7.TabIndex = 32;
             label7.Text = "Thông Tin Chi Tiết";
             label7.TextAlign = ContentAlignment.MiddleCenter;
@@ -815,9 +798,10 @@
             btn_back.ForeColor = Color.White;
             btn_back.Image = Properties.Resources.arrowreturn32pxBlack1;
             btn_back.ImageHover = Properties.Resources.arrowreturn32pxWhite1;
-            btn_back.Location = new Point(20, 15);
+            btn_back.Location = new Point(28, 25);
+            btn_back.Margin = new Padding(4, 5, 4, 5);
             btn_back.Name = "btn_back";
-            btn_back.Size = new Size(63, 41);
+            btn_back.Size = new Size(90, 69);
             btn_back.TabIndex = 31;
             btn_back.TextColor = Color.White;
             btn_back.TextHover = Color.White;
@@ -834,18 +818,18 @@
             txtIdNcc.Enabled = false;
             txtIdNcc.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             txtIdNcc.ForeColor = Color.DimGray;
-            txtIdNcc.Location = new Point(55, 89);
+            txtIdNcc.Location = new Point(78, 149);
+            txtIdNcc.Margin = new Padding(4, 5, 4, 5);
             txtIdNcc.Multiline = false;
             txtIdNcc.Name = "txtIdNcc";
-            txtIdNcc.Padding = new Padding(8, 9, 7, 7);
+            txtIdNcc.Padding = new Padding(12, 15, 10, 11);
             txtIdNcc.PasswordChar = false;
             txtIdNcc.PlaceholderColor = Color.DarkGray;
             txtIdNcc.PlaceholderText = "Nhập ID";
-            txtIdNcc.Size = new Size(244, 42);
+            txtIdNcc.Size = new Size(349, 63);
             txtIdNcc.TabIndex = 30;
             txtIdNcc.Texts = "";
             txtIdNcc.UnderlinedStyle = false;
-            txtIdNcc._TextChanged += txtIdNcc__TextChanged;
             // 
             // txtEmailNcc
             // 
@@ -856,14 +840,15 @@
             txtEmailNcc.BorderSize = 2;
             txtEmailNcc.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             txtEmailNcc.ForeColor = Color.DimGray;
-            txtEmailNcc.Location = new Point(351, 172);
+            txtEmailNcc.Location = new Point(502, 286);
+            txtEmailNcc.Margin = new Padding(4, 5, 4, 5);
             txtEmailNcc.Multiline = false;
             txtEmailNcc.Name = "txtEmailNcc";
-            txtEmailNcc.Padding = new Padding(8, 9, 7, 7);
+            txtEmailNcc.Padding = new Padding(12, 15, 10, 11);
             txtEmailNcc.PasswordChar = false;
             txtEmailNcc.PlaceholderColor = Color.DarkGray;
             txtEmailNcc.PlaceholderText = "Nhập email";
-            txtEmailNcc.Size = new Size(244, 42);
+            txtEmailNcc.Size = new Size(349, 63);
             txtEmailNcc.TabIndex = 29;
             txtEmailNcc.Texts = "";
             txtEmailNcc.UnderlinedStyle = false;
@@ -878,14 +863,15 @@
             txtTenNcc.BorderSize = 2;
             txtTenNcc.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             txtTenNcc.ForeColor = Color.DimGray;
-            txtTenNcc.Location = new Point(55, 172);
+            txtTenNcc.Location = new Point(78, 286);
+            txtTenNcc.Margin = new Padding(4, 5, 4, 5);
             txtTenNcc.Multiline = false;
             txtTenNcc.Name = "txtTenNcc";
-            txtTenNcc.Padding = new Padding(8, 9, 7, 7);
+            txtTenNcc.Padding = new Padding(12, 15, 10, 11);
             txtTenNcc.PasswordChar = false;
             txtTenNcc.PlaceholderColor = Color.DarkGray;
             txtTenNcc.PlaceholderText = "Nhập tên nhà cung cấp";
-            txtTenNcc.Size = new Size(244, 42);
+            txtTenNcc.Size = new Size(349, 63);
             txtTenNcc.TabIndex = 28;
             txtTenNcc.Texts = "";
             txtTenNcc.UnderlinedStyle = false;
@@ -894,9 +880,10 @@
             // label5
             // 
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(35, 132);
+            label5.Location = new Point(50, 220);
+            label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new Size(78, 51);
+            label5.Size = new Size(112, 85);
             label5.TabIndex = 27;
             label5.Text = "Tên";
             label5.TextAlign = ContentAlignment.MiddleCenter;
@@ -904,9 +891,10 @@
             // label4
             // 
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(335, 132);
+            label4.Location = new Point(478, 220);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(106, 51);
+            label4.Size = new Size(151, 85);
             label4.TabIndex = 26;
             label4.Text = "Email";
             label4.TextAlign = ContentAlignment.MiddleCenter;
@@ -914,21 +902,22 @@
             // label1
             // 
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(38, 51);
+            label1.Location = new Point(54, 85);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(78, 51);
+            label1.Size = new Size(112, 85);
             label1.TabIndex = 25;
             label1.Text = "ID";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // NccView
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1060, 520);
+            ClientSize = new Size(1515, 866);
             Controls.Add(tcNCC);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
+            Margin = new Padding(4);
             Name = "NccView";
             Text = "NccView";
             tcNCC.ResumeLayout(false);
