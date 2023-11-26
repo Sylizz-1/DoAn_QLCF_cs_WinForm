@@ -87,7 +87,8 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                         khachHangModel.Email = reader.GetString("Email");
                         khachHangModel.IdTypeOfCustomer = reader.GetInt32("LoaiKhachHangId");
                         khachHangModel.TimeCreateAccount = Convert.ToDateTime(reader["ThoiGianTaoTk"]);
-                        khachHangModel.Birthday = Convert.ToDateTime(reader["NgaySinh"]);
+                        khachHangModel.Account = reader.GetString("TaiKhoan");
+                        khachHangModel.Password = reader.GetString("MatKhau");
                         return khachHangModel;
                     }
                     return null;

@@ -10,5 +10,7 @@ namespace DoAn_QLCF_cs_WinForm.Repository.RepositoryInterface
     public interface INhanVienRepository
     {
         IEnumerable<NhanVienModel> GetAll();
+
+        int GetNextId();
     }
 }

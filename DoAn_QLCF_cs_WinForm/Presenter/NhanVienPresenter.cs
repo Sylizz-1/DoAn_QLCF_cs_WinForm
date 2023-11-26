@@ -23,12 +23,20 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             this.repo = repo;
             bindingSource = new BindingSource();
             LoadNhanVienList();
+            GetNhanVienId();
         }
         private void LoadNhanVienList()
         {
             List = repo.GetAll();
             bindingSource.DataSource = List;
             view.LoadData(bindingSource);
+        }
+
+        private void GetNhanVienId()
+        {
+            int txtId = repo.GetNextId();
+            view.GetIdNhanVien(txtId);
+
         }
 
         public void Add()
