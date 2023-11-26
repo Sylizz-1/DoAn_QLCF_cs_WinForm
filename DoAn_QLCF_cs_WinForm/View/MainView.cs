@@ -60,7 +60,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             }
             ArrayList arrAction = this.employeeInfor.ArrAction;
             //duyệt qua 10 item menu trong design, item nào ko có trong arrAction thì remove
-            for (int i = 1; i <= 11; i++)
+            for (int i = 1; i <= 12; i++)
             {
                 if (!arrAction.Contains(i))
                 {
@@ -98,6 +98,9 @@ namespace DoAn_QLCF_cs_WinForm.View
                             break;
                         case 11:
                             removeControlByName("pn_phieuGiamGia");
+                            break;
+                        case 12:
+                            removeControlByName("pn_loaiKhachHang");
                             break;
                     }
                 }

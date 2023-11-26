@@ -33,7 +33,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             components = new System.ComponentModel.Container();
             bindingSource1 = new BindingSource(components);
             sideBar = new CustomControl.SidePanel();
-            panel1 = new Panel();
+            pn_loaiKhachHang = new Panel();
             navLkh = new CustomControl.CustomButton();
             pn_phieuGiamGia = new Panel();
             navPgg = new CustomControl.CustomButton();
@@ -84,7 +84,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             timerLblTitle = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             sideBar.SuspendLayout();
-            panel1.SuspendLayout();
+            pn_loaiKhachHang.SuspendLayout();
             pn_phieuGiamGia.SuspendLayout();
             panel12.SuspendLayout();
             pn_phanQuyen.SuspendLayout();
@@ -108,7 +108,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             sideBar.AutoScroll = true;
             sideBar.BackColor = Color.DarkSlateGray;
             sideBar.BorderRadius = 1;
-            sideBar.Controls.Add(panel1);
+            sideBar.Controls.Add(pn_loaiKhachHang);
             sideBar.Controls.Add(pn_phieuGiamGia);
             sideBar.Controls.Add(label3);
             sideBar.Controls.Add(panel12);
@@ -137,16 +137,16 @@ namespace DoAn_QLCF_cs_WinForm.View
             sideBar.Size = new Size(258, 749);
             sideBar.TabIndex = 1;
             // 
-            // panel1
+            // pn_loaiKhachHang
             // 
-            panel1.BackColor = Color.DarkSlateGray;
-            panel1.Controls.Add(navLkh);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 589);
-            panel1.Name = "panel1";
-            panel1.Padding = new Padding(5);
-            panel1.Size = new Size(258, 49);
-            panel1.TabIndex = 18;
+            pn_loaiKhachHang.BackColor = Color.DarkSlateGray;
+            pn_loaiKhachHang.Controls.Add(navLkh);
+            pn_loaiKhachHang.Dock = DockStyle.Top;
+            pn_loaiKhachHang.Location = new Point(0, 589);
+            pn_loaiKhachHang.Name = "pn_loaiKhachHang";
+            pn_loaiKhachHang.Padding = new Padding(5);
+            pn_loaiKhachHang.Size = new Size(258, 49);
+            pn_loaiKhachHang.TabIndex = 18;
             // 
             // navLkh
             // 
@@ -1009,7 +1009,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             SizeChanged += MainView_SizeChanged;
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             sideBar.ResumeLayout(false);
-            panel1.ResumeLayout(false);
+            pn_loaiKhachHang.ResumeLayout(false);
             pn_phieuGiamGia.ResumeLayout(false);
             panel12.ResumeLayout(false);
             pn_phanQuyen.ResumeLayout(false);
@@ -1079,7 +1079,7 @@ namespace DoAn_QLCF_cs_WinForm.View
         private CustomControl.SidePanel mainPanelContainer;
         private Panel pn_phieuGiamGia;
         private CustomControl.CustomButton navPgg;
-		private Panel panel1;
+		private Panel pn_loaiKhachHang;
 		private CustomControl.CustomButton navLkh;
 	}
 }
