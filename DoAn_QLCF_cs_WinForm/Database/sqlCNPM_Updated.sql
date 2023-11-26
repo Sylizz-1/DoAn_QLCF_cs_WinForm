@@ -225,8 +225,8 @@ INSERT INTO LoaiKhachHang (TenLoaiKh, GiamGia) VALUES
 
 -- INSERT data into KhachHang table
 INSERT INTO KhachHang (TaiKhoan, MatKhau, TenKhachHang, DiaChi, SDT, Email, LoaiKhachHangId, IsDelete, ThoiGianTaoTk) VALUES
-('vipcustomer', 'vip123', N'Khách Hàng VIP', '123 VIP DHSG', '0123456789', 'vip@gmail.com', 1, 0, '2023-01-01'),
-('customer1', 'customer123', N'Khách Hàng Thường', '456 Normal DHSG', '0987654321', 'customer1@gmail.com', 2, 0, '2023-01-02');
+('khachvip', '123', N'Nguyễn Văn Z', '123 VIP DHSG', '0123456789', 'vip@gmail.com', 1, 0, '2023-01-01'),
+('khach1', '123', N'Trần Thị B', '456 Normal DHSG', '0987654321', 'customer1@gmail.com', 2, 0, '2023-01-02');
 
 -- INSERT data into NhaCungCap table
 INSERT INTO NhaCungCap (TenNhaCungCap, DiaChi, SDT, Email, IsDelete) VALUES
