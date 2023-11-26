@@ -12,6 +12,7 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
     {
         event EventHandler btnAddClickEvent;
         event EventHandler btnUpdateClickEvent;
+        event EventHandler btnFilterClickEvent;
         event EventHandler AddEvent;
         event EventHandler DeleteEvent;
         event EventHandler UpdateEvent;
@@ -20,6 +21,7 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
         event EventHandler ResetEvent;
         bool isAdd { get; set; }
         bool isFilter { get; set; }
+        bool isUpdate { get; set; }
         string SearchValue { get; set; }
         string NhaCungCapId { get; set; }
         string TenNhaCungCap { get; set; }
@@ -32,6 +34,7 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
         void GetIdNccAdd(int id);
         bool CheckInput();
         void SetNull();
+        void setState(bool isAddState, bool isUpdateState, bool isFilterState, bool isNeedReturnState);
         void SetTextBoxFillData(NccModel ncc);
     }
 }

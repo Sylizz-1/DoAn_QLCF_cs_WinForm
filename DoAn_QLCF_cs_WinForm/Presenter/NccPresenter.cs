@@ -27,10 +27,11 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
 
             this.view.AddEvent += Add;
             this.view.DeleteEvent += Delete;
-            this.view.ResetEvent += Filter;
+            this.view.FilterEvent += Filter;
             this.view.UpdateEvent += Update;
             this.view.btnAddClickEvent += AddClickEvent;
             this.view.btnUpdateClickEvent += UpdateClickEvent;
+            this.view.btnFilterClickEvent += FilterClickEvent;
             this.view.ResetEvent += LoadNccList;
 
             cpBindingSource = new BindingSource();
@@ -55,8 +56,23 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
         }
         private void AddClickEvent(object sender, EventArgs e)
         {
+            this.view.setState(true, false, false, false);
             GetNccId();
             this.view.SetNull();
+        }
+        public void UpdateClickEvent(object sender, EventArgs e)
+        {
+            this.view.setState(false, true, false, false);
+            if (int.Parse(this.view.selectedId) != 0)
+            {
+                NccModel ncc = repository.GetById(int.Parse(this.view.selectedId));
+                this.view.SetTextBoxFillData(ncc);
+
+            }
+        }
+        private void FilterClickEvent(object sender, EventArgs e)
+        {
+            this.view.setState(false, false, true, true);
         }
         private void Add(object sender, EventArgs e)
         {
@@ -82,32 +98,15 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
                     LoadNccList();
                     this.view.SetNull();
                 }
-            this.view.isAdd = false;
         }
         private void Filter(object sender, EventArgs e)
         {
             if (this.view.isFilter)
-                if (this.view.CheckInput())
-                {
-                    NccModel ncc = new NccModel();
-                    ncc.NhaCungCapId = int.Parse(this.view.NhaCungCapId);
-                    ncc.TenNhaCungCap = this.view.TenNhaCungCap;
-                    ncc.SDT = this.view.SDT;
-                    ncc.Email = this.view.Email;
-                    ncc.DiaChi = this.view.DiaChi;
-                    ncc.IsDelete = bool.Parse(this.view.IsDelete);
-
-                    if (repository.Add(ncc))
-                    {
-                        MessageBox.Show("Success");
-                    }
-                    else
-                        MessageBox.Show("Fail");
-
-                    GetNccId();
-                    LoadNccList();
-                    this.view.SetNull();
-                }
+            {
+                nccList = repository.GetByValue(this.view.NhaCungCapId, this.view.TenNhaCungCap, this.view.DiaChi, this.view.SDT, this.view.Email, bool.Parse(this.view.IsDelete));
+                cpBindingSource.DataSource = nccList;
+                view.LoadData(cpBindingSource);
+            }
             this.view.isFilter = false;
         }
         public void Delete(object sender, EventArgs e)
@@ -124,18 +123,9 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
                 LoadNccList();
             }
         }
-        public void UpdateClickEvent(object sender, EventArgs e)
-        {
-            if (int.Parse(this.view.selectedId) != 0)
-            {
-                NccModel ncc = repository.GetById(int.Parse(this.view.selectedId));
-                this.view.SetTextBoxFillData(ncc);
-
-            }
-        }
         public void Update(object sender, EventArgs e)
         {
-            if (!this.view.isAdd)
+            if (this.view.isUpdate)
                 if (this.view.CheckInput())
                 {
                     NccModel ncc = new NccModel();

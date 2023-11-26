@@ -1,6 +1,7 @@
 ﻿using DoAn_QLCF_cs_WinForm.Model;
 using DoAn_QLCF_cs_WinForm.Repository.RepositoryInterface;
 using System.Data.SqlClient;
+using System.Text;
 
 namespace DoAn_QLCF_cs_WinForm.Repository
 {
@@ -66,6 +67,70 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                 MessageBox.Show(ex.ToString());
                 return false;
             }
+        }
+
+        public IEnumerable<NccModel> GetByValue(string nhaCungCapId, string tenNhaCungCap, string diaChi, string sdt, string email, bool? isDelete)
+        {
+            List<NccModel> nccList = new List<NccModel>();
+            using (var connection = new SqlConnection(this.connectionString))
+            using (var cmd = connection.CreateCommand())
+            {
+                connection.Open();
+                cmd.Connection = connection;
+                StringBuilder queryBuilder = new StringBuilder("SELECT * FROM NhaCungCap WHERE 1=1");
+
+                if (!string.IsNullOrEmpty(nhaCungCapId))
+                {
+                    queryBuilder.Append(" AND NhaCungCapId = @NhaCungCapId");
+                    cmd.Parameters.AddWithValue("@NhaCungCapId", nhaCungCapId);
+                }
+                if (!string.IsNullOrEmpty(tenNhaCungCap))
+                {
+                    queryBuilder.Append(" AND TenNhaCungCap LIKE @TenNhaCungCap");
+                    cmd.Parameters.AddWithValue("@TenNhaCungCap", "%" + tenNhaCungCap + "%");
+                }
+                if (!string.IsNullOrEmpty(diaChi))
+                {
+                    queryBuilder.Append(" AND DiaChi LIKE @DiaChi");
+                    cmd.Parameters.AddWithValue("@DiaChi", "%" + diaChi + "%");
+                }
+                if (!string.IsNullOrEmpty(sdt))
+                {
+                    queryBuilder.Append(" AND SDT LIKE @SDT");
+                    cmd.Parameters.AddWithValue("@SDT", "%" + sdt + "%");
+                }
+                if (!string.IsNullOrEmpty(email))
+                {
+                    queryBuilder.Append(" AND Email LIKE @Email");
+                    cmd.Parameters.AddWithValue("@Email", "%" + email + "%");
+                }
+                if (isDelete.HasValue)
+                {
+                    queryBuilder.Append(" AND IsDelete = @IsDelete");
+                    cmd.Parameters.AddWithValue("@IsDelete", isDelete.Value);
+                }
+
+                cmd.CommandText = queryBuilder.ToString();
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var ncc = new NccModel
+                        {
+                            NhaCungCapId = (int)reader["NhaCungCapId"],
+                            TenNhaCungCap = reader["TenNhaCungCap"].ToString(),
+                            DiaChi = reader["DiaChi"].ToString(),
+                            SDT = reader["SDT"].ToString(),
+                            Email = reader["Email"].ToString(),
+                            IsDelete = (bool)reader["IsDelete"]
+                        };
+                        nccList.Add(ncc);
+                    }
+                }
+            }
+
+            return nccList;
         }
 
         public IEnumerable<NccModel> GetAll()
@@ -144,38 +209,7 @@ namespace DoAn_QLCF_cs_WinForm.Repository
             }
         }
 
-        public IEnumerable<NccModel> GetByValue(string value)
-        {
-            List<NccModel> nccList = new List<NccModel>();
 
-            using (var connection = new SqlConnection(this.connectionString))
-            using (var cmd = connection.CreateCommand())
-            {
-                connection.Open();
-                cmd.Connection = connection;
-                cmd.CommandText = "SELECT * FROM NhaCungCap WHERE TenNhaCungCap LIKE @Value";
-                cmd.Parameters.AddWithValue("@Value", "%" + value + "%");
-
-                using (var reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        var ncc = new NccModel
-                        {
-                            NhaCungCapId = (int)reader["NhaCungCapId"],
-                            TenNhaCungCap = reader["TenNhaCungCap"].ToString(),
-                            DiaChi = reader["DiaChi"].ToString(),
-                            SDT = reader["SDT"].ToString(),
-                            Email = reader["Email"].ToString(),
-                            IsDelete = (bool)reader["IsDelete"]
-                        };
-                        nccList.Add(ncc);
-                    }
-                }
-            }
-
-            return nccList;
-        }
 
         public bool IsExit(int id)
         {

@@ -133,8 +133,8 @@
             resetBtn.Cursor = Cursors.Hand;
             resetBtn.EnabledTextHover = true;
             resetBtn.FlatAppearance.BorderSize = 0;
-            resetBtn.FlatAppearance.MouseDownBackColor = Color.Teal;
-            resetBtn.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
+            resetBtn.FlatAppearance.MouseDownBackColor = Color.DarkGray;
+            resetBtn.FlatAppearance.MouseOverBackColor = Color.DarkGray;
             resetBtn.FlatStyle = FlatStyle.Flat;
             resetBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             resetBtn.ForeColor = Color.DarkGray;
@@ -388,8 +388,8 @@
             filterBtn.Cursor = Cursors.Hand;
             filterBtn.EnabledTextHover = true;
             filterBtn.FlatAppearance.BorderSize = 0;
-            filterBtn.FlatAppearance.MouseDownBackColor = Color.Teal;
-            filterBtn.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
+            filterBtn.FlatAppearance.MouseDownBackColor = Color.Goldenrod;
+            filterBtn.FlatAppearance.MouseOverBackColor = Color.Goldenrod;
             filterBtn.FlatStyle = FlatStyle.Flat;
             filterBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             filterBtn.ForeColor = Color.Goldenrod;
@@ -418,8 +418,8 @@
             sortBtn.Cursor = Cursors.Hand;
             sortBtn.EnabledTextHover = true;
             sortBtn.FlatAppearance.BorderSize = 0;
-            sortBtn.FlatAppearance.MouseDownBackColor = Color.Teal;
-            sortBtn.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
+            sortBtn.FlatAppearance.MouseDownBackColor = Color.DeepSkyBlue;
+            sortBtn.FlatAppearance.MouseOverBackColor = Color.DeepSkyBlue;
             sortBtn.FlatStyle = FlatStyle.Flat;
             sortBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             sortBtn.ForeColor = Color.DeepSkyBlue;
@@ -702,6 +702,7 @@
             xacNhanBtn.TextHover = Color.White;
             xacNhanBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             xacNhanBtn.UseVisualStyleBackColor = false;
+            xacNhanBtn.Click += xacNhanBtn_Click;
             // 
             // txtSDTNcc
             // 
@@ -810,12 +811,11 @@
             // 
             // txtIdNcc
             // 
-            txtIdNcc.BackColor = Color.LightGray;
+            txtIdNcc.BackColor = Color.White;
             txtIdNcc.BorderColor = Color.Silver;
-            txtIdNcc.BorderFocusColor = Color.DarkCyan;
+            txtIdNcc.BorderFocusColor = Color.DeepSkyBlue;
             txtIdNcc.BorderRadius = 13;
             txtIdNcc.BorderSize = 2;
-            txtIdNcc.Enabled = false;
             txtIdNcc.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             txtIdNcc.ForeColor = Color.DimGray;
             txtIdNcc.Location = new Point(78, 149);

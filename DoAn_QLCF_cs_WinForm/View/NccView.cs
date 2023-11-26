@@ -20,6 +20,7 @@ namespace DoAn_QLCF_cs_WinForm.View
         private string id = "1";
         public event EventHandler btnAddClickEvent;
         public event EventHandler btnUpdateClickEvent;
+        public event EventHandler btnFilterClickEvent;
         public event EventHandler AddEvent;
         public event EventHandler UpdateEvent;
         public event EventHandler DeleteEvent;
@@ -28,6 +29,8 @@ namespace DoAn_QLCF_cs_WinForm.View
         public event EventHandler ResetEvent;
         public bool checkIsAdd = false;
         public bool checkIsfilter = false;
+        public bool checkIsUpdate = false;
+        public bool isNeedTurn = false;
         private BindingSource templist = new BindingSource();
         public NccView()
         {
@@ -37,10 +40,12 @@ namespace DoAn_QLCF_cs_WinForm.View
             xacNhanBtn.Click += delegate { AddEvent?.Invoke(this, EventArgs.Empty); };
             xacNhanBtn.Click += delegate { UpdateEvent?.Invoke(this, EventArgs.Empty); };
             xacNhanBtn.Click += delegate { FilterEvent?.Invoke(this, EventArgs.Empty); };
-            delBtn.Click += delegate { DeleteEvent?.Invoke(this, EventArgs.Empty); };
-            editBtn.Click += delegate { btnUpdateClickEvent?.Invoke(this, EventArgs.Empty); };
+
             addBtn.Click += delegate { btnAddClickEvent?.Invoke(this, EventArgs.Empty); };
-            filterBtn.Click += delegate { FilterEvent?.Invoke(this, EventArgs.Empty); };
+            editBtn.Click += delegate { btnUpdateClickEvent?.Invoke(this, EventArgs.Empty); };
+            filterBtn.Click += delegate { btnFilterClickEvent?.Invoke(this, EventArgs.Empty); };
+
+            delBtn.Click += delegate { DeleteEvent?.Invoke(this, EventArgs.Empty); };
             sortBtn.Click += delegate { SortEvent?.Invoke(this, EventArgs.Empty); };
             resetBtn.Click += delegate { ResetEvent?.Invoke(this, EventArgs.Empty); };
 
@@ -102,6 +107,11 @@ namespace DoAn_QLCF_cs_WinForm.View
             get => checkIsfilter;
             set => checkIsfilter = value;
         }
+        public bool isUpdate
+        {
+            get => checkIsUpdate;
+            set => checkIsUpdate = value;
+        }
         public string selectedId { get => this.id; set => this.id = value; }
 
 
@@ -132,7 +142,10 @@ namespace DoAn_QLCF_cs_WinForm.View
         }
         public void GetIdNccAdd(int id)
         {
+            this.txtIdNcc.Enabled = true;
+            this.txtIdNcc.Focus();
             this.txtIdNcc.Texts = id.ToString();
+            this.txtTenNcc.Focus();
         }
         private void SetUpView()
         {
@@ -194,9 +207,24 @@ namespace DoAn_QLCF_cs_WinForm.View
             }
             return true;
         }
-
+        public void setState(bool isAddState, bool isUpdateState, bool isFilterState, bool isNeedReturnState)
+        {
+            checkIsAdd = isAddState;
+            checkIsUpdate = isUpdateState;
+            checkIsfilter = isFilterState;
+            isNeedTurn = isNeedReturnState;
+        }
         public void SetNull()
         {
+            if (isFilter)
+            {
+                txtIdNcc.Enabled = true;
+                txtIdNcc.BackColor = Color.White;
+                txtIdNcc.Texts = "";
+                txtIdNcc.BorderColor = Color.DarkCyan;
+                txtIdNcc.Focus();
+            }
+
             txtTenNcc.Texts = "";
             txtSDTNcc.Texts = "";
             txtEmailNcc.Texts = "";
@@ -210,24 +238,47 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         private void addBtn_Click(object sender, EventArgs e)
         {
+            txtIdNcc.Enabled = false;
+            txtIdNcc.BackColor = Color.LightGray;
+            txtIdNcc.BorderColor = Color.Silver;
             tcNCC.SelectedTab = detailTabPage;
-            isAdd = true;
         }
 
         private void editBtn_Click(object sender, EventArgs e)
         {
             tcNCC.SelectedTab = detailTabPage;
-            isAdd = false;
+        }
+        private void filterBtn_Click(object sender, EventArgs e)
+        {
+            isFilter = true;
+            tcNCC.SelectedTab = detailTabPage;
+            SetNull();
         }
 
         private void btn_back_Click(object sender, EventArgs e)
         {
+            if (isFilter)
+            {
+                txtIdNcc.Text = "";
+                txtIdNcc.Enabled = false;
+                txtIdNcc.BackColor = Color.LightGray;
+                txtIdNcc.BorderColor = Color.Silver;
+            }
+            setState(false, false, false, false);
             tcNCC.SelectedTab = listTabPage;
             SetNull();
         }
 
         private void HuyBtn_Click(object sender, EventArgs e)
         {
+            if (isFilter)
+            {
+                txtIdNcc.Text = "";
+                txtIdNcc.Enabled = false;
+                txtIdNcc.BackColor = Color.LightGray;
+                txtIdNcc.BorderColor = Color.Silver;
+            }
+            setState(false, false, false, false);
             tcNCC.SelectedTab = listTabPage;
             SetNull();
         }
@@ -243,7 +294,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         private void txtTenNcc__TextChanged(object sender, EventArgs e)
         {
-            if (txtTenNcc.Texts.Length > 0)
+            if (txtTenNcc.Texts.Length > 0 || isFilter)
                 txtTenNcc.BorderColor = Color.DarkCyan;
             else
                 txtTenNcc.BorderColor = Color.Red;
@@ -251,7 +302,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         private void txtDiaChiNcc__TextChanged(object sender, EventArgs e)
         {
-            if (txtDiaChiNcc.Texts.Length > 0)
+            if (txtDiaChiNcc.Texts.Length > 0 || isFilter)
                 txtDiaChiNcc.BorderColor = Color.DarkCyan;
             else
                 txtDiaChiNcc.BorderColor = Color.Red;
@@ -259,7 +310,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         private void txtEmailNcc__TextChanged(object sender, EventArgs e)
         {
-            if (txtEmailNcc.Texts.Length > 0)
+            if (txtEmailNcc.Texts.Length > 0 || isFilter)
                 txtEmailNcc.BorderColor = Color.DarkCyan;
             else
                 txtEmailNcc.BorderColor = Color.Red;
@@ -268,17 +319,12 @@ namespace DoAn_QLCF_cs_WinForm.View
         private void txtSDTNcc__TextChanged(object sender, EventArgs e)
         {
             int result;
-            if (!int.TryParse(txtSDTNcc.Texts, out result))
-                txtSDTNcc.BorderColor = Color.Red;
-            else
+            if ((int.TryParse(txtSDTNcc.Texts, out result) && txtSDTNcc.Texts.Length > 0) && (isFilter || int.TryParse(txtSDTNcc.Texts, out result)))
                 txtSDTNcc.BorderColor = Color.DarkCyan;
+            else
+                txtSDTNcc.BorderColor = Color.Red;
         }
 
-        private void filterBtn_Click(object sender, EventArgs e)
-        {
-            tcNCC.SelectedTab = detailTabPage;
-            isFilter = true;
-        }
 
         private void sortBtn_Click(object sender, EventArgs e)
         {
@@ -356,6 +402,11 @@ namespace DoAn_QLCF_cs_WinForm.View
             rbEmailInc.Checked = false;
             rbIsDeleteDec.Checked = false;
             rbIsDeleteInc.Checked = false;
+        }
+        private void xacNhanBtn_Click(object sender, EventArgs e)
+        {
+            if (isNeedTurn)
+                tcNCC.SelectedTab = listTabPage;
         }
     }
 }
