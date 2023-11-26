@@ -27,14 +27,21 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
 
             this.view.AddEvent += Add;
             this.view.DeleteEvent += Delete;
-            this.view.btnUpdateClickEvent += UpdateClickEvent;
+            this.view.ResetEvent += Filter;
             this.view.UpdateEvent += Update;
             this.view.btnAddClickEvent += AddClickEvent;
+            this.view.btnUpdateClickEvent += UpdateClickEvent;
+            this.view.ResetEvent += LoadNccList;
 
             cpBindingSource = new BindingSource();
             LoadNccList();
         }
-
+        private void LoadNccList(object sender, EventArgs e)
+        {
+            nccList = repository.GetAll();
+            cpBindingSource.DataSource = nccList;
+            view.LoadData(cpBindingSource);
+        }
         private void LoadNccList()
         {
             nccList = repository.GetAll();
@@ -75,6 +82,33 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
                     LoadNccList();
                     this.view.SetNull();
                 }
+            this.view.isAdd = false;
+        }
+        private void Filter(object sender, EventArgs e)
+        {
+            if (this.view.isFilter)
+                if (this.view.CheckInput())
+                {
+                    NccModel ncc = new NccModel();
+                    ncc.NhaCungCapId = int.Parse(this.view.NhaCungCapId);
+                    ncc.TenNhaCungCap = this.view.TenNhaCungCap;
+                    ncc.SDT = this.view.SDT;
+                    ncc.Email = this.view.Email;
+                    ncc.DiaChi = this.view.DiaChi;
+                    ncc.IsDelete = bool.Parse(this.view.IsDelete);
+
+                    if (repository.Add(ncc))
+                    {
+                        MessageBox.Show("Success");
+                    }
+                    else
+                        MessageBox.Show("Fail");
+
+                    GetNccId();
+                    LoadNccList();
+                    this.view.SetNull();
+                }
+            this.view.isFilter = false;
         }
         public void Delete(object sender, EventArgs e)
         {

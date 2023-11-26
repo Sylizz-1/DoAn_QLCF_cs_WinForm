@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             tcNCC = new TabControl();
             listTabPage = new TabPage();
+            resetBtn = new CustomControl.CustomButton();
             gbSort = new GroupBox();
             groupBox5 = new GroupBox();
             rbDcDec = new RadioButton();
@@ -103,6 +104,7 @@
             // 
             // listTabPage
             // 
+            listTabPage.Controls.Add(resetBtn);
             listTabPage.Controls.Add(gbSort);
             listTabPage.Controls.Add(filterBtn);
             listTabPage.Controls.Add(sortBtn);
@@ -119,6 +121,36 @@
             listTabPage.TabIndex = 0;
             listTabPage.Text = "Danh Sách";
             listTabPage.UseVisualStyleBackColor = true;
+            // 
+            // resetBtn
+            // 
+            resetBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            resetBtn.BackColor = SystemColors.Control;
+            resetBtn.BackgroundColor = SystemColors.Control;
+            resetBtn.BorderColor = Color.Gray;
+            resetBtn.BorderRadius = 15;
+            resetBtn.BorderSize = 2;
+            resetBtn.Cursor = Cursors.Hand;
+            resetBtn.EnabledTextHover = true;
+            resetBtn.FlatAppearance.BorderSize = 0;
+            resetBtn.FlatAppearance.MouseDownBackColor = Color.Teal;
+            resetBtn.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
+            resetBtn.FlatStyle = FlatStyle.Flat;
+            resetBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            resetBtn.ForeColor = Color.DarkGray;
+            resetBtn.ImageAlign = ContentAlignment.MiddleRight;
+            resetBtn.ImageHover = null;
+            resetBtn.Location = new Point(1315, 174);
+            resetBtn.Margin = new Padding(4, 5, 4, 5);
+            resetBtn.Name = "resetBtn";
+            resetBtn.Size = new Size(172, 64);
+            resetBtn.TabIndex = 28;
+            resetBtn.Text = "Reset";
+            resetBtn.TextColor = Color.DarkGray;
+            resetBtn.TextHover = Color.White;
+            resetBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            resetBtn.UseVisualStyleBackColor = false;
+            resetBtn.Click += resetBtn_Click;
             // 
             // gbSort
             // 
@@ -363,7 +395,7 @@
             filterBtn.ForeColor = Color.Goldenrod;
             filterBtn.ImageAlign = ContentAlignment.MiddleRight;
             filterBtn.ImageHover = null;
-            filterBtn.Location = new Point(545, 12);
+            filterBtn.Location = new Point(552, 9);
             filterBtn.Margin = new Padding(4, 5, 4, 5);
             filterBtn.Name = "filterBtn";
             filterBtn.Size = new Size(172, 64);
@@ -393,7 +425,7 @@
             sortBtn.ForeColor = Color.DeepSkyBlue;
             sortBtn.ImageAlign = ContentAlignment.MiddleRight;
             sortBtn.ImageHover = null;
-            sortBtn.Location = new Point(744, 9);
+            sortBtn.Location = new Point(742, 9);
             sortBtn.Margin = new Padding(4, 5, 4, 5);
             sortBtn.Name = "sortBtn";
             sortBtn.Size = new Size(172, 64);
@@ -413,24 +445,24 @@
             dgvNcc.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvNcc.BorderStyle = BorderStyle.None;
             dgvNcc.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.DarkCyan;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dgvNcc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.DarkCyan;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvNcc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvNcc.ColumnHeadersHeight = 30;
             dgvNcc.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = SystemColors.Window;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dgvNcc.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvNcc.DefaultCellStyle = dataGridViewCellStyle2;
             dgvNcc.Dock = DockStyle.Bottom;
             dgvNcc.EnableHeadersVisualStyles = false;
             dgvNcc.GridColor = Color.DarkCyan;
@@ -441,8 +473,8 @@
             dgvNcc.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dgvNcc.RowHeadersVisible = false;
             dgvNcc.RowHeadersWidth = 51;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvNcc.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvNcc.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dgvNcc.RowTemplate.Height = 25;
             dgvNcc.RowTemplate.ReadOnly = true;
             dgvNcc.Size = new Size(1499, 498);
@@ -490,7 +522,7 @@
             delBtn.Image = Properties.Resources.deleteIconRed16px;
             delBtn.ImageAlign = ContentAlignment.MiddleRight;
             delBtn.ImageHover = Properties.Resources.deleteIconWhite16px;
-            delBtn.Location = new Point(1315, 9);
+            delBtn.Location = new Point(1312, 9);
             delBtn.Margin = new Padding(4, 5, 4, 5);
             delBtn.Name = "delBtn";
             delBtn.Size = new Size(172, 64);
@@ -520,7 +552,7 @@
             editBtn.Image = Properties.Resources.editIconTeal16px;
             editBtn.ImageAlign = ContentAlignment.MiddleRight;
             editBtn.ImageHover = Properties.Resources.editIconWhite16px;
-            editBtn.Location = new Point(1134, 9);
+            editBtn.Location = new Point(1122, 9);
             editBtn.Margin = new Padding(4, 5, 4, 5);
             editBtn.Name = "editBtn";
             editBtn.Size = new Size(172, 64);
@@ -551,7 +583,7 @@
             addBtn.Image = Properties.Resources.addIconTeal16px;
             addBtn.ImageAlign = ContentAlignment.MiddleRight;
             addBtn.ImageHover = Properties.Resources.addIconWhite16px;
-            addBtn.Location = new Point(951, 9);
+            addBtn.Location = new Point(932, 9);
             addBtn.Margin = new Padding(4, 5, 4, 5);
             addBtn.Name = "addBtn";
             addBtn.Size = new Size(172, 64);
@@ -956,5 +988,6 @@
         private RadioButton rbIsDeleteDec;
         private RadioButton rbIsDeleteInc;
         private GroupBox gbSort;
+        private CustomControl.CustomButton resetBtn;
     }
 }

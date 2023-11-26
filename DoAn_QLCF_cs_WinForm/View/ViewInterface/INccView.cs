@@ -17,7 +17,9 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
         event EventHandler UpdateEvent;
         event EventHandler SortEvent;
         event EventHandler FilterEvent;
+        event EventHandler ResetEvent;
         bool isAdd { get; set; }
+        bool isFilter { get; set; }
         string SearchValue { get; set; }
         string NhaCungCapId { get; set; }
         string TenNhaCungCap { get; set; }

@@ -25,7 +25,9 @@ namespace DoAn_QLCF_cs_WinForm.View
         public event EventHandler DeleteEvent;
         public event EventHandler SortEvent;
         public event EventHandler FilterEvent;
+        public event EventHandler ResetEvent;
         public bool checkIsAdd = false;
+        public bool checkIsfilter = false;
         private BindingSource templist = new BindingSource();
         public NccView()
         {
@@ -34,11 +36,13 @@ namespace DoAn_QLCF_cs_WinForm.View
 
             xacNhanBtn.Click += delegate { AddEvent?.Invoke(this, EventArgs.Empty); };
             xacNhanBtn.Click += delegate { UpdateEvent?.Invoke(this, EventArgs.Empty); };
+            xacNhanBtn.Click += delegate { FilterEvent?.Invoke(this, EventArgs.Empty); };
             delBtn.Click += delegate { DeleteEvent?.Invoke(this, EventArgs.Empty); };
             editBtn.Click += delegate { btnUpdateClickEvent?.Invoke(this, EventArgs.Empty); };
             addBtn.Click += delegate { btnAddClickEvent?.Invoke(this, EventArgs.Empty); };
             filterBtn.Click += delegate { FilterEvent?.Invoke(this, EventArgs.Empty); };
             sortBtn.Click += delegate { SortEvent?.Invoke(this, EventArgs.Empty); };
+            resetBtn.Click += delegate { ResetEvent?.Invoke(this, EventArgs.Empty); };
 
             rbIDDec.CheckedChanged += SortRadioButton_CheckedChanged;
             rbIIDnc.CheckedChanged += SortRadioButton_CheckedChanged;
@@ -73,21 +77,6 @@ namespace DoAn_QLCF_cs_WinForm.View
             get => this.txtDiaChiNcc.Texts;
             set => this.txtDiaChiNcc.Texts = value;
         }
-        public void SetTextBoxFillData(NccModel ncc)
-        {
-            this.txtIdNcc.Enabled = true;
-            this.txtIdNcc.Focus();
-            this.txtIdNcc.Texts = ncc.NhaCungCapId.ToString();
-            this.txtIdNcc.Enabled = false;
-            this.txtTenNcc.Focus();
-            this.txtTenNcc.Texts = ncc.TenNhaCungCap;
-            this.txtDiaChiNcc.Focus();
-            this.txtDiaChiNcc.Texts = ncc.DiaChi;
-            this.txtSDTNcc.Focus();
-            this.txtSDTNcc.Texts = ncc.SDT;
-            this.txtEmailNcc.Focus();
-            this.txtEmailNcc.Texts = ncc.Email;
-        }
         public string SDT
         {
             get => this.txtSDTNcc.Texts;
@@ -107,6 +96,11 @@ namespace DoAn_QLCF_cs_WinForm.View
         {
             get => checkIsAdd;
             set => checkIsAdd = value;
+        }
+        public bool isFilter
+        {
+            get => checkIsfilter;
+            set => checkIsfilter = value;
         }
         public string selectedId { get => this.id; set => this.id = value; }
 
@@ -145,6 +139,21 @@ namespace DoAn_QLCF_cs_WinForm.View
             tcNCC.Appearance = TabAppearance.FlatButtons;
             tcNCC.ItemSize = new System.Drawing.Size(0, 1);
             tcNCC.SizeMode = TabSizeMode.Fixed;
+        }
+        public void SetTextBoxFillData(NccModel ncc)
+        {
+            this.txtIdNcc.Enabled = true;
+            this.txtIdNcc.Focus();
+            this.txtIdNcc.Texts = ncc.NhaCungCapId.ToString();
+            this.txtIdNcc.Enabled = false;
+            this.txtTenNcc.Focus();
+            this.txtTenNcc.Texts = ncc.TenNhaCungCap;
+            this.txtDiaChiNcc.Focus();
+            this.txtDiaChiNcc.Texts = ncc.DiaChi;
+            this.txtSDTNcc.Focus();
+            this.txtSDTNcc.Texts = ncc.SDT;
+            this.txtEmailNcc.Focus();
+            this.txtEmailNcc.Texts = ncc.Email;
         }
 
         public bool CheckInput()
@@ -267,12 +276,13 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         private void filterBtn_Click(object sender, EventArgs e)
         {
-
+            tcNCC.SelectedTab = detailTabPage;
+            isFilter = true;
         }
 
         private void sortBtn_Click(object sender, EventArgs e)
         {
-            if(gbSort.Visible)
+            if (gbSort.Visible)
                 gbSort.Visible = false;
             else
                 gbSort.Visible = true;
@@ -330,6 +340,22 @@ namespace DoAn_QLCF_cs_WinForm.View
             BindingSource myBindingSource = new BindingSource();
             myBindingSource.DataSource = myList;
             LoadData(myBindingSource);
+        }
+
+        private void resetBtn_Click(object sender, EventArgs e)
+        {
+            rbIDDec.Checked = false;
+            rbIIDnc.Checked = false;
+            rbNameDec.Checked = false;
+            rbNameInc.Checked = false;
+            rbSdtDec.Checked = false;
+            rbSdtInc.Checked = false;
+            rbDcDec.Checked = false;
+            rbDcInc.Checked = false;
+            rbEmailDec.Checked = false;
+            rbEmailInc.Checked = false;
+            rbIsDeleteDec.Checked = false;
+            rbIsDeleteInc.Checked = false;
         }
     }
 }
