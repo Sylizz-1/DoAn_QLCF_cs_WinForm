@@ -183,6 +183,7 @@
             // 
             // btn_newAccount
             // 
+            btn_newAccount.Anchor = AnchorStyles.Bottom;
             btn_newAccount.Cursor = Cursors.Hand;
             btn_newAccount.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             btn_newAccount.ForeColor = SystemColors.Highlight;
@@ -230,7 +231,7 @@
             // 
             // btn_login
             // 
-            btn_login.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_login.Anchor = AnchorStyles.Bottom;
             btn_login.BackColor = SystemColors.Control;
             btn_login.BackgroundColor = SystemColors.Control;
             btn_login.BorderColor = Color.Red;
@@ -277,6 +278,7 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.Anchor = AnchorStyles.Top;
             pictureBox2.Image = Properties.Resources.icons8_user_100_header;
             pictureBox2.Location = new Point(220, 16);
             pictureBox2.Name = "pictureBox2";
