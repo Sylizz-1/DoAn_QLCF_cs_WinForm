@@ -33,14 +33,14 @@
             tabControl1 = new TabControl();
             tp_login = new TabPage();
             btn_newAccount = new Button();
-            groupBox1 = new GroupBox();
+            grb_role = new GroupBox();
             rdb_customerLogin = new RadioButton();
             rdb_employeeLogin = new RadioButton();
             btn_login = new CustomControl.CustomButton();
-            panel2 = new Panel();
+            pn_password = new Panel();
             pictureBox3 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            panel1 = new Panel();
+            ptb_header = new PictureBox();
+            pn_username = new Panel();
             pictureBox1 = new PictureBox();
             tp_information = new TabPage();
             pn_birthday = new Panel();
@@ -79,11 +79,11 @@
             btn_back2 = new CustomControl.CustomButton();
             tabControl1.SuspendLayout();
             tp_login.SuspendLayout();
-            groupBox1.SuspendLayout();
-            panel2.SuspendLayout();
+            grb_role.SuspendLayout();
+            pn_password.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ptb_header).BeginInit();
+            pn_username.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tp_information.SuspendLayout();
             pn_birthday.SuspendLayout();
@@ -168,12 +168,14 @@
             // tp_login
             // 
             tp_login.BackColor = SystemColors.Window;
+            tp_login.BackgroundImage = Properties.Resources.background_coffee_2;
+            tp_login.BackgroundImageLayout = ImageLayout.Stretch;
             tp_login.Controls.Add(btn_newAccount);
-            tp_login.Controls.Add(groupBox1);
+            tp_login.Controls.Add(grb_role);
             tp_login.Controls.Add(btn_login);
-            tp_login.Controls.Add(panel2);
-            tp_login.Controls.Add(pictureBox2);
-            tp_login.Controls.Add(panel1);
+            tp_login.Controls.Add(pn_password);
+            tp_login.Controls.Add(ptb_header);
+            tp_login.Controls.Add(pn_username);
             tp_login.Location = new Point(4, 29);
             tp_login.Name = "tp_login";
             tp_login.Padding = new Padding(3);
@@ -183,10 +185,10 @@
             // 
             // btn_newAccount
             // 
-            btn_newAccount.Anchor = AnchorStyles.Bottom;
+            btn_newAccount.Anchor = AnchorStyles.Top;
             btn_newAccount.Cursor = Cursors.Hand;
-            btn_newAccount.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_newAccount.ForeColor = SystemColors.Highlight;
+            btn_newAccount.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_newAccount.ForeColor = SystemColors.HotTrack;
             btn_newAccount.Location = new Point(70, 459);
             btn_newAccount.Name = "btn_newAccount";
             btn_newAccount.Size = new Size(400, 29);
@@ -195,17 +197,17 @@
             btn_newAccount.UseVisualStyleBackColor = true;
             btn_newAccount.Click += btn_newAccount_Click;
             // 
-            // groupBox1
+            // grb_role
             // 
-            groupBox1.Controls.Add(rdb_customerLogin);
-            groupBox1.Controls.Add(rdb_employeeLogin);
-            groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox1.Location = new Point(70, 289);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(400, 84);
-            groupBox1.TabIndex = 16;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Chọn Vai Trò";
+            grb_role.Controls.Add(rdb_customerLogin);
+            grb_role.Controls.Add(rdb_employeeLogin);
+            grb_role.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            grb_role.Location = new Point(70, 289);
+            grb_role.Name = "grb_role";
+            grb_role.Size = new Size(400, 84);
+            grb_role.TabIndex = 16;
+            grb_role.TabStop = false;
+            grb_role.Text = "Chọn Vai Trò";
             // 
             // rdb_customerLogin
             // 
@@ -231,7 +233,7 @@
             // 
             // btn_login
             // 
-            btn_login.Anchor = AnchorStyles.Bottom;
+            btn_login.Anchor = AnchorStyles.Top;
             btn_login.BackColor = SystemColors.Control;
             btn_login.BackgroundColor = SystemColors.Control;
             btn_login.BorderColor = Color.Red;
@@ -258,14 +260,14 @@
             btn_login.TextImageRelation = TextImageRelation.ImageBeforeText;
             btn_login.UseVisualStyleBackColor = false;
             // 
-            // panel2
+            // pn_password
             // 
-            panel2.Controls.Add(pictureBox3);
-            panel2.Controls.Add(txt_password);
-            panel2.Location = new Point(70, 214);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(400, 57);
-            panel2.TabIndex = 9;
+            pn_password.Controls.Add(pictureBox3);
+            pn_password.Controls.Add(txt_password);
+            pn_password.Location = new Point(70, 214);
+            pn_password.Name = "pn_password";
+            pn_password.Size = new Size(400, 57);
+            pn_password.TabIndex = 9;
             // 
             // pictureBox3
             // 
@@ -276,24 +278,24 @@
             pictureBox3.TabIndex = 8;
             pictureBox3.TabStop = false;
             // 
-            // pictureBox2
+            // ptb_header
             // 
-            pictureBox2.Anchor = AnchorStyles.Top;
-            pictureBox2.Image = Properties.Resources.icons8_user_100_header;
-            pictureBox2.Location = new Point(220, 16);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(100, 100);
-            pictureBox2.TabIndex = 8;
-            pictureBox2.TabStop = false;
+            ptb_header.Anchor = AnchorStyles.Top;
+            ptb_header.Image = Properties.Resources.icons8_user_100_header;
+            ptb_header.Location = new Point(220, 16);
+            ptb_header.Name = "ptb_header";
+            ptb_header.Size = new Size(100, 100);
+            ptb_header.TabIndex = 8;
+            ptb_header.TabStop = false;
             // 
-            // panel1
+            // pn_username
             // 
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(txt_username);
-            panel1.Location = new Point(70, 139);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(400, 57);
-            panel1.TabIndex = 7;
+            pn_username.Controls.Add(pictureBox1);
+            pn_username.Controls.Add(txt_username);
+            pn_username.Location = new Point(70, 139);
+            pn_username.Name = "pn_username";
+            pn_username.Size = new Size(400, 57);
+            pn_username.TabIndex = 7;
             // 
             // pictureBox1
             // 
@@ -814,17 +816,19 @@
             BackColor = Color.White;
             ClientSize = new Size(548, 553);
             Controls.Add(tabControl1);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            MaximizeBox = false;
             Name = "LogInView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LogInView";
             tabControl1.ResumeLayout(false);
             tp_login.ResumeLayout(false);
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            panel2.ResumeLayout(false);
+            grb_role.ResumeLayout(false);
+            grb_role.PerformLayout();
+            pn_password.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)ptb_header).EndInit();
+            pn_username.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tp_information.ResumeLayout(false);
             pn_birthday.ResumeLayout(false);
@@ -859,12 +863,12 @@
         private TabPage tp_login;
         private TabPage tp_register;
         private PictureBox pictureBox1;
-        private Panel panel1;
-        private Panel panel2;
+        private Panel pn_username;
+        private Panel pn_password;
         private PictureBox pictureBox3;
-        private PictureBox pictureBox2;
+        private PictureBox ptb_header;
         private CustomControl.CustomButton btn_login;
-        private GroupBox groupBox1;
+        private GroupBox grb_role;
         private RadioButton rdb_customerLogin;
         private RadioButton rdb_employeeLogin;
         private Button btn_newAccount;

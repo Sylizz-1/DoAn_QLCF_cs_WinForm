@@ -27,6 +27,7 @@ namespace DoAn_QLCF_cs_WinForm
             ILoginRepository loginRepository = new LoginRepository(connectionString);
             new LoginPresenter(loginView, loginRepository);
             Application.Run((Form)loginView);
+            //Application.Run(new PhanQuyenView());
 
         }
     }

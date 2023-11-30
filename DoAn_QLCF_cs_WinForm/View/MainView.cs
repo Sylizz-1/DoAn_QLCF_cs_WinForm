@@ -44,7 +44,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             this.connectionString = connectionString;
             this.employeeInfor = employeeInfor;
             LoadButtonNav();
-            timerLblTitle.Start();  
+            timerLblTitle.Start();
             LoadFormContainer();
 
             RemoveControlByPermission();
@@ -260,7 +260,7 @@ namespace DoAn_QLCF_cs_WinForm.View
         {
             mainFormContainer = new Form();
             mainFormContainer.TopLevel = false;
-            mainPanelContainer.Controls.Add(mainFormContainer);
+            mainPanelContainer.Controls.Add(mainFormContainer);            
             mainFormContainer.FormBorderStyle = FormBorderStyle.None;
             mainFormContainer.Dock = DockStyle.Fill;
             mainFormContainer.Padding = new Padding(3);

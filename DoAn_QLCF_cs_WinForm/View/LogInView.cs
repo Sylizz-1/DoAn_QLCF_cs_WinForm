@@ -19,7 +19,7 @@ namespace DoAn_QLCF_cs_WinForm.View
         {
             InitializeComponent();
             setUpView();
-
+                               
             btn_login.Click += delegate { LoginEvent?.Invoke(this, EventArgs.Empty); };
             btn_register.Click += delegate { RegisterEvent?.Invoke(this, EventArgs.Empty); };
         }
@@ -37,6 +37,22 @@ namespace DoAn_QLCF_cs_WinForm.View
 
             //gán giá trị max cho birthday là ngày hôm nay
             dtp_birthdayRegister.MaxDate = DateTime.Today;
+
+            grb_role.BackColor = Color.FromArgb(100, Color.White); // Màu nền với độ mờ 100
+            grb_role.ForeColor = Color.Black;
+
+            btn_login.BackColor = Color.FromArgb(100, Color.White); // Màu nền với độ mờ 100
+            btn_login.ForeColor = Color.Black;
+
+            ptb_header.BackColor = Color.FromArgb(100, Color.White); // Màu nền với độ mờ 100           
+
+            btn_newAccount.BackColor = Color.FromArgb(100, Color.White); // Màu nền với độ mờ 100
+
+            pn_username.BackColor = Color.FromArgb(100, Color.White); // Màu nền với độ mờ 100
+            pn_username.ForeColor = Color.Black;            
+
+            pn_password.BackColor = Color.FromArgb(100, Color.White); // Màu nền với độ mờ 100
+            pn_password.ForeColor = Color.Black;
         }
 
         public string UserName
