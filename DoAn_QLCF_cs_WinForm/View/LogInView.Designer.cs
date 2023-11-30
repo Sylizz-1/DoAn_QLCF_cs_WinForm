@@ -38,6 +38,7 @@
             rdb_employeeLogin = new RadioButton();
             btn_login = new CustomControl.CustomButton();
             pn_password = new Panel();
+            pn_hidePassword = new Panel();
             pictureBox3 = new PictureBox();
             ptb_header = new PictureBox();
             pn_username = new Panel();
@@ -144,10 +145,10 @@
             txt_password.Multiline = false;
             txt_password.Name = "txt_password";
             txt_password.Padding = new Padding(10, 9, 8, 9);
-            txt_password.PasswordChar = false;
+            txt_password.PasswordChar = true;
             txt_password.PlaceholderColor = Color.DarkGray;
             txt_password.PlaceholderText = "Nhập Mật Khẩu";
-            txt_password.Size = new Size(338, 47);
+            txt_password.Size = new Size(281, 47);
             txt_password.TabIndex = 4;
             txt_password.Texts = "";
             txt_password.UnderlinedStyle = false;
@@ -201,7 +202,7 @@
             // 
             grb_role.Controls.Add(rdb_customerLogin);
             grb_role.Controls.Add(rdb_employeeLogin);
-            grb_role.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            grb_role.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             grb_role.Location = new Point(70, 289);
             grb_role.Name = "grb_role";
             grb_role.Size = new Size(400, 84);
@@ -214,7 +215,7 @@
             rdb_customerLogin.AutoSize = true;
             rdb_customerLogin.Location = new Point(257, 33);
             rdb_customerLogin.Name = "rdb_customerLogin";
-            rdb_customerLogin.Size = new Size(138, 32);
+            rdb_customerLogin.Size = new Size(147, 32);
             rdb_customerLogin.TabIndex = 1;
             rdb_customerLogin.TabStop = true;
             rdb_customerLogin.Text = "Khách Hàng";
@@ -225,7 +226,7 @@
             rdb_employeeLogin.AutoSize = true;
             rdb_employeeLogin.Location = new Point(6, 33);
             rdb_employeeLogin.Name = "rdb_employeeLogin";
-            rdb_employeeLogin.Size = new Size(123, 32);
+            rdb_employeeLogin.Size = new Size(132, 32);
             rdb_employeeLogin.TabIndex = 0;
             rdb_employeeLogin.TabStop = true;
             rdb_employeeLogin.Text = "Nhân Viên";
@@ -262,12 +263,24 @@
             // 
             // pn_password
             // 
+            pn_password.Controls.Add(pn_hidePassword);
             pn_password.Controls.Add(pictureBox3);
             pn_password.Controls.Add(txt_password);
             pn_password.Location = new Point(70, 214);
             pn_password.Name = "pn_password";
             pn_password.Size = new Size(400, 57);
             pn_password.TabIndex = 9;
+            // 
+            // pn_hidePassword
+            // 
+            pn_hidePassword.BackgroundImage = Properties.Resources.icons8_eye_57;
+            pn_hidePassword.Cursor = Cursors.Hand;
+            pn_hidePassword.Dock = DockStyle.Right;
+            pn_hidePassword.Location = new Point(343, 0);
+            pn_hidePassword.Name = "pn_hidePassword";
+            pn_hidePassword.Size = new Size(57, 57);
+            pn_hidePassword.TabIndex = 10;
+            pn_hidePassword.Click += pn_hidePassword_Click;
             // 
             // pictureBox3
             // 
@@ -906,5 +919,6 @@
         private Panel pn_birthday;
         private CustomControl.CustomDateTimePicker dtp_birthdayRegister;
         private PictureBox pictureBox12;
+        private Panel pn_hidePassword;
     }
 }

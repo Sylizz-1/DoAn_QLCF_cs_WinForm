@@ -15,11 +15,12 @@ namespace DoAn_QLCF_cs_WinForm.View
 {
     public partial class LogInView : Form, ILoginView
     {
+        private bool isHidePassword = true;
         public LogInView()
         {
             InitializeComponent();
             setUpView();
-                               
+
             btn_login.Click += delegate { LoginEvent?.Invoke(this, EventArgs.Empty); };
             btn_register.Click += delegate { RegisterEvent?.Invoke(this, EventArgs.Empty); };
         }
@@ -40,17 +41,12 @@ namespace DoAn_QLCF_cs_WinForm.View
 
             grb_role.BackColor = Color.FromArgb(100, Color.White); // Màu nền với độ mờ 100
             grb_role.ForeColor = Color.Black;
-
             btn_login.BackColor = Color.FromArgb(100, Color.White); // Màu nền với độ mờ 100
             btn_login.ForeColor = Color.Black;
-
             ptb_header.BackColor = Color.FromArgb(100, Color.White); // Màu nền với độ mờ 100           
-
             btn_newAccount.BackColor = Color.FromArgb(100, Color.White); // Màu nền với độ mờ 100
-
             pn_username.BackColor = Color.FromArgb(100, Color.White); // Màu nền với độ mờ 100
-            pn_username.ForeColor = Color.Black;            
-
+            pn_username.ForeColor = Color.Black;
             pn_password.BackColor = Color.FromArgb(100, Color.White); // Màu nền với độ mờ 100
             pn_password.ForeColor = Color.Black;
         }
@@ -258,7 +254,24 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         private void txt_phoneNumberRegister_KeyPress(object sender, KeyPressEventArgs e)
         {
-        
+
+        }
+
+
+        private void pn_hidePassword_Click(object sender, EventArgs e)
+        {
+            if (isHidePassword)
+            {
+                txt_password.PasswordChar = false;
+                pn_hidePassword.BackgroundImage = Properties.Resources.icons8_hide_57;
+                isHidePassword = false;
+            }
+            else
+            {
+                txt_password.PasswordChar = true;
+                pn_hidePassword.BackgroundImage = Properties.Resources.icons8_eye_57;
+                isHidePassword = true;
+            }
         }
     }
 }

@@ -563,6 +563,26 @@ namespace DoAn_QLCF_cs_WinForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_eye_57 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-eye-57", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_hide_57 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-hide-57", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_name_47 {
             get {
                 object obj = ResourceManager.GetObject("icons8_name_47", resourceCulture);
@@ -946,6 +966,16 @@ namespace DoAn_QLCF_cs_WinForm.Properties {
         internal static System.Drawing.Bitmap TaskIcon {
             get {
                 object obj = ResourceManager.GetObject("TaskIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap unhide {
+            get {
+                object obj = ResourceManager.GetObject("unhide", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
