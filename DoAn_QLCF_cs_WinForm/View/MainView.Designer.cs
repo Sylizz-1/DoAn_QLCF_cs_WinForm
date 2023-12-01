@@ -1002,6 +1002,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             Controls.Add(backgroundMainView);
             Controls.Add(sideBar);
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            MaximizeBox = false;
             MinimumSize = new Size(799, 682);
             Name = "MainView";
             StartPosition = FormStartPosition.CenterScreen;
