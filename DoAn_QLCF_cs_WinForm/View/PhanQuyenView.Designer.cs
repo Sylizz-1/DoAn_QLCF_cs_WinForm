@@ -31,26 +31,26 @@
             grb_quyen = new GroupBox();
             tc_quyen = new TabControl();
             tp_quyenDanhSach = new TabPage();
+            customButton2 = new CustomControl.CustomButton();
+            searchTxt = new CustomControl.CustomTextBox();
+            dataGridView1 = new DataGridView();
             tp_quyenChiTiet = new TabPage();
             tableLayoutPanel1 = new TableLayoutPanel();
             grb_chucNang = new GroupBox();
             tc_chucNang = new TabControl();
             tp_chucNangDanhSach = new TabPage();
-            tp_chucNangChiTiet = new TabPage();
-            dataGridView1 = new DataGridView();
-            dataGridView2 = new DataGridView();
-            searchTxt = new CustomControl.CustomTextBox();
-            customButton2 = new CustomControl.CustomButton();
             customButton1 = new CustomControl.CustomButton();
             customTextBox1 = new CustomControl.CustomTextBox();
+            dataGridView2 = new DataGridView();
+            tp_chucNangChiTiet = new TabPage();
             grb_quyen.SuspendLayout();
             tc_quyen.SuspendLayout();
             tp_quyenDanhSach.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             grb_chucNang.SuspendLayout();
             tc_chucNang.SuspendLayout();
             tp_chucNangDanhSach.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
@@ -91,13 +91,70 @@
             tp_quyenDanhSach.TabIndex = 0;
             tp_quyenDanhSach.Text = "Danh Sách";
             // 
+            // customButton2
+            // 
+            customButton2.BackColor = Color.Transparent;
+            customButton2.BackgroundColor = Color.Transparent;
+            customButton2.BorderColor = Color.PaleVioletRed;
+            customButton2.BorderRadius = 15;
+            customButton2.BorderSize = 0;
+            customButton2.Cursor = Cursors.Hand;
+            customButton2.EnabledTextHover = false;
+            customButton2.FlatAppearance.BorderSize = 0;
+            customButton2.FlatAppearance.MouseOverBackColor = Color.FromArgb(50, 64, 64, 64);
+            customButton2.FlatStyle = FlatStyle.Flat;
+            customButton2.ForeColor = Color.White;
+            customButton2.Image = Properties.Resources.findIcon16px;
+            customButton2.ImageHover = null;
+            customButton2.Location = new Point(206, 12);
+            customButton2.Margin = new Padding(3, 4, 3, 4);
+            customButton2.Name = "customButton2";
+            customButton2.Size = new Size(40, 37);
+            customButton2.TabIndex = 7;
+            customButton2.TextColor = Color.White;
+            customButton2.TextHover = Color.White;
+            customButton2.UseVisualStyleBackColor = false;
+            // 
+            // searchTxt
+            // 
+            searchTxt.BackColor = SystemColors.Window;
+            searchTxt.BorderColor = Color.Silver;
+            searchTxt.BorderFocusColor = Color.DarkCyan;
+            searchTxt.BorderRadius = 15;
+            searchTxt.BorderSize = 2;
+            searchTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            searchTxt.ForeColor = Color.DimGray;
+            searchTxt.Location = new Point(6, 7);
+            searchTxt.Margin = new Padding(3, 4, 3, 4);
+            searchTxt.Multiline = false;
+            searchTxt.Name = "searchTxt";
+            searchTxt.Padding = new Padding(10, 9, 46, 9);
+            searchTxt.PasswordChar = false;
+            searchTxt.PlaceholderColor = Color.DarkGray;
+            searchTxt.PlaceholderText = "Tìm Kiếm ...";
+            searchTxt.Size = new Size(249, 47);
+            searchTxt.TabIndex = 3;
+            searchTxt.Texts = "";
+            searchTxt.UnderlinedStyle = false;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Dock = DockStyle.Bottom;
+            dataGridView1.Location = new Point(3, 411);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 29;
+            dataGridView1.Size = new Size(724, 246);
+            dataGridView1.TabIndex = 0;
+            // 
             // tp_quyenChiTiet
             // 
             tp_quyenChiTiet.BackColor = SystemColors.Window;
             tp_quyenChiTiet.Location = new Point(4, 37);
             tp_quyenChiTiet.Name = "tp_quyenChiTiet";
             tp_quyenChiTiet.Padding = new Padding(3);
-            tp_quyenChiTiet.Size = new Size(730, 660);
+            tp_quyenChiTiet.Size = new Size(730, 320);
             tp_quyenChiTiet.TabIndex = 1;
             tp_quyenChiTiet.Text = "Chi Tiết";
             // 
@@ -155,84 +212,6 @@
             tp_chucNangDanhSach.TabIndex = 0;
             tp_chucNangDanhSach.Text = "Danh Sách";
             // 
-            // tp_chucNangChiTiet
-            // 
-            tp_chucNangChiTiet.BackColor = SystemColors.Window;
-            tp_chucNangChiTiet.Location = new Point(4, 37);
-            tp_chucNangChiTiet.Name = "tp_chucNangChiTiet";
-            tp_chucNangChiTiet.Padding = new Padding(3);
-            tp_chucNangChiTiet.Size = new Size(730, 660);
-            tp_chucNangChiTiet.TabIndex = 1;
-            tp_chucNangChiTiet.Text = "Chi Tiết";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Bottom;
-            dataGridView1.Location = new Point(3, 411);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(724, 246);
-            dataGridView1.TabIndex = 0;
-            // 
-            // dataGridView2
-            // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Dock = DockStyle.Bottom;
-            dataGridView2.Location = new Point(3, 411);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.RowTemplate.Height = 29;
-            dataGridView2.Size = new Size(724, 246);
-            dataGridView2.TabIndex = 1;
-            // 
-            // searchTxt
-            // 
-            searchTxt.BackColor = SystemColors.Window;
-            searchTxt.BorderColor = Color.Silver;
-            searchTxt.BorderFocusColor = Color.DarkCyan;
-            searchTxt.BorderRadius = 15;
-            searchTxt.BorderSize = 2;
-            searchTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            searchTxt.ForeColor = Color.DimGray;
-            searchTxt.Location = new Point(6, 7);
-            searchTxt.Margin = new Padding(3, 4, 3, 4);
-            searchTxt.Multiline = false;
-            searchTxt.Name = "searchTxt";
-            searchTxt.Padding = new Padding(10, 9, 46, 9);
-            searchTxt.PasswordChar = false;
-            searchTxt.PlaceholderColor = Color.DarkGray;
-            searchTxt.PlaceholderText = "Tìm Kiếm ...";
-            searchTxt.Size = new Size(249, 47);
-            searchTxt.TabIndex = 3;
-            searchTxt.Texts = "";
-            searchTxt.UnderlinedStyle = false;
-            // 
-            // customButton2
-            // 
-            customButton2.BackColor = Color.Transparent;
-            customButton2.BackgroundColor = Color.Transparent;
-            customButton2.BorderColor = Color.PaleVioletRed;
-            customButton2.BorderRadius = 15;
-            customButton2.BorderSize = 0;
-            customButton2.Cursor = Cursors.Hand;
-            customButton2.EnabledTextHover = false;
-            customButton2.FlatAppearance.BorderSize = 0;
-            customButton2.FlatAppearance.MouseOverBackColor = Color.FromArgb(50, 64, 64, 64);
-            customButton2.FlatStyle = FlatStyle.Flat;
-            customButton2.ForeColor = Color.White;
-            customButton2.Image = Properties.Resources.findIcon16px;
-            customButton2.ImageHover = null;
-            customButton2.Location = new Point(206, 12);
-            customButton2.Margin = new Padding(3, 4, 3, 4);
-            customButton2.Name = "customButton2";
-            customButton2.Size = new Size(40, 37);
-            customButton2.TabIndex = 7;
-            customButton2.TextColor = Color.White;
-            customButton2.TextHover = Color.White;
-            customButton2.UseVisualStyleBackColor = false;
-            // 
             // customButton1
             // 
             customButton1.BackColor = Color.Transparent;
@@ -279,6 +258,27 @@
             customTextBox1.Texts = "";
             customTextBox1.UnderlinedStyle = false;
             // 
+            // dataGridView2
+            // 
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Dock = DockStyle.Bottom;
+            dataGridView2.Location = new Point(3, 411);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.RowHeadersWidth = 51;
+            dataGridView2.RowTemplate.Height = 29;
+            dataGridView2.Size = new Size(724, 246);
+            dataGridView2.TabIndex = 1;
+            // 
+            // tp_chucNangChiTiet
+            // 
+            tp_chucNangChiTiet.BackColor = SystemColors.Window;
+            tp_chucNangChiTiet.Location = new Point(4, 37);
+            tp_chucNangChiTiet.Name = "tp_chucNangChiTiet";
+            tp_chucNangChiTiet.Padding = new Padding(3);
+            tp_chucNangChiTiet.Size = new Size(730, 320);
+            tp_chucNangChiTiet.TabIndex = 1;
+            tp_chucNangChiTiet.Text = "Chi Tiết";
+            // 
             // PhanQuyenView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -292,11 +292,11 @@
             grb_quyen.ResumeLayout(false);
             tc_quyen.ResumeLayout(false);
             tp_quyenDanhSach.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             grb_chucNang.ResumeLayout(false);
             tc_chucNang.ResumeLayout(false);
             tp_chucNangDanhSach.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
         }
