@@ -8,5 +8,6 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
 {
 	public interface IPhanQuyenView
 	{
-	}
+        void LoadData(BindingSource listPermission, BindingSource listMethod);
+    }
 }

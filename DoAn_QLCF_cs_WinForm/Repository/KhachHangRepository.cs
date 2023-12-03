@@ -27,15 +27,27 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                         var khachhangModel = new KhachHangModel();
 
                         khachhangModel.Id = (int)reader["KhachHangId"];
+#pragma warning disable CS8601 // Possible null reference assignment.
                         khachhangModel.Name = reader["TenKhachHang"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
                         khachhangModel.Address = reader["DiaChi"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
                         khachhangModel.PhoneNumber = reader["SDT"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
                         khachhangModel.Email = reader["Email"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
                         khachhangModel.IsDelete = (bool)reader["IsDelete"];
                         khachhangModel.IdTypeOfCustomer = (int)reader["LoaiKhachHangId"];
                         khachhangModel.TimeCreateAccount = (DateTime)reader["ThoiGianTaoTk"];
+#pragma warning disable CS8601 // Possible null reference assignment.
                         khachhangModel.Account = reader["TaiKhoan"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
                         khachhangModel.Password = reader["MatKhau"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
                         List.Add(khachhangModel);
                     }
                 }

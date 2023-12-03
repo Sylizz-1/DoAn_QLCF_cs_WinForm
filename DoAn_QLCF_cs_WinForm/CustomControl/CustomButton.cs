@@ -10,6 +10,8 @@ namespace DoAn_QLCF_cs_WinForm.CustomControl
 {
 	public class CustomButton: Button
 	{
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 		public CustomButton() {
 			this.FlatStyle = FlatStyle.Flat;
 			this.FlatAppearance.BorderSize = 0;
@@ -19,6 +21,8 @@ namespace DoAn_QLCF_cs_WinForm.CustomControl
 			this.textHover = this.ForeColor;
 			
 		}
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
 		//Fields
 		private int borderSize = 0;
@@ -148,7 +152,9 @@ namespace DoAn_QLCF_cs_WinForm.CustomControl
 		protected override void OnHandleCreated(EventArgs e)
 		{
 			base.OnHandleCreated(e);
+#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
 			this.Parent.BackColorChanged += new EventHandler(Container_BackColorChanged);
+#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
 		}
 
 		private void Container_BackColorChanged(object sender, EventArgs e)

@@ -17,7 +17,9 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
         private IChiTietPhieuNhapRepository repositoryCTPN;
         private INhanVienRepository repositoryNV;
         private INccRepository repositoryNcc;
+#pragma warning disable CS0169 // The field 'NhapHangPresenter.repositoryNgl' is never used
         private INguyenLieuRepository repositoryNgl;
+#pragma warning restore CS0169 // The field 'NhapHangPresenter.repositoryNgl' is never used
         private BindingSource pnBindingSource;
         private BindingSource ctpnBindingSource;
         private BindingSource nvBindingSource;
@@ -29,7 +31,17 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
         private IEnumerable<NccModel> NccList;
 
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public NhapHangPresenter(INhapHangView view, IPhieuNhapRepository repoPN, IChiTietPhieuNhapRepository repositoryCTPN
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
             , INhanVienRepository repoNV, INccRepository repoNcc, INguyenLieuRepository repoNgl)
         {
             this.view = view;

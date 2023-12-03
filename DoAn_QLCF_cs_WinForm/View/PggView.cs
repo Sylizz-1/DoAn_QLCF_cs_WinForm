@@ -22,7 +22,9 @@ namespace DoAn_QLCF_cs_WinForm.View
             tabControl1.SizeMode = TabSizeMode.Fixed;
         }
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         private static PggView instance;
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public static IPggView GetInstance(Form parentContainer)
         {
 

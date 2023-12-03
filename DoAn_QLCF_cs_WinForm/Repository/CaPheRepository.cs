@@ -18,6 +18,7 @@ namespace DoAn_QLCF_cs_WinForm.Repository
 
 		public CaPheRepository(string connectionString) {
 			this.connectionString = connectionString;
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
 			string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
 			caPheImagePath = Path.Combine(path, "image\\caPhe");
 			nguyenLieuImagePath = Path.Combine(path, "image\\nguyenLieu");
@@ -103,11 +104,20 @@ namespace DoAn_QLCF_cs_WinForm.Repository
 					{
 						var cpModel = new CaPheModel();
 						cpModel.Id = (int)reader["CaPheId"];
+#pragma warning disable CS8601 // Possible null reference assignment.
 						cpModel.Ten = reader["TenCaPhe"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
 						cpModel.Gia = Convert.ToSingle(reader["Gia"]) ;
+#pragma warning disable CS8601 // Possible null reference assignment.
 						cpModel.MieuTa = reader["MieuTa"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
 						cpModel.XuatXu = reader["XuatXu"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8604 // Possible null reference argument.
 						string imgPath = Path.Combine(this.caPheImagePath, reader["HinhAnh"].ToString());
+#pragma warning restore CS8604 // Possible null reference argument.
+#pragma warning disable CS8601 // Possible null reference assignment.
 						cpModel.HinhAnh = Image.FromFile(imgPath) ?? null;
 						cpModel.HinhAnh.Tag = reader["HinhAnh"].ToString();
 						cpModel.IsDeleted = (bool)reader["IsDeleted"];

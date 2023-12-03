@@ -17,13 +17,18 @@ namespace DoAn_QLCF_cs_WinForm.View
 	public partial class CaPheView : Form, ICaPheView
 	{
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 		public CaPheView()
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 		{
 			InitializeComponent();
 			SetUpView();
 			BindingEvents();
 		}
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 		private static CaPheView instance;
 
 		public event EventHandler AcceptBtnEvent;

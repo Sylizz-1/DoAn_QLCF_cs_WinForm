@@ -23,12 +23,15 @@ namespace DoAn_QLCF_cs_WinForm
 
             string connectionString = ConfigurationManager.ConnectionStrings["sqlConnection"].ConnectionString;
 
-            ILoginView loginView = new LogInView();
-            ILoginRepository loginRepository = new LoginRepository(connectionString);
-            new LoginPresenter(loginView, loginRepository);
-            Application.Run((Form)loginView);
-            //Application.Run(new PhanQuyenView());
+            //ILoginView loginView = new LogInView();
+            //ILoginRepository loginRepository = new LoginRepository(connectionString);
+            //new LoginPresenter(loginView, loginRepository);
+            //Application.Run((Form)loginView);
 
+            IPhanQuyenView view = new PhanQuyenView();
+            IPhanQuyenRepository repo = new PhanQuyenRepository(connectionString);
+            new PhanQuyenPresenter(view, repo);
+            Application.Run((Form)view);
         }
     }
 }

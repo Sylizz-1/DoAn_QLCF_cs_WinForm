@@ -17,13 +17,16 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
 		private BindingSource bindingSource;
 		private IEnumerable<NhanVienModel> List;
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public NhanVienPresenter(INhanVienView view, INhanVienRepository repo)
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 		{
             this.view = view;
             this.repo = repo;
             bindingSource = new BindingSource();
             LoadNhanVienList();
             GetNhanVienId();
+            GetNhanVienQuyen();
         }
         private void LoadNhanVienList()
         {
@@ -37,6 +40,11 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             int txtId = repo.GetNextId();
             view.GetIdNhanVien(txtId);
 
+        }
+        private void GetNhanVienQuyen()
+        {
+            List<string> quyenList = repo.getQuyen();
+            view.GetQuyenNhanVien(quyenList);
         }
 
         public void Add()
