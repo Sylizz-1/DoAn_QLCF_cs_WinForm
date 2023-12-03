@@ -13,7 +13,9 @@ namespace DoAn_QLCF_cs_WinForm.CustomControl
 		private Form mdiForm;
 		private MdiClient ctlClient = new MdiClient();
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 		public MdiClientPanel()
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 		{
 			base.Controls.Add(this.ctlClient);
 		}
@@ -26,8 +28,12 @@ namespace DoAn_QLCF_cs_WinForm.CustomControl
 				{
 					this.mdiForm = new Form();
 					/// set the hidden ctlClient field which is used to determine if the form is an MDI form
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
 					System.Reflection.FieldInfo field = typeof(Form).GetField("ctlClient", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
 					field.SetValue(this.mdiForm, this.ctlClient);
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
 				}
 				return this.mdiForm;
 			}

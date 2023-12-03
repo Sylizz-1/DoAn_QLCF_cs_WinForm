@@ -12,5 +12,6 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
         NhanVienPresenter Presenter { get; set; }
         void LoadData(BindingSource list);
         void GetIdNhanVien(int id);
+        void GetQuyenNhanVien(List<string> quyenList);
     }
 }

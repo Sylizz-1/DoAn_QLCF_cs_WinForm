@@ -60,7 +60,9 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                         nhanVienModel.ArrAction = getArrAction(nhanVienModel.IdPermission);
                         return nhanVienModel;
                     }
+#pragma warning disable CS8603 // Possible null reference return.
                     return null;
+#pragma warning restore CS8603 // Possible null reference return.
                 }
             }
         }
@@ -91,7 +93,9 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                         khachHangModel.Password = reader.GetString("MatKhau");
                         return khachHangModel;
                     }
+#pragma warning disable CS8603 // Possible null reference return.
                     return null;
+#pragma warning restore CS8603 // Possible null reference return.
                 }
             }
         }

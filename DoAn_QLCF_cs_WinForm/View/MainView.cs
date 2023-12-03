@@ -38,7 +38,13 @@ namespace DoAn_QLCF_cs_WinForm.View
         public Form MainFormContainer { get => mainFormContainer; set => mainFormContainer = value; }
 
         // UI code
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public MainView(string connectionString, NhanVienModel employeeInfor)
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
             InitializeComponent();
             this.connectionString = connectionString;
@@ -175,12 +181,16 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         private void navLogOut_MouseEnter(object sender, EventArgs e)
         {
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
             (sender as Button).Image = (Image)(Properties.Resources.logoutflatwhite);
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
         }
 
         private void navLogOut_MouseLeave(object sender, EventArgs e)
         {
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
             (sender as Button).Image = (Image)(Properties.Resources.logoutflatred2);
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
         }
 
         private void LoadButtonNav()
@@ -238,9 +248,13 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         public static void SetDoubleBuffering(System.Windows.Forms.Control control, bool value)
         {
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             System.Reflection.PropertyInfo controlProperty = typeof(System.Windows.Forms.Control)
                 .GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
             controlProperty.SetValue(control, value, null);
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
         }
 
         private void timerLblTitle_Tick(object sender, EventArgs e)

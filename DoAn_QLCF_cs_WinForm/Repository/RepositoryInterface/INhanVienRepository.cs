@@ -12,5 +12,6 @@ namespace DoAn_QLCF_cs_WinForm.Repository.RepositoryInterface
         IEnumerable<NhanVienModel> GetAll();
 
         int GetNextId();
+        List<string> getQuyen();
     }
 }
