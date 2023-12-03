@@ -127,6 +127,9 @@
   <data name="icons8-hide-57" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-hide-57.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ingredientIcon64pxOrangeRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ingredientIcon64pxOrangeRed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="background_coffee_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background_coffee_2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -163,8 +166,8 @@
   <data name="importFlat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\importFlat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ingredientIcon64pxOrangeRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ingredientIcon64pxOrangeRed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ConfirmIcondarkcyan1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ConfirmIcondarkcyan1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="discount64pxnh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\discount64pxnh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -189,9 +192,6 @@
   </data>
   <data name="fileFla" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fileFla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DiscountIcon24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DiscountIcon24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_name_47" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-name-47.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -247,6 +247,9 @@
   <data name="permissionIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\permissionIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="employeeCrimS64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\employeeCrimS64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="addIconTeal16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\addIconTeal16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -283,14 +286,14 @@
   <data name="editIconTeal16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\editIconTeal16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ConfirmIcondarkcyan1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ConfirmIcondarkcyan1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="LoaiKhachHangNAV" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LoaiKhachHangNAV.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_email_47" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-email-47.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fixNLdarkcyan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fixNLdarkcyan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TaskIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TaskIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -306,6 +309,9 @@
   </data>
   <data name="coupon32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\coupon32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-eye-57" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-eye-57.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-user-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-user-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -328,8 +334,8 @@
   <data name="icons8_register_100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-register-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="employeeCrimS64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\employeeCrimS64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DiscountIcon24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DiscountIcon24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="coupon64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\coupon64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -394,7 +400,7 @@
   <data name="icons8_check_lock_47" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-check-lock-47.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-eye-57" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-eye-57.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fixNLWHITE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fixNLWHITE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

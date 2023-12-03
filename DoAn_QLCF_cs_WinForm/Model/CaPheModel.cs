@@ -31,6 +31,6 @@ namespace DoAn_QLCF_cs_WinForm.Model
 		
 
 		[DisplayName("IsDelete")]
-		public bool IsDelete { get; set; }
+		public bool IsDeleted { get; set; }
 	}
 }

@@ -523,6 +523,26 @@ namespace DoAn_QLCF_cs_WinForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fixNLdarkcyan {
+            get {
+                object obj = ResourceManager.GetObject("fixNLdarkcyan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fixNLWHITE {
+            get {
+                object obj = ResourceManager.GetObject("fixNLWHITE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_birthday_39 {
             get {
                 object obj = ResourceManager.GetObject("icons8_birthday_39", resourceCulture);
