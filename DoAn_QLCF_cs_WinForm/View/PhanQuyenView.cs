@@ -30,9 +30,13 @@ namespace DoAn_QLCF_cs_WinForm.View
             tc_quyen.SizeMode = TabSizeMode.Fixed;
         }
 
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+        public void LoadData(BindingSource listPermission, BindingSource listMethod)
+        {
+            this.dtgrv_quyen.DataSource = listPermission;
+            this.dtgrv_chucNang.DataSource = listMethod;
+        }
+
         private static PhanQuyenView instance;
-#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public static IPhanQuyenView GetInstance(Form parentContainer)
         {
 
@@ -52,5 +56,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             instance.Show();
             return instance;
         }
+
+
     }
 }
