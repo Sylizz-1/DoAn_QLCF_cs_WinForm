@@ -120,28 +120,103 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
 
 			if (!this.view.IsEdited)
 			{
+
 				bool result = repository.Add(cpModel);
 				bool result2 = repository.UpdateChiTietNguyenLieu(id, cpnlList);
 				if (!result)
 				{
 					MessageBox.Show("Thêm thất bại!!!");
 				}
+				
 				if(!result2)
 				{
 					MessageBox.Show("Cập nhật chi tiết nguyên liệu cho cà phê thất bại!!!");
 				}
+
+				if (result && result2 )
+				{
+					MessageBox.Show("Thêm thành công!!!");
+				}
+
+				int lastId = repository.GetLastId();
+				this.view.CapheId = (++lastId).ToString();
+				this.view.MieuTaTxt = "";
+				this.view.GiaTienTxt = "";
+				this.view.TenTxt = "";
+				this.view.XuatXuTxt = "";
+				this.view.IsDeleted = false;
+				this.view.CaPheImage = Properties.Resources.defaultImage3;
+				this.GetNguyenLieuOfCaPhe(lastId);
+
+				LoadCaPheList();
+				return;
+			}
+			else
+			{
+				CaPheModel cpModelTemp = (CaPheModel)this.view.CaPheDg.CurrentRow.DataBoundItem;
+				cpModel.Id = cpModelTemp.Id;
+					
+				bool result = repository.Update(cpModel);
+				bool result2 = repository.UpdateChiTietNguyenLieu(cpModel.Id, cpnlList);
+				if (!result)
+				{
+					MessageBox.Show("Cập nhật thất bại!!!");
+				}
+
+				if (!result2)
+				{
+					MessageBox.Show("Cập nhật chi tiết nguyên liệu cho cà phê thất bại!!!");
+				}
+
+				if (result && result2)
+				{
+					MessageBox.Show("Cập nhật thành công!!!");
+				}
+
+				LoadCaPheList();
 				return;
 			}
 		}
 		
 		private void Delete(object? sender, EventArgs e)
 		{
-			throw new NotImplementedException();
+			DialogResult dialogResult = MessageBox.Show("Bạn có chắc muốn xóa không?", "Xác nhận xóa!!!", MessageBoxButtons.YesNo);
+			if (dialogResult == DialogResult.Yes)
+			{
+				CaPheModel cpModel = (CaPheModel)this.view.CaPheDg.CurrentRow.DataBoundItem;
+				bool result= repository.Delete(cpModel.Id);
+				if(result)
+				{
+					MessageBox.Show("Xóa thành công!!!");
+					LoadCaPheList();
+				}
+				else
+				{
+					MessageBox.Show("Xóa thành công!!!");
+				}
+			}
+			else if (dialogResult == DialogResult.No)
+			{
+				return;
+			}
+			
 		}
 
 		private void SearchChange(object? sender, EventArgs e)
 		{
-			throw new NotImplementedException();
+			string valueSearch = this.view.SearchValue;
+
+			if (string.IsNullOrEmpty(valueSearch) || string.IsNullOrWhiteSpace(valueSearch)) {
+				caPheList = repository.GetAll();
+			}
+			else
+			{
+				caPheList = repository.GetByValue(valueSearch);
+			}
+			
+			cpBindingSource.DataSource = caPheList;
+			view.LoadData(cpBindingSource);
+
 		}
 
 		private void Edit(object? sender, EventArgs e)
@@ -155,6 +230,16 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
 			this.view.IsDeleted = cpModel.IsDeleted;
 			this.view.CaPheImage = cpModel.HinhAnh;
 
+
+			string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+			string caPheImagePath = Path.Combine(path, "image\\caPhe");
+
+			string fileName = Path.Combine(caPheImagePath, cpModel.HinhAnh.Tag.ToString());
+			if(!File.Exists(fileName))
+			{
+				MessageBox.Show(fileName);
+
+			}
 			this.GetNguyenLieuOfCaPhe(cpModel.Id);
 
 		}
@@ -169,7 +254,7 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
 			this.view.XuatXuTxt = "";
 			this.view.IsDeleted = false;
 			this.view.CaPheImage = Properties.Resources.defaultImage3;
-			this.GetNguyenLieuOfCaPhe(++lastId);
+			this.GetNguyenLieuOfCaPhe(lastId);
 
 		}
 

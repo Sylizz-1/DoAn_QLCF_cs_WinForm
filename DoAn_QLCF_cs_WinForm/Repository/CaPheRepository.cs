@@ -18,7 +18,6 @@ namespace DoAn_QLCF_cs_WinForm.Repository
 
 		public CaPheRepository(string connectionString) {
 			this.connectionString = connectionString;
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
 			string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
 			caPheImagePath = Path.Combine(path, "image\\caPhe");
 			nguyenLieuImagePath = Path.Combine(path, "image\\nguyenLieu");
@@ -26,6 +25,8 @@ namespace DoAn_QLCF_cs_WinForm.Repository
 
 		public bool Add(CaPheModel obj)
 		{
+			string modifiedFileName = "";
+
 			try
 			{
 				using (var connection = new SqlConnection(this.connectionString))
@@ -46,8 +47,10 @@ namespace DoAn_QLCF_cs_WinForm.Repository
 					cmd.Parameters.AddWithValue("@XuatXu", obj.XuatXu);
 
 					// save image to project
-					SaveImage(obj.HinhAnh);
-					cmd.Parameters.AddWithValue("@HinhAnh", obj.HinhAnh.Tag.ToString());
+
+					modifiedFileName = SaveImage(obj.HinhAnh);
+
+					cmd.Parameters.AddWithValue("@HinhAnh", modifiedFileName);
 					cmd.Parameters.AddWithValue("@IsDeleted", obj.IsDeleted);
 
 					if (cmd.ExecuteNonQuery() > 0)
@@ -104,20 +107,17 @@ namespace DoAn_QLCF_cs_WinForm.Repository
 					{
 						var cpModel = new CaPheModel();
 						cpModel.Id = (int)reader["CaPheId"];
-#pragma warning disable CS8601 // Possible null reference assignment.
+
 						cpModel.Ten = reader["TenCaPhe"].ToString();
-#pragma warning restore CS8601 // Possible null reference assignment.
+
 						cpModel.Gia = Convert.ToSingle(reader["Gia"]) ;
-#pragma warning disable CS8601 // Possible null reference assignment.
+
 						cpModel.MieuTa = reader["MieuTa"].ToString();
-#pragma warning restore CS8601 // Possible null reference assignment.
-#pragma warning disable CS8601 // Possible null reference assignment.
+
 						cpModel.XuatXu = reader["XuatXu"].ToString();
-#pragma warning restore CS8601 // Possible null reference assignment.
-#pragma warning disable CS8604 // Possible null reference argument.
+
 						string imgPath = Path.Combine(this.caPheImagePath, reader["HinhAnh"].ToString());
-#pragma warning restore CS8604 // Possible null reference argument.
-#pragma warning disable CS8601 // Possible null reference assignment.
+
 						cpModel.HinhAnh = Image.FromFile(imgPath) ?? null;
 						cpModel.HinhAnh.Tag = reader["HinhAnh"].ToString();
 						cpModel.IsDeleted = (bool)reader["IsDeleted"];
@@ -170,7 +170,52 @@ namespace DoAn_QLCF_cs_WinForm.Repository
 
 		public IEnumerable<CaPheModel> GetByValue(string value)
 		{
-			throw new NotImplementedException();
+			int idSearch = 0,giaSearch = 0;
+			Int32.TryParse(value, out idSearch);
+			Int32.TryParse(value, out giaSearch);
+			// Tạo một danh sách Caphemodel
+			var cpList = new List<CaPheModel>();
+			using (var connection = new SqlConnection(this.connectionString))
+			using (var cmd = connection.CreateCommand())
+			{ // Gia LIKE '%' +  @GiaSearch + '%'
+				connection.Open();
+				cmd.Connection = connection;
+				cmd.CommandText = "select * from CaPhe where CaPheId = @IdSearch" +
+					" or TenCaPhe LIKE '%' +  @Value + '%'" +
+					" or MieuTa LIKE '%' +  @Value + '%'" +
+					" or XuatXu LIKE '%' +  @Value + '%' " +
+					"or Gia = @GiaSearch  order by CaPheId asc";
+				cmd.Parameters.AddWithValue("@Value", value);
+				cmd.Parameters.AddWithValue("@IdSearch", idSearch);
+				cmd.Parameters.AddWithValue("@GiaSearch", giaSearch);
+
+				using (var reader = cmd.ExecuteReader())
+				{
+					while (reader.Read())
+					{
+						var cpModel = new CaPheModel();
+						cpModel.Id = (int)reader["CaPheId"];
+
+						cpModel.Ten = reader["TenCaPhe"].ToString();
+
+						cpModel.Gia = Convert.ToSingle(reader["Gia"]);
+
+						cpModel.MieuTa = reader["MieuTa"].ToString();
+
+						cpModel.XuatXu = reader["XuatXu"].ToString();
+
+						string imgPath = Path.Combine(this.caPheImagePath, reader["HinhAnh"].ToString());
+
+						cpModel.HinhAnh = Image.FromFile(imgPath) ?? null;
+						cpModel.HinhAnh.Tag = reader["HinhAnh"].ToString();
+						cpModel.IsDeleted = (bool)reader["IsDeleted"];
+
+						cpList.Add(cpModel);
+					}
+				}
+
+				return cpList;
+			}
 		}
 
 		public int GetLastId()
@@ -244,6 +289,8 @@ namespace DoAn_QLCF_cs_WinForm.Repository
 
 		public bool Update(CaPheModel obj)
 		{
+			string modifiedFileName;
+
 			try
 			{
 				using (var connection = new SqlConnection(this.connectionString))
@@ -261,8 +308,16 @@ namespace DoAn_QLCF_cs_WinForm.Repository
 					cmd.Parameters.AddWithValue("@XuatXu", obj.XuatXu);
 
 					// save image to project
-					SaveImage(obj.HinhAnh);
-					cmd.Parameters.AddWithValue("@HinhAnh", obj.HinhAnh.Tag.ToString());
+					modifiedFileName = Path.Combine(caPheImagePath, obj.HinhAnh.Tag.ToString());
+					if (!File.Exists(modifiedFileName))
+					{
+						modifiedFileName = SaveImage(obj.HinhAnh);
+					}
+					else
+					{
+						modifiedFileName = obj.HinhAnh.Tag.ToString();
+					}
+					cmd.Parameters.AddWithValue("@HinhAnh", modifiedFileName);
 					cmd.Parameters.AddWithValue("@IsDelete", obj.IsDeleted);
 
 					if (cmd.ExecuteNonQuery() > 0)
@@ -296,7 +351,7 @@ namespace DoAn_QLCF_cs_WinForm.Repository
 
 					foreach (CaPheNguyenLieuModel cpnlModel in cpnlList)
 					{
-						/*cmd.Parameters.Clear();*/
+						cmd.Parameters.Clear();
 						cmd.Parameters.AddWithValue("@CaPheId", caPheId);
 						cmd.Parameters.AddWithValue("@NguyenLieuId", cpnlModel.NguyenLieuId);
 						cmd.Parameters.AddWithValue("@KhoiLuong", cpnlModel.KhoiLuong);
@@ -315,18 +370,29 @@ namespace DoAn_QLCF_cs_WinForm.Repository
 
 		}
 
-		private void SaveImage(Image img)
+		private string SaveImage(Image img)
 		{
-			string filePath = Path.Combine(this.caPheImagePath, img.Tag.ToString());
-/*			if (File.Exists(filePath))
-			{
-				File.Delete(filePath);
-			}*/
+			string fileName = img.Tag.ToString();
+			string formattedDateTime = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+			string modifiedFilename;
+			string filePath = "";
+
+			int indexOfDot = fileName.LastIndexOf(".");
+
+			if (indexOfDot != -1)
+				// Insert the new string before the last "."
+				 modifiedFilename = fileName.Insert(indexOfDot, "_" + formattedDateTime);
+			else
+				 modifiedFilename = fileName.Insert(fileName.Length ,"_" + formattedDateTime);
+
+			filePath = Path.Combine(this.caPheImagePath,modifiedFilename);
 
 			using (Image imgCopy = img)
 			{
 				imgCopy.Save(filePath);
 			}
+
+			return modifiedFilename;
 		}
 			
 	}

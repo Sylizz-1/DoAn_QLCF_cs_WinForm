@@ -63,7 +63,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 			editBtn.Click += delegate { EditBtnEvent?.Invoke(this, EventArgs.Empty); };
 			acceptCfBtn.Click += delegate { AcceptBtnEvent?.Invoke(this, EventArgs.Empty); };
 			delBtn.Click += delegate { DeleteBtnEvent?.Invoke(this, EventArgs.Empty); };
-			searchTxt.TextChanged += delegate { SearchTxtEvent?.Invoke(this, EventArgs.Empty); };
+			searchTxt._TextChanged += delegate { SearchTxtEvent?.Invoke(this, EventArgs.Empty); };
 			addCpnlBtn.Click += delegate { AddNlBtnEvent?.Invoke(this, EventArgs.Empty); };
 			editCpnlBtn.Click += delegate { EditNlBtnEvent?.Invoke(this, EventArgs.Empty); };
 			delCpnlBtn.Click += delegate { DeleteNlBtnEvent?.Invoke(this, EventArgs.Empty); };
