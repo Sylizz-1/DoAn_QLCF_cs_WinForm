@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle37 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle38 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle39 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle40 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle41 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle42 = new DataGridViewCellStyle();
             grb_quyen = new GroupBox();
             tc_quyen = new TabControl();
             tp_quyenDanhSach = new TabPage();
+            button = new CustomControl.CustomButton();
             dtgrv_quyen = new DataGridView();
             delBtn = new CustomControl.CustomButton();
             editBtn = new CustomControl.CustomButton();
@@ -55,11 +56,19 @@
             customButton1 = new CustomControl.CustomButton();
             customTextBox1 = new CustomControl.CustomTextBox();
             tp_chucNangChiTiet = new TabPage();
-            button = new CustomControl.CustomButton();
+            customButton6 = new CustomControl.CustomButton();
+            idTxt = new CustomControl.CustomTextBox();
+            label1 = new Label();
+            customTextBox2 = new CustomControl.CustomTextBox();
+            label2 = new Label();
+            customTextBox3 = new CustomControl.CustomTextBox();
+            label3 = new Label();
+            groupBox1 = new GroupBox();
             grb_quyen.SuspendLayout();
             tc_quyen.SuspendLayout();
             tp_quyenDanhSach.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtgrv_quyen).BeginInit();
+            tp_quyenChiTiet.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             grb_chucNang.SuspendLayout();
             tc_chucNang.SuspendLayout();
@@ -108,6 +117,36 @@
             tp_quyenDanhSach.TabIndex = 0;
             tp_quyenDanhSach.Text = "Danh Sách";
             // 
+            // button
+            // 
+            button.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button.BackColor = SystemColors.Control;
+            button.BackgroundColor = SystemColors.Control;
+            button.BorderColor = Color.DarkCyan;
+            button.BorderRadius = 15;
+            button.BorderSize = 2;
+            button.Cursor = Cursors.Hand;
+            button.EnabledTextHover = true;
+            button.FlatAppearance.BorderSize = 0;
+            button.FlatAppearance.MouseDownBackColor = Color.Teal;
+            button.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
+            button.FlatStyle = FlatStyle.Flat;
+            button.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button.ForeColor = Color.DarkCyan;
+            button.Image = Properties.Resources.detailsIcon16px;
+            button.ImageAlign = ContentAlignment.MiddleRight;
+            button.ImageHover = Properties.Resources.detailsIcon16pxWHITE;
+            button.Location = new Point(586, 63);
+            button.Margin = new Padding(3, 4, 3, 4);
+            button.Name = "button";
+            button.Size = new Size(138, 51);
+            button.TabIndex = 17;
+            button.Text = "  Chi Tiết";
+            button.TextColor = Color.DarkCyan;
+            button.TextHover = Color.White;
+            button.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button.UseVisualStyleBackColor = false;
+            // 
             // dtgrv_quyen
             // 
             dtgrv_quyen.AllowUserToAddRows = false;
@@ -117,24 +156,24 @@
             dtgrv_quyen.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dtgrv_quyen.BorderStyle = BorderStyle.None;
             dtgrv_quyen.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.DarkCyan;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dtgrv_quyen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle37.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle37.BackColor = Color.DarkCyan;
+            dataGridViewCellStyle37.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle37.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle37.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle37.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle37.WrapMode = DataGridViewTriState.True;
+            dtgrv_quyen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle37;
             dtgrv_quyen.ColumnHeadersHeight = 30;
             dtgrv_quyen.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dtgrv_quyen.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle38.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle38.BackColor = SystemColors.Window;
+            dataGridViewCellStyle38.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle38.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle38.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle38.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle38.WrapMode = DataGridViewTriState.False;
+            dtgrv_quyen.DefaultCellStyle = dataGridViewCellStyle38;
             dtgrv_quyen.EnableHeadersVisualStyles = false;
             dtgrv_quyen.GridColor = Color.DarkCyan;
             dtgrv_quyen.ImeMode = ImeMode.NoControl;
@@ -144,8 +183,8 @@
             dtgrv_quyen.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dtgrv_quyen.RowHeadersVisible = false;
             dtgrv_quyen.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dtgrv_quyen.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle39.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dtgrv_quyen.RowsDefaultCellStyle = dataGridViewCellStyle39;
             dtgrv_quyen.RowTemplate.Height = 25;
             dtgrv_quyen.RowTemplate.ReadOnly = true;
             dtgrv_quyen.Size = new Size(724, 477);
@@ -290,6 +329,14 @@
             // tp_quyenChiTiet
             // 
             tp_quyenChiTiet.BackColor = SystemColors.Window;
+            tp_quyenChiTiet.Controls.Add(groupBox1);
+            tp_quyenChiTiet.Controls.Add(customTextBox3);
+            tp_quyenChiTiet.Controls.Add(label3);
+            tp_quyenChiTiet.Controls.Add(customTextBox2);
+            tp_quyenChiTiet.Controls.Add(label2);
+            tp_quyenChiTiet.Controls.Add(idTxt);
+            tp_quyenChiTiet.Controls.Add(label1);
+            tp_quyenChiTiet.Controls.Add(customButton6);
             tp_quyenChiTiet.Location = new Point(4, 37);
             tp_quyenChiTiet.Name = "tp_quyenChiTiet";
             tp_quyenChiTiet.Padding = new Padding(3);
@@ -363,24 +410,24 @@
             dtgrv_chucNang.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dtgrv_chucNang.BorderStyle = BorderStyle.None;
             dtgrv_chucNang.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.DarkCyan;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dtgrv_chucNang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle40.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle40.BackColor = Color.DarkCyan;
+            dataGridViewCellStyle40.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle40.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle40.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle40.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle40.WrapMode = DataGridViewTriState.True;
+            dtgrv_chucNang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle40;
             dtgrv_chucNang.ColumnHeadersHeight = 30;
             dtgrv_chucNang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = SystemColors.Window;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dtgrv_chucNang.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle41.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle41.BackColor = SystemColors.Window;
+            dataGridViewCellStyle41.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle41.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle41.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle41.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle41.WrapMode = DataGridViewTriState.False;
+            dtgrv_chucNang.DefaultCellStyle = dataGridViewCellStyle41;
             dtgrv_chucNang.EnableHeadersVisualStyles = false;
             dtgrv_chucNang.GridColor = Color.DarkCyan;
             dtgrv_chucNang.ImeMode = ImeMode.NoControl;
@@ -390,8 +437,8 @@
             dtgrv_chucNang.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dtgrv_chucNang.RowHeadersVisible = false;
             dtgrv_chucNang.RowHeadersWidth = 51;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dtgrv_chucNang.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle42.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dtgrv_chucNang.RowsDefaultCellStyle = dataGridViewCellStyle42;
             dtgrv_chucNang.RowTemplate.Height = 25;
             dtgrv_chucNang.RowTemplate.ReadOnly = true;
             dtgrv_chucNang.Size = new Size(724, 477);
@@ -543,35 +590,138 @@
             tp_chucNangChiTiet.TabIndex = 1;
             tp_chucNangChiTiet.Text = "Chi Tiết";
             // 
-            // button
+            // customButton6
             // 
-            button.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button.BackColor = SystemColors.Control;
-            button.BackgroundColor = SystemColors.Control;
-            button.BorderColor = Color.DarkCyan;
-            button.BorderRadius = 15;
-            button.BorderSize = 2;
-            button.Cursor = Cursors.Hand;
-            button.EnabledTextHover = true;
-            button.FlatAppearance.BorderSize = 0;
-            button.FlatAppearance.MouseDownBackColor = Color.Teal;
-            button.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
-            button.FlatStyle = FlatStyle.Flat;
-            button.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button.ForeColor = Color.DarkCyan;
-            button.Image = Properties.Resources.detailsIcon16px;
-            button.ImageAlign = ContentAlignment.MiddleRight;
-            button.ImageHover = Properties.Resources.detailsIcon16pxWHITE;
-            button.Location = new Point(586, 63);
-            button.Margin = new Padding(3, 4, 3, 4);
-            button.Name = "button";
-            button.Size = new Size(138, 51);
-            button.TabIndex = 17;
-            button.Text = "  Chi Tiết";
-            button.TextColor = Color.DarkCyan;
-            button.TextHover = Color.White;
-            button.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button.UseVisualStyleBackColor = false;
+            customButton6.BackColor = Color.Transparent;
+            customButton6.BackgroundColor = Color.Transparent;
+            customButton6.BorderColor = Color.PaleVioletRed;
+            customButton6.BorderRadius = 20;
+            customButton6.BorderSize = 0;
+            customButton6.Cursor = Cursors.Hand;
+            customButton6.EnabledTextHover = false;
+            customButton6.FlatAppearance.BorderSize = 0;
+            customButton6.FlatAppearance.MouseDownBackColor = Color.Teal;
+            customButton6.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
+            customButton6.FlatStyle = FlatStyle.Flat;
+            customButton6.ForeColor = Color.White;
+            customButton6.Image = Properties.Resources.arrowreturn32pxBlack1;
+            customButton6.ImageHover = Properties.Resources.arrowreturn32pxWhite1;
+            customButton6.Location = new Point(6, 4);
+            customButton6.Margin = new Padding(3, 4, 3, 4);
+            customButton6.Name = "customButton6";
+            customButton6.Size = new Size(72, 55);
+            customButton6.TabIndex = 16;
+            customButton6.TextColor = Color.White;
+            customButton6.TextHover = Color.White;
+            customButton6.UseVisualStyleBackColor = false;
+            // 
+            // idTxt
+            // 
+            idTxt.BackColor = SystemColors.Window;
+            idTxt.BorderColor = Color.Silver;
+            idTxt.BorderFocusColor = Color.DarkCyan;
+            idTxt.BorderRadius = 13;
+            idTxt.BorderSize = 2;
+            idTxt.Enabled = false;
+            idTxt.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            idTxt.ForeColor = Color.DimGray;
+            idTxt.Location = new Point(27, 101);
+            idTxt.Margin = new Padding(3, 4, 3, 4);
+            idTxt.Multiline = false;
+            idTxt.Name = "idTxt";
+            idTxt.Padding = new Padding(10, 12, 8, 9);
+            idTxt.PasswordChar = false;
+            idTxt.PlaceholderColor = Color.DarkGray;
+            idTxt.PlaceholderText = "Nhập ID....";
+            idTxt.Size = new Size(279, 52);
+            idTxt.TabIndex = 18;
+            idTxt.Texts = "";
+            idTxt.UnderlinedStyle = false;
+            // 
+            // label1
+            // 
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(2, 52);
+            label1.Name = "label1";
+            label1.Size = new Size(121, 68);
+            label1.TabIndex = 17;
+            label1.Text = "Quyền ID";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // customTextBox2
+            // 
+            customTextBox2.BackColor = SystemColors.Window;
+            customTextBox2.BorderColor = Color.Silver;
+            customTextBox2.BorderFocusColor = Color.DarkCyan;
+            customTextBox2.BorderRadius = 13;
+            customTextBox2.BorderSize = 2;
+            customTextBox2.Enabled = false;
+            customTextBox2.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            customTextBox2.ForeColor = Color.DimGray;
+            customTextBox2.Location = new Point(27, 212);
+            customTextBox2.Margin = new Padding(3, 4, 3, 4);
+            customTextBox2.Multiline = false;
+            customTextBox2.Name = "customTextBox2";
+            customTextBox2.Padding = new Padding(10, 12, 8, 9);
+            customTextBox2.PasswordChar = false;
+            customTextBox2.PlaceholderColor = Color.DarkGray;
+            customTextBox2.PlaceholderText = "Nhập Nội Dung Quyền...";
+            customTextBox2.Size = new Size(279, 52);
+            customTextBox2.TabIndex = 20;
+            customTextBox2.Texts = "";
+            customTextBox2.UnderlinedStyle = false;
+            // 
+            // label2
+            // 
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(6, 157);
+            label2.Name = "label2";
+            label2.Size = new Size(175, 68);
+            label2.TabIndex = 19;
+            label2.Text = "Nội Dung Quyền";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // customTextBox3
+            // 
+            customTextBox3.BackColor = SystemColors.Window;
+            customTextBox3.BorderColor = Color.Silver;
+            customTextBox3.BorderFocusColor = Color.DarkCyan;
+            customTextBox3.BorderRadius = 13;
+            customTextBox3.BorderSize = 2;
+            customTextBox3.Enabled = false;
+            customTextBox3.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            customTextBox3.ForeColor = Color.DimGray;
+            customTextBox3.Location = new Point(335, 101);
+            customTextBox3.Margin = new Padding(3, 4, 3, 4);
+            customTextBox3.Multiline = false;
+            customTextBox3.Name = "customTextBox3";
+            customTextBox3.Padding = new Padding(10, 12, 8, 9);
+            customTextBox3.PasswordChar = false;
+            customTextBox3.PlaceholderColor = Color.DarkGray;
+            customTextBox3.PlaceholderText = "Nhập Tên Quyền...";
+            customTextBox3.Size = new Size(279, 52);
+            customTextBox3.TabIndex = 22;
+            customTextBox3.Texts = "";
+            customTextBox3.UnderlinedStyle = false;
+            // 
+            // label3
+            // 
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(312, 52);
+            label3.Name = "label3";
+            label3.Size = new Size(155, 68);
+            label3.TabIndex = 21;
+            label3.Text = "Tên Quyền";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Location = new Point(6, 280);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(721, 377);
+            groupBox1.TabIndex = 23;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Chức Năng";
             // 
             // PhanQuyenView
             // 
@@ -587,6 +737,7 @@
             tc_quyen.ResumeLayout(false);
             tp_quyenDanhSach.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dtgrv_quyen).EndInit();
+            tp_quyenChiTiet.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             grb_chucNang.ResumeLayout(false);
             tc_chucNang.ResumeLayout(false);
@@ -619,5 +770,13 @@
         private DataGridView dtgrv_quyen;
         private DataGridView dtgrv_chucNang;
         private CustomControl.CustomButton button;
+        private CustomControl.CustomButton customButton6;
+        private CustomControl.CustomTextBox customTextBox3;
+        private Label label3;
+        private CustomControl.CustomTextBox customTextBox2;
+        private Label label2;
+        private CustomControl.CustomTextBox idTxt;
+        private Label label1;
+        private GroupBox groupBox1;
     }
 }

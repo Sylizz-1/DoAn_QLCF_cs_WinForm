@@ -56,7 +56,5 @@ namespace DoAn_QLCF_cs_WinForm.View
             instance.Show();
             return instance;
         }
-
-
     }
 }
