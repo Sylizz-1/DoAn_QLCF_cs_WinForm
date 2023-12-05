@@ -9,15 +9,16 @@ namespace DoAn_QLCF_cs_WinForm.Repository.RepositoryInterface
 {
     public interface IChiTietPhieuNhapRepository
     {
-        void Add(ChiTietPhieuNhapModel obj);
-        void Update(ChiTietPhieuNhapModel obj);
-        void Delete(int id);
-        int GetNextId();
+        bool Add(ChiTietPhieuNhapModel obj);
+        bool Update(ChiTietPhieuNhapModel obj);
+        bool Delete(int id);
+        int GetMaxId();
         IEnumerable<ChiTietPhieuNhapModel> GetAll();
 
-        IEnumerable<ChiTietPhieuNhapModel> GetByValue(string value);
+        List<ChiTietPhieuNhapModel> GetByValue(string pnId, string nglId, string klg, string dg);
 
-        ChiTietPhieuNhapModel GetById(int id);
+        List<ChiTietPhieuNhapModel> GetById(int id);
+        ChiTietPhieuNhapModel GetByIdNgl(int id);
         bool IsExit(int id);
     }
 }

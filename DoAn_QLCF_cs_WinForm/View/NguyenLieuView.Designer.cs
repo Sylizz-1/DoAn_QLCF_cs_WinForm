@@ -33,6 +33,7 @@
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             tcNgl = new TabControl();
             listTabPage = new TabPage();
+            btnFindNgl = new CustomControl.CustomButton();
             gbSort = new GroupBox();
             groupBox5 = new GroupBox();
             rbInfoDec = new RadioButton();
@@ -56,14 +57,13 @@
             filterBtn = new CustomControl.CustomButton();
             sortBtn = new CustomControl.CustomButton();
             dgvNgl = new DataGridView();
-            customButton2 = new CustomControl.CustomButton();
             delBtn = new CustomControl.CustomButton();
             editBtn = new CustomControl.CustomButton();
             addBtn = new CustomControl.CustomButton();
-            searchTxt = new CustomControl.CustomTextBox();
+            searchNglTxt = new CustomControl.CustomTextBox();
             detailTabPage = new TabPage();
             checkboxIsDelete = new CheckBox();
-            label6 = new Label();
+            lbIsDelete = new Label();
             HuyBtn = new CustomControl.CustomButton();
             xacNhanBtn = new CustomControl.CustomButton();
             label7 = new Label();
@@ -108,16 +108,16 @@
             // 
             // listTabPage
             // 
+            listTabPage.Controls.Add(btnFindNgl);
             listTabPage.Controls.Add(gbSort);
             listTabPage.Controls.Add(resetBtn);
             listTabPage.Controls.Add(filterBtn);
             listTabPage.Controls.Add(sortBtn);
             listTabPage.Controls.Add(dgvNgl);
-            listTabPage.Controls.Add(customButton2);
             listTabPage.Controls.Add(delBtn);
             listTabPage.Controls.Add(editBtn);
             listTabPage.Controls.Add(addBtn);
-            listTabPage.Controls.Add(searchTxt);
+            listTabPage.Controls.Add(searchNglTxt);
             listTabPage.Location = new Point(4, 34);
             listTabPage.Margin = new Padding(4);
             listTabPage.Name = "listTabPage";
@@ -126,6 +126,31 @@
             listTabPage.TabIndex = 0;
             listTabPage.Text = "Danh Sach";
             listTabPage.UseVisualStyleBackColor = true;
+            // 
+            // btnFindNgl
+            // 
+            btnFindNgl.BackColor = Color.Transparent;
+            btnFindNgl.BackgroundColor = Color.Transparent;
+            btnFindNgl.BorderColor = Color.PaleVioletRed;
+            btnFindNgl.BorderRadius = 15;
+            btnFindNgl.BorderSize = 0;
+            btnFindNgl.Cursor = Cursors.Hand;
+            btnFindNgl.EnabledTextHover = false;
+            btnFindNgl.FlatAppearance.BorderSize = 0;
+            btnFindNgl.FlatAppearance.MouseOverBackColor = Color.FromArgb(50, 64, 64, 64);
+            btnFindNgl.FlatStyle = FlatStyle.Flat;
+            btnFindNgl.ForeColor = Color.White;
+            btnFindNgl.Image = Properties.Resources.findIcon16px;
+            btnFindNgl.ImageHover = null;
+            btnFindNgl.Location = new Point(332, 16);
+            btnFindNgl.Margin = new Padding(4, 5, 4, 5);
+            btnFindNgl.Name = "btnFindNgl";
+            btnFindNgl.Size = new Size(40, 40);
+            btnFindNgl.TabIndex = 31;
+            btnFindNgl.TextColor = Color.White;
+            btnFindNgl.TextHover = Color.White;
+            btnFindNgl.UseVisualStyleBackColor = false;
+            btnFindNgl.Click += btnFindNgl_Click;
             // 
             // gbSort
             // 
@@ -485,29 +510,7 @@
             dgvNgl.Size = new Size(1522, 537);
             dgvNgl.TabIndex = 22;
             dgvNgl.CellClick += dgvNgl_CellClick;
-            // 
-            // customButton2
-            // 
-            customButton2.BackColor = Color.Transparent;
-            customButton2.BackgroundColor = Color.Transparent;
-            customButton2.BorderColor = Color.PaleVioletRed;
-            customButton2.BorderRadius = 15;
-            customButton2.BorderSize = 0;
-            customButton2.Cursor = Cursors.Hand;
-            customButton2.EnabledTextHover = false;
-            customButton2.FlatAppearance.BorderSize = 0;
-            customButton2.FlatAppearance.MouseOverBackColor = Color.FromArgb(50, 64, 64, 64);
-            customButton2.FlatStyle = FlatStyle.Flat;
-            customButton2.ForeColor = Color.White;
-            customButton2.ImageHover = null;
-            customButton2.Location = new Point(332, 15);
-            customButton2.Margin = new Padding(4, 5, 4, 5);
-            customButton2.Name = "customButton2";
-            customButton2.Size = new Size(50, 46);
-            customButton2.TabIndex = 15;
-            customButton2.TextColor = Color.White;
-            customButton2.TextHover = Color.White;
-            customButton2.UseVisualStyleBackColor = false;
+            dgvNgl.CellFormatting += dgvNgl_CellFormatting;
             // 
             // delBtn
             // 
@@ -601,32 +604,32 @@
             addBtn.UseVisualStyleBackColor = false;
             addBtn.Click += addBtn_Click;
             // 
-            // searchTxt
+            // searchNglTxt
             // 
-            searchTxt.BackColor = SystemColors.Window;
-            searchTxt.BorderColor = Color.Silver;
-            searchTxt.BorderFocusColor = Color.DarkCyan;
-            searchTxt.BorderRadius = 15;
-            searchTxt.BorderSize = 2;
-            searchTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            searchTxt.ForeColor = Color.DimGray;
-            searchTxt.Location = new Point(10, 9);
-            searchTxt.Margin = new Padding(4, 5, 4, 5);
-            searchTxt.Multiline = false;
-            searchTxt.Name = "searchTxt";
-            searchTxt.Padding = new Padding(12, 11, 58, 11);
-            searchTxt.PasswordChar = false;
-            searchTxt.PlaceholderColor = Color.DarkGray;
-            searchTxt.PlaceholderText = "Tìm Kiếm ...";
-            searchTxt.Size = new Size(380, 55);
-            searchTxt.TabIndex = 11;
-            searchTxt.Texts = "";
-            searchTxt.UnderlinedStyle = false;
+            searchNglTxt.BackColor = SystemColors.Window;
+            searchNglTxt.BorderColor = Color.Silver;
+            searchNglTxt.BorderFocusColor = Color.DarkCyan;
+            searchNglTxt.BorderRadius = 15;
+            searchNglTxt.BorderSize = 2;
+            searchNglTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            searchNglTxt.ForeColor = Color.DimGray;
+            searchNglTxt.Location = new Point(10, 9);
+            searchNglTxt.Margin = new Padding(4, 5, 4, 5);
+            searchNglTxt.Multiline = false;
+            searchNglTxt.Name = "searchNglTxt";
+            searchNglTxt.Padding = new Padding(12, 11, 58, 11);
+            searchNglTxt.PasswordChar = false;
+            searchNglTxt.PlaceholderColor = Color.DarkGray;
+            searchNglTxt.PlaceholderText = "Tìm Kiếm ...";
+            searchNglTxt.Size = new Size(380, 55);
+            searchNglTxt.TabIndex = 11;
+            searchNglTxt.Texts = "";
+            searchNglTxt.UnderlinedStyle = false;
             // 
             // detailTabPage
             // 
             detailTabPage.Controls.Add(checkboxIsDelete);
-            detailTabPage.Controls.Add(label6);
+            detailTabPage.Controls.Add(lbIsDelete);
             detailTabPage.Controls.Add(HuyBtn);
             detailTabPage.Controls.Add(xacNhanBtn);
             detailTabPage.Controls.Add(label7);
@@ -661,16 +664,16 @@
             checkboxIsDelete.TabIndex = 56;
             checkboxIsDelete.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // lbIsDelete
             // 
-            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(923, 288);
-            label6.Margin = new Padding(4, 0, 4, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(112, 85);
-            label6.TabIndex = 55;
-            label6.Text = "IsDelete";
-            label6.TextAlign = ContentAlignment.MiddleCenter;
+            lbIsDelete.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbIsDelete.Location = new Point(923, 288);
+            lbIsDelete.Margin = new Padding(4, 0, 4, 0);
+            lbIsDelete.Name = "lbIsDelete";
+            lbIsDelete.Size = new Size(112, 85);
+            lbIsDelete.TabIndex = 55;
+            lbIsDelete.Text = "IsDelete";
+            lbIsDelete.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // HuyBtn
             // 
@@ -784,6 +787,7 @@
             caPhePic.SizeMode = PictureBoxSizeMode.StretchImage;
             caPhePic.TabIndex = 38;
             caPhePic.TabStop = false;
+            caPhePic.Click += caPhePic_Click;
             // 
             // label8
             // 
@@ -800,7 +804,7 @@
             // 
             txtNglPrice.BackColor = SystemColors.Window;
             txtNglPrice.BorderColor = Color.Silver;
-            txtNglPrice.BorderFocusColor = Color.DarkCyan;
+            txtNglPrice.BorderFocusColor = Color.DeepSkyBlue;
             txtNglPrice.BorderRadius = 13;
             txtNglPrice.BorderSize = 2;
             txtNglPrice.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
@@ -834,7 +838,7 @@
             // 
             txtNglInfo.BackColor = SystemColors.Window;
             txtNglInfo.BorderColor = Color.Silver;
-            txtNglInfo.BorderFocusColor = Color.DarkCyan;
+            txtNglInfo.BorderFocusColor = Color.DeepSkyBlue;
             txtNglInfo.BorderRadius = 13;
             txtNglInfo.BorderSize = 2;
             txtNglInfo.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
@@ -866,11 +870,12 @@
             // 
             // txtNglId
             // 
-            txtNglId.BackColor = SystemColors.Window;
+            txtNglId.BackColor = Color.LightGray;
             txtNglId.BorderColor = Color.Silver;
-            txtNglId.BorderFocusColor = Color.DarkCyan;
+            txtNglId.BorderFocusColor = Color.DeepSkyBlue;
             txtNglId.BorderRadius = 13;
             txtNglId.BorderSize = 2;
+            txtNglId.Enabled = false;
             txtNglId.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             txtNglId.ForeColor = Color.DimGray;
             txtNglId.Location = new Point(88, 161);
@@ -890,7 +895,7 @@
             // 
             txtNglWeigh.BackColor = SystemColors.Window;
             txtNglWeigh.BorderColor = Color.Silver;
-            txtNglWeigh.BorderFocusColor = Color.DarkCyan;
+            txtNglWeigh.BorderFocusColor = Color.DeepSkyBlue;
             txtNglWeigh.BorderRadius = 13;
             txtNglWeigh.BorderSize = 2;
             txtNglWeigh.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
@@ -913,7 +918,7 @@
             // 
             txtNglName.BackColor = SystemColors.Window;
             txtNglName.BorderColor = Color.Silver;
-            txtNglName.BorderFocusColor = Color.DarkCyan;
+            txtNglName.BorderFocusColor = Color.DeepSkyBlue;
             txtNglName.BorderRadius = 13;
             txtNglName.BorderSize = 2;
             txtNglName.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
@@ -1002,11 +1007,10 @@
         private TabControl tcNgl;
         private TabPage listTabPage;
         private TabPage detailTabPage;
-        private CustomControl.CustomButton customButton2;
         private CustomControl.CustomButton delBtn;
         private CustomControl.CustomButton editBtn;
         private CustomControl.CustomButton addBtn;
-        private CustomControl.CustomTextBox searchTxt;
+        private CustomControl.CustomTextBox searchNglTxt;
         private DataGridView dgvNgl;
         private PictureBox caPhePic;
         private Label label8;
@@ -1024,7 +1028,7 @@
         private CustomControl.CustomButton btn_back;
         private CustomControl.CustomButton HuyBtn;
         private CustomControl.CustomButton xacNhanBtn;
-        private Label label6;
+        private Label lbIsDelete;
         private CustomControl.CustomButton sortBtn;
         private CustomControl.CustomButton filterBtn;
         private CustomControl.CustomButton resetBtn;
@@ -1048,5 +1052,6 @@
         private RadioButton rbPriceDec;
         private RadioButton rbPriceInc;
         private CheckBox checkboxIsDelete;
+        private CustomControl.CustomButton btnFindNgl;
     }
 }

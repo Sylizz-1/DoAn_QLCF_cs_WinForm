@@ -14,7 +14,7 @@ namespace DoAn_QLCF_cs_WinForm.Repository.RepositoryInterface
         bool Delete(int id);
         int GetNextId();
         IEnumerable<NccModel> GetAll();
-
+        IEnumerable<NccModel> FindNccByNameOrId(string textFind);
         IEnumerable<NccModel> GetByValue(string nhaCungCapId, string tenNhaCungCap, string diaChi, string sdt, string email, bool? isDelete);
 
         NccModel GetById(int id);

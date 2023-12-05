@@ -31,7 +31,7 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                         nhanVienModel.Gioitinh = reader["GioiTinh"].ToString();
                         nhanVienModel.Email = reader["Email"].ToString();
                         nhanVienModel.Sdt = reader["SDT"].ToString();
-                        nhanVienModel.Ngaysinh = (DateTime)reader["NamSinh"];
+                        nhanVienModel.Ngaysinh = (DateTime)reader["NgaySinh"];
                         nhanVienModel.Taikhoan = reader["TaiKhoan"].ToString();
                         nhanVienModel.Matkhau = reader["MatKhau"].ToString();
                         nhanVienModel.Quyen = reader["QuyenId"].ToString();
@@ -73,7 +73,7 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                                 Gioitinh = reader["GioiTinh"].ToString(),
                                 Email = reader["Email"].ToString(),
                                 Sdt = reader["SDT"].ToString(),
-                                Ngaysinh = (DateTime)reader["NamSinh"],
+                                Ngaysinh = (DateTime)reader["NgaySinh"],
                                 Taikhoan = reader["TaiKhoan"].ToString(),
                                 Matkhau = reader["MatKhau"].ToString(),
                                 Quyen = reader["QuyenId"].ToString(),

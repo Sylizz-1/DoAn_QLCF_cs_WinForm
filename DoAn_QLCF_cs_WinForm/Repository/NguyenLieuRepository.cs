@@ -45,7 +45,7 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                         string imgPath = Path.Combine(this.nguyenLieuImagePath, reader["HinhAnh"].ToString());
                         try
                         {
-                            NguyenLieu.HinhAnh = Image.FromFile(imgPath);
+                            NguyenLieu.HinhAnh = imgPath;
                         }
                         catch (OutOfMemoryException ex)
                         {
@@ -72,22 +72,24 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                     cmd.CommandText = "INSERT INTO NguyenLieu (TenNguyenLieu, ThongTin, KhoiLuong, GiaTien_Kg, HinhAnh, IsDelete) " +
                                       "VALUES (@TenNguyenLieu, @ThongTin, @KhoiLuong, @GiaTien_Kg, @HinhAnh, @IsDelete)";
 
-                    // Đặt giá trị cho các tham số
                     cmd.Parameters.AddWithValue("@TenNguyenLieu", nguyenLieu.TenNguyenLieu);
                     cmd.Parameters.AddWithValue("@ThongTin", nguyenLieu.ThongTin);
                     cmd.Parameters.AddWithValue("@KhoiLuong", nguyenLieu.KhoiLuong);
                     cmd.Parameters.AddWithValue("@GiaTien_Kg", nguyenLieu.GiaTien_Kg);
 
-                    if (nguyenLieu.HinhAnh != null)
+                    try
                     {
-                        string imgPath = nguyenLieu.HinhAnh.ToString();
-                        cmd.Parameters.AddWithValue("@HinhAnh", imgPath);
+                        if (nguyenLieu.HinhAnh != null)
+                        {
+                            string imgPath = nguyenLieu.HinhAnh.ToString();
+                            cmd.Parameters.AddWithValue("@HinhAnh", imgPath);
+                        }
                     }
-                    else
+                    catch(OutOfMemoryException ex)
                     {
-                        cmd.Parameters.AddWithValue("@HinhAnh", DBNull.Value);
+                        MessageBox.Show("Ảnh quá bộ nhớ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
                     }
-
                     cmd.Parameters.AddWithValue("@IsDelete", nguyenLieu.IsDelete);
                     cmd.ExecuteNonQuery();
                     return true;
@@ -151,7 +153,7 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                         string imgPath = Path.Combine(this.nguyenLieuImagePath, reader["HinhAnh"].ToString());
                         try
                         {
-                            NguyenLieu.HinhAnh = Image.FromFile(imgPath);
+                            NguyenLieu.HinhAnh = imgPath;
                         }
                         catch (OutOfMemoryException ex)
                         {
@@ -194,33 +196,37 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                 connection.Open();
                 cmd.Connection = connection;
                 StringBuilder queryBuilder = new StringBuilder("Select * from NguyenLieu where 1=1");
-                    
-                if(!String.IsNullOrEmpty(NguyenLieuId))
+                string ha = "defaultImage3.png";
+
+                if (!string.IsNullOrEmpty(NguyenLieuId))
                 {
-                    queryBuilder.Append(" and NguyenLieuId = @NguyenLieuId");
-                    cmd.Parameters.AddWithValue("@NguyenLieuId", NguyenLieuId);
+                    if (int.TryParse(NguyenLieuId, out int NguyenLieuIdValue))
+                    {
+                        queryBuilder.Append(" and NguyenLieuId = @NguyenLieuId");
+                        cmd.Parameters.AddWithValue("@NguyenLieuId", NguyenLieuId);
+                    }
                 }
-                if (!String.IsNullOrEmpty(TenNguyenLieu))
+                if (!string.IsNullOrEmpty(TenNguyenLieu))
                 {
-                    queryBuilder.Append(" and TenNguyenLieu = @TenNguyenLieu");
-                    cmd.Parameters.AddWithValue("@TenNguyenLieu", TenNguyenLieu);
+                    queryBuilder.Append(" and TenNguyenLieu LIKE @TenNguyenLieu");
+                    cmd.Parameters.AddWithValue("@TenNguyenLieu", "%" + TenNguyenLieu + "%");
                 }
-                if (!String.IsNullOrEmpty(ThongTin))
+                if (!string.IsNullOrEmpty(ThongTin))
                 {
-                    queryBuilder.Append(" and ThongTin = @ThongTin");
-                    cmd.Parameters.AddWithValue("@ThongTin", ThongTin);
+                    queryBuilder.Append(" and ThongTin LIKE @ThongTin");
+                    cmd.Parameters.AddWithValue("@ThongTin", "%" + ThongTin + "%");
                 }
-                if (!String.IsNullOrEmpty(KhoiLuong))
+                if (!string.IsNullOrEmpty(KhoiLuong))
                 {
                     queryBuilder.Append(" and KhoiLuong = @KhoiLuong");
                     cmd.Parameters.AddWithValue("@KhoiLuong", KhoiLuong);
                 }
-                if (!String.IsNullOrEmpty(GiaTien_Kg))
+                if (!string.IsNullOrEmpty(GiaTien_Kg))
                 {
                     queryBuilder.Append(" and GiaTien_Kg = @GiaTien_Kg");
                     cmd.Parameters.AddWithValue("@GiaTien_Kg", GiaTien_Kg);
                 }
-                if (!String.IsNullOrEmpty(HinhAnh.ToString()))
+                if (!string.IsNullOrEmpty(HinhAnh.ToString()) && HinhAnh != ha)
                 {
                     queryBuilder.Append(" AND HinhAnh = @HinhAnh");
                     cmd.Parameters.AddWithValue("@HinhAnh", HinhAnh);
@@ -244,7 +250,7 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                         string imgPath = Path.Combine(this.nguyenLieuImagePath, reader["HinhAnh"].ToString());
                         try
                         {
-                            NguyenLieu.HinhAnh = Image.FromFile(imgPath);
+                            NguyenLieu.HinhAnh = imgPath;
                         }
                         catch (OutOfMemoryException ex)
                         {
@@ -260,7 +266,56 @@ namespace DoAn_QLCF_cs_WinForm.Repository
             return nguyenLieuList;
         }
 
+        public IEnumerable<NguyenLieuModel> FindNglByNameOrId(string textFind)
+        {
+            List<NguyenLieuModel> nguyenLieuList = new List<NguyenLieuModel>();
+            using (var connection = new SqlConnection(this.connectionString))
+            using (var cmd = connection.CreateCommand())
+            {
+                connection.Open();
+                cmd.Connection = connection;
+                StringBuilder queryBuilder = new StringBuilder("Select * from NguyenLieu where 1=1");
+                string ha = "defaultImage3.png";
 
+                if (int.TryParse(textFind, out int textFindIdValue))
+                {
+                    queryBuilder.Append(" and NguyenLieuId = @NguyenLieuId");
+                    cmd.Parameters.AddWithValue("@NguyenLieuId", textFind);
+                }
+                else
+                {
+                    queryBuilder.Append(" and TenNguyenLieu LIKE @TenNguyenLieu");
+                    cmd.Parameters.AddWithValue("@TenNguyenLieu", "%" + textFind + "%");
+                }
+                cmd.CommandText = queryBuilder.ToString();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var NguyenLieu = new NguyenLieuModel();
+                        NguyenLieu.NguyenLieuId = (int)reader["NguyenLieuId"];
+                        NguyenLieu.TenNguyenLieu = reader["TenNguyenLieu"].ToString();
+                        NguyenLieu.ThongTin = reader["ThongTin"].ToString();
+                        NguyenLieu.KhoiLuong = float.Parse(reader["KhoiLuong"].ToString());
+                        NguyenLieu.GiaTien_Kg = float.Parse(reader["GiaTien_Kg"].ToString());
+                        string imgPath = Path.Combine(this.nguyenLieuImagePath, reader["HinhAnh"].ToString());
+                        try
+                        {
+                            NguyenLieu.HinhAnh = imgPath;
+                        }
+                        catch (OutOfMemoryException ex)
+                        {
+                            ex.ToString();
+                            NguyenLieu.HinhAnh = null;
+                        }
+                        NguyenLieu.IsDelete = (bool)reader["IsDelete"];
+
+                        nguyenLieuList.Add(NguyenLieu);
+                    }
+                }
+            }
+            return nguyenLieuList;
+        }
         public bool IsExit(int id)
         {
             using (var connection = new SqlConnection(this.connectionString))
@@ -276,7 +331,31 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                 return count > 0;
             }
         }
+        public bool UpdateKL_DG(int nglId, float kl, float dg)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(this.connectionString))
+                using (var cmd = connection.CreateCommand())
+                {
+                    connection.Open();
+                    cmd.Connection = connection;
+                    cmd.CommandText = "UPDATE NguyenLieu SET KhoiLuong = KhoiLuong + @KhoiLuong, GiaTien_Kg = @GiaTien_Kg WHERE NguyenLieuId = @Id";
 
+                    cmd.Parameters.AddWithValue("@Id", nglId);
+                    cmd.Parameters.AddWithValue("@KhoiLuong", kl);
+                    cmd.Parameters.AddWithValue("@GiaTien_Kg", dg);
+
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
         public bool Update(NguyenLieuModel obj)
         {
             try
