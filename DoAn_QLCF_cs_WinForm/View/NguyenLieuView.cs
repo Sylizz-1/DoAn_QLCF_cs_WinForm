@@ -70,7 +70,6 @@ namespace DoAn_QLCF_cs_WinForm.View
             sortBtn.Click += delegate { SortEvent?.Invoke(this, EventArgs.Empty); };
             resetBtn.Click += delegate { ResetEvent?.Invoke(this, EventArgs.Empty); };
 
-#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             rbIDDec.CheckedChanged += SortRadioButton_CheckedChanged;
 #pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
 #pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).

@@ -48,7 +48,6 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
 #pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
 #pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             this.view.ResetEvent += LoadNguyenLieuList;
-#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
 
             nglBindingSource = new BindingSource();
             LoadNguyenLieuList();

@@ -94,9 +94,7 @@ namespace DoAn_QLCF_cs_WinForm.Repository
 
                     if (nguyenLieu.HinhAnh != null)
                     {
-#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
                         string imgPath = nguyenLieu.HinhAnh.ToString();
-#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
                         cmd.Parameters.AddWithValue("@HinhAnh", imgPath);
                     }
                     else

@@ -39,9 +39,7 @@ namespace DoAn_QLCF_cs_WinForm.Repository
 #pragma warning restore CS8601 // Possible null reference assignment.
 #pragma warning disable CS8601 // Possible null reference assignment.
                         nhanVienModel.Sdt = reader["SDT"].ToString();
-#pragma warning restore CS8601 // Possible null reference assignment.
                         nhanVienModel.Ngaysinh = (DateTime)reader["NamSinh"];
-#pragma warning disable CS8601 // Possible null reference assignment.
                         nhanVienModel.Taikhoan = reader["TaiKhoan"].ToString();
 #pragma warning restore CS8601 // Possible null reference assignment.
 #pragma warning disable CS8601 // Possible null reference assignment.
