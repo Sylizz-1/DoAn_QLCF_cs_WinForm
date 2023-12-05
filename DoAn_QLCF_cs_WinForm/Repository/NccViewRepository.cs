@@ -81,11 +81,8 @@ namespace DoAn_QLCF_cs_WinForm.Repository
 
                 if (!string.IsNullOrEmpty(nhaCungCapId))
                 {
-                    if (int.TryParse(nhaCungCapId, out int nhaCungCapIdValue))
-                    {
-                        queryBuilder.Append(" AND NhaCungCapId = @NhaCungCapId");
-                        cmd.Parameters.AddWithValue("@NhaCungCapId", nhaCungCapIdValue);
-                    }
+                    queryBuilder.Append(" AND NhaCungCapId = @NhaCungCapId");
+                    cmd.Parameters.AddWithValue("@NhaCungCapId", nhaCungCapId);
                 }
                 if (!string.IsNullOrEmpty(tenNhaCungCap))
                 {
@@ -144,47 +141,6 @@ namespace DoAn_QLCF_cs_WinForm.Repository
             return nccList;
         }
 
-        public IEnumerable<NccModel> FindNccByNameOrId(string textFind)
-        {
-            List<NccModel> nccList = new List<NccModel>();
-            using (var connection = new SqlConnection(this.connectionString))
-            using (var cmd = connection.CreateCommand())
-            {
-                connection.Open();
-                cmd.Connection = connection;
-                StringBuilder queryBuilder = new StringBuilder("SELECT * FROM NhaCungCap WHERE 1=1");
-
-                if (int.TryParse(textFind, out int textFindValue))
-                {
-                    queryBuilder.Append(" AND NhaCungCapId = @NhaCungCapId");
-                    cmd.Parameters.AddWithValue("@NhaCungCapId", textFind);
-                }
-                else
-                {
-                    queryBuilder.Append(" AND TenNhaCungCap LIKE @TenNhaCungCap");
-                    cmd.Parameters.AddWithValue("@TenNhaCungCap", "%" + textFind + "%");
-                }
-                cmd.CommandText = queryBuilder.ToString();
-
-                using (var reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        var ncc = new NccModel
-                        {
-                            NhaCungCapId = (int)reader["NhaCungCapId"],
-                            TenNhaCungCap = reader["TenNhaCungCap"].ToString(),
-                            DiaChi = reader["DiaChi"].ToString(),
-                            SDT = reader["SDT"].ToString(),
-                            Email = reader["Email"].ToString(),
-                            IsDelete = (bool)reader["IsDelete"]
-                        };
-                        nccList.Add(ncc);
-                    }
-                }
-            }
-            return nccList;
-        }
         public IEnumerable<NccModel> GetAll()
         {
             var cpList = new List<NccModel>();

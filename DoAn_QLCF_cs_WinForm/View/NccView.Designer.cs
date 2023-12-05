@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             tcNCC = new TabControl();
             listTabPage = new TabPage();
             resetBtn = new CustomControl.CustomButton();
@@ -53,31 +53,30 @@
             groupBox3 = new GroupBox();
             rbEmailDec = new RadioButton();
             rbEmailInc = new RadioButton();
-            filterNccBtn = new CustomControl.CustomButton();
-            sortNccBtn = new CustomControl.CustomButton();
+            filterBtn = new CustomControl.CustomButton();
+            sortBtn = new CustomControl.CustomButton();
             dgvNcc = new DataGridView();
             searchTxt = new CustomControl.CustomTextBox();
-            delNccBtn = new CustomControl.CustomButton();
-            editNccBtn = new CustomControl.CustomButton();
-            addNccBtn = new CustomControl.CustomButton();
+            delBtn = new CustomControl.CustomButton();
+            editBtn = new CustomControl.CustomButton();
+            addBtn = new CustomControl.CustomButton();
             detailTabPage = new TabPage();
             checkboxIsDelete = new CheckBox();
-            lbIsDelete = new Label();
-            HuyNccBtn = new CustomControl.CustomButton();
-            xacNhanNccBtn = new CustomControl.CustomButton();
+            label8 = new Label();
+            HuyBtn = new CustomControl.CustomButton();
+            xacNhanBtn = new CustomControl.CustomButton();
             txtSDTNcc = new CustomControl.CustomTextBox();
             label3 = new Label();
             txtDiaChiNcc = new CustomControl.CustomTextBox();
             M = new Label();
             label7 = new Label();
-            btnNcc_back = new CustomControl.CustomButton();
+            btn_back = new CustomControl.CustomButton();
             txtIdNcc = new CustomControl.CustomTextBox();
             txtEmailNcc = new CustomControl.CustomTextBox();
             txtTenNcc = new CustomControl.CustomTextBox();
             label5 = new Label();
             label4 = new Label();
             label1 = new Label();
-            btnFindNcc = new CustomControl.CustomButton();
             tcNCC.SuspendLayout();
             listTabPage.SuspendLayout();
             gbSort.SuspendLayout();
@@ -105,16 +104,15 @@
             // 
             // listTabPage
             // 
-            listTabPage.Controls.Add(btnFindNcc);
             listTabPage.Controls.Add(resetBtn);
             listTabPage.Controls.Add(gbSort);
-            listTabPage.Controls.Add(filterNccBtn);
-            listTabPage.Controls.Add(sortNccBtn);
+            listTabPage.Controls.Add(filterBtn);
+            listTabPage.Controls.Add(sortBtn);
             listTabPage.Controls.Add(dgvNcc);
             listTabPage.Controls.Add(searchTxt);
-            listTabPage.Controls.Add(delNccBtn);
-            listTabPage.Controls.Add(editNccBtn);
-            listTabPage.Controls.Add(addNccBtn);
+            listTabPage.Controls.Add(delBtn);
+            listTabPage.Controls.Add(editBtn);
+            listTabPage.Controls.Add(addBtn);
             listTabPage.Location = new Point(4, 34);
             listTabPage.Margin = new Padding(4);
             listTabPage.Name = "listTabPage";
@@ -379,65 +377,65 @@
             rbEmailInc.Text = "Tăng";
             rbEmailInc.UseVisualStyleBackColor = true;
             // 
-            // filterNccBtn
+            // filterBtn
             // 
-            filterNccBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            filterNccBtn.BackColor = SystemColors.Control;
-            filterNccBtn.BackgroundColor = SystemColors.Control;
-            filterNccBtn.BorderColor = Color.Goldenrod;
-            filterNccBtn.BorderRadius = 15;
-            filterNccBtn.BorderSize = 2;
-            filterNccBtn.Cursor = Cursors.Hand;
-            filterNccBtn.EnabledTextHover = true;
-            filterNccBtn.FlatAppearance.BorderSize = 0;
-            filterNccBtn.FlatAppearance.MouseDownBackColor = Color.Goldenrod;
-            filterNccBtn.FlatAppearance.MouseOverBackColor = Color.Goldenrod;
-            filterNccBtn.FlatStyle = FlatStyle.Flat;
-            filterNccBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            filterNccBtn.ForeColor = Color.Goldenrod;
-            filterNccBtn.ImageAlign = ContentAlignment.MiddleRight;
-            filterNccBtn.ImageHover = null;
-            filterNccBtn.Location = new Point(552, 9);
-            filterNccBtn.Margin = new Padding(4, 5, 4, 5);
-            filterNccBtn.Name = "filterNccBtn";
-            filterNccBtn.Size = new Size(172, 64);
-            filterNccBtn.TabIndex = 22;
-            filterNccBtn.Text = "Lọc";
-            filterNccBtn.TextColor = Color.Goldenrod;
-            filterNccBtn.TextHover = Color.White;
-            filterNccBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-            filterNccBtn.UseVisualStyleBackColor = false;
-            filterNccBtn.Click += filterNccBtn_Click;
+            filterBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            filterBtn.BackColor = SystemColors.Control;
+            filterBtn.BackgroundColor = SystemColors.Control;
+            filterBtn.BorderColor = Color.Goldenrod;
+            filterBtn.BorderRadius = 15;
+            filterBtn.BorderSize = 2;
+            filterBtn.Cursor = Cursors.Hand;
+            filterBtn.EnabledTextHover = true;
+            filterBtn.FlatAppearance.BorderSize = 0;
+            filterBtn.FlatAppearance.MouseDownBackColor = Color.Goldenrod;
+            filterBtn.FlatAppearance.MouseOverBackColor = Color.Goldenrod;
+            filterBtn.FlatStyle = FlatStyle.Flat;
+            filterBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            filterBtn.ForeColor = Color.Goldenrod;
+            filterBtn.ImageAlign = ContentAlignment.MiddleRight;
+            filterBtn.ImageHover = null;
+            filterBtn.Location = new Point(552, 9);
+            filterBtn.Margin = new Padding(4, 5, 4, 5);
+            filterBtn.Name = "filterBtn";
+            filterBtn.Size = new Size(172, 64);
+            filterBtn.TabIndex = 22;
+            filterBtn.Text = "Lọc";
+            filterBtn.TextColor = Color.Goldenrod;
+            filterBtn.TextHover = Color.White;
+            filterBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            filterBtn.UseVisualStyleBackColor = false;
+            filterBtn.Click += filterBtn_Click;
             // 
-            // sortNccBtn
+            // sortBtn
             // 
-            sortNccBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            sortNccBtn.BackColor = SystemColors.Control;
-            sortNccBtn.BackgroundColor = SystemColors.Control;
-            sortNccBtn.BorderColor = Color.DeepSkyBlue;
-            sortNccBtn.BorderRadius = 15;
-            sortNccBtn.BorderSize = 2;
-            sortNccBtn.Cursor = Cursors.Hand;
-            sortNccBtn.EnabledTextHover = true;
-            sortNccBtn.FlatAppearance.BorderSize = 0;
-            sortNccBtn.FlatAppearance.MouseDownBackColor = Color.DeepSkyBlue;
-            sortNccBtn.FlatAppearance.MouseOverBackColor = Color.DeepSkyBlue;
-            sortNccBtn.FlatStyle = FlatStyle.Flat;
-            sortNccBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            sortNccBtn.ForeColor = Color.DeepSkyBlue;
-            sortNccBtn.ImageAlign = ContentAlignment.MiddleRight;
-            sortNccBtn.ImageHover = null;
-            sortNccBtn.Location = new Point(742, 9);
-            sortNccBtn.Margin = new Padding(4, 5, 4, 5);
-            sortNccBtn.Name = "sortNccBtn";
-            sortNccBtn.Size = new Size(172, 64);
-            sortNccBtn.TabIndex = 21;
-            sortNccBtn.Text = "Sắp xếp";
-            sortNccBtn.TextColor = Color.DeepSkyBlue;
-            sortNccBtn.TextHover = Color.White;
-            sortNccBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-            sortNccBtn.UseVisualStyleBackColor = false;
-            sortNccBtn.Click += sortNccBtn_Click;
+            sortBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            sortBtn.BackColor = SystemColors.Control;
+            sortBtn.BackgroundColor = SystemColors.Control;
+            sortBtn.BorderColor = Color.DeepSkyBlue;
+            sortBtn.BorderRadius = 15;
+            sortBtn.BorderSize = 2;
+            sortBtn.Cursor = Cursors.Hand;
+            sortBtn.EnabledTextHover = true;
+            sortBtn.FlatAppearance.BorderSize = 0;
+            sortBtn.FlatAppearance.MouseDownBackColor = Color.DeepSkyBlue;
+            sortBtn.FlatAppearance.MouseOverBackColor = Color.DeepSkyBlue;
+            sortBtn.FlatStyle = FlatStyle.Flat;
+            sortBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            sortBtn.ForeColor = Color.DeepSkyBlue;
+            sortBtn.ImageAlign = ContentAlignment.MiddleRight;
+            sortBtn.ImageHover = null;
+            sortBtn.Location = new Point(742, 9);
+            sortBtn.Margin = new Padding(4, 5, 4, 5);
+            sortBtn.Name = "sortBtn";
+            sortBtn.Size = new Size(172, 64);
+            sortBtn.TabIndex = 21;
+            sortBtn.Text = "Sắp xếp";
+            sortBtn.TextColor = Color.DeepSkyBlue;
+            sortBtn.TextHover = Color.White;
+            sortBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            sortBtn.UseVisualStyleBackColor = false;
+            sortBtn.Click += sortBtn_Click;
             // 
             // dgvNcc
             // 
@@ -447,24 +445,24 @@
             dgvNcc.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvNcc.BorderStyle = BorderStyle.None;
             dgvNcc.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = Color.DarkCyan;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dgvNcc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.DarkCyan;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvNcc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvNcc.ColumnHeadersHeight = 30;
             dgvNcc.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = SystemColors.Window;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            dgvNcc.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvNcc.DefaultCellStyle = dataGridViewCellStyle2;
             dgvNcc.Dock = DockStyle.Bottom;
             dgvNcc.EnableHeadersVisualStyles = false;
             dgvNcc.GridColor = Color.DarkCyan;
@@ -475,8 +473,8 @@
             dgvNcc.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dgvNcc.RowHeadersVisible = false;
             dgvNcc.RowHeadersWidth = 51;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvNcc.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvNcc.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dgvNcc.RowTemplate.Height = 25;
             dgvNcc.RowTemplate.ReadOnly = true;
             dgvNcc.Size = new Size(1499, 498);
@@ -505,110 +503,110 @@
             searchTxt.Texts = "";
             searchTxt.UnderlinedStyle = false;
             // 
-            // delNccBtn
+            // delBtn
             // 
-            delNccBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            delNccBtn.BackColor = SystemColors.Control;
-            delNccBtn.BackgroundColor = SystemColors.Control;
-            delNccBtn.BorderColor = Color.Red;
-            delNccBtn.BorderRadius = 15;
-            delNccBtn.BorderSize = 2;
-            delNccBtn.Cursor = Cursors.Hand;
-            delNccBtn.EnabledTextHover = true;
-            delNccBtn.FlatAppearance.BorderSize = 0;
-            delNccBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(187, 10, 10);
-            delNccBtn.FlatAppearance.MouseOverBackColor = Color.Red;
-            delNccBtn.FlatStyle = FlatStyle.Flat;
-            delNccBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            delNccBtn.ForeColor = Color.Red;
-            delNccBtn.Image = Properties.Resources.deleteIconRed16px;
-            delNccBtn.ImageAlign = ContentAlignment.MiddleRight;
-            delNccBtn.ImageHover = Properties.Resources.deleteIconWhite16px;
-            delNccBtn.Location = new Point(1312, 9);
-            delNccBtn.Margin = new Padding(4, 5, 4, 5);
-            delNccBtn.Name = "delNccBtn";
-            delNccBtn.Size = new Size(172, 64);
-            delNccBtn.TabIndex = 13;
-            delNccBtn.Text = "  Xóa";
-            delNccBtn.TextColor = Color.Red;
-            delNccBtn.TextHover = Color.White;
-            delNccBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-            delNccBtn.UseVisualStyleBackColor = false;
+            delBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            delBtn.BackColor = SystemColors.Control;
+            delBtn.BackgroundColor = SystemColors.Control;
+            delBtn.BorderColor = Color.Red;
+            delBtn.BorderRadius = 15;
+            delBtn.BorderSize = 2;
+            delBtn.Cursor = Cursors.Hand;
+            delBtn.EnabledTextHover = true;
+            delBtn.FlatAppearance.BorderSize = 0;
+            delBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(187, 10, 10);
+            delBtn.FlatAppearance.MouseOverBackColor = Color.Red;
+            delBtn.FlatStyle = FlatStyle.Flat;
+            delBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            delBtn.ForeColor = Color.Red;
+            delBtn.Image = Properties.Resources.deleteIconRed16px;
+            delBtn.ImageAlign = ContentAlignment.MiddleRight;
+            delBtn.ImageHover = Properties.Resources.deleteIconWhite16px;
+            delBtn.Location = new Point(1312, 9);
+            delBtn.Margin = new Padding(4, 5, 4, 5);
+            delBtn.Name = "delBtn";
+            delBtn.Size = new Size(172, 64);
+            delBtn.TabIndex = 13;
+            delBtn.Text = "  Xóa";
+            delBtn.TextColor = Color.Red;
+            delBtn.TextHover = Color.White;
+            delBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            delBtn.UseVisualStyleBackColor = false;
             // 
-            // editNccBtn
+            // editBtn
             // 
-            editNccBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            editNccBtn.BackColor = SystemColors.Control;
-            editNccBtn.BackgroundColor = SystemColors.Control;
-            editNccBtn.BorderColor = Color.DarkCyan;
-            editNccBtn.BorderRadius = 15;
-            editNccBtn.BorderSize = 2;
-            editNccBtn.Cursor = Cursors.Hand;
-            editNccBtn.EnabledTextHover = true;
-            editNccBtn.FlatAppearance.BorderSize = 0;
-            editNccBtn.FlatAppearance.MouseDownBackColor = Color.Teal;
-            editNccBtn.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
-            editNccBtn.FlatStyle = FlatStyle.Flat;
-            editNccBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            editNccBtn.ForeColor = Color.DarkCyan;
-            editNccBtn.Image = Properties.Resources.editIconTeal16px;
-            editNccBtn.ImageAlign = ContentAlignment.MiddleRight;
-            editNccBtn.ImageHover = Properties.Resources.editIconWhite16px;
-            editNccBtn.Location = new Point(1122, 9);
-            editNccBtn.Margin = new Padding(4, 5, 4, 5);
-            editNccBtn.Name = "editNccBtn";
-            editNccBtn.Size = new Size(172, 64);
-            editNccBtn.TabIndex = 12;
-            editNccBtn.Text = "  Sửa";
-            editNccBtn.TextColor = Color.DarkCyan;
-            editNccBtn.TextHover = Color.White;
-            editNccBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-            editNccBtn.UseVisualStyleBackColor = false;
-            editNccBtn.Click += editNccBtn_Click;
+            editBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            editBtn.BackColor = SystemColors.Control;
+            editBtn.BackgroundColor = SystemColors.Control;
+            editBtn.BorderColor = Color.DarkCyan;
+            editBtn.BorderRadius = 15;
+            editBtn.BorderSize = 2;
+            editBtn.Cursor = Cursors.Hand;
+            editBtn.EnabledTextHover = true;
+            editBtn.FlatAppearance.BorderSize = 0;
+            editBtn.FlatAppearance.MouseDownBackColor = Color.Teal;
+            editBtn.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
+            editBtn.FlatStyle = FlatStyle.Flat;
+            editBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            editBtn.ForeColor = Color.DarkCyan;
+            editBtn.Image = Properties.Resources.editIconTeal16px;
+            editBtn.ImageAlign = ContentAlignment.MiddleRight;
+            editBtn.ImageHover = Properties.Resources.editIconWhite16px;
+            editBtn.Location = new Point(1122, 9);
+            editBtn.Margin = new Padding(4, 5, 4, 5);
+            editBtn.Name = "editBtn";
+            editBtn.Size = new Size(172, 64);
+            editBtn.TabIndex = 12;
+            editBtn.Text = "  Sửa";
+            editBtn.TextColor = Color.DarkCyan;
+            editBtn.TextHover = Color.White;
+            editBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            editBtn.UseVisualStyleBackColor = false;
+            editBtn.Click += editBtn_Click;
             // 
-            // addNccBtn
+            // addBtn
             // 
-            addNccBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            addNccBtn.BackColor = SystemColors.Control;
-            addNccBtn.BackgroundColor = SystemColors.Control;
-            addNccBtn.BorderColor = Color.DarkCyan;
-            addNccBtn.BorderRadius = 15;
-            addNccBtn.BorderSize = 2;
-            addNccBtn.Cursor = Cursors.Hand;
-            addNccBtn.EnabledTextHover = true;
-            addNccBtn.FlatAppearance.BorderSize = 0;
-            addNccBtn.FlatAppearance.MouseDownBackColor = Color.Teal;
-            addNccBtn.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
-            addNccBtn.FlatStyle = FlatStyle.Flat;
-            addNccBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            addNccBtn.ForeColor = Color.DarkCyan;
-            addNccBtn.Image = Properties.Resources.addIconTeal16px;
-            addNccBtn.ImageAlign = ContentAlignment.MiddleRight;
-            addNccBtn.ImageHover = Properties.Resources.addIconWhite16px;
-            addNccBtn.Location = new Point(932, 9);
-            addNccBtn.Margin = new Padding(4, 5, 4, 5);
-            addNccBtn.Name = "addNccBtn";
-            addNccBtn.Size = new Size(172, 64);
-            addNccBtn.TabIndex = 11;
-            addNccBtn.Text = "  Thêm";
-            addNccBtn.TextColor = Color.DarkCyan;
-            addNccBtn.TextHover = Color.White;
-            addNccBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-            addNccBtn.UseVisualStyleBackColor = false;
-            addNccBtn.Click += addNccBtn_Click;
+            addBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            addBtn.BackColor = SystemColors.Control;
+            addBtn.BackgroundColor = SystemColors.Control;
+            addBtn.BorderColor = Color.DarkCyan;
+            addBtn.BorderRadius = 15;
+            addBtn.BorderSize = 2;
+            addBtn.Cursor = Cursors.Hand;
+            addBtn.EnabledTextHover = true;
+            addBtn.FlatAppearance.BorderSize = 0;
+            addBtn.FlatAppearance.MouseDownBackColor = Color.Teal;
+            addBtn.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
+            addBtn.FlatStyle = FlatStyle.Flat;
+            addBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            addBtn.ForeColor = Color.DarkCyan;
+            addBtn.Image = Properties.Resources.addIconTeal16px;
+            addBtn.ImageAlign = ContentAlignment.MiddleRight;
+            addBtn.ImageHover = Properties.Resources.addIconWhite16px;
+            addBtn.Location = new Point(932, 9);
+            addBtn.Margin = new Padding(4, 5, 4, 5);
+            addBtn.Name = "addBtn";
+            addBtn.Size = new Size(172, 64);
+            addBtn.TabIndex = 11;
+            addBtn.Text = "  Thêm";
+            addBtn.TextColor = Color.DarkCyan;
+            addBtn.TextHover = Color.White;
+            addBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            addBtn.UseVisualStyleBackColor = false;
+            addBtn.Click += addBtn_Click;
             // 
             // detailTabPage
             // 
             detailTabPage.Controls.Add(checkboxIsDelete);
-            detailTabPage.Controls.Add(lbIsDelete);
-            detailTabPage.Controls.Add(HuyNccBtn);
-            detailTabPage.Controls.Add(xacNhanNccBtn);
+            detailTabPage.Controls.Add(label8);
+            detailTabPage.Controls.Add(HuyBtn);
+            detailTabPage.Controls.Add(xacNhanBtn);
             detailTabPage.Controls.Add(txtSDTNcc);
             detailTabPage.Controls.Add(label3);
             detailTabPage.Controls.Add(txtDiaChiNcc);
             detailTabPage.Controls.Add(M);
             detailTabPage.Controls.Add(label7);
-            detailTabPage.Controls.Add(btnNcc_back);
+            detailTabPage.Controls.Add(btn_back);
             detailTabPage.Controls.Add(txtIdNcc);
             detailTabPage.Controls.Add(txtEmailNcc);
             detailTabPage.Controls.Add(txtTenNcc);
@@ -633,78 +631,78 @@
             checkboxIsDelete.TabIndex = 57;
             checkboxIsDelete.UseVisualStyleBackColor = true;
             // 
-            // lbIsDelete
+            // label8
             // 
-            lbIsDelete.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lbIsDelete.Location = new Point(914, 273);
-            lbIsDelete.Margin = new Padding(4, 0, 4, 0);
-            lbIsDelete.Name = "lbIsDelete";
-            lbIsDelete.Size = new Size(112, 85);
-            lbIsDelete.TabIndex = 56;
-            lbIsDelete.Text = "IsDelete";
-            lbIsDelete.TextAlign = ContentAlignment.MiddleCenter;
+            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Location = new Point(914, 273);
+            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(112, 85);
+            label8.TabIndex = 56;
+            label8.Text = "IsDelete";
+            label8.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // HuyNccBtn
+            // HuyBtn
             // 
-            HuyNccBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            HuyNccBtn.BackColor = SystemColors.Control;
-            HuyNccBtn.BackgroundColor = SystemColors.Control;
-            HuyNccBtn.BorderColor = Color.Red;
-            HuyNccBtn.BorderRadius = 15;
-            HuyNccBtn.BorderSize = 2;
-            HuyNccBtn.Cursor = Cursors.Hand;
-            HuyNccBtn.EnabledTextHover = true;
-            HuyNccBtn.FlatAppearance.BorderSize = 0;
-            HuyNccBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(187, 10, 10);
-            HuyNccBtn.FlatAppearance.MouseOverBackColor = Color.Red;
-            HuyNccBtn.FlatStyle = FlatStyle.Flat;
-            HuyNccBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            HuyNccBtn.ForeColor = Color.Red;
-            HuyNccBtn.Image = Properties.Resources.CANCELiconRed;
-            HuyNccBtn.ImageAlign = ContentAlignment.MiddleRight;
-            HuyNccBtn.ImageHover = Properties.Resources.CANCELiconWhite;
-            HuyNccBtn.Location = new Point(1280, 689);
-            HuyNccBtn.Margin = new Padding(4, 5, 4, 5);
-            HuyNccBtn.Name = "HuyNccBtn";
-            HuyNccBtn.Size = new Size(196, 89);
-            HuyNccBtn.TabIndex = 42;
-            HuyNccBtn.Text = "  Hủy";
-            HuyNccBtn.TextColor = Color.Red;
-            HuyNccBtn.TextHover = Color.White;
-            HuyNccBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-            HuyNccBtn.UseVisualStyleBackColor = false;
-            HuyNccBtn.Click += HuyNccBtn_Click;
+            HuyBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            HuyBtn.BackColor = SystemColors.Control;
+            HuyBtn.BackgroundColor = SystemColors.Control;
+            HuyBtn.BorderColor = Color.Red;
+            HuyBtn.BorderRadius = 15;
+            HuyBtn.BorderSize = 2;
+            HuyBtn.Cursor = Cursors.Hand;
+            HuyBtn.EnabledTextHover = true;
+            HuyBtn.FlatAppearance.BorderSize = 0;
+            HuyBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(187, 10, 10);
+            HuyBtn.FlatAppearance.MouseOverBackColor = Color.Red;
+            HuyBtn.FlatStyle = FlatStyle.Flat;
+            HuyBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            HuyBtn.ForeColor = Color.Red;
+            HuyBtn.Image = Properties.Resources.CANCELiconRed;
+            HuyBtn.ImageAlign = ContentAlignment.MiddleRight;
+            HuyBtn.ImageHover = Properties.Resources.CANCELiconWhite;
+            HuyBtn.Location = new Point(1280, 689);
+            HuyBtn.Margin = new Padding(4, 5, 4, 5);
+            HuyBtn.Name = "HuyBtn";
+            HuyBtn.Size = new Size(196, 89);
+            HuyBtn.TabIndex = 42;
+            HuyBtn.Text = "  Hủy";
+            HuyBtn.TextColor = Color.Red;
+            HuyBtn.TextHover = Color.White;
+            HuyBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            HuyBtn.UseVisualStyleBackColor = false;
+            HuyBtn.Click += HuyBtn_Click;
             // 
-            // xacNhanNccBtn
+            // xacNhanBtn
             // 
-            xacNhanNccBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            xacNhanNccBtn.BackColor = SystemColors.Control;
-            xacNhanNccBtn.BackgroundColor = SystemColors.Control;
-            xacNhanNccBtn.BorderColor = Color.DarkCyan;
-            xacNhanNccBtn.BorderRadius = 15;
-            xacNhanNccBtn.BorderSize = 2;
-            xacNhanNccBtn.Cursor = Cursors.Hand;
-            xacNhanNccBtn.EnabledTextHover = true;
-            xacNhanNccBtn.FlatAppearance.BorderSize = 0;
-            xacNhanNccBtn.FlatAppearance.MouseDownBackColor = Color.Teal;
-            xacNhanNccBtn.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
-            xacNhanNccBtn.FlatStyle = FlatStyle.Flat;
-            xacNhanNccBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            xacNhanNccBtn.ForeColor = Color.DarkCyan;
-            xacNhanNccBtn.Image = Properties.Resources.ConfirmIcondarkcyan1;
-            xacNhanNccBtn.ImageAlign = ContentAlignment.MiddleRight;
-            xacNhanNccBtn.ImageHover = Properties.Resources.ConfirmIconWhite1;
-            xacNhanNccBtn.Location = new Point(1061, 689);
-            xacNhanNccBtn.Margin = new Padding(4, 5, 4, 5);
-            xacNhanNccBtn.Name = "xacNhanNccBtn";
-            xacNhanNccBtn.Size = new Size(196, 89);
-            xacNhanNccBtn.TabIndex = 41;
-            xacNhanNccBtn.Text = "  Xác Nhận";
-            xacNhanNccBtn.TextColor = Color.DarkCyan;
-            xacNhanNccBtn.TextHover = Color.White;
-            xacNhanNccBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-            xacNhanNccBtn.UseVisualStyleBackColor = false;
-            xacNhanNccBtn.Click += xacNhanNccBtn_Click;
+            xacNhanBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            xacNhanBtn.BackColor = SystemColors.Control;
+            xacNhanBtn.BackgroundColor = SystemColors.Control;
+            xacNhanBtn.BorderColor = Color.DarkCyan;
+            xacNhanBtn.BorderRadius = 15;
+            xacNhanBtn.BorderSize = 2;
+            xacNhanBtn.Cursor = Cursors.Hand;
+            xacNhanBtn.EnabledTextHover = true;
+            xacNhanBtn.FlatAppearance.BorderSize = 0;
+            xacNhanBtn.FlatAppearance.MouseDownBackColor = Color.Teal;
+            xacNhanBtn.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
+            xacNhanBtn.FlatStyle = FlatStyle.Flat;
+            xacNhanBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            xacNhanBtn.ForeColor = Color.DarkCyan;
+            xacNhanBtn.Image = Properties.Resources.ConfirmIcondarkcyan1;
+            xacNhanBtn.ImageAlign = ContentAlignment.MiddleRight;
+            xacNhanBtn.ImageHover = Properties.Resources.ConfirmIconWhite1;
+            xacNhanBtn.Location = new Point(1061, 689);
+            xacNhanBtn.Margin = new Padding(4, 5, 4, 5);
+            xacNhanBtn.Name = "xacNhanBtn";
+            xacNhanBtn.Size = new Size(196, 89);
+            xacNhanBtn.TabIndex = 41;
+            xacNhanBtn.Text = "  Xác Nhận";
+            xacNhanBtn.TextColor = Color.DarkCyan;
+            xacNhanBtn.TextHover = Color.White;
+            xacNhanBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            xacNhanBtn.UseVisualStyleBackColor = false;
+            xacNhanBtn.Click += xacNhanBtn_Click;
             // 
             // txtSDTNcc
             // 
@@ -785,31 +783,31 @@
             label7.Text = "Thông Tin Chi Tiết";
             label7.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // btnNcc_back
+            // btn_back
             // 
-            btnNcc_back.BackColor = Color.Transparent;
-            btnNcc_back.BackgroundColor = Color.Transparent;
-            btnNcc_back.BorderColor = Color.PaleVioletRed;
-            btnNcc_back.BorderRadius = 20;
-            btnNcc_back.BorderSize = 0;
-            btnNcc_back.Cursor = Cursors.Hand;
-            btnNcc_back.EnabledTextHover = false;
-            btnNcc_back.FlatAppearance.BorderSize = 0;
-            btnNcc_back.FlatAppearance.MouseDownBackColor = Color.Teal;
-            btnNcc_back.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
-            btnNcc_back.FlatStyle = FlatStyle.Flat;
-            btnNcc_back.ForeColor = Color.White;
-            btnNcc_back.Image = Properties.Resources.arrowreturn32pxBlack1;
-            btnNcc_back.ImageHover = Properties.Resources.arrowreturn32pxWhite1;
-            btnNcc_back.Location = new Point(28, 25);
-            btnNcc_back.Margin = new Padding(4, 5, 4, 5);
-            btnNcc_back.Name = "btnNcc_back";
-            btnNcc_back.Size = new Size(90, 69);
-            btnNcc_back.TabIndex = 31;
-            btnNcc_back.TextColor = Color.White;
-            btnNcc_back.TextHover = Color.White;
-            btnNcc_back.UseVisualStyleBackColor = false;
-            btnNcc_back.Click += btnNcc_back_Click;
+            btn_back.BackColor = Color.Transparent;
+            btn_back.BackgroundColor = Color.Transparent;
+            btn_back.BorderColor = Color.PaleVioletRed;
+            btn_back.BorderRadius = 20;
+            btn_back.BorderSize = 0;
+            btn_back.Cursor = Cursors.Hand;
+            btn_back.EnabledTextHover = false;
+            btn_back.FlatAppearance.BorderSize = 0;
+            btn_back.FlatAppearance.MouseDownBackColor = Color.Teal;
+            btn_back.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
+            btn_back.FlatStyle = FlatStyle.Flat;
+            btn_back.ForeColor = Color.White;
+            btn_back.Image = Properties.Resources.arrowreturn32pxBlack1;
+            btn_back.ImageHover = Properties.Resources.arrowreturn32pxWhite1;
+            btn_back.Location = new Point(28, 25);
+            btn_back.Margin = new Padding(4, 5, 4, 5);
+            btn_back.Name = "btn_back";
+            btn_back.Size = new Size(90, 69);
+            btn_back.TabIndex = 31;
+            btn_back.TextColor = Color.White;
+            btn_back.TextHover = Color.White;
+            btn_back.UseVisualStyleBackColor = false;
+            btn_back.Click += btn_back_Click;
             // 
             // txtIdNcc
             // 
@@ -912,31 +910,6 @@
             label1.Text = "ID";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // btnFindNcc
-            // 
-            btnFindNcc.BackColor = Color.Transparent;
-            btnFindNcc.BackgroundColor = Color.Transparent;
-            btnFindNcc.BorderColor = Color.PaleVioletRed;
-            btnFindNcc.BorderRadius = 15;
-            btnFindNcc.BorderSize = 0;
-            btnFindNcc.Cursor = Cursors.Hand;
-            btnFindNcc.EnabledTextHover = false;
-            btnFindNcc.FlatAppearance.BorderSize = 0;
-            btnFindNcc.FlatAppearance.MouseOverBackColor = Color.FromArgb(50, 64, 64, 64);
-            btnFindNcc.FlatStyle = FlatStyle.Flat;
-            btnFindNcc.ForeColor = Color.White;
-            btnFindNcc.Image = Properties.Resources.findIcon16px;
-            btnFindNcc.ImageHover = null;
-            btnFindNcc.Location = new Point(331, 20);
-            btnFindNcc.Margin = new Padding(4, 5, 4, 5);
-            btnFindNcc.Name = "btnFindNcc";
-            btnFindNcc.Size = new Size(40, 40);
-            btnFindNcc.TabIndex = 29;
-            btnFindNcc.TextColor = Color.White;
-            btnFindNcc.TextHover = Color.White;
-            btnFindNcc.UseVisualStyleBackColor = false;
-            btnFindNcc.Click += btnFindNcc_Click;
-            // 
             // NccView
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -973,9 +946,9 @@
 		private TabControl tcNCC;
         private TabPage listTabPage;
         private TabPage detailTabPage;
-        private CustomControl.CustomButton delNccBtn;
-        private CustomControl.CustomButton editNccBtn;
-        private CustomControl.CustomButton addNccBtn;
+        private CustomControl.CustomButton delBtn;
+        private CustomControl.CustomButton editBtn;
+        private CustomControl.CustomButton addBtn;
         private CustomControl.CustomTextBox searchTxt;
         private DataGridView dgvNcc;
         private CustomControl.CustomTextBox txtSDTNcc;
@@ -983,19 +956,19 @@
         private CustomControl.CustomTextBox txtDiaChiNcc;
         private Label M;
         private Label label7;
-        private CustomControl.CustomButton btnNcc_back;
+        private CustomControl.CustomButton btn_back;
         private CustomControl.CustomTextBox txtIdNcc;
         private CustomControl.CustomTextBox txtEmailNcc;
         private CustomControl.CustomTextBox txtTenNcc;
         private Label label5;
         private Label label4;
         private Label label1;
-        private CustomControl.CustomButton HuyNccBtn;
-        private CustomControl.CustomButton xacNhanNccBtn;
-        private Label lbIsDelete;
+        private CustomControl.CustomButton HuyBtn;
+        private CustomControl.CustomButton xacNhanBtn;
+        private Label label8;
         private CheckBox checkboxIsDelete;
-        private CustomControl.CustomButton filterNccBtn;
-        private CustomControl.CustomButton sortNccBtn;
+        private CustomControl.CustomButton filterBtn;
+        private CustomControl.CustomButton sortBtn;
         private GroupBox groupBox1;
         private RadioButton rbIDDec;
         private RadioButton rbIIDnc;
@@ -1016,6 +989,5 @@
         private RadioButton rbIsDeleteInc;
         private GroupBox gbSort;
         private CustomControl.CustomButton resetBtn;
-        private CustomControl.CustomButton btnFindNcc;
     }
 }

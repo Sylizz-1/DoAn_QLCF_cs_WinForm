@@ -9,13 +9,13 @@ namespace DoAn_QLCF_cs_WinForm.Repository.RepositoryInterface
 {
     public interface IPhieuNhapRepository
     {
-        bool Add(PhieuNhapModel obj);
-        bool Update(PhieuNhapModel obj);
-        bool Delete(int id);
+        void Add(PhieuNhapModel obj);
+        void Update(PhieuNhapModel obj);
+        void Delete(int id);
         int GetNextId();
         IEnumerable<PhieuNhapModel> GetAll();
 
-        IEnumerable<PhieuNhapModel> GetByValue(string pnId, string nvId, string nccId, string nn, string tt);
+        IEnumerable<PhieuNhapModel> GetByValue(string value);
 
         PhieuNhapModel GetById(int id);
         bool IsExit(int id);

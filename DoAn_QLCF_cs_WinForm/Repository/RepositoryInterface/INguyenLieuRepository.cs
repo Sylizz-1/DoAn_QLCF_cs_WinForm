@@ -11,14 +11,12 @@ namespace DoAn_QLCF_cs_WinForm.Repository.RepositoryInterface
     {
         bool Add(NguyenLieuModel obj);
         bool Update(NguyenLieuModel obj);
-        bool UpdateKL_DG(int nglId, float kl, float dg);
         bool Delete(int id);
         int GetNextId();
         IEnumerable<NguyenLieuModel> GetAll();
 
         IEnumerable<NguyenLieuModel> GetByValue(string NguyenLieuId, string TenNguyenLieu, string ThongTin, string KhoiLuong, string GiaTien_Kg, string HinhAnh, bool? isDelete);
 
-        IEnumerable<NguyenLieuModel> FindNglByNameOrId(string textFind);
         NguyenLieuModel GetById(int id);
         bool IsExit(int id);
     }

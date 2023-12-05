@@ -27,17 +27,14 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             this.view = view;
             this.repository = repository;
 
-            this.view.AddNccEvent += AddNcc;
-            this.view.DeleteNccEvent += DeleteNcc;
-            this.view.FilterNccEvent += FilterNcc;
-            this.view.UpdateNccEvent += UpdateNcc;
-            this.view.btnAddNccClickEvent += AddNccClickEvent;
-            this.view.btnUpdateNccClickEvent += UpdateNccClickEvent;
-            this.view.btnFilterNccClickEvent += FilterNccClickEvent;
-#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
+            this.view.AddEvent += Add;
+            this.view.DeleteEvent += Delete;
+            this.view.FilterEvent += Filter;
+            this.view.UpdateEvent += Update;
+            this.view.btnAddClickEvent += AddClickEvent;
+            this.view.btnUpdateClickEvent += UpdateClickEvent;
+            this.view.btnFilterClickEvent += FilterClickEvent;
             this.view.ResetEvent += LoadNccList;
-            this.view.FindNccEvent += FindNcc;
 
             cpBindingSource = new BindingSource();
             LoadNccList();
@@ -59,33 +56,27 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             int txtIdNcc = repository.GetNextId();
             view.GetIdNccAdd(txtIdNcc);
         }
-        private void AddNccClickEvent(object sender, EventArgs e)
+        private void AddClickEvent(object sender, EventArgs e)
         {
             this.view.setState(true, false, false, false);
             GetNccId();
             this.view.SetNull();
         }
-        public void UpdateNccClickEvent(object sender, EventArgs e)
+        public void UpdateClickEvent(object sender, EventArgs e)
         {
             this.view.setState(false, true, false, false);
-            if (int.Parse(this.view.NCCcount) > 0)
+            if (int.Parse(this.view.selectedId) != 0)
             {
-                if (this.view.selectedId != "0")
-                {
-                    NccModel ncc = repository.GetById(int.Parse(this.view.selectedId));
-                    this.view.SetTextBoxFillData(ncc);
-                }
-                else
-                    MessageBox.Show("Vui lòng chọn phiếu nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                NccModel ncc = repository.GetById(int.Parse(this.view.selectedId));
+                this.view.SetTextBoxFillData(ncc);
+
             }
-            else
-                MessageBox.Show("Danh sách rỗng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        private void FilterNccClickEvent(object sender, EventArgs e)
+        private void FilterClickEvent(object sender, EventArgs e)
         {
             this.view.setState(false, false, true, true);
         }
-        private void AddNcc(object sender, EventArgs e)
+        private void Add(object sender, EventArgs e)
         {
             if (this.view.isAdd)
                 if (this.view.CheckInput())
@@ -100,17 +91,17 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
 
                     if (repository.Add(ncc))
                     {
-                        MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Success");
                     }
                     else
-                        MessageBox.Show("Thêm không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Fail");
 
                     GetNccId();
                     LoadNccList();
                     this.view.SetNull();
                 }
         }
-        private void FilterNcc(object sender, EventArgs e)
+        private void Filter(object sender, EventArgs e)
         {
             if (this.view.isFilter)
             {
@@ -120,32 +111,21 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             }
             this.view.isFilter = false;
         }
-        public void DeleteNcc(object sender, EventArgs e)
+        public void Delete(object sender, EventArgs e)
         {
-            MessageBox.Show(this.view.selectedId);
-            if (int.Parse(this.view.NCCcount) > 0)
+            if (int.Parse(this.view.selectedId) != 0)
             {
-                if(this.view.selectedId != "0")
+                if (repository.Delete(int.Parse(this.view.selectedId)))
                 {
-                    DialogResult result = MessageBox.Show("Bạn chắc chắn muốn xóa nhà cung cấp", "Cảnh báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                    if (result == DialogResult.OK)
-                    {
-                        if (repository.Delete(int.Parse(this.view.selectedId)))
-                        {
-                            MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                            MessageBox.Show("Xóa không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        LoadNccList();
-                    }
+                    MessageBox.Show("Delete Success");
                 }
                 else
-                    MessageBox.Show("Vui lòng chọn nhà cung cấp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Delete Fail");
+
+                LoadNccList();
             }
-            else
-                MessageBox.Show("Danh sách rỗng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        public void UpdateNcc(object sender, EventArgs e)
+        public void Update(object sender, EventArgs e)
         {
             if (this.view.isUpdate)
                 if (this.view.CheckInput())
@@ -160,7 +140,7 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
 
                     if (repository.Update(ncc))
                     {
-                        MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Edit Success");
                         this.view.NhaCungCapId = ncc.NhaCungCapId.ToString();
                         this.view.TenNhaCungCap = ncc.TenNhaCungCap.ToString();
                         this.view.SDT = ncc.SDT.ToString();
@@ -169,16 +149,9 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
                         this.view.IsDelete = ncc.IsDelete.ToString();
                     }
                     else
-                        MessageBox.Show("Sửa không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Fail");
                     LoadNccList();
                 }
-        }
-        private void FindNcc(object sender, EventArgs e)
-        {
-            nccList = repository.FindNccByNameOrId(this.view.FindText);
-            cpBindingSource.DataSource = nccList;
-            view.LoadData(cpBindingSource);
-            this.view.FindText = "";
         }
     }
 }

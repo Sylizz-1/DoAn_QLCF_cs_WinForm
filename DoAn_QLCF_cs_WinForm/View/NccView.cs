@@ -8,11 +8,9 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace DoAn_QLCF_cs_WinForm.View
 {
@@ -22,17 +20,15 @@ namespace DoAn_QLCF_cs_WinForm.View
         private static NccView instance;
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         private string id = "1";
-        public event EventHandler btnAddNccClickEvent;
-        public event EventHandler btnUpdateNccClickEvent;
-        public event EventHandler btnFilterNccClickEvent;
-        public event EventHandler AddNccEvent;
-        public event EventHandler UpdateNccEvent;
-        public event EventHandler DeleteNccEvent;
-        public event EventHandler SortNccEvent;
-        public event EventHandler FilterNccEvent;
+        public event EventHandler btnAddClickEvent;
+        public event EventHandler btnUpdateClickEvent;
+        public event EventHandler btnFilterClickEvent;
+        public event EventHandler AddEvent;
+        public event EventHandler UpdateEvent;
+        public event EventHandler DeleteEvent;
+        public event EventHandler SortEvent;
+        public event EventHandler FilterEvent;
         public event EventHandler ResetEvent;
-        public event EventHandler FindNccEvent;
-
         public bool checkIsAdd = false;
         public bool checkIsfilter = false;
         public bool checkIsUpdate = false;
@@ -61,18 +57,17 @@ namespace DoAn_QLCF_cs_WinForm.View
             InitializeComponent();
             SetUpView();
 
-            xacNhanNccBtn.Click += delegate { AddNccEvent?.Invoke(this, EventArgs.Empty); };
-            xacNhanNccBtn.Click += delegate { UpdateNccEvent?.Invoke(this, EventArgs.Empty); };
-            xacNhanNccBtn.Click += delegate { FilterNccEvent?.Invoke(this, EventArgs.Empty); };
+            xacNhanBtn.Click += delegate { AddEvent?.Invoke(this, EventArgs.Empty); };
+            xacNhanBtn.Click += delegate { UpdateEvent?.Invoke(this, EventArgs.Empty); };
+            xacNhanBtn.Click += delegate { FilterEvent?.Invoke(this, EventArgs.Empty); };
 
-            addNccBtn.Click += delegate { btnAddNccClickEvent?.Invoke(this, EventArgs.Empty); };
-            editNccBtn.Click += delegate { btnUpdateNccClickEvent?.Invoke(this, EventArgs.Empty); };
-            filterNccBtn.Click += delegate { btnFilterNccClickEvent?.Invoke(this, EventArgs.Empty); };
+            addBtn.Click += delegate { btnAddClickEvent?.Invoke(this, EventArgs.Empty); };
+            editBtn.Click += delegate { btnUpdateClickEvent?.Invoke(this, EventArgs.Empty); };
+            filterBtn.Click += delegate { btnFilterClickEvent?.Invoke(this, EventArgs.Empty); };
 
-            delNccBtn.Click += delegate { DeleteNccEvent?.Invoke(this, EventArgs.Empty); };
-            sortNccBtn.Click += delegate { SortNccEvent?.Invoke(this, EventArgs.Empty); };
+            delBtn.Click += delegate { DeleteEvent?.Invoke(this, EventArgs.Empty); };
+            sortBtn.Click += delegate { SortEvent?.Invoke(this, EventArgs.Empty); };
             resetBtn.Click += delegate { ResetEvent?.Invoke(this, EventArgs.Empty); };
-            btnFindNcc.Click += delegate { FindNccEvent?.Invoke(this, EventArgs.Empty); };
 
 #pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             rbIDDec.CheckedChanged += SortRadioButton_CheckedChanged;
@@ -156,21 +151,12 @@ namespace DoAn_QLCF_cs_WinForm.View
             get => checkIsUpdate;
             set => checkIsUpdate = value;
         }
-        public string NCCcount
-        {
-            get => dgvNcc.RowCount.ToString();
-        }
-        public string FindText
-        {
-            get => searchTxt.Texts;
-            set => searchTxt.Texts = value;
-        }
         public string selectedId { get => this.id; set => this.id = value; }
 
 
         public static INccView GetInstance(Form parentContainer)
         {
-            instance = null;
+
             if (instance == null || instance.IsDisposed)
             {
                 instance = new NccView();
@@ -182,6 +168,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             {
                 if (instance.WindowState == FormWindowState.Minimized)
                     instance.WindowState = FormWindowState.Normal;
+
             }
             instance.Show();
             return instance;
@@ -191,8 +178,6 @@ namespace DoAn_QLCF_cs_WinForm.View
         {
             this.dgvNcc.DataSource = list;
             templist = list;
-            dgvNcc.ClearSelection();
-            selectedId = "0";
         }
         public void GetIdNccAdd(int id)
         {
@@ -213,61 +198,52 @@ namespace DoAn_QLCF_cs_WinForm.View
             this.txtIdNcc.Focus();
             this.txtIdNcc.Texts = ncc.NhaCungCapId.ToString();
             this.txtIdNcc.Enabled = false;
+            this.txtTenNcc.Focus();
+            this.txtTenNcc.Texts = ncc.TenNhaCungCap;
             this.txtDiaChiNcc.Focus();
             this.txtDiaChiNcc.Texts = ncc.DiaChi;
             this.txtSDTNcc.Focus();
             this.txtSDTNcc.Texts = ncc.SDT;
             this.txtEmailNcc.Focus();
             this.txtEmailNcc.Texts = ncc.Email;
-            this.txtTenNcc.Focus();
-            this.txtTenNcc.Texts = ncc.TenNhaCungCap;
-            this.checkboxIsDelete.Checked = ncc.IsDelete;
         }
-        private bool IsEmailValid(string email)
-        {
-            string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
-            Regex regex = new Regex(emailPattern);
-            return regex.IsMatch(email);
-        }
+
         public bool CheckInput()
         {
             string s = "Vui lòng nhập ";
             if (string.IsNullOrEmpty(txtTenNcc.Texts))
             {
-                s += "Tên nhà cung cấp";
+                s += "\n + Tên nhà cung cấp";
                 txtTenNcc.BorderColor = Color.Red;
-                MessageBox.Show(s, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
             }
             else
                 txtTenNcc.BorderColor = Color.DarkCyan;
             if (string.IsNullOrEmpty(txtDiaChiNcc.Texts))
             {
-                s += "Địa chỉ nhà cung cấp";
+                s += "\n + Địa chỉ nhà cung cấp";
                 txtDiaChiNcc.BorderColor = Color.Red;
-                MessageBox.Show(s, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
             }
             else
                 txtDiaChiNcc.BorderColor = Color.DarkCyan;
-            if (string.IsNullOrEmpty(txtSDTNcc.Texts) || !float.TryParse(txtSDTNcc.Texts, out _) || txtSDTNcc.Texts.Length != 10)
+            if (string.IsNullOrEmpty(txtSDTNcc.Texts) || !float.TryParse(txtSDTNcc.Texts, out _))
             {
-                s += "Số điện thoại nhà cung cấp (số)";
+                s += "\n + Số điện thoại nhà cung cấp (số)";
                 txtSDTNcc.BorderColor = Color.Red;
-                MessageBox.Show(s, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
             }
             else
                 txtSDTNcc.BorderColor = Color.DarkCyan;
-            if (string.IsNullOrEmpty(txtEmailNcc.Texts) || !IsEmailValid(txtEmailNcc.Texts))
+            if (string.IsNullOrEmpty(txtEmailNcc.Texts))
             {
-                s += "Email nhà cung cấp";
+                s += "\n + Email nhà cung cấp";
                 txtEmailNcc.BorderColor = Color.Red;
-                MessageBox.Show(s, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
             }
             else
                 txtEmailNcc.BorderColor = Color.DarkCyan;
+            if (s != "Vui lòng nhập ")
+            {
+                MessageBox.Show(s);
+                return false;
+            }
             return true;
         }
         public void setState(bool isAddState, bool isUpdateState, bool isFilterState, bool isNeedReturnState)
@@ -287,17 +263,11 @@ namespace DoAn_QLCF_cs_WinForm.View
                 txtIdNcc.BorderColor = Color.DarkCyan;
                 txtIdNcc.Focus();
             }
-            if (isAdd)
-            {
-                lbIsDelete.Visible = false;
-                checkboxIsDelete.Visible = false;
-                txtTenNcc.PlaceholderText = string.Empty;
-            }
 
+            txtTenNcc.Texts = "";
             txtSDTNcc.Texts = "";
             txtEmailNcc.Texts = "";
             txtDiaChiNcc.Texts = "";
-            txtTenNcc.Texts = "";
             checkboxIsDelete.Checked = false;
             txtTenNcc.BorderColor = Color.DarkCyan;
             txtDiaChiNcc.BorderColor = Color.DarkCyan;
@@ -305,7 +275,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             txtSDTNcc.BorderColor = Color.DarkCyan;
         }
 
-        private void addNccBtn_Click(object sender, EventArgs e)
+        private void addBtn_Click(object sender, EventArgs e)
         {
             txtIdNcc.Enabled = false;
             txtIdNcc.BackColor = Color.LightGray;
@@ -313,19 +283,18 @@ namespace DoAn_QLCF_cs_WinForm.View
             tcNCC.SelectedTab = detailTabPage;
         }
 
-        private void editNccBtn_Click(object sender, EventArgs e)
+        private void editBtn_Click(object sender, EventArgs e)
         {
-            if (dgvNcc.RowCount > 0 && selectedId != "0")
-                tcNCC.SelectedTab = detailTabPage;
+            tcNCC.SelectedTab = detailTabPage;
         }
-        private void filterNccBtn_Click(object sender, EventArgs e)
+        private void filterBtn_Click(object sender, EventArgs e)
         {
             isFilter = true;
             tcNCC.SelectedTab = detailTabPage;
             SetNull();
         }
 
-        private void btnNcc_back_Click(object sender, EventArgs e)
+        private void btn_back_Click(object sender, EventArgs e)
         {
             if (isFilter)
             {
@@ -334,19 +303,12 @@ namespace DoAn_QLCF_cs_WinForm.View
                 txtIdNcc.BackColor = Color.LightGray;
                 txtIdNcc.BorderColor = Color.Silver;
             }
-            if (isAdd)
-            {
-                lbIsDelete.Visible = true;
-                checkboxIsDelete.Visible = true;
-            }
             setState(false, false, false, false);
             tcNCC.SelectedTab = listTabPage;
             SetNull();
-            dgvNcc.ClearSelection();
-            selectedId = "0";
         }
 
-        private void HuyNccBtn_Click(object sender, EventArgs e)
+        private void HuyBtn_Click(object sender, EventArgs e)
         {
             if (isFilter)
             {
@@ -355,16 +317,9 @@ namespace DoAn_QLCF_cs_WinForm.View
                 txtIdNcc.BackColor = Color.LightGray;
                 txtIdNcc.BorderColor = Color.Silver;
             }
-            if (isAdd)
-            {
-                lbIsDelete.Visible = true;
-                checkboxIsDelete.Visible = true;
-            }
             setState(false, false, false, false);
             tcNCC.SelectedTab = listTabPage;
             SetNull();
-            dgvNcc.ClearSelection();
-            selectedId = "0";
         }
         private void dgvNcc_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -414,7 +369,7 @@ namespace DoAn_QLCF_cs_WinForm.View
         }
 
 
-        private void sortNccBtn_Click(object sender, EventArgs e)
+        private void sortBtn_Click(object sender, EventArgs e)
         {
             if (gbSort.Visible)
                 gbSort.Visible = false;
@@ -469,10 +424,10 @@ namespace DoAn_QLCF_cs_WinForm.View
                     myList.Sort((x, y) => y.Email.CompareTo(x.Email));
                     break;
                 case "IsDeleteInc":
-                    myList.Sort((x, y) => x.IsDelete.CompareTo(y.IsDelete));
+                    myList.Sort((x, y) => x.Email.CompareTo(y.Email));
                     break;
                 case "IsDeleteDec":
-                    myList.Sort((x, y) => y.IsDelete.CompareTo(x.IsDelete));
+                    myList.Sort((x, y) => y.Email.CompareTo(x.Email));
                     break;
             }
             BindingSource myBindingSource = new BindingSource();
@@ -494,20 +449,11 @@ namespace DoAn_QLCF_cs_WinForm.View
             rbEmailInc.Checked = false;
             rbIsDeleteDec.Checked = false;
             rbIsDeleteInc.Checked = false;
-
-            dgvNcc.ClearSelection();
-            selectedId = "0";
         }
-        private void xacNhanNccBtn_Click(object sender, EventArgs e)
+        private void xacNhanBtn_Click(object sender, EventArgs e)
         {
             if (isNeedTurn)
                 tcNCC.SelectedTab = listTabPage;
-            dgvNcc.ClearSelection();
-            selectedId = "0";
-        }
-
-        private void btnFindNcc_Click(object sender, EventArgs e)
-        {
         }
     }
 }
