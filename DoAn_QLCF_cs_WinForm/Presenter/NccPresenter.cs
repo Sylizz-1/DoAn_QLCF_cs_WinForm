@@ -20,7 +20,9 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
         private IEnumerable<NccModel> nccList;
 
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public NccPresenter(INccView view, INccRepository repository)
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
             this.view = view;
             this.repository = repository;
@@ -32,6 +34,8 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             this.view.btnAddNccClickEvent += AddNccClickEvent;
             this.view.btnUpdateNccClickEvent += UpdateNccClickEvent;
             this.view.btnFilterNccClickEvent += FilterNccClickEvent;
+#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
+#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             this.view.ResetEvent += LoadNccList;
             this.view.FindNccEvent += FindNcc;
 

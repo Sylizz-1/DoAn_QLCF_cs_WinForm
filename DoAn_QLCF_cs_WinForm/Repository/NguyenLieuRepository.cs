@@ -18,7 +18,9 @@ namespace DoAn_QLCF_cs_WinForm.Repository
         public NguyenLieuRepository(string connectionString)
         {
             this.connectionString = connectionString;
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
             string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
             var logoimage = Path.Combine(path, "image\\nguyenLieu");
             nguyenLieuImagePath = logoimage;
         }
@@ -38,11 +40,21 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                     {
                         var NguyenLieu = new NguyenLieuModel();
                         NguyenLieu.NguyenLieuId = (int)reader["NguyenLieuId"];
+#pragma warning disable CS8601 // Possible null reference assignment.
                         NguyenLieu.TenNguyenLieu = reader["TenNguyenLieu"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
                         NguyenLieu.ThongTin = reader["ThongTin"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8604 // Possible null reference argument.
                         NguyenLieu.KhoiLuong = float.Parse(reader["KhoiLuong"].ToString());
+#pragma warning restore CS8604 // Possible null reference argument.
+#pragma warning disable CS8604 // Possible null reference argument.
                         NguyenLieu.GiaTien_Kg = float.Parse(reader["GiaTien_Kg"].ToString());
+#pragma warning restore CS8604 // Possible null reference argument.
+#pragma warning disable CS8604 // Possible null reference argument.
                         string imgPath = Path.Combine(this.nguyenLieuImagePath, reader["HinhAnh"].ToString());
+#pragma warning restore CS8604 // Possible null reference argument.
                         try
                         {
                             NguyenLieu.HinhAnh = imgPath;
@@ -50,7 +62,9 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                         catch (OutOfMemoryException ex)
                         {
                             ex.ToString();
+#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
                             NguyenLieu.HinhAnh = null;
+#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
                         }
                         NguyenLieu.IsDelete = (bool)reader["IsDelete"];
 
@@ -146,11 +160,21 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                     if (reader.Read())
                     {
                         NguyenLieu.NguyenLieuId = (int)reader["NguyenLieuId"];
+#pragma warning disable CS8601 // Possible null reference assignment.
                         NguyenLieu.TenNguyenLieu = reader["TenNguyenLieu"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
                         NguyenLieu.ThongTin = reader["ThongTin"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8604 // Possible null reference argument.
                         NguyenLieu.KhoiLuong = float.Parse(reader["KhoiLuong"].ToString());
+#pragma warning restore CS8604 // Possible null reference argument.
+#pragma warning disable CS8604 // Possible null reference argument.
                         NguyenLieu.GiaTien_Kg = float.Parse(reader["GiaTien_Kg"].ToString());
+#pragma warning restore CS8604 // Possible null reference argument.
+#pragma warning disable CS8604 // Possible null reference argument.
                         string imgPath = Path.Combine(this.nguyenLieuImagePath, reader["HinhAnh"].ToString());
+#pragma warning restore CS8604 // Possible null reference argument.
                         try
                         {
                             NguyenLieu.HinhAnh = imgPath;
@@ -158,7 +182,9 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                         catch (OutOfMemoryException ex)
                         {
                             ex.ToString();
+#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
                             NguyenLieu.HinhAnh = null;
+#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
                         }
                         NguyenLieu.IsDelete = (bool)reader["IsDelete"];
                     }
@@ -243,11 +269,21 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                     {
                         var NguyenLieu = new NguyenLieuModel();
                         NguyenLieu.NguyenLieuId = (int)reader["NguyenLieuId"];
+#pragma warning disable CS8601 // Possible null reference assignment.
                         NguyenLieu.TenNguyenLieu = reader["TenNguyenLieu"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
                         NguyenLieu.ThongTin = reader["ThongTin"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8604 // Possible null reference argument.
                         NguyenLieu.KhoiLuong = float.Parse(reader["KhoiLuong"].ToString());
+#pragma warning restore CS8604 // Possible null reference argument.
+#pragma warning disable CS8604 // Possible null reference argument.
                         NguyenLieu.GiaTien_Kg = float.Parse(reader["GiaTien_Kg"].ToString());
+#pragma warning restore CS8604 // Possible null reference argument.
+#pragma warning disable CS8604 // Possible null reference argument.
                         string imgPath = Path.Combine(this.nguyenLieuImagePath, reader["HinhAnh"].ToString());
+#pragma warning restore CS8604 // Possible null reference argument.
                         try
                         {
                             NguyenLieu.HinhAnh = imgPath;
@@ -255,7 +291,9 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                         catch (OutOfMemoryException ex)
                         {
                             ex.ToString();
+#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
                             NguyenLieu.HinhAnh = null;
+#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
                         }
                         NguyenLieu.IsDelete = (bool)reader["IsDelete"];
 

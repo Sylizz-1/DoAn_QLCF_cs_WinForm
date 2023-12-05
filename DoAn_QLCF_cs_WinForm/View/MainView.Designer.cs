@@ -313,6 +313,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             btnNavToolTip.SetToolTip(navPhanQuyen, "Phân Quyền");
             navPhanQuyen.UseVisualStyleBackColor = false;
             navPhanQuyen.Click += ButtonNavClick;
+            navPhanQuyen.MouseDown += navPhanQuyen_MouseDown;
             // 
             // pn_nhaCungCap
             // 
@@ -794,6 +795,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             mainPanelContainer.Size = new Size(694, 688);
             mainPanelContainer.TabIndex = 1;
             mainPanelContainer.Click += ButtonNavClick;
+            mainPanelContainer.MouseDown += navPhanQuyen_MouseDown;
             // 
             // titleBar
             // 
@@ -1000,6 +1002,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             Controls.Add(backgroundMainView);
             Controls.Add(sideBar);
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            MaximizeBox = false;
             MinimumSize = new Size(799, 682);
             Name = "MainView";
             StartPosition = FormStartPosition.CenterScreen;

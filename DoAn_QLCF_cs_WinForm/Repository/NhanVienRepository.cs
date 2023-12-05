@@ -1,5 +1,6 @@
 ﻿using DoAn_QLCF_cs_WinForm.Model;
 using DoAn_QLCF_cs_WinForm.Repository.RepositoryInterface;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 
 namespace DoAn_QLCF_cs_WinForm.Repository
@@ -27,14 +28,27 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                     {
                         var nhanVienModel = new NhanVienModel();
                         nhanVienModel.Id = (int)reader["NhanVienId"];
+#pragma warning disable CS8601 // Possible null reference assignment.
                         nhanVienModel.Name = reader["Ten"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
                         nhanVienModel.Gioitinh = reader["GioiTinh"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
                         nhanVienModel.Email = reader["Email"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
                         nhanVienModel.Sdt = reader["SDT"].ToString();
                         nhanVienModel.Ngaysinh = (DateTime)reader["NgaySinh"];
+#pragma warning disable CS8601 // Possible null reference assignment.
                         nhanVienModel.Taikhoan = reader["TaiKhoan"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
                         nhanVienModel.Matkhau = reader["MatKhau"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
                         nhanVienModel.Quyen = reader["QuyenId"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
                         nhanVienModel.isDelete = (bool)reader["IsDelete"];
 
                         List.Add(nhanVienModel);
@@ -66,6 +80,13 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                     {
                         while (reader.Read())
                         {
+#pragma warning disable CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
                             var nhanVienModel = new NhanVienModel
                             {
                                 Id = (int)reader["NhanVienId"],
@@ -79,6 +100,13 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                                 Quyen = reader["QuyenId"].ToString(),
                                 isDelete = (bool)reader["IsDelete"]
                             };
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning restore CS8601 // Possible null reference assignment.
                         List.Add(nhanVienModel);
                     }
                 }
@@ -112,6 +140,32 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                     return (int)result + 1;
                 }
                 return 1;
+            }
+        }
+
+        public List<string> getQuyen()
+        {
+            List<string> quyenList = new List<string>();
+            using (var connection = new SqlConnection(this.connectionString))
+            using (var cmd = connection.CreateCommand())
+            {
+                connection.Open();
+                cmd.Connection = connection;
+                cmd.CommandText = "SELECT * FROM Quyen";
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
+                        string tenQuyen = reader["TenQuyen"].ToString();
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
+#pragma warning disable CS8604 // Possible null reference argument.
+                        quyenList.Add(tenQuyen);
+#pragma warning restore CS8604 // Possible null reference argument.
+
+                    }
+                }
+                return quyenList;
             }
         }
     }

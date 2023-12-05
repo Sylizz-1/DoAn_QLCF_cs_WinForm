@@ -16,6 +16,24 @@ namespace DoAn_QLCF_cs_WinForm.View
         public PhanQuyenView()
         {
             InitializeComponent();
+            SetUpView();
+        }
+
+        private void SetUpView()
+        {
+            // ẩn các tab control
+            tc_chucNang.Appearance = TabAppearance.FlatButtons;
+            tc_chucNang.ItemSize = new System.Drawing.Size(0, 1);
+            tc_chucNang.SizeMode = TabSizeMode.Fixed;
+            tc_quyen.Appearance = TabAppearance.FlatButtons;
+            tc_quyen.ItemSize = new System.Drawing.Size(0, 1);
+            tc_quyen.SizeMode = TabSizeMode.Fixed;
+        }
+
+        public void LoadData(BindingSource listPermission, BindingSource listMethod)
+        {
+            this.dtgrv_quyen.DataSource = listPermission;
+            this.dtgrv_chucNang.DataSource = listMethod;
         }
 
         private static PhanQuyenView instance;
@@ -38,5 +56,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             instance.Show();
             return instance;
         }
+
+
     }
 }

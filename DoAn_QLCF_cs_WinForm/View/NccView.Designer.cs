@@ -20,7 +20,7 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
 
         /// <summary>
         /// Required method for Designer support - do not modify
@@ -968,9 +968,9 @@
             ResumeLayout(false);
         }
 
-        #endregion
+		#endregion
 
-        private TabControl tcNCC;
+		private TabControl tcNCC;
         private TabPage listTabPage;
         private TabPage detailTabPage;
         private CustomControl.CustomButton delNccBtn;

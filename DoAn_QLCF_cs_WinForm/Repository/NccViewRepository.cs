@@ -119,6 +119,10 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                 {
                     while (reader.Read())
                     {
+#pragma warning disable CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
                         var ncc = new NccModel
                         {
                             NhaCungCapId = (int)reader["NhaCungCapId"],
@@ -128,6 +132,10 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                             Email = reader["Email"].ToString(),
                             IsDelete = (bool)reader["IsDelete"]
                         };
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning restore CS8601 // Possible null reference assignment.
                         nccList.Add(ncc);
                     }
                 }
@@ -192,10 +200,18 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                     {
                         var ncc = new NccModel();
                         ncc.NhaCungCapId = (int)reader["NhaCungCapId"];
+#pragma warning disable CS8601 // Possible null reference assignment.
                         ncc.TenNhaCungCap = reader["TenNhaCungCap"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
                         ncc.DiaChi = reader["DiaChi"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
                         ncc.SDT = reader["SDT"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
                         ncc.Email = reader["Email"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
                         ncc.IsDelete = (bool)reader["IsDelete"];
 
                         cpList.Add(ncc);
@@ -222,10 +238,18 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                     if (reader.Read())
                     {
                         ncc.NhaCungCapId = (int)reader["NhaCungCapId"];
+#pragma warning disable CS8601 // Possible null reference assignment.
                         ncc.TenNhaCungCap = reader["TenNhaCungCap"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
                         ncc.DiaChi = reader["DiaChi"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
                         ncc.SDT = reader["SDT"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
                         ncc.Email = reader["Email"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
                         ncc.IsDelete = (bool)reader["IsDelete"];
                     }
                 }

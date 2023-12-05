@@ -17,7 +17,9 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
         private BindingSource bindingSource;
         private IEnumerable<KhachHangModel> List;
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public KhachHangPresenter(IKhachHangView view, IKhachHangRepository repo)
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 		{
 			this.view = view;
 			this.repo = repo;

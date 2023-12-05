@@ -18,18 +18,35 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
         private IEnumerable<NguyenLieuModel> NguyenLieuList;
         private string nguyenLieuImagePath;
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public NguyenLieuPresenter(INguyenLieuView view, INguyenLieuRepository repository)
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
             this.view = view;
             this.repository = repository;
 
+#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             this.view.AddEvent += Add;
+#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
+#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             this.view.DeleteEvent += Delete;
+#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
+#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             this.view.FilterEvent += Filter;
+#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
+#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             this.view.UpdateEvent += Update;
+#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
+#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             this.view.btnAddClickEvent += AddClickEvent;
+#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
+#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             this.view.btnUpdateClickEvent += UpdateClickEvent;
+#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
+#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             this.view.btnFilterClickEvent += FilterClickEvent;
+#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
+#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             this.view.ResetEvent += LoadNguyenLieuList;
             this.view.FindNglEvent += FindNgl;
 
@@ -37,7 +54,9 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             LoadNguyenLieuList();
             GetNguyenLieuId();
 
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
             string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
             var logoimage = Path.Combine(path, "image\\nguyenLieu");
             nguyenLieuImagePath = logoimage;
         }
