@@ -27,30 +27,17 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             this.view = view;
             this.repository = repository;
 
-#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-            this.view.AddEvent += Add;
-#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-            this.view.DeleteEvent += Delete;
-#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-            this.view.FilterEvent += Filter;
-#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-            this.view.UpdateEvent += Update;
-#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-            this.view.btnAddClickEvent += AddClickEvent;
-#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-            this.view.btnUpdateClickEvent += UpdateClickEvent;
-#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-            this.view.btnFilterClickEvent += FilterClickEvent;
+            this.view.AddNccEvent += AddNcc;
+            this.view.DeleteNccEvent += DeleteNcc;
+            this.view.FilterNccEvent += FilterNcc;
+            this.view.UpdateNccEvent += UpdateNcc;
+            this.view.btnAddNccClickEvent += AddNccClickEvent;
+            this.view.btnUpdateNccClickEvent += UpdateNccClickEvent;
+            this.view.btnFilterNccClickEvent += FilterNccClickEvent;
 #pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
 #pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             this.view.ResetEvent += LoadNccList;
-#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
+            this.view.FindNccEvent += FindNcc;
 
             cpBindingSource = new BindingSource();
             LoadNccList();
@@ -72,27 +59,33 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             int txtIdNcc = repository.GetNextId();
             view.GetIdNccAdd(txtIdNcc);
         }
-        private void AddClickEvent(object sender, EventArgs e)
+        private void AddNccClickEvent(object sender, EventArgs e)
         {
             this.view.setState(true, false, false, false);
             GetNccId();
             this.view.SetNull();
         }
-        public void UpdateClickEvent(object sender, EventArgs e)
+        public void UpdateNccClickEvent(object sender, EventArgs e)
         {
             this.view.setState(false, true, false, false);
-            if (int.Parse(this.view.selectedId) != 0)
+            if (int.Parse(this.view.NCCcount) > 0)
             {
-                NccModel ncc = repository.GetById(int.Parse(this.view.selectedId));
-                this.view.SetTextBoxFillData(ncc);
-
+                if (this.view.selectedId != "0")
+                {
+                    NccModel ncc = repository.GetById(int.Parse(this.view.selectedId));
+                    this.view.SetTextBoxFillData(ncc);
+                }
+                else
+                    MessageBox.Show("Vui lòng chọn phiếu nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else
+                MessageBox.Show("Danh sách rỗng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        private void FilterClickEvent(object sender, EventArgs e)
+        private void FilterNccClickEvent(object sender, EventArgs e)
         {
             this.view.setState(false, false, true, true);
         }
-        private void Add(object sender, EventArgs e)
+        private void AddNcc(object sender, EventArgs e)
         {
             if (this.view.isAdd)
                 if (this.view.CheckInput())
@@ -107,17 +100,17 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
 
                     if (repository.Add(ncc))
                     {
-                        MessageBox.Show("Success");
+                        MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
-                        MessageBox.Show("Fail");
+                        MessageBox.Show("Thêm không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     GetNccId();
                     LoadNccList();
                     this.view.SetNull();
                 }
         }
-        private void Filter(object sender, EventArgs e)
+        private void FilterNcc(object sender, EventArgs e)
         {
             if (this.view.isFilter)
             {
@@ -127,21 +120,32 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             }
             this.view.isFilter = false;
         }
-        public void Delete(object sender, EventArgs e)
+        public void DeleteNcc(object sender, EventArgs e)
         {
-            if (int.Parse(this.view.selectedId) != 0)
+            MessageBox.Show(this.view.selectedId);
+            if (int.Parse(this.view.NCCcount) > 0)
             {
-                if (repository.Delete(int.Parse(this.view.selectedId)))
+                if(this.view.selectedId != "0")
                 {
-                    MessageBox.Show("Delete Success");
+                    DialogResult result = MessageBox.Show("Bạn chắc chắn muốn xóa nhà cung cấp", "Cảnh báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (result == DialogResult.OK)
+                    {
+                        if (repository.Delete(int.Parse(this.view.selectedId)))
+                        {
+                            MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                            MessageBox.Show("Xóa không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        LoadNccList();
+                    }
                 }
                 else
-                    MessageBox.Show("Delete Fail");
-
-                LoadNccList();
+                    MessageBox.Show("Vui lòng chọn nhà cung cấp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else
+                MessageBox.Show("Danh sách rỗng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        public void Update(object sender, EventArgs e)
+        public void UpdateNcc(object sender, EventArgs e)
         {
             if (this.view.isUpdate)
                 if (this.view.CheckInput())
@@ -156,7 +160,7 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
 
                     if (repository.Update(ncc))
                     {
-                        MessageBox.Show("Edit Success");
+                        MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.view.NhaCungCapId = ncc.NhaCungCapId.ToString();
                         this.view.TenNhaCungCap = ncc.TenNhaCungCap.ToString();
                         this.view.SDT = ncc.SDT.ToString();
@@ -165,9 +169,16 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
                         this.view.IsDelete = ncc.IsDelete.ToString();
                     }
                     else
-                        MessageBox.Show("Fail");
+                        MessageBox.Show("Sửa không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     LoadNccList();
                 }
+        }
+        private void FindNcc(object sender, EventArgs e)
+        {
+            nccList = repository.FindNccByNameOrId(this.view.FindText);
+            cpBindingSource.DataSource = nccList;
+            view.LoadData(cpBindingSource);
+            this.view.FindText = "";
         }
     }
 }

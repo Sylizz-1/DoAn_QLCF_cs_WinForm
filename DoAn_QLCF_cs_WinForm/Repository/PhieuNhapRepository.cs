@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace DoAn_QLCF_cs_WinForm.Repository
 {
@@ -16,32 +17,140 @@ namespace DoAn_QLCF_cs_WinForm.Repository
             this.connectionString = connectionString;
         }
 
-        public void Add(PhieuNhapModel PhieuNhap)
+        public bool Add(PhieuNhapModel PhieuNhap)
         {
-            MessageBox.Show("Success");
+            try
+            {
+                using (var connection = new SqlConnection(this.connectionString))
+                using (var cmd = connection.CreateCommand())
+                {
+                    connection.Open();
+                    cmd.Connection = connection;
+
+                    cmd.CommandText = "INSERT INTO PhieuNhap (NhanVienId, NhaCungCapId, NgayNhap, TongTien) " +
+                                      "VALUES (@NhanVienId, @NhaCungCapId, @NgayNhap, @TongTien)";
+
+                    cmd.Parameters.AddWithValue("@NhanVienId", PhieuNhap.NhanVienId);
+                    cmd.Parameters.AddWithValue("@NhaCungCapId", PhieuNhap.NhaCungCapId);
+                    cmd.Parameters.AddWithValue("@NgayNhap", PhieuNhap.NgayNhap);
+                    cmd.Parameters.AddWithValue("@TongTien", PhieuNhap.TongTien);
+
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
+        public bool Update(PhieuNhapModel obj)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(this.connectionString))
+                using (var cmd = connection.CreateCommand())
+                {
+                    connection.Open();
+                    cmd.Connection = connection;
+                    cmd.CommandText = "UPDATE PhieuNhap SET NhanVienId = @NhanVienId, NhaCungCapId = @NhaCungCapId, NgayNhap = @NgayNhap, TongTien = @TongTien WHERE PhieuNhapId = @Id";
+
+                    cmd.Parameters.AddWithValue("@Id", obj.PhieuNhapId);
+                    cmd.Parameters.AddWithValue("@NhanVienId", obj.NhanVienId);
+                    cmd.Parameters.AddWithValue("@NhaCungCapId", obj.NhaCungCapId);
+                    cmd.Parameters.AddWithValue("@NgayNhap", obj.NgayNhap);
+                    cmd.Parameters.AddWithValue("@TongTien", obj.TongTien);
+
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
+        public bool Delete(int id)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(this.connectionString))
+                using (var cmd = connection.CreateCommand())
+                {
+                    connection.Open();
+                    cmd.Connection = connection;
+                    cmd.CommandText = "DELETE FROM PhieuNhap WHERE PhieuNhapId = @Id";
+
+                    cmd.Parameters.AddWithValue("@Id", id);
+
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
+
+        public IEnumerable<PhieuNhapModel> GetByValue(string pnId, string nvId, string nccId, string nn, string tt)
+        {
+            List<PhieuNhapModel> phieuNhapList = new List<PhieuNhapModel>();
             using (var connection = new SqlConnection(this.connectionString))
             using (var cmd = connection.CreateCommand())
             {
                 connection.Open();
                 cmd.Connection = connection;
+                StringBuilder queryBuilder = new StringBuilder("SELECT * FROM PhieuNhap WHERE 1=1");
 
-                cmd.CommandText = "INSERT INTO PhieuNhap (NhanVienId, NhaCungCapId, NgayNhap, TongTien) " +
-                                  "VALUES (@NhanVienId, @NhaCungCapId, @NgayNhap, @TongTien)";
+                if (!string.IsNullOrEmpty(pnId))
+                {
+                    queryBuilder.Append(" AND PhieuNhapId = @PhieuNhapId");
+                    cmd.Parameters.AddWithValue("@PhieuNhapId", pnId);
+                }
+                if (!string.IsNullOrEmpty(nvId) && nvId != "0")
+                {
+                    queryBuilder.Append(" AND NhanVienId LIKE @NhanVienId");
+                    cmd.Parameters.AddWithValue("@NhanVienId", "%" + nvId + "%");
+                }
+                if (!string.IsNullOrEmpty(nccId) && nccId != "0")
+                {
+                    queryBuilder.Append(" AND NhaCungCapId LIKE @NhaCungCapId");
+                    cmd.Parameters.AddWithValue("@NhaCungCapId", "%" + nccId + "%");
+                }
+                if (!string.IsNullOrEmpty(nn))
+                {
+                    string[] parts = DateTime.Parse(nn).ToString().Split(' ');
+                    string dateString = parts[0];
+                    queryBuilder.Append(" AND NgayNhap = @NgayNhap");
+                    cmd.Parameters.AddWithValue("@NgayNhap", dateString);
+                }
+                if (!String.IsNullOrEmpty(tt) && tt != "0")
+                {
+                    queryBuilder.Append(" and TongTien = @TongTien");
+                    cmd.Parameters.AddWithValue("@TongTien", tt);
+                }
 
-                cmd.Parameters.AddWithValue("@NhanVienId", PhieuNhap.NhanVienId);
-                cmd.Parameters.AddWithValue("@NhaCungCapId", PhieuNhap.NhaCungCapId);
-                cmd.Parameters.AddWithValue("@NgayNhap", PhieuNhap.NgayNhap);
-                cmd.Parameters.AddWithValue("@TongTien", PhieuNhap.TongTien);
-
-                cmd.ExecuteNonQuery();
+                cmd.CommandText = queryBuilder.ToString();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var phieuNhap = new PhieuNhapModel();
+                        phieuNhap.PhieuNhapId = (int)reader["PhieuNhapId"];
+                        phieuNhap.NhanVienId = (int)reader["NhanVienId"];
+                        phieuNhap.NhaCungCapId = (int)reader["NhaCungCapId"];
+                        phieuNhap.NgayNhap = (DateTime)reader["NgayNhap"];
+                        phieuNhap.TongTien = Convert.ToSingle(reader["TongTien"]);
+                        phieuNhapList.Add(phieuNhap);
+                    }
+                }
             }
-        }
 
-
-
-        public void Delete(int id)
-        {
-            throw new NotImplementedException();
+            return phieuNhapList;
         }
 
         public IEnumerable<PhieuNhapModel> GetAll()
@@ -91,7 +200,7 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                         PhieuNhap.NhanVienId = (int)reader["NhanVienId"];
                         PhieuNhap.NhaCungCapId = (int)reader["NhaCungCapId"];
                         PhieuNhap.NgayNhap = (DateTime)reader["NgayNhap"];
-                        PhieuNhap.TongTien = (float)reader["TongTien"];
+                        PhieuNhap.TongTien = Convert.ToSingle(reader["TongTien"]);
                     }
                 }
 
@@ -118,36 +227,6 @@ namespace DoAn_QLCF_cs_WinForm.Repository
             }
         }
 
-        public IEnumerable<PhieuNhapModel> GetByValue(string value)
-        {
-            List<PhieuNhapModel> PhieuNhapList = new List<PhieuNhapModel>();
-
-            using (var connection = new SqlConnection(this.connectionString))
-            using (var cmd = connection.CreateCommand())
-            {
-                connection.Open();
-                cmd.Connection = connection;
-                cmd.CommandText = "SELECT * FROM PhieuNhap WHERE PhieuNhapId LIKE @Value";
-                cmd.Parameters.AddWithValue("@Value", "%" + value + "%");
-
-                using (var reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        var PhieuNhap = new PhieuNhapModel();
-                        PhieuNhap.PhieuNhapId = (int)reader["PhieuNhapId"];
-                        PhieuNhap.NhanVienId = (int)reader["NhanVienId"];
-                        PhieuNhap.NhaCungCapId = (int)reader["NhaCungCapId"];
-                        PhieuNhap.NgayNhap = (DateTime)reader["NgayNhap"];
-                        PhieuNhap.TongTien = (float)reader["TongTien"];
-                        PhieuNhapList.Add(PhieuNhap);
-                    }
-                }
-            }
-
-            return PhieuNhapList;
-        }
-
         public bool IsExit(int id)
         {
             using (var connection = new SqlConnection(this.connectionString))
@@ -164,24 +243,5 @@ namespace DoAn_QLCF_cs_WinForm.Repository
             }
         }
 
-        public void Update(PhieuNhapModel obj)
-        {
-            using (var connection = new SqlConnection(this.connectionString))
-            using (var cmd = connection.CreateCommand())
-            {
-                connection.Open();
-                cmd.Connection = connection;
-                cmd.CommandText = "UPDATE PhieuNhap SET PhieuNhapId = @PhieuNhapId, NhanVienId = @NhanVienId, NhaCungCapId = @NhaCungCapId, NgayNhap = @NgayNhap, TongTien = @TongTien WHERE PhieuNhapId = @Id";
-
-                cmd.Parameters.AddWithValue("@Id", obj.PhieuNhapId);
-                cmd.Parameters.AddWithValue("@PhieuNhapId", obj.PhieuNhapId);
-                cmd.Parameters.AddWithValue("@NhanVienId", obj.NhanVienId);
-                cmd.Parameters.AddWithValue("@NhaCungCapId", obj.NhaCungCapId);
-                cmd.Parameters.AddWithValue("@NgayNhap", obj.NgayNhap);
-                cmd.Parameters.AddWithValue("@TongTien", obj.TongTien);
-
-                cmd.ExecuteNonQuery();
-            }
-        }
     }
 }
