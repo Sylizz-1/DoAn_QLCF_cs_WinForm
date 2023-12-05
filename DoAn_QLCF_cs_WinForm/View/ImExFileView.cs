@@ -18,9 +18,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             InitializeComponent();
         }
 
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         private static ImExFileView instance;
-#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public static IImExFileView GetInstance(Form parentContainer)
         {
 
@@ -50,6 +48,18 @@ namespace DoAn_QLCF_cs_WinForm.View
         {
 
 
+        }
+
+        private void customButton2_Click(object sender, EventArgs e)
+        {
+            FormGridViewKhachHang form = new FormGridViewKhachHang();
+            form.Show();
+        }
+
+        private void customButton3_Click(object sender, EventArgs e)
+        {
+            FormGridViewNhanVien form = new FormGridViewNhanVien();
+            form.Show();
         }
     }
 }

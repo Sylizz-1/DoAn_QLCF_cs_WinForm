@@ -140,6 +140,7 @@
             customButton3.TextHover = Color.White;
             customButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton3.UseVisualStyleBackColor = false;
+            customButton3.Click += customButton3_Click;
             // 
             // customButton2
             // 
@@ -169,6 +170,7 @@
             customButton2.TextHover = Color.White;
             customButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton2.UseVisualStyleBackColor = false;
+            customButton2.Click += customButton2_Click;
             // 
             // customButton1
             // 

@@ -47,9 +47,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         public string nhanvienGioitinh
         {
-#pragma warning disable CS8603 // Possible null reference return.
             get => this.gioitinhcmb.SelectedItem.ToString();
-#pragma warning restore CS8603 // Possible null reference return.
             set => this.gioitinhcmb.SelectedItem = value;
         }
 
@@ -73,23 +71,17 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         public string nhanvienQuyen
         {
-#pragma warning disable CS8603 // Possible null reference return.
             get => this.quyencmb.SelectedItem.ToString();
-#pragma warning restore CS8603 // Possible null reference return.
             set => this.quyencmb.SelectedItem = value;
         }
 
         public string nhanvienDel
         {
-#pragma warning disable CS8603 // Possible null reference return.
             get => this.trangthaicmb.SelectedItem.ToString();
-#pragma warning restore CS8603 // Possible null reference return.
             set => this.trangthaicmb.SelectedItem = value;
         }
 
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         private static NhanVienView instance;
-#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
         public NhanVienPresenter Presenter { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
