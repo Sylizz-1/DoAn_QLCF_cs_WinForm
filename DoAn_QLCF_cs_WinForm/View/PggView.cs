@@ -55,7 +55,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 
             addBtn.Click += delegate { btnAddClickEvent?.Invoke(this, EventArgs.Empty); };
             editBtn.Click += delegate { btnUpdateClickEvent?.Invoke(this, EventArgs.Empty); };
-            filterBtn.Click += delegate { btnFilterClickEvent?.Invoke(this, EventArgs.Empty); };
+            //filterBtn.Click += delegate { btnFilterClickEvent?.Invoke(this, EventArgs.Empty); };
 
             delBtn.Click += delegate { DeleteEvent?.Invoke(this, EventArgs.Empty); };
             sortBtn.Click += delegate { SortEvent?.Invoke(this, EventArgs.Empty); };

@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle37 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle38 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle39 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle40 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle41 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle42 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
             grb_quyen = new GroupBox();
             tc_quyen = new TabControl();
             tp_quyenDanhSach = new TabPage();
@@ -45,6 +45,15 @@
             customButton2 = new CustomControl.CustomButton();
             searchTxt = new CustomControl.CustomTextBox();
             tp_quyenChiTiet = new TabPage();
+            groupBox1 = new GroupBox();
+            clb_chucNang = new CheckedListBox();
+            customTextBox3 = new CustomControl.CustomTextBox();
+            label3 = new Label();
+            customTextBox2 = new CustomControl.CustomTextBox();
+            label2 = new Label();
+            idTxt = new CustomControl.CustomTextBox();
+            label1 = new Label();
+            customButton6 = new CustomControl.CustomButton();
             tableLayoutPanel1 = new TableLayoutPanel();
             grb_chucNang = new GroupBox();
             tc_chucNang = new TabControl();
@@ -56,19 +65,12 @@
             customButton1 = new CustomControl.CustomButton();
             customTextBox1 = new CustomControl.CustomTextBox();
             tp_chucNangChiTiet = new TabPage();
-            customButton6 = new CustomControl.CustomButton();
-            idTxt = new CustomControl.CustomTextBox();
-            label1 = new Label();
-            customTextBox2 = new CustomControl.CustomTextBox();
-            label2 = new Label();
-            customTextBox3 = new CustomControl.CustomTextBox();
-            label3 = new Label();
-            groupBox1 = new GroupBox();
             grb_quyen.SuspendLayout();
             tc_quyen.SuspendLayout();
             tp_quyenDanhSach.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtgrv_quyen).BeginInit();
             tp_quyenChiTiet.SuspendLayout();
+            groupBox1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             grb_chucNang.SuspendLayout();
             tc_chucNang.SuspendLayout();
@@ -156,24 +158,24 @@
             dtgrv_quyen.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dtgrv_quyen.BorderStyle = BorderStyle.None;
             dtgrv_quyen.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle37.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle37.BackColor = Color.DarkCyan;
-            dataGridViewCellStyle37.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle37.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle37.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle37.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle37.WrapMode = DataGridViewTriState.True;
-            dtgrv_quyen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = Color.DarkCyan;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dtgrv_quyen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dtgrv_quyen.ColumnHeadersHeight = 30;
             dtgrv_quyen.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle38.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle38.BackColor = SystemColors.Window;
-            dataGridViewCellStyle38.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle38.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle38.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle38.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle38.WrapMode = DataGridViewTriState.False;
-            dtgrv_quyen.DefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = SystemColors.Window;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dtgrv_quyen.DefaultCellStyle = dataGridViewCellStyle8;
             dtgrv_quyen.EnableHeadersVisualStyles = false;
             dtgrv_quyen.GridColor = Color.DarkCyan;
             dtgrv_quyen.ImeMode = ImeMode.NoControl;
@@ -183,8 +185,8 @@
             dtgrv_quyen.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dtgrv_quyen.RowHeadersVisible = false;
             dtgrv_quyen.RowHeadersWidth = 51;
-            dataGridViewCellStyle39.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dtgrv_quyen.RowsDefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dtgrv_quyen.RowsDefaultCellStyle = dataGridViewCellStyle9;
             dtgrv_quyen.RowTemplate.Height = 25;
             dtgrv_quyen.RowTemplate.ReadOnly = true;
             dtgrv_quyen.Size = new Size(724, 477);
@@ -344,6 +346,154 @@
             tp_quyenChiTiet.TabIndex = 1;
             tp_quyenChiTiet.Text = "Chi Tiết";
             // 
+            // groupBox1
+            // 
+            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            groupBox1.Controls.Add(clb_chucNang);
+            groupBox1.Location = new Point(6, 280);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(721, 377);
+            groupBox1.TabIndex = 23;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Chức Năng";
+            // 
+            // clb_chucNang
+            // 
+            clb_chucNang.CheckOnClick = true;
+            clb_chucNang.Cursor = Cursors.Hand;
+            clb_chucNang.Dock = DockStyle.Fill;
+            clb_chucNang.FormattingEnabled = true;
+            clb_chucNang.Items.AddRange(new object[] { "a", "c", "a", "a", "â", "a", "a", "a", "a", "a", "â", "a", "a", "a", "â" });
+            clb_chucNang.Location = new Point(3, 30);
+            clb_chucNang.MultiColumn = true;
+            clb_chucNang.Name = "clb_chucNang";
+            clb_chucNang.Size = new Size(715, 344);
+            clb_chucNang.TabIndex = 0;
+            // 
+            // customTextBox3
+            // 
+            customTextBox3.BackColor = SystemColors.Window;
+            customTextBox3.BorderColor = Color.Silver;
+            customTextBox3.BorderFocusColor = Color.DarkCyan;
+            customTextBox3.BorderRadius = 13;
+            customTextBox3.BorderSize = 2;
+            customTextBox3.Enabled = false;
+            customTextBox3.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            customTextBox3.ForeColor = Color.DimGray;
+            customTextBox3.Location = new Point(335, 101);
+            customTextBox3.Margin = new Padding(3, 4, 3, 4);
+            customTextBox3.Multiline = false;
+            customTextBox3.Name = "customTextBox3";
+            customTextBox3.Padding = new Padding(10, 12, 8, 9);
+            customTextBox3.PasswordChar = false;
+            customTextBox3.PlaceholderColor = Color.DarkGray;
+            customTextBox3.PlaceholderText = "Nhập Tên Quyền...";
+            customTextBox3.Size = new Size(279, 52);
+            customTextBox3.TabIndex = 22;
+            customTextBox3.Texts = "";
+            customTextBox3.UnderlinedStyle = false;
+            // 
+            // label3
+            // 
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(312, 52);
+            label3.Name = "label3";
+            label3.Size = new Size(155, 68);
+            label3.TabIndex = 21;
+            label3.Text = "Tên Quyền";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // customTextBox2
+            // 
+            customTextBox2.BackColor = SystemColors.Window;
+            customTextBox2.BorderColor = Color.Silver;
+            customTextBox2.BorderFocusColor = Color.DarkCyan;
+            customTextBox2.BorderRadius = 13;
+            customTextBox2.BorderSize = 2;
+            customTextBox2.Enabled = false;
+            customTextBox2.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            customTextBox2.ForeColor = Color.DimGray;
+            customTextBox2.Location = new Point(27, 212);
+            customTextBox2.Margin = new Padding(3, 4, 3, 4);
+            customTextBox2.Multiline = false;
+            customTextBox2.Name = "customTextBox2";
+            customTextBox2.Padding = new Padding(10, 12, 8, 9);
+            customTextBox2.PasswordChar = false;
+            customTextBox2.PlaceholderColor = Color.DarkGray;
+            customTextBox2.PlaceholderText = "Nhập Nội Dung Quyền...";
+            customTextBox2.Size = new Size(279, 52);
+            customTextBox2.TabIndex = 20;
+            customTextBox2.Texts = "";
+            customTextBox2.UnderlinedStyle = false;
+            // 
+            // label2
+            // 
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(6, 157);
+            label2.Name = "label2";
+            label2.Size = new Size(175, 68);
+            label2.TabIndex = 19;
+            label2.Text = "Nội Dung Quyền";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // idTxt
+            // 
+            idTxt.BackColor = SystemColors.Window;
+            idTxt.BorderColor = Color.Silver;
+            idTxt.BorderFocusColor = Color.DarkCyan;
+            idTxt.BorderRadius = 13;
+            idTxt.BorderSize = 2;
+            idTxt.Enabled = false;
+            idTxt.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            idTxt.ForeColor = Color.DimGray;
+            idTxt.Location = new Point(27, 101);
+            idTxt.Margin = new Padding(3, 4, 3, 4);
+            idTxt.Multiline = false;
+            idTxt.Name = "idTxt";
+            idTxt.Padding = new Padding(10, 12, 8, 9);
+            idTxt.PasswordChar = false;
+            idTxt.PlaceholderColor = Color.DarkGray;
+            idTxt.PlaceholderText = "Nhập ID....";
+            idTxt.Size = new Size(279, 52);
+            idTxt.TabIndex = 18;
+            idTxt.Texts = "";
+            idTxt.UnderlinedStyle = false;
+            // 
+            // label1
+            // 
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(2, 52);
+            label1.Name = "label1";
+            label1.Size = new Size(121, 68);
+            label1.TabIndex = 17;
+            label1.Text = "Quyền ID";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // customButton6
+            // 
+            customButton6.BackColor = Color.Transparent;
+            customButton6.BackgroundColor = Color.Transparent;
+            customButton6.BorderColor = Color.PaleVioletRed;
+            customButton6.BorderRadius = 20;
+            customButton6.BorderSize = 0;
+            customButton6.Cursor = Cursors.Hand;
+            customButton6.EnabledTextHover = false;
+            customButton6.FlatAppearance.BorderSize = 0;
+            customButton6.FlatAppearance.MouseDownBackColor = Color.Teal;
+            customButton6.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
+            customButton6.FlatStyle = FlatStyle.Flat;
+            customButton6.ForeColor = Color.White;
+            customButton6.Image = Properties.Resources.arrowreturn32pxBlack1;
+            customButton6.ImageHover = Properties.Resources.arrowreturn32pxWhite1;
+            customButton6.Location = new Point(6, 4);
+            customButton6.Margin = new Padding(3, 4, 3, 4);
+            customButton6.Name = "customButton6";
+            customButton6.Size = new Size(72, 55);
+            customButton6.TabIndex = 16;
+            customButton6.TextColor = Color.White;
+            customButton6.TextHover = Color.White;
+            customButton6.UseVisualStyleBackColor = false;
+            // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 2;
@@ -410,24 +560,24 @@
             dtgrv_chucNang.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dtgrv_chucNang.BorderStyle = BorderStyle.None;
             dtgrv_chucNang.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle40.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle40.BackColor = Color.DarkCyan;
-            dataGridViewCellStyle40.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle40.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle40.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle40.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle40.WrapMode = DataGridViewTriState.True;
-            dtgrv_chucNang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = Color.DarkCyan;
+            dataGridViewCellStyle10.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle10.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
+            dtgrv_chucNang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             dtgrv_chucNang.ColumnHeadersHeight = 30;
             dtgrv_chucNang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle41.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle41.BackColor = SystemColors.Window;
-            dataGridViewCellStyle41.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle41.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle41.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle41.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle41.WrapMode = DataGridViewTriState.False;
-            dtgrv_chucNang.DefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = SystemColors.Window;
+            dataGridViewCellStyle11.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
+            dtgrv_chucNang.DefaultCellStyle = dataGridViewCellStyle11;
             dtgrv_chucNang.EnableHeadersVisualStyles = false;
             dtgrv_chucNang.GridColor = Color.DarkCyan;
             dtgrv_chucNang.ImeMode = ImeMode.NoControl;
@@ -437,8 +587,8 @@
             dtgrv_chucNang.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dtgrv_chucNang.RowHeadersVisible = false;
             dtgrv_chucNang.RowHeadersWidth = 51;
-            dataGridViewCellStyle42.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dtgrv_chucNang.RowsDefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dtgrv_chucNang.RowsDefaultCellStyle = dataGridViewCellStyle12;
             dtgrv_chucNang.RowTemplate.Height = 25;
             dtgrv_chucNang.RowTemplate.ReadOnly = true;
             dtgrv_chucNang.Size = new Size(724, 477);
@@ -590,139 +740,6 @@
             tp_chucNangChiTiet.TabIndex = 1;
             tp_chucNangChiTiet.Text = "Chi Tiết";
             // 
-            // customButton6
-            // 
-            customButton6.BackColor = Color.Transparent;
-            customButton6.BackgroundColor = Color.Transparent;
-            customButton6.BorderColor = Color.PaleVioletRed;
-            customButton6.BorderRadius = 20;
-            customButton6.BorderSize = 0;
-            customButton6.Cursor = Cursors.Hand;
-            customButton6.EnabledTextHover = false;
-            customButton6.FlatAppearance.BorderSize = 0;
-            customButton6.FlatAppearance.MouseDownBackColor = Color.Teal;
-            customButton6.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
-            customButton6.FlatStyle = FlatStyle.Flat;
-            customButton6.ForeColor = Color.White;
-            customButton6.Image = Properties.Resources.arrowreturn32pxBlack1;
-            customButton6.ImageHover = Properties.Resources.arrowreturn32pxWhite1;
-            customButton6.Location = new Point(6, 4);
-            customButton6.Margin = new Padding(3, 4, 3, 4);
-            customButton6.Name = "customButton6";
-            customButton6.Size = new Size(72, 55);
-            customButton6.TabIndex = 16;
-            customButton6.TextColor = Color.White;
-            customButton6.TextHover = Color.White;
-            customButton6.UseVisualStyleBackColor = false;
-            // 
-            // idTxt
-            // 
-            idTxt.BackColor = SystemColors.Window;
-            idTxt.BorderColor = Color.Silver;
-            idTxt.BorderFocusColor = Color.DarkCyan;
-            idTxt.BorderRadius = 13;
-            idTxt.BorderSize = 2;
-            idTxt.Enabled = false;
-            idTxt.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            idTxt.ForeColor = Color.DimGray;
-            idTxt.Location = new Point(27, 101);
-            idTxt.Margin = new Padding(3, 4, 3, 4);
-            idTxt.Multiline = false;
-            idTxt.Name = "idTxt";
-            idTxt.Padding = new Padding(10, 12, 8, 9);
-            idTxt.PasswordChar = false;
-            idTxt.PlaceholderColor = Color.DarkGray;
-            idTxt.PlaceholderText = "Nhập ID....";
-            idTxt.Size = new Size(279, 52);
-            idTxt.TabIndex = 18;
-            idTxt.Texts = "";
-            idTxt.UnderlinedStyle = false;
-            // 
-            // label1
-            // 
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(2, 52);
-            label1.Name = "label1";
-            label1.Size = new Size(121, 68);
-            label1.TabIndex = 17;
-            label1.Text = "Quyền ID";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // customTextBox2
-            // 
-            customTextBox2.BackColor = SystemColors.Window;
-            customTextBox2.BorderColor = Color.Silver;
-            customTextBox2.BorderFocusColor = Color.DarkCyan;
-            customTextBox2.BorderRadius = 13;
-            customTextBox2.BorderSize = 2;
-            customTextBox2.Enabled = false;
-            customTextBox2.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            customTextBox2.ForeColor = Color.DimGray;
-            customTextBox2.Location = new Point(27, 212);
-            customTextBox2.Margin = new Padding(3, 4, 3, 4);
-            customTextBox2.Multiline = false;
-            customTextBox2.Name = "customTextBox2";
-            customTextBox2.Padding = new Padding(10, 12, 8, 9);
-            customTextBox2.PasswordChar = false;
-            customTextBox2.PlaceholderColor = Color.DarkGray;
-            customTextBox2.PlaceholderText = "Nhập Nội Dung Quyền...";
-            customTextBox2.Size = new Size(279, 52);
-            customTextBox2.TabIndex = 20;
-            customTextBox2.Texts = "";
-            customTextBox2.UnderlinedStyle = false;
-            // 
-            // label2
-            // 
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(6, 157);
-            label2.Name = "label2";
-            label2.Size = new Size(175, 68);
-            label2.TabIndex = 19;
-            label2.Text = "Nội Dung Quyền";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // customTextBox3
-            // 
-            customTextBox3.BackColor = SystemColors.Window;
-            customTextBox3.BorderColor = Color.Silver;
-            customTextBox3.BorderFocusColor = Color.DarkCyan;
-            customTextBox3.BorderRadius = 13;
-            customTextBox3.BorderSize = 2;
-            customTextBox3.Enabled = false;
-            customTextBox3.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            customTextBox3.ForeColor = Color.DimGray;
-            customTextBox3.Location = new Point(335, 101);
-            customTextBox3.Margin = new Padding(3, 4, 3, 4);
-            customTextBox3.Multiline = false;
-            customTextBox3.Name = "customTextBox3";
-            customTextBox3.Padding = new Padding(10, 12, 8, 9);
-            customTextBox3.PasswordChar = false;
-            customTextBox3.PlaceholderColor = Color.DarkGray;
-            customTextBox3.PlaceholderText = "Nhập Tên Quyền...";
-            customTextBox3.Size = new Size(279, 52);
-            customTextBox3.TabIndex = 22;
-            customTextBox3.Texts = "";
-            customTextBox3.UnderlinedStyle = false;
-            // 
-            // label3
-            // 
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(312, 52);
-            label3.Name = "label3";
-            label3.Size = new Size(155, 68);
-            label3.TabIndex = 21;
-            label3.Text = "Tên Quyền";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // groupBox1
-            // 
-            groupBox1.Location = new Point(6, 280);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(721, 377);
-            groupBox1.TabIndex = 23;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Chức Năng";
-            // 
             // PhanQuyenView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -738,6 +755,7 @@
             tp_quyenDanhSach.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dtgrv_quyen).EndInit();
             tp_quyenChiTiet.ResumeLayout(false);
+            groupBox1.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             grb_chucNang.ResumeLayout(false);
             tc_chucNang.ResumeLayout(false);
@@ -778,5 +796,6 @@
         private CustomControl.CustomTextBox idTxt;
         private Label label1;
         private GroupBox groupBox1;
+        private CheckedListBox clb_chucNang;
     }
 }

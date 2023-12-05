@@ -16,7 +16,12 @@ namespace DoAn_QLCF_cs_WinForm.View
         public PhanQuyenView()
         {
             InitializeComponent();
-            SetUpView();
+            //SetUpView();
+
+            CheckBox t = new CheckBox();            
+            clb_chucNang.Items.Add("abc");
+
+
         }
 
         private void SetUpView()
@@ -35,6 +40,8 @@ namespace DoAn_QLCF_cs_WinForm.View
             this.dtgrv_quyen.DataSource = listPermission;
             this.dtgrv_chucNang.DataSource = listMethod;
         }
+
+
 
         private static PhanQuyenView instance;
         public static IPhanQuyenView GetInstance(Form parentContainer)
