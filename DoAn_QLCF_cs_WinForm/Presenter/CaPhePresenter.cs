@@ -263,7 +263,10 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
 			NguyenLieuModel nlModel = (NguyenLieuModel)this.view.NguyenLieuCbx.SelectedValue;
 			CaPheModel cpModel = (CaPheModel)this.view.CaPheDg.CurrentRow.DataBoundItem;
 
-			foreach(CaPheNguyenLieuModel cpnl in cpnlBindingSource)
+            string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            var logoimage = Path.Combine(path, "image\\nguyenLieu");
+
+            foreach (CaPheNguyenLieuModel cpnl in cpnlBindingSource)
 			{
 				if(cpnl.NguyenLieuId == nlModel.NguyenLieuId)
 				{
@@ -283,7 +286,7 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
 			{
 				CaPheId = cpModel.Id,
 				NguyenLieuId = nlModel.NguyenLieuId,
-				HinhAnh = nlModel.HinhAnh,
+				HinhAnh = Image.FromFile(Path.Combine(logoimage, nlModel.HinhAnh)),
 				TenNguyenLieu = nlModel.TenNguyenLieu,
 				KhoiLuong = khoiLuong
 			};

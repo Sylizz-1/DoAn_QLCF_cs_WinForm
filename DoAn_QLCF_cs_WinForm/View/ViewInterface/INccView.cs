@@ -10,15 +10,16 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
 {
     public interface INccView
     {
-        event EventHandler btnAddClickEvent;
-        event EventHandler btnUpdateClickEvent;
-        event EventHandler btnFilterClickEvent;
-        event EventHandler AddEvent;
-        event EventHandler DeleteEvent;
-        event EventHandler UpdateEvent;
-        event EventHandler SortEvent;
-        event EventHandler FilterEvent;
+        event EventHandler btnAddNccClickEvent;
+        event EventHandler btnUpdateNccClickEvent;
+        event EventHandler btnFilterNccClickEvent;
+        event EventHandler AddNccEvent;
+        event EventHandler DeleteNccEvent;
+        event EventHandler UpdateNccEvent;
+        event EventHandler SortNccEvent;
+        event EventHandler FilterNccEvent;
         event EventHandler ResetEvent;
+        event EventHandler FindNccEvent;
         bool isAdd { get; set; }
         bool isFilter { get; set; }
         bool isUpdate { get; set; }
@@ -26,9 +27,11 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
         string TenNhaCungCap { get; set; }
         string DiaChi { get; set; }
         string SDT { get; set; }
-        string Email { get; set ; }
+        string Email { get; set; }
         string IsDelete { get; set; }
         string selectedId { get; set; }
+        string NCCcount { get; }
+        string FindText { get; set; }
         void LoadData(BindingSource list);
         void GetIdNccAdd(int id);
         bool CheckInput();

@@ -28,59 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             tcNhapHang = new TabControl();
             listTabPage = new TabPage();
             resetBtn = new CustomControl.CustomButton();
             gbSort = new GroupBox();
             groupBox5 = new GroupBox();
-            rbDcDec = new RadioButton();
-            rbDcInc = new RadioButton();
-            groupBox6 = new GroupBox();
-            rbIsDeleteDec = new RadioButton();
-            rbIsDeleteInc = new RadioButton();
+            rbIDNccDec = new RadioButton();
+            rbIDNccInc = new RadioButton();
             groupBox2 = new GroupBox();
-            rbIDDec = new RadioButton();
-            rbIIDnc = new RadioButton();
+            rbIDPnDec = new RadioButton();
+            rbIDPnInc = new RadioButton();
             groupBox4 = new GroupBox();
-            rbSdtDec = new RadioButton();
-            rbSdtInc = new RadioButton();
+            rbNNDec = new RadioButton();
+            rbNNInc = new RadioButton();
             groupBox3 = new GroupBox();
-            rbNameDec = new RadioButton();
-            rbNameInc = new RadioButton();
+            rbIDNvDec = new RadioButton();
+            rbIDNvInc = new RadioButton();
             groupBox7 = new GroupBox();
-            rbEmailDec = new RadioButton();
-            rbEmailInc = new RadioButton();
-            filterBtn = new CustomControl.CustomButton();
+            rbTTDec = new RadioButton();
+            rbTTInc = new RadioButton();
+            btnFilterPN = new CustomControl.CustomButton();
             sortBtn = new CustomControl.CustomButton();
             delBtn = new CustomControl.CustomButton();
             btnEditPN = new CustomControl.CustomButton();
             btnAddPN = new CustomControl.CustomButton();
             dgvDsNhapHang = new DataGridView();
-            customButton2 = new CustomControl.CustomButton();
             searchTxt = new CustomControl.CustomTextBox();
             detailTabPage = new TabPage();
+            txtTongTien = new CustomControl.CustomTextBox();
             label18 = new Label();
             HuyBtn = new CustomControl.CustomButton();
             xacNhanBtn = new CustomControl.CustomButton();
-            groupBox1 = new GroupBox();
+            gbCTPN = new GroupBox();
+            dgvCTPN = new DataGridView();
             panel1 = new Panel();
-            label8 = new Label();
-            label10 = new Label();
-            comboBox7 = new ComboBox();
-            comboBox8 = new ComboBox();
-            customButton1 = new CustomControl.CustomButton();
+            btnSortCTPN = new CustomControl.CustomButton();
+            gbCtpnSort = new GroupBox();
+            groupBox6 = new GroupBox();
+            rbIDNglDec = new RadioButton();
+            rbIDNglInc = new RadioButton();
+            groupBox9 = new GroupBox();
+            rbKLNglDec = new RadioButton();
+            rbKLNglInc = new RadioButton();
+            groupBox11 = new GroupBox();
+            rbDGNglDec = new RadioButton();
+            rbDGNglInc = new RadioButton();
+            resetCTPNBtn = new CustomControl.CustomButton();
+            btnFilterCTPN = new CustomControl.CustomButton();
+            btnDeleteCTPN = new CustomControl.CustomButton();
             btnEditCTPN = new CustomControl.CustomButton();
             btnAddCTPN = new CustomControl.CustomButton();
-            customButton5 = new CustomControl.CustomButton();
-            customTextBox1 = new CustomControl.CustomTextBox();
-            dgvCTPN = new DataGridView();
-            dateTimePicker1 = new DateTimePicker();
+            dtpPN = new DateTimePicker();
             cbNccName = new ComboBox();
             cbNhanVienId = new ComboBox();
             cbNccId = new ComboBox();
@@ -95,13 +99,14 @@
             label4 = new Label();
             label1 = new Label();
             moreDetailTabPage = new TabPage();
+            btnAddNgl = new CustomControl.CustomButton();
             btnHuyCTPN = new CustomControl.CustomButton();
             btnXacNhanCTPN = new CustomControl.CustomButton();
             txtCTPNDonGia = new CustomControl.CustomTextBox();
             label13 = new Label();
             txtCTPNKhoiLuong = new CustomControl.CustomTextBox();
-            comboBox10 = new ComboBox();
-            comboBox12 = new ComboBox();
+            cbNglId = new ComboBox();
+            cbNglName = new ComboBox();
             label12 = new Label();
             label14 = new Label();
             txtCTPNId = new CustomControl.CustomTextBox();
@@ -109,21 +114,42 @@
             label17 = new Label();
             label11 = new Label();
             btn_back2 = new CustomControl.CustomButton();
+            addNgl = new TabPage();
+            btnHuyAdd = new CustomControl.CustomButton();
+            btnXacNhanAdd = new CustomControl.CustomButton();
+            label2 = new Label();
+            btnBackCTPN = new CustomControl.CustomButton();
+            caPhePic = new PictureBox();
+            label8 = new Label();
+            txtNglPrice = new CustomControl.CustomTextBox();
+            label9 = new Label();
+            txtNglInfo = new CustomControl.CustomTextBox();
+            label10 = new Label();
+            txtNglWeigh = new CustomControl.CustomTextBox();
+            txtNglName = new CustomControl.CustomTextBox();
+            label16 = new Label();
+            label19 = new Label();
+            btnFindPn = new CustomControl.CustomButton();
             tcNhapHang.SuspendLayout();
             listTabPage.SuspendLayout();
             gbSort.SuspendLayout();
             groupBox5.SuspendLayout();
-            groupBox6.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox4.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDsNhapHang).BeginInit();
             detailTabPage.SuspendLayout();
-            groupBox1.SuspendLayout();
-            panel1.SuspendLayout();
+            gbCTPN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCTPN).BeginInit();
+            panel1.SuspendLayout();
+            gbCtpnSort.SuspendLayout();
+            groupBox6.SuspendLayout();
+            groupBox9.SuspendLayout();
+            groupBox11.SuspendLayout();
             moreDetailTabPage.SuspendLayout();
+            addNgl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)caPhePic).BeginInit();
             SuspendLayout();
             // 
             // tcNhapHang
@@ -131,6 +157,7 @@
             tcNhapHang.Controls.Add(listTabPage);
             tcNhapHang.Controls.Add(detailTabPage);
             tcNhapHang.Controls.Add(moreDetailTabPage);
+            tcNhapHang.Controls.Add(addNgl);
             tcNhapHang.Dock = DockStyle.Fill;
             tcNhapHang.Location = new Point(0, 0);
             tcNhapHang.Margin = new Padding(4);
@@ -141,15 +168,15 @@
             // 
             // listTabPage
             // 
+            listTabPage.Controls.Add(btnFindPn);
             listTabPage.Controls.Add(resetBtn);
             listTabPage.Controls.Add(gbSort);
-            listTabPage.Controls.Add(filterBtn);
+            listTabPage.Controls.Add(btnFilterPN);
             listTabPage.Controls.Add(sortBtn);
             listTabPage.Controls.Add(delBtn);
             listTabPage.Controls.Add(btnEditPN);
             listTabPage.Controls.Add(btnAddPN);
             listTabPage.Controls.Add(dgvDsNhapHang);
-            listTabPage.Controls.Add(customButton2);
             listTabPage.Controls.Add(searchTxt);
             listTabPage.Location = new Point(4, 34);
             listTabPage.Margin = new Padding(4);
@@ -188,260 +215,236 @@
             resetBtn.TextHover = Color.White;
             resetBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             resetBtn.UseVisualStyleBackColor = false;
+            resetBtn.Click += resetBtn_Click;
             // 
             // gbSort
             // 
             gbSort.Controls.Add(groupBox5);
-            gbSort.Controls.Add(groupBox6);
             gbSort.Controls.Add(groupBox2);
             gbSort.Controls.Add(groupBox4);
             gbSort.Controls.Add(groupBox3);
             gbSort.Controls.Add(groupBox7);
             gbSort.Location = new Point(52, 115);
             gbSort.Name = "gbSort";
-            gbSort.Size = new Size(1148, 150);
+            gbSort.Size = new Size(969, 150);
             gbSort.TabIndex = 29;
             gbSort.TabStop = false;
             gbSort.Visible = false;
             // 
             // groupBox5
             // 
-            groupBox5.Controls.Add(rbDcDec);
-            groupBox5.Controls.Add(rbDcInc);
+            groupBox5.Controls.Add(rbIDNccDec);
+            groupBox5.Controls.Add(rbIDNccInc);
             groupBox5.Location = new Point(403, 24);
             groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(140, 108);
+            groupBox5.Size = new Size(159, 108);
             groupBox5.TabIndex = 24;
             groupBox5.TabStop = false;
-            groupBox5.Text = "Địa chỉ";
+            groupBox5.Text = "ID Nhà cung cấp";
             // 
-            // rbDcDec
+            // rbIDNccDec
             // 
-            rbDcDec.AutoSize = true;
-            rbDcDec.Location = new Point(17, 65);
-            rbDcDec.Name = "rbDcDec";
-            rbDcDec.Size = new Size(78, 29);
-            rbDcDec.TabIndex = 1;
-            rbDcDec.TabStop = true;
-            rbDcDec.Tag = "DcDec";
-            rbDcDec.Text = "Giảm";
-            rbDcDec.UseVisualStyleBackColor = true;
+            rbIDNccDec.AutoSize = true;
+            rbIDNccDec.Location = new Point(17, 65);
+            rbIDNccDec.Name = "rbIDNccDec";
+            rbIDNccDec.Size = new Size(78, 29);
+            rbIDNccDec.TabIndex = 1;
+            rbIDNccDec.TabStop = true;
+            rbIDNccDec.Tag = "IDNccDec";
+            rbIDNccDec.Text = "Giảm";
+            rbIDNccDec.UseVisualStyleBackColor = true;
+            rbIDNccDec.CheckedChanged += SortRadioButton_CheckedChanged;
             // 
-            // rbDcInc
+            // rbIDNccInc
             // 
-            rbDcInc.AutoSize = true;
-            rbDcInc.Location = new Point(17, 30);
-            rbDcInc.Name = "rbDcInc";
-            rbDcInc.Size = new Size(74, 29);
-            rbDcInc.TabIndex = 0;
-            rbDcInc.TabStop = true;
-            rbDcInc.Tag = "DcInc";
-            rbDcInc.Text = "Tăng";
-            rbDcInc.UseVisualStyleBackColor = true;
-            // 
-            // groupBox6
-            // 
-            groupBox6.Controls.Add(rbIsDeleteDec);
-            groupBox6.Controls.Add(rbIsDeleteInc);
-            groupBox6.Location = new Point(991, 24);
-            groupBox6.Name = "groupBox6";
-            groupBox6.Size = new Size(140, 108);
-            groupBox6.TabIndex = 26;
-            groupBox6.TabStop = false;
-            groupBox6.Text = "IsDelete";
-            // 
-            // rbIsDeleteDec
-            // 
-            rbIsDeleteDec.AutoSize = true;
-            rbIsDeleteDec.Location = new Point(17, 65);
-            rbIsDeleteDec.Name = "rbIsDeleteDec";
-            rbIsDeleteDec.Size = new Size(78, 29);
-            rbIsDeleteDec.TabIndex = 1;
-            rbIsDeleteDec.TabStop = true;
-            rbIsDeleteDec.Tag = "IsDeleteDec";
-            rbIsDeleteDec.Text = "Giảm";
-            rbIsDeleteDec.UseVisualStyleBackColor = true;
-            // 
-            // rbIsDeleteInc
-            // 
-            rbIsDeleteInc.AutoSize = true;
-            rbIsDeleteInc.Location = new Point(17, 30);
-            rbIsDeleteInc.Name = "rbIsDeleteInc";
-            rbIsDeleteInc.Size = new Size(74, 29);
-            rbIsDeleteInc.TabIndex = 0;
-            rbIsDeleteInc.TabStop = true;
-            rbIsDeleteInc.Tag = "IsDeleteInc";
-            rbIsDeleteInc.Text = "Tăng";
-            rbIsDeleteInc.UseVisualStyleBackColor = true;
+            rbIDNccInc.AutoSize = true;
+            rbIDNccInc.Location = new Point(17, 30);
+            rbIDNccInc.Name = "rbIDNccInc";
+            rbIDNccInc.Size = new Size(74, 29);
+            rbIDNccInc.TabIndex = 0;
+            rbIDNccInc.TabStop = true;
+            rbIDNccInc.Tag = "IDNccInc";
+            rbIDNccInc.Text = "Tăng";
+            rbIDNccInc.UseVisualStyleBackColor = true;
+            rbIDNccInc.CheckedChanged += SortRadioButton_CheckedChanged;
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(rbIDDec);
-            groupBox2.Controls.Add(rbIIDnc);
+            groupBox2.Controls.Add(rbIDPnDec);
+            groupBox2.Controls.Add(rbIDPnInc);
             groupBox2.Location = new Point(11, 24);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(140, 108);
+            groupBox2.Size = new Size(159, 108);
             groupBox2.TabIndex = 23;
             groupBox2.TabStop = false;
-            groupBox2.Text = "ID";
+            groupBox2.Text = "ID phiếu nhập";
             // 
-            // rbIDDec
+            // rbIDPnDec
             // 
-            rbIDDec.AutoSize = true;
-            rbIDDec.Location = new Point(17, 65);
-            rbIDDec.Name = "rbIDDec";
-            rbIDDec.Size = new Size(78, 29);
-            rbIDDec.TabIndex = 1;
-            rbIDDec.TabStop = true;
-            rbIDDec.Tag = "IDDec";
-            rbIDDec.Text = "Giảm";
-            rbIDDec.UseVisualStyleBackColor = true;
+            rbIDPnDec.AutoSize = true;
+            rbIDPnDec.Location = new Point(17, 65);
+            rbIDPnDec.Name = "rbIDPnDec";
+            rbIDPnDec.Size = new Size(78, 29);
+            rbIDPnDec.TabIndex = 1;
+            rbIDPnDec.TabStop = true;
+            rbIDPnDec.Tag = "IDPnDec";
+            rbIDPnDec.Text = "Giảm";
+            rbIDPnDec.UseVisualStyleBackColor = true;
+            rbIDPnDec.CheckedChanged += SortRadioButton_CheckedChanged;
             // 
-            // rbIIDnc
+            // rbIDPnInc
             // 
-            rbIIDnc.AutoSize = true;
-            rbIIDnc.Location = new Point(17, 30);
-            rbIIDnc.Name = "rbIIDnc";
-            rbIIDnc.Size = new Size(74, 29);
-            rbIIDnc.TabIndex = 0;
-            rbIIDnc.TabStop = true;
-            rbIIDnc.Tag = "IDInc";
-            rbIIDnc.Text = "Tăng";
-            rbIIDnc.UseVisualStyleBackColor = true;
+            rbIDPnInc.AutoSize = true;
+            rbIDPnInc.Location = new Point(17, 30);
+            rbIDPnInc.Name = "rbIDPnInc";
+            rbIDPnInc.Size = new Size(74, 29);
+            rbIDPnInc.TabIndex = 0;
+            rbIDPnInc.TabStop = true;
+            rbIDPnInc.Tag = "IDPnInc";
+            rbIDPnInc.Text = "Tăng";
+            rbIDPnInc.UseVisualStyleBackColor = true;
+            rbIDPnInc.CheckedChanged += SortRadioButton_CheckedChanged;
             // 
             // groupBox4
             // 
-            groupBox4.Controls.Add(rbSdtDec);
-            groupBox4.Controls.Add(rbSdtInc);
+            groupBox4.Controls.Add(rbNNDec);
+            groupBox4.Controls.Add(rbNNInc);
             groupBox4.Location = new Point(599, 24);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(140, 108);
+            groupBox4.Size = new Size(159, 108);
             groupBox4.TabIndex = 24;
             groupBox4.TabStop = false;
-            groupBox4.Text = "SĐT";
+            groupBox4.Text = "Ngày nhập";
             // 
-            // rbSdtDec
+            // rbNNDec
             // 
-            rbSdtDec.AutoSize = true;
-            rbSdtDec.Location = new Point(17, 65);
-            rbSdtDec.Name = "rbSdtDec";
-            rbSdtDec.Size = new Size(78, 29);
-            rbSdtDec.TabIndex = 1;
-            rbSdtDec.TabStop = true;
-            rbSdtDec.Tag = "SdtDec";
-            rbSdtDec.Text = "Giảm";
-            rbSdtDec.UseVisualStyleBackColor = true;
+            rbNNDec.AutoSize = true;
+            rbNNDec.Location = new Point(17, 65);
+            rbNNDec.Name = "rbNNDec";
+            rbNNDec.Size = new Size(78, 29);
+            rbNNDec.TabIndex = 1;
+            rbNNDec.TabStop = true;
+            rbNNDec.Tag = "NgayNhapDec";
+            rbNNDec.Text = "Giảm";
+            rbNNDec.UseVisualStyleBackColor = true;
+            rbNNDec.CheckedChanged += SortRadioButton_CheckedChanged;
             // 
-            // rbSdtInc
+            // rbNNInc
             // 
-            rbSdtInc.AutoSize = true;
-            rbSdtInc.Location = new Point(17, 30);
-            rbSdtInc.Name = "rbSdtInc";
-            rbSdtInc.Size = new Size(74, 29);
-            rbSdtInc.TabIndex = 0;
-            rbSdtInc.TabStop = true;
-            rbSdtInc.Tag = "SdtInc";
-            rbSdtInc.Text = "Tăng";
-            rbSdtInc.UseVisualStyleBackColor = true;
+            rbNNInc.AutoSize = true;
+            rbNNInc.Location = new Point(17, 30);
+            rbNNInc.Name = "rbNNInc";
+            rbNNInc.Size = new Size(74, 29);
+            rbNNInc.TabIndex = 0;
+            rbNNInc.TabStop = true;
+            rbNNInc.Tag = "NgayNhapInc";
+            rbNNInc.Text = "Tăng";
+            rbNNInc.UseVisualStyleBackColor = true;
+            rbNNInc.CheckedChanged += SortRadioButton_CheckedChanged;
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(rbNameDec);
-            groupBox3.Controls.Add(rbNameInc);
+            groupBox3.Controls.Add(rbIDNvDec);
+            groupBox3.Controls.Add(rbIDNvInc);
             groupBox3.Location = new Point(207, 24);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(140, 108);
+            groupBox3.Size = new Size(159, 108);
             groupBox3.TabIndex = 24;
             groupBox3.TabStop = false;
-            groupBox3.Text = "Tên";
+            groupBox3.Text = "ID nhân viên";
             // 
-            // rbNameDec
+            // rbIDNvDec
             // 
-            rbNameDec.AutoSize = true;
-            rbNameDec.Location = new Point(17, 65);
-            rbNameDec.Name = "rbNameDec";
-            rbNameDec.Size = new Size(78, 29);
-            rbNameDec.TabIndex = 1;
-            rbNameDec.TabStop = true;
-            rbNameDec.Tag = "NameDec";
-            rbNameDec.Text = "Giảm";
-            rbNameDec.UseVisualStyleBackColor = true;
+            rbIDNvDec.AutoSize = true;
+            rbIDNvDec.Location = new Point(17, 65);
+            rbIDNvDec.Name = "rbIDNvDec";
+            rbIDNvDec.Size = new Size(78, 29);
+            rbIDNvDec.TabIndex = 1;
+            rbIDNvDec.TabStop = true;
+            rbIDNvDec.Tag = "IDNvDec";
+            rbIDNvDec.Text = "Giảm";
+            rbIDNvDec.UseVisualStyleBackColor = true;
+            rbIDNvDec.CheckedChanged += SortRadioButton_CheckedChanged;
             // 
-            // rbNameInc
+            // rbIDNvInc
             // 
-            rbNameInc.AutoSize = true;
-            rbNameInc.Location = new Point(17, 30);
-            rbNameInc.Name = "rbNameInc";
-            rbNameInc.Size = new Size(74, 29);
-            rbNameInc.TabIndex = 0;
-            rbNameInc.TabStop = true;
-            rbNameInc.Tag = "NameInc";
-            rbNameInc.Text = "Tăng";
-            rbNameInc.UseVisualStyleBackColor = true;
+            rbIDNvInc.AutoSize = true;
+            rbIDNvInc.Location = new Point(17, 30);
+            rbIDNvInc.Name = "rbIDNvInc";
+            rbIDNvInc.Size = new Size(74, 29);
+            rbIDNvInc.TabIndex = 0;
+            rbIDNvInc.TabStop = true;
+            rbIDNvInc.Tag = "IDNvInc";
+            rbIDNvInc.Text = "Tăng";
+            rbIDNvInc.UseVisualStyleBackColor = true;
+            rbIDNvInc.CheckedChanged += SortRadioButton_CheckedChanged;
             // 
             // groupBox7
             // 
-            groupBox7.Controls.Add(rbEmailDec);
-            groupBox7.Controls.Add(rbEmailInc);
+            groupBox7.Controls.Add(rbTTDec);
+            groupBox7.Controls.Add(rbTTInc);
             groupBox7.Location = new Point(795, 24);
             groupBox7.Name = "groupBox7";
-            groupBox7.Size = new Size(140, 108);
+            groupBox7.Size = new Size(159, 108);
             groupBox7.TabIndex = 25;
             groupBox7.TabStop = false;
-            groupBox7.Text = "Email";
+            groupBox7.Text = "Tổng tiền";
             // 
-            // rbEmailDec
+            // rbTTDec
             // 
-            rbEmailDec.AutoSize = true;
-            rbEmailDec.Location = new Point(17, 65);
-            rbEmailDec.Name = "rbEmailDec";
-            rbEmailDec.Size = new Size(78, 29);
-            rbEmailDec.TabIndex = 1;
-            rbEmailDec.TabStop = true;
-            rbEmailDec.Tag = "EmailDec";
-            rbEmailDec.Text = "Giảm";
-            rbEmailDec.UseVisualStyleBackColor = true;
+            rbTTDec.AutoSize = true;
+            rbTTDec.Location = new Point(17, 65);
+            rbTTDec.Name = "rbTTDec";
+            rbTTDec.Size = new Size(78, 29);
+            rbTTDec.TabIndex = 1;
+            rbTTDec.TabStop = true;
+            rbTTDec.Tag = "TongTienDec";
+            rbTTDec.Text = "Giảm";
+            rbTTDec.UseVisualStyleBackColor = true;
+            rbTTDec.CheckedChanged += SortRadioButton_CheckedChanged;
             // 
-            // rbEmailInc
+            // rbTTInc
             // 
-            rbEmailInc.AutoSize = true;
-            rbEmailInc.Location = new Point(17, 30);
-            rbEmailInc.Name = "rbEmailInc";
-            rbEmailInc.Size = new Size(74, 29);
-            rbEmailInc.TabIndex = 0;
-            rbEmailInc.TabStop = true;
-            rbEmailInc.Tag = "EmailInc";
-            rbEmailInc.Text = "Tăng";
-            rbEmailInc.UseVisualStyleBackColor = true;
+            rbTTInc.AutoSize = true;
+            rbTTInc.Location = new Point(17, 30);
+            rbTTInc.Name = "rbTTInc";
+            rbTTInc.Size = new Size(74, 29);
+            rbTTInc.TabIndex = 0;
+            rbTTInc.TabStop = true;
+            rbTTInc.Tag = "TongTienInc";
+            rbTTInc.Text = "Tăng";
+            rbTTInc.UseVisualStyleBackColor = true;
+            rbTTInc.CheckedChanged += SortRadioButton_CheckedChanged;
             // 
-            // filterBtn
+            // btnFilterPN
             // 
-            filterBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            filterBtn.BackColor = SystemColors.Control;
-            filterBtn.BackgroundColor = SystemColors.Control;
-            filterBtn.BorderColor = Color.Goldenrod;
-            filterBtn.BorderRadius = 15;
-            filterBtn.BorderSize = 2;
-            filterBtn.Cursor = Cursors.Hand;
-            filterBtn.EnabledTextHover = true;
-            filterBtn.FlatAppearance.BorderSize = 0;
-            filterBtn.FlatAppearance.MouseDownBackColor = Color.Goldenrod;
-            filterBtn.FlatAppearance.MouseOverBackColor = Color.Goldenrod;
-            filterBtn.FlatStyle = FlatStyle.Flat;
-            filterBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            filterBtn.ForeColor = Color.Goldenrod;
-            filterBtn.ImageAlign = ContentAlignment.MiddleRight;
-            filterBtn.ImageHover = null;
-            filterBtn.Location = new Point(589, 4);
-            filterBtn.Margin = new Padding(4, 5, 4, 5);
-            filterBtn.Name = "filterBtn";
-            filterBtn.Size = new Size(172, 64);
-            filterBtn.TabIndex = 27;
-            filterBtn.Text = "Lọc";
-            filterBtn.TextColor = Color.Goldenrod;
-            filterBtn.TextHover = Color.White;
-            filterBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-            filterBtn.UseVisualStyleBackColor = false;
+            btnFilterPN.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnFilterPN.BackColor = SystemColors.Control;
+            btnFilterPN.BackgroundColor = SystemColors.Control;
+            btnFilterPN.BorderColor = Color.Goldenrod;
+            btnFilterPN.BorderRadius = 15;
+            btnFilterPN.BorderSize = 2;
+            btnFilterPN.Cursor = Cursors.Hand;
+            btnFilterPN.EnabledTextHover = true;
+            btnFilterPN.FlatAppearance.BorderSize = 0;
+            btnFilterPN.FlatAppearance.MouseDownBackColor = Color.Goldenrod;
+            btnFilterPN.FlatAppearance.MouseOverBackColor = Color.Goldenrod;
+            btnFilterPN.FlatStyle = FlatStyle.Flat;
+            btnFilterPN.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnFilterPN.ForeColor = Color.Goldenrod;
+            btnFilterPN.ImageAlign = ContentAlignment.MiddleRight;
+            btnFilterPN.ImageHover = null;
+            btnFilterPN.Location = new Point(589, 4);
+            btnFilterPN.Margin = new Padding(4, 5, 4, 5);
+            btnFilterPN.Name = "btnFilterPN";
+            btnFilterPN.Size = new Size(172, 64);
+            btnFilterPN.TabIndex = 27;
+            btnFilterPN.Text = "Lọc";
+            btnFilterPN.TextColor = Color.Goldenrod;
+            btnFilterPN.TextHover = Color.White;
+            btnFilterPN.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnFilterPN.UseVisualStyleBackColor = false;
+            btnFilterPN.Click += filterBtn_Click;
             // 
             // sortBtn
             // 
@@ -471,6 +474,7 @@
             sortBtn.TextHover = Color.White;
             sortBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             sortBtn.UseVisualStyleBackColor = false;
+            sortBtn.Click += sortBtn_Click;
             // 
             // delBtn
             // 
@@ -531,6 +535,7 @@
             btnEditPN.TextHover = Color.White;
             btnEditPN.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnEditPN.UseVisualStyleBackColor = false;
+            btnEditPN.Click += btnEditPN_Click;
             // 
             // btnAddPN
             // 
@@ -571,24 +576,24 @@
             dgvDsNhapHang.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvDsNhapHang.BorderStyle = BorderStyle.None;
             dgvDsNhapHang.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = Color.DarkCyan;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dgvDsNhapHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.DarkCyan;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvDsNhapHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvDsNhapHang.ColumnHeadersHeight = 30;
             dgvDsNhapHang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = SystemColors.Window;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            dgvDsNhapHang.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvDsNhapHang.DefaultCellStyle = dataGridViewCellStyle2;
             dgvDsNhapHang.Dock = DockStyle.Bottom;
             dgvDsNhapHang.EnableHeadersVisualStyles = false;
             dgvDsNhapHang.GridColor = Color.DarkCyan;
@@ -599,35 +604,13 @@
             dgvDsNhapHang.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dgvDsNhapHang.RowHeadersVisible = false;
             dgvDsNhapHang.RowHeadersWidth = 51;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvDsNhapHang.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvDsNhapHang.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dgvDsNhapHang.RowTemplate.Height = 25;
             dgvDsNhapHang.RowTemplate.ReadOnly = true;
             dgvDsNhapHang.Size = new Size(1522, 543);
             dgvDsNhapHang.TabIndex = 22;
-            // 
-            // customButton2
-            // 
-            customButton2.BackColor = Color.Transparent;
-            customButton2.BackgroundColor = Color.Transparent;
-            customButton2.BorderColor = Color.PaleVioletRed;
-            customButton2.BorderRadius = 15;
-            customButton2.BorderSize = 0;
-            customButton2.Cursor = Cursors.Hand;
-            customButton2.EnabledTextHover = false;
-            customButton2.FlatAppearance.BorderSize = 0;
-            customButton2.FlatAppearance.MouseOverBackColor = Color.FromArgb(50, 64, 64, 64);
-            customButton2.FlatStyle = FlatStyle.Flat;
-            customButton2.ForeColor = Color.White;
-            customButton2.ImageHover = null;
-            customButton2.Location = new Point(332, 15);
-            customButton2.Margin = new Padding(4, 5, 4, 5);
-            customButton2.Name = "customButton2";
-            customButton2.Size = new Size(50, 46);
-            customButton2.TabIndex = 15;
-            customButton2.TextColor = Color.White;
-            customButton2.TextHover = Color.White;
-            customButton2.UseVisualStyleBackColor = false;
+            dgvDsNhapHang.CellClick += dgvDsNhapHang_CellClick;
             // 
             // searchTxt
             // 
@@ -653,11 +636,12 @@
             // 
             // detailTabPage
             // 
+            detailTabPage.Controls.Add(txtTongTien);
             detailTabPage.Controls.Add(label18);
             detailTabPage.Controls.Add(HuyBtn);
             detailTabPage.Controls.Add(xacNhanBtn);
-            detailTabPage.Controls.Add(groupBox1);
-            detailTabPage.Controls.Add(dateTimePicker1);
+            detailTabPage.Controls.Add(gbCTPN);
+            detailTabPage.Controls.Add(dtpPN);
             detailTabPage.Controls.Add(cbNccName);
             detailTabPage.Controls.Add(cbNhanVienId);
             detailTabPage.Controls.Add(cbNccId);
@@ -679,6 +663,29 @@
             detailTabPage.TabIndex = 1;
             detailTabPage.Text = "Chi Tiết";
             detailTabPage.UseVisualStyleBackColor = true;
+            // 
+            // txtTongTien
+            // 
+            txtTongTien.BackColor = Color.White;
+            txtTongTien.BorderColor = Color.Silver;
+            txtTongTien.BorderFocusColor = Color.Silver;
+            txtTongTien.BorderRadius = 13;
+            txtTongTien.BorderSize = 2;
+            txtTongTien.Enabled = false;
+            txtTongTien.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTongTien.ForeColor = Color.DimGray;
+            txtTongTien.Location = new Point(1179, 23);
+            txtTongTien.Margin = new Padding(4, 5, 4, 5);
+            txtTongTien.Multiline = false;
+            txtTongTien.Name = "txtTongTien";
+            txtTongTien.Padding = new Padding(12, 15, 10, 11);
+            txtTongTien.PasswordChar = false;
+            txtTongTien.PlaceholderColor = Color.DarkGray;
+            txtTongTien.PlaceholderText = "";
+            txtTongTien.Size = new Size(217, 63);
+            txtTongTien.TabIndex = 66;
+            txtTongTien.Texts = "";
+            txtTongTien.UnderlinedStyle = false;
             // 
             // label18
             // 
@@ -710,7 +717,7 @@
             HuyBtn.Image = Properties.Resources.CANCELiconRed;
             HuyBtn.ImageAlign = ContentAlignment.MiddleRight;
             HuyBtn.ImageHover = Properties.Resources.CANCELiconWhite;
-            HuyBtn.Location = new Point(1321, 191);
+            HuyBtn.Location = new Point(1325, 124);
             HuyBtn.Margin = new Padding(4, 5, 4, 5);
             HuyBtn.Name = "HuyBtn";
             HuyBtn.Size = new Size(196, 89);
@@ -720,6 +727,7 @@
             HuyBtn.TextHover = Color.White;
             HuyBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             HuyBtn.UseVisualStyleBackColor = false;
+            HuyBtn.Click += HuyBtn_Click;
             // 
             // xacNhanBtn
             // 
@@ -740,7 +748,7 @@
             xacNhanBtn.Image = Properties.Resources.ConfirmIcondarkcyan1;
             xacNhanBtn.ImageAlign = ContentAlignment.MiddleRight;
             xacNhanBtn.ImageHover = Properties.Resources.ConfirmIconWhite1;
-            xacNhanBtn.Location = new Point(1321, 290);
+            xacNhanBtn.Location = new Point(1325, 223);
             xacNhanBtn.Margin = new Padding(4, 5, 4, 5);
             xacNhanBtn.Name = "xacNhanBtn";
             xacNhanBtn.Size = new Size(196, 89);
@@ -750,115 +758,326 @@
             xacNhanBtn.TextHover = Color.White;
             xacNhanBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             xacNhanBtn.UseVisualStyleBackColor = false;
+            xacNhanBtn.Click += xacNhanBtn_Click;
             // 
-            // groupBox1
+            // gbCTPN
             // 
-            groupBox1.Controls.Add(panel1);
-            groupBox1.Controls.Add(dgvCTPN);
-            groupBox1.Dock = DockStyle.Bottom;
-            groupBox1.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox1.Location = new Point(4, 403);
-            groupBox1.Margin = new Padding(4);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(4);
-            groupBox1.Size = new Size(1522, 480);
-            groupBox1.TabIndex = 61;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Chi Tiết Phiếu Nhập";
+            gbCTPN.Controls.Add(dgvCTPN);
+            gbCTPN.Controls.Add(panel1);
+            gbCTPN.Dock = DockStyle.Bottom;
+            gbCTPN.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            gbCTPN.Location = new Point(4, 335);
+            gbCTPN.Margin = new Padding(4);
+            gbCTPN.Name = "gbCTPN";
+            gbCTPN.Padding = new Padding(4);
+            gbCTPN.Size = new Size(1522, 548);
+            gbCTPN.TabIndex = 61;
+            gbCTPN.TabStop = false;
+            gbCTPN.Text = "Chi Tiết Phiếu Nhập";
+            // 
+            // dgvCTPN
+            // 
+            dgvCTPN.AllowUserToAddRows = false;
+            dgvCTPN.AllowUserToDeleteRows = false;
+            dgvCTPN.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCTPN.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvCTPN.BorderStyle = BorderStyle.None;
+            dgvCTPN.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.DarkCyan;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvCTPN.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dgvCTPN.ColumnHeadersHeight = 30;
+            dgvCTPN.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = SystemColors.Window;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dgvCTPN.DefaultCellStyle = dataGridViewCellStyle5;
+            dgvCTPN.EnableHeadersVisualStyles = false;
+            dgvCTPN.GridColor = Color.DarkCyan;
+            dgvCTPN.ImeMode = ImeMode.NoControl;
+            dgvCTPN.Location = new Point(3, 217);
+            dgvCTPN.Margin = new Padding(4, 5, 4, 5);
+            dgvCTPN.Name = "dgvCTPN";
+            dgvCTPN.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dgvCTPN.RowHeadersVisible = false;
+            dgvCTPN.RowHeadersWidth = 51;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCTPN.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dgvCTPN.RowTemplate.Height = 25;
+            dgvCTPN.RowTemplate.ReadOnly = true;
+            dgvCTPN.Size = new Size(1552, 336);
+            dgvCTPN.TabIndex = 23;
+            dgvCTPN.CellClick += dgvNgl_CellClick;
             // 
             // panel1
             // 
-            panel1.Controls.Add(label8);
-            panel1.Controls.Add(label10);
-            panel1.Controls.Add(comboBox7);
-            panel1.Controls.Add(comboBox8);
-            panel1.Controls.Add(customButton1);
+            panel1.Controls.Add(btnSortCTPN);
+            panel1.Controls.Add(gbCtpnSort);
+            panel1.Controls.Add(resetCTPNBtn);
+            panel1.Controls.Add(btnFilterCTPN);
+            panel1.Controls.Add(btnDeleteCTPN);
             panel1.Controls.Add(btnEditCTPN);
             panel1.Controls.Add(btnAddCTPN);
-            panel1.Controls.Add(customButton5);
-            panel1.Controls.Add(customTextBox1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(4, 39);
             panel1.Margin = new Padding(4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1514, 108);
+            panel1.Size = new Size(1514, 169);
             panel1.TabIndex = 24;
             // 
-            // label8
+            // btnSortCTPN
             // 
-            label8.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label8.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(397, 25);
-            label8.Margin = new Padding(4, 0, 4, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(58, 51);
-            label8.TabIndex = 38;
-            label8.Text = "Lọc:";
-            label8.TextAlign = ContentAlignment.MiddleCenter;
+            btnSortCTPN.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnSortCTPN.BackColor = SystemColors.Control;
+            btnSortCTPN.BackgroundColor = SystemColors.Control;
+            btnSortCTPN.BorderColor = Color.DeepSkyBlue;
+            btnSortCTPN.BorderRadius = 15;
+            btnSortCTPN.BorderSize = 2;
+            btnSortCTPN.Cursor = Cursors.Hand;
+            btnSortCTPN.EnabledTextHover = true;
+            btnSortCTPN.FlatAppearance.BorderSize = 0;
+            btnSortCTPN.FlatAppearance.MouseDownBackColor = Color.DeepSkyBlue;
+            btnSortCTPN.FlatAppearance.MouseOverBackColor = Color.DeepSkyBlue;
+            btnSortCTPN.FlatStyle = FlatStyle.Flat;
+            btnSortCTPN.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSortCTPN.ForeColor = Color.DeepSkyBlue;
+            btnSortCTPN.ImageAlign = ContentAlignment.MiddleRight;
+            btnSortCTPN.ImageHover = null;
+            btnSortCTPN.Location = new Point(906, 90);
+            btnSortCTPN.Margin = new Padding(4, 5, 4, 5);
+            btnSortCTPN.Name = "btnSortCTPN";
+            btnSortCTPN.Size = new Size(172, 64);
+            btnSortCTPN.TabIndex = 38;
+            btnSortCTPN.Text = "Sắp xếp";
+            btnSortCTPN.TextColor = Color.DeepSkyBlue;
+            btnSortCTPN.TextHover = Color.White;
+            btnSortCTPN.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnSortCTPN.UseVisualStyleBackColor = false;
+            btnSortCTPN.Click += btnSortCTPN_Click;
             // 
-            // label10
+            // gbCtpnSort
             // 
-            label10.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label10.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(647, 26);
-            label10.Margin = new Padding(4, 0, 4, 0);
-            label10.Name = "label10";
-            label10.Size = new Size(104, 51);
-            label10.TabIndex = 37;
-            label10.Text = "Sắp xếp:";
-            label10.TextAlign = ContentAlignment.MiddleCenter;
+            gbCtpnSort.Controls.Add(groupBox6);
+            gbCtpnSort.Controls.Add(groupBox9);
+            gbCtpnSort.Controls.Add(groupBox11);
+            gbCtpnSort.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            gbCtpnSort.Location = new Point(16, 7);
+            gbCtpnSort.Name = "gbCtpnSort";
+            gbCtpnSort.Size = new Size(531, 150);
+            gbCtpnSort.TabIndex = 37;
+            gbCtpnSort.TabStop = false;
+            gbCtpnSort.Visible = false;
             // 
-            // comboBox7
+            // groupBox6
             // 
-            comboBox7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            comboBox7.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox7.FormattingEnabled = true;
-            comboBox7.Location = new Point(462, 30);
-            comboBox7.Margin = new Padding(4, 5, 4, 5);
-            comboBox7.Name = "comboBox7";
-            comboBox7.Size = new Size(176, 44);
-            comboBox7.TabIndex = 36;
+            groupBox6.Controls.Add(rbIDNglDec);
+            groupBox6.Controls.Add(rbIDNglInc);
+            groupBox6.Location = new Point(13, 30);
+            groupBox6.Name = "groupBox6";
+            groupBox6.Size = new Size(159, 108);
+            groupBox6.TabIndex = 24;
+            groupBox6.TabStop = false;
+            groupBox6.Text = "ID nguyên liệu";
             // 
-            // comboBox8
+            // rbIDNglDec
             // 
-            comboBox8.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            comboBox8.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox8.FormattingEnabled = true;
-            comboBox8.Location = new Point(758, 30);
-            comboBox8.Margin = new Padding(4, 5, 4, 5);
-            comboBox8.Name = "comboBox8";
-            comboBox8.Size = new Size(184, 44);
-            comboBox8.TabIndex = 35;
+            rbIDNglDec.AutoSize = true;
+            rbIDNglDec.Location = new Point(17, 65);
+            rbIDNglDec.Name = "rbIDNglDec";
+            rbIDNglDec.Size = new Size(78, 29);
+            rbIDNglDec.TabIndex = 1;
+            rbIDNglDec.TabStop = true;
+            rbIDNglDec.Tag = "IDNglDec";
+            rbIDNglDec.Text = "Giảm";
+            rbIDNglDec.UseVisualStyleBackColor = true;
+            rbIDNglDec.CheckedChanged += SortRadioButton_CheckedChanged;
             // 
-            // customButton1
+            // rbIDNglInc
             // 
-            customButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            customButton1.BackColor = SystemColors.Control;
-            customButton1.BackgroundColor = SystemColors.Control;
-            customButton1.BorderColor = Color.Red;
-            customButton1.BorderRadius = 15;
-            customButton1.BorderSize = 2;
-            customButton1.Cursor = Cursors.Hand;
-            customButton1.EnabledTextHover = true;
-            customButton1.FlatAppearance.BorderSize = 0;
-            customButton1.FlatAppearance.MouseDownBackColor = Color.FromArgb(187, 10, 10);
-            customButton1.FlatAppearance.MouseOverBackColor = Color.Red;
-            customButton1.FlatStyle = FlatStyle.Flat;
-            customButton1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            customButton1.ForeColor = Color.Red;
-            customButton1.Image = Properties.Resources.deleteIconRed16px;
-            customButton1.ImageAlign = ContentAlignment.MiddleRight;
-            customButton1.ImageHover = Properties.Resources.deleteIconWhite16px;
-            customButton1.Location = new Point(1336, 19);
-            customButton1.Margin = new Padding(4, 5, 4, 5);
-            customButton1.Name = "customButton1";
-            customButton1.Size = new Size(172, 64);
-            customButton1.TabIndex = 34;
-            customButton1.Text = "  Xóa";
-            customButton1.TextColor = Color.Red;
-            customButton1.TextHover = Color.White;
-            customButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            customButton1.UseVisualStyleBackColor = false;
+            rbIDNglInc.AutoSize = true;
+            rbIDNglInc.Location = new Point(17, 30);
+            rbIDNglInc.Name = "rbIDNglInc";
+            rbIDNglInc.Size = new Size(74, 29);
+            rbIDNglInc.TabIndex = 0;
+            rbIDNglInc.TabStop = true;
+            rbIDNglInc.Tag = "IDNglInc";
+            rbIDNglInc.Text = "Tăng";
+            rbIDNglInc.UseVisualStyleBackColor = true;
+            rbIDNglInc.CheckedChanged += SortRadioButton_CheckedChanged;
+            // 
+            // groupBox9
+            // 
+            groupBox9.Controls.Add(rbKLNglDec);
+            groupBox9.Controls.Add(rbKLNglInc);
+            groupBox9.Location = new Point(178, 30);
+            groupBox9.Name = "groupBox9";
+            groupBox9.Size = new Size(159, 108);
+            groupBox9.TabIndex = 24;
+            groupBox9.TabStop = false;
+            groupBox9.Text = "Khối lượng";
+            // 
+            // rbKLNglDec
+            // 
+            rbKLNglDec.AutoSize = true;
+            rbKLNglDec.Location = new Point(17, 65);
+            rbKLNglDec.Name = "rbKLNglDec";
+            rbKLNglDec.Size = new Size(78, 29);
+            rbKLNglDec.TabIndex = 1;
+            rbKLNglDec.TabStop = true;
+            rbKLNglDec.Tag = "KhoiLuongDec";
+            rbKLNglDec.Text = "Giảm";
+            rbKLNglDec.UseVisualStyleBackColor = true;
+            rbKLNglDec.CheckedChanged += SortRadioButton_CheckedChanged;
+            // 
+            // rbKLNglInc
+            // 
+            rbKLNglInc.AutoSize = true;
+            rbKLNglInc.Location = new Point(17, 30);
+            rbKLNglInc.Name = "rbKLNglInc";
+            rbKLNglInc.Size = new Size(74, 29);
+            rbKLNglInc.TabIndex = 0;
+            rbKLNglInc.TabStop = true;
+            rbKLNglInc.Tag = "KhoiLuongInc";
+            rbKLNglInc.Text = "Tăng";
+            rbKLNglInc.UseVisualStyleBackColor = true;
+            rbKLNglInc.CheckedChanged += SortRadioButton_CheckedChanged;
+            // 
+            // groupBox11
+            // 
+            groupBox11.Controls.Add(rbDGNglDec);
+            groupBox11.Controls.Add(rbDGNglInc);
+            groupBox11.Location = new Point(343, 30);
+            groupBox11.Name = "groupBox11";
+            groupBox11.Size = new Size(159, 108);
+            groupBox11.TabIndex = 25;
+            groupBox11.TabStop = false;
+            groupBox11.Text = "Đơn giá";
+            // 
+            // rbDGNglDec
+            // 
+            rbDGNglDec.AutoSize = true;
+            rbDGNglDec.Location = new Point(17, 65);
+            rbDGNglDec.Name = "rbDGNglDec";
+            rbDGNglDec.Size = new Size(78, 29);
+            rbDGNglDec.TabIndex = 1;
+            rbDGNglDec.TabStop = true;
+            rbDGNglDec.Tag = "DonGiaDec";
+            rbDGNglDec.Text = "Giảm";
+            rbDGNglDec.UseVisualStyleBackColor = true;
+            rbDGNglDec.CheckedChanged += SortRadioButton_CheckedChanged;
+            // 
+            // rbDGNglInc
+            // 
+            rbDGNglInc.AutoSize = true;
+            rbDGNglInc.Location = new Point(17, 30);
+            rbDGNglInc.Name = "rbDGNglInc";
+            rbDGNglInc.Size = new Size(74, 29);
+            rbDGNglInc.TabIndex = 0;
+            rbDGNglInc.TabStop = true;
+            rbDGNglInc.Tag = "DonGiaInc";
+            rbDGNglInc.Text = "Tăng";
+            rbDGNglInc.UseVisualStyleBackColor = true;
+            rbDGNglInc.CheckedChanged += SortRadioButton_CheckedChanged;
+            // 
+            // resetCTPNBtn
+            // 
+            resetCTPNBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            resetCTPNBtn.BackColor = SystemColors.Control;
+            resetCTPNBtn.BackgroundColor = SystemColors.Control;
+            resetCTPNBtn.BorderColor = Color.Gray;
+            resetCTPNBtn.BorderRadius = 15;
+            resetCTPNBtn.BorderSize = 2;
+            resetCTPNBtn.Cursor = Cursors.Hand;
+            resetCTPNBtn.EnabledTextHover = true;
+            resetCTPNBtn.FlatAppearance.BorderSize = 0;
+            resetCTPNBtn.FlatAppearance.MouseDownBackColor = Color.DarkGray;
+            resetCTPNBtn.FlatAppearance.MouseOverBackColor = Color.DarkGray;
+            resetCTPNBtn.FlatStyle = FlatStyle.Flat;
+            resetCTPNBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            resetCTPNBtn.ForeColor = Color.DarkGray;
+            resetCTPNBtn.ImageAlign = ContentAlignment.MiddleRight;
+            resetCTPNBtn.ImageHover = null;
+            resetCTPNBtn.Location = new Point(1102, 90);
+            resetCTPNBtn.Margin = new Padding(4, 5, 4, 5);
+            resetCTPNBtn.Name = "resetCTPNBtn";
+            resetCTPNBtn.Size = new Size(172, 64);
+            resetCTPNBtn.TabIndex = 36;
+            resetCTPNBtn.Text = "Reset";
+            resetCTPNBtn.TextColor = Color.DarkGray;
+            resetCTPNBtn.TextHover = Color.White;
+            resetCTPNBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            resetCTPNBtn.UseVisualStyleBackColor = false;
+            resetCTPNBtn.Click += resetCTPNBtn_Click;
+            // 
+            // btnFilterCTPN
+            // 
+            btnFilterCTPN.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnFilterCTPN.BackColor = SystemColors.Control;
+            btnFilterCTPN.BackgroundColor = SystemColors.Control;
+            btnFilterCTPN.BorderColor = Color.Goldenrod;
+            btnFilterCTPN.BorderRadius = 15;
+            btnFilterCTPN.BorderSize = 2;
+            btnFilterCTPN.Cursor = Cursors.Hand;
+            btnFilterCTPN.EnabledTextHover = true;
+            btnFilterCTPN.FlatAppearance.BorderSize = 0;
+            btnFilterCTPN.FlatAppearance.MouseDownBackColor = Color.Goldenrod;
+            btnFilterCTPN.FlatAppearance.MouseOverBackColor = Color.Goldenrod;
+            btnFilterCTPN.FlatStyle = FlatStyle.Flat;
+            btnFilterCTPN.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnFilterCTPN.ForeColor = Color.Goldenrod;
+            btnFilterCTPN.ImageAlign = ContentAlignment.MiddleRight;
+            btnFilterCTPN.ImageHover = null;
+            btnFilterCTPN.Location = new Point(1299, 90);
+            btnFilterCTPN.Margin = new Padding(4, 5, 4, 5);
+            btnFilterCTPN.Name = "btnFilterCTPN";
+            btnFilterCTPN.Size = new Size(172, 64);
+            btnFilterCTPN.TabIndex = 35;
+            btnFilterCTPN.Text = "Lọc";
+            btnFilterCTPN.TextColor = Color.Goldenrod;
+            btnFilterCTPN.TextHover = Color.White;
+            btnFilterCTPN.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnFilterCTPN.UseVisualStyleBackColor = false;
+            btnFilterCTPN.Click += btnFilterCTPN_Click;
+            // 
+            // btnDeleteCTPN
+            // 
+            btnDeleteCTPN.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnDeleteCTPN.BackColor = SystemColors.Control;
+            btnDeleteCTPN.BackgroundColor = SystemColors.Control;
+            btnDeleteCTPN.BorderColor = Color.Red;
+            btnDeleteCTPN.BorderRadius = 15;
+            btnDeleteCTPN.BorderSize = 2;
+            btnDeleteCTPN.Cursor = Cursors.Hand;
+            btnDeleteCTPN.EnabledTextHover = true;
+            btnDeleteCTPN.FlatAppearance.BorderSize = 0;
+            btnDeleteCTPN.FlatAppearance.MouseDownBackColor = Color.FromArgb(187, 10, 10);
+            btnDeleteCTPN.FlatAppearance.MouseOverBackColor = Color.Red;
+            btnDeleteCTPN.FlatStyle = FlatStyle.Flat;
+            btnDeleteCTPN.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnDeleteCTPN.ForeColor = Color.Red;
+            btnDeleteCTPN.Image = Properties.Resources.deleteIconRed16px;
+            btnDeleteCTPN.ImageAlign = ContentAlignment.MiddleRight;
+            btnDeleteCTPN.ImageHover = Properties.Resources.deleteIconWhite16px;
+            btnDeleteCTPN.Location = new Point(1298, 16);
+            btnDeleteCTPN.Margin = new Padding(4, 5, 4, 5);
+            btnDeleteCTPN.Name = "btnDeleteCTPN";
+            btnDeleteCTPN.Size = new Size(172, 64);
+            btnDeleteCTPN.TabIndex = 34;
+            btnDeleteCTPN.Text = "  Xóa";
+            btnDeleteCTPN.TextColor = Color.Red;
+            btnDeleteCTPN.TextHover = Color.White;
+            btnDeleteCTPN.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnDeleteCTPN.UseVisualStyleBackColor = false;
+            btnDeleteCTPN.Click += btnDeleteCTPN_Click;
             // 
             // btnEditCTPN
             // 
@@ -879,7 +1098,7 @@
             btnEditCTPN.Image = Properties.Resources.editIconTeal16px;
             btnEditCTPN.ImageAlign = ContentAlignment.MiddleRight;
             btnEditCTPN.ImageHover = Properties.Resources.editIconWhite16px;
-            btnEditCTPN.Location = new Point(1154, 19);
+            btnEditCTPN.Location = new Point(1101, 16);
             btnEditCTPN.Margin = new Padding(4, 5, 4, 5);
             btnEditCTPN.Name = "btnEditCTPN";
             btnEditCTPN.Size = new Size(172, 64);
@@ -889,6 +1108,7 @@
             btnEditCTPN.TextHover = Color.White;
             btnEditCTPN.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnEditCTPN.UseVisualStyleBackColor = false;
+            btnEditCTPN.Click += btnEditCTPN_Click;
             // 
             // btnAddCTPN
             // 
@@ -909,7 +1129,7 @@
             btnAddCTPN.Image = Properties.Resources.addIconTeal16px;
             btnAddCTPN.ImageAlign = ContentAlignment.MiddleRight;
             btnAddCTPN.ImageHover = Properties.Resources.addIconWhite16px;
-            btnAddCTPN.Location = new Point(972, 19);
+            btnAddCTPN.Location = new Point(904, 16);
             btnAddCTPN.Margin = new Padding(4, 5, 4, 5);
             btnAddCTPN.Name = "btnAddCTPN";
             btnAddCTPN.Size = new Size(172, 64);
@@ -919,114 +1139,27 @@
             btnAddCTPN.TextHover = Color.White;
             btnAddCTPN.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnAddCTPN.UseVisualStyleBackColor = false;
-            btnAddCTPN.Click += btn_add2_Click;
+            btnAddCTPN.Click += btn_addCTPN_Click;
             // 
-            // customButton5
+            // dtpPN
             // 
-            customButton5.BackColor = Color.Transparent;
-            customButton5.BackgroundColor = Color.Transparent;
-            customButton5.BorderColor = Color.PaleVioletRed;
-            customButton5.BorderRadius = 15;
-            customButton5.BorderSize = 0;
-            customButton5.Cursor = Cursors.Hand;
-            customButton5.EnabledTextHover = false;
-            customButton5.FlatAppearance.BorderSize = 0;
-            customButton5.FlatAppearance.MouseOverBackColor = Color.FromArgb(50, 64, 64, 64);
-            customButton5.FlatStyle = FlatStyle.Flat;
-            customButton5.ForeColor = Color.White;
-            customButton5.ImageHover = null;
-            customButton5.Location = new Point(330, 30);
-            customButton5.Margin = new Padding(4, 5, 4, 5);
-            customButton5.Name = "customButton5";
-            customButton5.Size = new Size(50, 46);
-            customButton5.TabIndex = 31;
-            customButton5.TextColor = Color.White;
-            customButton5.TextHover = Color.White;
-            customButton5.UseVisualStyleBackColor = false;
-            // 
-            // customTextBox1
-            // 
-            customTextBox1.BackColor = SystemColors.Window;
-            customTextBox1.BorderColor = Color.Silver;
-            customTextBox1.BorderFocusColor = Color.DarkCyan;
-            customTextBox1.BorderRadius = 15;
-            customTextBox1.BorderSize = 2;
-            customTextBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            customTextBox1.ForeColor = Color.DimGray;
-            customTextBox1.Location = new Point(8, 24);
-            customTextBox1.Margin = new Padding(4, 5, 4, 5);
-            customTextBox1.Multiline = false;
-            customTextBox1.Name = "customTextBox1";
-            customTextBox1.Padding = new Padding(12, 11, 58, 11);
-            customTextBox1.PasswordChar = false;
-            customTextBox1.PlaceholderColor = Color.DarkGray;
-            customTextBox1.PlaceholderText = "Tìm Kiếm ...";
-            customTextBox1.Size = new Size(380, 55);
-            customTextBox1.TabIndex = 30;
-            customTextBox1.Texts = "";
-            customTextBox1.UnderlinedStyle = false;
-            // 
-            // dgvCTPN
-            // 
-            dgvCTPN.AllowUserToAddRows = false;
-            dgvCTPN.AllowUserToDeleteRows = false;
-            dgvCTPN.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvCTPN.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dgvCTPN.BorderStyle = BorderStyle.None;
-            dgvCTPN.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = Color.DarkCyan;
-            dataGridViewCellStyle10.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle10.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
-            dgvCTPN.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            dgvCTPN.ColumnHeadersHeight = 30;
-            dgvCTPN.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = SystemColors.Window;
-            dataGridViewCellStyle11.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle11.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
-            dgvCTPN.DefaultCellStyle = dataGridViewCellStyle11;
-            dgvCTPN.Dock = DockStyle.Fill;
-            dgvCTPN.EnableHeadersVisualStyles = false;
-            dgvCTPN.GridColor = Color.DarkCyan;
-            dgvCTPN.ImeMode = ImeMode.NoControl;
-            dgvCTPN.Location = new Point(4, 39);
-            dgvCTPN.Margin = new Padding(4, 5, 4, 5);
-            dgvCTPN.Name = "dgvCTPN";
-            dgvCTPN.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dgvCTPN.RowHeadersVisible = false;
-            dgvCTPN.RowHeadersWidth = 51;
-            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvCTPN.RowsDefaultCellStyle = dataGridViewCellStyle12;
-            dgvCTPN.RowTemplate.Height = 25;
-            dgvCTPN.RowTemplate.ReadOnly = true;
-            dgvCTPN.Size = new Size(1514, 437);
-            dgvCTPN.TabIndex = 23;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePicker1.Location = new Point(48, 311);
-            dateTimePicker1.Margin = new Padding(4);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(428, 42);
-            dateTimePicker1.TabIndex = 60;
+            dtpPN.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            dtpPN.Location = new Point(48, 275);
+            dtpPN.Margin = new Padding(4);
+            dtpPN.Name = "dtpPN";
+            dtpPN.Size = new Size(428, 42);
+            dtpPN.TabIndex = 60;
             // 
             // cbNccName
             // 
             cbNccName.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             cbNccName.FormattingEnabled = true;
-            cbNccName.Location = new Point(910, 311);
+            cbNccName.Location = new Point(910, 275);
             cbNccName.Margin = new Padding(4);
             cbNccName.Name = "cbNccName";
             cbNccName.Size = new Size(348, 44);
             cbNccName.TabIndex = 59;
+            cbNccName.SelectedIndexChanged += cbNccName_SelectedIndexChanged;
             // 
             // cbNhanVienId
             // 
@@ -1034,37 +1167,40 @@
             cbNhanVienId.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             cbNhanVienId.ForeColor = SystemColors.WindowText;
             cbNhanVienId.FormattingEnabled = true;
-            cbNhanVienId.Location = new Point(519, 174);
+            cbNhanVienId.Location = new Point(519, 163);
             cbNhanVienId.Margin = new Padding(4);
             cbNhanVienId.Name = "cbNhanVienId";
             cbNhanVienId.Size = new Size(348, 44);
             cbNhanVienId.TabIndex = 58;
+            cbNhanVienId.SelectedIndexChanged += cbNhanVienId_SelectedIndexChanged;
             // 
             // cbNccId
             // 
             cbNccId.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             cbNccId.FormattingEnabled = true;
             cbNccId.Items.AddRange(new object[] { "False", "True" });
-            cbNccId.Location = new Point(910, 174);
+            cbNccId.Location = new Point(910, 163);
             cbNccId.Margin = new Padding(4);
             cbNccId.Name = "cbNccId";
             cbNccId.Size = new Size(348, 44);
             cbNccId.TabIndex = 57;
+            cbNccId.SelectedIndexChanged += cbNccId_SelectedIndexChanged;
             // 
             // cbNhanVienName
             // 
             cbNhanVienName.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             cbNhanVienName.FormattingEnabled = true;
-            cbNhanVienName.Location = new Point(519, 311);
+            cbNhanVienName.Location = new Point(519, 275);
             cbNhanVienName.Margin = new Padding(4);
             cbNhanVienName.Name = "cbNhanVienName";
             cbNhanVienName.Size = new Size(348, 44);
             cbNhanVienName.TabIndex = 56;
+            cbNhanVienName.SelectedIndexChanged += cbNhanVienName_SelectedIndexChanged;
             // 
             // label6
             // 
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(511, 229);
+            label6.Location = new Point(511, 193);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(191, 85);
@@ -1112,7 +1248,7 @@
             // label3
             // 
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(906, 89);
+            label3.Location = new Point(906, 78);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(216, 85);
@@ -1123,7 +1259,7 @@
             // M
             // 
             M.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            M.Location = new Point(494, 91);
+            M.Location = new Point(494, 80);
             M.Margin = new Padding(4, 0, 4, 0);
             M.Name = "M";
             M.Size = new Size(208, 85);
@@ -1135,13 +1271,13 @@
             // 
             txtPhieuNhapId.BackColor = Color.LightGray;
             txtPhieuNhapId.BorderColor = Color.Silver;
-            txtPhieuNhapId.BorderFocusColor = Color.DarkCyan;
+            txtPhieuNhapId.BorderFocusColor = Color.Silver;
             txtPhieuNhapId.BorderRadius = 13;
             txtPhieuNhapId.BorderSize = 2;
             txtPhieuNhapId.Enabled = false;
             txtPhieuNhapId.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             txtPhieuNhapId.ForeColor = Color.DimGray;
-            txtPhieuNhapId.Location = new Point(48, 156);
+            txtPhieuNhapId.Location = new Point(48, 145);
             txtPhieuNhapId.Margin = new Padding(4, 5, 4, 5);
             txtPhieuNhapId.Multiline = false;
             txtPhieuNhapId.Name = "txtPhieuNhapId";
@@ -1157,7 +1293,7 @@
             // label5
             // 
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(20, 242);
+            label5.Location = new Point(20, 206);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(158, 85);
@@ -1168,7 +1304,7 @@
             // label4
             // 
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(906, 229);
+            label4.Location = new Point(906, 193);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(238, 85);
@@ -1179,7 +1315,7 @@
             // label1
             // 
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(24, 92);
+            label1.Location = new Point(24, 81);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(196, 85);
@@ -1189,13 +1325,14 @@
             // 
             // moreDetailTabPage
             // 
+            moreDetailTabPage.Controls.Add(btnAddNgl);
             moreDetailTabPage.Controls.Add(btnHuyCTPN);
             moreDetailTabPage.Controls.Add(btnXacNhanCTPN);
             moreDetailTabPage.Controls.Add(txtCTPNDonGia);
             moreDetailTabPage.Controls.Add(label13);
             moreDetailTabPage.Controls.Add(txtCTPNKhoiLuong);
-            moreDetailTabPage.Controls.Add(comboBox10);
-            moreDetailTabPage.Controls.Add(comboBox12);
+            moreDetailTabPage.Controls.Add(cbNglId);
+            moreDetailTabPage.Controls.Add(cbNglName);
             moreDetailTabPage.Controls.Add(label12);
             moreDetailTabPage.Controls.Add(label14);
             moreDetailTabPage.Controls.Add(txtCTPNId);
@@ -1211,6 +1348,37 @@
             moreDetailTabPage.TabIndex = 2;
             moreDetailTabPage.Text = "Chi Tiết Phiếu Nhập";
             moreDetailTabPage.UseVisualStyleBackColor = true;
+            // 
+            // btnAddNgl
+            // 
+            btnAddNgl.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnAddNgl.BackColor = SystemColors.Control;
+            btnAddNgl.BackgroundColor = SystemColors.Control;
+            btnAddNgl.BorderColor = Color.DarkCyan;
+            btnAddNgl.BorderRadius = 15;
+            btnAddNgl.BorderSize = 2;
+            btnAddNgl.Cursor = Cursors.Hand;
+            btnAddNgl.EnabledTextHover = true;
+            btnAddNgl.FlatAppearance.BorderSize = 0;
+            btnAddNgl.FlatAppearance.MouseDownBackColor = Color.Teal;
+            btnAddNgl.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
+            btnAddNgl.FlatStyle = FlatStyle.Flat;
+            btnAddNgl.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAddNgl.ForeColor = Color.DarkCyan;
+            btnAddNgl.Image = Properties.Resources.addIconTeal16px;
+            btnAddNgl.ImageAlign = ContentAlignment.MiddleRight;
+            btnAddNgl.ImageHover = Properties.Resources.addIconWhite16px;
+            btnAddNgl.Location = new Point(1081, 296);
+            btnAddNgl.Margin = new Padding(4, 5, 4, 5);
+            btnAddNgl.Name = "btnAddNgl";
+            btnAddNgl.Size = new Size(172, 64);
+            btnAddNgl.TabIndex = 76;
+            btnAddNgl.Text = "  Thêm";
+            btnAddNgl.TextColor = Color.DarkCyan;
+            btnAddNgl.TextHover = Color.White;
+            btnAddNgl.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnAddNgl.UseVisualStyleBackColor = false;
+            btnAddNgl.Click += btnAddNgl_Click;
             // 
             // btnHuyCTPN
             // 
@@ -1241,6 +1409,7 @@
             btnHuyCTPN.TextHover = Color.White;
             btnHuyCTPN.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnHuyCTPN.UseVisualStyleBackColor = false;
+            btnHuyCTPN.Click += btnHuyCTPN_Click;
             // 
             // btnXacNhanCTPN
             // 
@@ -1271,12 +1440,13 @@
             btnXacNhanCTPN.TextHover = Color.White;
             btnXacNhanCTPN.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnXacNhanCTPN.UseVisualStyleBackColor = false;
+            btnXacNhanCTPN.Click += btnXacNhanCTPN_Click;
             // 
             // txtCTPNDonGia
             // 
             txtCTPNDonGia.BackColor = SystemColors.Window;
             txtCTPNDonGia.BorderColor = Color.Silver;
-            txtCTPNDonGia.BorderFocusColor = Color.DarkCyan;
+            txtCTPNDonGia.BorderFocusColor = Color.DeepSkyBlue;
             txtCTPNDonGia.BorderRadius = 13;
             txtCTPNDonGia.BorderSize = 2;
             txtCTPNDonGia.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
@@ -1293,6 +1463,7 @@
             txtCTPNDonGia.TabIndex = 73;
             txtCTPNDonGia.Texts = "";
             txtCTPNDonGia.UnderlinedStyle = false;
+            txtCTPNDonGia._TextChanged += txtCTPNDonGia__TextChanged;
             // 
             // label13
             // 
@@ -1309,7 +1480,7 @@
             // 
             txtCTPNKhoiLuong.BackColor = SystemColors.Window;
             txtCTPNKhoiLuong.BorderColor = Color.Silver;
-            txtCTPNKhoiLuong.BorderFocusColor = Color.DarkCyan;
+            txtCTPNKhoiLuong.BorderFocusColor = Color.DeepSkyBlue;
             txtCTPNKhoiLuong.BorderRadius = 13;
             txtCTPNKhoiLuong.BorderSize = 2;
             txtCTPNKhoiLuong.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
@@ -1326,26 +1497,31 @@
             txtCTPNKhoiLuong.TabIndex = 71;
             txtCTPNKhoiLuong.Texts = "";
             txtCTPNKhoiLuong.UnderlinedStyle = false;
+            txtCTPNKhoiLuong._TextChanged += txtCTPNKhoiLuong__TextChanged;
             // 
-            // comboBox10
+            // cbNglId
             // 
-            comboBox10.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox10.FormattingEnabled = true;
-            comboBox10.Location = new Point(536, 169);
-            comboBox10.Margin = new Padding(4);
-            comboBox10.Name = "comboBox10";
-            comboBox10.Size = new Size(348, 44);
-            comboBox10.TabIndex = 70;
+            cbNglId.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            cbNglId.FormattingEnabled = true;
+            cbNglId.Location = new Point(536, 169);
+            cbNglId.Margin = new Padding(4);
+            cbNglId.Name = "cbNglId";
+            cbNglId.Size = new Size(348, 44);
+            cbNglId.TabIndex = 70;
+            cbNglId.SelectedIndexChanged += cbNglId_SelectedIndexChanged;
+            cbNglId.Click += cbNglId_Click;
             // 
-            // comboBox12
+            // cbNglName
             // 
-            comboBox12.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox12.FormattingEnabled = true;
-            comboBox12.Location = new Point(536, 306);
-            comboBox12.Margin = new Padding(4);
-            comboBox12.Name = "comboBox12";
-            comboBox12.Size = new Size(348, 44);
-            comboBox12.TabIndex = 68;
+            cbNglName.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            cbNglName.FormattingEnabled = true;
+            cbNglName.Location = new Point(536, 306);
+            cbNglName.Margin = new Padding(4);
+            cbNglName.Name = "cbNglName";
+            cbNglName.Size = new Size(348, 44);
+            cbNglName.TabIndex = 68;
+            cbNglName.SelectedIndexChanged += cbNglName_SelectedIndexChanged;
+            cbNglName.Click += cbNglName_Click;
             // 
             // label12
             // 
@@ -1371,7 +1547,7 @@
             // 
             // txtCTPNId
             // 
-            txtCTPNId.BackColor = SystemColors.Window;
+            txtCTPNId.BackColor = Color.LightGray;
             txtCTPNId.BorderColor = Color.Silver;
             txtCTPNId.BorderFocusColor = Color.DarkCyan;
             txtCTPNId.BorderRadius = 13;
@@ -1451,6 +1627,310 @@
             btn_back2.UseVisualStyleBackColor = false;
             btn_back2.Click += btn_back2_Click;
             // 
+            // addNgl
+            // 
+            addNgl.Controls.Add(btnHuyAdd);
+            addNgl.Controls.Add(btnXacNhanAdd);
+            addNgl.Controls.Add(label2);
+            addNgl.Controls.Add(btnBackCTPN);
+            addNgl.Controls.Add(caPhePic);
+            addNgl.Controls.Add(label8);
+            addNgl.Controls.Add(txtNglPrice);
+            addNgl.Controls.Add(label9);
+            addNgl.Controls.Add(txtNglInfo);
+            addNgl.Controls.Add(label10);
+            addNgl.Controls.Add(txtNglWeigh);
+            addNgl.Controls.Add(txtNglName);
+            addNgl.Controls.Add(label16);
+            addNgl.Controls.Add(label19);
+            addNgl.Location = new Point(4, 34);
+            addNgl.Name = "addNgl";
+            addNgl.Size = new Size(1530, 887);
+            addNgl.TabIndex = 3;
+            addNgl.Text = "thêm ngl";
+            addNgl.UseVisualStyleBackColor = true;
+            // 
+            // btnHuyAdd
+            // 
+            btnHuyAdd.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnHuyAdd.BackColor = SystemColors.Control;
+            btnHuyAdd.BackgroundColor = SystemColors.Control;
+            btnHuyAdd.BorderColor = Color.Red;
+            btnHuyAdd.BorderRadius = 15;
+            btnHuyAdd.BorderSize = 2;
+            btnHuyAdd.Cursor = Cursors.Hand;
+            btnHuyAdd.EnabledTextHover = true;
+            btnHuyAdd.FlatAppearance.BorderSize = 0;
+            btnHuyAdd.FlatAppearance.MouseDownBackColor = Color.FromArgb(187, 10, 10);
+            btnHuyAdd.FlatAppearance.MouseOverBackColor = Color.Red;
+            btnHuyAdd.FlatStyle = FlatStyle.Flat;
+            btnHuyAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnHuyAdd.ForeColor = Color.Red;
+            btnHuyAdd.Image = Properties.Resources.CANCELiconRed;
+            btnHuyAdd.ImageAlign = ContentAlignment.MiddleRight;
+            btnHuyAdd.ImageHover = Properties.Resources.CANCELiconWhite;
+            btnHuyAdd.Location = new Point(1322, 783);
+            btnHuyAdd.Margin = new Padding(4, 5, 4, 5);
+            btnHuyAdd.Name = "btnHuyAdd";
+            btnHuyAdd.Size = new Size(196, 89);
+            btnHuyAdd.TabIndex = 72;
+            btnHuyAdd.Text = "  Hủy";
+            btnHuyAdd.TextColor = Color.Red;
+            btnHuyAdd.TextHover = Color.White;
+            btnHuyAdd.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnHuyAdd.UseVisualStyleBackColor = false;
+            btnHuyAdd.Click += btnHuyAdd_Click;
+            // 
+            // btnXacNhanAdd
+            // 
+            btnXacNhanAdd.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnXacNhanAdd.BackColor = SystemColors.Control;
+            btnXacNhanAdd.BackgroundColor = SystemColors.Control;
+            btnXacNhanAdd.BorderColor = Color.DarkCyan;
+            btnXacNhanAdd.BorderRadius = 15;
+            btnXacNhanAdd.BorderSize = 2;
+            btnXacNhanAdd.Cursor = Cursors.Hand;
+            btnXacNhanAdd.EnabledTextHover = true;
+            btnXacNhanAdd.FlatAppearance.BorderSize = 0;
+            btnXacNhanAdd.FlatAppearance.MouseDownBackColor = Color.Teal;
+            btnXacNhanAdd.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
+            btnXacNhanAdd.FlatStyle = FlatStyle.Flat;
+            btnXacNhanAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnXacNhanAdd.ForeColor = Color.DarkCyan;
+            btnXacNhanAdd.Image = Properties.Resources.ConfirmIcondarkcyan1;
+            btnXacNhanAdd.ImageAlign = ContentAlignment.MiddleRight;
+            btnXacNhanAdd.ImageHover = Properties.Resources.ConfirmIconWhite1;
+            btnXacNhanAdd.Location = new Point(1103, 783);
+            btnXacNhanAdd.Margin = new Padding(4, 5, 4, 5);
+            btnXacNhanAdd.Name = "btnXacNhanAdd";
+            btnXacNhanAdd.Size = new Size(196, 89);
+            btnXacNhanAdd.TabIndex = 71;
+            btnXacNhanAdd.Text = "  Xác Nhận";
+            btnXacNhanAdd.TextColor = Color.DarkCyan;
+            btnXacNhanAdd.TextHover = Color.White;
+            btnXacNhanAdd.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnXacNhanAdd.UseVisualStyleBackColor = false;
+            btnXacNhanAdd.Click += btnXacNhanAdd_Click;
+            // 
+            // label2
+            // 
+            label2.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(110, 20);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(374, 71);
+            label2.TabIndex = 70;
+            label2.Text = "Thêm nguyên liệu mới";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnBackCTPN
+            // 
+            btnBackCTPN.BackColor = Color.Transparent;
+            btnBackCTPN.BackgroundColor = Color.Transparent;
+            btnBackCTPN.BorderColor = Color.PaleVioletRed;
+            btnBackCTPN.BorderRadius = 20;
+            btnBackCTPN.BorderSize = 0;
+            btnBackCTPN.Cursor = Cursors.Hand;
+            btnBackCTPN.EnabledTextHover = false;
+            btnBackCTPN.FlatAppearance.BorderSize = 0;
+            btnBackCTPN.FlatAppearance.MouseDownBackColor = Color.Teal;
+            btnBackCTPN.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
+            btnBackCTPN.FlatStyle = FlatStyle.Flat;
+            btnBackCTPN.ForeColor = Color.White;
+            btnBackCTPN.Image = Properties.Resources.arrowreturn32pxBlack1;
+            btnBackCTPN.ImageHover = Properties.Resources.arrowreturn32pxWhite1;
+            btnBackCTPN.Location = new Point(12, 20);
+            btnBackCTPN.Margin = new Padding(4, 5, 4, 5);
+            btnBackCTPN.Name = "btnBackCTPN";
+            btnBackCTPN.Size = new Size(90, 69);
+            btnBackCTPN.TabIndex = 69;
+            btnBackCTPN.TextColor = Color.White;
+            btnBackCTPN.TextHover = Color.White;
+            btnBackCTPN.UseVisualStyleBackColor = false;
+            btnBackCTPN.Click += btnBackCTPN_Click;
+            // 
+            // caPhePic
+            // 
+            caPhePic.BackColor = SystemColors.ActiveBorder;
+            caPhePic.BackgroundImageLayout = ImageLayout.None;
+            caPhePic.Cursor = Cursors.Hand;
+            caPhePic.Image = Properties.Resources.defaultImage3;
+            caPhePic.Location = new Point(89, 439);
+            caPhePic.Margin = new Padding(4, 5, 4, 5);
+            caPhePic.Name = "caPhePic";
+            caPhePic.Size = new Size(229, 240);
+            caPhePic.SizeMode = PictureBoxSizeMode.StretchImage;
+            caPhePic.TabIndex = 68;
+            caPhePic.TabStop = false;
+            caPhePic.Click += caPhePic_Click;
+            // 
+            // label8
+            // 
+            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Location = new Point(67, 395);
+            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(151, 49);
+            label8.TabIndex = 67;
+            label8.Text = "Hình Ảnh";
+            label8.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // txtNglPrice
+            // 
+            txtNglPrice.BackColor = SystemColors.Window;
+            txtNglPrice.BorderColor = Color.Silver;
+            txtNglPrice.BorderFocusColor = Color.DeepSkyBlue;
+            txtNglPrice.BorderRadius = 13;
+            txtNglPrice.BorderSize = 2;
+            txtNglPrice.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNglPrice.ForeColor = Color.DimGray;
+            txtNglPrice.Location = new Point(905, 172);
+            txtNglPrice.Margin = new Padding(4, 5, 4, 5);
+            txtNglPrice.Multiline = false;
+            txtNglPrice.Name = "txtNglPrice";
+            txtNglPrice.Padding = new Padding(12, 15, 10, 11);
+            txtNglPrice.PasswordChar = false;
+            txtNglPrice.PlaceholderColor = Color.DarkGray;
+            txtNglPrice.PlaceholderText = "Nhập giá tiền";
+            txtNglPrice.Size = new Size(349, 63);
+            txtNglPrice.TabIndex = 66;
+            txtNglPrice.Texts = "";
+            txtNglPrice.UnderlinedStyle = false;
+            // 
+            // label9
+            // 
+            label9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Location = new Point(901, 105);
+            label9.Margin = new Padding(4, 0, 4, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(216, 85);
+            label9.TabIndex = 65;
+            label9.Text = "Giá Tiền (Kg)";
+            label9.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // txtNglInfo
+            // 
+            txtNglInfo.BackColor = SystemColors.Window;
+            txtNglInfo.BorderColor = Color.Silver;
+            txtNglInfo.BorderFocusColor = Color.DeepSkyBlue;
+            txtNglInfo.BorderRadius = 13;
+            txtNglInfo.BorderSize = 2;
+            txtNglInfo.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNglInfo.ForeColor = Color.DimGray;
+            txtNglInfo.Location = new Point(513, 172);
+            txtNglInfo.Margin = new Padding(4, 5, 4, 5);
+            txtNglInfo.Multiline = false;
+            txtNglInfo.Name = "txtNglInfo";
+            txtNglInfo.Padding = new Padding(12, 15, 10, 11);
+            txtNglInfo.PasswordChar = false;
+            txtNglInfo.PlaceholderColor = Color.DarkGray;
+            txtNglInfo.PlaceholderText = "Nhập thông tin";
+            txtNglInfo.Size = new Size(349, 63);
+            txtNglInfo.TabIndex = 64;
+            txtNglInfo.Texts = "";
+            txtNglInfo.UnderlinedStyle = false;
+            // 
+            // label10
+            // 
+            label10.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Location = new Point(489, 107);
+            label10.Margin = new Padding(4, 0, 4, 0);
+            label10.Name = "label10";
+            label10.Size = new Size(151, 85);
+            label10.TabIndex = 63;
+            label10.Text = "Thông Tin";
+            label10.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // txtNglWeigh
+            // 
+            txtNglWeigh.BackColor = SystemColors.Window;
+            txtNglWeigh.BorderColor = Color.Silver;
+            txtNglWeigh.BorderFocusColor = Color.DeepSkyBlue;
+            txtNglWeigh.BorderRadius = 13;
+            txtNglWeigh.BorderSize = 2;
+            txtNglWeigh.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNglWeigh.ForeColor = Color.DimGray;
+            txtNglWeigh.Location = new Point(89, 305);
+            txtNglWeigh.Margin = new Padding(4, 5, 4, 5);
+            txtNglWeigh.Multiline = false;
+            txtNglWeigh.Name = "txtNglWeigh";
+            txtNglWeigh.Padding = new Padding(12, 15, 10, 11);
+            txtNglWeigh.PasswordChar = false;
+            txtNglWeigh.PlaceholderColor = Color.DarkGray;
+            txtNglWeigh.PlaceholderText = "Nhập khối lượng";
+            txtNglWeigh.Size = new Size(349, 63);
+            txtNglWeigh.TabIndex = 61;
+            txtNglWeigh.Texts = "";
+            txtNglWeigh.UnderlinedStyle = false;
+            // 
+            // txtNglName
+            // 
+            txtNglName.BackColor = SystemColors.Window;
+            txtNglName.BorderColor = Color.Silver;
+            txtNglName.BorderFocusColor = Color.DeepSkyBlue;
+            txtNglName.BorderRadius = 13;
+            txtNglName.BorderSize = 2;
+            txtNglName.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNglName.ForeColor = Color.DimGray;
+            txtNglName.Location = new Point(89, 172);
+            txtNglName.Margin = new Padding(4, 5, 4, 5);
+            txtNglName.Multiline = false;
+            txtNglName.Name = "txtNglName";
+            txtNglName.Padding = new Padding(12, 15, 10, 11);
+            txtNglName.PasswordChar = false;
+            txtNglName.PlaceholderColor = Color.DarkGray;
+            txtNglName.PlaceholderText = "Nhập tên nguyên liệu";
+            txtNglName.Size = new Size(349, 63);
+            txtNglName.TabIndex = 60;
+            txtNglName.Texts = "";
+            txtNglName.UnderlinedStyle = false;
+            // 
+            // label16
+            // 
+            label16.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label16.Location = new Point(61, 105);
+            label16.Margin = new Padding(4, 0, 4, 0);
+            label16.Name = "label16";
+            label16.Size = new Size(112, 85);
+            label16.TabIndex = 59;
+            label16.Text = "Tên";
+            label16.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label19
+            // 
+            label19.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label19.Location = new Point(67, 230);
+            label19.Margin = new Padding(4, 0, 4, 0);
+            label19.Name = "label19";
+            label19.Size = new Size(151, 85);
+            label19.TabIndex = 58;
+            label19.Text = "Khối Lượng";
+            label19.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnFindPn
+            // 
+            btnFindPn.BackColor = Color.Transparent;
+            btnFindPn.BackgroundColor = Color.Transparent;
+            btnFindPn.BorderColor = Color.PaleVioletRed;
+            btnFindPn.BorderRadius = 15;
+            btnFindPn.BorderSize = 0;
+            btnFindPn.Cursor = Cursors.Hand;
+            btnFindPn.EnabledTextHover = false;
+            btnFindPn.FlatAppearance.BorderSize = 0;
+            btnFindPn.FlatAppearance.MouseOverBackColor = Color.FromArgb(50, 64, 64, 64);
+            btnFindPn.FlatStyle = FlatStyle.Flat;
+            btnFindPn.ForeColor = Color.White;
+            btnFindPn.Image = Properties.Resources.findIcon16px;
+            btnFindPn.ImageHover = null;
+            btnFindPn.Location = new Point(335, 18);
+            btnFindPn.Margin = new Padding(4, 5, 4, 5);
+            btnFindPn.Name = "btnFindPn";
+            btnFindPn.Size = new Size(40, 40);
+            btnFindPn.TabIndex = 31;
+            btnFindPn.TextColor = Color.White;
+            btnFindPn.TextHover = Color.White;
+            btnFindPn.UseVisualStyleBackColor = false;
+            // 
             // NhapHangView
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -1466,8 +1946,6 @@
             gbSort.ResumeLayout(false);
             groupBox5.ResumeLayout(false);
             groupBox5.PerformLayout();
-            groupBox6.ResumeLayout(false);
-            groupBox6.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox4.ResumeLayout(false);
@@ -1478,10 +1956,19 @@
             groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDsNhapHang).EndInit();
             detailTabPage.ResumeLayout(false);
-            groupBox1.ResumeLayout(false);
-            panel1.ResumeLayout(false);
+            gbCTPN.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvCTPN).EndInit();
+            panel1.ResumeLayout(false);
+            gbCtpnSort.ResumeLayout(false);
+            groupBox6.ResumeLayout(false);
+            groupBox6.PerformLayout();
+            groupBox9.ResumeLayout(false);
+            groupBox9.PerformLayout();
+            groupBox11.ResumeLayout(false);
+            groupBox11.PerformLayout();
             moreDetailTabPage.ResumeLayout(false);
+            addNgl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)caPhePic).EndInit();
             ResumeLayout(false);
         }
 
@@ -1490,7 +1977,6 @@
         private TabControl tcNhapHang;
         private TabPage listTabPage;
         private DataGridView dgvDsNhapHang;
-        private CustomControl.CustomButton customButton2;
         private CustomControl.CustomTextBox searchTxt;
         private TabPage detailTabPage;
         private ComboBox cbNhanVienName;
@@ -1509,26 +1995,20 @@
         private ComboBox cbNccName;
         private ComboBox cbNhanVienId;
         private ComboBox cbNccId;
-        private DateTimePicker dateTimePicker1;
-        private GroupBox groupBox1;
+        private DateTimePicker dtpPN;
+        private GroupBox gbCTPN;
         private DataGridView dgvCTPN;
         private CustomControl.CustomButton xacNhanBtn;
         private CustomControl.CustomButton HuyBtn;
         private Panel panel1;
-        private Label label8;
-        private Label label10;
-        private ComboBox comboBox7;
-        private ComboBox comboBox8;
-        private CustomControl.CustomButton customButton1;
+        private CustomControl.CustomButton btnDeleteCTPN;
         private CustomControl.CustomButton btnEditCTPN;
         private CustomControl.CustomButton btnAddCTPN;
-        private CustomControl.CustomButton customButton5;
-        private CustomControl.CustomTextBox customTextBox1;
         private TabPage moreDetailTabPage;
         private Label label11;
         private CustomControl.CustomButton btn_back2;
-        private ComboBox comboBox10;
-        private ComboBox comboBox12;
+        private ComboBox cbNglId;
+        private ComboBox cbNglName;
         private Label label12;
         private Label label14;
         private CustomControl.CustomTextBox txtCTPNId;
@@ -1540,27 +2020,55 @@
         private CustomControl.CustomTextBox txtCTPNKhoiLuong;
         private CustomControl.CustomButton btnHuyCTPN;
         private CustomControl.CustomButton btnXacNhanCTPN;
-        private CustomControl.CustomButton filterBtn;
+        private CustomControl.CustomButton btnFilterPN;
         private CustomControl.CustomButton sortBtn;
         private CustomControl.CustomButton resetBtn;
         private GroupBox gbSort;
         private GroupBox groupBox5;
-        private RadioButton rbDcDec;
-        private RadioButton rbDcInc;
-        private GroupBox groupBox6;
-        private RadioButton rbIsDeleteDec;
-        private RadioButton rbIsDeleteInc;
+        private RadioButton rbIDNccDec;
+        private RadioButton rbIDNccInc;
         private GroupBox groupBox2;
-        private RadioButton rbIDDec;
-        private RadioButton rbIIDnc;
+        private RadioButton rbIDPnDec;
+        private RadioButton rbIDPnInc;
         private GroupBox groupBox4;
-        private RadioButton rbSdtDec;
-        private RadioButton rbSdtInc;
+        private RadioButton rbNNDec;
+        private RadioButton rbNNInc;
         private GroupBox groupBox3;
-        private RadioButton rbNameDec;
-        private RadioButton rbNameInc;
+        private RadioButton rbIDNvDec;
+        private RadioButton rbIDNvInc;
         private GroupBox groupBox7;
-        private RadioButton rbEmailDec;
-        private RadioButton rbEmailInc;
+        private RadioButton rbTTDec;
+        private RadioButton rbTTInc;
+        private CustomControl.CustomTextBox txtTongTien;
+        private CustomControl.CustomButton btnFilterCTPN;
+        private CustomControl.CustomButton resetCTPNBtn;
+        private GroupBox gbCtpnSort;
+        private GroupBox groupBox6;
+        private RadioButton rbIDNglDec;
+        private RadioButton rbIDNglInc;
+        private GroupBox groupBox9;
+        private RadioButton rbKLNglDec;
+        private RadioButton rbKLNglInc;
+        private GroupBox groupBox11;
+        private RadioButton rbDGNglDec;
+        private RadioButton rbDGNglInc;
+        private CustomControl.CustomButton btnSortCTPN;
+        private TabPage addNgl;
+        private CustomControl.CustomButton btnHuyAdd;
+        private CustomControl.CustomButton btnXacNhanAdd;
+        private Label label2;
+        private CustomControl.CustomButton btnBackCTPN;
+        private PictureBox caPhePic;
+        private Label label8;
+        private CustomControl.CustomTextBox txtNglPrice;
+        private Label label9;
+        private CustomControl.CustomTextBox txtNglInfo;
+        private Label label10;
+        private CustomControl.CustomTextBox txtNglWeigh;
+        private CustomControl.CustomTextBox txtNglName;
+        private Label label16;
+        private Label label19;
+        private CustomControl.CustomButton btnAddNgl;
+        private CustomControl.CustomButton btnFindPn;
     }
 }

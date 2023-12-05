@@ -184,11 +184,14 @@ namespace DoAn_QLCF_cs_WinForm.View
 		}
 
 		private void NguyenLieuCbx_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			if (nguyenLieuCbx.SelectedValue != null)
+        {
+            string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            var logoimage = Path.Combine(path, "image\\nguyenLieu");
+
+            if (nguyenLieuCbx.SelectedValue != null)
 			{
 				NguyenLieuModel nlModel = (NguyenLieuModel)nguyenLieuCbx.SelectedValue;
-				this.anhNguyenLieuPbx.Image = nlModel.HinhAnh;
+				this.anhNguyenLieuPbx.Image = Image.FromFile(Path.Combine(logoimage, nlModel.HinhAnh));
 			}
 		}
 

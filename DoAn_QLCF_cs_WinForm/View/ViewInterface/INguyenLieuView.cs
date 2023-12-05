@@ -19,6 +19,7 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
         event EventHandler SortEvent;
         event EventHandler FilterEvent;
         event EventHandler ResetEvent;
+        event EventHandler FindNglEvent;
         bool isAdd { get; set; }
         bool isFilter { get; set; }
         bool isUpdate { get; set; }
@@ -30,6 +31,8 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
         string HinhAnh { get; set; }
         string IsDelete { get; set; }
         string selectedId { get; set; }
+        string Nglcount { get; }
+        string FindText { get; set; }
         void LoadData(BindingSource list);
         void GetIdNguyenLieuAdd(int id);
         bool CheckInput();
