@@ -81,8 +81,11 @@ namespace DoAn_QLCF_cs_WinForm.Repository
 
                 if (!string.IsNullOrEmpty(nhaCungCapId))
                 {
-                    queryBuilder.Append(" AND NhaCungCapId = @NhaCungCapId");
-                    cmd.Parameters.AddWithValue("@NhaCungCapId", nhaCungCapId);
+                    if (int.TryParse(nhaCungCapId, out int nhaCungCapIdValue))
+                    {
+                        queryBuilder.Append(" AND NhaCungCapId = @NhaCungCapId");
+                        cmd.Parameters.AddWithValue("@NhaCungCapId", nhaCungCapIdValue);
+                    }
                 }
                 if (!string.IsNullOrEmpty(tenNhaCungCap))
                 {
@@ -116,10 +119,6 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                 {
                     while (reader.Read())
                     {
-#pragma warning disable CS8601 // Possible null reference assignment.
-#pragma warning disable CS8601 // Possible null reference assignment.
-#pragma warning disable CS8601 // Possible null reference assignment.
-#pragma warning disable CS8601 // Possible null reference assignment.
                         var ncc = new NccModel
                         {
                             NhaCungCapId = (int)reader["NhaCungCapId"],
@@ -129,10 +128,6 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                             Email = reader["Email"].ToString(),
                             IsDelete = (bool)reader["IsDelete"]
                         };
-#pragma warning restore CS8601 // Possible null reference assignment.
-#pragma warning restore CS8601 // Possible null reference assignment.
-#pragma warning restore CS8601 // Possible null reference assignment.
-#pragma warning restore CS8601 // Possible null reference assignment.
                         nccList.Add(ncc);
                     }
                 }
@@ -141,6 +136,47 @@ namespace DoAn_QLCF_cs_WinForm.Repository
             return nccList;
         }
 
+        public IEnumerable<NccModel> FindNccByNameOrId(string textFind)
+        {
+            List<NccModel> nccList = new List<NccModel>();
+            using (var connection = new SqlConnection(this.connectionString))
+            using (var cmd = connection.CreateCommand())
+            {
+                connection.Open();
+                cmd.Connection = connection;
+                StringBuilder queryBuilder = new StringBuilder("SELECT * FROM NhaCungCap WHERE 1=1");
+
+                if (int.TryParse(textFind, out int textFindValue))
+                {
+                    queryBuilder.Append(" AND NhaCungCapId = @NhaCungCapId");
+                    cmd.Parameters.AddWithValue("@NhaCungCapId", textFind);
+                }
+                else
+                {
+                    queryBuilder.Append(" AND TenNhaCungCap LIKE @TenNhaCungCap");
+                    cmd.Parameters.AddWithValue("@TenNhaCungCap", "%" + textFind + "%");
+                }
+                cmd.CommandText = queryBuilder.ToString();
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var ncc = new NccModel
+                        {
+                            NhaCungCapId = (int)reader["NhaCungCapId"],
+                            TenNhaCungCap = reader["TenNhaCungCap"].ToString(),
+                            DiaChi = reader["DiaChi"].ToString(),
+                            SDT = reader["SDT"].ToString(),
+                            Email = reader["Email"].ToString(),
+                            IsDelete = (bool)reader["IsDelete"]
+                        };
+                        nccList.Add(ncc);
+                    }
+                }
+            }
+            return nccList;
+        }
         public IEnumerable<NccModel> GetAll()
         {
             var cpList = new List<NccModel>();
@@ -156,18 +192,10 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                     {
                         var ncc = new NccModel();
                         ncc.NhaCungCapId = (int)reader["NhaCungCapId"];
-#pragma warning disable CS8601 // Possible null reference assignment.
                         ncc.TenNhaCungCap = reader["TenNhaCungCap"].ToString();
-#pragma warning restore CS8601 // Possible null reference assignment.
-#pragma warning disable CS8601 // Possible null reference assignment.
                         ncc.DiaChi = reader["DiaChi"].ToString();
-#pragma warning restore CS8601 // Possible null reference assignment.
-#pragma warning disable CS8601 // Possible null reference assignment.
                         ncc.SDT = reader["SDT"].ToString();
-#pragma warning restore CS8601 // Possible null reference assignment.
-#pragma warning disable CS8601 // Possible null reference assignment.
                         ncc.Email = reader["Email"].ToString();
-#pragma warning restore CS8601 // Possible null reference assignment.
                         ncc.IsDelete = (bool)reader["IsDelete"];
 
                         cpList.Add(ncc);
@@ -194,18 +222,10 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                     if (reader.Read())
                     {
                         ncc.NhaCungCapId = (int)reader["NhaCungCapId"];
-#pragma warning disable CS8601 // Possible null reference assignment.
                         ncc.TenNhaCungCap = reader["TenNhaCungCap"].ToString();
-#pragma warning restore CS8601 // Possible null reference assignment.
-#pragma warning disable CS8601 // Possible null reference assignment.
                         ncc.DiaChi = reader["DiaChi"].ToString();
-#pragma warning restore CS8601 // Possible null reference assignment.
-#pragma warning disable CS8601 // Possible null reference assignment.
                         ncc.SDT = reader["SDT"].ToString();
-#pragma warning restore CS8601 // Possible null reference assignment.
-#pragma warning disable CS8601 // Possible null reference assignment.
                         ncc.Email = reader["Email"].ToString();
-#pragma warning restore CS8601 // Possible null reference assignment.
                         ncc.IsDelete = (bool)reader["IsDelete"];
                     }
                 }

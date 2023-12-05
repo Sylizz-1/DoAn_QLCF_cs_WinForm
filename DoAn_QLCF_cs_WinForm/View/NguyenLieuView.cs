@@ -6,19 +6,19 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DoAn_QLCF_cs_WinForm.View
 {
     public partial class NguyenLieuView : Form, INguyenLieuView
     {
 
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         private static NguyenLieuView instance;
-#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         private string id = "1";
         public event EventHandler btnAddClickEvent;
         public event EventHandler btnUpdateClickEvent;
@@ -29,31 +29,15 @@ namespace DoAn_QLCF_cs_WinForm.View
         public event EventHandler SortEvent;
         public event EventHandler FilterEvent;
         public event EventHandler ResetEvent;
+        public event EventHandler FindNglEvent;
+
         public bool checkIsAdd = false;
         public bool checkIsfilter = false;
         public bool checkIsUpdate = false;
         public bool isNeedTurn = false;
         private BindingSource templist = new BindingSource();
 
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public NguyenLieuView()
-#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
             InitializeComponent();
             SetUpView();
@@ -70,41 +54,20 @@ namespace DoAn_QLCF_cs_WinForm.View
             sortBtn.Click += delegate { SortEvent?.Invoke(this, EventArgs.Empty); };
             resetBtn.Click += delegate { ResetEvent?.Invoke(this, EventArgs.Empty); };
 
+            btnFindNgl.Click += delegate { FindNglEvent?.Invoke(this, EventArgs.Empty); };
+
             rbIDDec.CheckedChanged += SortRadioButton_CheckedChanged;
-#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             rbIIDnc.CheckedChanged += SortRadioButton_CheckedChanged;
-#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             rbNameDec.CheckedChanged += SortRadioButton_CheckedChanged;
-#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             rbNameInc.CheckedChanged += SortRadioButton_CheckedChanged;
-#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             rbKlgDec.CheckedChanged += SortRadioButton_CheckedChanged;
-#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             rbKlgInc.CheckedChanged += SortRadioButton_CheckedChanged;
-#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             rbInfoDec.CheckedChanged += SortRadioButton_CheckedChanged;
-#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             rbInfoInc.CheckedChanged += SortRadioButton_CheckedChanged;
-#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             rbPriceDec.CheckedChanged += SortRadioButton_CheckedChanged;
-#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             rbPriceInc.CheckedChanged += SortRadioButton_CheckedChanged;
-#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             rbIsDeleteDec.CheckedChanged += SortRadioButton_CheckedChanged;
-#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             rbIsDeleteInc.CheckedChanged += SortRadioButton_CheckedChanged;
-#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
         }
         private void SetUpView()
         {
@@ -114,7 +77,7 @@ namespace DoAn_QLCF_cs_WinForm.View
         }
         public static INguyenLieuView GetInstance(Form parentContainer)
         {
-
+            instance = null;
             if (instance == null || instance.IsDisposed)
             {
                 instance = new NguyenLieuView();
@@ -163,9 +126,33 @@ namespace DoAn_QLCF_cs_WinForm.View
         }
         public string HinhAnh
         {
-            get => this.caPhePic.ImageLocation;
-            set => this.caPhePic.Image = Image.FromFile(value);
+            get
+            {
+                string fullPath = this.caPhePic.ImageLocation;
+                int lastIndexOfSlash = fullPath.LastIndexOf("\\");
+                if (lastIndexOfSlash != -1)
+                {
+                    string croppedPath = fullPath.Substring(lastIndexOfSlash + 1);
+                    return croppedPath;
+                }
+                return fullPath;
+            }
+            set
+            {
+                try
+                {
+                    this.caPhePic.ImageLocation = value;
+                    this.caPhePic.Image = Image.FromFile(value);
+                }
+                catch (OutOfMemoryException ex)
+                {
+                    MessageBox.Show("Ảnh quá bộ nhớ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+                    HinhAnh = Path.Combine(path, "Resources\\defaultImage3.png");
+                }
+            }
         }
+
         public bool isAdd
         {
             get => checkIsAdd;
@@ -183,12 +170,53 @@ namespace DoAn_QLCF_cs_WinForm.View
         }
         public string selectedId { get => this.id; set => this.id = value; }
 
+        public string Nglcount
+        {
+            get => dgvNgl.RowCount.ToString();
+        }
+        public string FindText
+        {
+            get => searchNglTxt.Texts;
+            set => searchNglTxt.Texts = value;
+        }
         public void LoadData(BindingSource list)
         {
             this.dgvNgl.DataSource = list;
+            if (dgvNgl.Columns.Contains("HinhAnh"))
+            {
+                dgvNgl.Columns.Remove("HinhAnh");
+            }
+
+            DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
+            imageColumn.Name = "HinhAnh";
+            imageColumn.HeaderText = "Hình Ảnh";
+            imageColumn.DataPropertyName = "HinhAnh";
+            imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
+
+            dgvNgl.Columns.Insert(5, imageColumn);
+
             templist = list;
+            dgvNgl.ClearSelection();
+            selectedId = "0";
         }
-        public void GetIdNglAdd(int id)
+        private void dgvNgl_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvNgl.Columns[e.ColumnIndex].Name == "HinhAnh" && e.Value != null)
+            {
+                string imagePath = e.Value.ToString();
+                Image image;
+                try
+                {
+                    image = Image.FromFile(imagePath);
+                }
+                catch (OutOfMemoryException ex)
+                {
+                    image = null;
+                }
+                e.Value = image;
+            }
+        }
+        public void GetIdNguyenLieuAdd(int id)
         {
             this.txtNglId.Enabled = true;
             this.txtNglId.Focus();
@@ -201,50 +229,62 @@ namespace DoAn_QLCF_cs_WinForm.View
             this.txtNglId.Focus();
             this.txtNglId.Texts = ngl.NguyenLieuId.ToString();
             this.txtNglId.Enabled = false;
-            this.txtNglName.Focus();
-            this.txtNglName.Texts = ngl.TenNguyenLieu;
             this.txtNglInfo.Focus();
             this.txtNglInfo.Texts = ngl.ThongTin;
             this.txtNglWeigh.Focus();
             this.txtNglWeigh.Texts = ngl.KhoiLuong.ToString();
             this.txtNglPrice.Focus();
             this.txtNglPrice.Texts = ngl.GiaTien_Kg.ToString();
+            this.HinhAnh = ngl.HinhAnh;
+            this.IsDelete = ngl.IsDelete.ToString();
+            this.txtNglName.Focus();
+            this.txtNglName.Texts = ngl.TenNguyenLieu;
         }
 
         public bool CheckInput()
         {
+            string checkPath = "defaultImage3.png";
             string s = "Vui lòng nhập ";
             if (string.IsNullOrEmpty(txtNglName.Texts))
             {
-                s += "\n + Tên nguyên liệu";
+                s += "Tên nguyên liệu";
                 txtNglName.BorderColor = Color.Red;
+                MessageBox.Show(s, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
             else
                 txtNglName.BorderColor = Color.DarkCyan;
             if (string.IsNullOrEmpty(txtNglInfo.Texts))
             {
-                s += "\n + Thông tin nguyên liệu";
+                s += "Thông tin nguyên liệu";
                 txtNglInfo.BorderColor = Color.Red;
+                MessageBox.Show(s, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
             else
                 txtNglInfo.BorderColor = Color.DarkCyan;
             if (string.IsNullOrEmpty(txtNglWeigh.Texts) || !float.TryParse(txtNglWeigh.Texts, out _))
             {
-                s += "\n + Khối lượng nguyên liệu (số)";
+                s += "Khối lượng nguyên liệu (số)";
                 txtNglWeigh.BorderColor = Color.Red;
+                MessageBox.Show(s, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
             else
                 txtNglWeigh.BorderColor = Color.DarkCyan;
             if (string.IsNullOrEmpty(txtNglPrice.Texts) || !float.TryParse(txtNglPrice.Texts, out _))
             {
-                s += "\n + Giá nguyên liệu (số)";
+                s += "Giá nguyên liệu (số)";
                 txtNglPrice.BorderColor = Color.Red;
+                MessageBox.Show(s, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
             else
                 txtNglPrice.BorderColor = Color.DarkCyan;
-            if (s != "Vui lòng nhập ")
+            if (HinhAnh == checkPath)
             {
-                MessageBox.Show(s);
+                s += "Hình ảnh";
+                MessageBox.Show(s, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;
@@ -256,10 +296,6 @@ namespace DoAn_QLCF_cs_WinForm.View
             checkIsfilter = isFilterState;
             isNeedTurn = isNeedReturnState;
         }
-        public void GetIdNguyenLieuAdd(int id)
-        {
-            this.txtNglId.Texts = id.ToString();
-        }
         public void SetNull()
         {
             if (isFilter)
@@ -270,7 +306,14 @@ namespace DoAn_QLCF_cs_WinForm.View
                 txtNglId.BorderColor = Color.DarkCyan;
                 txtNglId.Focus();
             }
-
+            if (isAdd)
+            {
+                lbIsDelete.Visible = false;
+                checkboxIsDelete.Visible = false;
+                txtNglName.PlaceholderText = string.Empty;
+            }
+            string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            HinhAnh = Path.Combine(path, "Resources\\defaultImage3.png");
             txtNglName.Texts = "";
             txtNglInfo.Texts = "";
             txtNglWeigh.Texts = "";
@@ -290,7 +333,8 @@ namespace DoAn_QLCF_cs_WinForm.View
         }
         private void editBtn_Click(object sender, EventArgs e)
         {
-            tcNgl.SelectedTab = detailTabPage;
+            if (dgvNgl.RowCount > 0 && selectedId != "0")
+                tcNgl.SelectedTab = detailTabPage;
         }
         private void filterBtn_Click(object sender, EventArgs e)
         {
@@ -308,9 +352,16 @@ namespace DoAn_QLCF_cs_WinForm.View
                 txtNglId.BackColor = Color.LightGray;
                 txtNglId.BorderColor = Color.Silver;
             }
+            if (isAdd)
+            {
+                lbIsDelete.Visible = true;
+                checkboxIsDelete.Visible = true;
+            }
             setState(false, false, false, false);
             tcNgl.SelectedTab = listTabPage;
             SetNull();
+            dgvNgl.ClearSelection();
+            selectedId = "0";
         }
         private void HuyBtn_Click(object sender, EventArgs e)
         {
@@ -321,9 +372,16 @@ namespace DoAn_QLCF_cs_WinForm.View
                 txtNglId.BackColor = Color.LightGray;
                 txtNglId.BorderColor = Color.Silver;
             }
+            if (isAdd)
+            {
+                lbIsDelete.Visible = true;
+                checkboxIsDelete.Visible = true;
+            }
             setState(false, false, false, false);
             tcNgl.SelectedTab = listTabPage;
             SetNull();
+            dgvNgl.ClearSelection();
+            selectedId = "0";
         }
         private void sortBtn_Click(object sender, EventArgs e)
         {
@@ -336,17 +394,15 @@ namespace DoAn_QLCF_cs_WinForm.View
         {
             if (isNeedTurn)
                 tcNgl.SelectedTab = listTabPage;
+            dgvNgl.ClearSelection();
+            selectedId = "0";
         }
         private void SortRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             if (sender is RadioButton radioButton && radioButton.Checked)
             {
-#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
                 string sortType = radioButton.Tag.ToString();
-#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-#pragma warning disable CS8604 // Possible null reference argument.
                 SortListModels(sortType);
-#pragma warning restore CS8604 // Possible null reference argument.
             }
         }
         private void SortListModels(string sortType)
@@ -401,12 +457,8 @@ namespace DoAn_QLCF_cs_WinForm.View
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow selectedRow = dgvNgl.Rows[e.RowIndex];
-#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
                 string firstCellData = selectedRow.Cells[0].Value.ToString();
-#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-#pragma warning disable CS8601 // Possible null reference assignment.
                 id = firstCellData;
-#pragma warning restore CS8601 // Possible null reference assignment.
             }
         }
         private void resetBtn_Click(object sender, EventArgs e)
@@ -423,6 +475,9 @@ namespace DoAn_QLCF_cs_WinForm.View
             rbPriceInc.Checked = false;
             rbIsDeleteDec.Checked = false;
             rbIsDeleteInc.Checked = false;
+
+            dgvNgl.ClearSelection();
+            selectedId = "0";
         }
 
         private void txtNglName__TextChanged(object sender, EventArgs e)
@@ -456,6 +511,21 @@ namespace DoAn_QLCF_cs_WinForm.View
                 txtNglPrice.BorderColor = Color.DarkCyan;
             else
                 txtNglPrice.BorderColor = Color.Red;
+        }
+
+        private void caPhePic_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                HinhAnh = open.FileName;
+            }
+        }
+
+        private void btnFindNgl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

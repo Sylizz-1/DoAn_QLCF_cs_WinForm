@@ -18,44 +18,26 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
         private IEnumerable<NguyenLieuModel> NguyenLieuList;
         private string nguyenLieuImagePath;
 
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public NguyenLieuPresenter(INguyenLieuView view, INguyenLieuRepository repository)
-#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
             this.view = view;
             this.repository = repository;
 
-#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             this.view.AddEvent += Add;
-#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             this.view.DeleteEvent += Delete;
-#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             this.view.FilterEvent += Filter;
-#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             this.view.UpdateEvent += Update;
-#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             this.view.btnAddClickEvent += AddClickEvent;
-#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             this.view.btnUpdateClickEvent += UpdateClickEvent;
-#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             this.view.btnFilterClickEvent += FilterClickEvent;
-#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
-#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             this.view.ResetEvent += LoadNguyenLieuList;
+            this.view.FindNglEvent += FindNgl;
 
             nglBindingSource = new BindingSource();
             LoadNguyenLieuList();
             GetNguyenLieuId();
 
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
             string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
             var logoimage = Path.Combine(path, "image\\nguyenLieu");
             nguyenLieuImagePath = logoimage;
         }
@@ -86,12 +68,18 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
         public void UpdateClickEvent(object sender, EventArgs e)
         {
             this.view.setState(false, true, false, false);
-            if (int.Parse(this.view.selectedId) != 0)
+            if (int.Parse(this.view.Nglcount) > 0)
             {
-                NguyenLieuModel ngl = repository.GetById(int.Parse(this.view.selectedId));
-                this.view.SetTextBoxFillData(ngl);
-
+                if (this.view.selectedId != "0")
+                {
+                    NguyenLieuModel ngl = repository.GetById(int.Parse(this.view.selectedId));
+                    this.view.SetTextBoxFillData(ngl);
+                }
+                else
+                    MessageBox.Show("Vui lòng chọn nguyên liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else
+                MessageBox.Show("Danh sách rỗng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void FilterClickEvent(object sender, EventArgs e)
         {
@@ -108,15 +96,13 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
                     ngl.KhoiLuong = float.Parse(this.view.KhoiLuong);
                     ngl.GiaTien_Kg = float.Parse(this.view.GiaTien_Kg);
                     ngl.ThongTin = this.view.ThongTin;
-                    ngl.HinhAnh = Image.FromFile(this.view.HinhAnh);
+                    ngl.HinhAnh = this.view.HinhAnh;
                     ngl.IsDelete = bool.Parse(this.view.IsDelete);
 
                     if (repository.Add(ngl))
-                    {
-                        MessageBox.Show("Success");
-                    }
+                        MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     else
-                        MessageBox.Show("Fail");
+                        MessageBox.Show("Thêm không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     GetNguyenLieuId();
                     LoadNguyenLieuList();
@@ -127,7 +113,6 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
         {
             if (this.view.isFilter)
             {
-                MessageBox.Show(this.view.HinhAnh);
                 NguyenLieuList = repository.GetByValue(this.view.NguyenLieuId, this.view.TenNguyenLieu, this.view.ThongTin, this.view.KhoiLuong, this.view.GiaTien_Kg, this.view.HinhAnh, bool.Parse(this.view.IsDelete));
                 nglBindingSource.DataSource = NguyenLieuList;
                 view.LoadData(nglBindingSource);
@@ -136,17 +121,26 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
         }
         public void Delete(object sender, EventArgs e)
         {
-            if (int.Parse(this.view.selectedId) != 0)
+            if (int.Parse(this.view.Nglcount) > 0)
             {
-                if (repository.Delete(int.Parse(this.view.selectedId)))
+                if (this.view.selectedId != "0")
                 {
-                    MessageBox.Show("Delete Success");
+                    DialogResult result = MessageBox.Show("Bạn chắc chắn muốn xóa nguyên liệu", "Cảnh báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (result == DialogResult.OK)
+                    {
+                        if (repository.Delete(int.Parse(this.view.selectedId)))
+                            MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        else
+                            MessageBox.Show("Xóa không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        LoadNguyenLieuList();
+                    }
                 }
                 else
-                    MessageBox.Show("Delete Fail");
-
-                LoadNguyenLieuList();
+                    MessageBox.Show("Vui lòng chọn nguyên liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else
+                MessageBox.Show("Danh sách rỗng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         public void Update(object sender, EventArgs e)
         {
@@ -159,22 +153,31 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
                     ngl.KhoiLuong = float.Parse(this.view.KhoiLuong);
                     ngl.GiaTien_Kg = float.Parse(this.view.GiaTien_Kg);
                     ngl.ThongTin = this.view.ThongTin;
+                    ngl.HinhAnh = this.view.HinhAnh;
                     ngl.IsDelete = bool.Parse(this.view.IsDelete);
 
                     if (repository.Update(ngl))
                     {
-                        MessageBox.Show("Edit Success");
+                        MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.view.NguyenLieuId = ngl.NguyenLieuId.ToString();
                         this.view.TenNguyenLieu = ngl.TenNguyenLieu.ToString();
                         this.view.KhoiLuong = ngl.KhoiLuong.ToString();
                         this.view.GiaTien_Kg = ngl.GiaTien_Kg.ToString();
                         this.view.ThongTin = ngl.ThongTin.ToString();
                         this.view.IsDelete = ngl.IsDelete.ToString();
+                        this.view.HinhAnh = Path.Combine(this.nguyenLieuImagePath, ngl.HinhAnh.ToString());
                     }
                     else
-                        MessageBox.Show("Fail");
+                        MessageBox.Show("Sửa không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     LoadNguyenLieuList();
                 }
+        }
+        private void FindNgl(object sender, EventArgs e)
+        {
+            NguyenLieuList = repository.FindNglByNameOrId(this.view.FindText);
+            nglBindingSource.DataSource = NguyenLieuList;
+            view.LoadData(nglBindingSource);
+            this.view.FindText = "";
         }
     }
 }

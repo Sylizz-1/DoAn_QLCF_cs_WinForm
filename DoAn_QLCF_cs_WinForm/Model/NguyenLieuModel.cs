@@ -29,7 +29,7 @@ namespace DoAn_QLCF_cs_WinForm.Model
         public float GiaTien_Kg { get; set; }
 
         [DisplayName("Hình ảnh")]
-        public Image HinhAnh { get; set; }
+        public string HinhAnh { get; set; }
 
         [DisplayName("IsDelete")]
         public bool IsDelete { get; set; }
