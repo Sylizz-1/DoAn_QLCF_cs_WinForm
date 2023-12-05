@@ -59,11 +59,6 @@ namespace DoAn_QLCF_cs_WinForm.View
         // hàm xóa những phần không thuộc quyền của user
         private void RemoveControlByPermission()
         {
-            // nếu IdPermission = 1 thì là quyền admin, hiển thị tất cả, không cần xóa phần nào
-            if (this.employeeInfor.IdPermission == 1)
-            {
-                return;
-            }
             ArrayList arrAction = this.employeeInfor.ArrAction;
             //duyệt qua 10 item menu trong design, item nào ko có trong arrAction thì remove
             for (int i = 1; i <= 12; i++)

@@ -1,5 +1,7 @@
 ﻿using DoAn_QLCF_cs_WinForm.Model;
 using DoAn_QLCF_cs_WinForm.Repository.RepositoryInterface;
+using System.Collections;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace DoAn_QLCF_cs_WinForm.Repository
@@ -11,6 +13,26 @@ namespace DoAn_QLCF_cs_WinForm.Repository
             this.connectionString = connectionString;
         }
 
+        public ArrayList GetArrMethodByIdPermission(int idPermission)
+        {
+            ArrayList array = new ArrayList();
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "SELECT ChucNangId FROM Quyen_ChucNang WHERE QuyenId = @id;";
+                command.Parameters.Add("@id", SqlDbType.VarChar).Value = idPermission;
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        array.Add(reader.GetInt32(0));
+                    }
+                }
+            }
+            return array;
+        }
         public IEnumerable<ChucNangModel> GetAllMethod()
         {            
             var methodList = new List<ChucNangModel>();
