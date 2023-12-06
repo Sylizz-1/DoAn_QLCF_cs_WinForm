@@ -12,6 +12,7 @@ namespace DoAn_QLCF_cs_WinForm.Repository
         {
             this.connectionString = connectionString;
         }
+
         public bool Update(HoaDonModel obj)
         {
             try

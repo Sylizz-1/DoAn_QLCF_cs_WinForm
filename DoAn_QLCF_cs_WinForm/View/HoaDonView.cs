@@ -1,5 +1,7 @@
 ﻿using DoAn_QLCF_cs_WinForm.Model;
+using DoAn_QLCF_cs_WinForm.Repository;
 using DoAn_QLCF_cs_WinForm.View.ViewInterface;
+using System.Configuration;
 using System.Reflection.Metadata;
 
 namespace DoAn_QLCF_cs_WinForm.View
@@ -7,6 +9,7 @@ namespace DoAn_QLCF_cs_WinForm.View
     public partial class HoaDonView : Form, IHoaDonView
     {
         private static HoaDonView instance;
+
         public static IHoaDonView GetInstance(Form parentContainer)
         {
 
@@ -60,10 +63,13 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         public HoaDonView()
         {
+
             InitializeComponent();
             SetUpView();
 
+
             xacNhanBtn.Click += XacNhanBtn_Click;
+            FilterEvent += FilterEvent_Click;
 
 
             btnCT.Click += delegate { btnUpdateClickEvent?.Invoke(this, EventArgs.Empty); };
@@ -94,7 +100,11 @@ namespace DoAn_QLCF_cs_WinForm.View
             rbGiamGiaDec.CheckedChanged += SortRadioButton_CheckedChanged;
             rbGiamGiaInc.CheckedChanged += SortRadioButton_CheckedChanged;
         }
-
+        private void FilterEvent_Click(object sender, EventArgs e)
+        {
+            // Gọi hàm filter
+            FilterListModels();
+        }
         public string HoaDonId
         {
             get => this.txtIDHoaDon.Texts;
@@ -173,35 +183,47 @@ namespace DoAn_QLCF_cs_WinForm.View
         {
             this.txtIDHoaDon.Enabled = true;
             this.txtIDHoaDon.Focus();
+            this.txtIDHoaDon.Texts = hd.HoaDonId.ToString();
             this.txtIDHoaDon.Enabled = false;
 
             this.txtIDNhanVien.Enabled = true;
             this.txtIDNhanVien.Focus();
+            this.txtIDNhanVien.Texts = hd.NhanVienId.ToString();
             this.txtIDNhanVien.Enabled = false;
 
             this.dtpNgayBan.Enabled = true;
-            this.dtpNgayBan.Focus(); ;
+            this.dtpNgayBan.Focus();
+            this.dtpNgayBan.Value = hd.NgayNhap;
             this.dtpNgayBan.Enabled = false;
 
             this.txtIDKhachHang.Enabled = true;
             this.txtIDKhachHang.Focus();
+            this.txtIDKhachHang.Texts = hd.KhachHangId.ToString();
             this.txtIDKhachHang.Enabled = false;
 
             this.txtIDPgg.Enabled = true;
             this.txtIDPgg.Focus();
+            this.txtIDPgg.Texts = hd.PggId.ToString();
             this.txtIDPgg.Enabled = false;
 
             this.txtDonGia.Enabled = true;
             this.txtDonGia.Focus();
+            this.txtDonGia.Texts = hd.PhiTruocGiamGia.ToString();
             this.txtDonGia.Enabled = false;
 
             this.txtGiamGia.Enabled = true;
             this.txtGiamGia.Focus();
+            this.txtGiamGia.Texts = hd.GiamGia.ToString();
             this.txtGiamGia.Enabled = false;
 
             this.txtThanhTien.Enabled = true;
             this.txtThanhTien.Focus();
+            this.txtThanhTien.Texts = hd.PhiSauGiamGia.ToString();
             this.txtThanhTien.Enabled = false;
+
+            this.checkboxIsAccepted.Enabled = true;
+            this.checkboxIsAccepted.Focus();
+            this.checkboxIsAccepted.Checked = hd.IsAccepted;
         }
 
         public void setState(bool isAddState, bool isUpdateState, bool isFilterState, bool isNeedReturnState)
@@ -273,12 +295,34 @@ namespace DoAn_QLCF_cs_WinForm.View
                 case "GiamGiaDec":
                     myList = myList.OrderByDescending(x => x.GiamGia).ToList();
                     break;
-                case "True":
+                case "IsAcp":
                     myList = myList.Where(x => x.IsAccepted).ToList();
                     break;
-                case "False":
+                case "NotAcp":
                     myList = myList.Where(x => !x.IsAccepted).ToList();
                     break;
+            }
+
+            BindingSource myBindingSource = new BindingSource();
+            myBindingSource.DataSource = myList;
+            LoadData(myBindingSource);
+        }
+
+        private void FilterListModels()
+        {
+            List<HoaDonModel> myList = templist.List.OfType<HoaDonModel>().ToList();
+
+            if (checkIsfilter)
+            {
+                // Thêm các điều kiện filter ở đây, ví dụ:
+                if (rbTrue.Checked)
+                {
+                    myList = myList.Where(x => x.IsAccepted).ToList();
+                }
+                else if (rbFalse.Checked)
+                {
+                    myList = myList.Where(x => !x.IsAccepted).ToList();
+                }
             }
 
             BindingSource myBindingSource = new BindingSource();
@@ -339,6 +383,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 
             if (gbLoc.Visible)
                 gbSort.Visible = false;
+            
 
         }
 
