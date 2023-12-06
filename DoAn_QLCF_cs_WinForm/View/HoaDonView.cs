@@ -42,14 +42,30 @@ namespace DoAn_QLCF_cs_WinForm.View
         public bool checkIsUpdate = false;
         public bool isNeedTurn = false;
         private BindingSource templist = new BindingSource();
+        private void XacNhanBtn_Click(object sender, EventArgs e)
+        {
+            if (checkIsAdd)
+            {
+                AddEvent?.Invoke(this, EventArgs.Empty);
+            }
+            else if (checkIsUpdate)
+            {
+                UpdateEvent?.Invoke(this, EventArgs.Empty);
+            }
+            if (isNeedTurn)
+            {
+                tcDanhSach.SelectedTab = tbDanhSach;
+            }
+        }
+
         public HoaDonView()
         {
             InitializeComponent();
             SetUpView();
 
-            xacNhanBtn.Click += delegate { AddEvent?.Invoke(this, EventArgs.Empty); };
-            xacNhanBtn.Click += delegate { UpdateEvent?.Invoke(this, EventArgs.Empty); };
-            xacNhanBtn.Click += delegate { FilterEvent?.Invoke(this, EventArgs.Empty); };
+            xacNhanBtn.Click += XacNhanBtn_Click;
+
+
             btnCT.Click += delegate { btnUpdateClickEvent?.Invoke(this, EventArgs.Empty); };
             btnLoc.Click += delegate { btnFilterClickEvent?.Invoke(this, EventArgs.Empty); };
             btnSort.Click += delegate { SortEvent?.Invoke(this, EventArgs.Empty); };
@@ -99,13 +115,13 @@ namespace DoAn_QLCF_cs_WinForm.View
             get => this.txtIDPgg.Texts;
             set => this.txtIDPgg.Texts = value;
         }
-        public string NgayBan
+        public string NgayNhap
         {
             get => this.dtpNgayBan.Text;
             set => this.dtpNgayBan.Text = value;
         }
 
-        public string DonGia
+        public string PhiTruocGiamGia
         {
             get => this.txtDonGia.Text;
             set => this.txtDonGia.Text = value;
@@ -115,7 +131,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             get => this.txtGiamGia.Texts;
             set => this.txtGiamGia.Texts = value;
         }
-        public string ThanhTien
+        public string PhiSauGiamGia
         {
             get => this.txtThanhTien.Texts;
             set => this.txtThanhTien.Texts = value;
@@ -157,45 +173,35 @@ namespace DoAn_QLCF_cs_WinForm.View
         {
             this.txtIDHoaDon.Enabled = true;
             this.txtIDHoaDon.Focus();
-            this.txtIDHoaDon.Texts = hd.HoaDonId.ToString();
             this.txtIDHoaDon.Enabled = false;
 
             this.txtIDNhanVien.Enabled = true;
             this.txtIDNhanVien.Focus();
-            this.txtIDNhanVien.Texts = hd.NhanVienId.ToString();
             this.txtIDNhanVien.Enabled = false;
 
             this.dtpNgayBan.Enabled = true;
-            this.dtpNgayBan.Focus();
-            this.dtpNgayBan.Value = hd.NgayNhap;
+            this.dtpNgayBan.Focus(); ;
             this.dtpNgayBan.Enabled = false;
 
             this.txtIDKhachHang.Enabled = true;
             this.txtIDKhachHang.Focus();
-            this.txtIDKhachHang.Texts = hd.KhachHangId.ToString();
             this.txtIDKhachHang.Enabled = false;
 
             this.txtIDPgg.Enabled = true;
             this.txtIDPgg.Focus();
-            this.txtIDPgg.Texts = hd.PggId.ToString();
             this.txtIDPgg.Enabled = false;
 
             this.txtDonGia.Enabled = true;
             this.txtDonGia.Focus();
-            this.txtDonGia.Texts = hd.PhiTruocGiamGia.ToString();
             this.txtDonGia.Enabled = false;
 
             this.txtGiamGia.Enabled = true;
             this.txtGiamGia.Focus();
-            this.txtGiamGia.Texts = hd.GiamGia.ToString();
             this.txtGiamGia.Enabled = false;
 
             this.txtThanhTien.Enabled = true;
             this.txtThanhTien.Focus();
-            this.txtThanhTien.Texts = hd.PhiSauGiamGia.ToString();
             this.txtThanhTien.Enabled = false;
-
-            this.checkboxIsAccepted.Checked = hd.IsAccepted;
         }
 
         public void setState(bool isAddState, bool isUpdateState, bool isFilterState, bool isNeedReturnState)
@@ -330,6 +336,10 @@ namespace DoAn_QLCF_cs_WinForm.View
                 gbLoc.Visible = false;
             else
                 gbLoc.Visible = true;
+
+            if (gbLoc.Visible)
+                gbSort.Visible = false;
+
         }
 
         private void btnSort_Click(object sender, EventArgs e)
@@ -338,6 +348,9 @@ namespace DoAn_QLCF_cs_WinForm.View
                 gbSort.Visible = false;
             else
                 gbSort.Visible = true;
+            if (gbSort.Visible)
+                gbLoc.Visible = false;
+
         }
 
         private void btnCT_Click(object sender, EventArgs e)

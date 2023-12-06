@@ -23,6 +23,6 @@ namespace DoAn_QLCF_cs_WinForm.Model
         public int CT_SoLuong { get; set; }
 
         [DisplayName("Đơn giá")]
-        public float CT_DonGia { get; set; }
+        public double CT_DonGia { get; set; }
     }
 }

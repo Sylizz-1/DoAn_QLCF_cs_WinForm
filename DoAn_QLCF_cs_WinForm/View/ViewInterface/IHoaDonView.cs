@@ -17,28 +17,20 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
         event EventHandler FilterEvent;
         event EventHandler ResetEvent;
         bool isUpdate { get; set; }
-        public int HoaDonId { get; set; }
-        public int NhanVienId { get; set; }
-        public int KhachHangId { get; set; }
-        public int PggId { get; set; }
-        public DateTime NgayNhap { get; set; }
-        public float PhiTruocGiamGia { get; set; }
-        public byte GiamGia { get; set; }
-        public float PhiSauGiamGia { get; set; }
-        public bool IsAccepted { get; set; }
-        public int CT_HoaDonId { get; set; }
-        public int CT_CaPheId { get; set; }
-        public string CT_TenCaPhe { get; set; }
-        public int CT_SoLuong { get; set; }
-        public float CT_DonGia { get; set; }
+        public string HoaDonId { get; set; }
+        public string NhanVienId { get; set; }
+        public string KhachHangId { get; set; }
+        public string PggId { get; set; }
+        public string NgayNhap { get; set; }
+        public string PhiTruocGiamGia { get; set; }
+        public string GiamGia { get; set; }
+        public string PhiSauGiamGia { get; set; }
+        public string IsAccepted { get; set; }
         string selectedId { get; set; }
         void LoadData(BindingSource list);
         void LoadData_CT(BindingSource list);
-        bool CheckInput();
-        void SetNull();
         void setState(bool isAddState, bool isUpdateState, bool isFilterState, bool isNeedReturnState);
         void SetTextBoxFillData(HoaDonModel hd);
-        void SetTextBoxFillData_CT(ChiTietHoaDonModel cthd);
 
     }
 }

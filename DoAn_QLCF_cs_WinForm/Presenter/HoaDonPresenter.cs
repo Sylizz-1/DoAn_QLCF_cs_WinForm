@@ -27,8 +27,6 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
 
             this.view.btnUpdateClickEvent += UpdateClickEvent;
 
-            this.view.btnUpdateClickEvent += UpdateClickEvent_CT;
-
             this.view.ResetEvent += LoadHDList;
 
             this.view.ResetEvent += LoadCTHDList;
@@ -74,21 +72,10 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
 
             }
         }
-        public void UpdateClickEvent_CT(object sender, EventArgs e)
-        {
-            this.view.setState(false, true, false, false);
-            if (int.Parse(this.view.selectedId) != 0)
-            {
-                ChiTietHoaDonModel Cthd = repository.GetById_CT(int.Parse(this.view.selectedId));
-                this.view.SetTextBoxFillData_CT(Cthd);
-
-            }
-        }
 
         private void Update_HD(object sender, EventArgs e)
         {
-            if (this.view.isUpdate)
-                if (this.view.CheckInput())
+            if (this.view.isUpdate)               
                 {
                     HoaDonModel Hd = new HoaDonModel();
                     Hd.HoaDonId = int.Parse(this.view.HoaDonId);

@@ -145,9 +145,9 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                         hd.KhachHangId = (int)reader["KhachHangId"];
                         hd.PggId = (int)reader["PggId"];
                         hd.NgayNhap = (DateTime)(reader["NgayNhap"]);
-                        hd.PhiTruocGiamGia = (float)reader["PhiTruocGiamGia"];
+                        hd.PhiTruocGiamGia = (double)reader["PhiTruocGiamGia"];
                         hd.GiamGia = (byte)reader["GiamGia"];
-                        hd.PhiSauGiamGia = (float)reader["PhiSauGiamGia"];                     
+                        hd.PhiSauGiamGia = (double)reader["PhiSauGiamGia"];                     
                         hd.IsAccepted = (bool)reader["IsAccepted"];
                         cpList.Add(hd);
                     }
@@ -176,9 +176,9 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                         hd.KhachHangId = (int)reader["KhachHangId"];
                         hd.PggId = (int)reader["PggId"];
                         hd.NgayNhap = (DateTime)(reader["NgayNhap"]);
-                        hd.PhiTruocGiamGia = (float)reader["PhiTruocGiamGia"];
+                        hd.PhiTruocGiamGia = (double)reader["PhiTruocGiamGia"];
                         hd.GiamGia = (byte)reader["GiamGia"];
-                        hd.PhiSauGiamGia = (float)reader["PhiSauGiamGia"];
+                        hd.PhiSauGiamGia = (double)reader["PhiSauGiamGia"];
                         hd.IsAccepted = (bool)reader["IsAccepted"];
                     }
                 }
@@ -266,7 +266,7 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                             CT_CaPheId = (int)reader["CaPheId"],
                             CT_TenCaPhe = (string)reader["TenCaPhe"],
                             CT_SoLuong = (int)reader["SoLuong"],
-                            CT_DonGia = (float)reader["DonGia"]
+                            CT_DonGia = (double)reader["DonGia"]
                         };
                         cpList.Add(cthd);
                     }

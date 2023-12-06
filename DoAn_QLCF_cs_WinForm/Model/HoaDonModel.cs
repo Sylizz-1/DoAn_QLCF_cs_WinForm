@@ -30,7 +30,7 @@ namespace DoAn_QLCF_cs_WinForm.Model
 
         [DisplayName("Đơn giá")]
 
-        public float PhiTruocGiamGia { get; set; }
+        public double PhiTruocGiamGia { get; set; }
 
 
         [DisplayName("Phần trăm giảm giá")]
@@ -39,7 +39,7 @@ namespace DoAn_QLCF_cs_WinForm.Model
 
         [DisplayName("Thành tiền")]
 
-        public float PhiSauGiamGia { get; set; }
+        public double PhiSauGiamGia { get; set; }
 
         [DisplayName("Đã thanh toán")]
         public bool IsAccepted { get; set; }
