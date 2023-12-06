@@ -28,23 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             grb_quyen = new GroupBox();
             tc_quyen = new TabControl();
             tp_quyenDanhSach = new TabPage();
-            button = new CustomControl.CustomButton();
+            btn_detailPermission = new CustomControl.CustomButton();
             dtgrv_quyen = new DataGridView();
-            delBtn = new CustomControl.CustomButton();
+            btn_deletePermission = new CustomControl.CustomButton();
             btn_editPermission = new CustomControl.CustomButton();
-            addBtn = new CustomControl.CustomButton();
+            btn_addPermission = new CustomControl.CustomButton();
             customButton2 = new CustomControl.CustomButton();
             searchTxt = new CustomControl.CustomTextBox();
             tp_quyenChiTiet = new TabPage();
+            btn_cancel = new CustomControl.CustomButton();
+            btn_acceptPermission = new CustomControl.CustomButton();
             txt_contentPermission = new CustomControl.CustomTextBox();
             txt_namePermission = new CustomControl.CustomTextBox();
             groupBox1 = new GroupBox();
@@ -105,11 +107,11 @@
             // tp_quyenDanhSach
             // 
             tp_quyenDanhSach.BackColor = SystemColors.Window;
-            tp_quyenDanhSach.Controls.Add(button);
+            tp_quyenDanhSach.Controls.Add(btn_detailPermission);
             tp_quyenDanhSach.Controls.Add(dtgrv_quyen);
-            tp_quyenDanhSach.Controls.Add(delBtn);
+            tp_quyenDanhSach.Controls.Add(btn_deletePermission);
             tp_quyenDanhSach.Controls.Add(btn_editPermission);
-            tp_quyenDanhSach.Controls.Add(addBtn);
+            tp_quyenDanhSach.Controls.Add(btn_addPermission);
             tp_quyenDanhSach.Controls.Add(customButton2);
             tp_quyenDanhSach.Controls.Add(searchTxt);
             tp_quyenDanhSach.Location = new Point(4, 37);
@@ -119,35 +121,36 @@
             tp_quyenDanhSach.TabIndex = 0;
             tp_quyenDanhSach.Text = "Danh Sách";
             // 
-            // button
+            // btn_detailPermission
             // 
-            button.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button.BackColor = SystemColors.Control;
-            button.BackgroundColor = SystemColors.Control;
-            button.BorderColor = Color.DarkCyan;
-            button.BorderRadius = 15;
-            button.BorderSize = 2;
-            button.Cursor = Cursors.Hand;
-            button.EnabledTextHover = true;
-            button.FlatAppearance.BorderSize = 0;
-            button.FlatAppearance.MouseDownBackColor = Color.Teal;
-            button.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
-            button.FlatStyle = FlatStyle.Flat;
-            button.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button.ForeColor = Color.DarkCyan;
-            button.Image = Properties.Resources.detailsIcon16px;
-            button.ImageAlign = ContentAlignment.MiddleRight;
-            button.ImageHover = Properties.Resources.detailsIcon16pxWHITE;
-            button.Location = new Point(586, 63);
-            button.Margin = new Padding(3, 4, 3, 4);
-            button.Name = "button";
-            button.Size = new Size(138, 51);
-            button.TabIndex = 17;
-            button.Text = "  Chi Tiết";
-            button.TextColor = Color.DarkCyan;
-            button.TextHover = Color.White;
-            button.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button.UseVisualStyleBackColor = false;
+            btn_detailPermission.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_detailPermission.BackColor = SystemColors.Control;
+            btn_detailPermission.BackgroundColor = SystemColors.Control;
+            btn_detailPermission.BorderColor = Color.DarkCyan;
+            btn_detailPermission.BorderRadius = 15;
+            btn_detailPermission.BorderSize = 2;
+            btn_detailPermission.Cursor = Cursors.Hand;
+            btn_detailPermission.EnabledTextHover = true;
+            btn_detailPermission.FlatAppearance.BorderSize = 0;
+            btn_detailPermission.FlatAppearance.MouseDownBackColor = Color.Teal;
+            btn_detailPermission.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
+            btn_detailPermission.FlatStyle = FlatStyle.Flat;
+            btn_detailPermission.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_detailPermission.ForeColor = Color.DarkCyan;
+            btn_detailPermission.Image = Properties.Resources.detailsIcon16px;
+            btn_detailPermission.ImageAlign = ContentAlignment.MiddleRight;
+            btn_detailPermission.ImageHover = Properties.Resources.detailsIcon16pxWHITE;
+            btn_detailPermission.Location = new Point(586, 63);
+            btn_detailPermission.Margin = new Padding(3, 4, 3, 4);
+            btn_detailPermission.Name = "btn_detailPermission";
+            btn_detailPermission.Size = new Size(138, 51);
+            btn_detailPermission.TabIndex = 17;
+            btn_detailPermission.Text = "  Chi Tiết";
+            btn_detailPermission.TextColor = Color.DarkCyan;
+            btn_detailPermission.TextHover = Color.White;
+            btn_detailPermission.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_detailPermission.UseVisualStyleBackColor = false;
+            btn_detailPermission.Click += btn_detailPermission_Click;
             // 
             // dtgrv_quyen
             // 
@@ -158,24 +161,24 @@
             dtgrv_quyen.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dtgrv_quyen.BorderStyle = BorderStyle.None;
             dtgrv_quyen.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = Color.DarkCyan;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dtgrv_quyen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.DarkCyan;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dtgrv_quyen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dtgrv_quyen.ColumnHeadersHeight = 30;
             dtgrv_quyen.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = SystemColors.Window;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            dtgrv_quyen.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dtgrv_quyen.DefaultCellStyle = dataGridViewCellStyle2;
             dtgrv_quyen.EnableHeadersVisualStyles = false;
             dtgrv_quyen.GridColor = Color.DarkCyan;
             dtgrv_quyen.ImeMode = ImeMode.NoControl;
@@ -185,42 +188,42 @@
             dtgrv_quyen.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dtgrv_quyen.RowHeadersVisible = false;
             dtgrv_quyen.RowHeadersWidth = 51;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dtgrv_quyen.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dtgrv_quyen.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dtgrv_quyen.RowTemplate.Height = 25;
             dtgrv_quyen.RowTemplate.ReadOnly = true;
             dtgrv_quyen.Size = new Size(724, 477);
             dtgrv_quyen.TabIndex = 15;
             // 
-            // delBtn
+            // btn_deletePermission
             // 
-            delBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            delBtn.BackColor = SystemColors.Control;
-            delBtn.BackgroundColor = SystemColors.Control;
-            delBtn.BorderColor = Color.Red;
-            delBtn.BorderRadius = 15;
-            delBtn.BorderSize = 2;
-            delBtn.Cursor = Cursors.Hand;
-            delBtn.EnabledTextHover = true;
-            delBtn.FlatAppearance.BorderSize = 0;
-            delBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(187, 10, 10);
-            delBtn.FlatAppearance.MouseOverBackColor = Color.Red;
-            delBtn.FlatStyle = FlatStyle.Flat;
-            delBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            delBtn.ForeColor = Color.Red;
-            delBtn.Image = Properties.Resources.deleteIconRed16px;
-            delBtn.ImageAlign = ContentAlignment.MiddleRight;
-            delBtn.ImageHover = Properties.Resources.deleteIconWhite16px;
-            delBtn.Location = new Point(586, 4);
-            delBtn.Margin = new Padding(3, 4, 3, 4);
-            delBtn.Name = "delBtn";
-            delBtn.Size = new Size(138, 51);
-            delBtn.TabIndex = 14;
-            delBtn.Text = "  Xóa";
-            delBtn.TextColor = Color.Red;
-            delBtn.TextHover = Color.White;
-            delBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-            delBtn.UseVisualStyleBackColor = false;
+            btn_deletePermission.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_deletePermission.BackColor = SystemColors.Control;
+            btn_deletePermission.BackgroundColor = SystemColors.Control;
+            btn_deletePermission.BorderColor = Color.Red;
+            btn_deletePermission.BorderRadius = 15;
+            btn_deletePermission.BorderSize = 2;
+            btn_deletePermission.Cursor = Cursors.Hand;
+            btn_deletePermission.EnabledTextHover = true;
+            btn_deletePermission.FlatAppearance.BorderSize = 0;
+            btn_deletePermission.FlatAppearance.MouseDownBackColor = Color.FromArgb(187, 10, 10);
+            btn_deletePermission.FlatAppearance.MouseOverBackColor = Color.Red;
+            btn_deletePermission.FlatStyle = FlatStyle.Flat;
+            btn_deletePermission.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_deletePermission.ForeColor = Color.Red;
+            btn_deletePermission.Image = Properties.Resources.deleteIconRed16px;
+            btn_deletePermission.ImageAlign = ContentAlignment.MiddleRight;
+            btn_deletePermission.ImageHover = Properties.Resources.deleteIconWhite16px;
+            btn_deletePermission.Location = new Point(586, 4);
+            btn_deletePermission.Margin = new Padding(3, 4, 3, 4);
+            btn_deletePermission.Name = "btn_deletePermission";
+            btn_deletePermission.Size = new Size(138, 51);
+            btn_deletePermission.TabIndex = 14;
+            btn_deletePermission.Text = "  Xóa";
+            btn_deletePermission.TextColor = Color.Red;
+            btn_deletePermission.TextHover = Color.White;
+            btn_deletePermission.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_deletePermission.UseVisualStyleBackColor = false;
             // 
             // btn_editPermission
             // 
@@ -253,35 +256,36 @@
             btn_editPermission.UseVisualStyleBackColor = false;
             btn_editPermission.Click += btn_editPermission_Click;
             // 
-            // addBtn
+            // btn_addPermission
             // 
-            addBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            addBtn.BackColor = SystemColors.Control;
-            addBtn.BackgroundColor = SystemColors.Control;
-            addBtn.BorderColor = Color.DarkCyan;
-            addBtn.BorderRadius = 15;
-            addBtn.BorderSize = 2;
-            addBtn.Cursor = Cursors.Hand;
-            addBtn.EnabledTextHover = true;
-            addBtn.FlatAppearance.BorderSize = 0;
-            addBtn.FlatAppearance.MouseDownBackColor = Color.Teal;
-            addBtn.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
-            addBtn.FlatStyle = FlatStyle.Flat;
-            addBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            addBtn.ForeColor = Color.DarkCyan;
-            addBtn.Image = Properties.Resources.addIconTeal16px;
-            addBtn.ImageAlign = ContentAlignment.MiddleRight;
-            addBtn.ImageHover = Properties.Resources.addIconWhite16px;
-            addBtn.Location = new Point(442, 63);
-            addBtn.Margin = new Padding(3, 4, 3, 4);
-            addBtn.Name = "addBtn";
-            addBtn.Size = new Size(138, 51);
-            addBtn.TabIndex = 12;
-            addBtn.Text = "  Thêm";
-            addBtn.TextColor = Color.DarkCyan;
-            addBtn.TextHover = Color.White;
-            addBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-            addBtn.UseVisualStyleBackColor = false;
+            btn_addPermission.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_addPermission.BackColor = SystemColors.Control;
+            btn_addPermission.BackgroundColor = SystemColors.Control;
+            btn_addPermission.BorderColor = Color.DarkCyan;
+            btn_addPermission.BorderRadius = 15;
+            btn_addPermission.BorderSize = 2;
+            btn_addPermission.Cursor = Cursors.Hand;
+            btn_addPermission.EnabledTextHover = true;
+            btn_addPermission.FlatAppearance.BorderSize = 0;
+            btn_addPermission.FlatAppearance.MouseDownBackColor = Color.Teal;
+            btn_addPermission.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
+            btn_addPermission.FlatStyle = FlatStyle.Flat;
+            btn_addPermission.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_addPermission.ForeColor = Color.DarkCyan;
+            btn_addPermission.Image = Properties.Resources.addIconTeal16px;
+            btn_addPermission.ImageAlign = ContentAlignment.MiddleRight;
+            btn_addPermission.ImageHover = Properties.Resources.addIconWhite16px;
+            btn_addPermission.Location = new Point(442, 63);
+            btn_addPermission.Margin = new Padding(3, 4, 3, 4);
+            btn_addPermission.Name = "btn_addPermission";
+            btn_addPermission.Size = new Size(138, 51);
+            btn_addPermission.TabIndex = 12;
+            btn_addPermission.Text = "  Thêm";
+            btn_addPermission.TextColor = Color.DarkCyan;
+            btn_addPermission.TextHover = Color.White;
+            btn_addPermission.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_addPermission.UseVisualStyleBackColor = false;
+            btn_addPermission.Click += addBtn_Click;
             // 
             // customButton2
             // 
@@ -332,6 +336,8 @@
             // tp_quyenChiTiet
             // 
             tp_quyenChiTiet.BackColor = SystemColors.Window;
+            tp_quyenChiTiet.Controls.Add(btn_cancel);
+            tp_quyenChiTiet.Controls.Add(btn_acceptPermission);
             tp_quyenChiTiet.Controls.Add(txt_contentPermission);
             tp_quyenChiTiet.Controls.Add(txt_namePermission);
             tp_quyenChiTiet.Controls.Add(groupBox1);
@@ -346,6 +352,68 @@
             tp_quyenChiTiet.Size = new Size(730, 660);
             tp_quyenChiTiet.TabIndex = 1;
             tp_quyenChiTiet.Text = "Chi Tiết";
+            // 
+            // btn_cancel
+            // 
+            btn_cancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btn_cancel.BackColor = SystemColors.Control;
+            btn_cancel.BackgroundColor = SystemColors.Control;
+            btn_cancel.BorderColor = Color.Red;
+            btn_cancel.BorderRadius = 15;
+            btn_cancel.BorderSize = 2;
+            btn_cancel.Cursor = Cursors.Hand;
+            btn_cancel.EnabledTextHover = true;
+            btn_cancel.FlatAppearance.BorderSize = 0;
+            btn_cancel.FlatAppearance.MouseDownBackColor = Color.FromArgb(187, 10, 10);
+            btn_cancel.FlatAppearance.MouseOverBackColor = Color.Red;
+            btn_cancel.FlatStyle = FlatStyle.Flat;
+            btn_cancel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_cancel.ForeColor = Color.Red;
+            btn_cancel.Image = Properties.Resources.CANCELiconRed;
+            btn_cancel.ImageAlign = ContentAlignment.MiddleRight;
+            btn_cancel.ImageHover = Properties.Resources.CANCELiconWhite;
+            btn_cancel.Location = new Point(553, 202);
+            btn_cancel.Margin = new Padding(3, 4, 3, 4);
+            btn_cancel.Name = "btn_cancel";
+            btn_cancel.Size = new Size(157, 71);
+            btn_cancel.TabIndex = 48;
+            btn_cancel.Text = "  Hủy";
+            btn_cancel.TextColor = Color.Red;
+            btn_cancel.TextHover = Color.White;
+            btn_cancel.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_cancel.UseVisualStyleBackColor = false;
+            btn_cancel.Click += btn_cancel_Click;
+            // 
+            // btn_acceptPermission
+            // 
+            btn_acceptPermission.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btn_acceptPermission.BackColor = SystemColors.Control;
+            btn_acceptPermission.BackgroundColor = SystemColors.Control;
+            btn_acceptPermission.BorderColor = Color.DarkCyan;
+            btn_acceptPermission.BorderRadius = 15;
+            btn_acceptPermission.BorderSize = 2;
+            btn_acceptPermission.Cursor = Cursors.Hand;
+            btn_acceptPermission.EnabledTextHover = true;
+            btn_acceptPermission.FlatAppearance.BorderSize = 0;
+            btn_acceptPermission.FlatAppearance.MouseDownBackColor = Color.Teal;
+            btn_acceptPermission.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
+            btn_acceptPermission.FlatStyle = FlatStyle.Flat;
+            btn_acceptPermission.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_acceptPermission.ForeColor = Color.DarkCyan;
+            btn_acceptPermission.Image = Properties.Resources.ConfirmIcondarkcyan1;
+            btn_acceptPermission.ImageAlign = ContentAlignment.MiddleRight;
+            btn_acceptPermission.ImageHover = Properties.Resources.ConfirmIconWhite1;
+            btn_acceptPermission.Location = new Point(390, 202);
+            btn_acceptPermission.Margin = new Padding(3, 4, 3, 4);
+            btn_acceptPermission.Name = "btn_acceptPermission";
+            btn_acceptPermission.Size = new Size(157, 71);
+            btn_acceptPermission.TabIndex = 47;
+            btn_acceptPermission.Text = "  Xác Nhận";
+            btn_acceptPermission.TextColor = Color.DarkCyan;
+            btn_acceptPermission.TextHover = Color.White;
+            btn_acceptPermission.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_acceptPermission.UseVisualStyleBackColor = false;
+            btn_acceptPermission.Click += btn_acceptPermission_Click;
             // 
             // txt_contentPermission
             // 
@@ -559,24 +627,24 @@
             dtgrv_chucNang.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dtgrv_chucNang.BorderStyle = BorderStyle.None;
             dtgrv_chucNang.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = Color.DarkCyan;
-            dataGridViewCellStyle10.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle10.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
-            dtgrv_chucNang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.DarkCyan;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dtgrv_chucNang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dtgrv_chucNang.ColumnHeadersHeight = 30;
             dtgrv_chucNang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = SystemColors.Window;
-            dataGridViewCellStyle11.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle11.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
-            dtgrv_chucNang.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = SystemColors.Window;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dtgrv_chucNang.DefaultCellStyle = dataGridViewCellStyle5;
             dtgrv_chucNang.EnableHeadersVisualStyles = false;
             dtgrv_chucNang.GridColor = Color.DarkCyan;
             dtgrv_chucNang.ImeMode = ImeMode.NoControl;
@@ -586,8 +654,8 @@
             dtgrv_chucNang.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dtgrv_chucNang.RowHeadersVisible = false;
             dtgrv_chucNang.RowHeadersWidth = 51;
-            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dtgrv_chucNang.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dtgrv_chucNang.RowsDefaultCellStyle = dataGridViewCellStyle6;
             dtgrv_chucNang.RowTemplate.Height = 25;
             dtgrv_chucNang.RowTemplate.ReadOnly = true;
             dtgrv_chucNang.Size = new Size(724, 477);
@@ -778,15 +846,15 @@
         private CustomControl.CustomButton customButton2;
         private CustomControl.CustomButton customButton1;
         private CustomControl.CustomTextBox customTextBox1;
-        private CustomControl.CustomButton addBtn;
+        private CustomControl.CustomButton btn_addPermission;
         private CustomControl.CustomButton btn_editPermission;
-        private CustomControl.CustomButton delBtn;
+        private CustomControl.CustomButton btn_deletePermission;
         private CustomControl.CustomButton customButton3;
         private CustomControl.CustomButton customButton4;
         private CustomControl.CustomButton customButton5;
         private DataGridView dtgrv_quyen;
         private DataGridView dtgrv_chucNang;
-        private CustomControl.CustomButton button;
+        private CustomControl.CustomButton btn_detailPermission;
         private CustomControl.CustomButton btn_backPermission;
         private Label label3;
         private Label label2;
@@ -796,5 +864,7 @@
         private CheckedListBox clb_chucNang;
         private CustomControl.CustomTextBox txt_contentPermission;
         private CustomControl.CustomTextBox txt_namePermission;
+        private CustomControl.CustomButton btn_cancel;
+        private CustomControl.CustomButton btn_acceptPermission;
     }
 }

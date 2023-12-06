@@ -10,6 +10,11 @@ namespace DoAn_QLCF_cs_WinForm.Repository.RepositoryInterface
 {
 	public interface IPhanQuyenRepository
 	{
+        bool DeletePermissionById(int idPermission);
+        bool IsPermissionOwnByEmployee(int idPermission);
+        bool Edit(QuyenModel quyenModel, ArrayList arrMethod);
+        bool Add(QuyenModel quyenModel, ArrayList arrMethod);
+        int GetNextIdPermission();
         ArrayList GetArrMethodByIdPermission(int idPermission);
         IEnumerable<QuyenModel> GetAllPermission();
         IEnumerable<ChucNangModel> GetAllMethod();

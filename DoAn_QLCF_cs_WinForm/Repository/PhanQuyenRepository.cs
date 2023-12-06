@@ -13,6 +13,25 @@ namespace DoAn_QLCF_cs_WinForm.Repository
             this.connectionString = connectionString;
         }
 
+        public int GetNextIdPermission()
+        {
+            using (var connection = new SqlConnection(this.connectionString))
+            using (var cmd = connection.CreateCommand())
+            {
+                connection.Open();
+                cmd.Connection = connection;
+                cmd.CommandText = "SELECT MAX([QuyenId]) FROM [Quyen]";
+
+                var result = cmd.ExecuteScalar();
+
+                if (result != DBNull.Value)
+                {
+                    return (int)result + 1;
+                }
+                return 1;
+            }
+        }
+
         public ArrayList GetArrMethodByIdPermission(int idPermission)
         {
             ArrayList array = new ArrayList();
@@ -34,7 +53,7 @@ namespace DoAn_QLCF_cs_WinForm.Repository
             return array;
         }
         public IEnumerable<ChucNangModel> GetAllMethod()
-        {            
+        {
             var methodList = new List<ChucNangModel>();
             using (var connection = new SqlConnection(this.connectionString))
             using (var cmd = connection.CreateCommand())
@@ -48,7 +67,7 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                     {
                         var methodModel = new ChucNangModel();
                         methodModel.IdMethod = (int)reader["ChucNangId"];
-                        methodModel.NameMethod = reader["TenChucNang"].ToString();                      
+                        methodModel.NameMethod = reader["TenChucNang"].ToString();
                         methodList.Add(methodModel);
                     }
                 }
@@ -57,7 +76,7 @@ namespace DoAn_QLCF_cs_WinForm.Repository
         }
 
         public IEnumerable<QuyenModel> GetAllPermission()
-        {            
+        {
             var permissionList = new List<QuyenModel>();
             using (var connection = new SqlConnection(this.connectionString))
             using (var cmd = connection.CreateCommand())
@@ -68,7 +87,7 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                 using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
-                    {           
+                    {
                         var permissionModel = new QuyenModel();
                         permissionModel.IdPermission = (int)reader["QuyenId"];
                         permissionModel.NamePermission = reader["TenQuyen"].ToString();
@@ -78,6 +97,151 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                 }
                 return permissionList;
             }
+        }
+
+        public bool Add(QuyenModel quyenModel, ArrayList arrMethod)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(this.connectionString))
+                using (var cmd = connection.CreateCommand())
+                {
+                    connection.Open();
+                    cmd.Connection = connection;
+                    cmd.CommandText = "SET IDENTITY_INSERT Quyen ON " +
+                        "insert into Quyen ([QuyenId],[TenQuyen],[NoiDungQuyen])" +
+                                      "VALUES (@QuyenId,@TenQuyen,@NoiDungQuyen)" +
+                                      "SET IDENTITY_INSERT Quyen OFF";
+                    cmd.Parameters.AddWithValue("@QuyenId", quyenModel.IdPermission);
+                    cmd.Parameters.AddWithValue("@TenQuyen", quyenModel.NamePermission);
+                    cmd.Parameters.AddWithValue("@NoiDungQuyen", quyenModel.ContentPermission);
+                    cmd.ExecuteNonQuery();
+                }
+                if (arrMethod.Count > 0)
+                {
+                    using (var connection = new SqlConnection(this.connectionString))
+                    using (var cmd = connection.CreateCommand())
+                    {
+                        connection.Open();
+                        cmd.Connection = connection;
+                        cmd.CommandText = "INSERT INTO Quyen_ChucNang ([QuyenId], [ChucNangId]) VALUES ";
+                        for (int i = 0; i < arrMethod.Count; i++)
+                        {
+                            cmd.CommandText += $"({quyenModel.IdPermission}, @ChucNangId{i})";
+                            if (i < arrMethod.Count - 1)
+                            {
+                                cmd.CommandText += ", ";
+                            }
+                            cmd.Parameters.AddWithValue($"@ChucNangId{i}", arrMethod[i]);
+                        }
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
+        public bool Edit(QuyenModel quyenModel, ArrayList arrMethod)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(this.connectionString))
+                using (var cmd = connection.CreateCommand())
+                {
+                    connection.Open();
+                    cmd.Connection = connection;
+                    cmd.CommandText = "UPDATE Quyen SET [TenQuyen] = @TenQuyen, [NoiDungQuyen] = @NoiDungQuyen" +
+                                        " WHERE [QuyenId] = @QuyenId";
+                    cmd.Parameters.AddWithValue("@QuyenId", quyenModel.IdPermission);
+                    cmd.Parameters.AddWithValue("@TenQuyen", quyenModel.NamePermission);
+                    cmd.Parameters.AddWithValue("@NoiDungQuyen", quyenModel.ContentPermission);
+                    cmd.ExecuteNonQuery();
+                }
+                using (var connection = new SqlConnection(this.connectionString))
+                using (var cmd = connection.CreateCommand())
+                {
+                    connection.Open();
+                    cmd.Connection = connection;
+                    cmd.CommandText = "DELETE FROM Quyen_ChucNang WHERE [QuyenId] = @QuyenId;";
+                    cmd.Parameters.AddWithValue("@QuyenId", quyenModel.IdPermission);
+                    cmd.ExecuteNonQuery();
+                }
+                if (arrMethod.Count > 0)
+                {
+                    using (var connection = new SqlConnection(this.connectionString))
+                    using (var cmd = connection.CreateCommand())
+                    {
+                        connection.Open();
+                        cmd.Connection = connection;
+                        cmd.CommandText = "INSERT INTO Quyen_ChucNang ([QuyenId], [ChucNangId]) VALUES ";
+                        for (int i = 0; i < arrMethod.Count; i++)
+                        {
+                            cmd.CommandText += $"({quyenModel.IdPermission}, @ChucNangId{i})";
+                            if (i < arrMethod.Count - 1)
+                            {
+                                cmd.CommandText += ", ";
+                            }
+                            cmd.Parameters.AddWithValue($"@ChucNangId{i}", arrMethod[i]);
+                        }
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
+
+        public bool IsPermissionOwnByEmployee(int idPermission)
+        {
+            using (var connection = new SqlConnection(this.connectionString))
+            using (var cmd = connection.CreateCommand())
+            {
+                connection.Open();
+                cmd.Connection = connection;
+                cmd.CommandText = "select * from NhanVien WHERE [QuyenId] = " + idPermission + ";";
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
+
+        public bool DeletePermissionById(int idPermission)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(this.connectionString))
+                using (var cmd = connection.CreateCommand())
+                {
+                    connection.Open();
+                    cmd.Connection = connection;
+                    cmd.CommandText = "DELETE FROM Quyen_ChucNang WHERE [QuyenId] = @QuyenId;";
+                    cmd.Parameters.AddWithValue("@QuyenId", idPermission);
+                    cmd.ExecuteNonQuery();
+                    cmd.CommandText = "DELETE FROM Quyen WHERE [QuyenId] = @QuyenId;";
+                    cmd.ExecuteNonQuery();                    
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+
+
         }
     }
 }

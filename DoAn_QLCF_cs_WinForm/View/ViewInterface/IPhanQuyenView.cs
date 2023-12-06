@@ -21,8 +21,11 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
         string ContentPermission { get; set; }
         DataGridView PermissionDataGridView { get; set; }
 
-
+        DialogResult ShowYesNoMessage(string message);
+        void ShowMessage(string message);
+        ArrayList GetArrayMethodChecked();
         void LoadData(BindingSource listPermission, BindingSource listMethod);
-        void LoadChucNangListCheckBox(BindingSource listMethod, ArrayList arrMethod);
+        void LoadChucNangListCheckBox(BindingSource listMethod);
+        void LoadCheckedCheckBox(ArrayList arrMethod);
     }
 }
