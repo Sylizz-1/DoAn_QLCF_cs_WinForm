@@ -186,9 +186,6 @@ CREATE TABLE ChiTietHoaDon
 
 -----------------------------------INSERT DATA--------------------------------------------------------
 
-USE QLCF
-GO
-
 -- INSERT data into Quyen table
 INSERT INTO Quyen (TenQuyen, NoiDungQuyen) VALUES
 (N'Admin', N'Quyền toàn quyền'),
