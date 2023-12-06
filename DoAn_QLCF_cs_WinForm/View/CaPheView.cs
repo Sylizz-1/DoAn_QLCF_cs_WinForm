@@ -191,7 +191,15 @@ namespace DoAn_QLCF_cs_WinForm.View
             if (nguyenLieuCbx.SelectedValue != null)
 			{
 				NguyenLieuModel nlModel = (NguyenLieuModel)nguyenLieuCbx.SelectedValue;
-				this.anhNguyenLieuPbx.Image = Image.FromFile(Path.Combine(logoimage, nlModel.HinhAnh));
+				using (var stream = new FileStream(Path.Combine(logoimage, nlModel.HinhAnh), FileMode.Open))
+				{ 
+					var image = Image.FromStream(stream);
+					this.anhNguyenLieuPbx.Image = image;
+				}
+				/*
+								NguyenLieuModel nlModel = (NguyenLieuModel)nguyenLieuCbx.SelectedValue;
+								this.anhNguyenLieuPbx.Image = Image.FromFile(Path.Combine(logoimage, nlModel.HinhAnh));
+				*/
 			}
 		}
 

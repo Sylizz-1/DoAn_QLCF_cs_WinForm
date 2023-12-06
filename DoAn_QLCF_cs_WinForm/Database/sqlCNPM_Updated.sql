@@ -166,7 +166,7 @@ CREATE TABLE HoaDon
     PhiTruocGiamGia float,
     GiamGia         tinyint,
     PhiSauGiamGia   float,
-    IsDelete bit default 0
+    IsAccepted bit default 0
     FOREIGN KEY (KhachHangId) REFERENCES KhachHang (KhachHangId),
     FOREIGN KEY (NhanVienId) REFERENCES NhanVien (NhanVienId),
     foreign key (PggId) references PhieuGiamGia(PggId)
