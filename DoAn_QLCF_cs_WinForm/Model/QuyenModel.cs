@@ -19,8 +19,10 @@ namespace DoAn_QLCF_cs_WinForm.Model
 
         [DisplayName("ID Quyền")]
         public int IdPermission { get; set; }
+
         [DisplayName("Tên Quyền")]
         public string NamePermission { get; set; }
+
         [DisplayName("Nội Dung Quyền")]
         public string ContentPermission { get; set; }
     }
