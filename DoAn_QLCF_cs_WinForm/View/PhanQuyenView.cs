@@ -19,8 +19,8 @@ namespace DoAn_QLCF_cs_WinForm.View
         public PhanQuyenView()
         {
             InitializeComponent();
-            //SetUpView();   
-            BindingEvents();            
+            SetUpView();
+            BindingEvents();
         }
         public DataGridView PermissionDataGridView
         {
@@ -39,12 +39,13 @@ namespace DoAn_QLCF_cs_WinForm.View
         {
             get
             {
-                return this.txt_idPermission.Texts;
+                return this.txt_idPermission.Tag.ToString();
             }
             set
             {
                 this.txt_idPermission.Focus();
                 this.txt_idPermission.Texts = value;
+                this.txt_idPermission.Tag = value;
             }
         }
         public string NamePermission
@@ -83,21 +84,26 @@ namespace DoAn_QLCF_cs_WinForm.View
         }
         private void BindingEvents()
         {
+            btn_addPermission.Click += delegate { AddPermissionBtnEvent?.Invoke(this, EventArgs.Empty); };
             btn_editPermission.Click += delegate { EditPermissionBtnEvent?.Invoke(this, EventArgs.Empty); };
-
-        }     
+            btn_deletePermission.Click += delegate { DeletePermissionBtnEvent?.Invoke(this, EventArgs.Empty); };
+            btn_acceptPermission.Click += delegate { AcceptPermissionBtnEvent?.Invoke(this, EventArgs.Empty); };
+        }
         public void LoadData(BindingSource listPermission, BindingSource listMethod)
         {
             this.dtgrv_quyen.DataSource = listPermission;
             this.dtgrv_chucNang.DataSource = listMethod;
         }
 
-        public void LoadChucNangListCheckBox(BindingSource listMethod, ArrayList arrMethod)
+        public void LoadChucNangListCheckBox(BindingSource listMethod)
         {
             ((ListBox)this.clb_chucNang).DataSource = listMethod;
             ((ListBox)this.clb_chucNang).DisplayMember = "NameMethod";
             ((ListBox)this.clb_chucNang).ValueMember = "IdMethod";
+        }
 
+        public void LoadCheckedCheckBox(ArrayList arrMethod)
+        {
             for (int i = 0; i < clb_chucNang.Items.Count; i++)
             {
                 ChucNangModel obj = (ChucNangModel)clb_chucNang.Items[i];
@@ -108,8 +114,30 @@ namespace DoAn_QLCF_cs_WinForm.View
                 else
                 {
                     clb_chucNang.SetItemChecked(i, false);
-                }                    
+                }
             }
+        }
+        public ArrayList GetArrayMethodChecked()
+        {
+            ArrayList arrMethod = new ArrayList();
+            for (int i = 0; i < clb_chucNang.Items.Count; i++)
+            {
+                if (clb_chucNang.GetItemChecked(i))
+                {
+                    ChucNangModel obj = (ChucNangModel)clb_chucNang.Items[i];
+                    arrMethod.Add(obj.IdMethod);
+                }
+            }
+            return arrMethod;
+        }
+        public void ShowMessage(string message)
+        {
+            MessageBox.Show(message);
+        }
+
+        public DialogResult ShowYesNoMessage(string message)
+        {
+            return MessageBox.Show(message, "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
 
         public event EventHandler AddPermissionBtnEvent;
@@ -145,6 +173,30 @@ namespace DoAn_QLCF_cs_WinForm.View
         }
 
         private void btn_backPermission_Click(object sender, EventArgs e)
+        {
+            this.tc_quyen.SelectedTab = this.tp_quyenDanhSach;
+        }
+
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < clb_chucNang.Items.Count; i++)
+            {
+                clb_chucNang.SetItemChecked(i, false);
+            }
+            this.tc_quyen.SelectedTab = this.tp_quyenChiTiet;
+        }
+
+        private void btn_acceptPermission_Click(object sender, EventArgs e)
+        {
+            this.tc_quyen.SelectedTab = this.tp_quyenDanhSach;
+        }
+
+        private void btn_detailPermission_Click(object sender, EventArgs e)
+        {
+            ShowMessage("Comming soon!");
+        }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
         {
             this.tc_quyen.SelectedTab = this.tp_quyenDanhSach;
         }
