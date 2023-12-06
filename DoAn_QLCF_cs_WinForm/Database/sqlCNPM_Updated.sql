@@ -1,6 +1,4 @@
-﻿DROP DATABASE if exists QLCF;
-GO
-CREATE DATABASE QLCF;
+﻿CREATE DATABASE QLCF;
 GO
 USE QLCF;
 GO
@@ -300,7 +298,7 @@ INSERT INTO PhieuGiamGia (PggId, TgBatDau, TgKetThuc, GiaHoaDon, PhanTramGiamGia
 (2, '2023-01-10', '2023-02-10', 150000.0, 15, 0);
 
 -- INSERT data into HoaDon table
-INSERT INTO HoaDon (NhanVienId, KhachHangId, PggId, NgayNhap, PhiTruocGiamGia, GiamGia, PhiSauGiamGia, IsDelete) VALUES
+INSERT INTO HoaDon (NhanVienId, KhachHangId, PggId, NgayNhap, PhiTruocGiamGia, GiamGia, PhiSauGiamGia, IsAccepted) VALUES
 (1, 1, 1, '2023-02-01', 80000.0, 10, 72000.0, 0),
 (2, 2, 2, '2023-02-02', 120000.0, 15, 102000.0, 0);
 
