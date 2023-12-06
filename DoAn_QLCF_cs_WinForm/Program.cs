@@ -32,6 +32,11 @@ namespace DoAn_QLCF_cs_WinForm
             //IPhanQuyenRepository repo = new PhanQuyenRepository(connectionString);
             //new PhanQuyenPresenter(view, repo);
             //Application.Run((Form)view);
+
+            IBanHangView banHangView = new BanHangView();
+            IBanHangRepository banHangRepository = new BanHangRepository(connectionString);
+            new BanHangPresenter(banHangView, banHangRepository);
+
         }
     }
 }

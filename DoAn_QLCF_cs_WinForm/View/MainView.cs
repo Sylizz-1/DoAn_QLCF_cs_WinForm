@@ -283,7 +283,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 
             ICaPheView view = CaPheView.GetInstance(this.mainFormContainer);
             ICaPheRepository repo = new CaPheRepository(this.connectionString);
-            new CaPhePresenter(view, repo);
+            CaPhePresenter.GetInstance(view, repo);
         }
 
         private void navNhanVien_MouseDown(object sender, MouseEventArgs e)
