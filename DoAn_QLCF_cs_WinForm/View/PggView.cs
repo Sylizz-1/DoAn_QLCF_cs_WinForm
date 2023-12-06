@@ -32,13 +32,14 @@ namespace DoAn_QLCF_cs_WinForm.View
         private string id = "1";
         public event EventHandler btnAddClickEvent;
         public event EventHandler btnUpdateClickEvent;
-        public event EventHandler btnFilterClickEvent;
         public event EventHandler AddEvent;
         public event EventHandler UpdateEvent;
         public event EventHandler DeleteEvent;
         public event EventHandler SortEvent;
         public event EventHandler FilterEvent;
         public event EventHandler ResetEvent;
+        public event EventHandler btnFilterClickEvent;
+
         public bool checkIsAdd = false;
         public bool checkIsfilter = false;
         public bool checkIsUpdate = false;

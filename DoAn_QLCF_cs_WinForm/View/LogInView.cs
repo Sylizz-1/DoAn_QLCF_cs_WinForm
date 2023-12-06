@@ -16,13 +16,7 @@ namespace DoAn_QLCF_cs_WinForm.View
     public partial class LogInView : Form, ILoginView
     {
         private bool isHidePassword = true;
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public LogInView()
-#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
             InitializeComponent();
             setUpView();
@@ -86,9 +80,7 @@ namespace DoAn_QLCF_cs_WinForm.View
                     return "customer";
                 if (rdb_employeeLogin.Checked)
                     return "employee";
-#pragma warning disable CS8603 // Possible null reference return.
                 return null;
-#pragma warning restore CS8603 // Possible null reference return.
             }
         }
 
@@ -120,9 +112,7 @@ namespace DoAn_QLCF_cs_WinForm.View
                     return "male";
                 if (rdb_femaleRegister.Checked)
                     return "female";
-#pragma warning disable CS8603 // Possible null reference return.
                 return null;
-#pragma warning restore CS8603 // Possible null reference return.
             }
         }
 
@@ -134,9 +124,7 @@ namespace DoAn_QLCF_cs_WinForm.View
                     return "employee";
                 if (rdb_customerRegister.Checked)
                     return "customer";
-#pragma warning disable CS8603 // Possible null reference return.
                 return null;
-#pragma warning restore CS8603 // Possible null reference return.
             }
         }
 
@@ -150,9 +138,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         public event EventHandler LoginEvent;
         public event EventHandler RegisterEvent;
-#pragma warning disable CS0067 // The event 'LogInView.InformationEvent' is never used
         public event EventHandler InformationEvent;
-#pragma warning restore CS0067 // The event 'LogInView.InformationEvent' is never used
 
         public void ShowMessage(string message)
         {
