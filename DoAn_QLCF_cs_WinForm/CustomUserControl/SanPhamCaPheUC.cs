@@ -13,10 +13,15 @@ namespace DoAn_QLCF_cs_WinForm.CustomUserControl
 {
 	public partial class SanPhamCaPheUC : UserControl
 	{
-		public CaPheModel cpModel {  get; set; }
-		public SanPhamCaPheUC(CaPheModel cpModel)
+		public CaPheModel cpModel { get; set; }
+		public SanPhamCaPheUC()
 		{
 			InitializeComponent();
+		}
+
+		public void SetData(CaPheModel cpModel)
+		{
+			this.cpModel = cpModel;
 			this.cpModel = cpModel;
 			this.hinhAnhPbx.Image = cpModel.HinhAnh;
 			this.tenLbl.Text = cpModel.Ten;

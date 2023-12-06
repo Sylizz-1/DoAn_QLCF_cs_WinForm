@@ -42,7 +42,7 @@
 			giaTienLbl.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
 			giaTienLbl.AutoEllipsis = true;
 			giaTienLbl.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-			giaTienLbl.Location = new Point(0, 158);
+			giaTienLbl.Location = new Point(0, 153);
 			giaTienLbl.Name = "giaTienLbl";
 			giaTienLbl.Size = new Size(116, 36);
 			giaTienLbl.TabIndex = 2;
@@ -54,7 +54,7 @@
 			tenLbl.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
 			tenLbl.AutoEllipsis = true;
 			tenLbl.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-			tenLbl.Location = new Point(0, 117);
+			tenLbl.Location = new Point(0, 112);
 			tenLbl.Name = "tenLbl";
 			tenLbl.Size = new Size(201, 41);
 			tenLbl.TabIndex = 1;
@@ -78,7 +78,7 @@
 			detailsBtn.ForeColor = Color.Blue;
 			detailsBtn.Image = (Image)resources.GetObject("detailsBtn.Image");
 			detailsBtn.ImageHover = (Image)resources.GetObject("detailsBtn.ImageHover");
-			detailsBtn.Location = new Point(36, 206);
+			detailsBtn.Location = new Point(38, 192);
 			detailsBtn.Name = "detailsBtn";
 			detailsBtn.Size = new Size(78, 38);
 			detailsBtn.TabIndex = 4;
@@ -90,9 +90,11 @@
 			// hinhAnhPbx
 			// 
 			hinhAnhPbx.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			hinhAnhPbx.Image = Properties.Resources.CaPheEspresso;
 			hinhAnhPbx.Location = new Point(0, 0);
 			hinhAnhPbx.Name = "hinhAnhPbx";
-			hinhAnhPbx.Size = new Size(201, 114);
+			hinhAnhPbx.Size = new Size(201, 109);
+			hinhAnhPbx.SizeMode = PictureBoxSizeMode.StretchImage;
 			hinhAnhPbx.TabIndex = 0;
 			hinhAnhPbx.TabStop = false;
 			// 
@@ -114,7 +116,7 @@
 			addToCartBtn.ForeColor = Color.Crimson;
 			addToCartBtn.Image = (Image)resources.GetObject("addToCartBtn.Image");
 			addToCartBtn.ImageHover = (Image)resources.GetObject("addToCartBtn.ImageHover");
-			addToCartBtn.Location = new Point(120, 206);
+			addToCartBtn.Location = new Point(122, 192);
 			addToCartBtn.Name = "addToCartBtn";
 			addToCartBtn.Size = new Size(78, 38);
 			addToCartBtn.TabIndex = 4;
@@ -127,13 +129,14 @@
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
+			BackColor = SystemColors.GradientInactiveCaption;
 			Controls.Add(addToCartBtn);
 			Controls.Add(detailsBtn);
 			Controls.Add(giaTienLbl);
 			Controls.Add(tenLbl);
 			Controls.Add(hinhAnhPbx);
 			Name = "SanPhamCaPheUC";
-			Size = new Size(201, 244);
+			Size = new Size(201, 230);
 			((System.ComponentModel.ISupportInitialize)hinhAnhPbx).EndInit();
 			ResumeLayout(false);
 		}

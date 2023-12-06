@@ -183,6 +183,16 @@ namespace DoAn_QLCF_cs_WinForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CaPheEspresso {
+            get {
+                object obj = ResourceManager.GetObject("CaPheEspresso", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap changepassicon {
             get {
                 object obj = ResourceManager.GetObject("changepassicon", resourceCulture);
@@ -1006,6 +1016,16 @@ namespace DoAn_QLCF_cs_WinForm.Properties {
         internal static System.Drawing.Bitmap TaskIcon {
             get {
                 object obj = ResourceManager.GetObject("TaskIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testcoffeePng {
+            get {
+                object obj = ResourceManager.GetObject("testcoffeePng", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

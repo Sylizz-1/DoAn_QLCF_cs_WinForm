@@ -1,5 +1,6 @@
 ﻿using DoAn_QLCF_cs_WinForm.Model;
 using DoAn_QLCF_cs_WinForm.Repository.RepositoryInterface;
+using DoAn_QLCF_cs_WinForm.View;
 using DoAn_QLCF_cs_WinForm.View.ViewInterface;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,8 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
 			this.repository = repository;
 			cpBindingSource = new BindingSource();
 			cpnlBindingSource = new BindingSource();
+
+			
 		}
 	}
 }

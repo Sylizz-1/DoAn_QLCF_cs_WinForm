@@ -17,8 +17,18 @@ namespace DoAn_QLCF_cs_WinForm.View
 		public BanHangView()
 		{
 			InitializeComponent();
+			SetUpView();
 		}
 
 		public KhachHangModel KhModel { get; set; }
+
+
+		private void SetUpView()
+		{
+			// setup Tabcontrol
+			tabControl1.Appearance = TabAppearance.FlatButtons;
+			tabControl1.ItemSize = new System.Drawing.Size(0, 1);
+			tabControl1.SizeMode = TabSizeMode.Fixed;
+		}
 	}
 }
