@@ -359,7 +359,7 @@ namespace DoAn_QLCF_cs_WinForm.View
         private void txtSDTNcc__TextChanged(object sender, EventArgs e)
         {
             int result;
-            if ((int.TryParse(txtSDTNcc.Texts, out result) && txtSDTNcc.Texts.Length > 0) && (isFilter || int.TryParse(txtSDTNcc.Texts, out result)))
+            if ((int.TryParse(txtSDTNcc.Texts, out result) && txtSDTNcc.Texts.Length == 10) && (isFilter || int.TryParse(txtSDTNcc.Texts, out result)))
                 txtSDTNcc.BorderColor = Color.DarkCyan;
             else
                 txtSDTNcc.BorderColor = Color.Red;
@@ -457,5 +457,6 @@ namespace DoAn_QLCF_cs_WinForm.View
         private void btnFindNcc_Click(object sender, EventArgs e)
         {
         }
+
     }
 }

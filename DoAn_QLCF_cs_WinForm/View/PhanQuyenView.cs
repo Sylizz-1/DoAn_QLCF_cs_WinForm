@@ -22,18 +22,7 @@ namespace DoAn_QLCF_cs_WinForm.View
             SetUpView();
             BindingEvents();
         }
-        public DataGridView PermissionDataGridView
-        {
-            get
-            {
-                return this.dtgrv_quyen;
-            }
-            set
-            {
 
-                this.dtgrv_quyen = value;
-            }
-        }
 
         public string IdPermission
         {
@@ -72,12 +61,75 @@ namespace DoAn_QLCF_cs_WinForm.View
                 this.txt_contentPermission.Texts = value;
             }
         }
+        public DataGridView PermissionDataGridView
+        {
+            get
+            {
+                return this.dtgrv_quyen;
+            }
+            set
+            {
+
+                this.dtgrv_quyen = value;
+            }
+        }
+        public DataGridView PermissionEmployeeDataGridView
+        {
+            get
+            {
+                return this.dtgrv_nhanVien;
+            }
+            set
+            {
+
+                this.dtgrv_nhanVien = value;
+            }
+        }
+
+        public string IdEmployee
+        {
+            get
+            {
+                return this.txt_idNhanVien.Tag.ToString();
+            }
+            set
+            {
+                this.txt_idNhanVien.Focus();
+                this.txt_idNhanVien.Texts = value;
+                this.txt_idNhanVien.Tag = value;
+            }
+        }
+        public string NameEmployee
+        {
+            get
+            {
+                return this.txt_tenNhanVien.Texts;
+            }
+            set
+            {
+                this.txt_tenNhanVien.Focus();
+                this.txt_tenNhanVien.Texts = value;
+            }
+        }
+
+        public int ComboboxIdPermission
+        {
+            get
+            {
+                return (int)this.cbb_idPermission.SelectedValue;
+            }
+            set
+            {
+                this.cbb_idPermission.SelectedValue = value;
+            }
+        }
+
         private void SetUpView()
         {
             // ẩn các tab control
-            tc_chucNang.Appearance = TabAppearance.FlatButtons;
-            tc_chucNang.ItemSize = new System.Drawing.Size(0, 1);
-            tc_chucNang.SizeMode = TabSizeMode.Fixed;
+            tc_nhanVien.Appearance = TabAppearance.FlatButtons;
+            tc_nhanVien.ItemSize = new System.Drawing.Size(0, 1);
+            tc_nhanVien.SizeMode = TabSizeMode.Fixed;
             tc_quyen.Appearance = TabAppearance.FlatButtons;
             tc_quyen.ItemSize = new System.Drawing.Size(0, 1);
             tc_quyen.SizeMode = TabSizeMode.Fixed;
@@ -88,11 +140,29 @@ namespace DoAn_QLCF_cs_WinForm.View
             btn_editPermission.Click += delegate { EditPermissionBtnEvent?.Invoke(this, EventArgs.Empty); };
             btn_deletePermission.Click += delegate { DeletePermissionBtnEvent?.Invoke(this, EventArgs.Empty); };
             btn_acceptPermission.Click += delegate { AcceptPermissionBtnEvent?.Invoke(this, EventArgs.Empty); };
+
+            btn_editPermissionEmployee.Click += delegate { EditPermissionEmployeeBtnEvent?.Invoke(this, EventArgs.Empty); };
+            btn_deletePermissionEmployee.Click += delegate { DeletePermissionEmployeeBtnEvent?.Invoke(this, EventArgs.Empty); };
+            btn_acceptPermissionEmployee.Click += delegate { AcceptPermissionEmployeeBtnEvent?.Invoke(this, EventArgs.Empty); };
+
         }
-        public void LoadData(BindingSource listPermission, BindingSource listMethod)
+        public void LoadNhanVienList(BindingSource listEmployee)
+        {
+            this.dtgrv_nhanVien.DataSource = listEmployee;
+        }
+
+        public void LoadQuyenCombobox(BindingSource listPermission)
+        {
+            this.cbb_idPermission.DataSource = listPermission;
+            this.cbb_idPermission.DisplayMember = "IdPermission";
+            this.cbb_idPermission.ValueMember = "IdPermission";
+            this.cbb_namePermission.DataSource = listPermission;
+            this.cbb_namePermission.DisplayMember = "NamePermission";
+            this.cbb_namePermission.ValueMember = "IdPermission";
+        }
+        public void LoadQuyenList(BindingSource listPermission)
         {
             this.dtgrv_quyen.DataSource = listPermission;
-            this.dtgrv_chucNang.DataSource = listMethod;
         }
 
         public void LoadChucNangListCheckBox(BindingSource listMethod)
@@ -145,7 +215,9 @@ namespace DoAn_QLCF_cs_WinForm.View
         public event EventHandler DeletePermissionBtnEvent;
         public event EventHandler DetailPermissionBtnEvent;
         public event EventHandler AcceptPermissionBtnEvent;
-        public event EventHandler CancelPermissionBtnEvent;
+        public event EventHandler EditPermissionEmployeeBtnEvent;
+        public event EventHandler DeletePermissionEmployeeBtnEvent;
+        public event EventHandler AcceptPermissionEmployeeBtnEvent;
 
         public static IPhanQuyenView GetInstance(Form parentContainer)
         {
@@ -200,5 +272,26 @@ namespace DoAn_QLCF_cs_WinForm.View
         {
             this.tc_quyen.SelectedTab = this.tp_quyenDanhSach;
         }
+
+        private void btn_backPermissionEmployee_Click(object sender, EventArgs e)
+        {
+            this.tc_nhanVien.SelectedTab = this.tp_nhanVienDanhSach;
+        }
+
+        private void btn_editPermissionEmployee_Click(object sender, EventArgs e)
+        {
+            this.tc_nhanVien.SelectedTab = this.tp_nhanVienChiTiet;
+        }
+
+        private void btn_cancelPermissionEmployee_Click(object sender, EventArgs e)
+        {
+            this.tc_nhanVien.SelectedTab = this.tp_nhanVienDanhSach;
+        }
+
+        private void btn_confirmPermissionEmployee_Click(object sender, EventArgs e)
+        {
+            this.tc_nhanVien.SelectedTab = this.tp_nhanVienDanhSach;
+        }
+
     }
 }

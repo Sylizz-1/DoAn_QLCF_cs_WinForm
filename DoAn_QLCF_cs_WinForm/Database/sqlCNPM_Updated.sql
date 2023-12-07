@@ -186,6 +186,7 @@ CREATE TABLE ChiTietHoaDon
 
 -- INSERT data into Quyen table
 INSERT INTO Quyen (TenQuyen, NoiDungQuyen) VALUES
+(N'KhongQuyen', N'Không có quyền'),
 (N'Admin', N'Quyền toàn quyền'),
 (N'NhanVienThuNgan', N'Quyền nhân viên thu ngân'),
 (N'NhanVienKeToan', N'Quyền nhân viên kế toán');
@@ -194,7 +195,8 @@ INSERT INTO Quyen (TenQuyen, NoiDungQuyen) VALUES
 INSERT INTO NhanVien (TaiKhoan, MatKhau, QuyenId, Ten, GioiTinh, SDT, Email, NgaySinh, IsDelete) VALUES
 (N'admin', N'123', 1, 'Admin User', 'Nam', '0123456789', 'admin@gmail.com', '1990-01-01', 0),
 (N'thungan1', N'123', 2, N'Thu Ngân 1', N'Nữ', '0987654321', 'nhanvien1@gmail.com', '1995-05-15', 0),
-(N'ketoan1', N'123', 3, N'Kế Toán 1', N'Nữ', '0987654321', 'nhanvien2@gmail.com', '1990-05-15', 0);
+(N'ketoan1', N'123', 3, N'Kế Toán 1', N'Nữ', '0987654321', 'nhanvien2@gmail.com', '1990-05-15', 0),
+(N'test', N'123', 3, N'test user', N'Nữ', '0987654321', 'test2@gmail.com', '1990-05-15', 0);
 
 -- INSERT data into ChucNang table
 INSERT INTO ChucNang (TenChucNang) VALUES

@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
             tcNhapHang = new TabControl();
             listTabPage = new TabPage();
+            btnXemPN = new CustomControl.CustomButton();
+            btnFindPn = new CustomControl.CustomButton();
             resetBtn = new CustomControl.CustomButton();
             gbSort = new GroupBox();
             groupBox5 = new GroupBox();
@@ -67,7 +69,7 @@
             xacNhanBtn = new CustomControl.CustomButton();
             gbCTPN = new GroupBox();
             dgvCTPN = new DataGridView();
-            panel1 = new Panel();
+            pnCTPN = new Panel();
             btnSortCTPN = new CustomControl.CustomButton();
             gbCtpnSort = new GroupBox();
             groupBox6 = new GroupBox();
@@ -97,7 +99,7 @@
             txtPhieuNhapId = new CustomControl.CustomTextBox();
             label5 = new Label();
             label4 = new Label();
-            label1 = new Label();
+            lbPN = new Label();
             moreDetailTabPage = new TabPage();
             btnAddNgl = new CustomControl.CustomButton();
             btnHuyCTPN = new CustomControl.CustomButton();
@@ -111,7 +113,7 @@
             label14 = new Label();
             txtCTPNId = new CustomControl.CustomTextBox();
             label15 = new Label();
-            label17 = new Label();
+            lbCTPNId = new Label();
             label11 = new Label();
             btn_back2 = new CustomControl.CustomButton();
             addNgl = new TabPage();
@@ -129,7 +131,6 @@
             txtNglName = new CustomControl.CustomTextBox();
             label16 = new Label();
             label19 = new Label();
-            btnFindPn = new CustomControl.CustomButton();
             tcNhapHang.SuspendLayout();
             listTabPage.SuspendLayout();
             gbSort.SuspendLayout();
@@ -142,7 +143,7 @@
             detailTabPage.SuspendLayout();
             gbCTPN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCTPN).BeginInit();
-            panel1.SuspendLayout();
+            pnCTPN.SuspendLayout();
             gbCtpnSort.SuspendLayout();
             groupBox6.SuspendLayout();
             groupBox9.SuspendLayout();
@@ -168,6 +169,7 @@
             // 
             // listTabPage
             // 
+            listTabPage.Controls.Add(btnXemPN);
             listTabPage.Controls.Add(btnFindPn);
             listTabPage.Controls.Add(resetBtn);
             listTabPage.Controls.Add(gbSort);
@@ -186,6 +188,60 @@
             listTabPage.TabIndex = 0;
             listTabPage.Text = "Danh Sach";
             listTabPage.UseVisualStyleBackColor = true;
+            // 
+            // btnXemPN
+            // 
+            btnXemPN.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnXemPN.BackColor = SystemColors.Control;
+            btnXemPN.BackgroundColor = SystemColors.Control;
+            btnXemPN.BorderColor = Color.Goldenrod;
+            btnXemPN.BorderRadius = 15;
+            btnXemPN.BorderSize = 2;
+            btnXemPN.Cursor = Cursors.Hand;
+            btnXemPN.EnabledTextHover = true;
+            btnXemPN.FlatAppearance.BorderSize = 0;
+            btnXemPN.FlatAppearance.MouseDownBackColor = Color.Goldenrod;
+            btnXemPN.FlatAppearance.MouseOverBackColor = Color.Goldenrod;
+            btnXemPN.FlatStyle = FlatStyle.Flat;
+            btnXemPN.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnXemPN.ForeColor = Color.Goldenrod;
+            btnXemPN.ImageAlign = ContentAlignment.MiddleRight;
+            btnXemPN.ImageHover = null;
+            btnXemPN.Location = new Point(1333, 266);
+            btnXemPN.Margin = new Padding(4, 5, 4, 5);
+            btnXemPN.Name = "btnXemPN";
+            btnXemPN.Size = new Size(172, 64);
+            btnXemPN.TabIndex = 32;
+            btnXemPN.Text = "Xem";
+            btnXemPN.TextColor = Color.Goldenrod;
+            btnXemPN.TextHover = Color.White;
+            btnXemPN.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnXemPN.UseVisualStyleBackColor = false;
+            btnXemPN.Click += btnXemPN_Click;
+            // 
+            // btnFindPn
+            // 
+            btnFindPn.BackColor = Color.Transparent;
+            btnFindPn.BackgroundColor = Color.Transparent;
+            btnFindPn.BorderColor = Color.PaleVioletRed;
+            btnFindPn.BorderRadius = 15;
+            btnFindPn.BorderSize = 0;
+            btnFindPn.Cursor = Cursors.Hand;
+            btnFindPn.EnabledTextHover = false;
+            btnFindPn.FlatAppearance.BorderSize = 0;
+            btnFindPn.FlatAppearance.MouseOverBackColor = Color.FromArgb(50, 64, 64, 64);
+            btnFindPn.FlatStyle = FlatStyle.Flat;
+            btnFindPn.ForeColor = Color.White;
+            btnFindPn.Image = Properties.Resources.findIcon16px;
+            btnFindPn.ImageHover = null;
+            btnFindPn.Location = new Point(335, 18);
+            btnFindPn.Margin = new Padding(4, 5, 4, 5);
+            btnFindPn.Name = "btnFindPn";
+            btnFindPn.Size = new Size(40, 40);
+            btnFindPn.TabIndex = 31;
+            btnFindPn.TextColor = Color.White;
+            btnFindPn.TextHover = Color.White;
+            btnFindPn.UseVisualStyleBackColor = false;
             // 
             // resetBtn
             // 
@@ -576,24 +632,24 @@
             dgvDsNhapHang.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvDsNhapHang.BorderStyle = BorderStyle.None;
             dgvDsNhapHang.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.DarkCyan;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvDsNhapHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = Color.DarkCyan;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dgvDsNhapHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dgvDsNhapHang.ColumnHeadersHeight = 30;
             dgvDsNhapHang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvDsNhapHang.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = SystemColors.Window;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dgvDsNhapHang.DefaultCellStyle = dataGridViewCellStyle8;
             dgvDsNhapHang.Dock = DockStyle.Bottom;
             dgvDsNhapHang.EnableHeadersVisualStyles = false;
             dgvDsNhapHang.GridColor = Color.DarkCyan;
@@ -604,8 +660,8 @@
             dgvDsNhapHang.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dgvDsNhapHang.RowHeadersVisible = false;
             dgvDsNhapHang.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvDsNhapHang.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvDsNhapHang.RowsDefaultCellStyle = dataGridViewCellStyle9;
             dgvDsNhapHang.RowTemplate.Height = 25;
             dgvDsNhapHang.RowTemplate.ReadOnly = true;
             dgvDsNhapHang.Size = new Size(1522, 543);
@@ -654,7 +710,7 @@
             detailTabPage.Controls.Add(txtPhieuNhapId);
             detailTabPage.Controls.Add(label5);
             detailTabPage.Controls.Add(label4);
-            detailTabPage.Controls.Add(label1);
+            detailTabPage.Controls.Add(lbPN);
             detailTabPage.Location = new Point(4, 34);
             detailTabPage.Margin = new Padding(4);
             detailTabPage.Name = "detailTabPage";
@@ -763,7 +819,7 @@
             // gbCTPN
             // 
             gbCTPN.Controls.Add(dgvCTPN);
-            gbCTPN.Controls.Add(panel1);
+            gbCTPN.Controls.Add(pnCTPN);
             gbCTPN.Dock = DockStyle.Bottom;
             gbCTPN.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             gbCTPN.Location = new Point(4, 335);
@@ -783,24 +839,24 @@
             dgvCTPN.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvCTPN.BorderStyle = BorderStyle.None;
             dgvCTPN.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.DarkCyan;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dgvCTPN.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = Color.DarkCyan;
+            dataGridViewCellStyle10.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle10.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
+            dgvCTPN.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             dgvCTPN.ColumnHeadersHeight = 30;
             dgvCTPN.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = SystemColors.Window;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dgvCTPN.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = SystemColors.Window;
+            dataGridViewCellStyle11.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
+            dgvCTPN.DefaultCellStyle = dataGridViewCellStyle11;
             dgvCTPN.EnableHeadersVisualStyles = false;
             dgvCTPN.GridColor = Color.DarkCyan;
             dgvCTPN.ImeMode = ImeMode.NoControl;
@@ -810,29 +866,29 @@
             dgvCTPN.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dgvCTPN.RowHeadersVisible = false;
             dgvCTPN.RowHeadersWidth = 51;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvCTPN.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCTPN.RowsDefaultCellStyle = dataGridViewCellStyle12;
             dgvCTPN.RowTemplate.Height = 25;
             dgvCTPN.RowTemplate.ReadOnly = true;
             dgvCTPN.Size = new Size(1552, 336);
             dgvCTPN.TabIndex = 23;
             dgvCTPN.CellClick += dgvNgl_CellClick;
             // 
-            // panel1
+            // pnCTPN
             // 
-            panel1.Controls.Add(btnSortCTPN);
-            panel1.Controls.Add(gbCtpnSort);
-            panel1.Controls.Add(resetCTPNBtn);
-            panel1.Controls.Add(btnFilterCTPN);
-            panel1.Controls.Add(btnDeleteCTPN);
-            panel1.Controls.Add(btnEditCTPN);
-            panel1.Controls.Add(btnAddCTPN);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(4, 39);
-            panel1.Margin = new Padding(4);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1514, 169);
-            panel1.TabIndex = 24;
+            pnCTPN.Controls.Add(btnSortCTPN);
+            pnCTPN.Controls.Add(gbCtpnSort);
+            pnCTPN.Controls.Add(resetCTPNBtn);
+            pnCTPN.Controls.Add(btnFilterCTPN);
+            pnCTPN.Controls.Add(btnDeleteCTPN);
+            pnCTPN.Controls.Add(btnEditCTPN);
+            pnCTPN.Controls.Add(btnAddCTPN);
+            pnCTPN.Dock = DockStyle.Top;
+            pnCTPN.Location = new Point(4, 39);
+            pnCTPN.Margin = new Padding(4);
+            pnCTPN.Name = "pnCTPN";
+            pnCTPN.Size = new Size(1514, 169);
+            pnCTPN.TabIndex = 24;
             // 
             // btnSortCTPN
             // 
@@ -1312,16 +1368,16 @@
             label4.Text = "Tên Nhà Cung Cấp";
             label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // lbPN
             // 
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(24, 81);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(196, 85);
-            label1.TabIndex = 25;
-            label1.Text = "ID Phiếu Nhập";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            lbPN.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbPN.Location = new Point(24, 81);
+            lbPN.Margin = new Padding(4, 0, 4, 0);
+            lbPN.Name = "lbPN";
+            lbPN.Size = new Size(196, 85);
+            lbPN.TabIndex = 25;
+            lbPN.Text = "ID Phiếu Nhập";
+            lbPN.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // moreDetailTabPage
             // 
@@ -1337,7 +1393,7 @@
             moreDetailTabPage.Controls.Add(label14);
             moreDetailTabPage.Controls.Add(txtCTPNId);
             moreDetailTabPage.Controls.Add(label15);
-            moreDetailTabPage.Controls.Add(label17);
+            moreDetailTabPage.Controls.Add(lbCTPNId);
             moreDetailTabPage.Controls.Add(label11);
             moreDetailTabPage.Controls.Add(btn_back2);
             moreDetailTabPage.Location = new Point(4, 34);
@@ -1579,16 +1635,16 @@
             label15.Text = "Khối Lượng (Kg)";
             label15.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label17
+            // lbCTPNId
             // 
-            label17.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label17.Location = new Point(41, 88);
-            label17.Margin = new Padding(4, 0, 4, 0);
-            label17.Name = "label17";
-            label17.Size = new Size(196, 85);
-            label17.TabIndex = 61;
-            label17.Text = "ID Phiếu Nhập";
-            label17.TextAlign = ContentAlignment.MiddleCenter;
+            lbCTPNId.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbCTPNId.Location = new Point(41, 88);
+            lbCTPNId.Margin = new Padding(4, 0, 4, 0);
+            lbCTPNId.Name = "lbCTPNId";
+            lbCTPNId.Size = new Size(196, 85);
+            lbCTPNId.TabIndex = 61;
+            lbCTPNId.Text = "ID Phiếu Nhập";
+            lbCTPNId.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label11
             // 
@@ -1907,30 +1963,6 @@
             label19.Text = "Khối Lượng";
             label19.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // btnFindPn
-            // 
-            btnFindPn.BackColor = Color.Transparent;
-            btnFindPn.BackgroundColor = Color.Transparent;
-            btnFindPn.BorderColor = Color.PaleVioletRed;
-            btnFindPn.BorderRadius = 15;
-            btnFindPn.BorderSize = 0;
-            btnFindPn.Cursor = Cursors.Hand;
-            btnFindPn.EnabledTextHover = false;
-            btnFindPn.FlatAppearance.BorderSize = 0;
-            btnFindPn.FlatAppearance.MouseOverBackColor = Color.FromArgb(50, 64, 64, 64);
-            btnFindPn.FlatStyle = FlatStyle.Flat;
-            btnFindPn.ForeColor = Color.White;
-            btnFindPn.Image = Properties.Resources.findIcon16px;
-            btnFindPn.ImageHover = null;
-            btnFindPn.Location = new Point(335, 18);
-            btnFindPn.Margin = new Padding(4, 5, 4, 5);
-            btnFindPn.Name = "btnFindPn";
-            btnFindPn.Size = new Size(40, 40);
-            btnFindPn.TabIndex = 31;
-            btnFindPn.TextColor = Color.White;
-            btnFindPn.TextHover = Color.White;
-            btnFindPn.UseVisualStyleBackColor = false;
-            // 
             // NhapHangView
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -1958,7 +1990,7 @@
             detailTabPage.ResumeLayout(false);
             gbCTPN.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvCTPN).EndInit();
-            panel1.ResumeLayout(false);
+            pnCTPN.ResumeLayout(false);
             gbCtpnSort.ResumeLayout(false);
             groupBox6.ResumeLayout(false);
             groupBox6.PerformLayout();
@@ -1988,7 +2020,7 @@
         private CustomControl.CustomTextBox txtPhieuNhapId;
         private Label label5;
         private Label label4;
-        private Label label1;
+        private Label lbPN;
         private CustomControl.CustomButton delBtn;
         private CustomControl.CustomButton btnEditPN;
         private CustomControl.CustomButton btnAddPN;
@@ -2000,7 +2032,7 @@
         private DataGridView dgvCTPN;
         private CustomControl.CustomButton xacNhanBtn;
         private CustomControl.CustomButton HuyBtn;
-        private Panel panel1;
+        private Panel pnCTPN;
         private CustomControl.CustomButton btnDeleteCTPN;
         private CustomControl.CustomButton btnEditCTPN;
         private CustomControl.CustomButton btnAddCTPN;
@@ -2013,7 +2045,7 @@
         private Label label14;
         private CustomControl.CustomTextBox txtCTPNId;
         private Label label15;
-        private Label label17;
+        private Label lbCTPNId;
         private Label label18;
         private CustomControl.CustomTextBox txtCTPNDonGia;
         private Label label13;
@@ -2070,5 +2102,6 @@
         private Label label19;
         private CustomControl.CustomButton btnAddNgl;
         private CustomControl.CustomButton btnFindPn;
+        private CustomControl.CustomButton btnXemPN;
     }
 }

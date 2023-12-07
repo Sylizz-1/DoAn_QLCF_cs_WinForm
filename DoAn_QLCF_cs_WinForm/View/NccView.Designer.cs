@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             tcNCC = new TabControl();
             listTabPage = new TabPage();
+            btnFindNcc = new CustomControl.CustomButton();
             resetBtn = new CustomControl.CustomButton();
             gbSort = new GroupBox();
             groupBox5 = new GroupBox();
@@ -77,7 +78,7 @@
             label5 = new Label();
             label4 = new Label();
             label1 = new Label();
-            btnFindNcc = new CustomControl.CustomButton();
+            btnReport = new CustomControl.CustomButton();
             tcNCC.SuspendLayout();
             listTabPage.SuspendLayout();
             gbSort.SuspendLayout();
@@ -105,6 +106,7 @@
             // 
             // listTabPage
             // 
+            listTabPage.Controls.Add(btnReport);
             listTabPage.Controls.Add(btnFindNcc);
             listTabPage.Controls.Add(resetBtn);
             listTabPage.Controls.Add(gbSort);
@@ -123,6 +125,31 @@
             listTabPage.TabIndex = 0;
             listTabPage.Text = "Danh Sách";
             listTabPage.UseVisualStyleBackColor = true;
+            // 
+            // btnFindNcc
+            // 
+            btnFindNcc.BackColor = Color.Transparent;
+            btnFindNcc.BackgroundColor = Color.Transparent;
+            btnFindNcc.BorderColor = Color.PaleVioletRed;
+            btnFindNcc.BorderRadius = 15;
+            btnFindNcc.BorderSize = 0;
+            btnFindNcc.Cursor = Cursors.Hand;
+            btnFindNcc.EnabledTextHover = false;
+            btnFindNcc.FlatAppearance.BorderSize = 0;
+            btnFindNcc.FlatAppearance.MouseOverBackColor = Color.FromArgb(50, 64, 64, 64);
+            btnFindNcc.FlatStyle = FlatStyle.Flat;
+            btnFindNcc.ForeColor = Color.White;
+            btnFindNcc.Image = Properties.Resources.findIcon16px;
+            btnFindNcc.ImageHover = null;
+            btnFindNcc.Location = new Point(331, 20);
+            btnFindNcc.Margin = new Padding(4, 5, 4, 5);
+            btnFindNcc.Name = "btnFindNcc";
+            btnFindNcc.Size = new Size(40, 40);
+            btnFindNcc.TabIndex = 29;
+            btnFindNcc.TextColor = Color.White;
+            btnFindNcc.TextHover = Color.White;
+            btnFindNcc.UseVisualStyleBackColor = false;
+            btnFindNcc.Click += btnFindNcc_Click;
             // 
             // resetBtn
             // 
@@ -447,24 +474,24 @@
             dgvNcc.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvNcc.BorderStyle = BorderStyle.None;
             dgvNcc.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = Color.DarkCyan;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dgvNcc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.DarkCyan;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvNcc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvNcc.ColumnHeadersHeight = 30;
             dgvNcc.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = SystemColors.Window;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            dgvNcc.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvNcc.DefaultCellStyle = dataGridViewCellStyle2;
             dgvNcc.Dock = DockStyle.Bottom;
             dgvNcc.EnableHeadersVisualStyles = false;
             dgvNcc.GridColor = Color.DarkCyan;
@@ -475,8 +502,8 @@
             dgvNcc.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dgvNcc.RowHeadersVisible = false;
             dgvNcc.RowHeadersWidth = 51;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvNcc.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvNcc.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dgvNcc.RowTemplate.Height = 25;
             dgvNcc.RowTemplate.ReadOnly = true;
             dgvNcc.Size = new Size(1499, 498);
@@ -912,31 +939,6 @@
             label1.Text = "ID";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // btnFindNcc
-            // 
-            btnFindNcc.BackColor = Color.Transparent;
-            btnFindNcc.BackgroundColor = Color.Transparent;
-            btnFindNcc.BorderColor = Color.PaleVioletRed;
-            btnFindNcc.BorderRadius = 15;
-            btnFindNcc.BorderSize = 0;
-            btnFindNcc.Cursor = Cursors.Hand;
-            btnFindNcc.EnabledTextHover = false;
-            btnFindNcc.FlatAppearance.BorderSize = 0;
-            btnFindNcc.FlatAppearance.MouseOverBackColor = Color.FromArgb(50, 64, 64, 64);
-            btnFindNcc.FlatStyle = FlatStyle.Flat;
-            btnFindNcc.ForeColor = Color.White;
-            btnFindNcc.Image = Properties.Resources.findIcon16px;
-            btnFindNcc.ImageHover = null;
-            btnFindNcc.Location = new Point(331, 20);
-            btnFindNcc.Margin = new Padding(4, 5, 4, 5);
-            btnFindNcc.Name = "btnFindNcc";
-            btnFindNcc.Size = new Size(40, 40);
-            btnFindNcc.TabIndex = 29;
-            btnFindNcc.TextColor = Color.White;
-            btnFindNcc.TextHover = Color.White;
-            btnFindNcc.UseVisualStyleBackColor = false;
-            btnFindNcc.Click += btnFindNcc_Click;
-            // 
             // NccView
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -1017,5 +1019,6 @@
         private GroupBox gbSort;
         private CustomControl.CustomButton resetBtn;
         private CustomControl.CustomButton btnFindNcc;
+        private CustomControl.CustomButton btnReport;
     }
 }

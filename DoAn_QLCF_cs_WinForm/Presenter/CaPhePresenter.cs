@@ -1,6 +1,7 @@
 ﻿using DoAn_QLCF_cs_WinForm.Model;
 using DoAn_QLCF_cs_WinForm.Repository;
 using DoAn_QLCF_cs_WinForm.Repository.RepositoryInterface;
+using DoAn_QLCF_cs_WinForm.View;
 using DoAn_QLCF_cs_WinForm.View.ViewInterface;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
 {
 	public class CaPhePresenter
 	{
+		private static CaPhePresenter instance;
 		private ICaPheView view;
 		private ICaPheRepository repository;
 		private BindingSource cpBindingSource;
@@ -35,6 +37,16 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
 			BindingEvents();
 			LoadCaPheList();
 			LoadNguyenLieuCbx();
+		}
+
+		public static CaPhePresenter GetInstance(ICaPheView view, ICaPheRepository repository)
+		{
+			if (instance == null)
+			{
+				instance = new CaPhePresenter(view,repository);
+			}
+
+			return instance;
 		}
 
 		private void LoadCaPheList ()

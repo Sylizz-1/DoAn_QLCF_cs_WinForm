@@ -183,6 +183,16 @@ namespace DoAn_QLCF_cs_WinForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CaPheEspresso {
+            get {
+                object obj = ResourceManager.GetObject("CaPheEspresso", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap changepassicon {
             get {
                 object obj = ResourceManager.GetObject("changepassicon", resourceCulture);
@@ -733,6 +743,16 @@ namespace DoAn_QLCF_cs_WinForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap invoice_khachhang {
+            get {
+                object obj = ResourceManager.GetObject("invoice-khachhang", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap invoiceFlat {
             get {
                 object obj = ResourceManager.GetObject("invoiceFlat", resourceCulture);
@@ -923,6 +943,16 @@ namespace DoAn_QLCF_cs_WinForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap shopping_cart {
+            get {
+                object obj = ResourceManager.GetObject("shopping-cart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap signOutMiniIcon {
             get {
                 object obj = ResourceManager.GetObject("signOutMiniIcon", resourceCulture);
@@ -986,6 +1016,16 @@ namespace DoAn_QLCF_cs_WinForm.Properties {
         internal static System.Drawing.Bitmap TaskIcon {
             get {
                 object obj = ResourceManager.GetObject("TaskIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testcoffeePng {
+            get {
+                object obj = ResourceManager.GetObject("testcoffeePng", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
