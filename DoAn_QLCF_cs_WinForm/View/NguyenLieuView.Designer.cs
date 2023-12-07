@@ -818,7 +818,7 @@
             txtNglPrice.PlaceholderColor = Color.DarkGray;
             txtNglPrice.PlaceholderText = "Nhập giá tiền";
             txtNglPrice.Size = new Size(349, 63);
-            txtNglPrice.TabIndex = 34;
+            txtNglPrice.TabIndex = 3;
             txtNglPrice.Texts = "";
             txtNglPrice.UnderlinedStyle = false;
             txtNglPrice._TextChanged += txtNglPrice__TextChanged;
@@ -852,7 +852,7 @@
             txtNglInfo.PlaceholderColor = Color.DarkGray;
             txtNglInfo.PlaceholderText = "Nhập thông tin";
             txtNglInfo.Size = new Size(349, 63);
-            txtNglInfo.TabIndex = 32;
+            txtNglInfo.TabIndex = 4;
             txtNglInfo.Texts = "";
             txtNglInfo.UnderlinedStyle = false;
             txtNglInfo._TextChanged += txtNglInfo__TextChanged;
@@ -909,7 +909,7 @@
             txtNglWeigh.PlaceholderColor = Color.DarkGray;
             txtNglWeigh.PlaceholderText = "Nhập khối lượng";
             txtNglWeigh.Size = new Size(349, 63);
-            txtNglWeigh.TabIndex = 29;
+            txtNglWeigh.TabIndex = 2;
             txtNglWeigh.Texts = "";
             txtNglWeigh.UnderlinedStyle = false;
             txtNglWeigh._TextChanged += txtNglWeigh__TextChanged;
@@ -932,7 +932,7 @@
             txtNglName.PlaceholderColor = Color.DarkGray;
             txtNglName.PlaceholderText = "Nhập tên nguyên liệu";
             txtNglName.Size = new Size(349, 63);
-            txtNglName.TabIndex = 28;
+            txtNglName.TabIndex = 0;
             txtNglName.Texts = "";
             txtNglName.UnderlinedStyle = false;
             txtNglName._TextChanged += txtNglName__TextChanged;
