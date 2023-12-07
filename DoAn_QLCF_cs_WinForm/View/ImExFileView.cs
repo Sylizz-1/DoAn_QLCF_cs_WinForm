@@ -46,20 +46,26 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         private void customButton4_Click(object sender, EventArgs e)
         {
-
+            FileGiamGia formGG = new FileGiamGia();
+            formGG.Show();
 
         }
 
         private void customButton2_Click(object sender, EventArgs e)
         {
-            FormGridViewKhachHang form = new FormGridViewKhachHang();
+            FileKhachHang form = new FileKhachHang();
             form.Show();
         }
 
         private void customButton3_Click(object sender, EventArgs e)
         {
-            FormGridViewNhanVien form = new FormGridViewNhanVien();
-            form.Show();
+
+        }
+
+        private void customButton1_Click(object sender, EventArgs e)
+        {
+            FileNL formNL = new FileNL();
+            formNL.Show();
         }
     }
 }
