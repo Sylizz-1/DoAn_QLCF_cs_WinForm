@@ -1,9 +1,11 @@
 ﻿using DoAn_QLCF_cs_WinForm.Model;
+using DoAn_QLCF_cs_WinForm.Repository;
 using DoAn_QLCF_cs_WinForm.View.ViewInterface;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -16,6 +18,7 @@ namespace DoAn_QLCF_cs_WinForm.View
     public partial class PhanQuyenView : Form, IPhanQuyenView
     {
         private static PhanQuyenView instance;
+
         public PhanQuyenView()
         {
             InitializeComponent();
@@ -85,6 +88,18 @@ namespace DoAn_QLCF_cs_WinForm.View
                 this.dtgrv_nhanVien = value;
             }
         }
+        public DataGridView PermissionDetailDataGridView
+        {
+            get
+            {
+                return this.dtgv_permissionDetail;
+            }
+            set
+            {
+
+                this.dtgv_permissionDetail = value;
+            }
+        }
 
         public string IdEmployee
         {
@@ -111,7 +126,6 @@ namespace DoAn_QLCF_cs_WinForm.View
                 this.txt_tenNhanVien.Texts = value;
             }
         }
-
         public int ComboboxIdPermission
         {
             get
@@ -123,6 +137,47 @@ namespace DoAn_QLCF_cs_WinForm.View
                 this.cbb_idPermission.SelectedValue = value;
             }
         }
+
+        public string IdPermissionDetail
+        {
+            get
+            {
+                return this.txt_idPermissionDetail.Tag.ToString();
+            }
+            set
+            {
+                this.txt_idPermissionDetail.Focus();
+                this.txt_idPermissionDetail.Texts = value;
+                this.txt_idPermissionDetail.Tag = value;
+            }
+        }
+        public string NamePermissionDetail
+        {
+            get
+            {
+                return this.txt_namePermissionDetail.Tag.ToString();
+            }
+            set
+            {
+                this.txt_namePermissionDetail.Focus();
+                this.txt_namePermissionDetail.Texts = value;
+                this.txt_namePermissionDetail.Tag = value;
+            }
+        }
+        public string ContentPermissionDetail
+        {
+            get
+            {
+                return this.txt_contentPermissionDetail.Tag.ToString();
+            }
+            set
+            {
+                this.txt_contentPermissionDetail.Focus();
+                this.txt_contentPermissionDetail.Texts = value;
+                this.txt_contentPermissionDetail.Tag = value;
+            }
+        }
+
 
         private void SetUpView()
         {
@@ -140,11 +195,16 @@ namespace DoAn_QLCF_cs_WinForm.View
             btn_editPermission.Click += delegate { EditPermissionBtnEvent?.Invoke(this, EventArgs.Empty); };
             btn_deletePermission.Click += delegate { DeletePermissionBtnEvent?.Invoke(this, EventArgs.Empty); };
             btn_acceptPermission.Click += delegate { AcceptPermissionBtnEvent?.Invoke(this, EventArgs.Empty); };
+            btn_detailPermission.Click += delegate { DetailPermissionBtnEvent?.Invoke(this, EventArgs.Empty); };
 
             btn_editPermissionEmployee.Click += delegate { EditPermissionEmployeeBtnEvent?.Invoke(this, EventArgs.Empty); };
             btn_deletePermissionEmployee.Click += delegate { DeletePermissionEmployeeBtnEvent?.Invoke(this, EventArgs.Empty); };
             btn_acceptPermissionEmployee.Click += delegate { AcceptPermissionEmployeeBtnEvent?.Invoke(this, EventArgs.Empty); };
 
+        }
+        public void LoadChucNangListDetail(BindingSource listMethod)
+        {
+            this.dtgv_permissionDetail.DataSource = listMethod;
         }
         public void LoadNhanVienList(BindingSource listEmployee)
         {
@@ -205,9 +265,19 @@ namespace DoAn_QLCF_cs_WinForm.View
             MessageBox.Show(message);
         }
 
+        public void GoToListTabPage()
+        {
+            this.tc_quyen.SelectedTab = this.tp_quyenDanhSach;
+        }
+
         public DialogResult ShowYesNoMessage(string message)
         {
             return MessageBox.Show(message, "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        }
+
+        public void GoToDetailPermissionTab()
+        {
+            this.tc_quyen.SelectedTab = this.tp_quyenChiTiet;
         }
 
         public event EventHandler AddPermissionBtnEvent;
@@ -241,7 +311,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         private void btn_editPermission_Click(object sender, EventArgs e)
         {
-            this.tc_quyen.SelectedTab = this.tp_quyenChiTiet;
+            
         }
 
         private void btn_backPermission_Click(object sender, EventArgs e)
@@ -260,19 +330,22 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         private void btn_acceptPermission_Click(object sender, EventArgs e)
         {
-            this.tc_quyen.SelectedTab = this.tp_quyenDanhSach;
+
         }
 
         private void btn_detailPermission_Click(object sender, EventArgs e)
         {
-            ShowMessage("Comming soon!");
+            this.tc_quyen.SelectedTab = this.tp_xemChiTiet;
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)
         {
             this.tc_quyen.SelectedTab = this.tp_quyenDanhSach;
         }
-
+        private void btn_back2_Click(object sender, EventArgs e)
+        {
+            this.tc_quyen.SelectedTab = this.tp_quyenDanhSach;
+        }
         private void btn_backPermissionEmployee_Click(object sender, EventArgs e)
         {
             this.tc_nhanVien.SelectedTab = this.tp_nhanVienDanhSach;
@@ -293,5 +366,47 @@ namespace DoAn_QLCF_cs_WinForm.View
             this.tc_nhanVien.SelectedTab = this.tp_nhanVienDanhSach;
         }
 
+        private void txt_searchPermission__TextChanged(object sender, EventArgs e)
+        {
+            string valueSearch = this.txt_searchPermission.Texts;
+            IEnumerable<QuyenModel> listQuyen;
+            PhanQuyenRepository repo = new PhanQuyenRepository(ConfigurationManager.ConnectionStrings["sqlConnection"].ConnectionString);
+            if (string.IsNullOrEmpty(valueSearch) || string.IsNullOrWhiteSpace(valueSearch))
+            {
+
+                listQuyen = repo.GetAllPermission();
+            }
+            else
+            {
+                listQuyen = repo.GetPermissionByValue(valueSearch);
+            }
+            this.dtgrv_quyen.DataSource = listQuyen;
+        }
+
+        private void txt_searchPermissionEmployee__TextChanged(object sender, EventArgs e)
+        {
+            string valueSearch = this.txt_searchPermissionEmployee.Texts;
+            IEnumerable<QuyenNhanVienModel> list;
+            PhanQuyenRepository repo = new PhanQuyenRepository(ConfigurationManager.ConnectionStrings["sqlConnection"].ConnectionString);
+            if (string.IsNullOrEmpty(valueSearch) || string.IsNullOrWhiteSpace(valueSearch))
+            {
+                list = repo.GetEmployeePermission();
+            }
+            else
+            {
+                list = repo.GetEmployeePermissionByValue(valueSearch);
+            }
+            this.dtgrv_nhanVien.DataSource = list;
+        }
+
+        private void cbb_idPermission_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cbb_namePermission_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }

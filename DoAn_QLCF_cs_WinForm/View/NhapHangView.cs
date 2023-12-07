@@ -99,13 +99,13 @@ namespace DoAn_QLCF_cs_WinForm.View
         }
         public string NhanVienId
         {
-            get => (this.cbNhanVienId.SelectedIndex + 1).ToString();
-            set => this.cbNhanVienId.SelectedIndex = int.Parse(value) - 1;
+            get => this.cbNhanVienId.SelectedItem.ToString();
+            set => this.cbNhanVienId.SelectedItem = int.Parse(value);
         }
         public string NhaCungCapId
         {
-            get => (this.cbNccId.SelectedIndex + 1).ToString();
-            set => this.cbNccId.SelectedIndex = int.Parse(value) - 1;
+            get => this.cbNccId.SelectedItem.ToString();
+            set => this.cbNccId.SelectedItem = int.Parse(value);
         }
         public string NgayNhap
         {
@@ -126,8 +126,8 @@ namespace DoAn_QLCF_cs_WinForm.View
         }
         public string NguyenLieuId
         {
-            get => (this.cbNglId.SelectedIndex + 1).ToString();
-            set => this.cbNglId.SelectedIndex = int.Parse(value) - 1;
+            get => this.cbNglId.SelectedItem.ToString();
+            set => this.cbNglId.SelectedItem = value;
         }
         public string KhoiLuong
         {
@@ -297,38 +297,96 @@ namespace DoAn_QLCF_cs_WinForm.View
             }
 
         }
-        public void LoadDataNV(BindingSource list)
+        public void LoadDataNV(BindingSource list, int index)
         {
             List<string> name = new List<string>();
             List<string> id = new List<string>();
             foreach (NhanVienModel nv in list)
             {
-                name.Add(nv.Name);
-                id.Add(nv.Id.ToString());
+                if(index == -1)
+                {
+                    if (!nv.isDelete)
+                    {
+                        name.Add(nv.Name);
+                        id.Add(nv.Id.ToString());
+                    }
+                }
+                else if (index == 0)
+                {
+                    name.Add(nv.Name);
+                    id.Add(nv.Id.ToString());
+                }
+                else
+                {
+                    if (!nv.isDelete || nv.Id == index)
+                    {
+                        name.Add(nv.Name);
+                        id.Add(nv.Id.ToString());
+                    }
+                }
             }
             cbNhanVienId.DataSource = id;
             cbNhanVienName.DataSource = name;
         }
-        public void LoadDataNCC(BindingSource list)
+        public void LoadDataNCC(BindingSource list, int index)
         {
             List<string> name = new List<string>();
             List<string> id = new List<string>();
             foreach (NccModel ncc in list)
             {
-                name.Add(ncc.TenNhaCungCap);
-                id.Add(ncc.NhaCungCapId.ToString());
+                if (index == -1)
+                {
+                    if (!ncc.IsDelete)
+                    {
+                        name.Add(ncc.TenNhaCungCap);
+                        id.Add(ncc.NhaCungCapId.ToString());
+                    }
+                }
+                else if (index == 0)
+                {
+                    name.Add(ncc.TenNhaCungCap);
+                    id.Add(ncc.NhaCungCapId.ToString());
+                }
+                else
+                {
+                    if (!ncc.IsDelete || ncc.NhaCungCapId == index)
+                    {
+                        name.Add(ncc.TenNhaCungCap);
+                        id.Add(ncc.NhaCungCapId.ToString());
+                    }
+                }
             }
             cbNccId.DataSource = id;
             cbNccName.DataSource = name;
         }
-        public void LoadDataNgl(BindingSource list)
+        public void LoadDataNgl(BindingSource list, int index)
         {
+
             List<string> name = new List<string>();
             List<string> id = new List<string>();
             foreach (NguyenLieuModel ngl in list)
             {
-                id.Add(ngl.NguyenLieuId.ToString());
-                name.Add(ngl.TenNguyenLieu);
+                if (index == -1)
+                {
+                    if (!ngl.IsDelete)
+                    {
+                        id.Add(ngl.NguyenLieuId.ToString());
+                        name.Add(ngl.TenNguyenLieu);
+                    }
+                }
+                else if (index == 0)
+                {
+                    id.Add(ngl.NguyenLieuId.ToString());
+                    name.Add(ngl.TenNguyenLieu);
+                }
+                else
+                {
+                    if (!ngl.IsDelete || ngl.NguyenLieuId == index)
+                    {
+                        id.Add(ngl.NguyenLieuId.ToString());
+                        name.Add(ngl.TenNguyenLieu);
+                    }
+                }
             }
             cbNglId.DataSource = id;
             cbNglName.DataSource = name;
@@ -387,6 +445,11 @@ namespace DoAn_QLCF_cs_WinForm.View
             {
                 s += "nhà cung cấp hàng";
                 MessageBox.Show(s, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (dtpPN.Value > DateTime.Now)
+            {
+                MessageBox.Show("Ngày nhập không được lớn hơn ngày hiện tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             if (CtpnList.Count == 0)
@@ -582,13 +645,15 @@ namespace DoAn_QLCF_cs_WinForm.View
             txtPhieuNhapId.Visible = true;
             lbCTPNId.Visible = true;
             txtCTPNId.Visible = true;
+
             this.txtPhieuNhapId.Enabled = true;
             this.txtPhieuNhapId.Focus();
             this.txtPhieuNhapId.Texts = pn.PhieuNhapId.ToString();
             this.txtPhieuNhapId.Enabled = false;
+
             NgayNhap = pn.NgayNhap.ToString();
             NhaCungCapId = pn.NhaCungCapId.ToString();
-            NhanVienId = pn.NhanVienId.ToString();
+            cbNhanVienId.SelectedItem = pn.NhanVienId.ToString();
             gbCTPN.Visible = true;
             CtpnList = list;
 
@@ -657,6 +722,7 @@ namespace DoAn_QLCF_cs_WinForm.View
         }
         private void btn_addCTPN_Click(object sender, EventArgs e)
         {
+            btnAddNgl.Visible = true;
             txtCTPNId.BackColor = Color.LightGray;
             txtCTPNId.BorderColor = Color.Silver;
             tcNhapHang.SelectedTab = moreDetailTabPage;
@@ -665,18 +731,19 @@ namespace DoAn_QLCF_cs_WinForm.View
         {
             if (CtpnList.Count > 0)
             {
+                btnAddNgl.Visible = true;
                 tcNhapHang.SelectedTab = moreDetailTabPage;
                 foreach (ChiTietPhieuNhapModel ctpn in CtpnList)
                     if (ctpn.NguyenLieuId.ToString() == idngl)
                     {
-                        cbNglId.SelectedIndex = ctpn.NguyenLieuId - 1;
-                        cbNglName.SelectedIndex = ctpn.NguyenLieuId - 1;
+                        cbNglId.SelectedItem = idngl;
                         cbNglId.Enabled = false;
                         cbNglName.Enabled = false;
                         this.txtCTPNId.Enabled = true;
                         this.txtCTPNId.Focus();
                         this.txtCTPNId.Texts = ctpn.PhieuNhapId.ToString();
                         this.txtCTPNId.Enabled = false;
+
                         this.txtCTPNDonGia.Focus();
                         this.txtCTPNDonGia.Texts = ctpn.DonGia.ToString();
                         this.txtCTPNKhoiLuong.Focus();
@@ -762,16 +829,26 @@ namespace DoAn_QLCF_cs_WinForm.View
             cbNglName.SelectedIndex = index;
             cbNglId.BackColor = Color.White;
             cbNglName.BackColor = Color.White;
-            foreach (ChiTietPhieuNhapModel ct in CtpnList)
+            bool check = false;
+            if(index > -1)
             {
-                if (ct.NguyenLieuId == index + 1)
+                foreach (ChiTietPhieuNhapModel ct in CtpnList)
                 {
-                    txtCTPNDonGia.Focus();
-                    DonGia = ct.DonGia.ToString();
-                    txtCTPNKhoiLuong.Focus();
-                    KhoiLuong = ct.KhoiLuong.ToString();
-                    break;
+                    if (ct.NguyenLieuId == int.Parse(cbNglId.SelectedValue.ToString()))
+                    {
+                        this.txtCTPNDonGia.Focus();
+                        this.txtCTPNDonGia.Texts = ct.DonGia.ToString();
+                        this.txtCTPNKhoiLuong.Focus();
+                        this.txtCTPNKhoiLuong.Texts = ct.KhoiLuong.ToString();
+                        check = true;
+                        break;
+                    }
                 }
+            }    
+            if(!check)
+            {
+                DonGia = "";
+                KhoiLuong = "";
             }
         }
 
@@ -781,17 +858,6 @@ namespace DoAn_QLCF_cs_WinForm.View
             cbNglId.SelectedIndex = index;
             cbNglName.BackColor = Color.White;
             cbNglId.BackColor = Color.White;
-            foreach (ChiTietPhieuNhapModel ct in CtpnList)
-            {
-                if (ct.NguyenLieuId == index + 1)
-                {
-                    txtCTPNDonGia.Focus();
-                    DonGia = ct.DonGia.ToString();
-                    txtCTPNKhoiLuong.Focus();
-                    KhoiLuong = ct.KhoiLuong.ToString();
-                    break;
-                }
-            }
         }
         private void txtCTPNKhoiLuong__TextChanged(object sender, EventArgs e)
         {
@@ -839,7 +905,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         private void btnFilterCTPN_Click(object sender, EventArgs e)
         {
-            SetNull();
+            btnAddNgl.Visible = false;
             tcNhapHang.SelectedTab = moreDetailTabPage;
 
             List<ChiTietPhieuNhapModel> ctpnList = new List<ChiTietPhieuNhapModel>();

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             tcNgl = new TabControl();
             listTabPage = new TabPage();
             btnFindNgl = new CustomControl.CustomButton();
@@ -100,10 +100,9 @@
             tcNgl.Controls.Add(detailTabPage);
             tcNgl.Dock = DockStyle.Fill;
             tcNgl.Location = new Point(0, 0);
-            tcNgl.Margin = new Padding(4);
             tcNgl.Name = "tcNgl";
             tcNgl.SelectedIndex = 0;
-            tcNgl.Size = new Size(1538, 925);
+            tcNgl.Size = new Size(1230, 740);
             tcNgl.TabIndex = 0;
             // 
             // listTabPage
@@ -118,11 +117,10 @@
             listTabPage.Controls.Add(editBtn);
             listTabPage.Controls.Add(addBtn);
             listTabPage.Controls.Add(searchNglTxt);
-            listTabPage.Location = new Point(4, 34);
-            listTabPage.Margin = new Padding(4);
+            listTabPage.Location = new Point(4, 29);
             listTabPage.Name = "listTabPage";
-            listTabPage.Padding = new Padding(4);
-            listTabPage.Size = new Size(1530, 887);
+            listTabPage.Padding = new Padding(3);
+            listTabPage.Size = new Size(1222, 707);
             listTabPage.TabIndex = 0;
             listTabPage.Text = "Danh Sach";
             listTabPage.UseVisualStyleBackColor = true;
@@ -142,10 +140,10 @@
             btnFindNgl.ForeColor = Color.White;
             btnFindNgl.Image = Properties.Resources.findIcon16px;
             btnFindNgl.ImageHover = null;
-            btnFindNgl.Location = new Point(332, 16);
-            btnFindNgl.Margin = new Padding(4, 5, 4, 5);
+            btnFindNgl.Location = new Point(266, 13);
+            btnFindNgl.Margin = new Padding(3, 4, 3, 4);
             btnFindNgl.Name = "btnFindNgl";
-            btnFindNgl.Size = new Size(40, 40);
+            btnFindNgl.Size = new Size(32, 32);
             btnFindNgl.TabIndex = 31;
             btnFindNgl.TextColor = Color.White;
             btnFindNgl.TextHover = Color.White;
@@ -160,9 +158,11 @@
             gbSort.Controls.Add(groupBox4);
             gbSort.Controls.Add(groupBox2);
             gbSort.Controls.Add(groupBox3);
-            gbSort.Location = new Point(34, 120);
+            gbSort.Location = new Point(27, 96);
+            gbSort.Margin = new Padding(2);
             gbSort.Name = "gbSort";
-            gbSort.Size = new Size(1148, 150);
+            gbSort.Padding = new Padding(2);
+            gbSort.Size = new Size(918, 120);
             gbSort.TabIndex = 30;
             gbSort.TabStop = false;
             gbSort.Visible = false;
@@ -171,9 +171,11 @@
             // 
             groupBox5.Controls.Add(rbInfoDec);
             groupBox5.Controls.Add(rbInfoInc);
-            groupBox5.Location = new Point(403, 24);
+            groupBox5.Location = new Point(322, 19);
+            groupBox5.Margin = new Padding(2);
             groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(140, 108);
+            groupBox5.Padding = new Padding(2);
+            groupBox5.Size = new Size(112, 86);
             groupBox5.TabIndex = 24;
             groupBox5.TabStop = false;
             groupBox5.Text = "Thông tin";
@@ -181,9 +183,10 @@
             // rbInfoDec
             // 
             rbInfoDec.AutoSize = true;
-            rbInfoDec.Location = new Point(17, 65);
+            rbInfoDec.Location = new Point(14, 52);
+            rbInfoDec.Margin = new Padding(2);
             rbInfoDec.Name = "rbInfoDec";
-            rbInfoDec.Size = new Size(78, 29);
+            rbInfoDec.Size = new Size(65, 24);
             rbInfoDec.TabIndex = 1;
             rbInfoDec.TabStop = true;
             rbInfoDec.Tag = "InfoDec";
@@ -193,9 +196,10 @@
             // rbInfoInc
             // 
             rbInfoInc.AutoSize = true;
-            rbInfoInc.Location = new Point(17, 30);
+            rbInfoInc.Location = new Point(14, 24);
+            rbInfoInc.Margin = new Padding(2);
             rbInfoInc.Name = "rbInfoInc";
-            rbInfoInc.Size = new Size(74, 29);
+            rbInfoInc.Size = new Size(62, 24);
             rbInfoInc.TabIndex = 0;
             rbInfoInc.TabStop = true;
             rbInfoInc.Tag = "InfoInc";
@@ -206,9 +210,11 @@
             // 
             groupBox6.Controls.Add(rbIsDeleteDec);
             groupBox6.Controls.Add(rbIsDeleteInc);
-            groupBox6.Location = new Point(991, 24);
+            groupBox6.Location = new Point(793, 19);
+            groupBox6.Margin = new Padding(2);
             groupBox6.Name = "groupBox6";
-            groupBox6.Size = new Size(140, 108);
+            groupBox6.Padding = new Padding(2);
+            groupBox6.Size = new Size(112, 86);
             groupBox6.TabIndex = 26;
             groupBox6.TabStop = false;
             groupBox6.Text = "IsDelete";
@@ -216,9 +222,10 @@
             // rbIsDeleteDec
             // 
             rbIsDeleteDec.AutoSize = true;
-            rbIsDeleteDec.Location = new Point(17, 65);
+            rbIsDeleteDec.Location = new Point(14, 52);
+            rbIsDeleteDec.Margin = new Padding(2);
             rbIsDeleteDec.Name = "rbIsDeleteDec";
-            rbIsDeleteDec.Size = new Size(78, 29);
+            rbIsDeleteDec.Size = new Size(65, 24);
             rbIsDeleteDec.TabIndex = 1;
             rbIsDeleteDec.TabStop = true;
             rbIsDeleteDec.Tag = "IsDeleteDec";
@@ -228,9 +235,10 @@
             // rbIsDeleteInc
             // 
             rbIsDeleteInc.AutoSize = true;
-            rbIsDeleteInc.Location = new Point(17, 30);
+            rbIsDeleteInc.Location = new Point(14, 24);
+            rbIsDeleteInc.Margin = new Padding(2);
             rbIsDeleteInc.Name = "rbIsDeleteInc";
-            rbIsDeleteInc.Size = new Size(74, 29);
+            rbIsDeleteInc.Size = new Size(62, 24);
             rbIsDeleteInc.TabIndex = 0;
             rbIsDeleteInc.TabStop = true;
             rbIsDeleteInc.Tag = "IsDeleteInc";
@@ -241,9 +249,11 @@
             // 
             groupBox1.Controls.Add(rbIDDec);
             groupBox1.Controls.Add(rbIIDnc);
-            groupBox1.Location = new Point(11, 24);
+            groupBox1.Location = new Point(9, 19);
+            groupBox1.Margin = new Padding(2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(140, 108);
+            groupBox1.Padding = new Padding(2);
+            groupBox1.Size = new Size(112, 86);
             groupBox1.TabIndex = 23;
             groupBox1.TabStop = false;
             groupBox1.Text = "ID";
@@ -251,9 +261,10 @@
             // rbIDDec
             // 
             rbIDDec.AutoSize = true;
-            rbIDDec.Location = new Point(17, 65);
+            rbIDDec.Location = new Point(14, 52);
+            rbIDDec.Margin = new Padding(2);
             rbIDDec.Name = "rbIDDec";
-            rbIDDec.Size = new Size(78, 29);
+            rbIDDec.Size = new Size(65, 24);
             rbIDDec.TabIndex = 1;
             rbIDDec.TabStop = true;
             rbIDDec.Tag = "IDDec";
@@ -263,9 +274,10 @@
             // rbIIDnc
             // 
             rbIIDnc.AutoSize = true;
-            rbIIDnc.Location = new Point(17, 30);
+            rbIIDnc.Location = new Point(14, 24);
+            rbIIDnc.Margin = new Padding(2);
             rbIIDnc.Name = "rbIIDnc";
-            rbIIDnc.Size = new Size(74, 29);
+            rbIIDnc.Size = new Size(62, 24);
             rbIIDnc.TabIndex = 0;
             rbIIDnc.TabStop = true;
             rbIIDnc.Tag = "IDInc";
@@ -276,9 +288,11 @@
             // 
             groupBox4.Controls.Add(rbKlgDec);
             groupBox4.Controls.Add(rbKlgInc);
-            groupBox4.Location = new Point(599, 24);
+            groupBox4.Location = new Point(479, 19);
+            groupBox4.Margin = new Padding(2);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(140, 108);
+            groupBox4.Padding = new Padding(2);
+            groupBox4.Size = new Size(112, 86);
             groupBox4.TabIndex = 24;
             groupBox4.TabStop = false;
             groupBox4.Text = "Khối lượng";
@@ -286,9 +300,10 @@
             // rbKlgDec
             // 
             rbKlgDec.AutoSize = true;
-            rbKlgDec.Location = new Point(17, 65);
+            rbKlgDec.Location = new Point(14, 52);
+            rbKlgDec.Margin = new Padding(2);
             rbKlgDec.Name = "rbKlgDec";
-            rbKlgDec.Size = new Size(78, 29);
+            rbKlgDec.Size = new Size(65, 24);
             rbKlgDec.TabIndex = 1;
             rbKlgDec.TabStop = true;
             rbKlgDec.Tag = "KlgDec";
@@ -298,9 +313,10 @@
             // rbKlgInc
             // 
             rbKlgInc.AutoSize = true;
-            rbKlgInc.Location = new Point(17, 30);
+            rbKlgInc.Location = new Point(14, 24);
+            rbKlgInc.Margin = new Padding(2);
             rbKlgInc.Name = "rbKlgInc";
-            rbKlgInc.Size = new Size(74, 29);
+            rbKlgInc.Size = new Size(62, 24);
             rbKlgInc.TabIndex = 0;
             rbKlgInc.TabStop = true;
             rbKlgInc.Tag = "KlgInc";
@@ -311,9 +327,11 @@
             // 
             groupBox2.Controls.Add(rbNameDec);
             groupBox2.Controls.Add(rbNameInc);
-            groupBox2.Location = new Point(207, 24);
+            groupBox2.Location = new Point(166, 19);
+            groupBox2.Margin = new Padding(2);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(140, 108);
+            groupBox2.Padding = new Padding(2);
+            groupBox2.Size = new Size(112, 86);
             groupBox2.TabIndex = 24;
             groupBox2.TabStop = false;
             groupBox2.Text = "Tên";
@@ -321,9 +339,10 @@
             // rbNameDec
             // 
             rbNameDec.AutoSize = true;
-            rbNameDec.Location = new Point(17, 65);
+            rbNameDec.Location = new Point(14, 52);
+            rbNameDec.Margin = new Padding(2);
             rbNameDec.Name = "rbNameDec";
-            rbNameDec.Size = new Size(78, 29);
+            rbNameDec.Size = new Size(65, 24);
             rbNameDec.TabIndex = 1;
             rbNameDec.TabStop = true;
             rbNameDec.Tag = "NameDec";
@@ -333,9 +352,10 @@
             // rbNameInc
             // 
             rbNameInc.AutoSize = true;
-            rbNameInc.Location = new Point(17, 30);
+            rbNameInc.Location = new Point(14, 24);
+            rbNameInc.Margin = new Padding(2);
             rbNameInc.Name = "rbNameInc";
-            rbNameInc.Size = new Size(74, 29);
+            rbNameInc.Size = new Size(62, 24);
             rbNameInc.TabIndex = 0;
             rbNameInc.TabStop = true;
             rbNameInc.Tag = "NameInc";
@@ -346,9 +366,11 @@
             // 
             groupBox3.Controls.Add(rbPriceDec);
             groupBox3.Controls.Add(rbPriceInc);
-            groupBox3.Location = new Point(795, 24);
+            groupBox3.Location = new Point(636, 19);
+            groupBox3.Margin = new Padding(2);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(140, 108);
+            groupBox3.Padding = new Padding(2);
+            groupBox3.Size = new Size(112, 86);
             groupBox3.TabIndex = 25;
             groupBox3.TabStop = false;
             groupBox3.Text = "Giá tiền";
@@ -356,9 +378,10 @@
             // rbPriceDec
             // 
             rbPriceDec.AutoSize = true;
-            rbPriceDec.Location = new Point(17, 65);
+            rbPriceDec.Location = new Point(14, 52);
+            rbPriceDec.Margin = new Padding(2);
             rbPriceDec.Name = "rbPriceDec";
-            rbPriceDec.Size = new Size(78, 29);
+            rbPriceDec.Size = new Size(65, 24);
             rbPriceDec.TabIndex = 1;
             rbPriceDec.TabStop = true;
             rbPriceDec.Tag = "PriceDec";
@@ -368,9 +391,10 @@
             // rbPriceInc
             // 
             rbPriceInc.AutoSize = true;
-            rbPriceInc.Location = new Point(17, 30);
+            rbPriceInc.Location = new Point(14, 24);
+            rbPriceInc.Margin = new Padding(2);
             rbPriceInc.Name = "rbPriceInc";
-            rbPriceInc.Size = new Size(74, 29);
+            rbPriceInc.Size = new Size(62, 24);
             rbPriceInc.TabIndex = 0;
             rbPriceInc.TabStop = true;
             rbPriceInc.Tag = "PriceInc";
@@ -391,14 +415,14 @@
             resetBtn.FlatAppearance.MouseDownBackColor = Color.DarkGray;
             resetBtn.FlatAppearance.MouseOverBackColor = Color.DarkGray;
             resetBtn.FlatStyle = FlatStyle.Flat;
-            resetBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            resetBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             resetBtn.ForeColor = Color.DarkGray;
             resetBtn.ImageAlign = ContentAlignment.MiddleRight;
             resetBtn.ImageHover = null;
-            resetBtn.Location = new Point(1346, 141);
-            resetBtn.Margin = new Padding(4, 5, 4, 5);
+            resetBtn.Location = new Point(1077, 113);
+            resetBtn.Margin = new Padding(3, 4, 3, 4);
             resetBtn.Name = "resetBtn";
-            resetBtn.Size = new Size(172, 64);
+            resetBtn.Size = new Size(138, 51);
             resetBtn.TabIndex = 29;
             resetBtn.Text = "Reset";
             resetBtn.TextColor = Color.DarkGray;
@@ -421,14 +445,14 @@
             filterBtn.FlatAppearance.MouseDownBackColor = Color.Goldenrod;
             filterBtn.FlatAppearance.MouseOverBackColor = Color.Goldenrod;
             filterBtn.FlatStyle = FlatStyle.Flat;
-            filterBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            filterBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             filterBtn.ForeColor = Color.Goldenrod;
             filterBtn.ImageAlign = ContentAlignment.MiddleRight;
             filterBtn.ImageHover = null;
-            filterBtn.Location = new Point(580, 9);
-            filterBtn.Margin = new Padding(4, 5, 4, 5);
+            filterBtn.Location = new Point(464, 7);
+            filterBtn.Margin = new Padding(3, 4, 3, 4);
             filterBtn.Name = "filterBtn";
-            filterBtn.Size = new Size(172, 64);
+            filterBtn.Size = new Size(138, 51);
             filterBtn.TabIndex = 24;
             filterBtn.Text = "Lọc";
             filterBtn.TextColor = Color.Goldenrod;
@@ -451,14 +475,14 @@
             sortBtn.FlatAppearance.MouseDownBackColor = Color.DeepSkyBlue;
             sortBtn.FlatAppearance.MouseOverBackColor = Color.DeepSkyBlue;
             sortBtn.FlatStyle = FlatStyle.Flat;
-            sortBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            sortBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             sortBtn.ForeColor = Color.DeepSkyBlue;
             sortBtn.ImageAlign = ContentAlignment.MiddleRight;
             sortBtn.ImageHover = null;
-            sortBtn.Location = new Point(771, 9);
-            sortBtn.Margin = new Padding(4, 5, 4, 5);
+            sortBtn.Location = new Point(617, 7);
+            sortBtn.Margin = new Padding(3, 4, 3, 4);
             sortBtn.Name = "sortBtn";
-            sortBtn.Size = new Size(172, 64);
+            sortBtn.Size = new Size(138, 51);
             sortBtn.TabIndex = 23;
             sortBtn.Text = "Sắp xếp";
             sortBtn.TextColor = Color.DeepSkyBlue;
@@ -471,43 +495,43 @@
             // 
             dgvNgl.AllowUserToAddRows = false;
             dgvNgl.AllowUserToDeleteRows = false;
+            dgvNgl.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvNgl.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvNgl.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvNgl.BorderStyle = BorderStyle.None;
             dgvNgl.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.DarkCyan;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dgvNgl.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.DarkCyan;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvNgl.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvNgl.ColumnHeadersHeight = 30;
             dgvNgl.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = SystemColors.Window;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dgvNgl.DefaultCellStyle = dataGridViewCellStyle5;
-            dgvNgl.Dock = DockStyle.Bottom;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvNgl.DefaultCellStyle = dataGridViewCellStyle2;
             dgvNgl.EnableHeadersVisualStyles = false;
             dgvNgl.GridColor = Color.DarkCyan;
             dgvNgl.ImeMode = ImeMode.NoControl;
-            dgvNgl.Location = new Point(4, 346);
-            dgvNgl.Margin = new Padding(4, 5, 4, 5);
+            dgvNgl.Location = new Point(3, 274);
+            dgvNgl.Margin = new Padding(3, 4, 3, 4);
             dgvNgl.Name = "dgvNgl";
             dgvNgl.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dgvNgl.RowHeadersVisible = false;
             dgvNgl.RowHeadersWidth = 51;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvNgl.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvNgl.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dgvNgl.RowTemplate.Height = 25;
             dgvNgl.RowTemplate.ReadOnly = true;
-            dgvNgl.Size = new Size(1522, 537);
+            dgvNgl.Size = new Size(1216, 430);
             dgvNgl.TabIndex = 22;
             dgvNgl.CellClick += dgvNgl_CellClick;
             dgvNgl.CellFormatting += dgvNgl_CellFormatting;
@@ -526,15 +550,15 @@
             delBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(187, 10, 10);
             delBtn.FlatAppearance.MouseOverBackColor = Color.Red;
             delBtn.FlatStyle = FlatStyle.Flat;
-            delBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            delBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             delBtn.ForeColor = Color.Red;
             delBtn.Image = Properties.Resources.deleteIconRed16px;
             delBtn.ImageAlign = ContentAlignment.MiddleRight;
             delBtn.ImageHover = Properties.Resources.deleteIconWhite16px;
-            delBtn.Location = new Point(1344, 9);
-            delBtn.Margin = new Padding(4, 5, 4, 5);
+            delBtn.Location = new Point(1075, 7);
+            delBtn.Margin = new Padding(3, 4, 3, 4);
             delBtn.Name = "delBtn";
-            delBtn.Size = new Size(172, 64);
+            delBtn.Size = new Size(138, 51);
             delBtn.TabIndex = 14;
             delBtn.Text = "  Xóa";
             delBtn.TextColor = Color.Red;
@@ -556,15 +580,15 @@
             editBtn.FlatAppearance.MouseDownBackColor = Color.Teal;
             editBtn.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
             editBtn.FlatStyle = FlatStyle.Flat;
-            editBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            editBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             editBtn.ForeColor = Color.DarkCyan;
             editBtn.Image = Properties.Resources.editIconTeal16px;
             editBtn.ImageAlign = ContentAlignment.MiddleRight;
             editBtn.ImageHover = Properties.Resources.editIconWhite16px;
-            editBtn.Location = new Point(1153, 9);
-            editBtn.Margin = new Padding(4, 5, 4, 5);
+            editBtn.Location = new Point(922, 7);
+            editBtn.Margin = new Padding(3, 4, 3, 4);
             editBtn.Name = "editBtn";
-            editBtn.Size = new Size(172, 64);
+            editBtn.Size = new Size(138, 51);
             editBtn.TabIndex = 13;
             editBtn.Text = "  Sửa";
             editBtn.TextColor = Color.DarkCyan;
@@ -587,15 +611,15 @@
             addBtn.FlatAppearance.MouseDownBackColor = Color.Teal;
             addBtn.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
             addBtn.FlatStyle = FlatStyle.Flat;
-            addBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            addBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             addBtn.ForeColor = Color.DarkCyan;
             addBtn.Image = Properties.Resources.addIconTeal16px;
             addBtn.ImageAlign = ContentAlignment.MiddleRight;
             addBtn.ImageHover = Properties.Resources.addIconWhite16px;
-            addBtn.Location = new Point(962, 9);
-            addBtn.Margin = new Padding(4, 5, 4, 5);
+            addBtn.Location = new Point(770, 7);
+            addBtn.Margin = new Padding(3, 4, 3, 4);
             addBtn.Name = "addBtn";
-            addBtn.Size = new Size(172, 64);
+            addBtn.Size = new Size(138, 51);
             addBtn.TabIndex = 12;
             addBtn.Text = "  Thêm";
             addBtn.TextColor = Color.DarkCyan;
@@ -611,17 +635,17 @@
             searchNglTxt.BorderFocusColor = Color.DarkCyan;
             searchNglTxt.BorderRadius = 15;
             searchNglTxt.BorderSize = 2;
-            searchNglTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            searchNglTxt.Font = new Font("Segoe UI", 12F);
             searchNglTxt.ForeColor = Color.DimGray;
-            searchNglTxt.Location = new Point(10, 9);
-            searchNglTxt.Margin = new Padding(4, 5, 4, 5);
+            searchNglTxt.Location = new Point(8, 7);
+            searchNglTxt.Margin = new Padding(3, 4, 3, 4);
             searchNglTxt.Multiline = false;
             searchNglTxt.Name = "searchNglTxt";
-            searchNglTxt.Padding = new Padding(12, 11, 58, 11);
+            searchNglTxt.Padding = new Padding(10, 9, 46, 9);
             searchNglTxt.PasswordChar = false;
             searchNglTxt.PlaceholderColor = Color.DarkGray;
             searchNglTxt.PlaceholderText = "Tìm Kiếm ...";
-            searchNglTxt.Size = new Size(380, 55);
+            searchNglTxt.Size = new Size(304, 47);
             searchNglTxt.TabIndex = 11;
             searchNglTxt.Texts = "";
             searchNglTxt.UnderlinedStyle = false;
@@ -646,11 +670,10 @@
             detailTabPage.Controls.Add(label5);
             detailTabPage.Controls.Add(label4);
             detailTabPage.Controls.Add(label1);
-            detailTabPage.Location = new Point(4, 34);
-            detailTabPage.Margin = new Padding(4);
+            detailTabPage.Location = new Point(4, 29);
             detailTabPage.Name = "detailTabPage";
-            detailTabPage.Padding = new Padding(4);
-            detailTabPage.Size = new Size(1530, 887);
+            detailTabPage.Padding = new Padding(3);
+            detailTabPage.Size = new Size(1222, 707);
             detailTabPage.TabIndex = 1;
             detailTabPage.Text = "Chi Tiết";
             detailTabPage.UseVisualStyleBackColor = true;
@@ -658,19 +681,19 @@
             // checkboxIsDelete
             // 
             checkboxIsDelete.AutoSize = true;
-            checkboxIsDelete.Location = new Point(1051, 324);
+            checkboxIsDelete.Location = new Point(841, 259);
+            checkboxIsDelete.Margin = new Padding(2);
             checkboxIsDelete.Name = "checkboxIsDelete";
-            checkboxIsDelete.Size = new Size(22, 21);
+            checkboxIsDelete.Size = new Size(18, 17);
             checkboxIsDelete.TabIndex = 56;
             checkboxIsDelete.UseVisualStyleBackColor = true;
             // 
             // lbIsDelete
             // 
-            lbIsDelete.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lbIsDelete.Location = new Point(923, 288);
-            lbIsDelete.Margin = new Padding(4, 0, 4, 0);
+            lbIsDelete.Font = new Font("Segoe UI", 12F);
+            lbIsDelete.Location = new Point(738, 230);
             lbIsDelete.Name = "lbIsDelete";
-            lbIsDelete.Size = new Size(112, 85);
+            lbIsDelete.Size = new Size(90, 68);
             lbIsDelete.TabIndex = 55;
             lbIsDelete.Text = "IsDelete";
             lbIsDelete.TextAlign = ContentAlignment.MiddleCenter;
@@ -689,15 +712,15 @@
             HuyBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(187, 10, 10);
             HuyBtn.FlatAppearance.MouseOverBackColor = Color.Red;
             HuyBtn.FlatStyle = FlatStyle.Flat;
-            HuyBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            HuyBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             HuyBtn.ForeColor = Color.Red;
             HuyBtn.Image = Properties.Resources.CANCELiconRed;
             HuyBtn.ImageAlign = ContentAlignment.MiddleRight;
             HuyBtn.ImageHover = Properties.Resources.CANCELiconWhite;
-            HuyBtn.Location = new Point(1321, 772);
-            HuyBtn.Margin = new Padding(4, 5, 4, 5);
+            HuyBtn.Location = new Point(1057, 618);
+            HuyBtn.Margin = new Padding(3, 4, 3, 4);
             HuyBtn.Name = "HuyBtn";
-            HuyBtn.Size = new Size(196, 89);
+            HuyBtn.Size = new Size(157, 71);
             HuyBtn.TabIndex = 44;
             HuyBtn.Text = "  Hủy";
             HuyBtn.TextColor = Color.Red;
@@ -720,15 +743,15 @@
             xacNhanBtn.FlatAppearance.MouseDownBackColor = Color.Teal;
             xacNhanBtn.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
             xacNhanBtn.FlatStyle = FlatStyle.Flat;
-            xacNhanBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            xacNhanBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             xacNhanBtn.ForeColor = Color.DarkCyan;
             xacNhanBtn.Image = Properties.Resources.ConfirmIcondarkcyan1;
             xacNhanBtn.ImageAlign = ContentAlignment.MiddleRight;
             xacNhanBtn.ImageHover = Properties.Resources.ConfirmIconWhite1;
-            xacNhanBtn.Location = new Point(1102, 772);
-            xacNhanBtn.Margin = new Padding(4, 5, 4, 5);
+            xacNhanBtn.Location = new Point(882, 618);
+            xacNhanBtn.Margin = new Padding(3, 4, 3, 4);
             xacNhanBtn.Name = "xacNhanBtn";
-            xacNhanBtn.Size = new Size(196, 89);
+            xacNhanBtn.Size = new Size(157, 71);
             xacNhanBtn.TabIndex = 43;
             xacNhanBtn.Text = "  Xác Nhận";
             xacNhanBtn.TextColor = Color.DarkCyan;
@@ -739,11 +762,10 @@
             // 
             // label7
             // 
-            label7.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(124, 4);
-            label7.Margin = new Padding(4, 0, 4, 0);
+            label7.Font = new Font("Segoe UI", 17F);
+            label7.Location = new Point(99, 3);
             label7.Name = "label7";
-            label7.Size = new Size(330, 71);
+            label7.Size = new Size(264, 57);
             label7.TabIndex = 40;
             label7.Text = "Thông Tin Chi Tiết";
             label7.TextAlign = ContentAlignment.MiddleCenter;
@@ -764,10 +786,10 @@
             btn_back.ForeColor = Color.White;
             btn_back.Image = Properties.Resources.arrowreturn32pxBlack1;
             btn_back.ImageHover = Properties.Resources.arrowreturn32pxWhite1;
-            btn_back.Location = new Point(11, 9);
-            btn_back.Margin = new Padding(4, 5, 4, 5);
+            btn_back.Location = new Point(9, 7);
+            btn_back.Margin = new Padding(3, 4, 3, 4);
             btn_back.Name = "btn_back";
-            btn_back.Size = new Size(90, 69);
+            btn_back.Size = new Size(72, 55);
             btn_back.TabIndex = 39;
             btn_back.TextColor = Color.White;
             btn_back.TextHover = Color.White;
@@ -780,10 +802,10 @@
             caPhePic.BackgroundImageLayout = ImageLayout.None;
             caPhePic.Cursor = Cursors.Hand;
             caPhePic.Image = Properties.Resources.defaultImage3;
-            caPhePic.Location = new Point(88, 428);
-            caPhePic.Margin = new Padding(4, 5, 4, 5);
+            caPhePic.Location = new Point(70, 342);
+            caPhePic.Margin = new Padding(3, 4, 3, 4);
             caPhePic.Name = "caPhePic";
-            caPhePic.Size = new Size(229, 240);
+            caPhePic.Size = new Size(183, 192);
             caPhePic.SizeMode = PictureBoxSizeMode.StretchImage;
             caPhePic.TabIndex = 38;
             caPhePic.TabStop = false;
@@ -791,11 +813,10 @@
             // 
             // label8
             // 
-            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(66, 384);
-            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Font = new Font("Segoe UI", 12F);
+            label8.Location = new Point(53, 307);
             label8.Name = "label8";
-            label8.Size = new Size(151, 49);
+            label8.Size = new Size(121, 39);
             label8.TabIndex = 37;
             label8.Text = "Hình Ảnh";
             label8.TextAlign = ContentAlignment.MiddleCenter;
@@ -807,29 +828,28 @@
             txtNglPrice.BorderFocusColor = Color.DeepSkyBlue;
             txtNglPrice.BorderRadius = 13;
             txtNglPrice.BorderSize = 2;
-            txtNglPrice.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNglPrice.Font = new Font("Segoe UI", 13F);
             txtNglPrice.ForeColor = Color.DimGray;
-            txtNglPrice.Location = new Point(904, 161);
-            txtNglPrice.Margin = new Padding(4, 5, 4, 5);
+            txtNglPrice.Location = new Point(723, 129);
+            txtNglPrice.Margin = new Padding(3, 4, 3, 4);
             txtNglPrice.Multiline = false;
             txtNglPrice.Name = "txtNglPrice";
-            txtNglPrice.Padding = new Padding(12, 15, 10, 11);
+            txtNglPrice.Padding = new Padding(10, 12, 8, 9);
             txtNglPrice.PasswordChar = false;
             txtNglPrice.PlaceholderColor = Color.DarkGray;
             txtNglPrice.PlaceholderText = "Nhập giá tiền";
-            txtNglPrice.Size = new Size(349, 63);
-            txtNglPrice.TabIndex = 34;
+            txtNglPrice.Size = new Size(279, 52);
+            txtNglPrice.TabIndex = 3;
             txtNglPrice.Texts = "";
             txtNglPrice.UnderlinedStyle = false;
             txtNglPrice._TextChanged += txtNglPrice__TextChanged;
             // 
             // label3
             // 
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(900, 94);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Font = new Font("Segoe UI", 12F);
+            label3.Location = new Point(720, 75);
             label3.Name = "label3";
-            label3.Size = new Size(216, 85);
+            label3.Size = new Size(173, 68);
             label3.TabIndex = 33;
             label3.Text = "Giá Tiền (Kg)";
             label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -841,29 +861,28 @@
             txtNglInfo.BorderFocusColor = Color.DeepSkyBlue;
             txtNglInfo.BorderRadius = 13;
             txtNglInfo.BorderSize = 2;
-            txtNglInfo.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNglInfo.Font = new Font("Segoe UI", 13F);
             txtNglInfo.ForeColor = Color.DimGray;
-            txtNglInfo.Location = new Point(512, 161);
-            txtNglInfo.Margin = new Padding(4, 5, 4, 5);
+            txtNglInfo.Location = new Point(410, 129);
+            txtNglInfo.Margin = new Padding(3, 4, 3, 4);
             txtNglInfo.Multiline = false;
             txtNglInfo.Name = "txtNglInfo";
-            txtNglInfo.Padding = new Padding(12, 15, 10, 11);
+            txtNglInfo.Padding = new Padding(10, 12, 8, 9);
             txtNglInfo.PasswordChar = false;
             txtNglInfo.PlaceholderColor = Color.DarkGray;
             txtNglInfo.PlaceholderText = "Nhập thông tin";
-            txtNglInfo.Size = new Size(349, 63);
-            txtNglInfo.TabIndex = 32;
+            txtNglInfo.Size = new Size(279, 52);
+            txtNglInfo.TabIndex = 4;
             txtNglInfo.Texts = "";
             txtNglInfo.UnderlinedStyle = false;
             txtNglInfo._TextChanged += txtNglInfo__TextChanged;
             // 
             // M
             // 
-            M.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            M.Location = new Point(488, 96);
-            M.Margin = new Padding(4, 0, 4, 0);
+            M.Font = new Font("Segoe UI", 12F);
+            M.Location = new Point(390, 77);
             M.Name = "M";
-            M.Size = new Size(151, 85);
+            M.Size = new Size(121, 68);
             M.TabIndex = 31;
             M.Text = "Thông Tin";
             M.TextAlign = ContentAlignment.MiddleCenter;
@@ -876,17 +895,17 @@
             txtNglId.BorderRadius = 13;
             txtNglId.BorderSize = 2;
             txtNglId.Enabled = false;
-            txtNglId.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNglId.Font = new Font("Segoe UI", 13F);
             txtNglId.ForeColor = Color.DimGray;
-            txtNglId.Location = new Point(88, 161);
-            txtNglId.Margin = new Padding(4, 5, 4, 5);
+            txtNglId.Location = new Point(70, 129);
+            txtNglId.Margin = new Padding(3, 4, 3, 4);
             txtNglId.Multiline = false;
             txtNglId.Name = "txtNglId";
-            txtNglId.Padding = new Padding(12, 15, 10, 11);
+            txtNglId.Padding = new Padding(10, 12, 8, 9);
             txtNglId.PasswordChar = false;
             txtNglId.PlaceholderColor = Color.DarkGray;
             txtNglId.PlaceholderText = "Nhập ID";
-            txtNglId.Size = new Size(349, 63);
+            txtNglId.Size = new Size(279, 52);
             txtNglId.TabIndex = 30;
             txtNglId.Texts = "";
             txtNglId.UnderlinedStyle = false;
@@ -898,18 +917,18 @@
             txtNglWeigh.BorderFocusColor = Color.DeepSkyBlue;
             txtNglWeigh.BorderRadius = 13;
             txtNglWeigh.BorderSize = 2;
-            txtNglWeigh.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNglWeigh.Font = new Font("Segoe UI", 13F);
             txtNglWeigh.ForeColor = Color.DimGray;
-            txtNglWeigh.Location = new Point(512, 299);
-            txtNglWeigh.Margin = new Padding(4, 5, 4, 5);
+            txtNglWeigh.Location = new Point(410, 239);
+            txtNglWeigh.Margin = new Padding(3, 4, 3, 4);
             txtNglWeigh.Multiline = false;
             txtNglWeigh.Name = "txtNglWeigh";
-            txtNglWeigh.Padding = new Padding(12, 15, 10, 11);
+            txtNglWeigh.Padding = new Padding(10, 12, 8, 9);
             txtNglWeigh.PasswordChar = false;
             txtNglWeigh.PlaceholderColor = Color.DarkGray;
             txtNglWeigh.PlaceholderText = "Nhập khối lượng";
-            txtNglWeigh.Size = new Size(349, 63);
-            txtNglWeigh.TabIndex = 29;
+            txtNglWeigh.Size = new Size(279, 52);
+            txtNglWeigh.TabIndex = 2;
             txtNglWeigh.Texts = "";
             txtNglWeigh.UnderlinedStyle = false;
             txtNglWeigh._TextChanged += txtNglWeigh__TextChanged;
@@ -921,63 +940,60 @@
             txtNglName.BorderFocusColor = Color.DeepSkyBlue;
             txtNglName.BorderRadius = 13;
             txtNglName.BorderSize = 2;
-            txtNglName.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNglName.Font = new Font("Segoe UI", 13F);
             txtNglName.ForeColor = Color.DimGray;
-            txtNglName.Location = new Point(88, 299);
-            txtNglName.Margin = new Padding(4, 5, 4, 5);
+            txtNglName.Location = new Point(70, 239);
+            txtNglName.Margin = new Padding(3, 4, 3, 4);
             txtNglName.Multiline = false;
             txtNglName.Name = "txtNglName";
-            txtNglName.Padding = new Padding(12, 15, 10, 11);
+            txtNglName.Padding = new Padding(10, 12, 8, 9);
             txtNglName.PasswordChar = false;
             txtNglName.PlaceholderColor = Color.DarkGray;
             txtNglName.PlaceholderText = "Nhập tên nguyên liệu";
-            txtNglName.Size = new Size(349, 63);
-            txtNglName.TabIndex = 28;
+            txtNglName.Size = new Size(279, 52);
+            txtNglName.TabIndex = 0;
             txtNglName.Texts = "";
             txtNglName.UnderlinedStyle = false;
             txtNglName._TextChanged += txtNglName__TextChanged;
             // 
             // label5
             // 
-            label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(60, 232);
-            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Font = new Font("Segoe UI", 12F);
+            label5.Location = new Point(48, 186);
             label5.Name = "label5";
-            label5.Size = new Size(112, 85);
+            label5.Size = new Size(90, 68);
             label5.TabIndex = 27;
             label5.Text = "Tên";
             label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
-            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(487, 234);
-            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Font = new Font("Segoe UI", 12F);
+            label4.Location = new Point(390, 187);
             label4.Name = "label4";
-            label4.Size = new Size(151, 85);
+            label4.Size = new Size(121, 68);
             label4.TabIndex = 26;
             label4.Text = "Khối Lượng";
             label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(64, 98);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Font = new Font("Segoe UI", 12F);
+            label1.Location = new Point(51, 78);
             label1.Name = "label1";
-            label1.Size = new Size(112, 85);
+            label1.Size = new Size(90, 68);
             label1.TabIndex = 25;
             label1.Text = "ID";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // NguyenLieuView
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1538, 925);
+            ClientSize = new Size(1230, 740);
             Controls.Add(tcNgl);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 5, 4, 5);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "NguyenLieuView";
             Text = "NguyenLieuView";
             tcNgl.ResumeLayout(false);

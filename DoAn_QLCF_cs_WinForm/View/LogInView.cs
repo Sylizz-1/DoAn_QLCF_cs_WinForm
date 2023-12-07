@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -162,7 +163,13 @@ namespace DoAn_QLCF_cs_WinForm.View
             txt_password.Focus();
             MessageBox.Show("Password không được để trống!");
         }
-
+        private bool IsEmailValid(string email)
+        {
+            // Biểu thức chính quy để kiểm tra định dạng email
+            string pattern = @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
+            // Sử dụng Regex.IsMatch để kiểm tra
+            return Regex.IsMatch(email, pattern);
+        }
         private bool CheckInputInformation()
         {
             if (RegisterRole == null)
@@ -191,6 +198,12 @@ namespace DoAn_QLCF_cs_WinForm.View
             {
                 txt_emailRegister.Focus();
                 ShowMessage("Email không được để trống!");
+                return false;
+            }
+            else if (!IsEmailValid(RegisterEmail))
+            {
+                txt_emailRegister.Focus();
+                ShowMessage("Email không đúng định dạng!");
                 return false;
             }
             else if (RegisterBirthday == DateTime.Today.ToString("MM/dd/yyyy"))
@@ -254,7 +267,15 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         private void txt_phoneNumberRegister_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            // Chỉ cho phép nhập số và không phản ứng với các phím điều hướng
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (txt_phoneNumberRegister.Texts.Length >= 10 && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
 

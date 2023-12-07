@@ -26,12 +26,19 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
         string IdEmployee { get; set; }
         string NameEmployee { get; set; }
         int ComboboxIdPermission { get; set; }
+        string IdPermissionDetail { get; set; }
+        string NamePermissionDetail { get; set; }
+        string ContentPermissionDetail { get; set; }
+        DataGridView PermissionDetailDataGridView { get; set; }
         DataGridView PermissionDataGridView { get; set; }
         DataGridView PermissionEmployeeDataGridView { get; set; }
 
         DialogResult ShowYesNoMessage(string message);
         void ShowMessage(string message);
+        void GoToDetailPermissionTab();
+        void GoToListTabPage();
         ArrayList GetArrayMethodChecked();
+        void LoadChucNangListDetail(BindingSource listMethod);
         void LoadNhanVienList(BindingSource listEmployee);
         void LoadQuyenList(BindingSource listPermission);
         void LoadQuyenCombobox(BindingSource listPermission);

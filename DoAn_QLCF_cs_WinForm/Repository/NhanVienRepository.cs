@@ -1,5 +1,6 @@
 ﻿using DoAn_QLCF_cs_WinForm.Model;
 using DoAn_QLCF_cs_WinForm.Repository.RepositoryInterface;
+using DocumentFormat.OpenXml.Office2010.ExcelAc;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
@@ -162,6 +163,79 @@ namespace DoAn_QLCF_cs_WinForm.Repository
             }
         }
 
+        public bool Delete(NhanVienModel nhanVienModel)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(this.connectionString))
+                using (var cmd = connection.CreateCommand())
+                {
+                    connection.Open();
+                    cmd.Connection = connection;
+                    cmd.CommandText = "UPDATE NhanVien SET [IsDelete] = 1 WHERE [NhanVienId] = @Id";
+                    cmd.Parameters.AddWithValue("@Id", nhanVienModel.Id);
+                    if (cmd.ExecuteNonQuery() > 0)
+                        return true;
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
 
+        public IEnumerable<NhanVienModel> GetEmployeeByValue(string value)
+        {
+            int idSearch = 0;
+            var list = new List<NhanVienModel>();
+            using (var connection = new SqlConnection(this.connectionString))
+            using (var cmd = connection.CreateCommand())
+            {
+                connection.Open();
+                cmd.Connection = connection;
+                cmd.CommandText = "select * from NhanVien where [NhanVienId] = @IdSearch" +
+                    " or [QuyenId] = @IdSearch" +
+                    " or [TaiKhoan] LIKE '%' +  @Value + '%'" +
+                    " or [MatKhau] LIKE '%' +  @Value + '%'" +
+                    " or [Ten] LIKE '%' +  @Value + '%'" +
+                    " or [GioiTinh] LIKE '%' +  @Value + '%'" +
+                    " or [SDT] LIKE '%' +  @Value + '%'" +
+                    " or [Email] LIKE '%' +  @Value + '%'" +
+                    " or [NgaySinh] LIKE '%' +  @Value + '%'" +
+                    " order by NhanVienId asc";
+                cmd.Parameters.AddWithValue("@Value", value);
+                if (Int32.TryParse(value, out idSearch))
+                {
+                    cmd.Parameters.AddWithValue("@IdSearch", idSearch);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@IdSearch", -1);
+                }
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var nhanVienModel = new NhanVienModel();
+                        nhanVienModel.Id = (int)reader["NhanVienId"];
+                        nhanVienModel.Name = reader["Ten"].ToString();
+                        nhanVienModel.Gioitinh = reader["GioiTinh"].ToString();
+                        nhanVienModel.Email = reader["Email"].ToString();
+                        nhanVienModel.Sdt = reader["SDT"].ToString();
+                        nhanVienModel.Ngaysinh = reader["NgaySinh"].ToString();
+                        nhanVienModel.Taikhoan = reader["TaiKhoan"].ToString();
+                        nhanVienModel.Matkhau = reader["MatKhau"].ToString();
+                        nhanVienModel.IdPermission = (int)reader["QuyenId"];
+                        nhanVienModel.isDelete = (bool)reader["IsDelete"];
+
+                        list.Add(nhanVienModel);
+                    }
+                }
+                return list;
+            }
+        }
     }
 }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
             tabControl1 = new TabControl();
             listTabPage = new TabPage();
             label9 = new Label();
@@ -42,7 +42,7 @@
             delBtn = new CustomControl.CustomButton();
             editBtn = new CustomControl.CustomButton();
             addBtn = new CustomControl.CustomButton();
-            dataGridView = new DataGridView();
+            dtgv_nhanVien = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
@@ -65,12 +65,12 @@
             quyencmb = new ComboBox();
             label3 = new Label();
             groupBox1 = new GroupBox();
+            dtp_ngaySinh = new CustomControl.CustomDateTimePicker();
             emailTxt = new CustomControl.CustomTextBox();
             sdtTxt = new CustomControl.CustomTextBox();
             idTxt = new CustomControl.CustomTextBox();
             label1 = new Label();
             label12 = new Label();
-            dtp_ngaySinh = new DateTimePicker();
             gioitinhcmb = new ComboBox();
             tenTxt = new CustomControl.CustomTextBox();
             label11 = new Label();
@@ -83,7 +83,7 @@
             btn_back = new CustomControl.CustomButton();
             tabControl1.SuspendLayout();
             listTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtgv_nhanVien).BeginInit();
             detailTabPage.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -111,7 +111,7 @@
             listTabPage.Controls.Add(delBtn);
             listTabPage.Controls.Add(editBtn);
             listTabPage.Controls.Add(addBtn);
-            listTabPage.Controls.Add(dataGridView);
+            listTabPage.Controls.Add(dtgv_nhanVien);
             listTabPage.Location = new Point(4, 29);
             listTabPage.Name = "listTabPage";
             listTabPage.Padding = new Padding(3);
@@ -209,6 +209,7 @@
             searchTxt.TabIndex = 26;
             searchTxt.Texts = "";
             searchTxt.UnderlinedStyle = false;
+            searchTxt._TextChanged += searchTxt__TextChanged;
             // 
             // delBtn
             // 
@@ -239,6 +240,7 @@
             delBtn.TextHover = Color.White;
             delBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             delBtn.UseVisualStyleBackColor = false;
+            delBtn.Click += delBtn_Click;
             // 
             // editBtn
             // 
@@ -302,49 +304,50 @@
             addBtn.UseVisualStyleBackColor = false;
             addBtn.Click += addBtn_Click;
             // 
-            // dataGridView
+            // dtgv_nhanVien
             // 
-            dataGridView.AllowUserToAddRows = false;
-            dataGridView.AllowUserToDeleteRows = false;
-            dataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridView.BorderStyle = BorderStyle.None;
-            dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.DarkCyan;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView.ColumnHeadersHeight = 30;
-            dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridView.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7, Column8, Column9, Column10 });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView.EnableHeadersVisualStyles = false;
-            dataGridView.GridColor = Color.DarkCyan;
-            dataGridView.ImeMode = ImeMode.NoControl;
-            dataGridView.Location = new Point(3, 156);
-            dataGridView.Margin = new Padding(3, 4, 3, 4);
-            dataGridView.Name = "dataGridView";
-            dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridView.RowHeadersVisible = false;
-            dataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridView.RowTemplate.Height = 25;
-            dataGridView.RowTemplate.ReadOnly = true;
-            dataGridView.Size = new Size(1216, 548);
-            dataGridView.TabIndex = 22;
+            dtgv_nhanVien.AllowUserToAddRows = false;
+            dtgv_nhanVien.AllowUserToDeleteRows = false;
+            dtgv_nhanVien.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dtgv_nhanVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtgv_nhanVien.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dtgv_nhanVien.BorderStyle = BorderStyle.None;
+            dtgv_nhanVien.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = Color.DarkCyan;
+            dataGridViewCellStyle10.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle10.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
+            dtgv_nhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dtgv_nhanVien.ColumnHeadersHeight = 30;
+            dtgv_nhanVien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dtgv_nhanVien.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7, Column8, Column9, Column10 });
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = SystemColors.Window;
+            dataGridViewCellStyle11.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
+            dtgv_nhanVien.DefaultCellStyle = dataGridViewCellStyle11;
+            dtgv_nhanVien.EnableHeadersVisualStyles = false;
+            dtgv_nhanVien.GridColor = Color.DarkCyan;
+            dtgv_nhanVien.ImeMode = ImeMode.NoControl;
+            dtgv_nhanVien.Location = new Point(3, 156);
+            dtgv_nhanVien.Margin = new Padding(3, 4, 3, 4);
+            dtgv_nhanVien.Name = "dtgv_nhanVien";
+            dtgv_nhanVien.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dtgv_nhanVien.RowHeadersVisible = false;
+            dtgv_nhanVien.RowHeadersWidth = 51;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dtgv_nhanVien.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dtgv_nhanVien.RowTemplate.Height = 25;
+            dtgv_nhanVien.RowTemplate.ReadOnly = true;
+            dtgv_nhanVien.Size = new Size(1216, 548);
+            dtgv_nhanVien.TabIndex = 22;
+            dtgv_nhanVien.ColumnHeaderMouseClick += dtgv_nhanVien_ColumnHeaderMouseClick;
             // 
             // Column1
             // 
@@ -495,6 +498,7 @@
             matkhauTxt.TabIndex = 58;
             matkhauTxt.Texts = "";
             matkhauTxt.UnderlinedStyle = false;
+            matkhauTxt.KeyPress += matkhauTxt_KeyPress;
             // 
             // M
             // 
@@ -527,6 +531,7 @@
             taikhoanTxt.TabIndex = 32;
             taikhoanTxt.Texts = "";
             taikhoanTxt.UnderlinedStyle = false;
+            taikhoanTxt.KeyPress += taikhoanTxt_KeyPress;
             // 
             // txt_passwordConfirm
             // 
@@ -549,6 +554,7 @@
             txt_passwordConfirm.TabIndex = 57;
             txt_passwordConfirm.Texts = "";
             txt_passwordConfirm.UnderlinedStyle = false;
+            txt_passwordConfirm.KeyPress += txt_passwordConfirm_KeyPress;
             // 
             // label10
             // 
@@ -591,12 +597,12 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(dtp_ngaySinh);
             groupBox1.Controls.Add(emailTxt);
             groupBox1.Controls.Add(sdtTxt);
             groupBox1.Controls.Add(idTxt);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(label12);
-            groupBox1.Controls.Add(dtp_ngaySinh);
             groupBox1.Controls.Add(gioitinhcmb);
             groupBox1.Controls.Add(tenTxt);
             groupBox1.Controls.Add(label11);
@@ -612,6 +618,19 @@
             groupBox1.TabIndex = 58;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông tin nhân viên";
+            // 
+            // dtp_ngaySinh
+            // 
+            dtp_ngaySinh.BorderColor = Color.PaleVioletRed;
+            dtp_ngaySinh.BorderSize = 0;
+            dtp_ngaySinh.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            dtp_ngaySinh.Location = new Point(319, 286);
+            dtp_ngaySinh.MinimumSize = new Size(4, 35);
+            dtp_ngaySinh.Name = "dtp_ngaySinh";
+            dtp_ngaySinh.Size = new Size(279, 35);
+            dtp_ngaySinh.SkinColor = Color.MediumSlateBlue;
+            dtp_ngaySinh.TabIndex = 60;
+            dtp_ngaySinh.TextColor = Color.White;
             // 
             // emailTxt
             // 
@@ -634,6 +653,7 @@
             emailTxt.TabIndex = 53;
             emailTxt.Texts = "";
             emailTxt.UnderlinedStyle = false;
+            emailTxt.KeyPress += emailTxt_KeyPress;
             // 
             // sdtTxt
             // 
@@ -656,6 +676,7 @@
             sdtTxt.TabIndex = 52;
             sdtTxt.Texts = "";
             sdtTxt.UnderlinedStyle = false;
+            sdtTxt.KeyPress += sdtTxt_KeyPress;
             // 
             // idTxt
             // 
@@ -699,17 +720,6 @@
             label12.TabIndex = 53;
             label12.Text = "Ngày Sinh";
             label12.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // dtp_ngaySinh
-            // 
-            dtp_ngaySinh.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dtp_ngaySinh.Location = new Point(319, 286);
-            dtp_ngaySinh.MaxDate = new DateTime(2025, 7, 5, 0, 0, 0, 0);
-            dtp_ngaySinh.Name = "dtp_ngaySinh";
-            dtp_ngaySinh.Size = new Size(278, 39);
-            dtp_ngaySinh.TabIndex = 52;
-            dtp_ngaySinh.Value = new DateTime(2023, 11, 10, 0, 0, 0, 0);
-            dtp_ngaySinh.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // gioitinhcmb
             // 
@@ -894,7 +904,7 @@
             Text = "NhanVienView";
             tabControl1.ResumeLayout(false);
             listTabPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtgv_nhanVien).EndInit();
             detailTabPage.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
@@ -906,7 +916,7 @@
 
         private TabControl tabControl1;
         private TabPage listTabPage;
-        private DataGridView dataGridView;
+        private DataGridView dtgv_nhanVien;
         private TabPage detailTabPage;
         private Label label7;
         private CustomControl.CustomButton btn_back;
@@ -933,7 +943,6 @@
         private Label label10;
         private ComboBox gioitinhcmb;
         private Label label11;
-        private DateTimePicker dtp_ngaySinh;
         private Label label12;
         private CustomControl.CustomTextBox txt_passwordConfirm;
         private Label label13;
@@ -954,5 +963,6 @@
         private DataGridViewTextBoxColumn Column9;
         private DataGridViewTextBoxColumn Column10;
         private CheckBox cb_isDeleted;
+        private CustomControl.CustomDateTimePicker dtp_ngaySinh;
     }
 }

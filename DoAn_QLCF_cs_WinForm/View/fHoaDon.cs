@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DoAn_QLCF_cs_WinForm.CustomUserControl
+namespace DoAn_QLCF_cs_WinForm.View
 {
 	public partial class ChiTietHoaDonUC : UserControl
 	{

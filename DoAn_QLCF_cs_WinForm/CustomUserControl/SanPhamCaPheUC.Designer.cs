@@ -28,28 +28,25 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SanPhamCaPheUC));
 			giaTienLbl = new Label();
 			tenLbl = new Label();
 			hinhAnhPbx = new PictureBox();
 			addToCartBtn = new CustomControl.CustomButton();
-			btnNavToolTip = new ToolTip(components);
-			label1 = new Label();
 			((System.ComponentModel.ISupportInitialize)hinhAnhPbx).BeginInit();
 			SuspendLayout();
 			// 
 			// giaTienLbl
 			// 
 			giaTienLbl.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-			giaTienLbl.AutoSize = true;
+			giaTienLbl.AutoEllipsis = true;
 			giaTienLbl.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
 			giaTienLbl.ForeColor = Color.Red;
 			giaTienLbl.Location = new Point(1, 154);
 			giaTienLbl.Name = "giaTienLbl";
-			giaTienLbl.Size = new Size(49, 19);
+			giaTienLbl.Size = new Size(116, 36);
 			giaTienLbl.TabIndex = 2;
-			giaTienLbl.Text = "23000";
+			giaTienLbl.Text = "12000 VND";
 			giaTienLbl.TextAlign = ContentAlignment.MiddleLeft;
 			// 
 			// tenLbl
@@ -99,7 +96,6 @@
 			addToCartBtn.TextColor = Color.Crimson;
 			addToCartBtn.TextHover = Color.White;
 			addToCartBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-			btnNavToolTip.SetToolTip(addToCartBtn, "Thêm Vào Giỏ Hàng");
 			addToCartBtn.UseVisualStyleBackColor = false;
 			addToCartBtn.Click += addToCartBtn_Click;
 			// 
@@ -136,7 +132,6 @@
 			Size = new Size(192, 223);
 			((System.ComponentModel.ISupportInitialize)hinhAnhPbx).EndInit();
 			ResumeLayout(false);
-			PerformLayout();
 		}
 
 		#endregion
@@ -145,7 +140,5 @@
 		private Label tenLbl;
 		private PictureBox hinhAnhPbx;
 		private CustomControl.CustomButton addToCartBtn;
-		private ToolTip btnNavToolTip;
-		private Label label1;
 	}
 }

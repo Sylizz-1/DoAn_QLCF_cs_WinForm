@@ -163,8 +163,32 @@ namespace DoAn_QLCF_cs_WinForm.View
             tcNCC.ItemSize = new System.Drawing.Size(0, 1);
             tcNCC.SizeMode = TabSizeMode.Fixed;
         }
+        public void setStateTb(bool state)
+        {
+            this.txtDiaChiNcc.Enabled = state;
+            this.txtEmailNcc.Enabled = state;
+            this.txtTenNcc.Enabled = state;
+            this.txtSDTNcc.Enabled = state;
+            this.checkboxIsDelete.Enabled = state;
+
+            if(state)
+            {
+                this.txtDiaChiNcc.BackColor = Color.White;
+                this.txtEmailNcc.BackColor = Color.White;
+                this.txtTenNcc.BackColor = Color.White;
+                this.txtSDTNcc.BackColor = Color.White;
+            }   
+            else
+            {
+                this.txtDiaChiNcc.BackColor = Color.LightGray;
+                this.txtEmailNcc.BackColor = Color.LightGray;
+                this.txtTenNcc.BackColor = Color.LightGray;
+                this.txtSDTNcc.BackColor = Color.LightGray;
+            }    
+        }
         public void SetTextBoxFillData(NccModel ncc)
         {
+            setStateTb(true);
             this.txtIdNcc.Enabled = true;
             this.txtIdNcc.Focus();
             this.txtIdNcc.Texts = ncc.NhaCungCapId.ToString();
@@ -178,6 +202,8 @@ namespace DoAn_QLCF_cs_WinForm.View
             this.txtTenNcc.Focus();
             this.txtTenNcc.Texts = ncc.TenNhaCungCap;
             this.checkboxIsDelete.Checked = ncc.IsDelete;
+            if (ncc.IsDelete == true)
+                setStateTb(false);
         }
         private bool IsEmailValid(string email)
         {
@@ -208,7 +234,7 @@ namespace DoAn_QLCF_cs_WinForm.View
                 txtDiaChiNcc.BorderColor = Color.DarkCyan;
             if (string.IsNullOrEmpty(txtSDTNcc.Texts) || !float.TryParse(txtSDTNcc.Texts, out _) || txtSDTNcc.Texts.Length != 10)
             {
-                s += "Số điện thoại nhà cung cấp (số)";
+                s += "Số điện thoại nhà cung cấp (10 số)";
                 txtSDTNcc.BorderColor = Color.Red;
                 MessageBox.Show(s, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -296,6 +322,7 @@ namespace DoAn_QLCF_cs_WinForm.View
                 checkboxIsDelete.Visible = true;
             }
             setState(false, false, false, false);
+            setStateTb(true);
             tcNCC.SelectedTab = listTabPage;
             SetNull();
             dgvNcc.ClearSelection();
@@ -317,6 +344,7 @@ namespace DoAn_QLCF_cs_WinForm.View
                 checkboxIsDelete.Visible = true;
             }
             setState(false, false, false, false);
+            setStateTb(true);
             tcNCC.SelectedTab = listTabPage;
             SetNull();
             dgvNcc.ClearSelection();
