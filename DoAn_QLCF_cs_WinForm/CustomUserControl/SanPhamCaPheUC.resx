@@ -118,29 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="detailsBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
-        MAAA6mAAADqYAAAXcJy6UTwAAAAHdElNRQfnDAYJLiOBv3CWAAAA3ElEQVRIS+2SMQ4BURCGl56aC1A5
-        gM450FMpNK6gdQ734BhcQUMkkvGPzMrbyczue6+g2S/5qvfP/NnJFn+GunAJd44L2JFwDp/l1OBcwrHQ
-        EB7hTRZAj28JZ3lmIA8e/Ll0huVgqXUeVudOsO5kNA7CuY5kmQXNVDhH7HCpFDzhAe6V1glDowsusCcP
-        AbQJMpbRBblGF3gn0nKGs8kFzok0nKGrzCQV5Bpd0J7IolLQnsiCpiqcI3a4UB8+gnCqd4gdtdAavmQg
-        RZ5ZyZImaAK30PprLDmLmZ9TFG/qBVfwwqSvDgAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="detailsBtn.ImageHover" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
-        MAAA6mAAADqYAAAXcJy6UTwAAAAHdElNRQfnDAYJOROi5cSsAAAA50lEQVRIS+2Suw3CQBBEz+Q4hgYg
-        cgHOXAeQQ0RAQguk1EEfUAa0QAJCQjIzdwuC+4Dtk4DAT3qJZ3ZPWln9lLIsO3AClwHHMJF6fTDM5Z8Y
-        Sb0aGOjDDTxymkjkIDFhlzM9ifygkMAdtPGdh9psYfhkCIe6FsdA1rkgLEwnikLWuTA0Hc0FruHK0nfC
-        Zyo/sIddiR7g21ynYSo/0JToE9myw+6duBPZsAMPHBDaE73CDmxPFIYd+D8nyk0nilzWuSBM4VnXmnGC
-        qazzg8IMXtmuCWemsuY9KGZwAX1/jU92Mxn/JkrdAFHl+WoKxTFDAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <metadata name="btnNavToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>141, 21</value>
-  </metadata>
   <data name="addToCartBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
@@ -178,6 +155,9 @@
         6HLbt2XZJxt+z4DeqXduVyrgW3YlnNxEE/86crmf8c0gtsUPseYAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="btnNavToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>141, 21</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>105</value>
   </metadata>

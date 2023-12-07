@@ -28,8 +28,11 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+			DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+			DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
 			titleBar = new CustomControl.SidePanel();
-			hoaDonBtn = new CustomControl.CustomButton();
+			pggBtn = new CustomControl.CustomButton();
 			customButton4 = new CustomControl.CustomButton();
 			customButton3 = new CustomControl.CustomButton();
 			customButton2 = new CustomControl.CustomButton();
@@ -38,24 +41,20 @@
 			tabControl1 = new TabControl();
 			trangChuTab = new TabPage();
 			sidePanel2 = new CustomControl.SidePanel();
-			flowLayoutPanel2 = new FlowLayoutPanel();
+			gioHangPanel = new FlowLayoutPanel();
 			panel2 = new Panel();
-			giaCuoiCungTxt = new TextBox();
+			label5 = new Label();
 			loaiKhTxt = new TextBox();
-			giamGiaTxt = new TextBox();
 			giaGocTxt = new TextBox();
-			customButton1 = new CustomControl.CustomButton();
-			label4 = new Label();
+			datHangBtn = new CustomControl.CustomButton();
 			label3 = new Label();
-			label2 = new Label();
 			label1 = new Label();
 			sidePanel1 = new CustomControl.SidePanel();
-			flowLayoutPanel1 = new FlowLayoutPanel();
-			sanPhamCaPheuc1 = new CustomUserControl.SanPhamCaPheUC();
-			sanPhamCaPheuc2 = new CustomUserControl.SanPhamCaPheUC();
-			sanPhamCaPheuc3 = new CustomUserControl.SanPhamCaPheUC();
-			sanPhamCaPheuc4 = new CustomUserControl.SanPhamCaPheUC();
-			hoaDonTab = new TabPage();
+			sanPhamPanel = new FlowLayoutPanel();
+			pggTab = new TabPage();
+			label7 = new Label();
+			returnBtn = new CustomControl.CustomButton();
+			pggDg = new DataGridView();
 			taiKhoanTab = new TabPage();
 			titleBar.SuspendLayout();
 			panel1.SuspendLayout();
@@ -64,7 +63,8 @@
 			sidePanel2.SuspendLayout();
 			panel2.SuspendLayout();
 			sidePanel1.SuspendLayout();
-			flowLayoutPanel1.SuspendLayout();
+			pggTab.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)pggDg).BeginInit();
 			SuspendLayout();
 			// 
 			// titleBar
@@ -72,7 +72,7 @@
 			titleBar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
 			titleBar.BackColor = Color.DarkSlateGray;
 			titleBar.BorderRadius = 15;
-			titleBar.Controls.Add(hoaDonBtn);
+			titleBar.Controls.Add(pggBtn);
 			titleBar.Controls.Add(customButton4);
 			titleBar.Controls.Add(customButton3);
 			titleBar.Controls.Add(customButton2);
@@ -87,30 +87,32 @@
 			titleBar.Size = new Size(931, 55);
 			titleBar.TabIndex = 1;
 			// 
-			// hoaDonBtn
+			// pggBtn
 			// 
-			hoaDonBtn.Anchor = AnchorStyles.Right;
-			hoaDonBtn.BackColor = Color.Transparent;
-			hoaDonBtn.BackgroundColor = Color.Transparent;
-			hoaDonBtn.BorderColor = Color.Teal;
-			hoaDonBtn.BorderRadius = 20;
-			hoaDonBtn.BorderSize = 0;
-			hoaDonBtn.Cursor = Cursors.Hand;
-			hoaDonBtn.EnabledTextHover = false;
-			hoaDonBtn.FlatAppearance.BorderSize = 0;
-			hoaDonBtn.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
-			hoaDonBtn.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
-			hoaDonBtn.FlatStyle = FlatStyle.Flat;
-			hoaDonBtn.ForeColor = Color.White;
-			hoaDonBtn.Image = Properties.Resources.invoice_khachhang;
-			hoaDonBtn.ImageHover = null;
-			hoaDonBtn.Location = new Point(772, 7);
-			hoaDonBtn.Name = "hoaDonBtn";
-			hoaDonBtn.Size = new Size(53, 40);
-			hoaDonBtn.TabIndex = 5;
-			hoaDonBtn.TextColor = Color.White;
-			hoaDonBtn.TextHover = Color.White;
-			hoaDonBtn.UseVisualStyleBackColor = false;
+			pggBtn.Anchor = AnchorStyles.Right;
+			pggBtn.BackColor = Color.Transparent;
+			pggBtn.BackgroundColor = Color.Transparent;
+			pggBtn.BorderColor = Color.Teal;
+			pggBtn.BorderRadius = 20;
+			pggBtn.BorderSize = 0;
+			pggBtn.Cursor = Cursors.Hand;
+			pggBtn.EnabledTextHover = false;
+			pggBtn.FlatAppearance.BorderSize = 0;
+			pggBtn.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
+			pggBtn.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
+			pggBtn.FlatStyle = FlatStyle.Flat;
+			pggBtn.ForeColor = Color.White;
+			pggBtn.Image = Properties.Resources.DiscountIcon24px;
+			pggBtn.ImageHover = null;
+			pggBtn.Location = new Point(787, 8);
+			pggBtn.Margin = new Padding(3, 3, 20, 3);
+			pggBtn.Name = "pggBtn";
+			pggBtn.Size = new Size(53, 40);
+			pggBtn.TabIndex = 5;
+			pggBtn.TextColor = Color.White;
+			pggBtn.TextHover = Color.White;
+			pggBtn.UseVisualStyleBackColor = false;
+			pggBtn.Click += pggBtn_Click;
 			// 
 			// customButton4
 			// 
@@ -219,19 +221,19 @@
 			panel1.Controls.Add(tabControl1);
 			panel1.Location = new Point(12, 73);
 			panel1.Name = "panel1";
-			panel1.Size = new Size(931, 468);
+			panel1.Size = new Size(931, 554);
 			panel1.TabIndex = 2;
 			// 
 			// tabControl1
 			// 
 			tabControl1.Controls.Add(trangChuTab);
-			tabControl1.Controls.Add(hoaDonTab);
+			tabControl1.Controls.Add(pggTab);
 			tabControl1.Controls.Add(taiKhoanTab);
 			tabControl1.Dock = DockStyle.Fill;
 			tabControl1.Location = new Point(0, 0);
 			tabControl1.Name = "tabControl1";
 			tabControl1.SelectedIndex = 0;
-			tabControl1.Size = new Size(931, 468);
+			tabControl1.Size = new Size(931, 554);
 			tabControl1.TabIndex = 0;
 			// 
 			// trangChuTab
@@ -241,7 +243,7 @@
 			trangChuTab.Location = new Point(4, 24);
 			trangChuTab.Name = "trangChuTab";
 			trangChuTab.Padding = new Padding(3);
-			trangChuTab.Size = new Size(923, 440);
+			trangChuTab.Size = new Size(923, 526);
 			trangChuTab.TabIndex = 0;
 			trangChuTab.Text = "tabPage1";
 			trangChuTab.UseVisualStyleBackColor = true;
@@ -250,58 +252,57 @@
 			// 
 			sidePanel2.BackColor = SystemColors.ActiveCaption;
 			sidePanel2.BorderRadius = 20;
-			sidePanel2.Controls.Add(flowLayoutPanel2);
+			sidePanel2.Controls.Add(gioHangPanel);
 			sidePanel2.Controls.Add(panel2);
 			sidePanel2.Dock = DockStyle.Right;
 			sidePanel2.EnabledGradient = false;
 			sidePanel2.GradientAngle = 90F;
 			sidePanel2.GradientBottomColor = Color.FromArgb(255, 51, 153);
 			sidePanel2.GradientTopColor = Color.Teal;
-			sidePanel2.Location = new Point(529, 3);
+			sidePanel2.Location = new Point(445, 3);
 			sidePanel2.Name = "sidePanel2";
-			sidePanel2.Size = new Size(391, 434);
+			sidePanel2.Size = new Size(475, 520);
 			sidePanel2.TabIndex = 3;
 			// 
-			// flowLayoutPanel2
+			// gioHangPanel
 			// 
-			flowLayoutPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-			flowLayoutPanel2.BackColor = SystemColors.ActiveBorder;
-			flowLayoutPanel2.FlowDirection = FlowDirection.TopDown;
-			flowLayoutPanel2.Location = new Point(0, 0);
-			flowLayoutPanel2.Name = "flowLayoutPanel2";
-			flowLayoutPanel2.Size = new Size(391, 262);
-			flowLayoutPanel2.TabIndex = 1;
+			gioHangPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			gioHangPanel.AutoScroll = true;
+			gioHangPanel.BackColor = SystemColors.ActiveBorder;
+			gioHangPanel.FlowDirection = FlowDirection.TopDown;
+			gioHangPanel.Location = new Point(0, 0);
+			gioHangPanel.Name = "gioHangPanel";
+			gioHangPanel.Padding = new Padding(0, 10, 0, 0);
+			gioHangPanel.Size = new Size(1354, 348);
+			gioHangPanel.TabIndex = 1;
+			gioHangPanel.WrapContents = false;
 			// 
 			// panel2
 			// 
 			panel2.BackColor = SystemColors.GradientActiveCaption;
-			panel2.Controls.Add(giaCuoiCungTxt);
+			panel2.Controls.Add(label5);
 			panel2.Controls.Add(loaiKhTxt);
-			panel2.Controls.Add(giamGiaTxt);
 			panel2.Controls.Add(giaGocTxt);
-			panel2.Controls.Add(customButton1);
-			panel2.Controls.Add(label4);
+			panel2.Controls.Add(datHangBtn);
 			panel2.Controls.Add(label3);
-			panel2.Controls.Add(label2);
 			panel2.Controls.Add(label1);
 			panel2.Dock = DockStyle.Bottom;
-			panel2.Location = new Point(0, 261);
+			panel2.Location = new Point(0, 347);
 			panel2.Name = "panel2";
-			panel2.Size = new Size(391, 173);
+			panel2.Size = new Size(475, 173);
 			panel2.TabIndex = 0;
 			// 
-			// giaCuoiCungTxt
+			// label5
 			// 
-			giaCuoiCungTxt.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-			giaCuoiCungTxt.BackColor = SystemColors.GradientActiveCaption;
-			giaCuoiCungTxt.BorderStyle = BorderStyle.None;
-			giaCuoiCungTxt.Enabled = false;
-			giaCuoiCungTxt.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-			giaCuoiCungTxt.Location = new Point(141, 82);
-			giaCuoiCungTxt.Name = "giaCuoiCungTxt";
-			giaCuoiCungTxt.ReadOnly = true;
-			giaCuoiCungTxt.Size = new Size(149, 24);
-			giaCuoiCungTxt.TabIndex = 2;
+			label5.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+			label5.AutoSize = true;
+			label5.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			label5.ForeColor = Color.Red;
+			label5.Location = new Point(205, 17);
+			label5.Name = "label5";
+			label5.Size = new Size(18, 20);
+			label5.TabIndex = 3;
+			label5.Text = "đ";
 			// 
 			// loaiKhTxt
 			// 
@@ -310,24 +311,13 @@
 			loaiKhTxt.BorderStyle = BorderStyle.None;
 			loaiKhTxt.Enabled = false;
 			loaiKhTxt.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-			loaiKhTxt.Location = new Point(114, 57);
+			loaiKhTxt.ForeColor = Color.Red;
+			loaiKhTxt.Location = new Point(141, 57);
 			loaiKhTxt.Name = "loaiKhTxt";
 			loaiKhTxt.ReadOnly = true;
-			loaiKhTxt.Size = new Size(149, 24);
+			loaiKhTxt.Size = new Size(66, 24);
 			loaiKhTxt.TabIndex = 2;
-			// 
-			// giamGiaTxt
-			// 
-			giamGiaTxt.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-			giamGiaTxt.BackColor = SystemColors.GradientActiveCaption;
-			giamGiaTxt.BorderStyle = BorderStyle.None;
-			giamGiaTxt.Enabled = false;
-			giamGiaTxt.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-			giamGiaTxt.Location = new Point(98, 31);
-			giamGiaTxt.Name = "giamGiaTxt";
-			giamGiaTxt.ReadOnly = true;
-			giamGiaTxt.Size = new Size(149, 24);
-			giamGiaTxt.TabIndex = 2;
+			loaiKhTxt.Text = "0%";
 			// 
 			// giaGocTxt
 			// 
@@ -336,74 +326,55 @@
 			giaGocTxt.BorderStyle = BorderStyle.None;
 			giaGocTxt.Enabled = false;
 			giaGocTxt.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-			giaGocTxt.Location = new Point(86, 7);
+			giaGocTxt.ForeColor = Color.Red;
+			giaGocTxt.Location = new Point(141, 20);
 			giaGocTxt.Name = "giaGocTxt";
 			giaGocTxt.ReadOnly = true;
-			giaGocTxt.Size = new Size(149, 24);
+			giaGocTxt.Size = new Size(66, 24);
 			giaGocTxt.TabIndex = 2;
+			giaGocTxt.Text = "0";
 			// 
-			// customButton1
+			// datHangBtn
 			// 
-			customButton1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-			customButton1.BackColor = Color.Crimson;
-			customButton1.BackgroundColor = Color.Crimson;
-			customButton1.BorderColor = Color.PaleVioletRed;
-			customButton1.BorderRadius = 15;
-			customButton1.BorderSize = 0;
-			customButton1.Cursor = Cursors.Hand;
-			customButton1.EnabledTextHover = false;
-			customButton1.FlatAppearance.BorderSize = 0;
-			customButton1.FlatStyle = FlatStyle.Flat;
-			customButton1.ForeColor = Color.White;
-			customButton1.ImageHover = null;
-			customButton1.Location = new Point(235, 118);
-			customButton1.Name = "customButton1";
-			customButton1.Size = new Size(148, 48);
-			customButton1.TabIndex = 1;
-			customButton1.Text = "Đặt Hàng";
-			customButton1.TextColor = Color.White;
-			customButton1.TextHover = Color.White;
-			customButton1.UseVisualStyleBackColor = false;
-			// 
-			// label4
-			// 
-			label4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-			label4.AutoSize = true;
-			label4.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
-			label4.Location = new Point(3, 80);
-			label4.Name = "label4";
-			label4.Size = new Size(137, 25);
-			label4.TabIndex = 0;
-			label4.Text = "Giá Cuối Cùng:";
+			datHangBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+			datHangBtn.BackColor = Color.Crimson;
+			datHangBtn.BackgroundColor = Color.Crimson;
+			datHangBtn.BorderColor = Color.PaleVioletRed;
+			datHangBtn.BorderRadius = 15;
+			datHangBtn.BorderSize = 0;
+			datHangBtn.Cursor = Cursors.Hand;
+			datHangBtn.EnabledTextHover = false;
+			datHangBtn.FlatAppearance.BorderSize = 0;
+			datHangBtn.FlatStyle = FlatStyle.Flat;
+			datHangBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+			datHangBtn.ForeColor = Color.White;
+			datHangBtn.ImageHover = null;
+			datHangBtn.Location = new Point(319, 118);
+			datHangBtn.Name = "datHangBtn";
+			datHangBtn.Size = new Size(148, 48);
+			datHangBtn.TabIndex = 1;
+			datHangBtn.Text = "Đặt Hàng";
+			datHangBtn.TextColor = Color.White;
+			datHangBtn.TextHover = Color.White;
+			datHangBtn.UseVisualStyleBackColor = false;
 			// 
 			// label3
 			// 
 			label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
 			label3.AutoSize = true;
 			label3.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
-			label3.Location = new Point(3, 55);
+			label3.Location = new Point(3, 56);
 			label3.Name = "label3";
 			label3.Size = new Size(110, 25);
 			label3.TabIndex = 0;
 			label3.Text = "Loại Khách:";
-			// 
-			// label2
-			// 
-			label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-			label2.AutoSize = true;
-			label2.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
-			label2.Location = new Point(3, 30);
-			label2.Name = "label2";
-			label2.Size = new Size(94, 25);
-			label2.TabIndex = 0;
-			label2.Text = "Giảm Giá:";
 			// 
 			// label1
 			// 
 			label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
 			label1.AutoSize = true;
 			label1.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
-			label1.Location = new Point(3, 5);
+			label1.Location = new Point(3, 18);
 			label1.Name = "label1";
 			label1.Size = new Size(83, 25);
 			label1.TabIndex = 0;
@@ -414,7 +385,7 @@
 			sidePanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
 			sidePanel1.BackColor = SystemColors.ActiveCaption;
 			sidePanel1.BorderRadius = 20;
-			sidePanel1.Controls.Add(flowLayoutPanel1);
+			sidePanel1.Controls.Add(sanPhamPanel);
 			sidePanel1.EnabledGradient = false;
 			sidePanel1.GradientAngle = 90F;
 			sidePanel1.GradientBottomColor = Color.FromArgb(255, 51, 153);
@@ -422,73 +393,114 @@
 			sidePanel1.Location = new Point(1, 3);
 			sidePanel1.Name = "sidePanel1";
 			sidePanel1.Padding = new Padding(7);
-			sidePanel1.Size = new Size(519, 434);
+			sidePanel1.Size = new Size(438, 520);
 			sidePanel1.TabIndex = 2;
 			// 
-			// flowLayoutPanel1
+			// sanPhamPanel
 			// 
-			flowLayoutPanel1.BackColor = SystemColors.ActiveCaption;
-			flowLayoutPanel1.Controls.Add(sanPhamCaPheuc1);
-			flowLayoutPanel1.Controls.Add(sanPhamCaPheuc2);
-			flowLayoutPanel1.Controls.Add(sanPhamCaPheuc3);
-			flowLayoutPanel1.Controls.Add(sanPhamCaPheuc4);
-			flowLayoutPanel1.Dock = DockStyle.Fill;
-			flowLayoutPanel1.Location = new Point(7, 7);
-			flowLayoutPanel1.Name = "flowLayoutPanel1";
-			flowLayoutPanel1.Size = new Size(505, 420);
-			flowLayoutPanel1.TabIndex = 0;
+			sanPhamPanel.AutoScroll = true;
+			sanPhamPanel.BackColor = SystemColors.ActiveCaption;
+			sanPhamPanel.Dock = DockStyle.Fill;
+			sanPhamPanel.Location = new Point(7, 7);
+			sanPhamPanel.Name = "sanPhamPanel";
+			sanPhamPanel.Size = new Size(424, 506);
+			sanPhamPanel.TabIndex = 0;
 			// 
-			// sanPhamCaPheuc1
+			// pggTab
 			// 
-			sanPhamCaPheuc1.BackColor = SystemColors.GradientInactiveCaption;
-			sanPhamCaPheuc1.cpModel = null;
-			sanPhamCaPheuc1.Location = new Point(3, 3);
-			sanPhamCaPheuc1.Name = "sanPhamCaPheuc1";
-			sanPhamCaPheuc1.Size = new Size(201, 230);
-			sanPhamCaPheuc1.TabIndex = 0;
+			pggTab.BackColor = SystemColors.Control;
+			pggTab.Controls.Add(label7);
+			pggTab.Controls.Add(returnBtn);
+			pggTab.Controls.Add(pggDg);
+			pggTab.Location = new Point(4, 24);
+			pggTab.Name = "pggTab";
+			pggTab.Padding = new Padding(3);
+			pggTab.Size = new Size(923, 526);
+			pggTab.TabIndex = 1;
+			pggTab.Text = "tabPage2";
 			// 
-			// sanPhamCaPheuc2
+			// label7
 			// 
-			sanPhamCaPheuc2.BackColor = SystemColors.GradientInactiveCaption;
-			sanPhamCaPheuc2.cpModel = null;
-			sanPhamCaPheuc2.Location = new Point(210, 3);
-			sanPhamCaPheuc2.Name = "sanPhamCaPheuc2";
-			sanPhamCaPheuc2.Size = new Size(201, 230);
-			sanPhamCaPheuc2.TabIndex = 1;
+			label7.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
+			label7.Location = new Point(84, 15);
+			label7.Name = "label7";
+			label7.Size = new Size(407, 43);
+			label7.TabIndex = 17;
+			label7.Text = "Danh Sách Phiếu Giảm Giá Sẵn Có";
+			label7.TextAlign = ContentAlignment.MiddleCenter;
 			// 
-			// sanPhamCaPheuc3
+			// returnBtn
 			// 
-			sanPhamCaPheuc3.BackColor = SystemColors.GradientInactiveCaption;
-			sanPhamCaPheuc3.cpModel = null;
-			sanPhamCaPheuc3.Location = new Point(3, 239);
-			sanPhamCaPheuc3.Name = "sanPhamCaPheuc3";
-			sanPhamCaPheuc3.Size = new Size(201, 230);
-			sanPhamCaPheuc3.TabIndex = 2;
+			returnBtn.BackColor = Color.Transparent;
+			returnBtn.BackgroundColor = Color.Transparent;
+			returnBtn.BorderColor = Color.PaleVioletRed;
+			returnBtn.BorderRadius = 20;
+			returnBtn.BorderSize = 0;
+			returnBtn.Cursor = Cursors.Hand;
+			returnBtn.EnabledTextHover = false;
+			returnBtn.FlatAppearance.BorderSize = 0;
+			returnBtn.FlatAppearance.MouseDownBackColor = Color.Teal;
+			returnBtn.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
+			returnBtn.FlatStyle = FlatStyle.Flat;
+			returnBtn.ForeColor = Color.White;
+			returnBtn.Image = Properties.Resources.arrowreturn32pxBlack1;
+			returnBtn.ImageHover = Properties.Resources.arrowreturn32pxWhite1;
+			returnBtn.Location = new Point(15, 15);
+			returnBtn.Name = "returnBtn";
+			returnBtn.Size = new Size(63, 41);
+			returnBtn.TabIndex = 16;
+			returnBtn.TextColor = Color.White;
+			returnBtn.TextHover = Color.White;
+			returnBtn.UseVisualStyleBackColor = false;
+			returnBtn.Click += returnBtn_Click;
 			// 
-			// sanPhamCaPheuc4
+			// pggDg
 			// 
-			sanPhamCaPheuc4.BackColor = SystemColors.GradientInactiveCaption;
-			sanPhamCaPheuc4.cpModel = null;
-			sanPhamCaPheuc4.Location = new Point(210, 239);
-			sanPhamCaPheuc4.Name = "sanPhamCaPheuc4";
-			sanPhamCaPheuc4.Size = new Size(201, 230);
-			sanPhamCaPheuc4.TabIndex = 3;
-			// 
-			// hoaDonTab
-			// 
-			hoaDonTab.Location = new Point(4, 24);
-			hoaDonTab.Name = "hoaDonTab";
-			hoaDonTab.Padding = new Padding(3);
-			hoaDonTab.Size = new Size(923, 440);
-			hoaDonTab.TabIndex = 1;
-			hoaDonTab.Text = "tabPage2";
-			hoaDonTab.UseVisualStyleBackColor = true;
+			pggDg.AllowUserToAddRows = false;
+			pggDg.AllowUserToDeleteRows = false;
+			pggDg.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			pggDg.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+			pggDg.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+			pggDg.BorderStyle = BorderStyle.None;
+			pggDg.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+			dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle4.BackColor = Color.DarkCyan;
+			dataGridViewCellStyle4.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+			dataGridViewCellStyle4.ForeColor = SystemColors.Control;
+			dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+			dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+			dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+			pggDg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+			pggDg.ColumnHeadersHeight = 30;
+			pggDg.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+			dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle5.BackColor = SystemColors.Window;
+			dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+			dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+			dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+			dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+			dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+			pggDg.DefaultCellStyle = dataGridViewCellStyle5;
+			pggDg.EnableHeadersVisualStyles = false;
+			pggDg.GridColor = Color.DarkCyan;
+			pggDg.ImeMode = ImeMode.NoControl;
+			pggDg.Location = new Point(0, 120);
+			pggDg.Name = "pggDg";
+			pggDg.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+			pggDg.RowHeadersVisible = false;
+			pggDg.RowHeadersWidth = 51;
+			dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+			pggDg.RowsDefaultCellStyle = dataGridViewCellStyle6;
+			pggDg.RowTemplate.Height = 25;
+			pggDg.RowTemplate.ReadOnly = true;
+			pggDg.Size = new Size(923, 406);
+			pggDg.TabIndex = 2;
 			// 
 			// taiKhoanTab
 			// 
 			taiKhoanTab.Location = new Point(4, 24);
 			taiKhoanTab.Name = "taiKhoanTab";
-			taiKhoanTab.Size = new Size(923, 440);
+			taiKhoanTab.Size = new Size(923, 526);
 			taiKhoanTab.TabIndex = 2;
 			taiKhoanTab.Text = "tabPage3";
 			taiKhoanTab.UseVisualStyleBackColor = true;
@@ -497,7 +509,7 @@
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(955, 553);
+			ClientSize = new Size(955, 639);
 			Controls.Add(panel1);
 			Controls.Add(titleBar);
 			Name = "BanHangView";
@@ -511,7 +523,8 @@
 			panel2.ResumeLayout(false);
 			panel2.PerformLayout();
 			sidePanel1.ResumeLayout(false);
-			flowLayoutPanel1.ResumeLayout(false);
+			pggTab.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)pggDg).EndInit();
 			ResumeLayout(false);
 		}
 
@@ -522,29 +535,25 @@
 		private CustomControl.CustomButton customButton3;
 		private CustomControl.CustomButton customButton2;
 		private CustomControl.CustomButton accountIcon;
-		private CustomControl.CustomButton hoaDonBtn;
 		private Panel panel1;
 		private TabControl tabControl1;
 		private TabPage trangChuTab;
-		private TabPage hoaDonTab;
+		private TabPage pggTab;
 		private TabPage taiKhoanTab;
 		private CustomControl.SidePanel sidePanel2;
 		private CustomControl.SidePanel sidePanel1;
-		private FlowLayoutPanel flowLayoutPanel1;
-		private CustomUserControl.SanPhamCaPheUC sanPhamCaPheuc1;
-		private CustomUserControl.SanPhamCaPheUC sanPhamCaPheuc2;
-		private CustomUserControl.SanPhamCaPheUC sanPhamCaPheuc3;
-		private CustomUserControl.SanPhamCaPheUC sanPhamCaPheuc4;
+		private FlowLayoutPanel sanPhamPanel;
 		private Panel panel2;
 		private Label label1;
-		private Label label4;
 		private Label label3;
-		private Label label2;
-		private CustomControl.CustomButton customButton1;
+		private CustomControl.CustomButton datHangBtn;
 		private TextBox giaGocTxt;
-		private TextBox giaCuoiCungTxt;
 		private TextBox loaiKhTxt;
-		private TextBox giamGiaTxt;
-		private FlowLayoutPanel flowLayoutPanel2;
+		private FlowLayoutPanel gioHangPanel;
+		private Label label5;
+		private DataGridView pggDg;
+		private CustomControl.CustomButton pggBtn;
+		private CustomControl.CustomButton returnBtn;
+		private Label label7;
 	}
 }

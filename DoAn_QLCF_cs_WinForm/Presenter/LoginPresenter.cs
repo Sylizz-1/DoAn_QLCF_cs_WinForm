@@ -1,4 +1,5 @@
 ﻿using DoAn_QLCF_cs_WinForm.Model;
+using DoAn_QLCF_cs_WinForm.Repository;
 using DoAn_QLCF_cs_WinForm.Repository.RepositoryInterface;
 using DoAn_QLCF_cs_WinForm.View;
 using DoAn_QLCF_cs_WinForm.View.ViewInterface;
@@ -74,8 +75,12 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
                     KhachHangModel khachHang = repository.LoginCustomer(this.view.UserName, this.view.Password);
                     if (khachHang != null)
                     {
-                        this.view.ShowMessage("Đăng nhập khách hàng thành công!");
-                    }
+						IBanHangView banHangView = new BanHangView();
+                        banHangView.KhModel = khachHang;
+						IBanHangRepository banHangRepository = new BanHangRepository(connectionString);
+						new BanHangPresenter(banHangView, banHangRepository);
+                        ((BanHangView)banHangView).Show();
+					}
                     else
                     {
                         this.view.LoginFailure();

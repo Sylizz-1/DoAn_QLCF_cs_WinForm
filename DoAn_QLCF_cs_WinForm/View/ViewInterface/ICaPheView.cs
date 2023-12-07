@@ -19,6 +19,7 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
 		event EventHandler AddNlBtnEvent;
 		event EventHandler EditNlBtnEvent;
 		event EventHandler DeleteNlBtnEvent;
+
 		// properties
 	
 		string CapheId { get; set; }
@@ -33,6 +34,7 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
 		ComboBox NguyenLieuCbx { get; set; }
 		string KhoiLuongTxt { get; set; }
 		DataGridView CpnlList2 { get; set; }
+
 
 
 		bool IsEdited { get; set; }

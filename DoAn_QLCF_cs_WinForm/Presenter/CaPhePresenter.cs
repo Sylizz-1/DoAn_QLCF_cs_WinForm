@@ -37,6 +37,7 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
 			BindingEvents();
 			LoadCaPheList();
 			LoadNguyenLieuCbx();
+			
 		}
 
 		public static CaPhePresenter GetInstance(ICaPheView view, ICaPheRepository repository)
@@ -96,13 +97,14 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
 			bool isDeleted;
 			List<CaPheNguyenLieuModel> cpnlList;
 			
-			if (this.view.TenTxt == "")
+			if (string.IsNullOrEmpty(this.view.TenTxt) || string.IsNullOrWhiteSpace(this.view.TenTxt))
 			{
 				MessageBox.Show("Tên không được để trống!!!");
 				return;
 			}
 
-			if(!float.TryParse(this.view.GiaTienTxt,out gia) || this.view.GiaTienTxt == "")
+			if(!float.TryParse(this.view.GiaTienTxt,out gia) || string.IsNullOrEmpty(this.view.GiaTienTxt) 
+				|| string.IsNullOrWhiteSpace(this.view.GiaTienTxt))
 			{
 				MessageBox.Show("Giá tiền phải là số và không được để trống!!!");
 				return;

@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace DoAn_QLCF_cs_WinForm.View
 {
 	public partial class CaPheView : Form, ICaPheView
@@ -39,6 +40,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 		public event EventHandler AddNlBtnEvent;
 		public event EventHandler EditNlBtnEvent;
 		public event EventHandler DeleteNlBtnEvent;
+		public event EventHandler FilterEvent;
 
 		public string CapheId { get => this.idTxt.Texts; set { this.idTxt.Focus(); this.idTxt.Texts = value; } }
 
@@ -55,6 +57,8 @@ namespace DoAn_QLCF_cs_WinForm.View
 		public string KhoiLuongTxt { get => this.khoiLuongTxt.Texts; set { this.khoiLuongTxt.Focus(); this.khoiLuongTxt.Texts = value; } }
 
 		DataGridView ICaPheView.CpnlList2 { get => this.cpnlList2; set => this.cpnlList2 = value; }
+
+		private BindingSource templist = new BindingSource();
 
 		// UI Code
 		private void BindingEvents()
@@ -85,6 +89,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 		public void LoadData(BindingSource list)
 		{
 			this.caPheDg.DataSource = list;
+			templist = list;
 			((DataGridViewImageColumn)caPheDg.Columns[1]).ImageLayout = DataGridViewImageCellLayout.Zoom;
 		}
 
@@ -143,7 +148,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 		}
 		public void LoadNguyenLieuCbx(BindingSource list)
 		{
-			
+
 			this.nguyenLieuCbx.DataSource = list;
 		}
 
@@ -185,22 +190,35 @@ namespace DoAn_QLCF_cs_WinForm.View
 		}
 
 		private void NguyenLieuCbx_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
-            var logoimage = Path.Combine(path, "image\\nguyenLieu");
-
-            if (nguyenLieuCbx.SelectedValue != null)
+		{
+			string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+			var logoimage = Path.Combine(path, "image\\nguyenLieu");
+			Image img;
+			if (nguyenLieuCbx.SelectedValue != null)
 			{
-				NguyenLieuModel nlModel = (NguyenLieuModel)nguyenLieuCbx.SelectedValue;
+				/*NguyenLieuModel nlModel = (NguyenLieuModel)nguyenLieuCbx.SelectedValue;
 				using (var stream = new FileStream(Path.Combine(logoimage, nlModel.HinhAnh), FileMode.Open))
-				{ 
+				{
 					var image = Image.FromStream(stream);
 					this.anhNguyenLieuPbx.Image = image;
+				}*/
+
+				try
+				{
+					NguyenLieuModel nlModel = (NguyenLieuModel)nguyenLieuCbx.SelectedValue;
+					this.anhNguyenLieuPbx.Image = Image.FromFile(Path.Combine(logoimage, nlModel.HinhAnh));
 				}
-				/*
-								NguyenLieuModel nlModel = (NguyenLieuModel)nguyenLieuCbx.SelectedValue;
-								this.anhNguyenLieuPbx.Image = Image.FromFile(Path.Combine(logoimage, nlModel.HinhAnh));
-				*/
+				catch (OutOfMemoryException ex)
+				{
+					ex.ToString();
+					this.anhNguyenLieuPbx.Image = null;
+				}
+
+				/*using (Image temp = Image.FromFile(logoimage))
+				{
+					img = new Bitmap(temp);
+					this.anhNguyenLieuPbx.Image = img;
+				}*/
 			}
 		}
 
@@ -226,9 +244,41 @@ namespace DoAn_QLCF_cs_WinForm.View
 			CaPheNguyenLieuModel cpnlModel = (CaPheNguyenLieuModel)this.cpnlList2.CurrentRow?.DataBoundItem;
 			if (cpnlModel != null)
 			{
-				this.NguyenLieuCbx.SelectedIndex = cpnlModel.NguyenLieuId -1 ;
+				this.NguyenLieuCbx.SelectedIndex = cpnlModel.NguyenLieuId - 1;
 				this.KhoiLuongTxt = cpnlModel.KhoiLuong.ToString();
 			}
+		}
+
+		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			string value = sxCbx.SelectedItem.ToString();
+			List<CaPheModel> myList = templist.List.OfType<CaPheModel>().ToList();
+
+			switch (value)
+			{
+				case "Id Tăng Dần":
+					myList.Sort((x, y) => x.Id.CompareTo(y.Id));
+					break;
+				case "Id Giảm Dần":
+					myList.Sort((x, y) => y.Id.CompareTo(x.Id));
+					break;
+				case "Giá Tăng Dần":
+					myList.Sort((x, y) => x.Gia.CompareTo(y.Gia));
+					break;
+				case "Giá Giảm Dần":
+					myList.Sort((x, y) => y.Gia.CompareTo(x.Gia));
+					break;
+				default: break;
+			}
+
+			BindingSource myBindingSource = new BindingSource();
+			myBindingSource.DataSource = myList;
+			LoadData(myBindingSource);
+		}
+
+		private void caPheDg_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+		{
+			
 		}
 	}
 }
