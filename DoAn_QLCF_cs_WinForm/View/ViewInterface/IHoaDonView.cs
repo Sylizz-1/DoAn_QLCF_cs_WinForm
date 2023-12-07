@@ -10,7 +10,8 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
 {
 	public interface IHoaDonView
 	{
-
+        event EventHandler DataUpdatedEvent;
+        event EventHandler btnLocClickEvent;
         event EventHandler btnUpdateClickEvent;
         event EventHandler UpdateEvent;
         event EventHandler SortEvent;

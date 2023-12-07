@@ -72,7 +72,7 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
                     this.view.SetTextBoxFillData(ncc);
                 }
                 else
-                    MessageBox.Show("Vui lòng chọn phiếu nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Vui lòng chọn nhà cung cấp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
                 MessageBox.Show("Danh sách rỗng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -118,7 +118,6 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
         }
         public void DeleteNcc(object sender, EventArgs e)
         {
-            MessageBox.Show(this.view.selectedId);
             if (int.Parse(this.view.NCCcount) > 0)
             {
                 if (this.view.selectedId != "0")

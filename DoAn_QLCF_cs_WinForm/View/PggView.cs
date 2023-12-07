@@ -322,16 +322,19 @@ namespace DoAn_QLCF_cs_WinForm.View
         }
 
         private void addBtn_Click(object sender, EventArgs e)
-        {
+        {           
+            tcPgg.SelectedTab = detailTabPage;
             txtIdPgg.Enabled = false;
             txtIdPgg.BackColor = Color.LightGray;
             txtIdPgg.BorderColor = Color.Silver;
-            tcPgg.SelectedTab = detailTabPage;
         }
 
         private void editBtn_Click(object sender, EventArgs e)
-        {
+        {        
             tcPgg.SelectedTab = detailTabPage;
+            txtIdPgg.Enabled = false;
+            txtIdPgg.BackColor = Color.LightGray;
+            txtIdPgg.BorderColor = Color.Silver;
         }
 
         private void delBtn_Click(object sender, EventArgs e)

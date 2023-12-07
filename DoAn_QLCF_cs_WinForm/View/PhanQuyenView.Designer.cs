@@ -34,6 +34,9 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             grb_quyen = new GroupBox();
             tc_quyen = new TabControl();
             tp_quyenDanhSach = new TabPage();
@@ -43,7 +46,7 @@
             btn_editPermission = new CustomControl.CustomButton();
             btn_addPermission = new CustomControl.CustomButton();
             customButton2 = new CustomControl.CustomButton();
-            searchTxt = new CustomControl.CustomTextBox();
+            txt_searchPermission = new CustomControl.CustomTextBox();
             tp_quyenChiTiet = new TabPage();
             btn_cancel = new CustomControl.CustomButton();
             btn_acceptPermission = new CustomControl.CustomButton();
@@ -56,6 +59,16 @@
             txt_idPermission = new CustomControl.CustomTextBox();
             label1 = new Label();
             btn_backPermission = new CustomControl.CustomButton();
+            tp_xemChiTiet = new TabPage();
+            groupBox2 = new GroupBox();
+            dtgv_permissionDetail = new DataGridView();
+            txt_namePermissionDetail = new CustomControl.CustomTextBox();
+            label10 = new Label();
+            txt_contentPermissionDetail = new CustomControl.CustomTextBox();
+            label9 = new Label();
+            btn_back2 = new CustomControl.CustomButton();
+            txt_idPermissionDetail = new CustomControl.CustomTextBox();
+            label8 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             grb_nhanVien = new GroupBox();
             tc_nhanVien = new TabControl();
@@ -64,7 +77,7 @@
             btn_deletePermissionEmployee = new CustomControl.CustomButton();
             btn_editPermissionEmployee = new CustomControl.CustomButton();
             customButton1 = new CustomControl.CustomButton();
-            customTextBox1 = new CustomControl.CustomTextBox();
+            txt_searchPermissionEmployee = new CustomControl.CustomTextBox();
             tp_nhanVienChiTiet = new TabPage();
             btn_cancelPermissionEmployee = new CustomControl.CustomButton();
             btn_acceptPermissionEmployee = new CustomControl.CustomButton();
@@ -83,6 +96,9 @@
             ((System.ComponentModel.ISupportInitialize)dtgrv_quyen).BeginInit();
             tp_quyenChiTiet.SuspendLayout();
             groupBox1.SuspendLayout();
+            tp_xemChiTiet.SuspendLayout();
+            groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dtgv_permissionDetail).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             grb_nhanVien.SuspendLayout();
             tc_nhanVien.SuspendLayout();
@@ -108,6 +124,7 @@
             // 
             tc_quyen.Controls.Add(tp_quyenDanhSach);
             tc_quyen.Controls.Add(tp_quyenChiTiet);
+            tc_quyen.Controls.Add(tp_xemChiTiet);
             tc_quyen.Dock = DockStyle.Fill;
             tc_quyen.Location = new Point(3, 30);
             tc_quyen.Name = "tc_quyen";
@@ -124,7 +141,7 @@
             tp_quyenDanhSach.Controls.Add(btn_editPermission);
             tp_quyenDanhSach.Controls.Add(btn_addPermission);
             tp_quyenDanhSach.Controls.Add(customButton2);
-            tp_quyenDanhSach.Controls.Add(searchTxt);
+            tp_quyenDanhSach.Controls.Add(txt_searchPermission);
             tp_quyenDanhSach.Location = new Point(4, 37);
             tp_quyenDanhSach.Name = "tp_quyenDanhSach";
             tp_quyenDanhSach.Padding = new Padding(3);
@@ -322,27 +339,28 @@
             customButton2.TextHover = Color.White;
             customButton2.UseVisualStyleBackColor = false;
             // 
-            // searchTxt
+            // txt_searchPermission
             // 
-            searchTxt.BackColor = SystemColors.Window;
-            searchTxt.BorderColor = Color.Silver;
-            searchTxt.BorderFocusColor = Color.DarkCyan;
-            searchTxt.BorderRadius = 15;
-            searchTxt.BorderSize = 2;
-            searchTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            searchTxt.ForeColor = Color.DimGray;
-            searchTxt.Location = new Point(6, 7);
-            searchTxt.Margin = new Padding(3, 4, 3, 4);
-            searchTxt.Multiline = false;
-            searchTxt.Name = "searchTxt";
-            searchTxt.Padding = new Padding(10, 9, 46, 9);
-            searchTxt.PasswordChar = false;
-            searchTxt.PlaceholderColor = Color.DarkGray;
-            searchTxt.PlaceholderText = "Tìm Kiếm ...";
-            searchTxt.Size = new Size(249, 47);
-            searchTxt.TabIndex = 3;
-            searchTxt.Texts = "";
-            searchTxt.UnderlinedStyle = false;
+            txt_searchPermission.BackColor = SystemColors.Window;
+            txt_searchPermission.BorderColor = Color.Silver;
+            txt_searchPermission.BorderFocusColor = Color.DarkCyan;
+            txt_searchPermission.BorderRadius = 15;
+            txt_searchPermission.BorderSize = 2;
+            txt_searchPermission.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_searchPermission.ForeColor = Color.DimGray;
+            txt_searchPermission.Location = new Point(6, 7);
+            txt_searchPermission.Margin = new Padding(3, 4, 3, 4);
+            txt_searchPermission.Multiline = false;
+            txt_searchPermission.Name = "txt_searchPermission";
+            txt_searchPermission.Padding = new Padding(10, 9, 46, 9);
+            txt_searchPermission.PasswordChar = false;
+            txt_searchPermission.PlaceholderColor = Color.DarkGray;
+            txt_searchPermission.PlaceholderText = "Tìm Kiếm ...";
+            txt_searchPermission.Size = new Size(249, 47);
+            txt_searchPermission.TabIndex = 3;
+            txt_searchPermission.Texts = "";
+            txt_searchPermission.UnderlinedStyle = false;
+            txt_searchPermission._TextChanged += txt_searchPermission__TextChanged;
             // 
             // tp_quyenChiTiet
             // 
@@ -366,7 +384,7 @@
             // 
             // btn_cancel
             // 
-            btn_cancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btn_cancel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_cancel.BackColor = SystemColors.Control;
             btn_cancel.BackgroundColor = SystemColors.Control;
             btn_cancel.BorderColor = Color.Red;
@@ -397,7 +415,7 @@
             // 
             // btn_acceptPermission
             // 
-            btn_acceptPermission.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btn_acceptPermission.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_acceptPermission.BackColor = SystemColors.Control;
             btn_acceptPermission.BackgroundColor = SystemColors.Control;
             btn_acceptPermission.BorderColor = Color.DarkCyan;
@@ -572,6 +590,203 @@
             btn_backPermission.UseVisualStyleBackColor = false;
             btn_backPermission.Click += btn_backPermission_Click;
             // 
+            // tp_xemChiTiet
+            // 
+            tp_xemChiTiet.Controls.Add(groupBox2);
+            tp_xemChiTiet.Controls.Add(txt_namePermissionDetail);
+            tp_xemChiTiet.Controls.Add(label10);
+            tp_xemChiTiet.Controls.Add(txt_contentPermissionDetail);
+            tp_xemChiTiet.Controls.Add(label9);
+            tp_xemChiTiet.Controls.Add(btn_back2);
+            tp_xemChiTiet.Controls.Add(txt_idPermissionDetail);
+            tp_xemChiTiet.Controls.Add(label8);
+            tp_xemChiTiet.Location = new Point(4, 37);
+            tp_xemChiTiet.Name = "tp_xemChiTiet";
+            tp_xemChiTiet.Padding = new Padding(3);
+            tp_xemChiTiet.Size = new Size(730, 660);
+            tp_xemChiTiet.TabIndex = 2;
+            tp_xemChiTiet.Text = "tp_xemChiTiet";
+            tp_xemChiTiet.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            groupBox2.Controls.Add(dtgv_permissionDetail);
+            groupBox2.Location = new Point(3, 280);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(724, 377);
+            groupBox2.TabIndex = 26;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Chức Năng";
+            // 
+            // dtgv_permissionDetail
+            // 
+            dtgv_permissionDetail.AllowUserToAddRows = false;
+            dtgv_permissionDetail.AllowUserToDeleteRows = false;
+            dtgv_permissionDetail.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtgv_permissionDetail.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dtgv_permissionDetail.BorderStyle = BorderStyle.None;
+            dtgv_permissionDetail.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.DarkCyan;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dtgv_permissionDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dtgv_permissionDetail.ColumnHeadersHeight = 30;
+            dtgv_permissionDetail.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = SystemColors.Window;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dtgv_permissionDetail.DefaultCellStyle = dataGridViewCellStyle5;
+            dtgv_permissionDetail.Dock = DockStyle.Fill;
+            dtgv_permissionDetail.EnableHeadersVisualStyles = false;
+            dtgv_permissionDetail.GridColor = Color.DarkCyan;
+            dtgv_permissionDetail.ImeMode = ImeMode.NoControl;
+            dtgv_permissionDetail.Location = new Point(3, 30);
+            dtgv_permissionDetail.Margin = new Padding(3, 4, 3, 4);
+            dtgv_permissionDetail.Name = "dtgv_permissionDetail";
+            dtgv_permissionDetail.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dtgv_permissionDetail.RowHeadersVisible = false;
+            dtgv_permissionDetail.RowHeadersWidth = 51;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dtgv_permissionDetail.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dtgv_permissionDetail.RowTemplate.Height = 25;
+            dtgv_permissionDetail.RowTemplate.ReadOnly = true;
+            dtgv_permissionDetail.Size = new Size(718, 344);
+            dtgv_permissionDetail.TabIndex = 19;
+            // 
+            // txt_namePermissionDetail
+            // 
+            txt_namePermissionDetail.BackColor = SystemColors.Window;
+            txt_namePermissionDetail.BorderColor = Color.Silver;
+            txt_namePermissionDetail.BorderFocusColor = Color.DarkCyan;
+            txt_namePermissionDetail.BorderRadius = 13;
+            txt_namePermissionDetail.BorderSize = 2;
+            txt_namePermissionDetail.Enabled = false;
+            txt_namePermissionDetail.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_namePermissionDetail.ForeColor = Color.DimGray;
+            txt_namePermissionDetail.Location = new Point(371, 110);
+            txt_namePermissionDetail.Margin = new Padding(3, 4, 3, 4);
+            txt_namePermissionDetail.Multiline = false;
+            txt_namePermissionDetail.Name = "txt_namePermissionDetail";
+            txt_namePermissionDetail.Padding = new Padding(10, 12, 8, 9);
+            txt_namePermissionDetail.PasswordChar = false;
+            txt_namePermissionDetail.PlaceholderColor = Color.DarkGray;
+            txt_namePermissionDetail.PlaceholderText = "Nhập ID....";
+            txt_namePermissionDetail.Size = new Size(279, 52);
+            txt_namePermissionDetail.TabIndex = 25;
+            txt_namePermissionDetail.Texts = "";
+            txt_namePermissionDetail.UnderlinedStyle = false;
+            // 
+            // label10
+            // 
+            label10.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Location = new Point(353, 72);
+            label10.Name = "label10";
+            label10.Size = new Size(130, 40);
+            label10.TabIndex = 24;
+            label10.Text = "Tên Quyền";
+            label10.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // txt_contentPermissionDetail
+            // 
+            txt_contentPermissionDetail.BackColor = SystemColors.Window;
+            txt_contentPermissionDetail.BorderColor = Color.Silver;
+            txt_contentPermissionDetail.BorderFocusColor = Color.DarkCyan;
+            txt_contentPermissionDetail.BorderRadius = 13;
+            txt_contentPermissionDetail.BorderSize = 2;
+            txt_contentPermissionDetail.Enabled = false;
+            txt_contentPermissionDetail.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_contentPermissionDetail.ForeColor = Color.DimGray;
+            txt_contentPermissionDetail.Location = new Point(31, 210);
+            txt_contentPermissionDetail.Margin = new Padding(3, 4, 3, 4);
+            txt_contentPermissionDetail.Multiline = false;
+            txt_contentPermissionDetail.Name = "txt_contentPermissionDetail";
+            txt_contentPermissionDetail.Padding = new Padding(10, 12, 8, 9);
+            txt_contentPermissionDetail.PasswordChar = false;
+            txt_contentPermissionDetail.PlaceholderColor = Color.DarkGray;
+            txt_contentPermissionDetail.PlaceholderText = "Nhập ID....";
+            txt_contentPermissionDetail.Size = new Size(279, 52);
+            txt_contentPermissionDetail.TabIndex = 23;
+            txt_contentPermissionDetail.Texts = "";
+            txt_contentPermissionDetail.UnderlinedStyle = false;
+            // 
+            // label9
+            // 
+            label9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Location = new Point(13, 172);
+            label9.Name = "label9";
+            label9.Size = new Size(176, 40);
+            label9.TabIndex = 22;
+            label9.Text = "Nội Dung Quyền";
+            label9.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btn_back2
+            // 
+            btn_back2.BackColor = Color.Transparent;
+            btn_back2.BackgroundColor = Color.Transparent;
+            btn_back2.BorderColor = Color.PaleVioletRed;
+            btn_back2.BorderRadius = 20;
+            btn_back2.BorderSize = 0;
+            btn_back2.Cursor = Cursors.Hand;
+            btn_back2.EnabledTextHover = false;
+            btn_back2.FlatAppearance.BorderSize = 0;
+            btn_back2.FlatAppearance.MouseDownBackColor = Color.Teal;
+            btn_back2.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
+            btn_back2.FlatStyle = FlatStyle.Flat;
+            btn_back2.ForeColor = Color.White;
+            btn_back2.Image = Properties.Resources.arrowreturn32pxBlack1;
+            btn_back2.ImageHover = Properties.Resources.arrowreturn32pxWhite1;
+            btn_back2.Location = new Point(6, 7);
+            btn_back2.Margin = new Padding(3, 4, 3, 4);
+            btn_back2.Name = "btn_back2";
+            btn_back2.Size = new Size(72, 55);
+            btn_back2.TabIndex = 21;
+            btn_back2.TextColor = Color.White;
+            btn_back2.TextHover = Color.White;
+            btn_back2.UseVisualStyleBackColor = false;
+            btn_back2.Click += btn_back2_Click;
+            // 
+            // txt_idPermissionDetail
+            // 
+            txt_idPermissionDetail.BackColor = SystemColors.Window;
+            txt_idPermissionDetail.BorderColor = Color.Silver;
+            txt_idPermissionDetail.BorderFocusColor = Color.DarkCyan;
+            txt_idPermissionDetail.BorderRadius = 13;
+            txt_idPermissionDetail.BorderSize = 2;
+            txt_idPermissionDetail.Enabled = false;
+            txt_idPermissionDetail.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_idPermissionDetail.ForeColor = Color.DimGray;
+            txt_idPermissionDetail.Location = new Point(31, 110);
+            txt_idPermissionDetail.Margin = new Padding(3, 4, 3, 4);
+            txt_idPermissionDetail.Multiline = false;
+            txt_idPermissionDetail.Name = "txt_idPermissionDetail";
+            txt_idPermissionDetail.Padding = new Padding(10, 12, 8, 9);
+            txt_idPermissionDetail.PasswordChar = false;
+            txt_idPermissionDetail.PlaceholderColor = Color.DarkGray;
+            txt_idPermissionDetail.PlaceholderText = "Nhập ID....";
+            txt_idPermissionDetail.Size = new Size(279, 52);
+            txt_idPermissionDetail.TabIndex = 20;
+            txt_idPermissionDetail.Texts = "";
+            txt_idPermissionDetail.UnderlinedStyle = false;
+            // 
+            // label8
+            // 
+            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Location = new Point(13, 72);
+            label8.Name = "label8";
+            label8.Size = new Size(93, 40);
+            label8.TabIndex = 19;
+            label8.Text = "Quyền ID";
+            label8.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 2;
@@ -620,7 +835,7 @@
             tp_nhanVienDanhSach.Controls.Add(btn_deletePermissionEmployee);
             tp_nhanVienDanhSach.Controls.Add(btn_editPermissionEmployee);
             tp_nhanVienDanhSach.Controls.Add(customButton1);
-            tp_nhanVienDanhSach.Controls.Add(customTextBox1);
+            tp_nhanVienDanhSach.Controls.Add(txt_searchPermissionEmployee);
             tp_nhanVienDanhSach.Location = new Point(4, 37);
             tp_nhanVienDanhSach.Name = "tp_nhanVienDanhSach";
             tp_nhanVienDanhSach.Padding = new Padding(3);
@@ -637,24 +852,24 @@
             dtgrv_nhanVien.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dtgrv_nhanVien.BorderStyle = BorderStyle.None;
             dtgrv_nhanVien.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.DarkCyan;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dtgrv_nhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = Color.DarkCyan;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dtgrv_nhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dtgrv_nhanVien.ColumnHeadersHeight = 30;
             dtgrv_nhanVien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = SystemColors.Window;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dtgrv_nhanVien.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = SystemColors.Window;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dtgrv_nhanVien.DefaultCellStyle = dataGridViewCellStyle8;
             dtgrv_nhanVien.EnableHeadersVisualStyles = false;
             dtgrv_nhanVien.GridColor = Color.DarkCyan;
             dtgrv_nhanVien.ImeMode = ImeMode.NoControl;
@@ -664,8 +879,8 @@
             dtgrv_nhanVien.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dtgrv_nhanVien.RowHeadersVisible = false;
             dtgrv_nhanVien.RowHeadersWidth = 51;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dtgrv_nhanVien.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dtgrv_nhanVien.RowsDefaultCellStyle = dataGridViewCellStyle9;
             dtgrv_nhanVien.RowTemplate.Height = 25;
             dtgrv_nhanVien.RowTemplate.ReadOnly = true;
             dtgrv_nhanVien.Size = new Size(724, 477);
@@ -756,27 +971,28 @@
             customButton1.TextHover = Color.White;
             customButton1.UseVisualStyleBackColor = false;
             // 
-            // customTextBox1
+            // txt_searchPermissionEmployee
             // 
-            customTextBox1.BackColor = SystemColors.Window;
-            customTextBox1.BorderColor = Color.Silver;
-            customTextBox1.BorderFocusColor = Color.DarkCyan;
-            customTextBox1.BorderRadius = 15;
-            customTextBox1.BorderSize = 2;
-            customTextBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            customTextBox1.ForeColor = Color.DimGray;
-            customTextBox1.Location = new Point(6, 4);
-            customTextBox1.Margin = new Padding(3, 4, 3, 4);
-            customTextBox1.Multiline = false;
-            customTextBox1.Name = "customTextBox1";
-            customTextBox1.Padding = new Padding(10, 9, 46, 9);
-            customTextBox1.PasswordChar = false;
-            customTextBox1.PlaceholderColor = Color.DarkGray;
-            customTextBox1.PlaceholderText = "Tìm Kiếm ...";
-            customTextBox1.Size = new Size(249, 47);
-            customTextBox1.TabIndex = 8;
-            customTextBox1.Texts = "";
-            customTextBox1.UnderlinedStyle = false;
+            txt_searchPermissionEmployee.BackColor = SystemColors.Window;
+            txt_searchPermissionEmployee.BorderColor = Color.Silver;
+            txt_searchPermissionEmployee.BorderFocusColor = Color.DarkCyan;
+            txt_searchPermissionEmployee.BorderRadius = 15;
+            txt_searchPermissionEmployee.BorderSize = 2;
+            txt_searchPermissionEmployee.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_searchPermissionEmployee.ForeColor = Color.DimGray;
+            txt_searchPermissionEmployee.Location = new Point(6, 4);
+            txt_searchPermissionEmployee.Margin = new Padding(3, 4, 3, 4);
+            txt_searchPermissionEmployee.Multiline = false;
+            txt_searchPermissionEmployee.Name = "txt_searchPermissionEmployee";
+            txt_searchPermissionEmployee.Padding = new Padding(10, 9, 46, 9);
+            txt_searchPermissionEmployee.PasswordChar = false;
+            txt_searchPermissionEmployee.PlaceholderColor = Color.DarkGray;
+            txt_searchPermissionEmployee.PlaceholderText = "Tìm Kiếm ...";
+            txt_searchPermissionEmployee.Size = new Size(249, 47);
+            txt_searchPermissionEmployee.TabIndex = 8;
+            txt_searchPermissionEmployee.Texts = "";
+            txt_searchPermissionEmployee.UnderlinedStyle = false;
+            txt_searchPermissionEmployee._TextChanged += txt_searchPermissionEmployee__TextChanged;
             // 
             // tp_nhanVienChiTiet
             // 
@@ -801,7 +1017,7 @@
             // 
             // btn_cancelPermissionEmployee
             // 
-            btn_cancelPermissionEmployee.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btn_cancelPermissionEmployee.Anchor = AnchorStyles.None;
             btn_cancelPermissionEmployee.BackColor = SystemColors.Control;
             btn_cancelPermissionEmployee.BackgroundColor = SystemColors.Control;
             btn_cancelPermissionEmployee.BorderColor = Color.Red;
@@ -818,7 +1034,7 @@
             btn_cancelPermissionEmployee.Image = Properties.Resources.CANCELiconRed;
             btn_cancelPermissionEmployee.ImageAlign = ContentAlignment.MiddleRight;
             btn_cancelPermissionEmployee.ImageHover = Properties.Resources.CANCELiconWhite;
-            btn_cancelPermissionEmployee.Location = new Point(567, 582);
+            btn_cancelPermissionEmployee.Location = new Point(567, 429);
             btn_cancelPermissionEmployee.Margin = new Padding(3, 4, 3, 4);
             btn_cancelPermissionEmployee.Name = "btn_cancelPermissionEmployee";
             btn_cancelPermissionEmployee.Size = new Size(157, 71);
@@ -832,7 +1048,7 @@
             // 
             // btn_acceptPermissionEmployee
             // 
-            btn_acceptPermissionEmployee.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btn_acceptPermissionEmployee.Anchor = AnchorStyles.None;
             btn_acceptPermissionEmployee.BackColor = SystemColors.Control;
             btn_acceptPermissionEmployee.BackgroundColor = SystemColors.Control;
             btn_acceptPermissionEmployee.BorderColor = Color.DarkCyan;
@@ -849,7 +1065,7 @@
             btn_acceptPermissionEmployee.Image = Properties.Resources.ConfirmIcondarkcyan1;
             btn_acceptPermissionEmployee.ImageAlign = ContentAlignment.MiddleRight;
             btn_acceptPermissionEmployee.ImageHover = Properties.Resources.ConfirmIconWhite1;
-            btn_acceptPermissionEmployee.Location = new Point(404, 582);
+            btn_acceptPermissionEmployee.Location = new Point(404, 429);
             btn_acceptPermissionEmployee.Margin = new Padding(3, 4, 3, 4);
             btn_acceptPermissionEmployee.Name = "btn_acceptPermissionEmployee";
             btn_acceptPermissionEmployee.Size = new Size(157, 71);
@@ -1007,6 +1223,9 @@
             ((System.ComponentModel.ISupportInitialize)dtgrv_quyen).EndInit();
             tp_quyenChiTiet.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
+            tp_xemChiTiet.ResumeLayout(false);
+            groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dtgv_permissionDetail).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             grb_nhanVien.ResumeLayout(false);
             tc_nhanVien.ResumeLayout(false);
@@ -1027,10 +1246,10 @@
         private TabControl tc_nhanVien;
         private TabPage tp_nhanVienDanhSach;
         private TabPage tp_nhanVienChiTiet;
-        private CustomControl.CustomTextBox searchTxt;
+        private CustomControl.CustomTextBox txt_searchPermission;
         private CustomControl.CustomButton customButton2;
         private CustomControl.CustomButton customButton1;
-        private CustomControl.CustomTextBox customTextBox1;
+        private CustomControl.CustomTextBox txt_searchPermissionEmployee;
         private CustomControl.CustomButton btn_addPermission;
         private CustomControl.CustomButton btn_editPermission;
         private CustomControl.CustomButton btn_deletePermission;
@@ -1061,5 +1280,15 @@
         private CustomControl.CustomButton btn_acceptPermissionEmployee;
         private ComboBox cbb_namePermission;
         private ComboBox cbb_idPermission;
+        private TabPage tp_xemChiTiet;
+        private CustomControl.CustomTextBox txt_namePermissionDetail;
+        private Label label10;
+        private CustomControl.CustomTextBox txt_contentPermissionDetail;
+        private Label label9;
+        private CustomControl.CustomButton btn_back2;
+        private CustomControl.CustomTextBox txt_idPermissionDetail;
+        private Label label8;
+        private GroupBox groupBox2;
+        private DataGridView dtgv_permissionDetail;
     }
 }

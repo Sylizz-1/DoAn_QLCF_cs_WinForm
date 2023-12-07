@@ -4,23 +4,13 @@ using DoAn_QLCF_cs_WinForm.View.ViewInterface;
 using System.ComponentModel;
 using System.Configuration;
 using System.Reflection.Metadata;
+using CrystalDecisions.Windows.Forms;
 
 namespace DoAn_QLCF_cs_WinForm.View
 {
     public partial class HoaDonView : Form, IHoaDonView
     {
         private static HoaDonView instance;
-        public void LoadDataFromDatabase()
-        {
-            string connectionString = ConfigurationManager.ConnectionStrings["sqlConnection"].ConnectionString;
-            HoaDonRepository hoaDonRepository = new HoaDonRepository(connectionString);
-
-            List<HoaDonModel> listHoaDon = hoaDonRepository.GetAll().ToList();
-            List<ChiTietHoaDonModel> listChiTietHoaDon = hoaDonRepository.GetAll_CT().ToList();
-
-            LoadData(new BindingSource(new BindingList<HoaDonModel>(listHoaDon), null));
-            LoadData_CT(new BindingSource(new BindingList<ChiTietHoaDonModel>(listChiTietHoaDon), null));
-        }
 
 
         public static IHoaDonView GetInstance(Form parentContainer)
@@ -51,11 +41,12 @@ namespace DoAn_QLCF_cs_WinForm.View
         public event EventHandler SortEvent;
         public event EventHandler FilterEvent;
         public event EventHandler ResetEvent;
-        public event EventHandler btnFilterClickEvent;
+        public event EventHandler btnLocClickEvent;
         public bool checkIsAdd = false;
         public bool checkIsfilter = false;
         public bool checkIsUpdate = false;
         public bool isNeedTurn = false;
+        public event EventHandler DataUpdatedEvent;
         private BindingSource templist = new BindingSource();
         private void XacNhanBtn_Click(object sender, EventArgs e)
         {
@@ -71,21 +62,20 @@ namespace DoAn_QLCF_cs_WinForm.View
             {
                 tcDanhSach.SelectedTab = tbDanhSach;
             }
+            DataUpdatedEvent?.Invoke(this, EventArgs.Empty);
         }
 
         public HoaDonView()
         {
-
+            
             InitializeComponent();
             SetUpView();
-            LoadDataFromDatabase();
-
+            DataUpdatedEvent?.Invoke(this, EventArgs.Empty);
             xacNhanBtn.Click += XacNhanBtn_Click;
-            FilterEvent += FilterEvent_Click;
 
 
             btnCT.Click += delegate { btnUpdateClickEvent?.Invoke(this, EventArgs.Empty); };
-            btnLoc.Click += delegate { btnFilterClickEvent?.Invoke(this, EventArgs.Empty); };
+            btnLoc.Click += delegate { btnLocClickEvent?.Invoke(this, EventArgs.Empty); };
             btnSort.Click += delegate { SortEvent?.Invoke(this, EventArgs.Empty); };
 
             rbIDKHDec.CheckedChanged += SortRadioButton_CheckedChanged;
@@ -111,12 +101,11 @@ namespace DoAn_QLCF_cs_WinForm.View
 
             rbGiamGiaDec.CheckedChanged += SortRadioButton_CheckedChanged;
             rbGiamGiaInc.CheckedChanged += SortRadioButton_CheckedChanged;
+
+            rbFalse.CheckedChanged += SortRadioButton_CheckedChanged;
+            rbTrue.CheckedChanged += SortRadioButton_CheckedChanged;
         }
-        private void FilterEvent_Click(object sender, EventArgs e)
-        {
-            // Gọi hàm filter
-            FilterListModels();
-        }
+
         public string HoaDonId
         {
             get => this.txtIDHoaDon.Texts;
@@ -320,28 +309,6 @@ namespace DoAn_QLCF_cs_WinForm.View
             LoadData(myBindingSource);
         }
 
-        private void FilterListModels()
-        {
-            List<HoaDonModel> myList = templist.List.OfType<HoaDonModel>().ToList();
-
-            if (checkIsfilter)
-            {
-                // Thêm các điều kiện filter ở đây, ví dụ:
-                if (rbTrue.Checked)
-                {
-                    myList = myList.Where(x => x.IsAccepted).ToList();
-                }
-                else if (rbFalse.Checked)
-                {
-                    myList = myList.Where(x => !x.IsAccepted).ToList();
-                }
-            }
-
-            BindingSource myBindingSource = new BindingSource();
-            myBindingSource.DataSource = myList;
-            LoadData(myBindingSource);
-        }
-
         private HoaDonModel GetSelectedHoaDonModel(string id)
         {
             int selectedId = int.Parse(id);
@@ -369,8 +336,19 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         private void xacNhanBtn_Click(object sender, EventArgs e)
         {
+            if (checkIsAdd)
+            {
+                AddEvent?.Invoke(this, EventArgs.Empty);
+            }
+            else if (checkIsUpdate)
+            {
+                UpdateEvent?.Invoke(this, EventArgs.Empty);
+            }
             if (isNeedTurn)
+            {
                 tcDanhSach.SelectedTab = tbDanhSach;
+            }
+            DataUpdatedEvent?.Invoke(this, EventArgs.Empty);
         }
 
         private void btn_back_Click(object sender, EventArgs e)
@@ -395,7 +373,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 
             if (gbLoc.Visible)
                 gbSort.Visible = false;
-            
+            DataUpdatedEvent?.Invoke(this, EventArgs.Empty);
 
         }
 
@@ -407,12 +385,13 @@ namespace DoAn_QLCF_cs_WinForm.View
                 gbSort.Visible = true;
             if (gbSort.Visible)
                 gbLoc.Visible = false;
-
+            DataUpdatedEvent?.Invoke(this, EventArgs.Empty);
         }
 
         private void btnCT_Click(object sender, EventArgs e)
         {
             tcDanhSach.SelectedTab = tbChiTiet;
+            DataUpdatedEvent?.Invoke(this, EventArgs.Empty);
         }
 
         private void resetBtn_Click(object sender, EventArgs e)
@@ -435,6 +414,9 @@ namespace DoAn_QLCF_cs_WinForm.View
             rbThanhTienDec.Checked = false;
             rbTrue.Checked = false;
             rbThanhTienInc.Checked = false;
+            DataUpdatedEvent?.Invoke(this, EventArgs.Empty);
         }
+
+
     }
 }
