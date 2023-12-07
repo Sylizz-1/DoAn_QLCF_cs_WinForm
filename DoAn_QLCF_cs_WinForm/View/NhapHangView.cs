@@ -77,6 +77,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 
             btnXacNhanAdd.Click += delegate { btnAddNglEvent?.Invoke(this, EventArgs.Empty); };
             btnFindPn.Click += delegate { FindPnEvent?.Invoke(this, EventArgs.Empty); };
+            btnXemPN.Click += delegate { btnUpdatePNClickEvent?.Invoke(this, EventArgs.Empty); };
 
             this.setStatePN(false, false, false, false);
             this.setStateCTPN(false, false, false, false);
@@ -276,11 +277,12 @@ namespace DoAn_QLCF_cs_WinForm.View
         }
         public void LoadDataPN(BindingSource list)
         {
-            this.dgvDsNhapHang.DataSource = list; ;
+            this.dgvDsNhapHang.DataSource = list;
             templist = list;
             dgvDsNhapHang.ClearSelection();
             selectedIdPN = "0";
         }
+
         public void LoadDataCTPN(BindingSource list)
         {
             this.dgvCTPN.DataSource = list;
@@ -397,6 +399,20 @@ namespace DoAn_QLCF_cs_WinForm.View
         }
         public void SetPNNull()
         {
+            if (isAddPN)
+            {
+                lbPN.Visible = false;
+                txtPhieuNhapId.Visible = false;
+                lbCTPNId.Visible = false;
+                txtCTPNId.Visible = false;
+            }
+            else
+            {
+                lbPN.Visible = true;
+                txtPhieuNhapId.Visible = true;
+                lbCTPNId.Visible = true;
+                txtCTPNId.Visible = true;
+            }
             if (isFilterPN)
             {
                 txtPhieuNhapId.Enabled = true;
@@ -416,6 +432,12 @@ namespace DoAn_QLCF_cs_WinForm.View
             }
             else
                 gbCTPN.Visible = true;
+            dtpPN.Enabled = true;
+            cbNhanVienId.Enabled = true;
+            cbNhanVienName.Enabled = true;
+            cbNccId.Enabled = true;
+            cbNccName.Enabled = true;
+            txtTongTien.Enabled = true;
             cbNhanVienId.SelectedIndex = -1;
             cbNccId.SelectedIndex = -1;
         }
@@ -496,9 +518,6 @@ namespace DoAn_QLCF_cs_WinForm.View
         {
             CtpnList = new List<ChiTietPhieuNhapModel>();
             LoadDataCTPN(null);
-            txtCTPNId.Enabled = false;
-            txtCTPNId.BackColor = Color.LightGray;
-            txtCTPNId.BorderColor = Color.Silver;
             txtTongTien.Texts = "0";
             tcNhapHang.SelectedTab = detailTabPage;
         }
@@ -508,17 +527,30 @@ namespace DoAn_QLCF_cs_WinForm.View
             this.setStatePN(false, false, false, false);
             dgvDsNhapHang.ClearSelection();
             selectedIdPN = "0";
+            pnCTPN.Visible = true;
+            HuyBtn.Visible = true;
+            xacNhanBtn.Visible = true;
         }
         private void btnEditPN_Click(object sender, EventArgs e)
         {
             if (dgvDsNhapHang.RowCount > 0 && selectedIdPN != "0")
             {
                 tcNhapHang.SelectedTab = detailTabPage;
+                dtpPN.Enabled = true;
+                cbNhanVienId.Enabled = true;
+                cbNhanVienName.Enabled = true;
+                cbNccId.Enabled = true;
+                cbNccName.Enabled = true;
+
+                lbPN.Visible = true;
+                txtCTPNId.Visible = true;
             }
         }
         private void filterBtn_Click(object sender, EventArgs e)
         {
             tcNhapHang.SelectedTab = detailTabPage;
+            lbPN.Visible = true;
+            txtCTPNId.Visible = true;
         }
 
         private void sortBtn_Click(object sender, EventArgs e)
@@ -546,6 +578,10 @@ namespace DoAn_QLCF_cs_WinForm.View
         }
         public void FillDataDetailPage(PhieuNhapModel pn, List<ChiTietPhieuNhapModel> list)
         {
+            lbPN.Visible = true;
+            txtPhieuNhapId.Visible = true;
+            lbCTPNId.Visible = true;
+            txtCTPNId.Visible = true;
             this.txtPhieuNhapId.Enabled = true;
             this.txtPhieuNhapId.Focus();
             this.txtPhieuNhapId.Texts = pn.PhieuNhapId.ToString();
@@ -568,6 +604,25 @@ namespace DoAn_QLCF_cs_WinForm.View
                 string firstCellData = selectedRow.Cells[0].Value.ToString();
                 idpn = firstCellData;
                 GetIdPNAdd(int.Parse(idpn));
+            }
+        }
+
+        private void btnXemPN_Click(object sender, EventArgs e)
+        {
+            if (dgvDsNhapHang.RowCount > 0 && selectedIdPN != "0")
+            {
+                tcNhapHang.SelectedTab = detailTabPage;
+                gbCTPN.Visible = true;
+                pnCTPN.Visible = false;
+                HuyBtn.Visible = false;
+                xacNhanBtn.Visible = false;
+
+                dtpPN.Enabled = false;
+                cbNhanVienId.Enabled = false;
+                cbNhanVienName.Enabled = false;
+                cbNccId.Enabled = false;
+                cbNccName.Enabled = false;
+                txtTongTien.Enabled = false;
             }
         }
         private void loadCTPN()
