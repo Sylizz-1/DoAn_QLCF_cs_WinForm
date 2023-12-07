@@ -214,13 +214,17 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             if (this.view.isUpdateCTPN)
                 if (this.view.CheckInputCTPN())
                 {
-                    ChiTietPhieuNhapModel ctpn = new ChiTietPhieuNhapModel();
-                    ctpn.PhieuNhapId = int.Parse(this.view.PhieuNhapId);
-                    ctpn.NguyenLieuId = int.Parse(this.view.NguyenLieuId);
-                    ctpn.KhoiLuong = float.Parse(this.view.KhoiLuong);
-                    ctpn.DonGia = float.Parse(this.view.DonGia);
+                    DialogResult result = MessageBox.Show("Bạn chắc chắn muốn sửa phiếu nhập", "Cảnh báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (result == DialogResult.OK)
+                    {
+                        ChiTietPhieuNhapModel ctpn = new ChiTietPhieuNhapModel();
+                        ctpn.PhieuNhapId = int.Parse(this.view.PhieuNhapId);
+                        ctpn.NguyenLieuId = int.Parse(this.view.NguyenLieuId);
+                        ctpn.KhoiLuong = float.Parse(this.view.KhoiLuong);
+                        ctpn.DonGia = float.Parse(this.view.DonGia);
 
-                    this.view.AddTempNgl(ctpn);
+                        this.view.AddTempNgl(ctpn);
+                    }
                 }
         }
         private void FilterPNClickEvent(object sender, EventArgs e)
@@ -308,7 +312,7 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             if (this.view.CheckInputNgl())
             {
                 NguyenLieuModel ngl = new NguyenLieuModel();
-                ngl.NguyenLieuId = int.Parse(this.view.NguyenLieuId);
+                ngl.NguyenLieuId = 1;
                 ngl.TenNguyenLieu = this.view.TenNguyenLieu;
                 ngl.KhoiLuong = float.Parse(this.view.KhoiLuongNgl);
                 ngl.GiaTien_Kg = float.Parse(this.view.GiaTien_Kg);

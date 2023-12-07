@@ -447,6 +447,11 @@ namespace DoAn_QLCF_cs_WinForm.View
                 MessageBox.Show(s, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+            if (dtpPN.Value > DateTime.Now)
+            {
+                MessageBox.Show("Ngày nhập không được lớn hơn ngày hiện tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             if (CtpnList.Count == 0)
             {
                 s += "thêm chi tiết phiếu nhập";
