@@ -18,6 +18,7 @@ namespace DoAn_QLCF_cs_WinForm.Repository.RepositoryInterface
         bool Add(QuyenModel quyenModel, ArrayList arrMethod);
         int GetNextIdPermission();
         ArrayList GetArrMethodByIdPermission(int idPermission);
+        IEnumerable<ChucNangModel> GetMethodByIdPermission(int idPermission);
         IEnumerable<QuyenModel> GetAllPermission();
         IEnumerable<ChucNangModel> GetAllMethod();
         IEnumerable<QuyenNhanVienModel> GetEmployeePermission();

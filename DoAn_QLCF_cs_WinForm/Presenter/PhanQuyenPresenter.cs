@@ -24,6 +24,8 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
         private IEnumerable<ChucNangModel> methodList;
         private BindingSource employeeBindingSource;
         private IEnumerable<QuyenNhanVienModel> employeeList;
+        private BindingSource methodDetailBindingSource;
+        private IEnumerable<ChucNangModel> methodDetailList;
 
         public PhanQuyenPresenter(IPhanQuyenView view, IPhanQuyenRepository repo)
 		{
@@ -32,7 +34,7 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             permissionBindingSource = new BindingSource();
             methodBindingSource = new BindingSource();
             employeeBindingSource = new BindingSource();
-
+            methodDetailBindingSource = new BindingSource();
             LoadQuyenList();
             LoadChucNangList();
             LoadNhanVienList();
@@ -60,7 +62,18 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             methodBindingSource.DataSource = methodList;
             this.view.LoadChucNangListCheckBox(methodBindingSource);
         }
-       
+        private void DetailPermission(object? sender, EventArgs e)
+        {
+            QuyenModel quyenModel = (QuyenModel)this.view.PermissionDataGridView.CurrentRow.DataBoundItem;
+            this.view.IdPermissionDetail = quyenModel.IdPermission.ToString();
+            this.view.NamePermissionDetail = quyenModel.NamePermission;
+            this.view.ContentPermissionDetail = quyenModel.ContentPermission;
+
+            methodDetailList = repo.GetMethodByIdPermission(quyenModel.IdPermission);
+            methodDetailBindingSource.DataSource = methodDetailList;
+            this.view.LoadChucNangListDetail(methodDetailBindingSource);
+        }
+
         private void BindingEvents()
         {
             this.view.AddPermissionBtnEvent += AddPermission;
@@ -148,18 +161,18 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
                     this.view.ShowMessage("Sửa quyền thất bại!");
                 }
             }
-        }
-
-        private void DetailPermission(object? sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        }        
 
         private void DeletePermission(object? sender, EventArgs e)
         {
             if (this.view.ShowYesNoMessage("Xác nhận xóa!") == DialogResult.Yes)
             {
                 QuyenModel quyenModel = (QuyenModel)this.view.PermissionDataGridView.CurrentRow.DataBoundItem;
+                if(quyenModel.IdPermission == 0)
+                {
+                    this.view.ShowMessage("Không thể Xóa quyền này!");
+                    return;
+                }
                 if (this.repo.IsPermissionOwnByEmployee(quyenModel.IdPermission))
                 {
                     this.view.ShowMessage("Quyền đã được gán cho Nhân Viên!\nKhông thể Xóa!");
@@ -194,7 +207,5 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             this.view.NamePermission = String.Empty;
             this.view.ContentPermission = String.Empty;
         }
-
-       
     }
 }
