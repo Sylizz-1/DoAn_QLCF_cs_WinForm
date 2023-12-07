@@ -42,8 +42,6 @@ namespace DoAn_QLCF_cs_WinForm.Repository
             }
         }
 
-
-
         public bool Delete(int id)
         {
             try
