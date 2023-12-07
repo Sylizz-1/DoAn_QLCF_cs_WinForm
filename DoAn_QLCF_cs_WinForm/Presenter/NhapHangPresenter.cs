@@ -69,9 +69,9 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             nccBindingSource = new BindingSource();
             nglBindingSource = new BindingSource();
             LoadCTPNList();
-            LoadNhanVienList("Add");
-            LoadNccList("Add");
-            LoadNglList("Add");
+            LoadNhanVienList(-1);
+            LoadNccList(-1);
+            LoadNglList(-1);
             LoadPhieuNhapList();
         }
         private void GetPNId()
@@ -100,9 +100,9 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
         {
             this.view.setStatePN(true, false, false, false);
             GetPNId();
-            LoadNhanVienList("Add");
-            LoadNccList("Add");
-            LoadNglList("Add");
+            LoadNhanVienList(-1);
+            LoadNccList(-1);
+            LoadNglList(-1);
             this.view.SetPNNull();
         }
         private void AddCTPNClickEvent(object sender, EventArgs e)
@@ -167,11 +167,11 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             {
                 if (this.view.selectedIdPN != "0")
                 {
-                    LoadNhanVienList("Update");
-                    LoadNccList("Update");
-                    LoadNglList("Update");
                     PhieuNhapModel ngl = repositoryPN.GetById(int.Parse(this.view.selectedIdPN));
                     List<ChiTietPhieuNhapModel> list = repositoryCTPN.GetById(int.Parse(this.view.selectedIdPN));
+                    LoadNhanVienList(ngl.NhanVienId);
+                    LoadNccList(ngl.NhaCungCapId);
+                    LoadNglList(-1);
                     this.view.FillDataDetailPage(ngl, list);
                 }
                 else
@@ -226,8 +226,8 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
         private void FilterPNClickEvent(object sender, EventArgs e)
         {
             this.view.setStatePN(false, false, true, true);
-            LoadNhanVienList("Update");
-            LoadNccList("Update");
+            LoadNhanVienList(0);
+            LoadNccList(0);
             this.view.SetPNNull();
         }
         private void FilterPN(object sender, EventArgs e)
@@ -243,7 +243,7 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
         private void FilterCTPNClickEvent(object sender, EventArgs e)
         {
             this.view.setStateCTPN(false, false, true, true);
-            LoadNglList("Update");
+            LoadNglList(0);
             this.view.SetNull();
         }
         private void FilterCTPN(object sender, EventArgs e)
@@ -285,23 +285,23 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             view.LoadDataCTPN(ctpnBindingSource);
         }
 
-        private void LoadNhanVienList(string state)
+        private void LoadNhanVienList(int index)
         {
             NhanVienList = repositoryNV.GetAll();
             nvBindingSource.DataSource = NhanVienList;
-            view.LoadDataNV(nvBindingSource, state);
+            view.LoadDataNV(nvBindingSource, index);
         }
-        private void LoadNccList(string state)
+        private void LoadNccList(int index)
         {
             NccList = repositoryNcc.GetAll();
             nccBindingSource.DataSource = NccList;
-            view.LoadDataNCC(nccBindingSource, state);
+            view.LoadDataNCC(nccBindingSource, index);
         }
-        private void LoadNglList(string state)
+        private void LoadNglList(int index)
         {
             NglList = repositoryNgl.GetAll();
             nglBindingSource.DataSource = NglList;
-            view.LoadDataNgl(nglBindingSource, state);
+            view.LoadDataNgl(nglBindingSource, index);
         }
         private void AddNgl(object sender, EventArgs e)
         {
@@ -324,7 +324,7 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
                 else
                     MessageBox.Show("Thêm không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                LoadNglList("Add");
+                LoadNglList(-1);
             }
         }
         private void FindPn(object sender, EventArgs e)

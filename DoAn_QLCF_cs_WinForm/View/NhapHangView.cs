@@ -99,13 +99,13 @@ namespace DoAn_QLCF_cs_WinForm.View
         }
         public string NhanVienId
         {
-            get => (this.cbNhanVienId.SelectedIndex + 1).ToString();
-            set => this.cbNhanVienId.SelectedIndex = int.Parse(value) - 1;
+            get => this.cbNhanVienId.SelectedItem.ToString();
+            set => this.cbNhanVienId.SelectedItem = int.Parse(value);
         }
         public string NhaCungCapId
         {
-            get => (this.cbNccId.SelectedIndex + 1).ToString();
-            set => this.cbNccId.SelectedIndex = int.Parse(value) - 1;
+            get => this.cbNccId.SelectedItem.ToString();
+            set => this.cbNccId.SelectedItem = int.Parse(value);
         }
         public string NgayNhap
         {
@@ -126,8 +126,8 @@ namespace DoAn_QLCF_cs_WinForm.View
         }
         public string NguyenLieuId
         {
-            get => (this.cbNglId.SelectedIndex + 1).ToString();
-            set => this.cbNglId.SelectedIndex = int.Parse(value) - 1;
+            get => this.cbNglId.SelectedItem.ToString();
+            set => this.cbNglId.SelectedItem = int.Parse(value);
         }
         public string KhoiLuong
         {
@@ -297,13 +297,13 @@ namespace DoAn_QLCF_cs_WinForm.View
             }
 
         }
-        public void LoadDataNV(BindingSource list, string state)
+        public void LoadDataNV(BindingSource list, int index)
         {
             List<string> name = new List<string>();
             List<string> id = new List<string>();
             foreach (NhanVienModel nv in list)
             {
-                if(state.Equals("Add"))
+                if(index == -1)
                 {
                     if (!nv.isDelete)
                     {
@@ -311,22 +311,30 @@ namespace DoAn_QLCF_cs_WinForm.View
                         id.Add(nv.Id.ToString());
                     }
                 }
-                else
+                else if (index == 0)
                 {
                     name.Add(nv.Name);
                     id.Add(nv.Id.ToString());
+                }
+                else
+                {
+                    if (!nv.isDelete || nv.Id == index)
+                    {
+                        name.Add(nv.Name);
+                        id.Add(nv.Id.ToString());
+                    }
                 }
             }
             cbNhanVienId.DataSource = id;
             cbNhanVienName.DataSource = name;
         }
-        public void LoadDataNCC(BindingSource list, string state)
+        public void LoadDataNCC(BindingSource list, int index)
         {
             List<string> name = new List<string>();
             List<string> id = new List<string>();
             foreach (NccModel ncc in list)
             {
-                if(state.Equals("Add"))
+                if (index == -1)
                 {
                     if (!ncc.IsDelete)
                     {
@@ -334,35 +342,50 @@ namespace DoAn_QLCF_cs_WinForm.View
                         id.Add(ncc.NhaCungCapId.ToString());
                     }
                 }
-                else
+                else if (index == 0)
                 {
                     name.Add(ncc.TenNhaCungCap);
                     id.Add(ncc.NhaCungCapId.ToString());
                 }
-
+                else
+                {
+                    if (!ncc.IsDelete || ncc.NhaCungCapId == index)
+                    {
+                        name.Add(ncc.TenNhaCungCap);
+                        id.Add(ncc.NhaCungCapId.ToString());
+                    }
+                }
             }
             cbNccId.DataSource = id;
             cbNccName.DataSource = name;
         }
-        public void LoadDataNgl(BindingSource list, string state)
+        public void LoadDataNgl(BindingSource list, int index)
         {
 
             List<string> name = new List<string>();
             List<string> id = new List<string>();
             foreach (NguyenLieuModel ngl in list)
             {
-                if(state.Equals("Add"))
+                if (index == -1)
                 {
                     if (!ngl.IsDelete)
                     {
                         id.Add(ngl.NguyenLieuId.ToString());
                         name.Add(ngl.TenNguyenLieu);
                     }
-                }  
-                else
+                }
+                else if (index == 0)
                 {
                     id.Add(ngl.NguyenLieuId.ToString());
                     name.Add(ngl.TenNguyenLieu);
+                }
+                else
+                {
+                    if (!ngl.IsDelete || ngl.NguyenLieuId == index)
+                    {
+                        id.Add(ngl.NguyenLieuId.ToString());
+                        name.Add(ngl.TenNguyenLieu);
+                    }
                 }
             }
             cbNglId.DataSource = id;

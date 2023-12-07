@@ -55,9 +55,9 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
         string FindText { get; set; }
         void LoadDataPN(BindingSource list);
         void LoadDataCTPN(BindingSource list);
-        void LoadDataNV(BindingSource list, string state);
-        void LoadDataNCC(BindingSource list, string state);
-        void LoadDataNgl(BindingSource list, string state);
+        void LoadDataNV(BindingSource list, int index);
+        void LoadDataNCC(BindingSource list, int index);
+        void LoadDataNgl(BindingSource list, int index);
         void AddTempNgl(ChiTietPhieuNhapModel ctpn);
         void GetIdPNAdd(int id);
         bool CheckInputPN();
