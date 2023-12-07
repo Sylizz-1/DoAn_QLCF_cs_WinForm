@@ -127,7 +127,7 @@ namespace DoAn_QLCF_cs_WinForm.View
         public string NguyenLieuId
         {
             get => this.cbNglId.SelectedItem.ToString();
-            set => this.cbNglId.SelectedItem = int.Parse(value);
+            set => this.cbNglId.SelectedItem = value;
         }
         public string KhoiLuong
         {
@@ -648,7 +648,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 
             NgayNhap = pn.NgayNhap.ToString();
             NhaCungCapId = pn.NhaCungCapId.ToString();
-            NhanVienId = pn.NhanVienId.ToString();
+            cbNhanVienId.SelectedItem = pn.NhanVienId.ToString();
             gbCTPN.Visible = true;
             CtpnList = list;
 
@@ -708,8 +708,8 @@ namespace DoAn_QLCF_cs_WinForm.View
         {
             cbNglId.Enabled = true;
             cbNglName.Enabled = true;
-            KhoiLuong = "";
-            DonGia = "";
+            txtCTPNKhoiLuong.Texts = "";
+            txtCTPNDonGia.Texts = "";
             cbNglId.SelectedIndex = -1;
             cbNglName.SelectedIndex = -1;
             txtCTPNKhoiLuong.BorderColor = Color.DarkCyan;
@@ -731,14 +731,14 @@ namespace DoAn_QLCF_cs_WinForm.View
                 foreach (ChiTietPhieuNhapModel ctpn in CtpnList)
                     if (ctpn.NguyenLieuId.ToString() == idngl)
                     {
-                        cbNglId.SelectedIndex = ctpn.NguyenLieuId - 1;
-                        cbNglName.SelectedIndex = ctpn.NguyenLieuId - 1;
+                        cbNglId.SelectedItem = idngl;
                         cbNglId.Enabled = false;
                         cbNglName.Enabled = false;
                         this.txtCTPNId.Enabled = true;
                         this.txtCTPNId.Focus();
                         this.txtCTPNId.Texts = ctpn.PhieuNhapId.ToString();
                         this.txtCTPNId.Enabled = false;
+
                         this.txtCTPNDonGia.Focus();
                         this.txtCTPNDonGia.Texts = ctpn.DonGia.ToString();
                         this.txtCTPNKhoiLuong.Focus();
@@ -825,18 +825,21 @@ namespace DoAn_QLCF_cs_WinForm.View
             cbNglId.BackColor = Color.White;
             cbNglName.BackColor = Color.White;
             bool check = false;
-            foreach (ChiTietPhieuNhapModel ct in CtpnList)
+            if(index > -1)
             {
-                if (ct.NguyenLieuId == index + 1)
+                foreach (ChiTietPhieuNhapModel ct in CtpnList)
                 {
-                    txtCTPNDonGia.Focus();
-                    DonGia = ct.DonGia.ToString();
-                    txtCTPNKhoiLuong.Focus();
-                    KhoiLuong = ct.KhoiLuong.ToString();
-                    check = true;
-                    break;
+                    if (ct.NguyenLieuId == int.Parse(cbNglId.SelectedValue.ToString()))
+                    {
+                        this.txtCTPNDonGia.Focus();
+                        this.txtCTPNDonGia.Texts = ct.DonGia.ToString();
+                        this.txtCTPNKhoiLuong.Focus();
+                        this.txtCTPNKhoiLuong.Texts = ct.KhoiLuong.ToString();
+                        check = true;
+                        break;
+                    }
                 }
-            }
+            }    
             if(!check)
             {
                 DonGia = "";
@@ -850,24 +853,6 @@ namespace DoAn_QLCF_cs_WinForm.View
             cbNglId.SelectedIndex = index;
             cbNglName.BackColor = Color.White;
             cbNglId.BackColor = Color.White;
-            bool check = false;
-            foreach (ChiTietPhieuNhapModel ct in CtpnList)
-            {
-                if (ct.NguyenLieuId == index + 1)
-                {
-                    txtCTPNDonGia.Focus();
-                    DonGia = ct.DonGia.ToString();
-                    txtCTPNKhoiLuong.Focus();
-                    KhoiLuong = ct.KhoiLuong.ToString();
-                    check = true;
-                    break;
-                }
-            }
-            if (!check)
-            {
-                DonGia = "";
-                KhoiLuong = "";
-            }
         }
         private void txtCTPNKhoiLuong__TextChanged(object sender, EventArgs e)
         {
