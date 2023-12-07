@@ -130,9 +130,6 @@
   <data name="ingredientIcon64pxOrangeRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ingredientIcon64pxOrangeRed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fixNLWHITE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fixNLWHITE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="background_coffee_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background_coffee_2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -169,6 +166,9 @@
   <data name="importFlat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\importFlat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="customer64pxWHITE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\customer64pxWHITE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ConfirmIcondarkcyan1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ConfirmIcondarkcyan1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -193,17 +193,14 @@
   <data name="invoice-khachhang" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\invoice-khachhang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="customer64pxWHITE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\customer64pxWHITE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_email_47" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-email-47.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fileFla" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fileFla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DiscountIcon24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DiscountIcon24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_name_47" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-name-47.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="open-folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\open-folder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -219,12 +216,6 @@
   </data>
   <data name="changepassicon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\changepassicon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logoutflatred2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logoutflatred2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="usericon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\usericon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Loadkhachhang64pxDarkCYAN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Loadkhachhang64pxDarkCYAN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -280,6 +271,9 @@
   <data name="unhide" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\unhide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="employee (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\employee (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="changepassicon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\changepassicon3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -294,9 +288,6 @@
   </data>
   <data name="LoaiKhachHangNAV" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LoaiKhachHangNAV.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_email_47" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-email-47.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fixNLdarkcyan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fixNLdarkcyan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -340,8 +331,11 @@
   <data name="icons8_register_100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-register-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="employeeCrimS64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\employeeCrimS64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fixNLWHITE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fixNLWHITE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CoffeeFlat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CoffeeFlat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="coupon64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\coupon64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -367,17 +361,23 @@
   <data name="accIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\accIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CoffeeFlat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CoffeeFlat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="usericon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usericon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="employees" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\employees.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="customerIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\customerIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="employee (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\employee (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logoutflatred2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logoutflatred2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="shopping-cart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shopping-cart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-user-100-header" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-user-100-header.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="arrowreturn32pxBlack1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrowreturn32pxBlack1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -394,17 +394,20 @@
   <data name="supplierflat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\supplierflat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="CaPheEspresso" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CaPheEspresso.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="defaultImage3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\defaultImage3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="employees" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\employees.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_name_47" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-name-47.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Coffee64pxBrown" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Coffee64pxBrown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-user-100-header" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-user-100-header.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="employeeCrimS64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\employeeCrimS64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="testcoffeePng" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\testcoffeePng1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -412,7 +415,7 @@
   <data name="icons8_check_lock_47" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-check-lock-47.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CaPheEspresso" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CaPheEspresso.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bin-24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bin-24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

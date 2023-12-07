@@ -38,6 +38,17 @@
 			tabControl1 = new TabControl();
 			trangChuTab = new TabPage();
 			sidePanel2 = new CustomControl.SidePanel();
+			flowLayoutPanel2 = new FlowLayoutPanel();
+			panel2 = new Panel();
+			giaCuoiCungTxt = new TextBox();
+			loaiKhTxt = new TextBox();
+			giamGiaTxt = new TextBox();
+			giaGocTxt = new TextBox();
+			customButton1 = new CustomControl.CustomButton();
+			label4 = new Label();
+			label3 = new Label();
+			label2 = new Label();
+			label1 = new Label();
 			sidePanel1 = new CustomControl.SidePanel();
 			flowLayoutPanel1 = new FlowLayoutPanel();
 			sanPhamCaPheuc1 = new CustomUserControl.SanPhamCaPheUC();
@@ -50,6 +61,8 @@
 			panel1.SuspendLayout();
 			tabControl1.SuspendLayout();
 			trangChuTab.SuspendLayout();
+			sidePanel2.SuspendLayout();
+			panel2.SuspendLayout();
 			sidePanel1.SuspendLayout();
 			flowLayoutPanel1.SuspendLayout();
 			SuspendLayout();
@@ -237,6 +250,8 @@
 			// 
 			sidePanel2.BackColor = SystemColors.ActiveCaption;
 			sidePanel2.BorderRadius = 20;
+			sidePanel2.Controls.Add(flowLayoutPanel2);
+			sidePanel2.Controls.Add(panel2);
 			sidePanel2.Dock = DockStyle.Right;
 			sidePanel2.EnabledGradient = false;
 			sidePanel2.GradientAngle = 90F;
@@ -246,6 +261,153 @@
 			sidePanel2.Name = "sidePanel2";
 			sidePanel2.Size = new Size(391, 434);
 			sidePanel2.TabIndex = 3;
+			// 
+			// flowLayoutPanel2
+			// 
+			flowLayoutPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			flowLayoutPanel2.BackColor = SystemColors.ActiveBorder;
+			flowLayoutPanel2.FlowDirection = FlowDirection.TopDown;
+			flowLayoutPanel2.Location = new Point(0, 0);
+			flowLayoutPanel2.Name = "flowLayoutPanel2";
+			flowLayoutPanel2.Size = new Size(391, 262);
+			flowLayoutPanel2.TabIndex = 1;
+			// 
+			// panel2
+			// 
+			panel2.BackColor = SystemColors.GradientActiveCaption;
+			panel2.Controls.Add(giaCuoiCungTxt);
+			panel2.Controls.Add(loaiKhTxt);
+			panel2.Controls.Add(giamGiaTxt);
+			panel2.Controls.Add(giaGocTxt);
+			panel2.Controls.Add(customButton1);
+			panel2.Controls.Add(label4);
+			panel2.Controls.Add(label3);
+			panel2.Controls.Add(label2);
+			panel2.Controls.Add(label1);
+			panel2.Dock = DockStyle.Bottom;
+			panel2.Location = new Point(0, 261);
+			panel2.Name = "panel2";
+			panel2.Size = new Size(391, 173);
+			panel2.TabIndex = 0;
+			// 
+			// giaCuoiCungTxt
+			// 
+			giaCuoiCungTxt.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+			giaCuoiCungTxt.BackColor = SystemColors.GradientActiveCaption;
+			giaCuoiCungTxt.BorderStyle = BorderStyle.None;
+			giaCuoiCungTxt.Enabled = false;
+			giaCuoiCungTxt.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+			giaCuoiCungTxt.Location = new Point(141, 82);
+			giaCuoiCungTxt.Name = "giaCuoiCungTxt";
+			giaCuoiCungTxt.ReadOnly = true;
+			giaCuoiCungTxt.Size = new Size(149, 24);
+			giaCuoiCungTxt.TabIndex = 2;
+			// 
+			// loaiKhTxt
+			// 
+			loaiKhTxt.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+			loaiKhTxt.BackColor = SystemColors.GradientActiveCaption;
+			loaiKhTxt.BorderStyle = BorderStyle.None;
+			loaiKhTxt.Enabled = false;
+			loaiKhTxt.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+			loaiKhTxt.Location = new Point(114, 57);
+			loaiKhTxt.Name = "loaiKhTxt";
+			loaiKhTxt.ReadOnly = true;
+			loaiKhTxt.Size = new Size(149, 24);
+			loaiKhTxt.TabIndex = 2;
+			// 
+			// giamGiaTxt
+			// 
+			giamGiaTxt.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+			giamGiaTxt.BackColor = SystemColors.GradientActiveCaption;
+			giamGiaTxt.BorderStyle = BorderStyle.None;
+			giamGiaTxt.Enabled = false;
+			giamGiaTxt.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+			giamGiaTxt.Location = new Point(98, 31);
+			giamGiaTxt.Name = "giamGiaTxt";
+			giamGiaTxt.ReadOnly = true;
+			giamGiaTxt.Size = new Size(149, 24);
+			giamGiaTxt.TabIndex = 2;
+			// 
+			// giaGocTxt
+			// 
+			giaGocTxt.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+			giaGocTxt.BackColor = SystemColors.GradientActiveCaption;
+			giaGocTxt.BorderStyle = BorderStyle.None;
+			giaGocTxt.Enabled = false;
+			giaGocTxt.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+			giaGocTxt.Location = new Point(86, 7);
+			giaGocTxt.Name = "giaGocTxt";
+			giaGocTxt.ReadOnly = true;
+			giaGocTxt.Size = new Size(149, 24);
+			giaGocTxt.TabIndex = 2;
+			// 
+			// customButton1
+			// 
+			customButton1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+			customButton1.BackColor = Color.Crimson;
+			customButton1.BackgroundColor = Color.Crimson;
+			customButton1.BorderColor = Color.PaleVioletRed;
+			customButton1.BorderRadius = 15;
+			customButton1.BorderSize = 0;
+			customButton1.Cursor = Cursors.Hand;
+			customButton1.EnabledTextHover = false;
+			customButton1.FlatAppearance.BorderSize = 0;
+			customButton1.FlatStyle = FlatStyle.Flat;
+			customButton1.ForeColor = Color.White;
+			customButton1.ImageHover = null;
+			customButton1.Location = new Point(235, 118);
+			customButton1.Name = "customButton1";
+			customButton1.Size = new Size(148, 48);
+			customButton1.TabIndex = 1;
+			customButton1.Text = "Đặt Hàng";
+			customButton1.TextColor = Color.White;
+			customButton1.TextHover = Color.White;
+			customButton1.UseVisualStyleBackColor = false;
+			// 
+			// label4
+			// 
+			label4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+			label4.AutoSize = true;
+			label4.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
+			label4.Location = new Point(3, 80);
+			label4.Name = "label4";
+			label4.Size = new Size(137, 25);
+			label4.TabIndex = 0;
+			label4.Text = "Giá Cuối Cùng:";
+			// 
+			// label3
+			// 
+			label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+			label3.AutoSize = true;
+			label3.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
+			label3.Location = new Point(3, 55);
+			label3.Name = "label3";
+			label3.Size = new Size(110, 25);
+			label3.TabIndex = 0;
+			label3.Text = "Loại Khách:";
+			// 
+			// label2
+			// 
+			label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+			label2.AutoSize = true;
+			label2.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
+			label2.Location = new Point(3, 30);
+			label2.Name = "label2";
+			label2.Size = new Size(94, 25);
+			label2.TabIndex = 0;
+			label2.Text = "Giảm Giá:";
+			// 
+			// label1
+			// 
+			label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+			label1.AutoSize = true;
+			label1.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
+			label1.Location = new Point(3, 5);
+			label1.Name = "label1";
+			label1.Size = new Size(83, 25);
+			label1.TabIndex = 0;
+			label1.Text = "Giá Gốc:";
 			// 
 			// sidePanel1
 			// 
@@ -345,6 +507,9 @@
 			panel1.ResumeLayout(false);
 			tabControl1.ResumeLayout(false);
 			trangChuTab.ResumeLayout(false);
+			sidePanel2.ResumeLayout(false);
+			panel2.ResumeLayout(false);
+			panel2.PerformLayout();
 			sidePanel1.ResumeLayout(false);
 			flowLayoutPanel1.ResumeLayout(false);
 			ResumeLayout(false);
@@ -370,5 +535,16 @@
 		private CustomUserControl.SanPhamCaPheUC sanPhamCaPheuc2;
 		private CustomUserControl.SanPhamCaPheUC sanPhamCaPheuc3;
 		private CustomUserControl.SanPhamCaPheUC sanPhamCaPheuc4;
+		private Panel panel2;
+		private Label label1;
+		private Label label4;
+		private Label label3;
+		private Label label2;
+		private CustomControl.CustomButton customButton1;
+		private TextBox giaGocTxt;
+		private TextBox giaCuoiCungTxt;
+		private TextBox loaiKhTxt;
+		private TextBox giamGiaTxt;
+		private FlowLayoutPanel flowLayoutPanel2;
 	}
 }
