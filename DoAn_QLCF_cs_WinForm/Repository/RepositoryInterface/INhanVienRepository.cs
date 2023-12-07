@@ -14,6 +14,7 @@ namespace DoAn_QLCF_cs_WinForm.Repository.RepositoryInterface
         int GetNextId();
         bool Add(NhanVienModel nhanVienModel);
         bool Edit(NhanVienModel nhanVienModel);
+        bool Delete(NhanVienModel nhanVienModel);
 
     }
 }

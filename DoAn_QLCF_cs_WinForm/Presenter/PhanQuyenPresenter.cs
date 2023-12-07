@@ -104,6 +104,7 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             }
         }
 
+        
         private void AcceptPermissionEmployeeBtnEvent(object? sender, EventArgs e)
         {
             QuyenNhanVienModel model = new QuyenNhanVienModel();
@@ -129,38 +130,58 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             this.view.ComboboxIdPermission = model.IdPermission;
         }
 
+        private bool CheckInput()
+        {
+            if (this.view.NamePermission == "")
+            {
+                this.view.ShowMessage("Tên quyền không được để trống!");
+                return false;
+            }
+            if(this.view.ContentPermission == "")
+            {
+                this.view.ShowMessage("Nội dung quyền không được để trống!");
+                return false;
+            }
+            return true;
+        }
         private void AcceptPermission(object? sender, EventArgs e)
         {
-            ArrayList arrMethod = new ArrayList();
-            QuyenModel model = new QuyenModel();            
-            model.IdPermission = int.Parse(this.view.IdPermission);
-            model.NamePermission = this.view.NamePermission;
-            model.ContentPermission = this.view.ContentPermission;
-            arrMethod = this.view.GetArrayMethodChecked();
-            if (this.isAdd)
+            if (CheckInput())
             {
-                if (this.repo.Add(model, arrMethod))
+                ArrayList arrMethod = new ArrayList();
+                QuyenModel model = new QuyenModel();
+                model.IdPermission = int.Parse(this.view.IdPermission);
+                model.NamePermission = this.view.NamePermission;
+                model.ContentPermission = this.view.ContentPermission;
+                arrMethod = this.view.GetArrayMethodChecked();
+                if (this.isAdd)
                 {
-                    this.view.ShowMessage("Thêm quyền thành công!");
-                    LoadQuyenList();
+                    if (this.repo.Add(model, arrMethod))
+                    {
+                        this.view.ShowMessage("Thêm quyền thành công!");
+                        LoadQuyenList();
+                        this.view.GoToListTabPage();
+                    }
+                    else
+                    {
+                        this.view.ShowMessage("Thêm quyền thất bại!");
+                    }
                 }
                 else
                 {
-                    this.view.ShowMessage("Thêm quyền thất bại!");
+                    if (this.repo.Edit(model, arrMethod))
+                    {
+                        this.view.ShowMessage("Sửa quyền thành công!");
+                        LoadQuyenList();
+                        this.view.GoToListTabPage();
+                    }
+                    else
+                    {
+                        this.view.ShowMessage("Sửa quyền thất bại!");
+                    }
                 }
             }
-            else
-            {
-                if (this.repo.Edit(model, arrMethod))
-                {
-                    this.view.ShowMessage("Sửa quyền thành công!");
-                    LoadQuyenList();
-                }
-                else
-                {
-                    this.view.ShowMessage("Sửa quyền thất bại!");
-                }
-            }
+            
         }        
 
         private void DeletePermission(object? sender, EventArgs e)
@@ -194,10 +215,19 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
         {
             this.isAdd = false;
             QuyenModel quyenModel = (QuyenModel)this.view.PermissionDataGridView.CurrentRow.DataBoundItem;
-            this.view.IdPermission = quyenModel.IdPermission.ToString();
-            this.view.NamePermission = quyenModel.NamePermission;
-            this.view.ContentPermission = quyenModel.ContentPermission;
-            this.view.LoadCheckedCheckBox(this.repo.GetArrMethodByIdPermission(quyenModel.IdPermission));           
+            if( quyenModel.IdPermission == 0)
+            {
+                this.view.ShowMessage("Không thể Sửa quyền này!");
+            }
+            else
+            {
+                this.view.IdPermission = quyenModel.IdPermission.ToString();
+                this.view.NamePermission = quyenModel.NamePermission;
+                this.view.ContentPermission = quyenModel.ContentPermission;
+                this.view.LoadCheckedCheckBox(this.repo.GetArrMethodByIdPermission(quyenModel.IdPermission));
+                this.view.GoToDetailPermissionTab();
+            }
+            
         }
 
         private void AddPermission(object? sender, EventArgs e)

@@ -28,6 +28,11 @@ namespace DoAn_QLCF_cs_WinForm
             new LoginPresenter(loginView, loginRepository);
             Application.Run((Form)loginView);
 
+            //INhanVienView view = new NhanVienView();
+            //INhanVienRepository repo = new NhanVienRepository(connectionString);
+            //new NhanVienPresenter(view, repo);
+            //Application.Run((Form)view);
+
             //IPhanQuyenView view = new PhanQuyenView();
             //IPhanQuyenRepository repo = new PhanQuyenRepository(connectionString);
             //new PhanQuyenPresenter(view, repo);

@@ -179,7 +179,7 @@
             tp_login.Controls.Add(pn_username);
             tp_login.Location = new Point(4, 29);
             tp_login.Name = "tp_login";
-            tp_login.Padding = new Padding(3, 3, 3, 3);
+            tp_login.Padding = new Padding(3);
             tp_login.Size = new Size(541, 520);
             tp_login.TabIndex = 0;
             tp_login.Text = "Login";
@@ -332,8 +332,8 @@
             tp_information.Controls.Add(pictureBox8);
             tp_information.Location = new Point(4, 29);
             tp_information.Name = "tp_information";
-            tp_information.Padding = new Padding(3, 3, 3, 3);
-            tp_information.Size = new Size(637, 667);
+            tp_information.Padding = new Padding(3);
+            tp_information.Size = new Size(541, 520);
             tp_information.TabIndex = 2;
             tp_information.Text = "Information";
             tp_information.UseVisualStyleBackColor = true;
@@ -371,7 +371,7 @@
             // 
             // btn_continue
             // 
-            btn_continue.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_continue.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             btn_continue.BackColor = SystemColors.Control;
             btn_continue.BackgroundColor = SystemColors.Control;
             btn_continue.BorderColor = Color.DarkCyan;
@@ -632,15 +632,15 @@
             tp_register.Controls.Add(btn_back2);
             tp_register.Location = new Point(4, 29);
             tp_register.Name = "tp_register";
-            tp_register.Padding = new Padding(3, 3, 3, 3);
-            tp_register.Size = new Size(637, 667);
+            tp_register.Padding = new Padding(3);
+            tp_register.Size = new Size(541, 520);
             tp_register.TabIndex = 1;
             tp_register.Text = "Register";
             tp_register.UseVisualStyleBackColor = true;
             // 
             // btn_register
             // 
-            btn_register.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_register.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             btn_register.BackColor = SystemColors.Control;
             btn_register.BackgroundColor = SystemColors.Control;
             btn_register.BorderColor = Color.DarkCyan;

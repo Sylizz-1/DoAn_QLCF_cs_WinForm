@@ -29,7 +29,7 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
         int Permission { get; set; }
 
         DataGridView DataGridView { get; set; }
-
+        void GoToListTabPage();
         void LoadData(BindingSource list);
         void LoadQuyen(BindingSource listQuyen);        
         void ShowMessage(string message);
