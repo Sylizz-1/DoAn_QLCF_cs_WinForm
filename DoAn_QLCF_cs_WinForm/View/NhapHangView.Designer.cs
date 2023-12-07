@@ -203,7 +203,7 @@
             btnXemPN.FlatAppearance.MouseDownBackColor = Color.Goldenrod;
             btnXemPN.FlatAppearance.MouseOverBackColor = Color.Goldenrod;
             btnXemPN.FlatStyle = FlatStyle.Flat;
-            btnXemPN.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnXemPN.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnXemPN.ForeColor = Color.Goldenrod;
             btnXemPN.ImageAlign = ContentAlignment.MiddleRight;
             btnXemPN.ImageHover = null;
@@ -257,7 +257,7 @@
             resetBtn.FlatAppearance.MouseDownBackColor = Color.DarkGray;
             resetBtn.FlatAppearance.MouseOverBackColor = Color.DarkGray;
             resetBtn.FlatStyle = FlatStyle.Flat;
-            resetBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            resetBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             resetBtn.ForeColor = Color.DarkGray;
             resetBtn.ImageAlign = ContentAlignment.MiddleRight;
             resetBtn.ImageHover = null;
@@ -486,7 +486,7 @@
             btnFilterPN.FlatAppearance.MouseDownBackColor = Color.Goldenrod;
             btnFilterPN.FlatAppearance.MouseOverBackColor = Color.Goldenrod;
             btnFilterPN.FlatStyle = FlatStyle.Flat;
-            btnFilterPN.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnFilterPN.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnFilterPN.ForeColor = Color.Goldenrod;
             btnFilterPN.ImageAlign = ContentAlignment.MiddleRight;
             btnFilterPN.ImageHover = null;
@@ -516,7 +516,7 @@
             sortBtn.FlatAppearance.MouseDownBackColor = Color.DeepSkyBlue;
             sortBtn.FlatAppearance.MouseOverBackColor = Color.DeepSkyBlue;
             sortBtn.FlatStyle = FlatStyle.Flat;
-            sortBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            sortBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             sortBtn.ForeColor = Color.DeepSkyBlue;
             sortBtn.ImageAlign = ContentAlignment.MiddleRight;
             sortBtn.ImageHover = null;
@@ -546,7 +546,7 @@
             delBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(187, 10, 10);
             delBtn.FlatAppearance.MouseOverBackColor = Color.Red;
             delBtn.FlatStyle = FlatStyle.Flat;
-            delBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            delBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             delBtn.ForeColor = Color.Red;
             delBtn.Image = Properties.Resources.deleteIconRed16px;
             delBtn.ImageAlign = ContentAlignment.MiddleRight;
@@ -576,7 +576,7 @@
             btnEditPN.FlatAppearance.MouseDownBackColor = Color.Teal;
             btnEditPN.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
             btnEditPN.FlatStyle = FlatStyle.Flat;
-            btnEditPN.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEditPN.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnEditPN.ForeColor = Color.DarkCyan;
             btnEditPN.Image = Properties.Resources.editIconTeal16px;
             btnEditPN.ImageAlign = ContentAlignment.MiddleRight;
@@ -607,7 +607,7 @@
             btnAddPN.FlatAppearance.MouseDownBackColor = Color.Teal;
             btnAddPN.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
             btnAddPN.FlatStyle = FlatStyle.Flat;
-            btnAddPN.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAddPN.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnAddPN.ForeColor = Color.DarkCyan;
             btnAddPN.Image = Properties.Resources.addIconTeal16px;
             btnAddPN.ImageAlign = ContentAlignment.MiddleRight;
@@ -634,7 +634,7 @@
             dgvDsNhapHang.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = Color.DarkCyan;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             dataGridViewCellStyle1.ForeColor = SystemColors.Control;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
@@ -644,7 +644,7 @@
             dgvDsNhapHang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
             dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
@@ -675,7 +675,7 @@
             searchTxt.BorderFocusColor = Color.DarkCyan;
             searchTxt.BorderRadius = 15;
             searchTxt.BorderSize = 2;
-            searchTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            searchTxt.Font = new Font("Segoe UI", 12F);
             searchTxt.ForeColor = Color.DimGray;
             searchTxt.Location = new Point(10, 9);
             searchTxt.Margin = new Padding(4, 5, 4, 5);
@@ -728,7 +728,7 @@
             txtTongTien.BorderRadius = 13;
             txtTongTien.BorderSize = 2;
             txtTongTien.Enabled = false;
-            txtTongTien.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTongTien.Font = new Font("Segoe UI", 13F);
             txtTongTien.ForeColor = Color.DimGray;
             txtTongTien.Location = new Point(1179, 23);
             txtTongTien.Margin = new Padding(4, 5, 4, 5);
@@ -745,7 +745,7 @@
             // 
             // label18
             // 
-            label18.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label18.Font = new Font("Segoe UI", 12F);
             label18.Location = new Point(999, 9);
             label18.Margin = new Padding(4, 0, 4, 0);
             label18.Name = "label18";
@@ -768,7 +768,7 @@
             HuyBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(187, 10, 10);
             HuyBtn.FlatAppearance.MouseOverBackColor = Color.Red;
             HuyBtn.FlatStyle = FlatStyle.Flat;
-            HuyBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            HuyBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             HuyBtn.ForeColor = Color.Red;
             HuyBtn.Image = Properties.Resources.CANCELiconRed;
             HuyBtn.ImageAlign = ContentAlignment.MiddleRight;
@@ -799,7 +799,7 @@
             xacNhanBtn.FlatAppearance.MouseDownBackColor = Color.Teal;
             xacNhanBtn.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
             xacNhanBtn.FlatStyle = FlatStyle.Flat;
-            xacNhanBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            xacNhanBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             xacNhanBtn.ForeColor = Color.DarkCyan;
             xacNhanBtn.Image = Properties.Resources.ConfirmIcondarkcyan1;
             xacNhanBtn.ImageAlign = ContentAlignment.MiddleRight;
@@ -821,7 +821,7 @@
             gbCTPN.Controls.Add(dgvCTPN);
             gbCTPN.Controls.Add(pnCTPN);
             gbCTPN.Dock = DockStyle.Bottom;
-            gbCTPN.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            gbCTPN.Font = new Font("Segoe UI", 13F);
             gbCTPN.Location = new Point(4, 335);
             gbCTPN.Margin = new Padding(4);
             gbCTPN.Name = "gbCTPN";
@@ -841,7 +841,7 @@
             dgvCTPN.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = Color.DarkCyan;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             dataGridViewCellStyle4.ForeColor = SystemColors.Control;
             dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
@@ -851,16 +851,17 @@
             dgvCTPN.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = SystemColors.Window;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
             dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
             dgvCTPN.DefaultCellStyle = dataGridViewCellStyle5;
+            dgvCTPN.Dock = DockStyle.Bottom;
             dgvCTPN.EnableHeadersVisualStyles = false;
             dgvCTPN.GridColor = Color.DarkCyan;
             dgvCTPN.ImeMode = ImeMode.NoControl;
-            dgvCTPN.Location = new Point(3, 217);
+            dgvCTPN.Location = new Point(4, 208);
             dgvCTPN.Margin = new Padding(4, 5, 4, 5);
             dgvCTPN.Name = "dgvCTPN";
             dgvCTPN.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
@@ -870,7 +871,7 @@
             dgvCTPN.RowsDefaultCellStyle = dataGridViewCellStyle6;
             dgvCTPN.RowTemplate.Height = 25;
             dgvCTPN.RowTemplate.ReadOnly = true;
-            dgvCTPN.Size = new Size(1552, 336);
+            dgvCTPN.Size = new Size(1514, 336);
             dgvCTPN.TabIndex = 23;
             dgvCTPN.CellClick += dgvNgl_CellClick;
             // 
@@ -904,7 +905,7 @@
             btnSortCTPN.FlatAppearance.MouseDownBackColor = Color.DeepSkyBlue;
             btnSortCTPN.FlatAppearance.MouseOverBackColor = Color.DeepSkyBlue;
             btnSortCTPN.FlatStyle = FlatStyle.Flat;
-            btnSortCTPN.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSortCTPN.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnSortCTPN.ForeColor = Color.DeepSkyBlue;
             btnSortCTPN.ImageAlign = ContentAlignment.MiddleRight;
             btnSortCTPN.ImageHover = null;
@@ -925,7 +926,7 @@
             gbCtpnSort.Controls.Add(groupBox6);
             gbCtpnSort.Controls.Add(groupBox9);
             gbCtpnSort.Controls.Add(groupBox11);
-            gbCtpnSort.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            gbCtpnSort.Font = new Font("Segoe UI", 9F);
             gbCtpnSort.Location = new Point(16, 7);
             gbCtpnSort.Name = "gbCtpnSort";
             gbCtpnSort.Size = new Size(531, 150);
@@ -1058,7 +1059,7 @@
             resetCTPNBtn.FlatAppearance.MouseDownBackColor = Color.DarkGray;
             resetCTPNBtn.FlatAppearance.MouseOverBackColor = Color.DarkGray;
             resetCTPNBtn.FlatStyle = FlatStyle.Flat;
-            resetCTPNBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            resetCTPNBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             resetCTPNBtn.ForeColor = Color.DarkGray;
             resetCTPNBtn.ImageAlign = ContentAlignment.MiddleRight;
             resetCTPNBtn.ImageHover = null;
@@ -1088,7 +1089,7 @@
             btnFilterCTPN.FlatAppearance.MouseDownBackColor = Color.Goldenrod;
             btnFilterCTPN.FlatAppearance.MouseOverBackColor = Color.Goldenrod;
             btnFilterCTPN.FlatStyle = FlatStyle.Flat;
-            btnFilterCTPN.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnFilterCTPN.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnFilterCTPN.ForeColor = Color.Goldenrod;
             btnFilterCTPN.ImageAlign = ContentAlignment.MiddleRight;
             btnFilterCTPN.ImageHover = null;
@@ -1118,7 +1119,7 @@
             btnDeleteCTPN.FlatAppearance.MouseDownBackColor = Color.FromArgb(187, 10, 10);
             btnDeleteCTPN.FlatAppearance.MouseOverBackColor = Color.Red;
             btnDeleteCTPN.FlatStyle = FlatStyle.Flat;
-            btnDeleteCTPN.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnDeleteCTPN.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnDeleteCTPN.ForeColor = Color.Red;
             btnDeleteCTPN.Image = Properties.Resources.deleteIconRed16px;
             btnDeleteCTPN.ImageAlign = ContentAlignment.MiddleRight;
@@ -1149,7 +1150,7 @@
             btnEditCTPN.FlatAppearance.MouseDownBackColor = Color.Teal;
             btnEditCTPN.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
             btnEditCTPN.FlatStyle = FlatStyle.Flat;
-            btnEditCTPN.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEditCTPN.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnEditCTPN.ForeColor = Color.DarkCyan;
             btnEditCTPN.Image = Properties.Resources.editIconTeal16px;
             btnEditCTPN.ImageAlign = ContentAlignment.MiddleRight;
@@ -1180,7 +1181,7 @@
             btnAddCTPN.FlatAppearance.MouseDownBackColor = Color.Teal;
             btnAddCTPN.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
             btnAddCTPN.FlatStyle = FlatStyle.Flat;
-            btnAddCTPN.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAddCTPN.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnAddCTPN.ForeColor = Color.DarkCyan;
             btnAddCTPN.Image = Properties.Resources.addIconTeal16px;
             btnAddCTPN.ImageAlign = ContentAlignment.MiddleRight;
@@ -1199,7 +1200,7 @@
             // 
             // dtpPN
             // 
-            dtpPN.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            dtpPN.Font = new Font("Segoe UI", 13F);
             dtpPN.Location = new Point(48, 275);
             dtpPN.Margin = new Padding(4);
             dtpPN.Name = "dtpPN";
@@ -1208,7 +1209,7 @@
             // 
             // cbNccName
             // 
-            cbNccName.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            cbNccName.Font = new Font("Segoe UI", 13F);
             cbNccName.FormattingEnabled = true;
             cbNccName.Location = new Point(910, 275);
             cbNccName.Margin = new Padding(4);
@@ -1220,7 +1221,7 @@
             // cbNhanVienId
             // 
             cbNhanVienId.BackColor = Color.White;
-            cbNhanVienId.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            cbNhanVienId.Font = new Font("Segoe UI", 13F);
             cbNhanVienId.ForeColor = SystemColors.WindowText;
             cbNhanVienId.FormattingEnabled = true;
             cbNhanVienId.Location = new Point(519, 163);
@@ -1232,7 +1233,7 @@
             // 
             // cbNccId
             // 
-            cbNccId.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            cbNccId.Font = new Font("Segoe UI", 13F);
             cbNccId.FormattingEnabled = true;
             cbNccId.Items.AddRange(new object[] { "False", "True" });
             cbNccId.Location = new Point(910, 163);
@@ -1244,7 +1245,7 @@
             // 
             // cbNhanVienName
             // 
-            cbNhanVienName.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            cbNhanVienName.Font = new Font("Segoe UI", 13F);
             cbNhanVienName.FormattingEnabled = true;
             cbNhanVienName.Location = new Point(519, 275);
             cbNhanVienName.Margin = new Padding(4);
@@ -1255,7 +1256,7 @@
             // 
             // label6
             // 
-            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Font = new Font("Segoe UI", 12F);
             label6.Location = new Point(511, 193);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
@@ -1266,7 +1267,7 @@
             // 
             // label7
             // 
-            label7.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Font = new Font("Segoe UI", 17F);
             label7.Location = new Point(124, 4);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
@@ -1303,7 +1304,7 @@
             // 
             // label3
             // 
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Segoe UI", 12F);
             label3.Location = new Point(906, 78);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
@@ -1314,7 +1315,7 @@
             // 
             // M
             // 
-            M.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            M.Font = new Font("Segoe UI", 12F);
             M.Location = new Point(494, 80);
             M.Margin = new Padding(4, 0, 4, 0);
             M.Name = "M";
@@ -1331,7 +1332,7 @@
             txtPhieuNhapId.BorderRadius = 13;
             txtPhieuNhapId.BorderSize = 2;
             txtPhieuNhapId.Enabled = false;
-            txtPhieuNhapId.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            txtPhieuNhapId.Font = new Font("Segoe UI", 13F);
             txtPhieuNhapId.ForeColor = Color.DimGray;
             txtPhieuNhapId.Location = new Point(48, 145);
             txtPhieuNhapId.Margin = new Padding(4, 5, 4, 5);
@@ -1348,7 +1349,7 @@
             // 
             // label5
             // 
-            label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Font = new Font("Segoe UI", 12F);
             label5.Location = new Point(20, 206);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
@@ -1359,7 +1360,7 @@
             // 
             // label4
             // 
-            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Segoe UI", 12F);
             label4.Location = new Point(906, 193);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
@@ -1370,7 +1371,7 @@
             // 
             // lbPN
             // 
-            lbPN.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbPN.Font = new Font("Segoe UI", 12F);
             lbPN.Location = new Point(24, 81);
             lbPN.Margin = new Padding(4, 0, 4, 0);
             lbPN.Name = "lbPN";
@@ -1419,7 +1420,7 @@
             btnAddNgl.FlatAppearance.MouseDownBackColor = Color.Teal;
             btnAddNgl.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
             btnAddNgl.FlatStyle = FlatStyle.Flat;
-            btnAddNgl.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAddNgl.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnAddNgl.ForeColor = Color.DarkCyan;
             btnAddNgl.Image = Properties.Resources.addIconTeal16px;
             btnAddNgl.ImageAlign = ContentAlignment.MiddleRight;
@@ -1450,7 +1451,7 @@
             btnHuyCTPN.FlatAppearance.MouseDownBackColor = Color.FromArgb(187, 10, 10);
             btnHuyCTPN.FlatAppearance.MouseOverBackColor = Color.Red;
             btnHuyCTPN.FlatStyle = FlatStyle.Flat;
-            btnHuyCTPN.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnHuyCTPN.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnHuyCTPN.ForeColor = Color.Red;
             btnHuyCTPN.Image = Properties.Resources.CANCELiconRed;
             btnHuyCTPN.ImageAlign = ContentAlignment.MiddleRight;
@@ -1481,7 +1482,7 @@
             btnXacNhanCTPN.FlatAppearance.MouseDownBackColor = Color.Teal;
             btnXacNhanCTPN.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
             btnXacNhanCTPN.FlatStyle = FlatStyle.Flat;
-            btnXacNhanCTPN.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnXacNhanCTPN.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnXacNhanCTPN.ForeColor = Color.DarkCyan;
             btnXacNhanCTPN.Image = Properties.Resources.ConfirmIcondarkcyan1;
             btnXacNhanCTPN.ImageAlign = ContentAlignment.MiddleRight;
@@ -1505,7 +1506,7 @@
             txtCTPNDonGia.BorderFocusColor = Color.DeepSkyBlue;
             txtCTPNDonGia.BorderRadius = 13;
             txtCTPNDonGia.BorderSize = 2;
-            txtCTPNDonGia.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCTPNDonGia.Font = new Font("Segoe UI", 13F);
             txtCTPNDonGia.ForeColor = Color.DimGray;
             txtCTPNDonGia.Location = new Point(942, 151);
             txtCTPNDonGia.Margin = new Padding(4, 5, 4, 5);
@@ -1523,7 +1524,7 @@
             // 
             // label13
             // 
-            label13.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label13.Font = new Font("Segoe UI", 12F);
             label13.Location = new Point(915, 82);
             label13.Margin = new Padding(4, 0, 4, 0);
             label13.Name = "label13";
@@ -1539,7 +1540,7 @@
             txtCTPNKhoiLuong.BorderFocusColor = Color.DeepSkyBlue;
             txtCTPNKhoiLuong.BorderRadius = 13;
             txtCTPNKhoiLuong.BorderSize = 2;
-            txtCTPNKhoiLuong.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCTPNKhoiLuong.Font = new Font("Segoe UI", 13F);
             txtCTPNKhoiLuong.ForeColor = Color.DimGray;
             txtCTPNKhoiLuong.Location = new Point(65, 289);
             txtCTPNKhoiLuong.Margin = new Padding(4, 5, 4, 5);
@@ -1557,7 +1558,7 @@
             // 
             // cbNglId
             // 
-            cbNglId.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            cbNglId.Font = new Font("Segoe UI", 13F);
             cbNglId.FormattingEnabled = true;
             cbNglId.Location = new Point(536, 169);
             cbNglId.Margin = new Padding(4);
@@ -1568,7 +1569,7 @@
             // 
             // cbNglName
             // 
-            cbNglName.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            cbNglName.Font = new Font("Segoe UI", 13F);
             cbNglName.FormattingEnabled = true;
             cbNglName.Location = new Point(536, 306);
             cbNglName.Margin = new Padding(4);
@@ -1580,7 +1581,7 @@
             // 
             // label12
             // 
-            label12.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.Font = new Font("Segoe UI", 12F);
             label12.Location = new Point(511, 224);
             label12.Margin = new Padding(4, 0, 4, 0);
             label12.Name = "label12";
@@ -1591,7 +1592,7 @@
             // 
             // label14
             // 
-            label14.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label14.Font = new Font("Segoe UI", 12F);
             label14.Location = new Point(511, 86);
             label14.Margin = new Padding(4, 0, 4, 0);
             label14.Name = "label14";
@@ -1608,7 +1609,7 @@
             txtCTPNId.BorderRadius = 13;
             txtCTPNId.BorderSize = 2;
             txtCTPNId.Enabled = false;
-            txtCTPNId.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCTPNId.Font = new Font("Segoe UI", 13F);
             txtCTPNId.ForeColor = Color.DimGray;
             txtCTPNId.Location = new Point(65, 151);
             txtCTPNId.Margin = new Padding(4, 5, 4, 5);
@@ -1625,7 +1626,7 @@
             // 
             // label15
             // 
-            label15.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label15.Font = new Font("Segoe UI", 12F);
             label15.Location = new Point(38, 220);
             label15.Margin = new Padding(4, 0, 4, 0);
             label15.Name = "label15";
@@ -1636,7 +1637,7 @@
             // 
             // lbCTPNId
             // 
-            lbCTPNId.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbCTPNId.Font = new Font("Segoe UI", 12F);
             lbCTPNId.Location = new Point(41, 88);
             lbCTPNId.Margin = new Padding(4, 0, 4, 0);
             lbCTPNId.Name = "lbCTPNId";
@@ -1647,7 +1648,7 @@
             // 
             // label11
             // 
-            label11.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
+            label11.Font = new Font("Segoe UI", 17F);
             label11.Location = new Point(122, 15);
             label11.Margin = new Padding(4, 0, 4, 0);
             label11.Name = "label11";
@@ -1719,7 +1720,7 @@
             btnHuyAdd.FlatAppearance.MouseDownBackColor = Color.FromArgb(187, 10, 10);
             btnHuyAdd.FlatAppearance.MouseOverBackColor = Color.Red;
             btnHuyAdd.FlatStyle = FlatStyle.Flat;
-            btnHuyAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnHuyAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnHuyAdd.ForeColor = Color.Red;
             btnHuyAdd.Image = Properties.Resources.CANCELiconRed;
             btnHuyAdd.ImageAlign = ContentAlignment.MiddleRight;
@@ -1750,7 +1751,7 @@
             btnXacNhanAdd.FlatAppearance.MouseDownBackColor = Color.Teal;
             btnXacNhanAdd.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
             btnXacNhanAdd.FlatStyle = FlatStyle.Flat;
-            btnXacNhanAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnXacNhanAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnXacNhanAdd.ForeColor = Color.DarkCyan;
             btnXacNhanAdd.Image = Properties.Resources.ConfirmIcondarkcyan1;
             btnXacNhanAdd.ImageAlign = ContentAlignment.MiddleRight;
@@ -1769,7 +1770,7 @@
             // 
             // label2
             // 
-            label2.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Segoe UI", 17F);
             label2.Location = new Point(110, 20);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
@@ -1821,7 +1822,7 @@
             // 
             // label8
             // 
-            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Font = new Font("Segoe UI", 12F);
             label8.Location = new Point(67, 395);
             label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
@@ -1837,7 +1838,7 @@
             txtNglPrice.BorderFocusColor = Color.DeepSkyBlue;
             txtNglPrice.BorderRadius = 13;
             txtNglPrice.BorderSize = 2;
-            txtNglPrice.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNglPrice.Font = new Font("Segoe UI", 13F);
             txtNglPrice.ForeColor = Color.DimGray;
             txtNglPrice.Location = new Point(905, 172);
             txtNglPrice.Margin = new Padding(4, 5, 4, 5);
@@ -1854,7 +1855,7 @@
             // 
             // label9
             // 
-            label9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Font = new Font("Segoe UI", 12F);
             label9.Location = new Point(901, 105);
             label9.Margin = new Padding(4, 0, 4, 0);
             label9.Name = "label9";
@@ -1870,7 +1871,7 @@
             txtNglInfo.BorderFocusColor = Color.DeepSkyBlue;
             txtNglInfo.BorderRadius = 13;
             txtNglInfo.BorderSize = 2;
-            txtNglInfo.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNglInfo.Font = new Font("Segoe UI", 13F);
             txtNglInfo.ForeColor = Color.DimGray;
             txtNglInfo.Location = new Point(513, 172);
             txtNglInfo.Margin = new Padding(4, 5, 4, 5);
@@ -1887,7 +1888,7 @@
             // 
             // label10
             // 
-            label10.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Font = new Font("Segoe UI", 12F);
             label10.Location = new Point(489, 107);
             label10.Margin = new Padding(4, 0, 4, 0);
             label10.Name = "label10";
@@ -1903,7 +1904,7 @@
             txtNglWeigh.BorderFocusColor = Color.DeepSkyBlue;
             txtNglWeigh.BorderRadius = 13;
             txtNglWeigh.BorderSize = 2;
-            txtNglWeigh.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNglWeigh.Font = new Font("Segoe UI", 13F);
             txtNglWeigh.ForeColor = Color.DimGray;
             txtNglWeigh.Location = new Point(89, 305);
             txtNglWeigh.Margin = new Padding(4, 5, 4, 5);
@@ -1925,7 +1926,7 @@
             txtNglName.BorderFocusColor = Color.DeepSkyBlue;
             txtNglName.BorderRadius = 13;
             txtNglName.BorderSize = 2;
-            txtNglName.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNglName.Font = new Font("Segoe UI", 13F);
             txtNglName.ForeColor = Color.DimGray;
             txtNglName.Location = new Point(89, 172);
             txtNglName.Margin = new Padding(4, 5, 4, 5);
@@ -1942,7 +1943,7 @@
             // 
             // label16
             // 
-            label16.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label16.Font = new Font("Segoe UI", 12F);
             label16.Location = new Point(61, 105);
             label16.Margin = new Padding(4, 0, 4, 0);
             label16.Name = "label16";
@@ -1953,7 +1954,7 @@
             // 
             // label19
             // 
-            label19.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label19.Font = new Font("Segoe UI", 12F);
             label19.Location = new Point(67, 230);
             label19.Margin = new Padding(4, 0, 4, 0);
             label19.Name = "label19";

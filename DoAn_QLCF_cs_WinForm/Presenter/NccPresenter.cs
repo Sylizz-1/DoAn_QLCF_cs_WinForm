@@ -153,18 +153,23 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
                     ncc.DiaChi = this.view.DiaChi;
                     ncc.IsDelete = bool.Parse(this.view.IsDelete);
 
-                    if (repository.Update(ncc))
+                    DialogResult result = MessageBox.Show("Bạn chắc chắn muốn sửa nhà cung cấp", "Cảnh báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (result == DialogResult.OK)
                     {
-                        MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.view.NhaCungCapId = ncc.NhaCungCapId.ToString();
-                        this.view.TenNhaCungCap = ncc.TenNhaCungCap.ToString();
-                        this.view.SDT = ncc.SDT.ToString();
-                        this.view.Email = ncc.Email.ToString();
-                        this.view.DiaChi = ncc.DiaChi.ToString();
-                        this.view.IsDelete = ncc.IsDelete.ToString();
+
+                        if (repository.Update(ncc))
+                        {
+                            MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.view.NhaCungCapId = ncc.NhaCungCapId.ToString();
+                            this.view.TenNhaCungCap = ncc.TenNhaCungCap.ToString();
+                            this.view.SDT = ncc.SDT.ToString();
+                            this.view.Email = ncc.Email.ToString();
+                            this.view.DiaChi = ncc.DiaChi.ToString();
+                            this.view.IsDelete = ncc.IsDelete.ToString();
+                        }
+                        else
+                            MessageBox.Show("Sửa không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    else
-                        MessageBox.Show("Sửa không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     LoadNccList();
                 }
         }
