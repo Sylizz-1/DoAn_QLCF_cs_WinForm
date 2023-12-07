@@ -17,9 +17,10 @@ namespace DoAn_QLCF_cs_WinForm.View
 {
     public partial class PhanQuyenView : Form, IPhanQuyenView
     {
+        int a;
         private static PhanQuyenView instance;
 
-        public PhanQuyenView()
+        public PhanQuyenView()  
         {
             InitializeComponent();
             SetUpView();
