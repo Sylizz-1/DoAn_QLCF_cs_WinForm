@@ -1565,7 +1565,6 @@
             cbNglId.Size = new Size(348, 44);
             cbNglId.TabIndex = 9;
             cbNglId.SelectedIndexChanged += cbNglId_SelectedIndexChanged;
-            cbNglId.Click += cbNglId_Click;
             // 
             // cbNglName
             // 
