@@ -22,17 +22,45 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
         private IEnumerable<QuyenModel> permissionList;
         private BindingSource methodBindingSource;        
         private IEnumerable<ChucNangModel> methodList;
+        private BindingSource employeeBindingSource;
+        private IEnumerable<QuyenNhanVienModel> employeeList;
 
         public PhanQuyenPresenter(IPhanQuyenView view, IPhanQuyenRepository repo)
 		{
 			this.view = view;
 			this.repo = repo;
-
             permissionBindingSource = new BindingSource();
             methodBindingSource = new BindingSource();
-            LoadPhanQuyenList();
+            employeeBindingSource = new BindingSource();
+
+            LoadQuyenList();
+            LoadChucNangList();
+            LoadNhanVienList();
             BindingEvents();
         }
+
+
+        private void LoadQuyenList()
+        {
+            permissionList = repo.GetAllPermission();
+            permissionBindingSource.DataSource = permissionList;
+            this.view.LoadQuyenList(permissionBindingSource);
+            this.view.LoadQuyenCombobox(permissionBindingSource);
+        }
+
+        private void LoadNhanVienList()
+        {
+            employeeList = repo.GetEmployeePermission();
+            employeeBindingSource.DataSource = employeeList;
+            this.view.LoadNhanVienList(employeeBindingSource);
+        }
+        private void LoadChucNangList()
+        {
+            methodList = repo.GetAllMethod();
+            methodBindingSource.DataSource = methodList;
+            this.view.LoadChucNangListCheckBox(methodBindingSource);
+        }
+       
         private void BindingEvents()
         {
             this.view.AddPermissionBtnEvent += AddPermission;
@@ -40,12 +68,52 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             this.view.DeletePermissionBtnEvent += DeletePermission;
             this.view.DetailPermissionBtnEvent += DetailPermission;
             this.view.AcceptPermissionBtnEvent += AcceptPermission;
-            this.view.CancelPermissionBtnEvent += CancelPermission;
+
+            this.view.EditPermissionEmployeeBtnEvent += EditPermissionEmployeeBtnEvent;
+            this.view.DeletePermissionEmployeeBtnEvent += DeletePermissionEmployeeBtnEvent;
+            this.view.AcceptPermissionEmployeeBtnEvent += AcceptPermissionEmployeeBtnEvent;
         }
 
-        private void CancelPermission(object? sender, EventArgs e)
+        private void DeletePermissionEmployeeBtnEvent(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            if (this.view.ShowYesNoMessage("Xác nhận xóa!") == DialogResult.Yes)
+            {
+                QuyenNhanVienModel model = (QuyenNhanVienModel)this.view.PermissionEmployeeDataGridView.CurrentRow.DataBoundItem;
+                if (this.repo.DeletePermissionEmployee(model.IdEmployee))
+                {
+                    this.view.ShowMessage("Xóa quyền nhân viên thành công!");
+                    LoadNhanVienList();
+                }
+                else
+                {
+                    this.view.ShowMessage("Xóa quyền nhân viên thất bại!");
+                }
+            }
+        }
+
+        private void AcceptPermissionEmployeeBtnEvent(object? sender, EventArgs e)
+        {
+            QuyenNhanVienModel model = new QuyenNhanVienModel();
+            model.IdEmployee = int.Parse(this.view.IdEmployee);
+            model.NameEmployee = this.view.NameEmployee;
+            model.IdPermission = this.view.ComboboxIdPermission;
+            if (this.repo.EditPermissionEmployee(model))
+            {
+                this.view.ShowMessage("Sửa quyền nhân viên thành công!");
+                LoadNhanVienList();
+            }
+            else
+            {
+                this.view.ShowMessage("Sửa quyền nhân viên thất bại!");
+            }                        
+        }
+
+        private void EditPermissionEmployeeBtnEvent(object? sender, EventArgs e)
+        {
+            QuyenNhanVienModel model = (QuyenNhanVienModel)this.view.PermissionEmployeeDataGridView.CurrentRow.DataBoundItem;
+            this.view.IdEmployee = model.IdEmployee.ToString();
+            this.view.NameEmployee = model.NameEmployee;
+            this.view.ComboboxIdPermission = model.IdPermission;
         }
 
         private void AcceptPermission(object? sender, EventArgs e)
@@ -61,7 +129,7 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
                 if (this.repo.Add(model, arrMethod))
                 {
                     this.view.ShowMessage("Thêm quyền thành công!");
-                    LoadPhanQuyenList();
+                    LoadQuyenList();
                 }
                 else
                 {
@@ -73,7 +141,7 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
                 if (this.repo.Edit(model, arrMethod))
                 {
                     this.view.ShowMessage("Sửa quyền thành công!");
-                    LoadPhanQuyenList();
+                    LoadQuyenList();
                 }
                 else
                 {
@@ -100,7 +168,7 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
                 if (this.repo.DeletePermissionById(quyenModel.IdPermission))
                 {
                     this.view.ShowMessage("Xóa quyền thành công!");
-                    LoadPhanQuyenList();
+                    LoadQuyenList();
                 }
                 else
                 {
@@ -127,14 +195,6 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
             this.view.ContentPermission = String.Empty;
         }
 
-        private void LoadPhanQuyenList()
-        {
-            permissionList = repo.GetAllPermission();
-            methodList = repo.GetAllMethod();
-            permissionBindingSource.DataSource = permissionList;
-            methodBindingSource.DataSource = methodList;
-            this.view.LoadData(permissionBindingSource, methodBindingSource);
-            this.view.LoadChucNangListCheckBox(methodBindingSource);
-        }
+       
     }
 }

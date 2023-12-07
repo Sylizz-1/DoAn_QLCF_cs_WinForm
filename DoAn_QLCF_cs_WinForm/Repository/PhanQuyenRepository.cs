@@ -3,6 +3,7 @@ using DoAn_QLCF_cs_WinForm.Repository.RepositoryInterface;
 using System.Collections;
 using System.Data;
 using System.Data.SqlClient;
+using System.Reflection;
 
 namespace DoAn_QLCF_cs_WinForm.Repository
 {
@@ -242,6 +243,87 @@ namespace DoAn_QLCF_cs_WinForm.Repository
             }
 
 
+        }
+
+        public IEnumerable<QuyenNhanVienModel> GetEmployeePermission()
+        {
+            var list = new List<QuyenNhanVienModel>();
+            using (var connection = new SqlConnection(this.connectionString))
+            using (var cmd = connection.CreateCommand())
+            {
+                connection.Open();
+                cmd.Connection = connection;
+                cmd.CommandText = "SELECT NhanVien.[NhanVienId], NhanVien.[Ten], NhanVien.QuyenId, Quyen.[TenQuyen]" +
+                                    " FROM NhanVien, Quyen" +
+                                    " WHERE NhanVien.QuyenId = Quyen.QuyenId AND NhanVien.IsDelete = 0" +
+                                    " order by NhanVien.[NhanVienId]";
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var model = new QuyenNhanVienModel();
+                        model.IdEmployee = (int)reader["NhanVienId"];
+                        model.NameEmployee = reader["Ten"].ToString();
+                        model.IdPermission = (int)reader["QuyenId"];
+                        model.NamePermission = reader["TenQuyen"].ToString();
+                        list.Add(model);
+                    }
+                }
+                return list;
+            }
+        }
+
+        public bool EditPermissionEmployee(QuyenNhanVienModel model)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(this.connectionString))
+                using (var cmd = connection.CreateCommand())
+                {
+                    connection.Open();
+                    cmd.Connection = connection;
+                    cmd.CommandText = "UPDATE NhanVien SET [QuyenId] = @QuyenId" +
+                                        " WHERE [NhanVienId] = @NhanVienId";
+                    cmd.Parameters.AddWithValue("@QuyenId", model.IdPermission);
+                    cmd.Parameters.AddWithValue("@NhanVienId", model.IdEmployee);                    
+                    if(cmd.ExecuteNonQuery() > 0)
+                    {
+                        return true;
+                    }
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
+
+        public bool DeletePermissionEmployee(int idEmployee)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(this.connectionString))
+                using (var cmd = connection.CreateCommand())
+                {
+                    connection.Open();
+                    cmd.Connection = connection;
+                    cmd.CommandText = "UPDATE NhanVien SET [QuyenId] = 0" +
+                                        " WHERE [NhanVienId] = @NhanVienId";
+                    cmd.Parameters.AddWithValue("@NhanVienId", idEmployee);
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        return true;
+                    }
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
         }
     }
 }
