@@ -35,6 +35,8 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
 
         DialogResult ShowYesNoMessage(string message);
         void ShowMessage(string message);
+        void GoToDetailPermissionTab();
+        void GoToListTabPage();
         ArrayList GetArrayMethodChecked();
         void LoadChucNangListDetail(BindingSource listMethod);
         void LoadNhanVienList(BindingSource listEmployee);

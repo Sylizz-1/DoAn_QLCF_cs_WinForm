@@ -1,8 +1,11 @@
-﻿using DoAn_QLCF_cs_WinForm.Presenter;
+﻿using DoAn_QLCF_cs_WinForm.Model;
+using DoAn_QLCF_cs_WinForm.Presenter;
+using DoAn_QLCF_cs_WinForm.Repository;
 using DoAn_QLCF_cs_WinForm.View.ViewInterface;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
@@ -27,7 +30,8 @@ namespace DoAn_QLCF_cs_WinForm.View
         public NhanVienView()
         {
             InitializeComponent();
-            //SetUpView();
+            SetUpView();
+            dtp_ngaySinh.MaxDate = DateTime.Today;
             BindingEvents();
 
 
@@ -36,6 +40,7 @@ namespace DoAn_QLCF_cs_WinForm.View
         {
             addBtn.Click += delegate { AddBtnEvent?.Invoke(this, EventArgs.Empty); };
             editBtn.Click += delegate { EditBtnEvent?.Invoke(this, EventArgs.Empty); };
+            delBtn.Click += delegate { DeleteBtnEvent?.Invoke(this, EventArgs.Empty); };
             xacNhanBtn.Click += delegate { AcceptBtnEvent?.Invoke(this, EventArgs.Empty); };
         }
         private void SetUpView()
@@ -106,18 +111,18 @@ namespace DoAn_QLCF_cs_WinForm.View
         {
             get
             {
-                return this.dataGridView;
+                return this.dtgv_nhanVien;
             }
             set
             {
 
-                this.dataGridView = value;
+                this.dtgv_nhanVien = value;
             }
         }
 
         public void LoadData(BindingSource list)
         {
-            this.dataGridView.DataSource = list;
+            this.dtgv_nhanVien.DataSource = list;
         }
 
         public void LoadQuyen(BindingSource listQuyen)
@@ -128,6 +133,10 @@ namespace DoAn_QLCF_cs_WinForm.View
             quyencmb.SelectedIndex = 0;
         }
 
+        public void GoToListTabPage()
+        {
+            tabControl1.SelectedTab = listTabPage;
+        }
 
         public static INhanVienView GetInstance(Form parentContainer)
         {
@@ -159,7 +168,6 @@ namespace DoAn_QLCF_cs_WinForm.View
             taikhoanTxt.Texts = string.Empty;
             matkhauTxt.Texts = string.Empty;
             txt_passwordConfirm.Texts = string.Empty;
-            dtp_ngaySinh.Value = DateTime.Now;
         }
 
         private void editBtn_Click(object sender, EventArgs e)
@@ -174,7 +182,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         private void xacNhanBtn_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedTab = listTabPage;
+
         }
 
         private void HuyBtn_Click(object sender, EventArgs e)
@@ -204,6 +212,75 @@ namespace DoAn_QLCF_cs_WinForm.View
             MessageBox.Show(message);
         }
 
-        
+        private void delBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtgv_nhanVien_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+        }
+
+        private void searchTxt__TextChanged(object sender, EventArgs e)
+        {
+            string valueSearch = this.searchTxt.Texts;
+            IEnumerable<NhanVienModel> list;
+            NhanVienRepository repo = new NhanVienRepository(ConfigurationManager.ConnectionStrings["sqlConnection"].ConnectionString);
+            if (string.IsNullOrEmpty(valueSearch) || string.IsNullOrWhiteSpace(valueSearch))
+            {
+                list = repo.GetAll();
+            }
+            else
+            {
+                list = repo.GetEmployeeByValue(valueSearch);
+            }
+            this.dtgv_nhanVien.DataSource = list;
+        }
+
+        private void sdtTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Chỉ cho phép nhập số và không phản ứng với các phím điều hướng
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (sdtTxt.Texts.Length >= 10 && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void emailTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void taikhoanTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void matkhauTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_passwordConfirm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

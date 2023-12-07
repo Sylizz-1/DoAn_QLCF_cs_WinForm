@@ -19,7 +19,7 @@ namespace DoAn_QLCF_cs_WinForm.View
     {
         private static PhanQuyenView instance;
 
-        public PhanQuyenView()  
+        public PhanQuyenView()
         {
             InitializeComponent();
             SetUpView();
@@ -265,9 +265,19 @@ namespace DoAn_QLCF_cs_WinForm.View
             MessageBox.Show(message);
         }
 
+        public void GoToListTabPage()
+        {
+            this.tc_quyen.SelectedTab = this.tp_quyenDanhSach;
+        }
+
         public DialogResult ShowYesNoMessage(string message)
         {
             return MessageBox.Show(message, "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        }
+
+        public void GoToDetailPermissionTab()
+        {
+            this.tc_quyen.SelectedTab = this.tp_quyenChiTiet;
         }
 
         public event EventHandler AddPermissionBtnEvent;
@@ -301,7 +311,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         private void btn_editPermission_Click(object sender, EventArgs e)
         {
-            this.tc_quyen.SelectedTab = this.tp_quyenChiTiet;
+            
         }
 
         private void btn_backPermission_Click(object sender, EventArgs e)
@@ -320,7 +330,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         private void btn_acceptPermission_Click(object sender, EventArgs e)
         {
-            this.tc_quyen.SelectedTab = this.tp_quyenDanhSach;
+
         }
 
         private void btn_detailPermission_Click(object sender, EventArgs e)
@@ -387,6 +397,16 @@ namespace DoAn_QLCF_cs_WinForm.View
                 list = repo.GetEmployeePermissionByValue(valueSearch);
             }
             this.dtgrv_nhanVien.DataSource = list;
+        }
+
+        private void cbb_idPermission_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cbb_namePermission_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }
