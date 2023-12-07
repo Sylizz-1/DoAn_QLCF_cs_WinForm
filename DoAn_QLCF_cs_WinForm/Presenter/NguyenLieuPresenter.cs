@@ -156,19 +156,23 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
                     ngl.HinhAnh = this.view.HinhAnh;
                     ngl.IsDelete = bool.Parse(this.view.IsDelete);
 
-                    if (repository.Update(ngl))
+                    DialogResult result = MessageBox.Show("Bạn chắc chắn muốn sửa nguyên liệu", "Cảnh báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (result == DialogResult.OK)
                     {
-                        MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.view.NguyenLieuId = ngl.NguyenLieuId.ToString();
-                        this.view.TenNguyenLieu = ngl.TenNguyenLieu.ToString();
-                        this.view.KhoiLuong = ngl.KhoiLuong.ToString();
-                        this.view.GiaTien_Kg = ngl.GiaTien_Kg.ToString();
-                        this.view.ThongTin = ngl.ThongTin.ToString();
-                        this.view.IsDelete = ngl.IsDelete.ToString();
-                        this.view.HinhAnh = Path.Combine(this.nguyenLieuImagePath, ngl.HinhAnh.ToString());
+                        if (repository.Update(ngl))
+                        {
+                            MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.view.NguyenLieuId = ngl.NguyenLieuId.ToString();
+                            this.view.TenNguyenLieu = ngl.TenNguyenLieu.ToString();
+                            this.view.KhoiLuong = ngl.KhoiLuong.ToString();
+                            this.view.GiaTien_Kg = ngl.GiaTien_Kg.ToString();
+                            this.view.ThongTin = ngl.ThongTin.ToString();
+                            this.view.IsDelete = ngl.IsDelete.ToString();
+                            this.view.HinhAnh = Path.Combine(this.nguyenLieuImagePath, ngl.HinhAnh.ToString());
+                        }
+                        else
+                            MessageBox.Show("Sửa không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    else
-                        MessageBox.Show("Sửa không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     LoadNguyenLieuList();
                 }
         }
