@@ -1,6 +1,7 @@
 ﻿using DoAn_QLCF_cs_WinForm.Model;
 using DoAn_QLCF_cs_WinForm.Repository;
 using DoAn_QLCF_cs_WinForm.View.ViewInterface;
+using System.ComponentModel;
 using System.Configuration;
 using System.Reflection.Metadata;
 
@@ -9,6 +10,18 @@ namespace DoAn_QLCF_cs_WinForm.View
     public partial class HoaDonView : Form, IHoaDonView
     {
         private static HoaDonView instance;
+        public void LoadDataFromDatabase()
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["sqlConnection"].ConnectionString;
+            HoaDonRepository hoaDonRepository = new HoaDonRepository(connectionString);
+
+            List<HoaDonModel> listHoaDon = hoaDonRepository.GetAll().ToList();
+            List<ChiTietHoaDonModel> listChiTietHoaDon = hoaDonRepository.GetAll_CT().ToList();
+
+            LoadData(new BindingSource(new BindingList<HoaDonModel>(listHoaDon), null));
+            LoadData_CT(new BindingSource(new BindingList<ChiTietHoaDonModel>(listChiTietHoaDon), null));
+        }
+
 
         public static IHoaDonView GetInstance(Form parentContainer)
         {
@@ -39,7 +52,6 @@ namespace DoAn_QLCF_cs_WinForm.View
         public event EventHandler FilterEvent;
         public event EventHandler ResetEvent;
         public event EventHandler btnFilterClickEvent;
-
         public bool checkIsAdd = false;
         public bool checkIsfilter = false;
         public bool checkIsUpdate = false;
@@ -66,7 +78,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 
             InitializeComponent();
             SetUpView();
-
+            LoadDataFromDatabase();
 
             xacNhanBtn.Click += XacNhanBtn_Click;
             FilterEvent += FilterEvent_Click;
