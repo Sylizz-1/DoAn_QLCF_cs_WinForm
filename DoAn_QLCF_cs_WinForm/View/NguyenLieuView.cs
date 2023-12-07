@@ -225,6 +225,8 @@ namespace DoAn_QLCF_cs_WinForm.View
         }
         public void SetTextBoxFillData(NguyenLieuModel ngl)
         {
+            setStateTb(true);
+
             this.txtNglId.Enabled = true;
             this.txtNglId.Focus();
             this.txtNglId.Texts = ngl.NguyenLieuId.ToString();
@@ -239,6 +241,8 @@ namespace DoAn_QLCF_cs_WinForm.View
             this.IsDelete = ngl.IsDelete.ToString();
             this.txtNglName.Focus();
             this.txtNglName.Texts = ngl.TenNguyenLieu;
+            if (ngl.IsDelete == true)
+                setStateTb(false);
         }
 
         public bool CheckInput()
@@ -342,6 +346,30 @@ namespace DoAn_QLCF_cs_WinForm.View
             tcNgl.SelectedTab = detailTabPage;
             SetNull();
         }
+        public void setStateTb(bool state)
+        {
+            this.txtNglInfo.Enabled = state;
+            this.txtNglWeigh.Enabled = state;
+            this.txtNglName.Enabled = state;
+            this.txtNglPrice.Enabled = state;
+            this.checkboxIsDelete.Enabled = state;
+            this.caPhePic.Enabled = state;
+
+            if (state)
+            {
+                this.txtNglInfo.BackColor = Color.White;
+                this.txtNglWeigh.BackColor = Color.White;
+                this.txtNglName.BackColor = Color.White;
+                this.txtNglPrice.BackColor = Color.White;
+            }
+            else
+            {
+                this.txtNglInfo.BackColor = Color.LightGray;
+                this.txtNglWeigh.BackColor = Color.LightGray;
+                this.txtNglName.BackColor = Color.LightGray;
+                this.txtNglPrice.BackColor = Color.LightGray;
+            }
+        }
 
         private void btn_back_Click(object sender, EventArgs e)
         {
@@ -358,6 +386,7 @@ namespace DoAn_QLCF_cs_WinForm.View
                 checkboxIsDelete.Visible = true;
             }
             setState(false, false, false, false);
+            setStateTb(true);
             tcNgl.SelectedTab = listTabPage;
             SetNull();
             dgvNgl.ClearSelection();
@@ -378,6 +407,7 @@ namespace DoAn_QLCF_cs_WinForm.View
                 checkboxIsDelete.Visible = true;
             }
             setState(false, false, false, false);
+            setStateTb(true);
             tcNgl.SelectedTab = listTabPage;
             SetNull();
             dgvNgl.ClearSelection();

@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             tcNhapHang = new TabControl();
             listTabPage = new TabPage();
             btnXemPN = new CustomControl.CustomButton();
@@ -165,7 +165,7 @@
             tcNhapHang.Name = "tcNhapHang";
             tcNhapHang.SelectedIndex = 0;
             tcNhapHang.Size = new Size(1538, 925);
-            tcNhapHang.TabIndex = 1;
+            tcNhapHang.TabIndex = 0;
             // 
             // listTabPage
             // 
@@ -266,7 +266,7 @@
             resetBtn.Name = "resetBtn";
             resetBtn.Size = new Size(172, 64);
             resetBtn.TabIndex = 30;
-            resetBtn.Text = "Reset";
+            resetBtn.Text = "&Reset";
             resetBtn.TextColor = Color.DarkGray;
             resetBtn.TextHover = Color.White;
             resetBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -495,7 +495,7 @@
             btnFilterPN.Name = "btnFilterPN";
             btnFilterPN.Size = new Size(172, 64);
             btnFilterPN.TabIndex = 27;
-            btnFilterPN.Text = "Lọc";
+            btnFilterPN.Text = "&Lọc";
             btnFilterPN.TextColor = Color.Goldenrod;
             btnFilterPN.TextHover = Color.White;
             btnFilterPN.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -525,7 +525,7 @@
             sortBtn.Name = "sortBtn";
             sortBtn.Size = new Size(172, 64);
             sortBtn.TabIndex = 26;
-            sortBtn.Text = "Sắp xếp";
+            sortBtn.Text = "&Sắp xếp";
             sortBtn.TextColor = Color.DeepSkyBlue;
             sortBtn.TextHover = Color.White;
             sortBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -556,7 +556,7 @@
             delBtn.Name = "delBtn";
             delBtn.Size = new Size(172, 64);
             delBtn.TabIndex = 25;
-            delBtn.Text = "  Xóa";
+            delBtn.Text = " &Xóa";
             delBtn.TextColor = Color.Red;
             delBtn.TextHover = Color.White;
             delBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -586,7 +586,7 @@
             btnEditPN.Name = "btnEditPN";
             btnEditPN.Size = new Size(172, 64);
             btnEditPN.TabIndex = 24;
-            btnEditPN.Text = "  Sửa";
+            btnEditPN.Text = " Sửa";
             btnEditPN.TextColor = Color.DarkCyan;
             btnEditPN.TextHover = Color.White;
             btnEditPN.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -617,7 +617,7 @@
             btnAddPN.Name = "btnAddPN";
             btnAddPN.Size = new Size(172, 64);
             btnAddPN.TabIndex = 23;
-            btnAddPN.Text = "  Thêm";
+            btnAddPN.Text = " &Thêm";
             btnAddPN.TextColor = Color.DarkCyan;
             btnAddPN.TextHover = Color.White;
             btnAddPN.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -632,24 +632,24 @@
             dgvDsNhapHang.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvDsNhapHang.BorderStyle = BorderStyle.None;
             dgvDsNhapHang.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = Color.DarkCyan;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dgvDsNhapHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.DarkCyan;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvDsNhapHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvDsNhapHang.ColumnHeadersHeight = 30;
             dgvDsNhapHang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = SystemColors.Window;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            dgvDsNhapHang.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvDsNhapHang.DefaultCellStyle = dataGridViewCellStyle2;
             dgvDsNhapHang.Dock = DockStyle.Bottom;
             dgvDsNhapHang.EnableHeadersVisualStyles = false;
             dgvDsNhapHang.GridColor = Color.DarkCyan;
@@ -660,8 +660,8 @@
             dgvDsNhapHang.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dgvDsNhapHang.RowHeadersVisible = false;
             dgvDsNhapHang.RowHeadersWidth = 51;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvDsNhapHang.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvDsNhapHang.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dgvDsNhapHang.RowTemplate.Height = 25;
             dgvDsNhapHang.RowTemplate.ReadOnly = true;
             dgvDsNhapHang.Size = new Size(1522, 543);
@@ -839,24 +839,24 @@
             dgvCTPN.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvCTPN.BorderStyle = BorderStyle.None;
             dgvCTPN.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = Color.DarkCyan;
-            dataGridViewCellStyle10.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle10.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
-            dgvCTPN.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.DarkCyan;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvCTPN.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvCTPN.ColumnHeadersHeight = 30;
             dgvCTPN.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = SystemColors.Window;
-            dataGridViewCellStyle11.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle11.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
-            dgvCTPN.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = SystemColors.Window;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dgvCTPN.DefaultCellStyle = dataGridViewCellStyle5;
             dgvCTPN.EnableHeadersVisualStyles = false;
             dgvCTPN.GridColor = Color.DarkCyan;
             dgvCTPN.ImeMode = ImeMode.NoControl;
@@ -866,8 +866,8 @@
             dgvCTPN.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dgvCTPN.RowHeadersVisible = false;
             dgvCTPN.RowHeadersWidth = 51;
-            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvCTPN.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCTPN.RowsDefaultCellStyle = dataGridViewCellStyle6;
             dgvCTPN.RowTemplate.Height = 25;
             dgvCTPN.RowTemplate.ReadOnly = true;
             dgvCTPN.Size = new Size(1552, 336);
@@ -1424,12 +1424,12 @@
             btnAddNgl.Image = Properties.Resources.addIconTeal16px;
             btnAddNgl.ImageAlign = ContentAlignment.MiddleRight;
             btnAddNgl.ImageHover = Properties.Resources.addIconWhite16px;
-            btnAddNgl.Location = new Point(1081, 296);
+            btnAddNgl.Location = new Point(1061, 296);
             btnAddNgl.Margin = new Padding(4, 5, 4, 5);
             btnAddNgl.Name = "btnAddNgl";
-            btnAddNgl.Size = new Size(172, 64);
+            btnAddNgl.Size = new Size(225, 89);
             btnAddNgl.TabIndex = 76;
-            btnAddNgl.Text = "  Thêm";
+            btnAddNgl.Text = " Thêm nguyên liệu mới";
             btnAddNgl.TextColor = Color.DarkCyan;
             btnAddNgl.TextHover = Color.White;
             btnAddNgl.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -1460,7 +1460,7 @@
             btnHuyCTPN.Name = "btnHuyCTPN";
             btnHuyCTPN.Size = new Size(196, 89);
             btnHuyCTPN.TabIndex = 75;
-            btnHuyCTPN.Text = "  Hủy";
+            btnHuyCTPN.Text = "  &Hủy";
             btnHuyCTPN.TextColor = Color.Red;
             btnHuyCTPN.TextHover = Color.White;
             btnHuyCTPN.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -1491,7 +1491,7 @@
             btnXacNhanCTPN.Name = "btnXacNhanCTPN";
             btnXacNhanCTPN.Size = new Size(196, 89);
             btnXacNhanCTPN.TabIndex = 74;
-            btnXacNhanCTPN.Text = "  Xác Nhận";
+            btnXacNhanCTPN.Text = "  &Xác Nhận";
             btnXacNhanCTPN.TextColor = Color.DarkCyan;
             btnXacNhanCTPN.TextHover = Color.White;
             btnXacNhanCTPN.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -1516,7 +1516,7 @@
             txtCTPNDonGia.PlaceholderColor = Color.DarkGray;
             txtCTPNDonGia.PlaceholderText = "Nhập đơn giá";
             txtCTPNDonGia.Size = new Size(429, 63);
-            txtCTPNDonGia.TabIndex = 73;
+            txtCTPNDonGia.TabIndex = 2;
             txtCTPNDonGia.Texts = "";
             txtCTPNDonGia.UnderlinedStyle = false;
             txtCTPNDonGia._TextChanged += txtCTPNDonGia__TextChanged;
@@ -1550,7 +1550,7 @@
             txtCTPNKhoiLuong.PlaceholderColor = Color.DarkGray;
             txtCTPNKhoiLuong.PlaceholderText = "Nhập khối lượng";
             txtCTPNKhoiLuong.Size = new Size(429, 63);
-            txtCTPNKhoiLuong.TabIndex = 71;
+            txtCTPNKhoiLuong.TabIndex = 1;
             txtCTPNKhoiLuong.Texts = "";
             txtCTPNKhoiLuong.UnderlinedStyle = false;
             txtCTPNKhoiLuong._TextChanged += txtCTPNKhoiLuong__TextChanged;
@@ -1563,7 +1563,7 @@
             cbNglId.Margin = new Padding(4);
             cbNglId.Name = "cbNglId";
             cbNglId.Size = new Size(348, 44);
-            cbNglId.TabIndex = 70;
+            cbNglId.TabIndex = 9;
             cbNglId.SelectedIndexChanged += cbNglId_SelectedIndexChanged;
             cbNglId.Click += cbNglId_Click;
             // 
@@ -1575,7 +1575,7 @@
             cbNglName.Margin = new Padding(4);
             cbNglName.Name = "cbNglName";
             cbNglName.Size = new Size(348, 44);
-            cbNglName.TabIndex = 68;
+            cbNglName.TabIndex = 0;
             cbNglName.SelectedIndexChanged += cbNglName_SelectedIndexChanged;
             cbNglName.Click += cbNglName_Click;
             // 
@@ -1620,7 +1620,7 @@
             txtCTPNId.PlaceholderColor = Color.DarkGray;
             txtCTPNId.PlaceholderText = "Nhập ID";
             txtCTPNId.Size = new Size(429, 63);
-            txtCTPNId.TabIndex = 64;
+            txtCTPNId.TabIndex = 0;
             txtCTPNId.Texts = "";
             txtCTPNId.UnderlinedStyle = false;
             // 
