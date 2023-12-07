@@ -28,29 +28,25 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SanPhamCaPheUC));
 			giaTienLbl = new Label();
 			tenLbl = new Label();
 			detailsBtn = new CustomControl.CustomButton();
 			hinhAnhPbx = new PictureBox();
 			addToCartBtn = new CustomControl.CustomButton();
-			btnNavToolTip = new ToolTip(components);
-			label1 = new Label();
 			((System.ComponentModel.ISupportInitialize)hinhAnhPbx).BeginInit();
 			SuspendLayout();
 			// 
 			// giaTienLbl
 			// 
 			giaTienLbl.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-			giaTienLbl.AutoSize = true;
+			giaTienLbl.AutoEllipsis = true;
 			giaTienLbl.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-			giaTienLbl.ForeColor = Color.Red;
-			giaTienLbl.Location = new Point(1, 161);
+			giaTienLbl.Location = new Point(0, 153);
 			giaTienLbl.Name = "giaTienLbl";
-			giaTienLbl.Size = new Size(49, 19);
+			giaTienLbl.Size = new Size(116, 36);
 			giaTienLbl.TabIndex = 2;
-			giaTienLbl.Text = "23000";
+			giaTienLbl.Text = "12000 VND";
 			giaTienLbl.TextAlign = ContentAlignment.MiddleLeft;
 			// 
 			// tenLbl
@@ -82,14 +78,13 @@
 			detailsBtn.ForeColor = Color.Blue;
 			detailsBtn.Image = (Image)resources.GetObject("detailsBtn.Image");
 			detailsBtn.ImageHover = (Image)resources.GetObject("detailsBtn.ImageHover");
-			detailsBtn.Location = new Point(44, 192);
+			detailsBtn.Location = new Point(38, 192);
 			detailsBtn.Name = "detailsBtn";
 			detailsBtn.Size = new Size(78, 38);
 			detailsBtn.TabIndex = 4;
 			detailsBtn.TextColor = Color.Blue;
 			detailsBtn.TextHover = Color.White;
 			detailsBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-			btnNavToolTip.SetToolTip(detailsBtn, "Xem Chi Tiết");
 			detailsBtn.UseVisualStyleBackColor = false;
 			// 
 			// hinhAnhPbx
@@ -128,27 +123,7 @@
 			addToCartBtn.TextColor = Color.Crimson;
 			addToCartBtn.TextHover = Color.White;
 			addToCartBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-			btnNavToolTip.SetToolTip(addToCartBtn, "Thêm Vào Giỏ Hàng");
 			addToCartBtn.UseVisualStyleBackColor = false;
-			// 
-			// btnNavToolTip
-			// 
-			btnNavToolTip.AutoPopDelay = 5000;
-			btnNavToolTip.InitialDelay = 1;
-			btnNavToolTip.ReshowDelay = 1;
-			// 
-			// label1
-			// 
-			label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-			label1.AutoEllipsis = true;
-			label1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-			label1.ForeColor = Color.Red;
-			label1.Location = new Point(51, 149);
-			label1.Name = "label1";
-			label1.Size = new Size(25, 30);
-			label1.TabIndex = 2;
-			label1.Text = "đ";
-			label1.TextAlign = ContentAlignment.MiddleLeft;
 			// 
 			// SanPhamCaPheUC
 			// 
@@ -157,7 +132,6 @@
 			BackColor = SystemColors.GradientInactiveCaption;
 			Controls.Add(addToCartBtn);
 			Controls.Add(detailsBtn);
-			Controls.Add(label1);
 			Controls.Add(giaTienLbl);
 			Controls.Add(tenLbl);
 			Controls.Add(hinhAnhPbx);
@@ -165,7 +139,6 @@
 			Size = new Size(201, 230);
 			((System.ComponentModel.ISupportInitialize)hinhAnhPbx).EndInit();
 			ResumeLayout(false);
-			PerformLayout();
 		}
 
 		#endregion
@@ -175,7 +148,5 @@
 		private CustomControl.CustomButton detailsBtn;
 		private PictureBox hinhAnhPbx;
 		private CustomControl.CustomButton addToCartBtn;
-		private ToolTip btnNavToolTip;
-		private Label label1;
 	}
 }

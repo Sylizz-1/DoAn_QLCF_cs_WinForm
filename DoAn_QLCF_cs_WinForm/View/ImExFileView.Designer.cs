@@ -200,6 +200,7 @@
             customButton1.TextHover = Color.White;
             customButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton1.UseVisualStyleBackColor = false;
+            customButton1.Click += customButton1_Click;
             // 
             // button
             // 
