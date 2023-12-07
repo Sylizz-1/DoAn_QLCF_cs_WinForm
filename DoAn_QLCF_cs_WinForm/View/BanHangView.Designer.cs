@@ -40,12 +40,12 @@
 			sidePanel2 = new CustomControl.SidePanel();
 			sidePanel1 = new CustomControl.SidePanel();
 			flowLayoutPanel1 = new FlowLayoutPanel();
-			hoaDonTab = new TabPage();
-			taiKhoanTab = new TabPage();
 			sanPhamCaPheuc1 = new CustomUserControl.SanPhamCaPheUC();
 			sanPhamCaPheuc2 = new CustomUserControl.SanPhamCaPheUC();
 			sanPhamCaPheuc3 = new CustomUserControl.SanPhamCaPheUC();
 			sanPhamCaPheuc4 = new CustomUserControl.SanPhamCaPheUC();
+			hoaDonTab = new TabPage();
+			taiKhoanTab = new TabPage();
 			titleBar.SuspendLayout();
 			panel1.SuspendLayout();
 			tabControl1.SuspendLayout();
@@ -265,7 +265,7 @@
 			// 
 			// flowLayoutPanel1
 			// 
-			flowLayoutPanel1.BackColor = Color.Transparent;
+			flowLayoutPanel1.BackColor = SystemColors.ActiveCaption;
 			flowLayoutPanel1.Controls.Add(sanPhamCaPheuc1);
 			flowLayoutPanel1.Controls.Add(sanPhamCaPheuc2);
 			flowLayoutPanel1.Controls.Add(sanPhamCaPheuc3);
@@ -275,25 +275,6 @@
 			flowLayoutPanel1.Name = "flowLayoutPanel1";
 			flowLayoutPanel1.Size = new Size(505, 420);
 			flowLayoutPanel1.TabIndex = 0;
-			// 
-			// hoaDonTab
-			// 
-			hoaDonTab.Location = new Point(4, 24);
-			hoaDonTab.Name = "hoaDonTab";
-			hoaDonTab.Padding = new Padding(3);
-			hoaDonTab.Size = new Size(923, 440);
-			hoaDonTab.TabIndex = 1;
-			hoaDonTab.Text = "tabPage2";
-			hoaDonTab.UseVisualStyleBackColor = true;
-			// 
-			// taiKhoanTab
-			// 
-			taiKhoanTab.Location = new Point(4, 24);
-			taiKhoanTab.Name = "taiKhoanTab";
-			taiKhoanTab.Size = new Size(923, 440);
-			taiKhoanTab.TabIndex = 2;
-			taiKhoanTab.Text = "tabPage3";
-			taiKhoanTab.UseVisualStyleBackColor = true;
 			// 
 			// sanPhamCaPheuc1
 			// 
@@ -330,6 +311,25 @@
 			sanPhamCaPheuc4.Name = "sanPhamCaPheuc4";
 			sanPhamCaPheuc4.Size = new Size(201, 230);
 			sanPhamCaPheuc4.TabIndex = 3;
+			// 
+			// hoaDonTab
+			// 
+			hoaDonTab.Location = new Point(4, 24);
+			hoaDonTab.Name = "hoaDonTab";
+			hoaDonTab.Padding = new Padding(3);
+			hoaDonTab.Size = new Size(923, 440);
+			hoaDonTab.TabIndex = 1;
+			hoaDonTab.Text = "tabPage2";
+			hoaDonTab.UseVisualStyleBackColor = true;
+			// 
+			// taiKhoanTab
+			// 
+			taiKhoanTab.Location = new Point(4, 24);
+			taiKhoanTab.Name = "taiKhoanTab";
+			taiKhoanTab.Size = new Size(923, 440);
+			taiKhoanTab.TabIndex = 2;
+			taiKhoanTab.Text = "tabPage3";
+			taiKhoanTab.UseVisualStyleBackColor = true;
 			// 
 			// BanHangView
 			// 
