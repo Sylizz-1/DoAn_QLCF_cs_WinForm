@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace DoAn_QLCF_cs_WinForm.View
 {
@@ -90,8 +91,7 @@ namespace DoAn_QLCF_cs_WinForm.View
     public class KhachHangBLL
     {
         private KhachHangDAL khachHangDAL;
-        private string connectionString = "Data Source=DESKTOP-T3L3RE2\\MSSQLSERVER02;Initial Catalog=QLCF;Integrated Security=True";
-
+        string connectionString = ConfigurationManager.ConnectionStrings["sqlConnection"].ConnectionString;
         public KhachHangBLL()
         {
             khachHangDAL = new KhachHangDAL();
@@ -138,7 +138,7 @@ namespace DoAn_QLCF_cs_WinForm.View
     }
     public class KhachHangDAL
     {
-        private string connectionString = "Data Source=DESKTOP-T3L3RE2\\MSSQLSERVER02;Initial Catalog=QLCF;Integrated Security=True";
+        string connectionString = ConfigurationManager.ConnectionStrings["sqlConnection"].ConnectionString;
 
         public int ThemDS()
         {
