@@ -113,7 +113,7 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
 				NgayNhap = DateTime.Now,
 				PhiTruocGiamGia = giaGoc,
 				GiamGia = (byte)(giamGiaFinal),
-				PhiSauGiamGia = (giamGiaFinal == 0) ? giaGoc : giaGoc * (giamGiaFinal / 100),
+				PhiSauGiamGia =  giaGoc - (giaGoc * (giamGiaFinal / 100)),
 			};
 
 
