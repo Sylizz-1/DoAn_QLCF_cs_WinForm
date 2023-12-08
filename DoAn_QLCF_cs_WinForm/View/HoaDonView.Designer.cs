@@ -991,7 +991,7 @@
             label6.Font = new Font("Segoe UI", 12F);
             label6.Location = new Point(698, 93);
             label6.Name = "label6";
-            label6.Size = new Size(134, 48);
+            label6.Size = new Size(171, 48);
             label6.TabIndex = 27;
             label6.Text = "ID Khách Hàng";
             label6.TextAlign = ContentAlignment.MiddleCenter;
@@ -1070,7 +1070,7 @@
             label1.Font = new Font("Segoe UI", 12F);
             label1.Location = new Point(362, 81);
             label1.Name = "label1";
-            label1.Size = new Size(121, 68);
+            label1.Size = new Size(149, 68);
             label1.TabIndex = 21;
             label1.Text = "ID Nhân Viên";
             label1.TextAlign = ContentAlignment.MiddleCenter;
