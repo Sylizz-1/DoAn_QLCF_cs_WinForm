@@ -72,14 +72,8 @@ namespace DoAn_QLCF_cs_WinForm.View
 			timeLblTitle = new Label();
 			textLblTitle = new Label();
 			imageLblTitle = new Label();
-			customButton4 = new CustomControl.CustomButton();
-			customButton3 = new CustomControl.CustomButton();
-			customButton2 = new CustomControl.CustomButton();
 			accountIcon = new CustomControl.CustomButton();
 			contextMenuStrip1 = new ContextMenuStrip(components);
-			accMenuStrip = new ToolStripMenuItem();
-			changePassMenuStrip = new ToolStripMenuItem();
-			settingMenuStrip = new ToolStripMenuItem();
 			logOutMenuStrip = new ToolStripMenuItem();
 			timerLblTitle = new System.Windows.Forms.Timer(components);
 			((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
@@ -161,7 +155,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 			navLkh.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
 			navLkh.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
 			navLkh.FlatStyle = FlatStyle.Flat;
-			navLkh.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			navLkh.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
 			navLkh.ForeColor = Color.White;
 			navLkh.Image = Properties.Resources.LoaiKhachHangNAV;
 			navLkh.ImageAlign = ContentAlignment.MiddleLeft;
@@ -202,7 +196,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 			navPgg.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
 			navPgg.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
 			navPgg.FlatStyle = FlatStyle.Flat;
-			navPgg.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			navPgg.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
 			navPgg.ForeColor = Color.White;
 			navPgg.Image = Properties.Resources.DiscountIcon24px;
 			navPgg.ImageAlign = ContentAlignment.MiddleLeft;
@@ -254,7 +248,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 			navLogOut.FlatAppearance.MouseDownBackColor = Color.Red;
 			navLogOut.FlatAppearance.MouseOverBackColor = Color.Crimson;
 			navLogOut.FlatStyle = FlatStyle.Flat;
-			navLogOut.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			navLogOut.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
 			navLogOut.ForeColor = Color.FromArgb(239, 65, 65);
 			navLogOut.Image = Properties.Resources.logoutflatred2;
 			navLogOut.ImageAlign = ContentAlignment.MiddleLeft;
@@ -269,6 +263,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 			navLogOut.TextColor = Color.FromArgb(239, 65, 65);
 			navLogOut.TextHover = Color.White;
 			navLogOut.UseVisualStyleBackColor = false;
+			navLogOut.Click += navLogOut_Click;
 			navLogOut.MouseEnter += navLogOut_MouseEnter;
 			navLogOut.MouseLeave += navLogOut_MouseLeave;
 			// 
@@ -296,7 +291,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 			navPhanQuyen.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
 			navPhanQuyen.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
 			navPhanQuyen.FlatStyle = FlatStyle.Flat;
-			navPhanQuyen.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			navPhanQuyen.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
 			navPhanQuyen.ForeColor = Color.White;
 			navPhanQuyen.Image = Properties.Resources.PERflat;
 			navPhanQuyen.ImageAlign = ContentAlignment.MiddleLeft;
@@ -339,7 +334,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 			navNcc.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
 			navNcc.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
 			navNcc.FlatStyle = FlatStyle.Flat;
-			navNcc.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			navNcc.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
 			navNcc.ForeColor = Color.White;
 			navNcc.Image = Properties.Resources.supplierflat;
 			navNcc.ImageAlign = ContentAlignment.MiddleLeft;
@@ -382,7 +377,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 			navThongKe.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
 			navThongKe.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
 			navThongKe.FlatStyle = FlatStyle.Flat;
-			navThongKe.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			navThongKe.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
 			navThongKe.ForeColor = Color.White;
 			navThongKe.Image = Properties.Resources.statisticflat;
 			navThongKe.ImageAlign = ContentAlignment.MiddleLeft;
@@ -424,7 +419,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 			navFile.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
 			navFile.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
 			navFile.FlatStyle = FlatStyle.Flat;
-			navFile.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			navFile.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
 			navFile.ForeColor = Color.White;
 			navFile.Image = Properties.Resources.fileFla;
 			navFile.ImageAlign = ContentAlignment.MiddleLeft;
@@ -467,7 +462,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 			navHoaDon.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
 			navHoaDon.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
 			navHoaDon.FlatStyle = FlatStyle.Flat;
-			navHoaDon.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			navHoaDon.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
 			navHoaDon.ForeColor = Color.White;
 			navHoaDon.Image = Properties.Resources.invoiceFlat;
 			navHoaDon.ImageAlign = ContentAlignment.MiddleLeft;
@@ -510,7 +505,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 			navNhapHang.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
 			navNhapHang.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
 			navNhapHang.FlatStyle = FlatStyle.Flat;
-			navNhapHang.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			navNhapHang.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
 			navNhapHang.ForeColor = Color.White;
 			navNhapHang.Image = Properties.Resources.importFlat;
 			navNhapHang.ImageAlign = ContentAlignment.MiddleLeft;
@@ -553,7 +548,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 			navNguyenLieu.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
 			navNguyenLieu.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
 			navNguyenLieu.FlatStyle = FlatStyle.Flat;
-			navNguyenLieu.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			navNguyenLieu.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
 			navNguyenLieu.ForeColor = Color.White;
 			navNguyenLieu.Image = Properties.Resources.ingreFlat;
 			navNguyenLieu.ImageAlign = ContentAlignment.MiddleLeft;
@@ -596,7 +591,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 			navCafe.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
 			navCafe.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
 			navCafe.FlatStyle = FlatStyle.Flat;
-			navCafe.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			navCafe.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
 			navCafe.ForeColor = Color.White;
 			navCafe.Image = Properties.Resources.CoffeeFlat;
 			navCafe.ImageAlign = ContentAlignment.MiddleLeft;
@@ -639,7 +634,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 			navKhachHang.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
 			navKhachHang.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
 			navKhachHang.FlatStyle = FlatStyle.Flat;
-			navKhachHang.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			navKhachHang.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
 			navKhachHang.ForeColor = Color.White;
 			navKhachHang.Image = Properties.Resources.EmployeeFlat;
 			navKhachHang.ImageAlign = ContentAlignment.MiddleLeft;
@@ -682,7 +677,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 			navNhanVien.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
 			navNhanVien.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
 			navNhanVien.FlatStyle = FlatStyle.Flat;
-			navNhanVien.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			navNhanVien.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
 			navNhanVien.ForeColor = Color.White;
 			navNhanVien.Image = Properties.Resources.manIcontest;
 			navNhanVien.ImageAlign = ContentAlignment.MiddleLeft;
@@ -734,7 +729,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 			sideNavBtn.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
 			sideNavBtn.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
 			sideNavBtn.FlatStyle = FlatStyle.Flat;
-			sideNavBtn.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			sideNavBtn.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
 			sideNavBtn.ForeColor = Color.White;
 			sideNavBtn.Image = Properties.Resources.navCloseflat;
 			sideNavBtn.ImageAlign = ContentAlignment.MiddleLeft;
@@ -805,9 +800,6 @@ namespace DoAn_QLCF_cs_WinForm.View
 			titleBar.Controls.Add(timeLblTitle);
 			titleBar.Controls.Add(textLblTitle);
 			titleBar.Controls.Add(imageLblTitle);
-			titleBar.Controls.Add(customButton4);
-			titleBar.Controls.Add(customButton3);
-			titleBar.Controls.Add(customButton2);
 			titleBar.Controls.Add(accountIcon);
 			titleBar.EnabledGradient = false;
 			titleBar.GradientAngle = 45F;
@@ -822,7 +814,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 			// timeLblTitle
 			// 
 			timeLblTitle.BackColor = Color.DarkSlateGray;
-			timeLblTitle.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			timeLblTitle.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
 			timeLblTitle.ForeColor = SystemColors.Control;
 			timeLblTitle.Location = new Point(194, 9);
 			timeLblTitle.Name = "timeLblTitle";
@@ -833,7 +825,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 			// textLblTitle
 			// 
 			textLblTitle.BackColor = Color.DarkSlateGray;
-			textLblTitle.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			textLblTitle.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
 			textLblTitle.ForeColor = SystemColors.Control;
 			textLblTitle.Location = new Point(61, 9);
 			textLblTitle.Name = "textLblTitle";
@@ -848,82 +840,6 @@ namespace DoAn_QLCF_cs_WinForm.View
 			imageLblTitle.Name = "imageLblTitle";
 			imageLblTitle.Size = new Size(43, 33);
 			imageLblTitle.TabIndex = 5;
-			// 
-			// customButton4
-			// 
-			customButton4.Anchor = AnchorStyles.Right;
-			customButton4.BackColor = Color.Transparent;
-			customButton4.BackgroundColor = Color.Transparent;
-			customButton4.BorderColor = Color.Teal;
-			customButton4.BorderRadius = 20;
-			customButton4.BorderSize = 0;
-			customButton4.Cursor = Cursors.Hand;
-			customButton4.EnabledTextHover = false;
-			customButton4.FlatAppearance.BorderSize = 0;
-			customButton4.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
-			customButton4.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
-			customButton4.FlatStyle = FlatStyle.Flat;
-			customButton4.ForeColor = Color.White;
-			customButton4.Image = Properties.Resources.TaskIcon;
-			customButton4.ImageHover = null;
-			customButton4.Location = new Point(372, 5);
-			customButton4.Margin = new Padding(3, 3, 20, 3);
-			customButton4.Name = "customButton4";
-			customButton4.Size = new Size(53, 40);
-			customButton4.TabIndex = 4;
-			customButton4.TextColor = Color.White;
-			customButton4.TextHover = Color.White;
-			customButton4.UseVisualStyleBackColor = false;
-			// 
-			// customButton3
-			// 
-			customButton3.Anchor = AnchorStyles.Right;
-			customButton3.BackColor = Color.Transparent;
-			customButton3.BackgroundColor = Color.Transparent;
-			customButton3.BorderColor = Color.Teal;
-			customButton3.BorderRadius = 20;
-			customButton3.BorderSize = 0;
-			customButton3.Cursor = Cursors.Hand;
-			customButton3.EnabledTextHover = false;
-			customButton3.FlatAppearance.BorderSize = 0;
-			customButton3.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
-			customButton3.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
-			customButton3.FlatStyle = FlatStyle.Flat;
-			customButton3.ForeColor = Color.White;
-			customButton3.Image = Properties.Resources.emailIcon;
-			customButton3.ImageHover = null;
-			customButton3.Location = new Point(446, 5);
-			customButton3.Name = "customButton3";
-			customButton3.Size = new Size(53, 40);
-			customButton3.TabIndex = 3;
-			customButton3.TextColor = Color.White;
-			customButton3.TextHover = Color.White;
-			customButton3.UseVisualStyleBackColor = false;
-			// 
-			// customButton2
-			// 
-			customButton2.Anchor = AnchorStyles.Right;
-			customButton2.BackColor = Color.Transparent;
-			customButton2.BackgroundColor = Color.Transparent;
-			customButton2.BorderColor = Color.Teal;
-			customButton2.BorderRadius = 20;
-			customButton2.BorderSize = 0;
-			customButton2.Cursor = Cursors.Hand;
-			customButton2.EnabledTextHover = false;
-			customButton2.FlatAppearance.BorderSize = 0;
-			customButton2.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
-			customButton2.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
-			customButton2.FlatStyle = FlatStyle.Flat;
-			customButton2.ForeColor = Color.White;
-			customButton2.Image = Properties.Resources.notificationIcon;
-			customButton2.ImageHover = null;
-			customButton2.Location = new Point(520, 5);
-			customButton2.Name = "customButton2";
-			customButton2.Size = new Size(53, 40);
-			customButton2.TabIndex = 2;
-			customButton2.TextColor = Color.White;
-			customButton2.TextHover = Color.White;
-			customButton2.UseVisualStyleBackColor = false;
 			// 
 			// accountIcon
 			// 
@@ -955,38 +871,18 @@ namespace DoAn_QLCF_cs_WinForm.View
 			// contextMenuStrip1
 			// 
 			contextMenuStrip1.ImageScalingSize = new Size(20, 20);
-			contextMenuStrip1.Items.AddRange(new ToolStripItem[] { accMenuStrip, changePassMenuStrip, settingMenuStrip, logOutMenuStrip });
+			contextMenuStrip1.Items.AddRange(new ToolStripItem[] { logOutMenuStrip });
 			contextMenuStrip1.Name = "contextMenuStrip1";
-			contextMenuStrip1.Size = new Size(151, 108);
-			// 
-			// accMenuStrip
-			// 
-			accMenuStrip.Image = Properties.Resources.accIcon;
-			accMenuStrip.Name = "accMenuStrip";
-			accMenuStrip.Size = new Size(150, 26);
-			accMenuStrip.Text = "Tài Khoản";
-			// 
-			// changePassMenuStrip
-			// 
-			changePassMenuStrip.Image = Properties.Resources.changepassicon4;
-			changePassMenuStrip.Name = "changePassMenuStrip";
-			changePassMenuStrip.Size = new Size(150, 26);
-			changePassMenuStrip.Text = "Đổi Mật Khẩu";
-			// 
-			// settingMenuStrip
-			// 
-			settingMenuStrip.Image = Properties.Resources.settingIcon;
-			settingMenuStrip.Name = "settingMenuStrip";
-			settingMenuStrip.Size = new Size(150, 26);
-			settingMenuStrip.Text = "Cài Đặt";
+			contextMenuStrip1.Size = new Size(133, 30);
 			// 
 			// logOutMenuStrip
 			// 
 			logOutMenuStrip.ForeColor = Color.Red;
 			logOutMenuStrip.Image = Properties.Resources.signOutMiniIconRed;
 			logOutMenuStrip.Name = "logOutMenuStrip";
-			logOutMenuStrip.Size = new Size(150, 26);
+			logOutMenuStrip.Size = new Size(132, 26);
 			logOutMenuStrip.Text = "Đăng xuất";
+			logOutMenuStrip.Click += navLogOut_Click;
 			// 
 			// timerLblTitle
 			// 
@@ -1001,7 +897,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 			ClientSize = new Size(983, 749);
 			Controls.Add(backgroundMainView);
 			Controls.Add(sideBar);
-			Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+			Font = new Font("Segoe UI", 9F);
 			MaximizeBox = false;
 			MinimumSize = new Size(799, 682);
 			Name = "MainView";
@@ -1067,17 +963,11 @@ namespace DoAn_QLCF_cs_WinForm.View
         private CustomControl.SidePanel backgroundMainView;
         private CustomControl.SidePanel titleBar;
         private CustomControl.CustomButton accountIcon;
-        private CustomControl.CustomButton customButton4;
-        private CustomControl.CustomButton customButton3;
-        private CustomControl.CustomButton customButton2;
         private Label imageLblTitle;
         private Label textLblTitle;
         private Label timeLblTitle;
         private System.Windows.Forms.Timer timerLblTitle;
         private ContextMenuStrip contextMenuStrip1;
-        private ToolStripMenuItem accMenuStrip;
-        private ToolStripMenuItem changePassMenuStrip;
-        private ToolStripMenuItem settingMenuStrip;
         private ToolStripMenuItem logOutMenuStrip;
         private CustomControl.SidePanel mainPanelContainer;
         private Panel pn_phieuGiamGia;
