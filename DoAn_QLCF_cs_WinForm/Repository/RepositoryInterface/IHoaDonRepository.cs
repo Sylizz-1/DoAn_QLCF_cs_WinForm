@@ -9,6 +9,7 @@ namespace DoAn_QLCF_cs_WinForm.Repository.RepositoryInterface
 {
 	public interface IHoaDonRepository
 	{
+        public IEnumerable<ChiTietHoaDonModel> GetById_CT(int id);
         public bool Update(HoaDonModel obj);
         public IEnumerable<HoaDonModel> GetAll();
         public IEnumerable<ChiTietHoaDonModel> GetAll_CT();
@@ -16,6 +17,6 @@ namespace DoAn_QLCF_cs_WinForm.Repository.RepositoryInterface
         public IEnumerable<ChiTietHoaDonModel> GetByValue_CT(int hoaDonId,  int caPheId, string tenCaPhe, int soLuong, double donGia);
         public HoaDonModel GetById(int id);
 
-        public ChiTietHoaDonModel GetById_CT(int id);
+        //public ChiTietHoaDonModel GetById_CT(int id);
     }
 }

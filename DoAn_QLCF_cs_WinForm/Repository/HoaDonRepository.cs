@@ -153,11 +153,18 @@ namespace DoAn_QLCF_cs_WinForm.Repository
                         hd.HoaDonId = (int)reader["HoaDonId"];
                         hd.NhanVienId = (int)reader["NhanVienId"];
                         hd.KhachHangId = (int)reader["KhachHangId"];
-                        hd.PggId = (int)reader["PggId"];
+                        try
+                        {
+                            hd.PggId = (int)reader["PggId"];
+                        }
+                        catch (Exception ex)
+                        {
+                            hd.PggId = 0;
+                        }
                         hd.NgayNhap = (DateTime)(reader["NgayNhap"]);
                         hd.PhiTruocGiamGia = (double)reader["PhiTruocGiamGia"];
                         hd.GiamGia = (byte)reader["GiamGia"];
-                        hd.PhiSauGiamGia = (double)reader["PhiSauGiamGia"];                     
+                        hd.PhiSauGiamGia = (double)reader["PhiSauGiamGia"];
                         hd.IsAccepted = (bool)reader["IsAccepted"];
                         cpList.Add(hd);
                     }
@@ -286,8 +293,9 @@ namespace DoAn_QLCF_cs_WinForm.Repository
             return cpList;
         }
 
-        public ChiTietHoaDonModel GetById_CT(int id)
+        public IEnumerable<ChiTietHoaDonModel> GetById_CT(int id)
         {
+            var cpList = new List<ChiTietHoaDonModel>();
             using (var connection = new SqlConnection(this.connectionString))
             using (var cmd = connection.CreateCommand())
             {
@@ -298,23 +306,68 @@ namespace DoAn_QLCF_cs_WinForm.Repository
 
                 using (var reader = cmd.ExecuteReader())
                 {
-                    if (reader.Read())
+
+                    while (reader.Read())
                     {
-                        return new ChiTietHoaDonModel
+                        var cthd = new ChiTietHoaDonModel
                         {
                             CT_HoaDonId = (int)reader["HoaDonId"],
                             CT_CaPheId = (int)reader["CaPheId"],
                             CT_TenCaPhe = (string)reader["TenCaPhe"],
                             CT_SoLuong = (int)reader["SoLuong"],
-                            CT_DonGia = (float)reader["DonGia"]
+                            CT_DonGia = (double)reader["DonGia"]
                         };
+                        cpList.Add(cthd);
                     }
+                    return cpList;
+                    //ChiTietHoaDonModel cthd = new ChiTietHoaDonModel();
+                    //cthd.CT_HoaDonId = (int)reader["HoaDonId"];
+                    //cthd.CT_CaPheId = (int)reader["CaPheId"];
+                    //cthd.CT_TenCaPhe = (string)reader["TenCaPhe"];
+                    //cthd.CT_SoLuong = (int)reader["SoLuong"];
+                    //cthd.CT_DonGia = (Double)reader["DonGia"];
+                    //return cthd;
+
+                    //return new ChiTietHoaDonModel
+                    //{
+                    //    CT_HoaDonId = (int)reader["HoaDonId"],
+                    //    CT_CaPheId = (int)reader["CaPheId"],
+                    //    CT_TenCaPhe = (string)reader["TenCaPhe"],
+                    //    CT_SoLuong = (int)reader["SoLuong"],
+                    //    CT_DonGia = (float)reader["DonGia"]
+                    //};
                 }
+
             }
             return null;
         }
 
+        public bool XacNhan(HoaDonModel model)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(this.connectionString))
+                using (var cmd = connection.CreateCommand())
+                {
+                    connection.Open();
+                    cmd.Connection = connection;
+                    cmd.CommandText = "UPDATE HoaDon SET [IsAccepted] = 1" +
+                                        " WHERE [HoaDonId] = @Id";
+                    cmd.Parameters.AddWithValue("@Id", model.HoaDonId);
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        return true;
+                    }
 
+                }
+                return false;
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
     }
 }

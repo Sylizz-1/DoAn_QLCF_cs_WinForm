@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Reflection.Metadata;
 using CrystalDecisions.Windows.Forms;
+using DoAn_QLCF_cs_WinForm.Presenter;
 
 namespace DoAn_QLCF_cs_WinForm.View
 {
@@ -47,6 +48,9 @@ namespace DoAn_QLCF_cs_WinForm.View
         public bool checkIsUpdate = false;
         public bool isNeedTurn = false;
         public event EventHandler DataUpdatedEvent;
+
+        public event EventHandler XacNhanEvent;
+
         private BindingSource templist = new BindingSource();
         private void XacNhanBtn_Click(object sender, EventArgs e)
         {
@@ -67,12 +71,13 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         public HoaDonView()
         {
-            
+
             InitializeComponent();
             SetUpView();
             DataUpdatedEvent?.Invoke(this, EventArgs.Empty);
-            xacNhanBtn.Click += XacNhanBtn_Click;
+            xacNhanBtn.Click += XacNhanBtn_Click; 
 
+            btn_xacNhan.Click += delegate { XacNhanEvent?.Invoke(this, EventArgs.Empty); }; ;
 
             btnCT.Click += delegate { btnUpdateClickEvent?.Invoke(this, EventArgs.Empty); };
             btnLoc.Click += delegate { btnLocClickEvent?.Invoke(this, EventArgs.Empty); };
@@ -163,6 +168,17 @@ namespace DoAn_QLCF_cs_WinForm.View
             set => checkIsUpdate = value;
         }
         public string selectedId { get => this.id; set => this.id = value; }
+        public DataGridView DataGridView {
+            get
+            {
+                return this.dgvHD;
+            }
+            set
+            {
+
+                this.dgvHD = value;
+            }
+        }
 
         public void LoadData(BindingSource list)
         {
@@ -391,7 +407,14 @@ namespace DoAn_QLCF_cs_WinForm.View
         private void btnCT_Click(object sender, EventArgs e)
         {
             tcDanhSach.SelectedTab = tbChiTiet;
-            DataUpdatedEvent?.Invoke(this, EventArgs.Empty);
+            HoaDonRepository repo = new HoaDonRepository(ConfigurationManager.ConnectionStrings["sqlConnection"].ConnectionString);
+            HoaDonModel model = (HoaDonModel)this.dgvHD.CurrentRow.DataBoundItem;
+            IEnumerable<ChiTietHoaDonModel> cthd = repo.GetById_CT(model.HoaDonId);
+
+            BindingSource t = new BindingSource();
+            t.DataSource = cthd;
+            this.dgvCTHD.DataSource = t;
+            //DataUpdatedEvent?.Invoke(this, EventArgs.Empty);
         }
 
         private void resetBtn_Click(object sender, EventArgs e)
@@ -417,6 +440,10 @@ namespace DoAn_QLCF_cs_WinForm.View
             DataUpdatedEvent?.Invoke(this, EventArgs.Empty);
         }
 
-
+        private void btn_xacNhan_Click(object sender, EventArgs e)
+        {
+            
+           
+        }
     }
 }

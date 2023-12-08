@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -96,7 +97,7 @@ namespace DoAn_QLCF_cs_WinForm.View
     public class NguyenLieuBLL
     {
         private NguyenLieuDAL nguyenlieuDAL;
-        private string connectionString = "Data Source=DESKTOP-T3L3RE2\\MSSQLSERVER02;Initial Catalog=QLCF;Integrated Security=True";
+        string connectionString = ConfigurationManager.ConnectionStrings["sqlConnection"].ConnectionString;
 
         public NguyenLieuBLL()
         {

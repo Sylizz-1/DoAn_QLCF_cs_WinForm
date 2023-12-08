@@ -10,6 +10,8 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
 {
 	public interface IHoaDonView
 	{
+        event EventHandler XacNhanEvent;
+
         event EventHandler DataUpdatedEvent;
         event EventHandler btnLocClickEvent;
         event EventHandler btnUpdateClickEvent;
@@ -27,6 +29,8 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
         public string GiamGia { get; set; }
         public string PhiSauGiamGia { get; set; }
         public string IsAccepted { get; set; }
+
+        DataGridView DataGridView { get; set; }
         string selectedId { get; set; }
         void LoadData(BindingSource list);
         void LoadData_CT(BindingSource list);
