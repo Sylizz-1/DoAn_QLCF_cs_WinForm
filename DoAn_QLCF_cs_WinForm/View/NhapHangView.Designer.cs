@@ -242,6 +242,7 @@
             btnFindPn.TextColor = Color.White;
             btnFindPn.TextHover = Color.White;
             btnFindPn.UseVisualStyleBackColor = false;
+            btnFindPn.Visible = false;
             // 
             // resetBtn
             // 
