@@ -28,9 +28,12 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-			DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-			DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+			DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+			DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+			DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+			DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+			DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+			DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
 			titleBar = new CustomControl.SidePanel();
 			pggBtn = new CustomControl.CustomButton();
 			customButton4 = new CustomControl.CustomButton();
@@ -55,7 +58,11 @@
 			label7 = new Label();
 			returnBtn = new CustomControl.CustomButton();
 			pggDg = new DataGridView();
-			taiKhoanTab = new TabPage();
+			hoaDonTab = new TabPage();
+			label2 = new Label();
+			customButton1 = new CustomControl.CustomButton();
+			hoaDonDg = new DataGridView();
+			hoaDonBtn = new CustomControl.CustomButton();
 			titleBar.SuspendLayout();
 			panel1.SuspendLayout();
 			tabControl1.SuspendLayout();
@@ -65,6 +72,8 @@
 			sidePanel1.SuspendLayout();
 			pggTab.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)pggDg).BeginInit();
+			hoaDonTab.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)hoaDonDg).BeginInit();
 			SuspendLayout();
 			// 
 			// titleBar
@@ -72,6 +81,7 @@
 			titleBar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
 			titleBar.BackColor = Color.DarkSlateGray;
 			titleBar.BorderRadius = 15;
+			titleBar.Controls.Add(hoaDonBtn);
 			titleBar.Controls.Add(pggBtn);
 			titleBar.Controls.Add(customButton4);
 			titleBar.Controls.Add(customButton3);
@@ -228,7 +238,7 @@
 			// 
 			tabControl1.Controls.Add(trangChuTab);
 			tabControl1.Controls.Add(pggTab);
-			tabControl1.Controls.Add(taiKhoanTab);
+			tabControl1.Controls.Add(hoaDonTab);
 			tabControl1.Dock = DockStyle.Fill;
 			tabControl1.Location = new Point(0, 0);
 			tabControl1.Name = "tabControl1";
@@ -296,7 +306,7 @@
 			// 
 			label5.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
 			label5.AutoSize = true;
-			label5.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+			label5.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
 			label5.ForeColor = Color.Red;
 			label5.Location = new Point(205, 17);
 			label5.Name = "label5";
@@ -310,7 +320,7 @@
 			loaiKhTxt.BackColor = SystemColors.GradientActiveCaption;
 			loaiKhTxt.BorderStyle = BorderStyle.None;
 			loaiKhTxt.Enabled = false;
-			loaiKhTxt.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+			loaiKhTxt.Font = new Font("Segoe UI", 13F);
 			loaiKhTxt.ForeColor = Color.Red;
 			loaiKhTxt.Location = new Point(141, 57);
 			loaiKhTxt.Name = "loaiKhTxt";
@@ -325,7 +335,7 @@
 			giaGocTxt.BackColor = SystemColors.GradientActiveCaption;
 			giaGocTxt.BorderStyle = BorderStyle.None;
 			giaGocTxt.Enabled = false;
-			giaGocTxt.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+			giaGocTxt.Font = new Font("Segoe UI", 13F);
 			giaGocTxt.ForeColor = Color.Red;
 			giaGocTxt.Location = new Point(141, 20);
 			giaGocTxt.Name = "giaGocTxt";
@@ -346,7 +356,7 @@
 			datHangBtn.EnabledTextHover = false;
 			datHangBtn.FlatAppearance.BorderSize = 0;
 			datHangBtn.FlatStyle = FlatStyle.Flat;
-			datHangBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+			datHangBtn.Font = new Font("Segoe UI", 12F);
 			datHangBtn.ForeColor = Color.White;
 			datHangBtn.ImageHover = null;
 			datHangBtn.Location = new Point(319, 118);
@@ -362,7 +372,7 @@
 			// 
 			label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
 			label3.AutoSize = true;
-			label3.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
+			label3.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
 			label3.Location = new Point(3, 56);
 			label3.Name = "label3";
 			label3.Size = new Size(110, 25);
@@ -373,7 +383,7 @@
 			// 
 			label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
 			label1.AutoSize = true;
-			label1.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
+			label1.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
 			label1.Location = new Point(3, 18);
 			label1.Name = "label1";
 			label1.Size = new Size(83, 25);
@@ -421,7 +431,7 @@
 			// 
 			// label7
 			// 
-			label7.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
+			label7.Font = new Font("Segoe UI", 17F);
 			label7.Location = new Point(84, 15);
 			label7.Name = "label7";
 			label7.Size = new Size(407, 43);
@@ -463,24 +473,24 @@
 			pggDg.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 			pggDg.BorderStyle = BorderStyle.None;
 			pggDg.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle4.BackColor = Color.DarkCyan;
-			dataGridViewCellStyle4.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-			dataGridViewCellStyle4.ForeColor = SystemColors.Control;
-			dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-			dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-			dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-			pggDg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle7.BackColor = Color.DarkCyan;
+			dataGridViewCellStyle7.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+			dataGridViewCellStyle7.ForeColor = SystemColors.Control;
+			dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+			dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+			dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+			pggDg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
 			pggDg.ColumnHeadersHeight = 30;
 			pggDg.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-			dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle5.BackColor = SystemColors.Window;
-			dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-			dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
-			dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-			dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-			dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-			pggDg.DefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle8.BackColor = SystemColors.Window;
+			dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
+			dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
+			dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+			dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+			dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+			pggDg.DefaultCellStyle = dataGridViewCellStyle8;
 			pggDg.EnableHeadersVisualStyles = false;
 			pggDg.GridColor = Color.DarkCyan;
 			pggDg.ImeMode = ImeMode.NoControl;
@@ -489,21 +499,125 @@
 			pggDg.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
 			pggDg.RowHeadersVisible = false;
 			pggDg.RowHeadersWidth = 51;
-			dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-			pggDg.RowsDefaultCellStyle = dataGridViewCellStyle6;
-			pggDg.RowTemplate.Height = 25;
+			dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
+			pggDg.RowsDefaultCellStyle = dataGridViewCellStyle9;
 			pggDg.RowTemplate.ReadOnly = true;
 			pggDg.Size = new Size(923, 406);
 			pggDg.TabIndex = 2;
 			// 
-			// taiKhoanTab
+			// hoaDonTab
 			// 
-			taiKhoanTab.Location = new Point(4, 24);
-			taiKhoanTab.Name = "taiKhoanTab";
-			taiKhoanTab.Size = new Size(923, 526);
-			taiKhoanTab.TabIndex = 2;
-			taiKhoanTab.Text = "tabPage3";
-			taiKhoanTab.UseVisualStyleBackColor = true;
+			hoaDonTab.BackColor = SystemColors.Control;
+			hoaDonTab.Controls.Add(label2);
+			hoaDonTab.Controls.Add(customButton1);
+			hoaDonTab.Controls.Add(hoaDonDg);
+			hoaDonTab.Location = new Point(4, 24);
+			hoaDonTab.Name = "hoaDonTab";
+			hoaDonTab.Size = new Size(923, 526);
+			hoaDonTab.TabIndex = 2;
+			hoaDonTab.Text = "tabPage3";
+			// 
+			// label2
+			// 
+			label2.Font = new Font("Segoe UI", 17F);
+			label2.Location = new Point(84, 8);
+			label2.Name = "label2";
+			label2.Size = new Size(369, 43);
+			label2.TabIndex = 20;
+			label2.Text = "Danh Sách Hóa Đơn";
+			label2.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// customButton1
+			// 
+			customButton1.BackColor = Color.Transparent;
+			customButton1.BackgroundColor = Color.Transparent;
+			customButton1.BorderColor = Color.PaleVioletRed;
+			customButton1.BorderRadius = 20;
+			customButton1.BorderSize = 0;
+			customButton1.Cursor = Cursors.Hand;
+			customButton1.EnabledTextHover = false;
+			customButton1.FlatAppearance.BorderSize = 0;
+			customButton1.FlatAppearance.MouseDownBackColor = Color.Teal;
+			customButton1.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
+			customButton1.FlatStyle = FlatStyle.Flat;
+			customButton1.ForeColor = Color.White;
+			customButton1.Image = Properties.Resources.arrowreturn32pxBlack1;
+			customButton1.ImageHover = Properties.Resources.arrowreturn32pxWhite1;
+			customButton1.Location = new Point(15, 8);
+			customButton1.Name = "customButton1";
+			customButton1.Size = new Size(63, 41);
+			customButton1.TabIndex = 19;
+			customButton1.TextColor = Color.White;
+			customButton1.TextHover = Color.White;
+			customButton1.UseVisualStyleBackColor = false;
+			// 
+			// hoaDonDg
+			// 
+			hoaDonDg.AllowUserToAddRows = false;
+			hoaDonDg.AllowUserToDeleteRows = false;
+			hoaDonDg.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			hoaDonDg.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+			hoaDonDg.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+			hoaDonDg.BorderStyle = BorderStyle.None;
+			hoaDonDg.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+			dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle10.BackColor = Color.DarkCyan;
+			dataGridViewCellStyle10.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+			dataGridViewCellStyle10.ForeColor = SystemColors.Control;
+			dataGridViewCellStyle10.SelectionBackColor = SystemColors.Highlight;
+			dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
+			dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
+			hoaDonDg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+			hoaDonDg.ColumnHeadersHeight = 30;
+			hoaDonDg.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+			dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle11.BackColor = SystemColors.Window;
+			dataGridViewCellStyle11.Font = new Font("Segoe UI", 9F);
+			dataGridViewCellStyle11.ForeColor = SystemColors.ControlText;
+			dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
+			dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
+			dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
+			hoaDonDg.DefaultCellStyle = dataGridViewCellStyle11;
+			hoaDonDg.EnableHeadersVisualStyles = false;
+			hoaDonDg.GridColor = Color.DarkCyan;
+			hoaDonDg.ImeMode = ImeMode.NoControl;
+			hoaDonDg.Location = new Point(0, 113);
+			hoaDonDg.Name = "hoaDonDg";
+			hoaDonDg.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+			hoaDonDg.RowHeadersVisible = false;
+			hoaDonDg.RowHeadersWidth = 51;
+			dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
+			hoaDonDg.RowsDefaultCellStyle = dataGridViewCellStyle12;
+			hoaDonDg.RowTemplate.ReadOnly = true;
+			hoaDonDg.Size = new Size(923, 406);
+			hoaDonDg.TabIndex = 18;
+			// 
+			// hoaDonBtn
+			// 
+			hoaDonBtn.Anchor = AnchorStyles.Right;
+			hoaDonBtn.BackColor = Color.Transparent;
+			hoaDonBtn.BackgroundColor = Color.Transparent;
+			hoaDonBtn.BorderColor = Color.Teal;
+			hoaDonBtn.BorderRadius = 20;
+			hoaDonBtn.BorderSize = 0;
+			hoaDonBtn.Cursor = Cursors.Hand;
+			hoaDonBtn.EnabledTextHover = false;
+			hoaDonBtn.FlatAppearance.BorderSize = 0;
+			hoaDonBtn.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
+			hoaDonBtn.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
+			hoaDonBtn.FlatStyle = FlatStyle.Flat;
+			hoaDonBtn.ForeColor = Color.White;
+			hoaDonBtn.Image = Properties.Resources.invoice_khachhang_24px;
+			hoaDonBtn.ImageHover = null;
+			hoaDonBtn.Location = new Point(711, 8);
+			hoaDonBtn.Margin = new Padding(3, 3, 20, 3);
+			hoaDonBtn.Name = "hoaDonBtn";
+			hoaDonBtn.Size = new Size(53, 40);
+			hoaDonBtn.TabIndex = 5;
+			hoaDonBtn.TextColor = Color.White;
+			hoaDonBtn.TextHover = Color.White;
+			hoaDonBtn.UseVisualStyleBackColor = false;
+			hoaDonBtn.Click += hoaDonBtn_Click;
 			// 
 			// BanHangView
 			// 
@@ -525,6 +639,8 @@
 			sidePanel1.ResumeLayout(false);
 			pggTab.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)pggDg).EndInit();
+			hoaDonTab.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)hoaDonDg).EndInit();
 			ResumeLayout(false);
 		}
 
@@ -539,7 +655,7 @@
 		private TabControl tabControl1;
 		private TabPage trangChuTab;
 		private TabPage pggTab;
-		private TabPage taiKhoanTab;
+		private TabPage hoaDonTab;
 		private CustomControl.SidePanel sidePanel2;
 		private CustomControl.SidePanel sidePanel1;
 		private FlowLayoutPanel sanPhamPanel;
@@ -555,5 +671,9 @@
 		private CustomControl.CustomButton pggBtn;
 		private CustomControl.CustomButton returnBtn;
 		private Label label7;
+		private Label label2;
+		private CustomControl.CustomButton customButton1;
+		private DataGridView hoaDonDg;
+		private CustomControl.CustomButton hoaDonBtn;
 	}
 }

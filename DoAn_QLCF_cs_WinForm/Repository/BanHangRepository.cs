@@ -203,5 +203,37 @@ namespace DoAn_QLCF_cs_WinForm.Repository
 				return false;
 			}
 		}
+
+		public IEnumerable<HoaDonModel> GetAllHoaDon(int idKhachHang)
+		{
+			var cpList = new List<HoaDonModel>();
+			using (var connection = new SqlConnection(this.connectionString))
+			using (var cmd = connection.CreateCommand())
+			{
+				connection.Open();
+				cmd.Connection = connection;
+				cmd.CommandText = "select * from HoaDon where KhachHangId = @Id";
+				cmd.Parameters.AddWithValue("@Id", idKhachHang);
+				using (var reader = cmd.ExecuteReader())
+				{
+					while (reader.Read())
+					{
+						var hd = new HoaDonModel();
+						hd.HoaDonId = (int)reader["HoaDonId"];
+						hd.NhanVienId = (int)reader["NhanVienId"];
+						hd.KhachHangId = (int)reader["KhachHangId"];
+						hd.PggId = (int)reader["PggId"];
+						hd.NgayNhap = (DateTime)(reader["NgayNhap"]);
+						hd.PhiTruocGiamGia = (double)reader["PhiTruocGiamGia"];
+						hd.GiamGia = (byte)reader["GiamGia"];
+						hd.PhiSauGiamGia = (double)reader["PhiSauGiamGia"];
+						hd.IsAccepted = (bool)reader["IsAccepted"];
+						cpList.Add(hd);
+					}
+				}
+
+				return cpList;
+			}
+		}
 	}
 }

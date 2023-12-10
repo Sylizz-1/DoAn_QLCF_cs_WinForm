@@ -25,6 +25,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 		public FlowLayoutPanel SanPhamPanel { get => sanPhamPanel; set => sanPhamPanel = value; }
 
 		public KhachHangModel KhModel { get; set; }
+		public DataGridView HoaDonDg { get => hoaDonDg; set => hoaDonDg = value; }
 		public int GiamGiaLoaiKh
 		{
 			get
@@ -40,7 +41,7 @@ namespace DoAn_QLCF_cs_WinForm.View
 			}
 		}
 		public DataGridView PggDg { get => pggDg; set => pggDg = value; }
-		public float GiaGocTxt { get => float.Parse(this.giaGocTxt.Text) ; set => this.giaGocTxt.Text = value.ToString(); }
+		public float GiaGocTxt { get => float.Parse(this.giaGocTxt.Text); set => this.giaGocTxt.Text = value.ToString(); }
 
 		public event EventHandler DatHangBtnEvent;
 
@@ -55,10 +56,10 @@ namespace DoAn_QLCF_cs_WinForm.View
 		public void UpdateGia()
 		{
 			float sum = 0;
-			foreach(ChiTietHoaDonUC cthdUc in this.gioHangPanel.Controls)
+			foreach (ChiTietHoaDonUC cthdUc in this.gioHangPanel.Controls)
 			{
 				sum += cthdUc.donGia;
-			} 
+			}
 			this.giaGocTxt.Text = sum.ToString();
 		}
 
@@ -69,6 +70,17 @@ namespace DoAn_QLCF_cs_WinForm.View
 
 		private void returnBtn_Click(object sender, EventArgs e)
 		{
+			this.tabControl1.SelectedTab = trangChuTab;
+		}
+
+		private void hoaDonBtn_Click(object sender, EventArgs e)
+		{
+			BindingSource bs = new BindingSource(); 
+			IEnumerable<HoaDonModel> hdModel ;
+
+
+
+
 			this.tabControl1.SelectedTab = trangChuTab;
 		}
 	}

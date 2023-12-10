@@ -150,5 +150,10 @@ namespace DoAn_QLCF_cs_WinForm.Presenter
 			
 		}
 
+
+		public IEnumerable<HoaDonModel> GetAllHoaDon(int idKhachHang)
+		{
+			return repository.GetAllHoaDon(idKhachHang);
+		}
 	}
 }

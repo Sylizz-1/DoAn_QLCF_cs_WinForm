@@ -16,5 +16,6 @@ namespace DoAn_QLCF_cs_WinForm.Repository.RepositoryInterface
 
 		bool AddHoaDon(HoaDonModel obj);
 		bool AddCthd(IEnumerable<ChiTietHoaDonModel>  objs);
+		 IEnumerable<HoaDonModel> GetAllHoaDon(int idKhachHang);
 	}
 }

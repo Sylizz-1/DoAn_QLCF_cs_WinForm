@@ -14,6 +14,7 @@ namespace DoAn_QLCF_cs_WinForm.View.ViewInterface
 		public FlowLayoutPanel SanPhamPanel { get; set ; }
 		public int GiamGiaLoaiKh {  get; set; }
 		public DataGridView PggDg { get; set ; }
+		public DataGridView HoaDonDg { get; set ; }
 
 		public float GiaGocTxt { get; set; }
 
