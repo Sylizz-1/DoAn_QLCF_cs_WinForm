@@ -207,7 +207,7 @@
             btnXemPN.ForeColor = Color.Goldenrod;
             btnXemPN.ImageAlign = ContentAlignment.MiddleRight;
             btnXemPN.ImageHover = null;
-            btnXemPN.Location = new Point(1333, 266);
+            btnXemPN.Location = new Point(986, 9);
             btnXemPN.Margin = new Padding(4, 5, 4, 5);
             btnXemPN.Name = "btnXemPN";
             btnXemPN.Size = new Size(172, 64);
@@ -242,6 +242,7 @@
             btnFindPn.TextColor = Color.White;
             btnFindPn.TextHover = Color.White;
             btnFindPn.UseVisualStyleBackColor = false;
+            btnFindPn.Visible = false;
             // 
             // resetBtn
             // 
@@ -261,7 +262,7 @@
             resetBtn.ForeColor = Color.DarkGray;
             resetBtn.ImageAlign = ContentAlignment.MiddleRight;
             resetBtn.ImageHover = null;
-            resetBtn.Location = new Point(1333, 169);
+            resetBtn.Location = new Point(803, 9);
             resetBtn.Margin = new Padding(4, 5, 4, 5);
             resetBtn.Name = "resetBtn";
             resetBtn.Size = new Size(172, 64);
@@ -281,7 +282,9 @@
             gbSort.Controls.Add(groupBox3);
             gbSort.Controls.Add(groupBox7);
             gbSort.Location = new Point(52, 115);
+            gbSort.Margin = new Padding(2);
             gbSort.Name = "gbSort";
+            gbSort.Padding = new Padding(2);
             gbSort.Size = new Size(969, 150);
             gbSort.TabIndex = 29;
             gbSort.TabStop = false;
@@ -291,8 +294,10 @@
             // 
             groupBox5.Controls.Add(rbIDNccDec);
             groupBox5.Controls.Add(rbIDNccInc);
-            groupBox5.Location = new Point(403, 24);
+            groupBox5.Location = new Point(402, 24);
+            groupBox5.Margin = new Padding(2);
             groupBox5.Name = "groupBox5";
+            groupBox5.Padding = new Padding(2);
             groupBox5.Size = new Size(159, 108);
             groupBox5.TabIndex = 24;
             groupBox5.TabStop = false;
@@ -301,7 +306,8 @@
             // rbIDNccDec
             // 
             rbIDNccDec.AutoSize = true;
-            rbIDNccDec.Location = new Point(17, 65);
+            rbIDNccDec.Location = new Point(18, 65);
+            rbIDNccDec.Margin = new Padding(2);
             rbIDNccDec.Name = "rbIDNccDec";
             rbIDNccDec.Size = new Size(78, 29);
             rbIDNccDec.TabIndex = 1;
@@ -314,7 +320,8 @@
             // rbIDNccInc
             // 
             rbIDNccInc.AutoSize = true;
-            rbIDNccInc.Location = new Point(17, 30);
+            rbIDNccInc.Location = new Point(18, 30);
+            rbIDNccInc.Margin = new Padding(2);
             rbIDNccInc.Name = "rbIDNccInc";
             rbIDNccInc.Size = new Size(74, 29);
             rbIDNccInc.TabIndex = 0;
@@ -329,7 +336,9 @@
             groupBox2.Controls.Add(rbIDPnDec);
             groupBox2.Controls.Add(rbIDPnInc);
             groupBox2.Location = new Point(11, 24);
+            groupBox2.Margin = new Padding(2);
             groupBox2.Name = "groupBox2";
+            groupBox2.Padding = new Padding(2);
             groupBox2.Size = new Size(159, 108);
             groupBox2.TabIndex = 23;
             groupBox2.TabStop = false;
@@ -338,7 +347,8 @@
             // rbIDPnDec
             // 
             rbIDPnDec.AutoSize = true;
-            rbIDPnDec.Location = new Point(17, 65);
+            rbIDPnDec.Location = new Point(18, 65);
+            rbIDPnDec.Margin = new Padding(2);
             rbIDPnDec.Name = "rbIDPnDec";
             rbIDPnDec.Size = new Size(78, 29);
             rbIDPnDec.TabIndex = 1;
@@ -351,7 +361,8 @@
             // rbIDPnInc
             // 
             rbIDPnInc.AutoSize = true;
-            rbIDPnInc.Location = new Point(17, 30);
+            rbIDPnInc.Location = new Point(18, 30);
+            rbIDPnInc.Margin = new Padding(2);
             rbIDPnInc.Name = "rbIDPnInc";
             rbIDPnInc.Size = new Size(74, 29);
             rbIDPnInc.TabIndex = 0;
@@ -366,7 +377,9 @@
             groupBox4.Controls.Add(rbNNDec);
             groupBox4.Controls.Add(rbNNInc);
             groupBox4.Location = new Point(599, 24);
+            groupBox4.Margin = new Padding(2);
             groupBox4.Name = "groupBox4";
+            groupBox4.Padding = new Padding(2);
             groupBox4.Size = new Size(159, 108);
             groupBox4.TabIndex = 24;
             groupBox4.TabStop = false;
@@ -375,7 +388,8 @@
             // rbNNDec
             // 
             rbNNDec.AutoSize = true;
-            rbNNDec.Location = new Point(17, 65);
+            rbNNDec.Location = new Point(18, 65);
+            rbNNDec.Margin = new Padding(2);
             rbNNDec.Name = "rbNNDec";
             rbNNDec.Size = new Size(78, 29);
             rbNNDec.TabIndex = 1;
@@ -388,7 +402,8 @@
             // rbNNInc
             // 
             rbNNInc.AutoSize = true;
-            rbNNInc.Location = new Point(17, 30);
+            rbNNInc.Location = new Point(18, 30);
+            rbNNInc.Margin = new Padding(2);
             rbNNInc.Name = "rbNNInc";
             rbNNInc.Size = new Size(74, 29);
             rbNNInc.TabIndex = 0;
@@ -402,8 +417,10 @@
             // 
             groupBox3.Controls.Add(rbIDNvDec);
             groupBox3.Controls.Add(rbIDNvInc);
-            groupBox3.Location = new Point(207, 24);
+            groupBox3.Location = new Point(208, 24);
+            groupBox3.Margin = new Padding(2);
             groupBox3.Name = "groupBox3";
+            groupBox3.Padding = new Padding(2);
             groupBox3.Size = new Size(159, 108);
             groupBox3.TabIndex = 24;
             groupBox3.TabStop = false;
@@ -412,7 +429,8 @@
             // rbIDNvDec
             // 
             rbIDNvDec.AutoSize = true;
-            rbIDNvDec.Location = new Point(17, 65);
+            rbIDNvDec.Location = new Point(18, 65);
+            rbIDNvDec.Margin = new Padding(2);
             rbIDNvDec.Name = "rbIDNvDec";
             rbIDNvDec.Size = new Size(78, 29);
             rbIDNvDec.TabIndex = 1;
@@ -425,7 +443,8 @@
             // rbIDNvInc
             // 
             rbIDNvInc.AutoSize = true;
-            rbIDNvInc.Location = new Point(17, 30);
+            rbIDNvInc.Location = new Point(18, 30);
+            rbIDNvInc.Margin = new Padding(2);
             rbIDNvInc.Name = "rbIDNvInc";
             rbIDNvInc.Size = new Size(74, 29);
             rbIDNvInc.TabIndex = 0;
@@ -440,7 +459,9 @@
             groupBox7.Controls.Add(rbTTDec);
             groupBox7.Controls.Add(rbTTInc);
             groupBox7.Location = new Point(795, 24);
+            groupBox7.Margin = new Padding(2);
             groupBox7.Name = "groupBox7";
+            groupBox7.Padding = new Padding(2);
             groupBox7.Size = new Size(159, 108);
             groupBox7.TabIndex = 25;
             groupBox7.TabStop = false;
@@ -449,7 +470,8 @@
             // rbTTDec
             // 
             rbTTDec.AutoSize = true;
-            rbTTDec.Location = new Point(17, 65);
+            rbTTDec.Location = new Point(18, 65);
+            rbTTDec.Margin = new Padding(2);
             rbTTDec.Name = "rbTTDec";
             rbTTDec.Size = new Size(78, 29);
             rbTTDec.TabIndex = 1;
@@ -462,7 +484,8 @@
             // rbTTInc
             // 
             rbTTInc.AutoSize = true;
-            rbTTInc.Location = new Point(17, 30);
+            rbTTInc.Location = new Point(18, 30);
+            rbTTInc.Margin = new Padding(2);
             rbTTInc.Name = "rbTTInc";
             rbTTInc.Size = new Size(74, 29);
             rbTTInc.TabIndex = 0;
@@ -490,7 +513,7 @@
             btnFilterPN.ForeColor = Color.Goldenrod;
             btnFilterPN.ImageAlign = ContentAlignment.MiddleRight;
             btnFilterPN.ImageHover = null;
-            btnFilterPN.Location = new Point(589, 4);
+            btnFilterPN.Location = new Point(1239, 189);
             btnFilterPN.Margin = new Padding(4, 5, 4, 5);
             btnFilterPN.Name = "btnFilterPN";
             btnFilterPN.Size = new Size(172, 64);
@@ -500,6 +523,7 @@
             btnFilterPN.TextHover = Color.White;
             btnFilterPN.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnFilterPN.UseVisualStyleBackColor = false;
+            btnFilterPN.Visible = false;
             btnFilterPN.Click += filterBtn_Click;
             // 
             // sortBtn
@@ -520,7 +544,7 @@
             sortBtn.ForeColor = Color.DeepSkyBlue;
             sortBtn.ImageAlign = ContentAlignment.MiddleRight;
             sortBtn.ImageHover = null;
-            sortBtn.Location = new Point(775, 4);
+            sortBtn.Location = new Point(1166, 9);
             sortBtn.Margin = new Padding(4, 5, 4, 5);
             sortBtn.Name = "sortBtn";
             sortBtn.Size = new Size(172, 64);
@@ -551,7 +575,7 @@
             delBtn.Image = Properties.Resources.deleteIconRed16px;
             delBtn.ImageAlign = ContentAlignment.MiddleRight;
             delBtn.ImageHover = Properties.Resources.deleteIconWhite16px;
-            delBtn.Location = new Point(1333, 4);
+            delBtn.Location = new Point(1059, 189);
             delBtn.Margin = new Padding(4, 5, 4, 5);
             delBtn.Name = "delBtn";
             delBtn.Size = new Size(172, 64);
@@ -561,6 +585,7 @@
             delBtn.TextHover = Color.White;
             delBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             delBtn.UseVisualStyleBackColor = false;
+            delBtn.Visible = false;
             // 
             // btnEditPN
             // 
@@ -581,7 +606,7 @@
             btnEditPN.Image = Properties.Resources.editIconTeal16px;
             btnEditPN.ImageAlign = ContentAlignment.MiddleRight;
             btnEditPN.ImageHover = Properties.Resources.editIconWhite16px;
-            btnEditPN.Location = new Point(1147, 4);
+            btnEditPN.Location = new Point(1059, 263);
             btnEditPN.Margin = new Padding(4, 5, 4, 5);
             btnEditPN.Name = "btnEditPN";
             btnEditPN.Size = new Size(172, 64);
@@ -591,6 +616,7 @@
             btnEditPN.TextHover = Color.White;
             btnEditPN.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnEditPN.UseVisualStyleBackColor = false;
+            btnEditPN.Visible = false;
             btnEditPN.Click += btnEditPN_Click;
             // 
             // btnAddPN
@@ -612,7 +638,7 @@
             btnAddPN.Image = Properties.Resources.addIconTeal16px;
             btnAddPN.ImageAlign = ContentAlignment.MiddleRight;
             btnAddPN.ImageHover = Properties.Resources.addIconWhite16px;
-            btnAddPN.Location = new Point(961, 4);
+            btnAddPN.Location = new Point(1349, 9);
             btnAddPN.Margin = new Padding(4, 5, 4, 5);
             btnAddPN.Name = "btnAddPN";
             btnAddPN.Size = new Size(172, 64);
@@ -654,7 +680,7 @@
             dgvDsNhapHang.EnableHeadersVisualStyles = false;
             dgvDsNhapHang.GridColor = Color.DarkCyan;
             dgvDsNhapHang.ImeMode = ImeMode.NoControl;
-            dgvDsNhapHang.Location = new Point(4, 340);
+            dgvDsNhapHang.Location = new Point(4, 341);
             dgvDsNhapHang.Margin = new Padding(4, 5, 4, 5);
             dgvDsNhapHang.Name = "dgvDsNhapHang";
             dgvDsNhapHang.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
@@ -664,7 +690,7 @@
             dgvDsNhapHang.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dgvDsNhapHang.RowTemplate.Height = 25;
             dgvDsNhapHang.RowTemplate.ReadOnly = true;
-            dgvDsNhapHang.Size = new Size(1522, 543);
+            dgvDsNhapHang.Size = new Size(1522, 542);
             dgvDsNhapHang.TabIndex = 22;
             dgvDsNhapHang.CellClick += dgvDsNhapHang_CellClick;
             // 
@@ -689,6 +715,7 @@
             searchTxt.TabIndex = 11;
             searchTxt.Texts = "";
             searchTxt.UnderlinedStyle = false;
+            searchTxt.Visible = false;
             // 
             // detailTabPage
             // 
@@ -730,7 +757,7 @@
             txtTongTien.Enabled = false;
             txtTongTien.Font = new Font("Segoe UI", 13F);
             txtTongTien.ForeColor = Color.DimGray;
-            txtTongTien.Location = new Point(1179, 23);
+            txtTongTien.Location = new Point(1179, 22);
             txtTongTien.Margin = new Padding(4, 5, 4, 5);
             txtTongTien.Multiline = false;
             txtTongTien.Name = "txtTongTien";
@@ -738,7 +765,7 @@
             txtTongTien.PasswordChar = false;
             txtTongTien.PlaceholderColor = Color.DarkGray;
             txtTongTien.PlaceholderText = "";
-            txtTongTien.Size = new Size(217, 63);
+            txtTongTien.Size = new Size(218, 63);
             txtTongTien.TabIndex = 66;
             txtTongTien.Texts = "";
             txtTongTien.UnderlinedStyle = false;
@@ -804,7 +831,7 @@
             xacNhanBtn.Image = Properties.Resources.ConfirmIcondarkcyan1;
             xacNhanBtn.ImageAlign = ContentAlignment.MiddleRight;
             xacNhanBtn.ImageHover = Properties.Resources.ConfirmIconWhite1;
-            xacNhanBtn.Location = new Point(1325, 223);
+            xacNhanBtn.Location = new Point(1325, 222);
             xacNhanBtn.Margin = new Padding(4, 5, 4, 5);
             xacNhanBtn.Name = "xacNhanBtn";
             xacNhanBtn.Size = new Size(196, 89);
@@ -909,7 +936,7 @@
             btnSortCTPN.ForeColor = Color.DeepSkyBlue;
             btnSortCTPN.ImageAlign = ContentAlignment.MiddleRight;
             btnSortCTPN.ImageHover = null;
-            btnSortCTPN.Location = new Point(906, 90);
+            btnSortCTPN.Location = new Point(907, 90);
             btnSortCTPN.Margin = new Padding(4, 5, 4, 5);
             btnSortCTPN.Name = "btnSortCTPN";
             btnSortCTPN.Size = new Size(172, 64);
@@ -927,8 +954,10 @@
             gbCtpnSort.Controls.Add(groupBox9);
             gbCtpnSort.Controls.Add(groupBox11);
             gbCtpnSort.Font = new Font("Segoe UI", 9F);
-            gbCtpnSort.Location = new Point(16, 7);
+            gbCtpnSort.Location = new Point(16, 8);
+            gbCtpnSort.Margin = new Padding(2);
             gbCtpnSort.Name = "gbCtpnSort";
+            gbCtpnSort.Padding = new Padding(2);
             gbCtpnSort.Size = new Size(531, 150);
             gbCtpnSort.TabIndex = 37;
             gbCtpnSort.TabStop = false;
@@ -938,8 +967,10 @@
             // 
             groupBox6.Controls.Add(rbIDNglDec);
             groupBox6.Controls.Add(rbIDNglInc);
-            groupBox6.Location = new Point(13, 30);
+            groupBox6.Location = new Point(12, 30);
+            groupBox6.Margin = new Padding(2);
             groupBox6.Name = "groupBox6";
+            groupBox6.Padding = new Padding(2);
             groupBox6.Size = new Size(159, 108);
             groupBox6.TabIndex = 24;
             groupBox6.TabStop = false;
@@ -948,7 +979,8 @@
             // rbIDNglDec
             // 
             rbIDNglDec.AutoSize = true;
-            rbIDNglDec.Location = new Point(17, 65);
+            rbIDNglDec.Location = new Point(18, 65);
+            rbIDNglDec.Margin = new Padding(2);
             rbIDNglDec.Name = "rbIDNglDec";
             rbIDNglDec.Size = new Size(78, 29);
             rbIDNglDec.TabIndex = 1;
@@ -961,7 +993,8 @@
             // rbIDNglInc
             // 
             rbIDNglInc.AutoSize = true;
-            rbIDNglInc.Location = new Point(17, 30);
+            rbIDNglInc.Location = new Point(18, 30);
+            rbIDNglInc.Margin = new Padding(2);
             rbIDNglInc.Name = "rbIDNglInc";
             rbIDNglInc.Size = new Size(74, 29);
             rbIDNglInc.TabIndex = 0;
@@ -976,7 +1009,9 @@
             groupBox9.Controls.Add(rbKLNglDec);
             groupBox9.Controls.Add(rbKLNglInc);
             groupBox9.Location = new Point(178, 30);
+            groupBox9.Margin = new Padding(2);
             groupBox9.Name = "groupBox9";
+            groupBox9.Padding = new Padding(2);
             groupBox9.Size = new Size(159, 108);
             groupBox9.TabIndex = 24;
             groupBox9.TabStop = false;
@@ -985,7 +1020,8 @@
             // rbKLNglDec
             // 
             rbKLNglDec.AutoSize = true;
-            rbKLNglDec.Location = new Point(17, 65);
+            rbKLNglDec.Location = new Point(18, 65);
+            rbKLNglDec.Margin = new Padding(2);
             rbKLNglDec.Name = "rbKLNglDec";
             rbKLNglDec.Size = new Size(78, 29);
             rbKLNglDec.TabIndex = 1;
@@ -998,7 +1034,8 @@
             // rbKLNglInc
             // 
             rbKLNglInc.AutoSize = true;
-            rbKLNglInc.Location = new Point(17, 30);
+            rbKLNglInc.Location = new Point(18, 30);
+            rbKLNglInc.Margin = new Padding(2);
             rbKLNglInc.Name = "rbKLNglInc";
             rbKLNglInc.Size = new Size(74, 29);
             rbKLNglInc.TabIndex = 0;
@@ -1012,8 +1049,10 @@
             // 
             groupBox11.Controls.Add(rbDGNglDec);
             groupBox11.Controls.Add(rbDGNglInc);
-            groupBox11.Location = new Point(343, 30);
+            groupBox11.Location = new Point(342, 30);
+            groupBox11.Margin = new Padding(2);
             groupBox11.Name = "groupBox11";
+            groupBox11.Padding = new Padding(2);
             groupBox11.Size = new Size(159, 108);
             groupBox11.TabIndex = 25;
             groupBox11.TabStop = false;
@@ -1022,7 +1061,8 @@
             // rbDGNglDec
             // 
             rbDGNglDec.AutoSize = true;
-            rbDGNglDec.Location = new Point(17, 65);
+            rbDGNglDec.Location = new Point(18, 65);
+            rbDGNglDec.Margin = new Padding(2);
             rbDGNglDec.Name = "rbDGNglDec";
             rbDGNglDec.Size = new Size(78, 29);
             rbDGNglDec.TabIndex = 1;
@@ -1035,7 +1075,8 @@
             // rbDGNglInc
             // 
             rbDGNglInc.AutoSize = true;
-            rbDGNglInc.Location = new Point(17, 30);
+            rbDGNglInc.Location = new Point(18, 30);
+            rbDGNglInc.Margin = new Padding(2);
             rbDGNglInc.Name = "rbDGNglInc";
             rbDGNglInc.Size = new Size(74, 29);
             rbDGNglInc.TabIndex = 0;
@@ -1063,7 +1104,7 @@
             resetCTPNBtn.ForeColor = Color.DarkGray;
             resetCTPNBtn.ImageAlign = ContentAlignment.MiddleRight;
             resetCTPNBtn.ImageHover = null;
-            resetCTPNBtn.Location = new Point(1102, 90);
+            resetCTPNBtn.Location = new Point(1103, 90);
             resetCTPNBtn.Margin = new Padding(4, 5, 4, 5);
             resetCTPNBtn.Name = "resetCTPNBtn";
             resetCTPNBtn.Size = new Size(172, 64);
@@ -1093,7 +1134,7 @@
             btnFilterCTPN.ForeColor = Color.Goldenrod;
             btnFilterCTPN.ImageAlign = ContentAlignment.MiddleRight;
             btnFilterCTPN.ImageHover = null;
-            btnFilterCTPN.Location = new Point(1299, 90);
+            btnFilterCTPN.Location = new Point(1300, 90);
             btnFilterCTPN.Margin = new Padding(4, 5, 4, 5);
             btnFilterCTPN.Name = "btnFilterCTPN";
             btnFilterCTPN.Size = new Size(172, 64);
@@ -1103,6 +1144,7 @@
             btnFilterCTPN.TextHover = Color.White;
             btnFilterCTPN.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnFilterCTPN.UseVisualStyleBackColor = false;
+            btnFilterCTPN.Visible = false;
             btnFilterCTPN.Click += btnFilterCTPN_Click;
             // 
             // btnDeleteCTPN
@@ -1155,7 +1197,7 @@
             btnEditCTPN.Image = Properties.Resources.editIconTeal16px;
             btnEditCTPN.ImageAlign = ContentAlignment.MiddleRight;
             btnEditCTPN.ImageHover = Properties.Resources.editIconWhite16px;
-            btnEditCTPN.Location = new Point(1101, 16);
+            btnEditCTPN.Location = new Point(1102, 16);
             btnEditCTPN.Margin = new Padding(4, 5, 4, 5);
             btnEditCTPN.Name = "btnEditCTPN";
             btnEditCTPN.Size = new Size(172, 64);
@@ -1224,7 +1266,7 @@
             cbNhanVienId.Font = new Font("Segoe UI", 13F);
             cbNhanVienId.ForeColor = SystemColors.WindowText;
             cbNhanVienId.FormattingEnabled = true;
-            cbNhanVienId.Location = new Point(519, 163);
+            cbNhanVienId.Location = new Point(519, 162);
             cbNhanVienId.Margin = new Padding(4);
             cbNhanVienId.Name = "cbNhanVienId";
             cbNhanVienId.Size = new Size(348, 44);
@@ -1236,7 +1278,7 @@
             cbNccId.Font = new Font("Segoe UI", 13F);
             cbNccId.FormattingEnabled = true;
             cbNccId.Items.AddRange(new object[] { "False", "True" });
-            cbNccId.Location = new Point(910, 163);
+            cbNccId.Location = new Point(910, 162);
             cbNccId.Margin = new Padding(4);
             cbNccId.Name = "cbNccId";
             cbNccId.Size = new Size(348, 44);
@@ -1257,7 +1299,7 @@
             // label6
             // 
             label6.Font = new Font("Segoe UI", 12F);
-            label6.Location = new Point(511, 193);
+            label6.Location = new Point(511, 192);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(191, 85);
@@ -1361,7 +1403,7 @@
             // label4
             // 
             label4.Font = new Font("Segoe UI", 12F);
-            label4.Location = new Point(906, 193);
+            label4.Location = new Point(906, 192);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(238, 85);
@@ -1700,6 +1742,7 @@
             addNgl.Controls.Add(label16);
             addNgl.Controls.Add(label19);
             addNgl.Location = new Point(4, 34);
+            addNgl.Margin = new Padding(2);
             addNgl.Name = "addNgl";
             addNgl.Size = new Size(1530, 887);
             addNgl.TabIndex = 3;
@@ -1725,7 +1768,7 @@
             btnHuyAdd.Image = Properties.Resources.CANCELiconRed;
             btnHuyAdd.ImageAlign = ContentAlignment.MiddleRight;
             btnHuyAdd.ImageHover = Properties.Resources.CANCELiconWhite;
-            btnHuyAdd.Location = new Point(1322, 783);
+            btnHuyAdd.Location = new Point(1322, 782);
             btnHuyAdd.Margin = new Padding(4, 5, 4, 5);
             btnHuyAdd.Name = "btnHuyAdd";
             btnHuyAdd.Size = new Size(196, 89);
@@ -1756,7 +1799,7 @@
             btnXacNhanAdd.Image = Properties.Resources.ConfirmIcondarkcyan1;
             btnXacNhanAdd.ImageAlign = ContentAlignment.MiddleRight;
             btnXacNhanAdd.ImageHover = Properties.Resources.ConfirmIconWhite1;
-            btnXacNhanAdd.Location = new Point(1103, 783);
+            btnXacNhanAdd.Location = new Point(1102, 782);
             btnXacNhanAdd.Margin = new Padding(4, 5, 4, 5);
             btnXacNhanAdd.Name = "btnXacNhanAdd";
             btnXacNhanAdd.Size = new Size(196, 89);
@@ -1823,7 +1866,7 @@
             // label8
             // 
             label8.Font = new Font("Segoe UI", 12F);
-            label8.Location = new Point(67, 395);
+            label8.Location = new Point(68, 395);
             label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
             label8.Size = new Size(151, 49);
@@ -1873,7 +1916,7 @@
             txtNglInfo.BorderSize = 2;
             txtNglInfo.Font = new Font("Segoe UI", 13F);
             txtNglInfo.ForeColor = Color.DimGray;
-            txtNglInfo.Location = new Point(513, 172);
+            txtNglInfo.Location = new Point(512, 172);
             txtNglInfo.Margin = new Padding(4, 5, 4, 5);
             txtNglInfo.Multiline = false;
             txtNglInfo.Name = "txtNglInfo";
@@ -1889,7 +1932,7 @@
             // label10
             // 
             label10.Font = new Font("Segoe UI", 12F);
-            label10.Location = new Point(489, 107);
+            label10.Location = new Point(489, 108);
             label10.Margin = new Padding(4, 0, 4, 0);
             label10.Name = "label10";
             label10.Size = new Size(151, 85);
@@ -1955,7 +1998,7 @@
             // label19
             // 
             label19.Font = new Font("Segoe UI", 12F);
-            label19.Location = new Point(67, 230);
+            label19.Location = new Point(68, 230);
             label19.Margin = new Padding(4, 0, 4, 0);
             label19.Name = "label19";
             label19.Size = new Size(151, 85);

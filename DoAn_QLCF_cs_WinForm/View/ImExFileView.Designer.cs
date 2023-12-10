@@ -48,8 +48,9 @@
             flowLayoutPanel1.Controls.Add(button);
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.Location = new Point(0, 0);
+            flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1024, 604);
+            flowLayoutPanel1.Size = new Size(1170, 805);
             flowLayoutPanel1.TabIndex = 0;
             // 
             // customButton5
@@ -66,20 +67,22 @@
             customButton5.FlatAppearance.MouseDownBackColor = Color.Teal;
             customButton5.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
             customButton5.FlatStyle = FlatStyle.Flat;
-            customButton5.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            customButton5.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             customButton5.ForeColor = Color.DarkCyan;
             customButton5.Image = Properties.Resources.Loadkhachhang64pxDarkCYAN;
             customButton5.ImageAlign = ContentAlignment.MiddleRight;
             customButton5.ImageHover = Properties.Resources.Loadkhachhang64pxwhite;
-            customButton5.Location = new Point(3, 3);
+            customButton5.Location = new Point(3, 4);
+            customButton5.Margin = new Padding(3, 4, 3, 4);
             customButton5.Name = "customButton5";
-            customButton5.Size = new Size(317, 162);
+            customButton5.Size = new Size(362, 216);
             customButton5.TabIndex = 28;
             customButton5.Text = "      Loại Khách Hàng";
             customButton5.TextColor = Color.DarkCyan;
             customButton5.TextHover = Color.White;
             customButton5.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton5.UseVisualStyleBackColor = false;
+            customButton5.Visible = false;
             customButton5.Click += customButton5_Click;
             // 
             // customButton4
@@ -96,14 +99,15 @@
             customButton4.FlatAppearance.MouseDownBackColor = Color.MediumSeaGreen;
             customButton4.FlatAppearance.MouseOverBackColor = Color.SpringGreen;
             customButton4.FlatStyle = FlatStyle.Flat;
-            customButton4.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            customButton4.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             customButton4.ForeColor = Color.SpringGreen;
             customButton4.Image = Properties.Resources.discount64pxnh;
             customButton4.ImageAlign = ContentAlignment.MiddleRight;
             customButton4.ImageHover = Properties.Resources.discount64pxnhWHITE;
-            customButton4.Location = new Point(326, 3);
+            customButton4.Location = new Point(371, 4);
+            customButton4.Margin = new Padding(3, 4, 3, 4);
             customButton4.Name = "customButton4";
-            customButton4.Size = new Size(317, 162);
+            customButton4.Size = new Size(362, 216);
             customButton4.TabIndex = 27;
             customButton4.Text = "      Phiếu Giảm Giá";
             customButton4.TextColor = Color.SpringGreen;
@@ -126,20 +130,22 @@
             customButton3.FlatAppearance.MouseDownBackColor = Color.Red;
             customButton3.FlatAppearance.MouseOverBackColor = Color.Crimson;
             customButton3.FlatStyle = FlatStyle.Flat;
-            customButton3.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            customButton3.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             customButton3.ForeColor = Color.Crimson;
             customButton3.Image = Properties.Resources.employeeCrimS64px;
             customButton3.ImageAlign = ContentAlignment.MiddleRight;
             customButton3.ImageHover = Properties.Resources.employeeWHITE64px;
-            customButton3.Location = new Point(649, 3);
+            customButton3.Location = new Point(739, 4);
+            customButton3.Margin = new Padding(3, 4, 3, 4);
             customButton3.Name = "customButton3";
-            customButton3.Size = new Size(317, 162);
+            customButton3.Size = new Size(362, 216);
             customButton3.TabIndex = 26;
             customButton3.Text = "      Nhân Viên";
             customButton3.TextColor = Color.Crimson;
             customButton3.TextHover = Color.White;
             customButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton3.UseVisualStyleBackColor = false;
+            customButton3.Visible = false;
             customButton3.Click += customButton3_Click;
             // 
             // customButton2
@@ -156,14 +162,15 @@
             customButton2.FlatAppearance.MouseDownBackColor = Color.MediumBlue;
             customButton2.FlatAppearance.MouseOverBackColor = Color.Blue;
             customButton2.FlatStyle = FlatStyle.Flat;
-            customButton2.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            customButton2.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             customButton2.ForeColor = Color.Blue;
             customButton2.Image = Properties.Resources.customer64pxBLUE;
             customButton2.ImageAlign = ContentAlignment.MiddleRight;
             customButton2.ImageHover = Properties.Resources.customer64pxWHITE;
-            customButton2.Location = new Point(3, 171);
+            customButton2.Location = new Point(3, 228);
+            customButton2.Margin = new Padding(3, 4, 3, 4);
             customButton2.Name = "customButton2";
-            customButton2.Size = new Size(317, 162);
+            customButton2.Size = new Size(362, 216);
             customButton2.TabIndex = 25;
             customButton2.Text = "      Khách Hàng";
             customButton2.TextColor = Color.Blue;
@@ -186,14 +193,15 @@
             customButton1.FlatAppearance.MouseDownBackColor = Color.Tomato;
             customButton1.FlatAppearance.MouseOverBackColor = Color.OrangeRed;
             customButton1.FlatStyle = FlatStyle.Flat;
-            customButton1.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            customButton1.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             customButton1.ForeColor = Color.OrangeRed;
             customButton1.Image = Properties.Resources.ingredientIcon64pxOrangeRed;
             customButton1.ImageAlign = ContentAlignment.MiddleRight;
             customButton1.ImageHover = Properties.Resources.ingredientIcon64pxWHITE;
-            customButton1.Location = new Point(326, 171);
+            customButton1.Location = new Point(371, 228);
+            customButton1.Margin = new Padding(3, 4, 3, 4);
             customButton1.Name = "customButton1";
-            customButton1.Size = new Size(317, 162);
+            customButton1.Size = new Size(362, 216);
             customButton1.TabIndex = 24;
             customButton1.Text = "      Nguyên Liệu";
             customButton1.TextColor = Color.OrangeRed;
@@ -216,28 +224,31 @@
             button.FlatAppearance.MouseDownBackColor = Color.DarkRed;
             button.FlatAppearance.MouseOverBackColor = Color.Brown;
             button.FlatStyle = FlatStyle.Flat;
-            button.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            button.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             button.ForeColor = Color.Brown;
             button.Image = Properties.Resources.Coffee64pxBrown;
             button.ImageAlign = ContentAlignment.MiddleRight;
             button.ImageHover = Properties.Resources.Coffee64pxWHITE;
-            button.Location = new Point(649, 171);
+            button.Location = new Point(739, 228);
+            button.Margin = new Padding(3, 4, 3, 4);
             button.Name = "button";
-            button.Size = new Size(317, 162);
+            button.Size = new Size(362, 216);
             button.TabIndex = 23;
             button.Text = "      Cà Phê";
             button.TextColor = Color.Brown;
             button.TextHover = Color.White;
             button.TextImageRelation = TextImageRelation.ImageBeforeText;
             button.UseVisualStyleBackColor = false;
+            button.Visible = false;
             // 
             // ImExFileView
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1024, 604);
+            ClientSize = new Size(1170, 805);
             Controls.Add(flowLayoutPanel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "ImExFileView";
             Text = "ImExFileView";
             flowLayoutPanel1.ResumeLayout(false);

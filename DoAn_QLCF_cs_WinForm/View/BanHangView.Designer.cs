@@ -20,7 +20,7 @@
 			base.Dispose(disposing);
 		}
 
-		#region Windows Form Designer generated code
+        #region Windows Form Designer generated code
 
 		/// <summary>
 		/// Required method for Designer support - do not modify
@@ -644,9 +644,9 @@
 			ResumeLayout(false);
 		}
 
-		#endregion
+        #endregion
 
-		private CustomControl.SidePanel titleBar;
+        private CustomControl.SidePanel titleBar;
 		private CustomControl.CustomButton customButton4;
 		private CustomControl.CustomButton customButton3;
 		private CustomControl.CustomButton customButton2;

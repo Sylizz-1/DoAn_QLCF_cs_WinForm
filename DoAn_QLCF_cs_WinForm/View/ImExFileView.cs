@@ -59,7 +59,8 @@ namespace DoAn_QLCF_cs_WinForm.View
 
         private void customButton3_Click(object sender, EventArgs e)
         {
-
+            //FileNhanVien form = new FileNhanVien();
+            //form.Show();
         }
 
         private void customButton1_Click(object sender, EventArgs e)

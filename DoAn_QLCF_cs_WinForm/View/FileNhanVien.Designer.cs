@@ -1,6 +1,6 @@
 ﻿namespace DoAn_QLCF_cs_WinForm.View
 {
-    partial class FileGiamGia
+    partial class FileNhanVien
     {
         /// <summary>
         /// Required designer variable.
@@ -36,36 +36,31 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Enabled = false;
-            dataGridView1.Location = new Point(2, 67);
-            dataGridView1.Margin = new Padding(3, 4, 3, 4);
+            dataGridView1.Location = new Point(4, 88);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(911, 383);
+            dataGridView1.Size = new Size(799, 188);
             dataGridView1.TabIndex = 0;
             // 
             // button1
             // 
-            button1.Location = new Point(391, 516);
-            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Location = new Point(330, 349);
             button1.Name = "button1";
-            button1.Size = new Size(86, 31);
+            button1.Size = new Size(94, 29);
             button1.TabIndex = 1;
-            button1.Text = "Export";
+            button1.Text = "button1";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // FileGiamGia
+            // FileNhanVien
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(800, 450);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
-            Margin = new Padding(3, 4, 3, 4);
-            Name = "FileGiamGia";
-            Text = "FileGiamGia";
+            Name = "FileNhanVien";
+            Text = "FileNhanVien";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
